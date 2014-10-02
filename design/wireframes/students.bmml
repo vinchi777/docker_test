@@ -1,0 +1,166 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1181" measuredH="697" mockupW="1033" mockupH="675">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="148" y="22" w="1033" h="675" measuredW="450" measuredH="400" zOrder="0" locked="true" isInGroup="-1">
+      <controlProperties>
+        <text>MaxRevOne%20%7C%20Students%0Ahttp%3A//www.maxrevone.ph/students</text>
+      </controlProperties>
+    </control>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="257" y="125" w="-1" h="-1" measuredW="70" measuredH="24" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <size>16</size>
+        <text>Students</text>
+      </controlProperties>
+    </control>
+    <control controlID="3" controlTypeID="com.balsamiq.mockups::Button" x="357" y="124" w="-1" h="-1" measuredW="106" measuredH="27" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>New%20Students</text>
+      </controlProperties>
+    </control>
+    <control controlID="4" controlTypeID="com.balsamiq.mockups::Link" x="968" y="128" w="-1" h="-1" measuredW="96" measuredH="19" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <href>enrollees%26bm%3Benrollees.bmml%26bm%3Benrollees.bmml%26bm%3Benrollees.bmml</href>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22820%2C106%2C916%2C125%22%20href%3D%22enrollees.bmml%22%20alt%3D%22enrollees%22%20id%3D%224%22/%3E</map>
+        <text>List%20of%20Enrollees</text>
+      </controlProperties>
+    </control>
+    <control controlID="14" controlTypeID="com.balsamiq.mockups::SearchBox" x="257" y="163" w="501" h="-1" measuredW="243" measuredH="25" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Search%20name%20of%20students%20or%20address</text>
+      </controlProperties>
+    </control>
+    <control controlID="15" controlTypeID="com.balsamiq.mockups::Label" x="968" y="226" w="-1" h="-1" measuredW="65" measuredH="22" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>14</size>
+        <text>April%202014</text>
+      </controlProperties>
+    </control>
+    <control controlID="16" controlTypeID="com.balsamiq.mockups::Label" x="968" y="246" w="-1" h="-1" measuredW="101" measuredH="22" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>14</size>
+        <text>November%202014</text>
+      </controlProperties>
+    </control>
+    <control controlID="17" controlTypeID="com.balsamiq.mockups::Label" x="257" y="203" w="117" h="-1" measuredW="79" measuredH="22" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <italic>false</italic>
+        <size>14</size>
+        <text>35%20Students</text>
+      </controlProperties>
+    </control>
+    <control controlID="19" controlTypeID="com.balsamiq.mockups::Label" x="968" y="203" w="-1" h="-1" measuredW="33" measuredH="22" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>6710886</color>
+        <size>14</size>
+        <text>Filter</text>
+      </controlProperties>
+    </control>
+    <control controlID="26" controlTypeID="__group__" x="258" y="340" w="240" h="42" measuredW="240" measuredH="42" zOrder="11" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Label" x="0" y="0" w="240" h="-1" measuredW="131" measuredH="22" zOrder="0" locked="false" isInGroup="26">
+          <controlProperties>
+            <bold>true</bold>
+            <size>14</size>
+            <text>Alinton%2C%20Shelame%20M.</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="0" y="20" w="240" h="-1" measuredW="218" measuredH="22" zOrder="1" locked="false" isInGroup="26">
+          <controlProperties>
+            <size>14</size>
+            <text>Brgy.%20Montealegre%20Kananga%2C%20Leyte</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="27" controlTypeID="__group__" x="257" y="240" w="160" h="42" measuredW="160" measuredH="42" zOrder="8" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Label" x="0" y="0" w="143" h="-1" measuredW="143" measuredH="22" zOrder="0" locked="false" isInGroup="27">
+          <controlProperties>
+            <bold>true</bold>
+            <size>14</size>
+            <text>Acala%2C%20Maria%20Divina%20D.</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="0" y="20" w="160" h="-1" measuredW="160" measuredH="22" zOrder="1" locked="false" isInGroup="27">
+          <controlProperties>
+            <size>14</size>
+            <text>District%204%20Burauen%2C%20Leyte</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="28" controlTypeID="__group__" x="257" y="288" w="240" h="42" measuredW="240" measuredH="42" zOrder="10" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Label" x="0" y="0" w="229" h="-1" measuredW="126" measuredH="22" zOrder="0" locked="false" isInGroup="28">
+          <controlProperties>
+            <bold>true</bold>
+            <size>14</size>
+            <text>Advincula%2C%20Mariz%20T.</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="0" y="20" w="240" h="-1" measuredW="226" measuredH="22" zOrder="1" locked="false" isInGroup="28">
+          <controlProperties>
+            <size>14</size>
+            <text>Brgy.%20Casuntingan%20MacArthur%2C%20Leyte</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="29" controlTypeID="__group__" x="257" y="392" w="240" h="42" measuredW="240" measuredH="42" zOrder="12" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Label" x="0" y="0" w="129" h="-1" measuredW="121" measuredH="22" zOrder="0" locked="false" isInGroup="29">
+          <controlProperties>
+            <bold>true</bold>
+            <size>14</size>
+            <text>Balais%2C%20Renante%20A.</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="0" y="20" w="240" h="-1" measuredW="219" measuredH="22" zOrder="1" locked="false" isInGroup="29">
+          <controlProperties>
+            <size>14</size>
+            <text>Brgy.%20Caraycary%20San%20Miguel%2C%20Leyte</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="30" controlTypeID="__group__" x="257" y="444" w="246" h="42" measuredW="246" measuredH="42" zOrder="13" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Label" x="0" y="0" w="246" h="-1" measuredW="153" measuredH="22" zOrder="0" locked="false" isInGroup="30">
+          <controlProperties>
+            <bold>true</bold>
+            <size>14</size>
+            <text>Basagan%2C%20Evangeline%20B.</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="0" y="20" w="240" h="-1" measuredW="219" measuredH="22" zOrder="1" locked="false" isInGroup="30">
+          <controlProperties>
+            <size>14</size>
+            <text>Brgy.%20Caraycary%20San%20Miguel%2C%20Leyte</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="31" controlTypeID="__group__" x="257" y="497" w="240" h="42" measuredW="240" measuredH="42" zOrder="14" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Label" x="0" y="0" w="129" h="-1" measuredW="111" measuredH="22" zOrder="0" locked="false" isInGroup="31">
+          <controlProperties>
+            <bold>true</bold>
+            <size>14</size>
+            <text>Basco%2C%20Gideon%20B.</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="0" y="20" w="240" h="-1" measuredW="222" measuredH="22" zOrder="1" locked="false" isInGroup="31">
+          <controlProperties>
+            <size>14</size>
+            <text>Pob.%20District%20I%20Rizal%20St%20Julita%2C%20Leyte</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="32" controlTypeID="com.balsamiq.mockups::LinkBar" x="519" y="616" w="-1" h="-1" measuredW="290" measuredH="19" zOrder="15" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>First%2C%20Previous%2C%201%2C%202%2C%203%2C%204%2C%20Next%2C%20Last</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>
