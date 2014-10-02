@@ -1,0 +1,123 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="607" measuredH="458" mockupW="549" mockupH="425">
+  <controls>
+    <control controlID="0" controlTypeID="__group__" x="167" y="33" w="440" h="425" measuredW="440" measuredH="425" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <controlName>student_view</controlName>
+      </controlProperties>
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Icon" x="18" y="0" w="-1" h="-1" measuredW="64" measuredH="64" zOrder="0" locked="false" isInGroup="0">
+          <controlProperties>
+            <icon>ContactIcon%7Cxlarge</icon>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::TextInput" x="104" y="24" w="107" h="-1" measuredW="52" measuredH="28" zOrder="1" locked="false" isInGroup="0">
+          <controlProperties>
+            <bold>true</bold>
+            <borderColor>13421772</borderColor>
+            <size>14</size>
+            <text>Acala</text>
+          </controlProperties>
+        </control>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::TextInput" x="219" y="24" w="107" h="-1" measuredW="96" measuredH="28" zOrder="2" locked="false" isInGroup="0">
+          <controlProperties>
+            <bold>true</bold>
+            <borderColor>13421772</borderColor>
+            <size>14</size>
+            <text>Maria%20Divina</text>
+          </controlProperties>
+        </control>
+        <control controlID="3" controlTypeID="com.balsamiq.mockups::TextInput" x="333" y="24" w="107" h="-1" measuredW="79" measuredH="28" zOrder="3" locked="false" isInGroup="0">
+          <controlProperties>
+            <bold>true</bold>
+            <borderColor>13421772</borderColor>
+            <size>14</size>
+            <text>dela%20Cruz</text>
+          </controlProperties>
+        </control>
+        <control controlID="4" controlTypeID="__group__" x="0" y="65" w="104" h="360" measuredW="104" measuredH="360" zOrder="4" locked="false" isInGroup="0">
+          <controlProperties>
+            <controlName>Vertical%20Tab%20Bar</controlName>
+          </controlProperties>
+          <groupChildrenDescriptors>
+            <control controlID="1" controlTypeID="__group__" x="0" y="38" w="100" h="33" measuredW="100" measuredH="33" zOrder="0" locked="false" isInGroup="4">
+              <controlProperties>
+                <controlName/>
+              </controlProperties>
+              <groupChildrenDescriptors>
+                <control controlID="0" controlTypeID="com.balsamiq.mockups::RoundButton" x="0" y="0" w="100" h="33" measuredW="32" measuredH="32" zOrder="0" locked="false" isInGroup="1">
+                  <controlProperties>
+                    <align>left</align>
+                    <borderColor>10066329</borderColor>
+                    <color>13421772</color>
+                    <markup>false</markup>
+                    <shape>rectangle</shape>
+                    <size>13</size>
+                    <text>Payment</text>
+                  </controlProperties>
+                </control>
+              </groupChildrenDescriptors>
+            </control>
+            <control controlID="2" controlTypeID="__group__" x="0" y="71" w="100" h="33" measuredW="100" measuredH="33" zOrder="1" locked="false" isInGroup="4">
+              <controlProperties>
+                <controlName/>
+              </controlProperties>
+              <groupChildrenDescriptors>
+                <control controlID="0" controlTypeID="com.balsamiq.mockups::RoundButton" x="0" y="0" w="100" h="33" measuredW="32" measuredH="32" zOrder="0" locked="false" isInGroup="2">
+                  <controlProperties>
+                    <align>left</align>
+                    <borderColor>10066329</borderColor>
+                    <color>13421772</color>
+                    <markup>false</markup>
+                    <shape>rectangle</shape>
+                    <size>13</size>
+                    <text>Score</text>
+                  </controlProperties>
+                </control>
+              </groupChildrenDescriptors>
+            </control>
+            <control controlID="3" controlTypeID="com.balsamiq.mockups::VRule" x="94" y="0" w="-1" h="360" measuredW="10" measuredH="100" zOrder="2" locked="false" isInGroup="4">
+              <controlProperties>
+                <color>10066329</color>
+              </controlProperties>
+            </control>
+            <control controlID="5" controlTypeID="__group__" x="0" y="5" w="104" h="33" measuredW="104" measuredH="33" zOrder="3" locked="false" isInGroup="4">
+              <controlProperties>
+                <controlName/>
+              </controlProperties>
+              <groupChildrenDescriptors>
+                <control controlID="0" controlTypeID="com.balsamiq.mockups::RoundButton" x="0" y="0" w="103" h="33" measuredW="32" measuredH="32" zOrder="0" locked="false" isInGroup="5">
+                  <controlProperties>
+                    <align>left</align>
+                    <borderColor>10066329</borderColor>
+                    <markup>false</markup>
+                    <shape>rectangle</shape>
+                    <size>13</size>
+                    <text>Profile</text>
+                  </controlProperties>
+                </control>
+                <control controlID="1" controlTypeID="com.balsamiq.mockups::Canvas" x="100" y="0" w="4" h="33" measuredW="100" measuredH="70" zOrder="1" locked="false" isInGroup="5">
+                  <controlProperties>
+                    <borderStyle>none</borderStyle>
+                  </controlProperties>
+                </control>
+              </groupChildrenDescriptors>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="1" controlTypeID="__group__" x="58" y="33" w="78" h="36" measuredW="78" measuredH="36" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <controlName>save_student</controlName>
+      </controlProperties>
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Button" x="0" y="0" w="78" h="36" measuredW="52" measuredH="27" zOrder="0" locked="false" isInGroup="1">
+          <controlProperties>
+            <color>11982760</color>
+            <text>Save</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+  </controls>
+</mockup>
