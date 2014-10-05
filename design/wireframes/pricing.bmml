@@ -1,0 +1,73 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1330" measuredH="1022" mockupW="1200" mockupH="996">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="130" y="26" w="1200" h="996" measuredW="450" measuredH="400" zOrder="0" locked="true" isInGroup="-1">
+      <controlProperties>
+        <text>MaxRevOne%20Online%0Awww.maxrevone.com</text>
+      </controlProperties>
+    </control>
+    <control controlID="191" controlTypeID="com.balsamiq.mockups::Label" x="166" y="163" w="99" h="33" measuredW="75" measuredH="33" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>24</size>
+        <text>Pricing</text>
+      </controlProperties>
+    </control>
+    <control controlID="215" controlTypeID="com.balsamiq.mockups::Label" x="166" y="241" w="99" h="24" measuredW="98" measuredH="24" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <size>16</size>
+        <text>Regular%20Rate</text>
+      </controlProperties>
+    </control>
+    <control controlID="216" controlTypeID="com.balsamiq.mockups::Paragraph" x="166" y="274" w="229" h="37" measuredW="200" measuredH="80" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>P%2016%2C000%0ADownpayment%20is%20as%20low%20as%20P%203%2C000</text>
+      </controlProperties>
+    </control>
+    <control controlID="219" controlTypeID="com.balsamiq.mockups::Label" x="166" y="336" w="-1" h="-1" measuredW="61" measuredH="24" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <size>16</size>
+        <text>Promos</text>
+      </controlProperties>
+    </control>
+    <control controlID="220" controlTypeID="com.balsamiq.mockups::Paragraph" x="166" y="369" w="672" h="128" measuredW="200" measuredH="80" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>First%20taker%20-%20P%2014%2C000%0ASecond%20taker%20-%20P%2012%2C000%0ADouble%20review%20-%2022%2C000%0A%091st%20payment%20%281st%20season%20review%29%20-%20P16%2C000%0A%092nd%20payment%202nd%20season%20review%29%20-%20P6%2C000%0A%20%0A_Regular%20rate%20will%20be%20asked%20for%20those%20students%20who%20can%27t%20pay%20the%20full%20agreed%20rate%20during%20the%20time%20of%20reservation._</text>
+      </controlProperties>
+    </control>
+    <control controlID="227" controlTypeID="com.balsamiq.mockups::Label" x="166" y="626" w="-1" h="-1" measuredW="99" measuredH="24" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <size>16</size>
+        <text>Scholarships</text>
+      </controlProperties>
+    </control>
+    <control controlID="228" controlTypeID="com.balsamiq.mockups::Paragraph" x="166" y="656" w="429" h="189" measuredW="200" measuredH="80" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Full%20Scholar%20%28inclusive%20of%20all%20privileges%29%0A%091.%20Summa%20Cum%20Laude%0A%092.%20Magna%20Cum%20Laude%0A%093.%20Cum%20Laude%0A%094.%20Highest%20Academic%20Award%0A%095.%20Dean%u2019s%20Choice%20Scholarship%20Grant%20%281%29%0A%096.%20Owner%u2019s%20Choice%20Scholarship%20Grant%20%281%29%0A%2050%25%20Scholar%0A%091.%20President%20%28Student%20Government%20Council%29%0A%092.%20With%20Distinction</text>
+      </controlProperties>
+    </control>
+    <control controlID="229" controlTypeID="com.balsamiq.mockups::Label" x="166" y="518" w="-1" h="-1" measuredW="176" measuredH="24" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <size>16</size>
+        <text>Money%20Back%20Guarantee</text>
+      </controlProperties>
+    </control>
+    <control controlID="230" controlTypeID="com.balsamiq.mockups::Paragraph" x="166" y="551" w="1128" h="49" measuredW="200" measuredH="80" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>We%20are%20confident%20that%20a%20student%20who%20attends%20class%20sessions%20regularly%20and%20passess%20all%20our%20review%20tests%20will%20definitely%20pass%20the%20board%20exam.%20However%2C%20if%20she/he%20fails%20to%20pass%20the%20board%20exam%2C%20we%20will%20return%20the%20money%20she%20has%20invested%20in%20full.</text>
+      </controlProperties>
+    </control>
+    <control controlID="231" controlTypeID="com.balsamiq.mockups::Component" x="130" y="845" w="1200" h="130" measuredW="1200" measuredH="130" zOrder="11" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>./assets/symbols.bmml#footer</src>
+      </controlProperties>
+    </control>
+    <control controlID="234" controlTypeID="com.balsamiq.mockups::Component" x="130" y="113" w="1200" h="39" measuredW="1200" measuredH="39" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>./assets/symbols.bmml#header</src>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>
