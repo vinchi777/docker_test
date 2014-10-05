@@ -1,4 +1,4 @@
-<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1427" measuredH="458" mockupW="1369" mockupH="425">
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1427" measuredH="458" mockupW="1420" mockupH="425">
   <controls>
     <control controlID="0" controlTypeID="__group__" x="167" y="33" w="1260" h="425" measuredW="1260" measuredH="425" zOrder="0" locked="false" isInGroup="-1">
       <controlProperties>
@@ -43,7 +43,7 @@
               <controlProperties>
                 <controlName/>
                 <href>student_payment%26bm%3Bstudent_payment.bmml%26bm%3Bstudent_payment.bmml%26bm%3Bstudent_payment.bmml</href>
-                <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22109%2C103%2C209%2C136%22%20href%3D%22student_payment.bmml%22%20alt%3D%22student_payment%22%20id%3D%221%22/%3E</map>
+                <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22160%2C103%2C260%2C136%22%20href%3D%22student_payment.bmml%22%20alt%3D%22student_payment%22%20id%3D%221%22/%3E</map>
               </controlProperties>
               <groupChildrenDescriptors>
                 <control controlID="0" controlTypeID="com.balsamiq.mockups::RoundButton" x="0" y="0" w="100" h="33" measuredW="32" measuredH="32" zOrder="0" locked="false" isInGroup="1">
@@ -86,7 +86,7 @@
               <controlProperties>
                 <controlName/>
                 <href>student%26bm%3Bstudent.bmml%26bm%3Bstudent.bmml%26bm%3Bstudent.bmml</href>
-                <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22109%2C70%2C213%2C103%22%20href%3D%22student.bmml%22%20alt%3D%22student%22%20id%3D%225%22/%3E</map>
+                <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22160%2C70%2C264%2C103%22%20href%3D%22student.bmml%22%20alt%3D%22student%22%20id%3D%225%22/%3E</map>
               </controlProperties>
               <groupChildrenDescriptors>
                 <control controlID="0" controlTypeID="com.balsamiq.mockups::RoundButton" x="0" y="0" w="103" h="33" measuredW="32" measuredH="32" zOrder="0" locked="false" isInGroup="5">
@@ -182,7 +182,7 @@
               <controlProperties>
                 <controlName/>
                 <href>enrollees%26bm%3Benrollees.bmml%26bm%3Benrollees.bmml%26bm%3Benrollees.bmml</href>
-                <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22612%2C113%2C708%2C153%22%20href%3D%22enrollees.bmml%22%20alt%3D%22enrollees%22%20id%3D%220%22/%3E</map>
+                <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22663%2C113%2C759%2C153%22%20href%3D%22enrollees.bmml%22%20alt%3D%22enrollees%22%20id%3D%220%22/%3E</map>
               </controlProperties>
               <groupChildrenDescriptors>
                 <control controlID="0" controlTypeID="com.balsamiq.mockups::RoundButton" x="0" y="0" w="96" h="40" measuredW="32" measuredH="32" zOrder="0" locked="false" isInGroup="0">
@@ -202,7 +202,7 @@
               <controlProperties>
                 <controlName/>
                 <href>students%26bm%3Bstudents.bmml%26bm%3Bstudents.bmml%26bm%3Bstudents.bmml</href>
-                <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22612%2C155%2C717%2C195%22%20href%3D%22students.bmml%22%20alt%3D%22students%22%20id%3D%225%22/%3E</map>
+                <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22663%2C155%2C768%2C195%22%20href%3D%22students.bmml%22%20alt%3D%22students%22%20id%3D%225%22/%3E</map>
               </controlProperties>
               <groupChildrenDescriptors>
                 <control controlID="0" controlTypeID="com.balsamiq.mockups::RoundButton" x="0" y="0" w="98" h="40" measuredW="32" measuredH="32" zOrder="0" locked="false" isInGroup="5">
@@ -252,6 +252,42 @@
         <control controlID="1" controlTypeID="com.balsamiq.mockups::ComboBox" x="42" y="0" w="-1" h="-1" measuredW="86" measuredH="46" zOrder="1" locked="false" isInGroup="3">
           <controlProperties>
             <text>Apr.%202014%0ANov.%202013</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="4" controlTypeID="__group__" x="7" y="288" w="186" h="15" measuredW="186" measuredH="15" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <controlName>progress_bar_enroll</controlName>
+      </controlProperties>
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::RoundButton" x="11" y="2" w="165" h="10" measuredW="32" measuredH="32" zOrder="0" locked="false" isInGroup="4">
+          <controlProperties>
+            <backgroundAlpha>1</backgroundAlpha>
+            <borderColor>16777215</borderColor>
+            <color>15658734</color>
+            <shape>rectangle</shape>
+            <text/>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::RoundButton" x="0" y="0" w="15" h="15" measuredW="32" measuredH="32" zOrder="1" locked="false" isInGroup="4">
+          <controlProperties>
+            <text/>
+          </controlProperties>
+        </control>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::RoundButton" x="57" y="0" w="15" h="15" measuredW="32" measuredH="32" zOrder="2" locked="false" isInGroup="4">
+          <controlProperties>
+            <text/>
+          </controlProperties>
+        </control>
+        <control controlID="3" controlTypeID="com.balsamiq.mockups::RoundButton" x="114" y="0" w="15" h="15" measuredW="32" measuredH="32" zOrder="3" locked="false" isInGroup="4">
+          <controlProperties>
+            <text/>
+          </controlProperties>
+        </control>
+        <control controlID="4" controlTypeID="com.balsamiq.mockups::RoundButton" x="171" y="0" w="15" h="15" measuredW="32" measuredH="32" zOrder="4" locked="false" isInGroup="4">
+          <controlProperties>
+            <text/>
           </controlProperties>
         </control>
       </groupChildrenDescriptors>

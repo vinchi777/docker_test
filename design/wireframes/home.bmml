@@ -5,27 +5,27 @@
         <text>MaxRevOne%20Online%0Awww.maxrevone.com</text>
       </controlProperties>
     </control>
-    <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="573" y="225" w="-1" h="-1" measuredW="314" measuredH="41" zOrder="2" locked="false" isInGroup="-1">
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="573" y="225" w="-1" h="-1" measuredW="321" measuredH="40" zOrder="2" locked="false" isInGroup="-1">
       <controlProperties>
         <align>center</align>
         <size>32</size>
         <text>Maximum%20Review%20One</text>
       </controlProperties>
     </control>
-    <control controlID="4" controlTypeID="com.balsamiq.mockups::Label" x="605" y="266" w="-1" h="-1" measuredW="251" measuredH="24" zOrder="3" locked="false" isInGroup="-1">
+    <control controlID="4" controlTypeID="com.balsamiq.mockups::Label" x="605" y="266" w="-1" h="-1" measuredW="257" measuredH="24" zOrder="3" locked="false" isInGroup="-1">
       <controlProperties>
         <align>center</align>
         <size>16</size>
         <text>Settle%20for%20nothing%20less%20but%20the%20best.</text>
       </controlProperties>
     </control>
-    <control controlID="5" controlTypeID="com.balsamiq.mockups::Label" x="163" y="510" w="-1" h="-1" measuredW="519" measuredH="21" zOrder="4" locked="false" isInGroup="-1">
+    <control controlID="5" controlTypeID="com.balsamiq.mockups::Label" x="163" y="510" w="-1" h="-1" measuredW="539" measuredH="21" zOrder="4" locked="false" isInGroup="-1">
       <controlProperties>
         <bold>true</bold>
         <text>Experience%20the%20most%20updated%2C%20most%20comprehensive%20and%20most%20complete%20review%20program</text>
       </controlProperties>
     </control>
-    <control controlID="6" controlTypeID="com.balsamiq.mockups::Label" x="602" y="926" w="-1" h="-1" measuredW="257" measuredH="21" zOrder="5" locked="false" isInGroup="-1">
+    <control controlID="6" controlTypeID="com.balsamiq.mockups::Label" x="602" y="926" w="-1" h="-1" measuredW="263" measuredH="21" zOrder="5" locked="false" isInGroup="-1">
       <controlProperties>
         <align>center</align>
         <bold>true</bold>
@@ -35,10 +35,12 @@
     <control controlID="11" controlTypeID="com.balsamiq.mockups::Image" x="695" y="151" w="70" h="68" measuredW="77" measuredH="79" zOrder="1" locked="false" isInGroup="-1"/>
     <control controlID="12" controlTypeID="com.balsamiq.mockups::HRule" x="130" y="377" w="1200" h="-1" measuredW="100" measuredH="10" zOrder="6" locked="false" isInGroup="-1"/>
     <control controlID="15" controlTypeID="com.balsamiq.mockups::HRule" x="130" y="628" w="1200" h="-1" measuredW="100" measuredH="10" zOrder="7" locked="false" isInGroup="-1"/>
-    <control controlID="17" controlTypeID="__group__" x="539" y="340" w="382" h="27" measuredW="382" measuredH="27" zOrder="8" locked="false" isInGroup="-1">
+    <control controlID="17" controlTypeID="__group__" x="539" y="340" w="383" h="27" measuredW="383" measuredH="27" zOrder="8" locked="false" isInGroup="-1">
       <groupChildrenDescriptors>
-        <control controlID="0" controlTypeID="com.balsamiq.mockups::Button" x="304" y="0" w="-1" h="-1" measuredW="78" measuredH="27" zOrder="0" locked="false" isInGroup="17">
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Button" x="304" y="0" w="-1" h="-1" measuredW="79" measuredH="27" zOrder="0" locked="false" isInGroup="17">
           <controlProperties>
+            <href>enroll%26bm%3Benroll.bmml%26bm%3Benroll.bmml%26bm%3Benroll.bmml</href>
+            <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22713%2C314%2C792%2C341%22%20href%3D%22enroll.bmml%22%20alt%3D%22enroll%22%20id%3D%220%22/%3E</map>
             <text>Enrol%20now</text>
           </controlProperties>
         </control>
@@ -51,7 +53,7 @@
         </control>
       </groupChildrenDescriptors>
     </control>
-    <control controlID="18" controlTypeID="com.balsamiq.mockups::Label" x="181" y="582" w="-1" h="-1" measuredW="256" measuredH="21" zOrder="9" locked="false" isInGroup="-1">
+    <control controlID="18" controlTypeID="com.balsamiq.mockups::Label" x="181" y="582" w="-1" h="-1" measuredW="251" measuredH="21" zOrder="9" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Take%20a%20look%20at%20our%208-phase%20review%20program</text>
       </controlProperties>
@@ -61,18 +63,18 @@
         <icon>GtIcon%7Cxsmall</icon>
       </controlProperties>
     </control>
-    <control controlID="25" controlTypeID="com.balsamiq.mockups::Paragraph" x="163" y="542" w="722" h="35" measuredW="200" measuredH="80" zOrder="11" locked="false" isInGroup="-1">
+    <control controlID="25" controlTypeID="com.balsamiq.mockups::Paragraph" x="163" y="542" w="722" h="35" measuredW="275" measuredH="80" zOrder="11" locked="false" isInGroup="-1">
       <controlProperties>
         <text>We%20want%20to%20give%20you%20more%20than%20what%20you%20pay%20for%20with%20our%20longest%2C%20content-rich%2C%20high%20intesitive%20and%20high%20comprehensive%20%20program%20you%20will%20surely%20enjoy.</text>
       </controlProperties>
     </control>
-    <control controlID="30" controlTypeID="com.balsamiq.mockups::Label" x="1117" y="784" w="-1" h="-1" measuredW="178" measuredH="21" zOrder="12" locked="false" isInGroup="-1">
+    <control controlID="30" controlTypeID="com.balsamiq.mockups::Label" x="1117" y="784" w="-1" h="-1" measuredW="180" measuredH="21" zOrder="12" locked="false" isInGroup="-1">
       <controlProperties>
         <bold>true</bold>
         <text>We%20just%20don%27t%20talk%20We%20deliver.</text>
       </controlProperties>
     </control>
-    <control controlID="31" controlTypeID="com.balsamiq.mockups::Label" x="1120" y="856" w="-1" h="-1" measuredW="157" measuredH="21" zOrder="13" locked="false" isInGroup="-1">
+    <control controlID="31" controlTypeID="com.balsamiq.mockups::Label" x="1120" y="856" w="-1" h="-1" measuredW="160" measuredH="21" zOrder="13" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Our%20track%20record%20says%20it%20all.</text>
       </controlProperties>
@@ -82,30 +84,30 @@
         <icon>GtIcon%7Cxsmall</icon>
       </controlProperties>
     </control>
-    <control controlID="33" controlTypeID="com.balsamiq.mockups::Paragraph" x="573" y="816" w="722" h="35" measuredW="200" measuredH="80" zOrder="16" locked="false" isInGroup="-1">
+    <control controlID="33" controlTypeID="com.balsamiq.mockups::Paragraph" x="573" y="816" w="722" h="35" measuredW="275" measuredH="80" zOrder="16" locked="false" isInGroup="-1">
       <controlProperties>
         <align>right</align>
         <text>As%20a%20former%20SRG%20member%20among%20the%2026%20branches%20nationwide%2C%20we%20always%20belong%20to%20Top%203%20Performing%20Branches%20w/%20the%20highest%20passing%20rate.%20We%20were%20awarded%20as%20the%20best%20managed%20branch%20and%20assigned%20as%20the%20main%20branch%20in%20Visayas.</text>
       </controlProperties>
     </control>
     <control controlID="34" controlTypeID="com.balsamiq.mockups::HRule" x="130" y="897" w="1200" h="-1" measuredW="100" measuredH="10" zOrder="17" locked="false" isInGroup="-1"/>
-    <control controlID="38" controlTypeID="com.balsamiq.mockups::Paragraph" x="387" y="953" w="688" h="41" measuredW="200" measuredH="80" zOrder="18" locked="false" isInGroup="-1">
+    <control controlID="38" controlTypeID="com.balsamiq.mockups::Paragraph" x="387" y="953" w="688" h="41" measuredW="275" measuredH="80" zOrder="18" locked="false" isInGroup="-1">
       <controlProperties>
         <align>center</align>
         <text>Our%20reviewers%20consists%20of%20experienced%20professors%20and%20former%20BONs%20who%20are%20excellently%20rated%20and%20seasoned%20in%20their%20own%20field%2C%20topics%20and%20lectures%2C%20who%20emanate%20from%20the%20best%20nursing%20schools%20nationwide</text>
       </controlProperties>
     </control>
     <control controlID="46" controlTypeID="com.balsamiq.mockups::CoverFlow" x="276" y="995" w="909" h="365" measuredW="493" measuredH="198" zOrder="19" locked="false" isInGroup="-1"/>
-    <control controlID="49" controlTypeID="com.balsamiq.mockups::Paragraph" x="598" y="1279" w="266" h="36" measuredW="200" measuredH="80" zOrder="20" locked="false" isInGroup="-1">
+    <control controlID="49" controlTypeID="com.balsamiq.mockups::Paragraph" x="598" y="1279" w="266" h="36" measuredW="275" measuredH="80" zOrder="20" locked="false" isInGroup="-1">
       <controlProperties>
         <text>*Professor%20Eufemia%20F.%20Octaviano*%0AFormer%20Chairman%20of%20the%20Board%20of%20Nursing</text>
       </controlProperties>
     </control>
     <control controlID="50" controlTypeID="com.balsamiq.mockups::LineChart" x="141" y="638" w="1178" h="259" measuredW="187" measuredH="175" zOrder="15" locked="false" isInGroup="-1"/>
     <control controlID="52" controlTypeID="com.balsamiq.mockups::Image" x="598" y="1052" w="266" h="212" measuredW="77" measuredH="79" zOrder="21" locked="false" isInGroup="-1"/>
-    <control controlID="56" controlTypeID="__group__" x="635" y="1368" w="191" h="21" measuredW="191" measuredH="21" zOrder="22" locked="false" isInGroup="-1">
+    <control controlID="56" controlTypeID="__group__" x="635" y="1368" w="185" h="21" measuredW="185" measuredH="21" zOrder="22" locked="false" isInGroup="-1">
       <groupChildrenDescriptors>
-        <control controlID="0" controlTypeID="com.balsamiq.mockups::Label" x="17" y="0" w="-1" h="-1" measuredW="174" measuredH="21" zOrder="0" locked="false" isInGroup="56">
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Label" x="17" y="0" w="-1" h="-1" measuredW="168" measuredH="21" zOrder="0" locked="false" isInGroup="56">
           <controlProperties>
             <text>Find%20out%20the%20rest%20of%20the%20crew.</text>
           </controlProperties>
@@ -125,9 +127,10 @@
         <text>Review%20with%20comfort</text>
       </controlProperties>
     </control>
-    <control controlID="59" controlTypeID="com.balsamiq.mockups::Paragraph" x="387" y="1561" w="688" h="41" measuredW="200" measuredH="80" zOrder="25" locked="false" isInGroup="-1">
+    <control controlID="59" controlTypeID="com.balsamiq.mockups::Paragraph" x="387" y="1561" w="688" h="41" measuredW="275" measuredH="80" zOrder="25" locked="false" isInGroup="-1">
       <controlProperties>
         <align>center</align>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22660.273193359375%2C1550.6%2C707.710205078125%2C1563.6%22%20href%3D%22http%3A//support.balsamiq.com/customer/portal/articles/110121%23basicformatting%22%20alt%3D%22web%20link%22%20id%3D%2259%22%20target%3D%22_blank%22/%3E</map>
         <text/>
       </controlProperties>
     </control>
