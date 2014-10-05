@@ -439,27 +439,27 @@
         <override controlID="2" x="34" y="22" w="260" h="105"/>
         <override controlID="3" x="742" y="22" w="79" h="97"/>
         <override controlID="4" x="901" y="24" w="250" h="95"/>
-        <override controlID="3:5" x="0" y="79" w="-1" h="-1"/>
-        <override controlID="2:5" x="0" y="89" w="16" h="16"/>
-        <override controlID="1:2" x="129" y="30" w="168" h="54"/>
-        <override controlID="1:1" x="129" y="0" w="-1" h="-1"/>
-        <override controlID="3:0" x="0" y="0" w="-1" h="-1"/>
-        <override controlID="4:2" x="56" y="7" w="194" h="47"/>
-        <override controlID="3:2" x="22" y="27" w="-1" h="-1"/>
-        <override controlID="2:2" x="0" y="49" w="16" h="16"/>
-        <override controlID="2:6" x="18" y="89" w="192" h="16"/>
-        <override controlID="4:0" x="0" y="80" w="250" h="15"/>
-        <override controlID="2:1" x="18" y="28" w="168" h="13"/>
-        <override controlID="2:0" x="0" y="0" w="70" h="21"/>
         <override controlID="3:4" x="22" y="52" w="-1" h="-1"/>
-        <override controlID="3:6" x="22" y="76" w="-1" h="-1"/>
-        <override controlID="2:4" x="18" y="51" w="242" h="39"/>
+        <override controlID="3:2" x="22" y="27" w="-1" h="-1"/>
+        <override controlID="4:0" x="0" y="80" w="250" h="15"/>
+        <override controlID="3:5" x="0" y="79" w="-1" h="-1"/>
+        <override controlID="2:6" x="18" y="89" w="192" h="16"/>
         <override controlID="3:1" x="0" y="30" w="-1" h="-1"/>
-        <override controlID="4:1" x="0" y="0" w="45" h="54"/>
+        <override controlID="2:0" x="0" y="0" w="70" h="21"/>
+        <override controlID="3:0" x="0" y="0" w="-1" h="-1"/>
+        <override controlID="3:6" x="22" y="76" w="-1" h="-1"/>
+        <override controlID="2:2" x="0" y="49" w="16" h="16"/>
+        <override controlID="2:1" x="18" y="28" w="168" h="13"/>
+        <override controlID="4:2" x="56" y="7" w="194" h="47"/>
+        <override controlID="1:1" x="129" y="0" w="-1" h="-1"/>
         <override controlID="2:3" x="0" y="28" w="16" h="16"/>
-        <override controlID="1:0" x="0" y="0" w="111" h="99"/>
+        <override controlID="4:1" x="0" y="0" w="45" h="54"/>
+        <override controlID="1:2" x="129" y="30" w="168" h="54"/>
+        <override controlID="2:4" x="18" y="51" w="242" h="39"/>
+        <override controlID="2:5" x="0" y="89" w="16" h="16"/>
         <override controlID="-1"/>
         <override controlID="3:3" x="0" y="55" w="-1" h="-1"/>
+        <override controlID="1:0" x="0" y="0" w="111" h="99"/>
         <src>./assets/symbols.bmml#footer</src>
       </controlProperties>
     </control>
