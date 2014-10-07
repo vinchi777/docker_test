@@ -1,0 +1,28 @@
+Homepage
+- Show photos top notcher reviewers
+- Show comment that the header is fixed when scrolling.
+- Show passing rates over the years.
+
+About
+- History is too long. Suggestions:
+
+	MaxRevOne Corporation was conceptualized by the people who managed and owned the Sultan Review Group or SRG Tacloban in its inception in 2010 until its dawn in December 2012 in Tacloban City. 
+
+ 	2010
+	The people behind MaxRevOne Corporation started in Tacloban with Review for Nursing as SRG Tacloban owners and staff.
+	Since then, the people behind has in part produced number of passers. On December 10, 2010, their first batch of examinees got 94.8% passing percentage. And for the succeeding board exams the results were overwhelming. 
+
+	2011
+	For the July 2011,  they got 94.4% passing rate, and on December 2011 it reached to 95.42%. 
+
+	2012
+	The July 2012 result soared high to 96.45% passing rate. The people behind the company is proud to say that many passers and a topnotcher has in a way been served and guided by the people of the company – MaxRevOne Corporation.
+
+ 	2013
+ 	And on January 2013, the people behind SRG Tacloban decided to make their own review center in the name of MaxRevOne Corporation (Maximum Review One Corpororation) --- a review management and service institution that offers a maximum grade review and training programs of the profession of choice.
+
+- Show passing rates over the years.
+
+Footer
+- Remove "LinkedIn"
+- Remove "for" in "All rights reserved"
