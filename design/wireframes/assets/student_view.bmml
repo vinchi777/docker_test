@@ -1,0 +1,133 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1260" measuredH="425" mockupW="1260" mockupH="425">
+  <controls>
+    <control controlID="11" controlTypeID="com.balsamiq.mockups::Icon" x="18" y="0" w="-1" h="-1" measuredW="64" measuredH="64" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>ContactIcon%7Cxlarge</icon>
+      </controlProperties>
+    </control>
+    <control controlID="12" controlTypeID="com.balsamiq.mockups::TextInput" x="104" y="24" w="107" h="-1" measuredW="52" measuredH="28" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <borderColor>13421772</borderColor>
+        <size>14</size>
+        <text>Acala</text>
+      </controlProperties>
+    </control>
+    <control controlID="13" controlTypeID="com.balsamiq.mockups::TextInput" x="219" y="24" w="107" h="-1" measuredW="96" measuredH="28" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <borderColor>13421772</borderColor>
+        <size>14</size>
+        <text>Maria%20Divina</text>
+      </controlProperties>
+    </control>
+    <control controlID="14" controlTypeID="com.balsamiq.mockups::TextInput" x="333" y="24" w="107" h="-1" measuredW="79" measuredH="28" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <borderColor>13421772</borderColor>
+        <size>14</size>
+        <text>dela%20Cruz</text>
+      </controlProperties>
+    </control>
+    <control controlID="17" controlTypeID="com.balsamiq.mockups::Label" x="455" y="27" w="63" h="-1" measuredW="39" measuredH="21" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>6710886</color>
+        <size>13</size>
+        <text>Status</text>
+      </controlProperties>
+    </control>
+    <control controlID="18" controlTypeID="com.balsamiq.mockups::Label" x="503" y="27" w="-1" h="-1" measuredW="48" measuredH="21" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Enrollee</text>
+      </controlProperties>
+    </control>
+    <control controlID="19" controlTypeID="com.balsamiq.mockups::Arrow" x="566" y="39" w="402" h="106" measuredW="150" measuredH="100" zOrder="11" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>1</backgroundAlpha>
+        <color>10066329</color>
+        <curvature>-1</curvature>
+        <leftArrow>false</leftArrow>
+        <stroke>dotted</stroke>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="20" controlTypeID="com.balsamiq.mockups::Paragraph" x="985" y="126" w="-1" h="-1" measuredW="275" measuredH="80" zOrder="12" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>*Different%20Status%3A*%0AEnrollee%20-%20Currently%20signed%20up%20for%20review%20but%20not%20yet%20confirmed%0AEnrollee%20last%20Month%2C%20year%20-%20Enrollee%20on%20a%20previous%20batch%20but%20did%20not%20proceed%0AConfirmed%20%28Month%2C%20Year%29%20-%20Confirmed%20student%20of%20batch%20month%2C%20year%0ALast%20Enrolled%20Last%20Month%2C%20Year%20-%20Previous%20student.</text>
+      </controlProperties>
+    </control>
+    <control controlID="21" controlTypeID="com.balsamiq.mockups::Button" x="770" y="20" w="78" h="36" measuredW="52" measuredH="27" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>11982760</color>
+        <text>Save</text>
+      </controlProperties>
+    </control>
+    <control controlID="22" controlTypeID="__group__" x="0" y="103" w="100" h="33" measuredW="100" measuredH="33" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <controlName/>
+        <href>student_payment%26bm%3Bstudent_payment.bmml%26bm%3Bstudent_payment.bmml%26bm%3Bstudent_payment.bmml</href>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%220%2C103%2C100%2C136%22%20href%3D%22student_payment.bmml%22%20alt%3D%22student_payment%22%20id%3D%2222%22/%3E</map>
+      </controlProperties>
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::RoundButton" x="0" y="0" w="100" h="33" measuredW="32" measuredH="32" zOrder="0" locked="false" isInGroup="22">
+          <controlProperties>
+            <align>left</align>
+            <borderColor>10066329</borderColor>
+            <color>13421772</color>
+            <markup>false</markup>
+            <shape>rectangle</shape>
+            <size>13</size>
+            <text>Payment</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="23" controlTypeID="__group__" x="0" y="136" w="100" h="33" measuredW="100" measuredH="33" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <controlName/>
+      </controlProperties>
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::RoundButton" x="0" y="0" w="100" h="33" measuredW="32" measuredH="32" zOrder="0" locked="false" isInGroup="23">
+          <controlProperties>
+            <align>left</align>
+            <borderColor>10066329</borderColor>
+            <color>13421772</color>
+            <markup>false</markup>
+            <shape>rectangle</shape>
+            <size>13</size>
+            <text>Score</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="24" controlTypeID="com.balsamiq.mockups::VRule" x="94" y="65" w="-1" h="360" measuredW="10" measuredH="100" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>10066329</color>
+      </controlProperties>
+    </control>
+    <control controlID="25" controlTypeID="__group__" x="0" y="70" w="104" h="33" measuredW="104" measuredH="33" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <controlName/>
+        <href>student%26bm%3Bstudent.bmml%26bm%3Bstudent.bmml%26bm%3Bstudent.bmml</href>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%220%2C70%2C104%2C103%22%20href%3D%22student.bmml%22%20alt%3D%22student%22%20id%3D%2225%22/%3E</map>
+      </controlProperties>
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::RoundButton" x="0" y="0" w="103" h="33" measuredW="32" measuredH="32" zOrder="0" locked="false" isInGroup="25">
+          <controlProperties>
+            <align>left</align>
+            <borderColor>10066329</borderColor>
+            <markup>false</markup>
+            <shape>rectangle</shape>
+            <size>13</size>
+            <text>Profile</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Canvas" x="100" y="0" w="4" h="33" measuredW="100" measuredH="70" zOrder="1" locked="false" isInGroup="25">
+          <controlProperties>
+            <borderStyle>none</borderStyle>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+  </controls>
+</mockup>
