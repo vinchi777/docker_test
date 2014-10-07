@@ -2,13 +2,17 @@
   <controls>
     <control controlID="1" controlTypeID="com.balsamiq.mockups::Button" x="84" y="1" w="109" h="27" measuredW="95" measuredH="27" zOrder="0" locked="false" isInGroup="-1">
       <controlProperties>
+        <href>student%26bm%3Bstudent.bmml%26bm%3Bstudent.bmml%26bm%3Bstudent.bmml</href>
         <icon>UsersIcon%7Cxsmall</icon>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%2284%2C1%2C193%2C28%22%20href%3D%22student.bmml%22%20alt%3D%22student%22%20id%3D%221%22/%3E</map>
         <menuIcon>false</menuIcon>
         <text>Students</text>
       </controlProperties>
     </control>
     <control controlID="2" controlTypeID="com.balsamiq.mockups::Button" x="198" y="1" w="93" h="27" measuredW="77" measuredH="27" zOrder="1" locked="false" isInGroup="-1">
       <controlProperties>
+        <href>enrollees%26bm%3Benrollees.bmml%26bm%3Benrollees.bmml%26bm%3Benrollees.bmml</href>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22198%2C1%2C291%2C28%22%20href%3D%22enrollees.bmml%22%20alt%3D%22enrollees%22%20id%3D%222%22/%3E</map>
         <menuIcon>false</menuIcon>
         <text>Enrollees</text>
       </controlProperties>
