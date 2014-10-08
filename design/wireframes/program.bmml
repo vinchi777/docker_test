@@ -1,72 +1,185 @@
-<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1163" measuredH="1467" mockupW="1033" mockupH="1441">
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1163" measuredH="1121" mockupW="1033" mockupH="1095">
   <controls>
-    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="130" y="26" w="1033" h="1441" measuredW="450" measuredH="400" zOrder="0" locked="true" isInGroup="-1">
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="130" y="26" w="1033" h="1095" measuredW="450" measuredH="400" zOrder="0" locked="true" isInGroup="-1">
       <controlProperties>
         <text>MaxRevOne%20Online%0Awww.maxrevone.com</text>
       </controlProperties>
     </control>
     <control controlID="216" controlTypeID="com.balsamiq.mockups::Component" x="130" y="110" w="1032" h="40" measuredW="1032" measuredH="40" zOrder="1" locked="false" isInGroup="-1">
       <controlProperties>
-        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22621%2C87%2C657%2C101%22%20href%3D%22home.bmml%22%20alt%3D%22home%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22675%2C87%2C713%2C101%22%20href%3D%22about.bmml%22%20alt%3D%22about%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22731%2C87%2C774%2C101%22%20href%3D%22people.bmml%22%20alt%3D%22people%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22913%2C87%2C958%2C101%22%20href%3D%22pricing.bmml%22%20alt%3D%22pricing%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22976%2C87%2C1011%2C101%22%20href%3D%22enroll.bmml%22%20alt%3D%22enroll%22%20id%3D%220%22/%3E</map>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22621%2C87%2C657%2C101%22%20href%3D%22home.bmml%22%20alt%3D%22home%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22675%2C87%2C713%2C101%22%20href%3D%22about.bmml%22%20alt%3D%22about%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22731%2C87%2C774%2C101%22%20href%3D%22people.bmml%22%20alt%3D%22people%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22792%2C87%2C895%2C101%22%20href%3D%22program.bmml%22%20alt%3D%22program%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22913%2C87%2C958%2C101%22%20href%3D%22pricing.bmml%22%20alt%3D%22pricing%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22976%2C87%2C1011%2C101%22%20href%3D%22enroll.bmml%22%20alt%3D%22enroll%22%20id%3D%220%22/%3E</map>
         <src>./assets/header.bmml</src>
       </controlProperties>
     </control>
-    <control controlID="217" controlTypeID="com.balsamiq.mockups::Component" x="130" y="1297" w="1031" h="127" measuredW="1031" measuredH="127" zOrder="2" locked="false" isInGroup="-1">
+    <control controlID="217" controlTypeID="com.balsamiq.mockups::Component" x="130" y="949" w="1031" h="127" measuredW="1031" measuredH="127" zOrder="2" locked="false" isInGroup="-1">
       <controlProperties>
         <src>./assets/footer.bmml</src>
       </controlProperties>
     </control>
-    <control controlID="218" controlTypeID="com.balsamiq.mockups::Paragraph" x="194" y="179" w="-1" h="-1" measuredW="275" measuredH="80" zOrder="3" locked="false" isInGroup="-1">
+    <control controlID="218" controlTypeID="com.balsamiq.mockups::Paragraph" x="207" y="186" w="523" h="21" measuredW="275" measuredH="80" zOrder="3" locked="false" isInGroup="-1">
       <controlProperties>
         <size>14</size>
-        <text>The%20MOST%20UPDATED%3B%0AThe%20MOST%20COMPREHENSIVE%20%26%0AThe%20MOST%20COMPLETE</text>
+        <text>The%20MOST%20UPDATED%3B%20The%20MOST%20COMPREHENSIVE%20%26%20The%20MOST%20COMPLETE</text>
       </controlProperties>
     </control>
-    <control controlID="219" controlTypeID="com.balsamiq.mockups::Label" x="194" y="253" w="-1" h="-1" measuredW="118" measuredH="24" zOrder="4" locked="false" isInGroup="-1">
+    <control controlID="219" controlTypeID="com.balsamiq.mockups::Label" x="207" y="200" w="-1" h="-1" measuredW="121" measuredH="24" zOrder="4" locked="false" isInGroup="-1">
       <controlProperties>
+        <bold>true</bold>
         <size>16</size>
         <text>Review%20Program</text>
       </controlProperties>
     </control>
-    <control controlID="220" controlTypeID="com.balsamiq.mockups::Paragraph" x="194" y="285" w="785" h="164" measuredW="275" measuredH="80" zOrder="5" locked="false" isInGroup="-1">
+    <control controlID="222" controlTypeID="com.balsamiq.mockups::Paragraph" x="482" y="337" w="292" h="226" measuredW="275" measuredH="80" zOrder="5" locked="false" isInGroup="-1">
       <controlProperties>
-        <size>14</size>
-        <text>Phase%201%3A%20%20Mind-setting%2C%20Orientationa%2C%20Motivational%20and%20%20Strategies%20%28MOMS%29%0APhase%202%3A%20%20Preparatory%20Mentoring%20%28PM%29%0APhase%203%3A%20%20Absolute%20Intensive%20Review%20%28AIR%29%0APhase%204%3A%20%20Enhancements/Trainings/Coaching%20%28ETC%29%0APhase%205%3A%20%20Ultimate%20Final%20Coaching%20%28UFC%29%0APhase%206%3A%20%20NLE%20Boards%20Simulation%20%26%20Brainstorming%20%28NBSB%29%0APhase%207%3A%20%20S.O.A.R.%20%26%20on-site%20NLE%20Support%20%20%28SONS%29%0APhase%208%3A%20%20Fellowship%20of%20Professionals%20%28FOP%29</text>
+        <text>*Phase%203*%0AFundamentals%20of%20Nursing%0ALeadership%2C%20Management%20%26%20Research%0AProfessional%20Adjustment%20%26%20Ethico-Legal%20Issues%20in%20Nursing%0AObstetric%20Nursing%0APediatric%20Nursing%0ACommunity%20Health%20Nursing%0ACommunicable%20Disease%20Nursing%0AAnatomy%20%26%20Physiology%0AMedical-Surgical%20Nursing%0APharmacology%0APsychiatric%20Nursing%0APsychopharmacology</text>
       </controlProperties>
     </control>
-    <control controlID="221" controlTypeID="com.balsamiq.mockups::Paragraph" x="194" y="436" w="203" h="225" measuredW="275" measuredH="80" zOrder="6" locked="false" isInGroup="-1">
+    <control controlID="223" controlTypeID="com.balsamiq.mockups::Paragraph" x="797" y="469" w="261" h="193" measuredW="275" measuredH="80" zOrder="6" locked="false" isInGroup="-1">
       <controlProperties>
-        <text>Phase%202%3A%20PM%0A%20%0ADiagnostic%20Exams%20%0ANP%20Pretest%201%0A%20NP%20Pretest%202%0A%20NP%20Pretest%203%0A%20NP%20Pretest%204%0A%20NP%20Pretest%205%0APreparatory%20Didactics%20%28PD%29%0APD%3A%20NPT%201%0APD%3A%20NPT%202%0APD%3A%20NPT%203%0APD%3A%20NPT%204%0APD%3A%20NPT%205%0A%20</text>
+        <text>*Phase%204*%0APost%20Tests%20%28NP%201-5%20Concepts%29%0ACritical%20Thinking%20Skills%20%28NP%201-5%20Concepts%29%0ASummative%20Exams%20%28NPT%201-5%29%0APre%20Mock%20Board%0ANPT%201%20%28100%20items%29%0ANPT%202%20%28100%20items%29%0ANPT%203%20%28100%20items%29%0ANPT%204%20%28100%20items%29%0ANPT%205%20%28100%20items%29%0A%20%0AHolistic%20Guidance%20Tutorial</text>
       </controlProperties>
     </control>
-    <control controlID="222" controlTypeID="com.balsamiq.mockups::Paragraph" x="411" y="434" w="348" h="210" measuredW="275" measuredH="80" zOrder="7" locked="false" isInGroup="-1">
+    <control controlID="224" controlTypeID="com.balsamiq.mockups::Paragraph" x="482" y="579" w="275" h="211" measuredW="275" measuredH="80" zOrder="7" locked="false" isInGroup="-1">
       <controlProperties>
-        <text>Phase%203%0A%20Fundamentals%20of%20Nursing%0A%20Leadership%2C%20Management%20%26%20Research%0AProfessional%20Adjustment%20%26%20Ethico-Legal%20Issues%20in%20Nursing%0A%20Obstetric%20Nursing%0APediatric%20Nursing%0A%20Community%20Health%20Nursing%0A%20Communicable%20Disease%20Nursing%0A%20Anatomy%20%26%20Physiology%0AMedical-Surgical%20Nursing%0A%20Pharmacology%0A%20Psychiatric%20Nursing%0A%20Psychopharmacology</text>
+        <text>*Phase%205*%0AFinal%20Coaching%2C%20Ratio%2C%20Tutorials%09%09%09%20%20%20%20%20%20%20%20%20%20%20%20%0AFundamentals%20of%20Nursing%09%09%09%0ACommunity%20Health%20Nursing%0ACommunicable%20Disease%20Nursing%09%09%09%20%20%20%20%20%20%20%20%20%20%20%20%0AObstetric%20Nursing%09%0APediatric%20Nursing%09%09%09%09%0AMedical-Surgical%20Nursing%0AMedical-Surgical%20Nursing%202%09%09%0AMedical-Surgical%20Nursing%203%09%09%0APsychiatric%20Nursing%09%09%0APALMR%09%09%09%09%09%20%20%20%20%20%20%20%20%20%20%20%0AHome%20Test%20Drills</text>
       </controlProperties>
     </control>
-    <control controlID="223" controlTypeID="com.balsamiq.mockups::Paragraph" x="787" y="427" w="345" h="193" measuredW="275" measuredH="80" zOrder="8" locked="false" isInGroup="-1">
+    <control controlID="225" controlTypeID="com.balsamiq.mockups::Paragraph" x="797" y="676" w="246" h="149" measuredW="275" measuredH="80" zOrder="8" locked="false" isInGroup="-1">
       <controlProperties>
-        <text>Phase%204%0APost%20Tests%20%28NP%201-5%20Concepts%29%0A%20Critical%20Thinking%20Skills%20%28NP%201-5%20Concepts%29%0A%20Summative%20Exams%20%28NPT%201-5%29%0APre%20Mock%20Board%0ANPT%201%20%28100%20items%29%0ANPT%202%20%28100%20items%29%0ANPT%203%20%28100%20items%29%0ANPT%204%20%28100%20items%29%0ANPT%205%20%28100%20items%29%0A%20%0A*%20Holistic%20Guidance%20Tutorial</text>
+        <text>*Phase%206*%0ASimulated%20Local%20Board%20Exam%20and%20Ratio%0ANMB%20%0ANLE%20Mock%20Boards%201%0ANLE%20Mock%20Boards%202%0ANLE%20Mock%20Boards%203%20%0ANLE%20Mock%20Boards%204%0ANLE%20Mock%20Boards%205%0ABrainstorming</text>
       </controlProperties>
     </control>
-    <control controlID="224" controlTypeID="com.balsamiq.mockups::Paragraph" x="194" y="685" w="275" h="211" measuredW="275" measuredH="80" zOrder="9" locked="false" isInGroup="-1">
+    <control controlID="226" controlTypeID="com.balsamiq.mockups::Paragraph" x="482" y="806" w="275" h="87" measuredW="275" measuredH="80" zOrder="9" locked="false" isInGroup="-1">
       <controlProperties>
-        <text>Phase%205%0AFinal%20Coaching%2C%20Ratio%2C%20Tutorials%09%09%09%20%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%09Fundamentals%20of%20Nursing%09%09%09%0A%20%20%20%09Community%20Health%20Nursing%0A%20%20%09Communicable%20Disease%20Nursing%09%09%09%20%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%09Obstetric%20Nursing%09%0A%20%20%20%09Pediatric%20Nursing%09%09%09%09%0A%20%20%20%09Medical-Surgical%20Nursing%0A%20%20%20%09Medical-Surgical%20Nursing%202%09%09%0A%20%20%20%09Medical-Surgical%20Nursing%203%09%09%0A%20%20%20%09Psychiatric%20Nursing%09%09%0A%20%20%20%09PALMR%09%09%09%09%09%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%09Home%20Test%20Drills</text>
+        <text>*Phase%207*%0ALast%20Minute%20Preparation%20%26%20Guidance%0ASupport%20%26%20Adjuration%20on%20Exam%20Proper%0ASend%20off%20Day</text>
       </controlProperties>
     </control>
-    <control controlID="225" controlTypeID="com.balsamiq.mockups::Paragraph" x="502" y="687" w="275" h="149" measuredW="275" measuredH="80" zOrder="10" locked="false" isInGroup="-1">
+    <control controlID="227" controlTypeID="com.balsamiq.mockups::Paragraph" x="797" y="840" w="246" h="83" measuredW="275" measuredH="80" zOrder="10" locked="false" isInGroup="-1">
       <controlProperties>
-        <text>Phase%206%0A%20Simulated%20Local%20Board%20Exam%20and%20Ratio%0A%20NMB%20%0ANLE%20Mock%20Boards%201%0ANLE%20Mock%20Boards%202%0ANLE%20Mock%20Boards%203%20%0ANLE%20Mock%20Boards%204%0ANLE%20Mock%20Boards%205%0ABrainstorming</text>
+        <text>*Phase%208*%0AThe%20Grand%20Day%20%0ACelebration%20of%20Gift%0AApplication%20of%20Law%20of%20Gratitude%0AThanksgiving%20Day%0A%20</text>
       </controlProperties>
     </control>
-    <control controlID="226" controlTypeID="com.balsamiq.mockups::Paragraph" x="785" y="687" w="275" h="87" measuredW="275" measuredH="80" zOrder="11" locked="false" isInGroup="-1">
+    <control controlID="235" controlTypeID="__group__" x="207" y="300" w="240" h="53" measuredW="240" measuredH="53" zOrder="12" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="0" w="240" h="53" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="235">
+          <controlProperties>
+            <borderColor>10066329</borderColor>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Paragraph" x="10" y="10" w="219" h="35" measuredW="275" measuredH="80" zOrder="1" locked="false" isInGroup="235">
+          <controlProperties>
+            <text>*Phase%202*%0APreparatory%20Mentoring%20%28PM%29%20</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="236" controlTypeID="__group__" x="207" y="239" w="240" h="61" measuredW="240" measuredH="61" zOrder="11" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="0" w="240" h="61" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="236">
+          <controlProperties>
+            <borderColor>10066329</borderColor>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Paragraph" x="11" y="9" w="219" h="52" measuredW="275" measuredH="80" zOrder="1" locked="false" isInGroup="236">
+          <controlProperties>
+            <text>*Phase%201*%0AMind-setting%2C%20Orientationa%2C%20Motivational%20and%20%20Strategies%20%28MOMS%29</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="238" controlTypeID="__group__" x="207" y="353" w="240" h="53" measuredW="240" measuredH="53" zOrder="13" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="0" w="240" h="53" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="238">
+          <controlProperties>
+            <borderColor>10066329</borderColor>
+          </controlProperties>
+        </control>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::Paragraph" x="9" y="9" w="200" h="35" measuredW="275" measuredH="80" zOrder="1" locked="false" isInGroup="238">
+          <controlProperties>
+            <text>*Phase%203*%0AAbsolute%20Intensive%20Review%20%28AIR%29</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="239" controlTypeID="__group__" x="207" y="406" w="240" h="53" measuredW="240" measuredH="53" zOrder="14" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="0" w="240" h="53" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="239">
+          <controlProperties>
+            <borderColor>10066329</borderColor>
+          </controlProperties>
+        </control>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::Paragraph" x="8" y="3" w="216" h="50" measuredW="275" measuredH="80" zOrder="1" locked="false" isInGroup="239">
+          <controlProperties>
+            <text>*Phase%204*%0AEnhancements/Trainings/Coaching%20%28ETC%29</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="240" controlTypeID="__group__" x="207" y="459" w="240" h="53" measuredW="240" measuredH="53" zOrder="15" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="0" w="240" h="53" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="240">
+          <controlProperties>
+            <borderColor>10066329</borderColor>
+          </controlProperties>
+        </control>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::Paragraph" x="9" y="9" w="200" h="35" measuredW="275" measuredH="80" zOrder="1" locked="false" isInGroup="240">
+          <controlProperties>
+            <text>*Phase%205*%0AUltimate%20Final%20Coaching%20%28UFC%29</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="241" controlTypeID="__group__" x="207" y="512" w="240" h="53" measuredW="240" measuredH="53" zOrder="16" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="0" w="240" h="53" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="241">
+          <controlProperties>
+            <borderColor>10066329</borderColor>
+          </controlProperties>
+        </control>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::Paragraph" x="9" y="9" w="200" h="35" measuredW="275" measuredH="80" zOrder="1" locked="false" isInGroup="241">
+          <controlProperties>
+            <text>*Phase%206*%0ANLE%20Boards%20Simulation%20%26%20Brainstorming%20%28NBSB%29</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="242" controlTypeID="__group__" x="207" y="565" w="240" h="53" measuredW="240" measuredH="53" zOrder="17" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="0" w="240" h="53" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="242">
+          <controlProperties>
+            <borderColor>10066329</borderColor>
+          </controlProperties>
+        </control>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::Paragraph" x="9" y="9" w="200" h="35" measuredW="275" measuredH="80" zOrder="1" locked="false" isInGroup="242">
+          <controlProperties>
+            <text>*Phase%207*%0AS.O.A.R.%20%26%20on-site%20NLE%20Support%20%20%28SONS%29</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="243" controlTypeID="__group__" x="207" y="618" w="240" h="53" measuredW="240" measuredH="53" zOrder="18" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="0" w="240" h="53" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="243">
+          <controlProperties>
+            <borderColor>10066329</borderColor>
+          </controlProperties>
+        </control>
+        <control controlID="3" controlTypeID="com.balsamiq.mockups::Paragraph" x="7" y="8" w="228" h="37" measuredW="275" measuredH="80" zOrder="1" locked="false" isInGroup="243">
+          <controlProperties>
+            <size>14</size>
+            <text>*Phase%208*%0AFellowship%20of%20Professionals%20%28FOP%29</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="246" controlTypeID="com.balsamiq.mockups::Paragraph" x="797" y="239" w="181" h="215" measuredW="275" measuredH="80" zOrder="19" locked="false" isInGroup="-1">
       <controlProperties>
-        <text>Phase%207%0A%20SOAR%0A%20Last%20Minute%20Preparation%20%26%20Guidance%0A%20Support%20%26%20Adjuration%20on%20Exam%20Proper%0A%20Send%20off%20Day</text>
+        <text>*Phase%202*%0ADiagnostic%20Exams%20%0ANP%20Pretest%201%0ANP%20Pretest%202%0ANP%20Pretest%203%0ANP%20Pretest%204%0ANP%20Pretest%205%0APreparatory%20Didactics%20%28PD%29%0APD%3A%20NPT%201%0APD%3A%20NPT%202%0APD%3A%20NPT%203%0APD%3A%20NPT%204%0APD%3A%20NPT%205%0A%20%0A%20</text>
       </controlProperties>
     </control>
-    <control controlID="227" controlTypeID="com.balsamiq.mockups::Paragraph" x="188" y="920" w="275" h="83" measuredW="275" measuredH="80" zOrder="12" locked="false" isInGroup="-1">
+    <control controlID="247" controlTypeID="com.balsamiq.mockups::Paragraph" x="482" y="239" w="148" h="82" measuredW="275" measuredH="80" zOrder="20" locked="false" isInGroup="-1">
       <controlProperties>
-        <text>Phase%208%0A%20The%20Grand%20Day%20%0ACelebration%20of%20Gift%0A%20Application%20of%20Law%20of%20Gratitude%0AThanksgiving%20Day%0A%20</text>
+        <text>*Phase%201*%0AMind-setting%0AOrientation%0AMotivational%20and%0AStrategies%0A%20</text>
       </controlProperties>
     </control>
   </controls>
