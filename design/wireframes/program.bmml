@@ -1,65 +1,71 @@
-<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1163" measuredH="1121" mockupW="1033" mockupH="1095">
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1436" measuredH="1169" mockupW="1427" mockupH="1140">
   <controls>
-    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="130" y="26" w="1033" h="1095" measuredW="450" measuredH="400" zOrder="0" locked="true" isInGroup="-1">
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="204" y="29" w="1033" h="1140" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
       <controlProperties>
         <text>MaxRevOne%20Online%0Awww.maxrevone.com</text>
       </controlProperties>
     </control>
-    <control controlID="216" controlTypeID="com.balsamiq.mockups::Component" x="130" y="110" w="1032" h="40" measuredW="1032" measuredH="40" zOrder="1" locked="false" isInGroup="-1">
+    <control controlID="216" controlTypeID="com.balsamiq.mockups::Component" x="204" y="113" w="1032" h="40" measuredW="1032" measuredH="40" zOrder="1" locked="false" isInGroup="-1">
       <controlProperties>
-        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22621%2C87%2C657%2C101%22%20href%3D%22home.bmml%22%20alt%3D%22home%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22675%2C87%2C713%2C101%22%20href%3D%22about.bmml%22%20alt%3D%22about%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22731%2C87%2C774%2C101%22%20href%3D%22people.bmml%22%20alt%3D%22people%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22792%2C87%2C895%2C101%22%20href%3D%22program.bmml%22%20alt%3D%22program%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22913%2C87%2C958%2C101%22%20href%3D%22pricing.bmml%22%20alt%3D%22pricing%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22976%2C87%2C1011%2C101%22%20href%3D%22enroll.bmml%22%20alt%3D%22enroll%22%20id%3D%220%22/%3E</map>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22816%2C87%2C852%2C101%22%20href%3D%22home.bmml%22%20alt%3D%22home%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22870%2C87%2C908%2C101%22%20href%3D%22about.bmml%22%20alt%3D%22about%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22926%2C87%2C969%2C101%22%20href%3D%22people.bmml%22%20alt%3D%22people%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22987%2C87%2C1090%2C101%22%20href%3D%22program.bmml%22%20alt%3D%22program%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%221108%2C87%2C1153%2C101%22%20href%3D%22pricing.bmml%22%20alt%3D%22pricing%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%221171%2C87%2C1206%2C101%22%20href%3D%22enroll.bmml%22%20alt%3D%22enroll%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22825%2C87%2C861%2C101%22%20href%3D%22home.bmml%22%20alt%3D%22home%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22879%2C87%2C917%2C101%22%20href%3D%22about.bmml%22%20alt%3D%22about%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22935%2C87%2C978%2C101%22%20href%3D%22people.bmml%22%20alt%3D%22people%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22996%2C87%2C1099%2C101%22%20href%3D%22program.bmml%22%20alt%3D%22program%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%221117%2C87%2C1162%2C101%22%20href%3D%22pricing.bmml%22%20alt%3D%22pricing%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%221180%2C87%2C1215%2C101%22%20href%3D%22enroll.bmml%22%20alt%3D%22enroll%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22819%2C87%2C855%2C101%22%20href%3D%22home.bmml%22%20alt%3D%22home%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22873%2C87%2C911%2C101%22%20href%3D%22about.bmml%22%20alt%3D%22about%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22929%2C87%2C972%2C101%22%20href%3D%22people.bmml%22%20alt%3D%22people%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22990%2C87%2C1093%2C101%22%20href%3D%22program.bmml%22%20alt%3D%22program%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%221111%2C87%2C1156%2C101%22%20href%3D%22pricing.bmml%22%20alt%3D%22pricing%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%221174%2C87%2C1209%2C101%22%20href%3D%22enroll.bmml%22%20alt%3D%22enroll%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22751%2C87%2C787%2C101%22%20href%3D%22home.bmml%22%20alt%3D%22home%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22805%2C87%2C843%2C101%22%20href%3D%22about.bmml%22%20alt%3D%22about%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22861%2C87%2C904%2C101%22%20href%3D%22people.bmml%22%20alt%3D%22people%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22922%2C87%2C1025%2C101%22%20href%3D%22program.bmml%22%20alt%3D%22program%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%221043%2C87%2C1088%2C101%22%20href%3D%22pricing.bmml%22%20alt%3D%22pricing%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%221106%2C87%2C1141%2C101%22%20href%3D%22enroll.bmml%22%20alt%3D%22enroll%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22621%2C87%2C657%2C101%22%20href%3D%22home.bmml%22%20alt%3D%22home%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22675%2C87%2C713%2C101%22%20href%3D%22about.bmml%22%20alt%3D%22about%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22731%2C87%2C774%2C101%22%20href%3D%22people.bmml%22%20alt%3D%22people%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22792%2C87%2C895%2C101%22%20href%3D%22program.bmml%22%20alt%3D%22program%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22913%2C87%2C958%2C101%22%20href%3D%22pricing.bmml%22%20alt%3D%22pricing%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22976%2C87%2C1011%2C101%22%20href%3D%22enroll.bmml%22%20alt%3D%22enroll%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22621%2C108%2C657%2C122%22%20href%3D%22home.bmml%22%20alt%3D%22home%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22675%2C108%2C713%2C122%22%20href%3D%22about.bmml%22%20alt%3D%22about%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22731%2C108%2C774%2C122%22%20href%3D%22people.bmml%22%20alt%3D%22people%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22792%2C108%2C895%2C122%22%20href%3D%22program.bmml%22%20alt%3D%22program%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22913%2C108%2C958%2C122%22%20href%3D%22pricing.bmml%22%20alt%3D%22pricing%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22976%2C108%2C1011%2C122%22%20href%3D%22enroll.bmml%22%20alt%3D%22enroll%22%20id%3D%220%22/%3E</map>
         <src>./assets/header.bmml</src>
       </controlProperties>
     </control>
-    <control controlID="217" controlTypeID="com.balsamiq.mockups::Component" x="130" y="949" w="1031" h="127" measuredW="1031" measuredH="127" zOrder="2" locked="false" isInGroup="-1">
+    <control controlID="217" controlTypeID="com.balsamiq.mockups::Component" x="204" y="997" w="1031" h="127" measuredW="1031" measuredH="127" zOrder="2" locked="false" isInGroup="-1">
       <controlProperties>
         <src>./assets/footer.bmml</src>
       </controlProperties>
     </control>
-    <control controlID="218" controlTypeID="com.balsamiq.mockups::Paragraph" x="207" y="186" w="523" h="21" measuredW="275" measuredH="80" zOrder="3" locked="false" isInGroup="-1">
+    <control controlID="218" controlTypeID="com.balsamiq.mockups::Paragraph" x="281" y="189" w="523" h="21" measuredW="275" measuredH="80" zOrder="3" locked="false" isInGroup="-1">
       <controlProperties>
         <size>14</size>
         <text>The%20MOST%20UPDATED%3B%20The%20MOST%20COMPREHENSIVE%20%26%20The%20MOST%20COMPLETE</text>
       </controlProperties>
     </control>
-    <control controlID="219" controlTypeID="com.balsamiq.mockups::Label" x="207" y="200" w="-1" h="-1" measuredW="121" measuredH="24" zOrder="4" locked="false" isInGroup="-1">
+    <control controlID="219" controlTypeID="com.balsamiq.mockups::Label" x="281" y="203" w="-1" h="-1" measuredW="121" measuredH="24" zOrder="4" locked="false" isInGroup="-1">
       <controlProperties>
         <bold>true</bold>
         <size>16</size>
         <text>Review%20Program</text>
       </controlProperties>
     </control>
-    <control controlID="222" controlTypeID="com.balsamiq.mockups::Paragraph" x="482" y="337" w="292" h="226" measuredW="275" measuredH="80" zOrder="5" locked="false" isInGroup="-1">
+    <control controlID="222" controlTypeID="com.balsamiq.mockups::Paragraph" x="556" y="388" w="292" h="248" measuredW="275" measuredH="80" zOrder="5" locked="false" isInGroup="-1">
       <controlProperties>
+        <size>14</size>
         <text>*Phase%203*%0AFundamentals%20of%20Nursing%0ALeadership%2C%20Management%20%26%20Research%0AProfessional%20Adjustment%20%26%20Ethico-Legal%20Issues%20in%20Nursing%0AObstetric%20Nursing%0APediatric%20Nursing%0ACommunity%20Health%20Nursing%0ACommunicable%20Disease%20Nursing%0AAnatomy%20%26%20Physiology%0AMedical-Surgical%20Nursing%0APharmacology%0APsychiatric%20Nursing%0APsychopharmacology</text>
       </controlProperties>
     </control>
-    <control controlID="223" controlTypeID="com.balsamiq.mockups::Paragraph" x="797" y="469" w="261" h="193" measuredW="275" measuredH="80" zOrder="6" locked="false" isInGroup="-1">
+    <control controlID="223" controlTypeID="com.balsamiq.mockups::Paragraph" x="839" y="392" w="261" h="193" measuredW="275" measuredH="80" zOrder="6" locked="false" isInGroup="-1">
       <controlProperties>
+        <size>14</size>
         <text>*Phase%204*%0APost%20Tests%20%28NP%201-5%20Concepts%29%0ACritical%20Thinking%20Skills%20%28NP%201-5%20Concepts%29%0ASummative%20Exams%20%28NPT%201-5%29%0APre%20Mock%20Board%0ANPT%201%20%28100%20items%29%0ANPT%202%20%28100%20items%29%0ANPT%203%20%28100%20items%29%0ANPT%204%20%28100%20items%29%0ANPT%205%20%28100%20items%29%0A%20%0AHolistic%20Guidance%20Tutorial</text>
       </controlProperties>
     </control>
-    <control controlID="224" controlTypeID="com.balsamiq.mockups::Paragraph" x="482" y="579" w="275" h="211" measuredW="275" measuredH="80" zOrder="7" locked="false" isInGroup="-1">
+    <control controlID="224" controlTypeID="com.balsamiq.mockups::Paragraph" x="556" y="655" w="275" h="225" measuredW="275" measuredH="80" zOrder="7" locked="false" isInGroup="-1">
       <controlProperties>
+        <size>14</size>
         <text>*Phase%205*%0AFinal%20Coaching%2C%20Ratio%2C%20Tutorials%09%09%09%20%20%20%20%20%20%20%20%20%20%20%20%0AFundamentals%20of%20Nursing%09%09%09%0ACommunity%20Health%20Nursing%0ACommunicable%20Disease%20Nursing%09%09%09%20%20%20%20%20%20%20%20%20%20%20%20%0AObstetric%20Nursing%09%0APediatric%20Nursing%09%09%09%09%0AMedical-Surgical%20Nursing%0AMedical-Surgical%20Nursing%202%09%09%0AMedical-Surgical%20Nursing%203%09%09%0APsychiatric%20Nursing%09%09%0APALMR%09%09%09%09%09%20%20%20%20%20%20%20%20%20%20%20%0AHome%20Test%20Drills</text>
       </controlProperties>
     </control>
-    <control controlID="225" controlTypeID="com.balsamiq.mockups::Paragraph" x="797" y="676" w="246" h="149" measuredW="275" measuredH="80" zOrder="8" locked="false" isInGroup="-1">
+    <control controlID="225" controlTypeID="com.balsamiq.mockups::Paragraph" x="839" y="655" w="246" h="149" measuredW="275" measuredH="80" zOrder="8" locked="false" isInGroup="-1">
       <controlProperties>
+        <size>14</size>
         <text>*Phase%206*%0ASimulated%20Local%20Board%20Exam%20and%20Ratio%0ANMB%20%0ANLE%20Mock%20Boards%201%0ANLE%20Mock%20Boards%202%0ANLE%20Mock%20Boards%203%20%0ANLE%20Mock%20Boards%204%0ANLE%20Mock%20Boards%205%0ABrainstorming</text>
       </controlProperties>
     </control>
-    <control controlID="226" controlTypeID="com.balsamiq.mockups::Paragraph" x="482" y="806" w="275" h="87" measuredW="275" measuredH="80" zOrder="9" locked="false" isInGroup="-1">
+    <control controlID="226" controlTypeID="com.balsamiq.mockups::Paragraph" x="556" y="902" w="275" h="87" measuredW="275" measuredH="80" zOrder="9" locked="false" isInGroup="-1">
       <controlProperties>
+        <size>14</size>
         <text>*Phase%207*%0ALast%20Minute%20Preparation%20%26%20Guidance%0ASupport%20%26%20Adjuration%20on%20Exam%20Proper%0ASend%20off%20Day</text>
       </controlProperties>
     </control>
-    <control controlID="227" controlTypeID="com.balsamiq.mockups::Paragraph" x="797" y="840" w="246" h="83" measuredW="275" measuredH="80" zOrder="10" locked="false" isInGroup="-1">
+    <control controlID="227" controlTypeID="com.balsamiq.mockups::Paragraph" x="831" y="904" w="246" h="83" measuredW="275" measuredH="80" zOrder="10" locked="false" isInGroup="-1">
       <controlProperties>
+        <size>14</size>
         <text>*Phase%208*%0AThe%20Grand%20Day%20%0ACelebration%20of%20Gift%0AApplication%20of%20Law%20of%20Gratitude%0AThanksgiving%20Day%0A%20</text>
       </controlProperties>
     </control>
-    <control controlID="235" controlTypeID="__group__" x="207" y="300" w="240" h="53" measuredW="240" measuredH="53" zOrder="12" locked="false" isInGroup="-1">
+    <control controlID="235" controlTypeID="__group__" x="281" y="303" w="240" h="53" measuredW="240" measuredH="53" zOrder="12" locked="false" isInGroup="-1">
       <groupChildrenDescriptors>
         <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="0" w="240" h="53" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="235">
           <controlProperties>
@@ -73,7 +79,7 @@
         </control>
       </groupChildrenDescriptors>
     </control>
-    <control controlID="236" controlTypeID="__group__" x="207" y="239" w="240" h="61" measuredW="240" measuredH="61" zOrder="11" locked="false" isInGroup="-1">
+    <control controlID="236" controlTypeID="__group__" x="281" y="242" w="240" h="61" measuredW="240" measuredH="61" zOrder="11" locked="false" isInGroup="-1">
       <groupChildrenDescriptors>
         <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="0" w="240" h="61" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="236">
           <controlProperties>
@@ -87,7 +93,7 @@
         </control>
       </groupChildrenDescriptors>
     </control>
-    <control controlID="238" controlTypeID="__group__" x="207" y="353" w="240" h="53" measuredW="240" measuredH="53" zOrder="13" locked="false" isInGroup="-1">
+    <control controlID="238" controlTypeID="__group__" x="281" y="356" w="240" h="53" measuredW="240" measuredH="53" zOrder="13" locked="false" isInGroup="-1">
       <groupChildrenDescriptors>
         <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="0" w="240" h="53" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="238">
           <controlProperties>
@@ -101,7 +107,7 @@
         </control>
       </groupChildrenDescriptors>
     </control>
-    <control controlID="239" controlTypeID="__group__" x="207" y="406" w="240" h="53" measuredW="240" measuredH="53" zOrder="14" locked="false" isInGroup="-1">
+    <control controlID="239" controlTypeID="__group__" x="281" y="409" w="240" h="53" measuredW="240" measuredH="53" zOrder="14" locked="false" isInGroup="-1">
       <groupChildrenDescriptors>
         <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="0" w="240" h="53" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="239">
           <controlProperties>
@@ -115,7 +121,7 @@
         </control>
       </groupChildrenDescriptors>
     </control>
-    <control controlID="240" controlTypeID="__group__" x="207" y="459" w="240" h="53" measuredW="240" measuredH="53" zOrder="15" locked="false" isInGroup="-1">
+    <control controlID="240" controlTypeID="__group__" x="281" y="462" w="240" h="53" measuredW="240" measuredH="53" zOrder="15" locked="false" isInGroup="-1">
       <groupChildrenDescriptors>
         <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="0" w="240" h="53" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="240">
           <controlProperties>
@@ -129,7 +135,7 @@
         </control>
       </groupChildrenDescriptors>
     </control>
-    <control controlID="241" controlTypeID="__group__" x="207" y="512" w="240" h="53" measuredW="240" measuredH="53" zOrder="16" locked="false" isInGroup="-1">
+    <control controlID="241" controlTypeID="__group__" x="281" y="515" w="240" h="53" measuredW="240" measuredH="53" zOrder="16" locked="false" isInGroup="-1">
       <groupChildrenDescriptors>
         <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="0" w="240" h="53" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="241">
           <controlProperties>
@@ -143,7 +149,7 @@
         </control>
       </groupChildrenDescriptors>
     </control>
-    <control controlID="242" controlTypeID="__group__" x="207" y="565" w="240" h="53" measuredW="240" measuredH="53" zOrder="17" locked="false" isInGroup="-1">
+    <control controlID="242" controlTypeID="__group__" x="281" y="568" w="240" h="53" measuredW="240" measuredH="53" zOrder="17" locked="false" isInGroup="-1">
       <groupChildrenDescriptors>
         <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="0" w="240" h="53" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="242">
           <controlProperties>
@@ -157,7 +163,7 @@
         </control>
       </groupChildrenDescriptors>
     </control>
-    <control controlID="243" controlTypeID="__group__" x="207" y="618" w="240" h="53" measuredW="240" measuredH="53" zOrder="18" locked="false" isInGroup="-1">
+    <control controlID="243" controlTypeID="__group__" x="281" y="621" w="240" h="53" measuredW="240" measuredH="53" zOrder="18" locked="false" isInGroup="-1">
       <groupChildrenDescriptors>
         <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="0" w="240" h="53" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="243">
           <controlProperties>
@@ -172,14 +178,56 @@
         </control>
       </groupChildrenDescriptors>
     </control>
-    <control controlID="246" controlTypeID="com.balsamiq.mockups::Paragraph" x="797" y="239" w="181" h="215" measuredW="275" measuredH="80" zOrder="19" locked="false" isInGroup="-1">
+    <control controlID="246" controlTypeID="com.balsamiq.mockups::Paragraph" x="839" y="245" w="133" h="128" measuredW="275" measuredH="80" zOrder="19" locked="false" isInGroup="-1">
       <controlProperties>
-        <text>*Phase%202*%0ADiagnostic%20Exams%20%0ANP%20Pretest%201%0ANP%20Pretest%202%0ANP%20Pretest%203%0ANP%20Pretest%204%0ANP%20Pretest%205%0APreparatory%20Didactics%20%28PD%29%0APD%3A%20NPT%201%0APD%3A%20NPT%202%0APD%3A%20NPT%203%0APD%3A%20NPT%204%0APD%3A%20NPT%205%0A%20%0A%20</text>
+        <size>14</size>
+        <text>*Phase%202*%0ADiagnostic%20Exams%20%0ANP%20Pretest%201%0ANP%20Pretest%202%0ANP%20Pretest%203%0ANP%20Pretest%204%0ANP%20Pretest%205%0A%20%0A%20%0A%20</text>
       </controlProperties>
     </control>
-    <control controlID="247" controlTypeID="com.balsamiq.mockups::Paragraph" x="482" y="239" w="148" h="82" measuredW="275" measuredH="80" zOrder="20" locked="false" isInGroup="-1">
+    <control controlID="247" controlTypeID="com.balsamiq.mockups::Paragraph" x="556" y="242" w="148" h="82" measuredW="275" measuredH="80" zOrder="20" locked="false" isInGroup="-1">
       <controlProperties>
+        <size>14</size>
         <text>*Phase%201*%0AMind-setting%0AOrientation%0AMotivational%20and%0AStrategies%0A%20</text>
+      </controlProperties>
+    </control>
+    <control controlID="249" controlTypeID="com.balsamiq.mockups::Paragraph" x="972" y="262" w="173" h="80" measuredW="275" measuredH="80" zOrder="21" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Preparatory%20Didactics%20%28PD%29%0APD%3A%20NPT%201%0APD%3A%20NPT%202%0APD%3A%20NPT%203%0APD%3A%20NPT%204%0APD%3A%20NPT%205</text>
+      </controlProperties>
+    </control>
+    <control controlID="251" controlTypeID="com.balsamiq.mockups::CallOut" x="1281" y="185" w="155" h="83" measuredW="390" measuredH="39" zOrder="22" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>1</backgroundAlpha>
+        <color>15658734</color>
+        <text>Highlights%20the%20corresponding%20left%20navigation%20when%20mouse%20over</text>
+      </controlProperties>
+    </control>
+    <control controlID="252" controlTypeID="com.balsamiq.mockups::Arrow" x="1151" y="214" w="119" h="28" measuredW="150" measuredH="100" zOrder="23" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>13421772</color>
+        <curvature>1</curvature>
+        <direction>bottom</direction>
+        <leftArrow>false</leftArrow>
+        <stroke>dotted</stroke>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="253" controlTypeID="com.balsamiq.mockups::CallOut" x="9" y="202" w="150" h="49" measuredW="269" measuredH="39" zOrder="24" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>1</backgroundAlpha>
+        <color>15658734</color>
+        <text>Left%20nav%20fix%20position%20when%20scrolling%20below</text>
+      </controlProperties>
+    </control>
+    <control controlID="254" controlTypeID="com.balsamiq.mockups::Arrow" x="167" y="227" w="99" h="41" measuredW="150" measuredH="100" zOrder="25" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>13421772</color>
+        <curvature>1</curvature>
+        <direction>top</direction>
+        <leftArrow>true</leftArrow>
+        <rightArrow>false</rightArrow>
+        <stroke>dotted</stroke>
+        <text/>
       </controlProperties>
     </control>
   </controls>
