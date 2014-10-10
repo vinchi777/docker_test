@@ -131,37 +131,47 @@
         <text>Education</text>
       </controlProperties>
     </control>
-    <control controlID="152" controlTypeID="com.balsamiq.mockups::Button" x="352" y="424" w="78" h="36" measuredW="51" measuredH="27" zOrder="20" locked="false" isInGroup="-1">
+    <control controlID="152" controlTypeID="com.balsamiq.mockups::Button" x="252" y="424" w="78" h="36" measuredW="51" measuredH="27" zOrder="20" locked="false" isInGroup="-1">
       <controlProperties>
         <align>center</align>
         <color>11982760</color>
         <href>enroll%26bm%3Benroll.bmml%26bm%3Benroll.bmml%26bm%3Benroll.bmml</href>
-        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22193%2C405%2C271%2C441%22%20href%3D%22enroll.bmml%22%20alt%3D%22enroll%22%20id%3D%22152%22/%3E</map>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%2293%2C405%2C171%2C441%22%20href%3D%22enroll.bmml%22%20alt%3D%22enroll%22%20id%3D%22152%22/%3E</map>
         <menuIcon>false</menuIcon>
         <rotation>180</rotation>
         <text>Back</text>
       </controlProperties>
     </control>
-    <control controlID="153" controlTypeID="com.balsamiq.mockups::Component" x="615" y="435" w="186" h="15" measuredW="186" measuredH="15" zOrder="21" locked="false" isInGroup="-1">
+    <control controlID="153" controlTypeID="com.balsamiq.mockups::Component" x="536" y="435" w="240" h="15" measuredW="240" measuredH="15" zOrder="21" locked="false" isInGroup="-1">
       <controlProperties>
-        <override controlID="1">
+        <override controlID="0" x="11" y="2" w="220" h="10"/>
+        <override controlID="1" x="0" y="0" w="15" h="15">
           <color>9684093</color>
         </override>
         <override controlID="2">
           <color>9684093</color>
         </override>
+        <override controlID="3" x="114" y="0" w="15" h="15"/>
+        <override controlID="4" x="171" y="0" w="15" h="15"/>
+        <override controlID="5" x="56" y="0" w="15" h="15">
+          <color>9684093</color>
+        </override>
+        <override controlID="6" x="225" y="0" w="15" h="15"/>
         <src>./assets/symbols.bmml#progress_bar_enroll</src>
       </controlProperties>
     </control>
     <control controlID="158" controlTypeID="com.balsamiq.mockups::Component" x="159" y="497" w="1031" h="127" measuredW="1031" measuredH="127" zOrder="22" locked="false" isInGroup="-1">
       <controlProperties>
+        <override controlID="1:2">
+          <text>3F%20Roqson%20Building%0ARizal%20Avenue%20cor.%20Burgos%20St.%0ATacloban%20City%2C%20PH%206500</text>
+        </override>
         <src>./assets/footer.bmml</src>
       </controlProperties>
     </control>
-    <control controlID="159" controlTypeID="com.balsamiq.mockups::Component" x="159" y="104" w="1032" h="40" measuredW="1032" measuredH="40" zOrder="23" locked="false" isInGroup="-1">
+    <control controlID="160" controlTypeID="com.balsamiq.mockups::Component" x="159" y="104" w="1032" h="40" measuredW="1032" measuredH="40" zOrder="23" locked="false" isInGroup="-1">
       <controlProperties>
-        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%2284%2C86%2C193%2C113%22%20href%3D%22student.bmml%22%20alt%3D%22student%22%20id%3D%221%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22198%2C86%2C291%2C113%22%20href%3D%22enrollees.bmml%22%20alt%3D%22enrollees%22%20id%3D%222%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22621%2C88%2C657%2C102%22%20href%3D%22home.bmml%22%20alt%3D%22home%22%20id%3D%223%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22675%2C88%2C713%2C102%22%20href%3D%22about.bmml%22%20alt%3D%22about%22%20id%3D%223%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22731%2C88%2C774%2C102%22%20href%3D%22people.bmml%22%20alt%3D%22people%22%20id%3D%223%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22913%2C88%2C958%2C102%22%20href%3D%22pricing.bmml%22%20alt%3D%22pricing%22%20id%3D%223%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22976%2C88%2C1011%2C102%22%20href%3D%22enroll.bmml%22%20alt%3D%22enroll%22%20id%3D%223%22/%3E</map>
-        <src>./assets/header_admin.bmml</src>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22621%2C88%2C657%2C102%22%20href%3D%22home.bmml%22%20alt%3D%22home%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22675%2C88%2C713%2C102%22%20href%3D%22about.bmml%22%20alt%3D%22about%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22731%2C88%2C774%2C102%22%20href%3D%22people.bmml%22%20alt%3D%22people%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22792%2C88%2C895%2C102%22%20href%3D%22program.bmml%22%20alt%3D%22program%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22913%2C88%2C958%2C102%22%20href%3D%22pricing.bmml%22%20alt%3D%22pricing%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22976%2C88%2C1011%2C102%22%20href%3D%22enroll.bmml%22%20alt%3D%22enroll%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22703%2C111%2C739%2C125%22%20href%3D%22home.bmml%22%20alt%3D%22home%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22757%2C111%2C795%2C125%22%20href%3D%22about.bmml%22%20alt%3D%22about%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22813%2C111%2C856%2C125%22%20href%3D%22people.bmml%22%20alt%3D%22people%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22874%2C111%2C977%2C125%22%20href%3D%22program.bmml%22%20alt%3D%22program%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22995%2C111%2C1040%2C125%22%20href%3D%22pricing.bmml%22%20alt%3D%22pricing%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%221058%2C111%2C1093%2C125%22%20href%3D%22enroll.bmml%22%20alt%3D%22enroll%22%20id%3D%220%22/%3E</map>
+        <src>./assets/header.bmml</src>
       </controlProperties>
     </control>
   </controls>
