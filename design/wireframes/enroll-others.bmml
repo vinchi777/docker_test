@@ -1,0 +1,171 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1274" measuredH="692" mockupW="1200" mockupH="674">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="74" y="18" w="1200" h="674" measuredW="450" measuredH="400" zOrder="0" locked="true" isInGroup="-1">
+      <controlProperties>
+        <text>MaxRevOne%20%7C%20Acala%2C%20Maria%20Divina%0Ahttp%3A//www.maxrevone.ph/enrollees/123ab5f0</text>
+      </controlProperties>
+    </control>
+    <control controlID="5" controlTypeID="com.balsamiq.mockups::Label" x="244" y="169" w="-1" h="-1" measuredW="111" measuredH="24" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <size>16</size>
+        <text>Enroll%20-%20Others</text>
+      </controlProperties>
+    </control>
+    <control controlID="134" controlTypeID="com.balsamiq.mockups::Icon" x="259" y="220" w="-1" h="-1" measuredW="64" measuredH="64" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>ContactIcon%7Cxlarge</icon>
+      </controlProperties>
+    </control>
+    <control controlID="139" controlTypeID="com.balsamiq.mockups::Link" x="252" y="291" w="-1" h="-1" measuredW="79" measuredH="19" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Upload%20Photo</text>
+      </controlProperties>
+    </control>
+    <control controlID="140" controlTypeID="com.balsamiq.mockups::Button" x="1016" y="432" w="78" h="36" measuredW="50" measuredH="27" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>11982760</color>
+        <href>enroll-terms%26bm%3Benroll-terms.bmml%26bm%3Benroll-terms.bmml%26bm%3Benroll-terms.bmml</href>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22942%2C414%2C1020%2C450%22%20href%3D%22enroll-terms.bmml%22%20alt%3D%22enroll-terms%22%20id%3D%22140%22/%3E</map>
+        <menuIcon>false</menuIcon>
+        <rotation>180</rotation>
+        <text>Next</text>
+      </controlProperties>
+    </control>
+    <control controlID="152" controlTypeID="com.balsamiq.mockups::Button" x="252" y="431" w="78" h="36" measuredW="51" measuredH="27" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <align>center</align>
+        <color>11982760</color>
+        <href>enroll-edu%26bm%3Benroll-edu.bmml%26bm%3Benroll-edu.bmml%26bm%3Benroll-edu.bmml</href>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22178%2C413%2C256%2C449%22%20href%3D%22enroll-edu.bmml%22%20alt%3D%22enroll-edu%22%20id%3D%22152%22/%3E</map>
+        <menuIcon>false</menuIcon>
+        <rotation>180</rotation>
+        <text>Back</text>
+      </controlProperties>
+    </control>
+    <control controlID="153" controlTypeID="com.balsamiq.mockups::Label" x="357" y="328" w="-1" h="-1" measuredW="75" measuredH="22" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>6710886</color>
+        <size>14</size>
+        <text>Referred%20by</text>
+      </controlProperties>
+    </control>
+    <control controlID="154" controlTypeID="com.balsamiq.mockups::TextInput" x="450" y="326" w="165" h="-1" measuredW="43" measuredH="27" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderColor>13421772</borderColor>
+        <text>Jose</text>
+      </controlProperties>
+    </control>
+    <control controlID="155" controlTypeID="com.balsamiq.mockups::Label" x="356" y="361" w="-1" h="-1" measuredW="224" measuredH="22" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>6710886</color>
+        <size>14</size>
+        <text>Why%20did%20you%20choose%20Max%20Rev%20One%3F</text>
+      </controlProperties>
+    </control>
+    <control controlID="156" controlTypeID="com.balsamiq.mockups::TextInput" x="622" y="326" w="180" h="-1" measuredW="72" measuredH="27" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderColor>13421772</borderColor>
+        <text>dela%20Cruz</text>
+      </controlProperties>
+    </control>
+    <control controlID="157" controlTypeID="com.balsamiq.mockups::TextInput" x="596" y="358" w="482" h="-1" measuredW="166" measuredH="27" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderColor>13421772</borderColor>
+        <text>Because%20it%27s%20so%20awesome%21</text>
+      </controlProperties>
+    </control>
+    <control controlID="158" controlTypeID="com.balsamiq.mockups::Label" x="380" y="223" w="75" h="-1" measuredW="61" measuredH="22" zOrder="11" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>6710886</color>
+        <size>14</size>
+        <text>Facebook</text>
+      </controlProperties>
+    </control>
+    <control controlID="159" controlTypeID="com.balsamiq.mockups::Icon" x="352" y="222" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="12" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>%24ACCOUNT/assets/icon_facebook-square.png%7Csmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="160" controlTypeID="com.balsamiq.mockups::Label" x="380" y="255" w="75" h="-1" measuredW="46" measuredH="22" zOrder="13" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>6710886</color>
+        <size>14</size>
+        <text>Twitter</text>
+      </controlProperties>
+    </control>
+    <control controlID="161" controlTypeID="com.balsamiq.mockups::Icon" x="352" y="254" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="14" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>%24ACCOUNT/assets/icon_twitter-square.png%7Csmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="162" controlTypeID="com.balsamiq.mockups::Label" x="380" y="289" w="75" h="-1" measuredW="54" measuredH="22" zOrder="15" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>6710886</color>
+        <size>14</size>
+        <text>LinkedIn</text>
+      </controlProperties>
+    </control>
+    <control controlID="163" controlTypeID="com.balsamiq.mockups::Icon" x="352" y="288" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="16" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>%24ACCOUNT/assets/icon_linkedin-square.png%7Csmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="164" controlTypeID="com.balsamiq.mockups::TextInput" x="455" y="220" w="153" h="-1" measuredW="82" measuredH="27" zOrder="17" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderColor>13421772</borderColor>
+        <text>divinaacala</text>
+      </controlProperties>
+    </control>
+    <control controlID="165" controlTypeID="com.balsamiq.mockups::TextInput" x="455" y="253" w="153" h="-1" measuredW="89" measuredH="27" zOrder="18" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderColor>13421772</borderColor>
+        <text>divina_acala</text>
+      </controlProperties>
+    </control>
+    <control controlID="166" controlTypeID="com.balsamiq.mockups::TextInput" x="455" y="286" w="153" h="-1" measuredW="89" measuredH="27" zOrder="19" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderColor>13421772</borderColor>
+        <text>divina_acala</text>
+      </controlProperties>
+    </control>
+    <control controlID="174" controlTypeID="com.balsamiq.mockups::Component" x="509" y="440" w="346" h="15" measuredW="346" measuredH="15" zOrder="20" locked="false" isInGroup="-1">
+      <controlProperties>
+        <override controlID="1">
+          <color>9684093</color>
+        </override>
+        <override controlID="2">
+          <color>9684093</color>
+        </override>
+        <override controlID="3">
+          <color>9684093</color>
+        </override>
+        <override controlID="4">
+          <color>11982760</color>
+        </override>
+        <override controlID="5">
+          <color>9684093</color>
+        </override>
+        <src>./assets/symbols.bmml#progress_bar_enroll</src>
+      </controlProperties>
+    </control>
+    <control controlID="177" controlTypeID="com.balsamiq.mockups::Component" x="159" y="513" w="1031" h="127" measuredW="1031" measuredH="127" zOrder="21" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>./assets/footer.bmml</src>
+      </controlProperties>
+    </control>
+    <control controlID="179" controlTypeID="com.balsamiq.mockups::Component" x="159" y="101" w="1032" h="40" measuredW="1032" measuredH="40" zOrder="22" locked="false" isInGroup="-1">
+      <controlProperties>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22780%2C86%2C816%2C100%22%20href%3D%22home.bmml%22%20alt%3D%22home%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22834%2C86%2C872%2C100%22%20href%3D%22about.bmml%22%20alt%3D%22about%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22890%2C86%2C933%2C100%22%20href%3D%22people.bmml%22%20alt%3D%22people%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22951%2C86%2C1054%2C100%22%20href%3D%22program.bmml%22%20alt%3D%22program%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%221072%2C86%2C1117%2C100%22%20href%3D%22pricing.bmml%22%20alt%3D%22pricing%22%20id%3D%220%22/%3E</map>
+        <override controlID="0" x="695" y="1" w="-1" h="-1">
+          <hrefs>home%26bm%3Bhome.bmml%26bm%3Bhome.bmml%26bm%3Bhome.bmml%2Cabout%26bm%3Babout.bmml%26bm%3Babout.bmml%26bm%3Babout.bmml%2Cpeople%26bm%3Bpeople.bmml%26bm%3Bpeople.bmml%26bm%3Bpeople.bmml%2Cprogram%26bm%3Bprogram.bmml%26bm%3Bprogram.bmml%26bm%3Bprogram.bmml%2Cpricing%26bm%3Bpricing.bmml%26bm%3Bpricing.bmml%26bm%3Bpricing.bmml</hrefs>
+          <text>Home%2CAbout%2CPeople%2CReview%20Program%2CPricing</text>
+        </override>
+        <override controlID="1" x="18" y="0" w="25" h="24"/>
+        <override controlID="2" x="0" y="30" w="1032" h="-1"/>
+        <override controlID="-1"/>
+        <src>./assets/header.bmml</src>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>
