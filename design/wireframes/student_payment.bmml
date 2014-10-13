@@ -48,7 +48,7 @@
     </control>
     <control controlID="143" controlTypeID="com.balsamiq.mockups::Component" x="159" y="100" w="1032" h="40" measuredW="1032" measuredH="40" zOrder="8" locked="false" isInGroup="-1">
       <controlProperties>
-        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22705%2C86%2C741%2C100%22%20href%3D%22home.bmml%22%20alt%3D%22home%22%20id%3D%223%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22759%2C86%2C797%2C100%22%20href%3D%22about.bmml%22%20alt%3D%22about%22%20id%3D%223%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22815%2C86%2C858%2C100%22%20href%3D%22people.bmml%22%20alt%3D%22people%22%20id%3D%223%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22997%2C86%2C1042%2C100%22%20href%3D%22pricing.bmml%22%20alt%3D%22pricing%22%20id%3D%223%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%221060%2C86%2C1095%2C100%22%20href%3D%22enroll-package.bmml%22%20alt%3D%22enroll-package%22%20id%3D%223%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22154%2C87%2C213%2C101%22%20href%3D%22students.bmml%22%20alt%3D%22students%22%20id%3D%226%22/%3E</map>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22705%2C86%2C741%2C100%22%20href%3D%22home.bmml%22%20alt%3D%22home%22%20id%3D%223%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22759%2C86%2C797%2C100%22%20href%3D%22about.bmml%22%20alt%3D%22about%22%20id%3D%223%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22815%2C86%2C858%2C100%22%20href%3D%22people.bmml%22%20alt%3D%22people%22%20id%3D%223%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22997%2C86%2C1042%2C100%22%20href%3D%22pricing.bmml%22%20alt%3D%22pricing%22%20id%3D%223%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%221060%2C86%2C1095%2C100%22%20href%3D%22enroll-package.bmml%22%20alt%3D%22enroll-package%22%20id%3D%223%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22154%2C87%2C213%2C101%22%20href%3D%22students.bmml%22%20alt%3D%22students%22%20id%3D%226%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22231%2C87%2C330%2C101%22%20href%3D%22review_seasons.bmml%22%20alt%3D%22review_seasons%22%20id%3D%226%22/%3E</map>
         <src>./assets/header_admin.bmml</src>
       </controlProperties>
     </control>
@@ -209,6 +209,76 @@
         <backgroundAlpha>1</backgroundAlpha>
         <color>15658734</color>
         <text>When%20clicking%20the%20*Add%20Transaction*%20link</text>
+      </controlProperties>
+    </control>
+    <control controlID="179" controlTypeID="com.balsamiq.mockups::TextInput" x="374" y="402" w="82" h="-1" measuredW="79" measuredH="26" zOrder="32" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>0</backgroundAlpha>
+        <borderColor>13421772</borderColor>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="180" controlTypeID="com.balsamiq.mockups::TextInput" x="467" y="402" w="100" h="-1" measuredW="79" measuredH="26" zOrder="33" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>0</backgroundAlpha>
+        <borderColor>13421772</borderColor>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="181" controlTypeID="com.balsamiq.mockups::TextInput" x="632" y="402" w="93" h="-1" measuredW="79" measuredH="26" zOrder="34" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>0</backgroundAlpha>
+        <borderColor>13421772</borderColor>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="182" controlTypeID="com.balsamiq.mockups::TextInput" x="733" y="402" w="-1" h="-1" measuredW="79" measuredH="26" zOrder="35" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>0</backgroundAlpha>
+        <borderColor>13421772</borderColor>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="183" controlTypeID="com.balsamiq.mockups::Arrow" x="818" y="436" w="77" h="16" measuredW="150" measuredH="100" zOrder="36" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>1</backgroundAlpha>
+        <color>10066329</color>
+        <curvature>-1</curvature>
+        <leftArrow>true</leftArrow>
+        <rightArrow>false</rightArrow>
+        <stroke>dotted</stroke>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="184" controlTypeID="com.balsamiq.mockups::CallOut" x="900" y="425" w="129" h="39" measuredW="121" measuredH="40" zOrder="37" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>1</backgroundAlpha>
+        <color>15658734</color>
+        <text>Editable%20on%20click</text>
+      </controlProperties>
+    </control>
+    <control controlID="186" controlTypeID="com.balsamiq.mockups::Link" x="374" y="455" w="-1" h="-1" measuredW="48" measuredH="19" zOrder="38" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Remove</text>
+      </controlProperties>
+    </control>
+    <control controlID="187" controlTypeID="com.balsamiq.mockups::Arrow" x="286" y="456" w="77" h="16" measuredW="150" measuredH="100" zOrder="39" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>1</backgroundAlpha>
+        <color>10066329</color>
+        <curvature>1</curvature>
+        <direction>bottom</direction>
+        <leftArrow>true</leftArrow>
+        <rightArrow>false</rightArrow>
+        <stroke>dotted</stroke>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="188" controlTypeID="com.balsamiq.mockups::CallOut" x="159" y="475" w="148" h="27" measuredW="148" measuredH="39" zOrder="40" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>1</backgroundAlpha>
+        <color>15658734</color>
+        <text>Show%20on%20mouse%20over</text>
       </controlProperties>
     </control>
   </controls>
