@@ -47,70 +47,51 @@
     </control>
     <control controlID="158" controlTypeID="com.balsamiq.mockups::Component" x="159" y="101" w="1032" h="40" measuredW="1032" measuredH="40" zOrder="6" locked="false" isInGroup="-1">
       <controlProperties>
-        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22775%2C88%2C811%2C102%22%20href%3D%22home.bmml%22%20alt%3D%22home%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22829%2C88%2C867%2C102%22%20href%3D%22about.bmml%22%20alt%3D%22about%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22885%2C88%2C928%2C102%22%20href%3D%22people.bmml%22%20alt%3D%22people%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22946%2C88%2C1049%2C102%22%20href%3D%22program.bmml%22%20alt%3D%22program%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%221067%2C88%2C1112%2C102%22%20href%3D%22pricing.bmml%22%20alt%3D%22pricing%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22701%2C88%2C737%2C102%22%20href%3D%22home.bmml%22%20alt%3D%22home%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22755%2C88%2C793%2C102%22%20href%3D%22about.bmml%22%20alt%3D%22about%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22811%2C88%2C854%2C102%22%20href%3D%22people.bmml%22%20alt%3D%22people%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22872%2C88%2C975%2C102%22%20href%3D%22program.bmml%22%20alt%3D%22program%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22993%2C88%2C1038%2C102%22%20href%3D%22pricing.bmml%22%20alt%3D%22pricing%22%20id%3D%220%22/%3E</map>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22775%2C88%2C811%2C102%22%20href%3D%22home.bmml%22%20alt%3D%22home%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22829%2C88%2C867%2C102%22%20href%3D%22about.bmml%22%20alt%3D%22about%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22885%2C88%2C928%2C102%22%20href%3D%22people.bmml%22%20alt%3D%22people%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22946%2C88%2C1049%2C102%22%20href%3D%22program.bmml%22%20alt%3D%22program%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%221067%2C88%2C1112%2C102%22%20href%3D%22pricing.bmml%22%20alt%3D%22pricing%22%20id%3D%220%22/%3E</map>
         <override controlID="0" x="695" y="1" w="-1" h="-1">
           <hrefs>home%26bm%3Bhome.bmml%26bm%3Bhome.bmml%26bm%3Bhome.bmml%2Cabout%26bm%3Babout.bmml%26bm%3Babout.bmml%26bm%3Babout.bmml%2Cpeople%26bm%3Bpeople.bmml%26bm%3Bpeople.bmml%26bm%3Bpeople.bmml%2Cprogram%26bm%3Bprogram.bmml%26bm%3Bprogram.bmml%26bm%3Bprogram.bmml%2Cpricing%26bm%3Bpricing.bmml%26bm%3Bpricing.bmml%26bm%3Bpricing.bmml</hrefs>
           <text>Home%2CAbout%2CPeople%2CReview%20Program%2CPricing</text>
         </override>
         <override controlID="1" x="18" y="0" w="25" h="24"/>
         <override controlID="2" x="0" y="30" w="1032" h="-1"/>
-        <override controlID="-1"/>
         <src>./assets/header.bmml</src>
       </controlProperties>
     </control>
-    <control controlID="159" controlTypeID="com.balsamiq.mockups::CheckBox" x="268" y="255" w="268" h="22" measuredW="261" measuredH="23" zOrder="7" locked="false" isInGroup="-1">
-      <controlProperties>
-        <size>14</size>
-        <text>Full%208%20Phase%20Package%20-%20Php%2016%2C000.00</text>
-      </controlProperties>
-    </control>
-    <control controlID="160" controlTypeID="com.balsamiq.mockups::CheckBox" x="268" y="311" w="-1" h="-1" measuredW="222" measuredH="23" zOrder="8" locked="false" isInGroup="-1">
-      <controlProperties>
-        <size>14</size>
-        <text>Double%20Review%20-%20Php%2022%2C000.00</text>
-      </controlProperties>
-    </control>
-    <control controlID="161" controlTypeID="com.balsamiq.mockups::Label" x="268" y="194" w="-1" h="-1" measuredW="393" measuredH="22" zOrder="9" locked="false" isInGroup="-1">
+    <control controlID="161" controlTypeID="com.balsamiq.mockups::Label" x="268" y="194" w="-1" h="-1" measuredW="393" measuredH="22" zOrder="7" locked="false" isInGroup="-1">
       <controlProperties>
         <size>14</size>
         <text>Please%20choose%20a%20package%20below%20for%20April%202014%20review%20season.</text>
       </controlProperties>
     </control>
-    <control controlID="162" controlTypeID="com.balsamiq.mockups::Label" x="288" y="277" w="-1" h="-1" measuredW="433" measuredH="22" zOrder="10" locked="false" isInGroup="-1">
+    <control controlID="162" controlTypeID="com.balsamiq.mockups::Label" x="284" y="277" w="-1" h="-1" measuredW="433" measuredH="22" zOrder="8" locked="false" isInGroup="-1">
       <controlProperties>
         <italic>true</italic>
         <size>14</size>
         <text>Get%20the%20most%20complete%20and%20comprehensive%208-phase%20review%20program.</text>
       </controlProperties>
     </control>
-    <control controlID="163" controlTypeID="com.balsamiq.mockups::Label" x="288" y="333" w="-1" h="-1" measuredW="480" measuredH="22" zOrder="11" locked="false" isInGroup="-1">
+    <control controlID="163" controlTypeID="com.balsamiq.mockups::Label" x="288" y="333" w="-1" h="-1" measuredW="480" measuredH="22" zOrder="9" locked="false" isInGroup="-1">
       <controlProperties>
         <italic>true</italic>
         <size>14</size>
         <text>Take%20a%20two%20full%20season%20review%20at%20a%20discounted%20price.%20Learn%20more%2C%20save%20more.</text>
       </controlProperties>
     </control>
-    <control controlID="164" controlTypeID="com.balsamiq.mockups::CheckBox" x="268" y="367" w="-1" h="-1" measuredW="212" measuredH="23" zOrder="12" locked="false" isInGroup="-1">
-      <controlProperties>
-        <size>14</size>
-        <text>Final%20Coaching%20-%20Php%207%2C000.00</text>
-      </controlProperties>
-    </control>
-    <control controlID="166" controlTypeID="com.balsamiq.mockups::Label" x="288" y="390" w="-1" h="-1" measuredW="371" measuredH="22" zOrder="13" locked="false" isInGroup="-1">
+    <control controlID="166" controlTypeID="com.balsamiq.mockups::Label" x="288" y="390" w="-1" h="-1" measuredW="371" measuredH="22" zOrder="10" locked="false" isInGroup="-1">
       <controlProperties>
         <italic>true</italic>
         <size>14</size>
         <text>Need%20a%20refresh%3F%20Get%20our%20Ultimate%20Final%20Coaching%20package.</text>
       </controlProperties>
     </control>
-    <control controlID="167" controlTypeID="com.balsamiq.mockups::CallOut" x="1168" y="377" w="150" h="49" measuredW="271" measuredH="37" zOrder="14" locked="false" isInGroup="-1">
+    <control controlID="167" controlTypeID="com.balsamiq.mockups::CallOut" x="1168" y="377" w="150" h="49" measuredW="271" measuredH="37" zOrder="11" locked="false" isInGroup="-1">
       <controlProperties>
         <backgroundAlpha>1</backgroundAlpha>
         <color>15658734</color>
         <text>Only%20enables%20when%20a%20package%20is%20selected</text>
       </controlProperties>
     </control>
-    <control controlID="168" controlTypeID="com.balsamiq.mockups::Arrow" x="1111" y="439" w="134" h="36" measuredW="150" measuredH="100" zOrder="15" locked="false" isInGroup="-1">
+    <control controlID="168" controlTypeID="com.balsamiq.mockups::Arrow" x="1111" y="439" w="134" h="36" measuredW="150" measuredH="100" zOrder="12" locked="false" isInGroup="-1">
       <controlProperties>
         <color>13421772</color>
         <curvature>-1</curvature>
@@ -119,6 +100,25 @@
         <rightArrow>false</rightArrow>
         <stroke>dotted</stroke>
         <text/>
+      </controlProperties>
+    </control>
+    <control controlID="169" controlTypeID="com.balsamiq.mockups::RadioButton" x="268" y="255" w="-1" h="-1" measuredW="261" measuredH="23" zOrder="13" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>14</size>
+        <state>selected</state>
+        <text>%20Full%208%20Phase%20Package%20-%20Php%2016%2C000.00</text>
+      </controlProperties>
+    </control>
+    <control controlID="170" controlTypeID="com.balsamiq.mockups::RadioButton" x="268" y="311" w="-1" h="-1" measuredW="223" measuredH="23" zOrder="14" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>14</size>
+        <text>%20Double%20Review%20-%20Php%2022%2C000.00</text>
+      </controlProperties>
+    </control>
+    <control controlID="171" controlTypeID="com.balsamiq.mockups::RadioButton" x="268" y="367" w="-1" h="-1" measuredW="347" measuredH="23" zOrder="15" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>14</size>
+        <text>%20Double%20Review%20-%20Php%20Final%20Coaching%20-%20Php%207%2C000.00</text>
       </controlProperties>
     </control>
   </controls>

@@ -1,6 +1,6 @@
 <mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1283" measuredH="644" mockupW="1282" mockupH="626">
   <controls>
-    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="83" y="18" w="1200" h="626" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="83" y="18" w="1200" h="626" measuredW="450" measuredH="400" zOrder="0" locked="true" isInGroup="-1">
       <controlProperties>
         <text>MaxRevOne%20%7C%20Enroll%20-%20Confirm%0Ahttp%3A//www.maxrevone.ph/enroll</text>
       </controlProperties>
@@ -70,7 +70,7 @@
     <control controlID="177" controlTypeID="com.balsamiq.mockups::Paragraph" x="352" y="253" w="720" h="133" measuredW="275" measuredH="80" zOrder="6" locked="false" isInGroup="-1">
       <controlProperties>
         <size>14</size>
-        <text>Thank%20you%20for%20choosing%20MaxRevOne.%0A%20%0AYour%20application%20is%20now%20complete%21%0AHere%20is%20your%20reference%20number%3A%20_32145789_</text>
+        <text>Thank%20you%20for%20choosing%20MaxRevOne.%0A%20%0AYour%20application%20is%20now%20complete.%20Please%20confirm%20your%20payment%20within%203%20days%20to%20avoid%20expiration%20of%20your%20application.%0A%20%0AHere%20is%20your%20reference%20number%3A%20_32145789_</text>
       </controlProperties>
     </control>
     <control controlID="180" controlTypeID="com.balsamiq.mockups::Button" x="999" y="391" w="73" h="36" measuredW="53" measuredH="27" zOrder="7" locked="false" isInGroup="-1">
