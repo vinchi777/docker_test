@@ -48,7 +48,7 @@
     </control>
     <control controlID="143" controlTypeID="com.balsamiq.mockups::Component" x="159" y="100" w="1032" h="40" measuredW="1032" measuredH="40" zOrder="8" locked="false" isInGroup="-1">
       <controlProperties>
-        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22168%2C84%2C277%2C111%22%20href%3D%22student.bmml%22%20alt%3D%22student%22%20id%3D%221%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22705%2C86%2C741%2C100%22%20href%3D%22home.bmml%22%20alt%3D%22home%22%20id%3D%223%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22759%2C86%2C797%2C100%22%20href%3D%22about.bmml%22%20alt%3D%22about%22%20id%3D%223%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22815%2C86%2C858%2C100%22%20href%3D%22people.bmml%22%20alt%3D%22people%22%20id%3D%223%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22997%2C86%2C1042%2C100%22%20href%3D%22pricing.bmml%22%20alt%3D%22pricing%22%20id%3D%223%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%221060%2C86%2C1095%2C100%22%20href%3D%22enroll-personal.bmml%22%20alt%3D%22enroll-personal%22%20id%3D%223%22/%3E</map>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22705%2C86%2C741%2C100%22%20href%3D%22home.bmml%22%20alt%3D%22home%22%20id%3D%223%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22759%2C86%2C797%2C100%22%20href%3D%22about.bmml%22%20alt%3D%22about%22%20id%3D%223%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22815%2C86%2C858%2C100%22%20href%3D%22people.bmml%22%20alt%3D%22people%22%20id%3D%223%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22997%2C86%2C1042%2C100%22%20href%3D%22pricing.bmml%22%20alt%3D%22pricing%22%20id%3D%223%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%221060%2C86%2C1095%2C100%22%20href%3D%22enroll-package.bmml%22%20alt%3D%22enroll-package%22%20id%3D%223%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22154%2C87%2C213%2C101%22%20href%3D%22students.bmml%22%20alt%3D%22students%22%20id%3D%226%22/%3E</map>
         <src>./assets/header_admin.bmml</src>
       </controlProperties>
     </control>
@@ -188,6 +188,8 @@
     </control>
     <control controlID="176" controlTypeID="com.balsamiq.mockups::Button" x="775" y="256" w="97" h="31" measuredW="90" measuredH="27" zOrder="29" locked="false" isInGroup="-1">
       <controlProperties>
+        <href>student_payment_invoice%26bm%3Bstudent_payment_invoice.bmml%26bm%3Bstudent_payment_invoice.bmml%26bm%3Bstudent_payment_invoice.bmml</href>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22700%2C239%2C797%2C270%22%20href%3D%22student_payment_invoice.bmml%22%20alt%3D%22student_payment_invoice%22%20id%3D%22176%22/%3E</map>
         <text>Add%20Invoice</text>
       </controlProperties>
     </control>
