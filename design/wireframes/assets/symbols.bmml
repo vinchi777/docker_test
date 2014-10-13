@@ -87,12 +87,12 @@
         </control>
       </groupChildrenDescriptors>
     </control>
-    <control controlID="6" controlTypeID="__group__" x="7" y="288" w="240" h="15" measuredW="240" measuredH="15" zOrder="2" locked="false" isInGroup="-1">
+    <control controlID="6" controlTypeID="__group__" x="7" y="288" w="346" h="15" measuredW="346" measuredH="15" zOrder="2" locked="false" isInGroup="-1">
       <controlProperties>
         <controlName>progress_bar_enroll</controlName>
       </controlProperties>
       <groupChildrenDescriptors>
-        <control controlID="0" controlTypeID="com.balsamiq.mockups::RoundButton" x="11" y="2" w="220" h="10" measuredW="32" measuredH="32" zOrder="0" locked="false" isInGroup="6">
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::RoundButton" x="11" y="2" w="325" h="10" measuredW="32" measuredH="32" zOrder="0" locked="false" isInGroup="6">
           <controlProperties>
             <backgroundAlpha>1</backgroundAlpha>
             <borderColor>16777215</borderColor>
@@ -122,6 +122,16 @@
           </controlProperties>
         </control>
         <control controlID="6" controlTypeID="com.balsamiq.mockups::RoundButton" x="225" y="0" w="15" h="15" measuredW="32" measuredH="32" zOrder="5" locked="false" isInGroup="6">
+          <controlProperties>
+            <text/>
+          </controlProperties>
+        </control>
+        <control controlID="7" controlTypeID="com.balsamiq.mockups::RoundButton" x="280" y="0" w="15" h="15" measuredW="32" measuredH="32" zOrder="6" locked="false" isInGroup="6">
+          <controlProperties>
+            <text/>
+          </controlProperties>
+        </control>
+        <control controlID="8" controlTypeID="com.balsamiq.mockups::RoundButton" x="331" y="0" w="15" h="15" measuredW="32" measuredH="32" zOrder="7" locked="false" isInGroup="6">
           <controlProperties>
             <text/>
           </controlProperties>

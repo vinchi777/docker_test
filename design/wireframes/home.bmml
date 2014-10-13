@@ -45,8 +45,8 @@
       <groupChildrenDescriptors>
         <control controlID="0" controlTypeID="com.balsamiq.mockups::Button" x="332" y="0" w="-1" h="-1" measuredW="119" measuredH="27" zOrder="0" locked="false" isInGroup="17">
           <controlProperties>
-            <href>enroll%26bm%3Benroll.bmml%26bm%3Benroll.bmml%26bm%3Benroll.bmml</href>
-            <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22623%2C314%2C742%2C341%22%20href%3D%22enroll.bmml%22%20alt%3D%22enroll%22%20id%3D%220%22/%3E</map>
+            <href>enroll-package%26bm%3Benroll-package.bmml%26bm%3Benroll-package.bmml%26bm%3Benroll-package.bmml</href>
+            <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22623%2C314%2C742%2C341%22%20href%3D%22enroll-package.bmml%22%20alt%3D%22enroll-package%22%20id%3D%220%22/%3E</map>
             <size>14</size>
             <text>Make%20it%20happen</text>
           </controlProperties>
@@ -321,8 +321,8 @@
     <control controlID="130" controlTypeID="com.balsamiq.mockups::HRule" x="129" y="2186" w="1034" h="-1" measuredW="100" measuredH="10" zOrder="15" locked="false" isInGroup="-1"/>
     <control controlID="186" controlTypeID="com.balsamiq.mockups::LinkBar" x="748" y="114" w="-1" h="-1" measuredW="390" measuredH="20" zOrder="58" locked="false" isInGroup="-1">
       <controlProperties>
-        <hrefs>home%26bm%3Bhome.bmml%26bm%3Bhome.bmml%26bm%3Bhome.bmml%2Cabout%26bm%3Babout.bmml%26bm%3Babout.bmml%26bm%3Babout.bmml%2Cpeople%26bm%3Bpeople.bmml%26bm%3Bpeople.bmml%26bm%3Bpeople.bmml%2Cprogram%26bm%3Bprogram.bmml%26bm%3Bprogram.bmml%26bm%3Bprogram.bmml%2Cpricing%26bm%3Bpricing.bmml%26bm%3Bpricing.bmml%26bm%3Bpricing.bmml%2Cenroll%26bm%3Benroll.bmml%26bm%3Benroll.bmml%26bm%3Benroll.bmml</hrefs>
-        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22619%2C90%2C655%2C104%22%20href%3D%22home.bmml%22%20alt%3D%22home%22%20id%3D%22186%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22673%2C90%2C711%2C104%22%20href%3D%22about.bmml%22%20alt%3D%22about%22%20id%3D%22186%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22729%2C90%2C772%2C104%22%20href%3D%22people.bmml%22%20alt%3D%22people%22%20id%3D%22186%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22790%2C90%2C893%2C104%22%20href%3D%22program.bmml%22%20alt%3D%22program%22%20id%3D%22186%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22911%2C90%2C956%2C104%22%20href%3D%22pricing.bmml%22%20alt%3D%22pricing%22%20id%3D%22186%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22974%2C90%2C1009%2C104%22%20href%3D%22enroll.bmml%22%20alt%3D%22enroll%22%20id%3D%22186%22/%3E</map>
+        <hrefs>home%26bm%3Bhome.bmml%26bm%3Bhome.bmml%26bm%3Bhome.bmml%2Cabout%26bm%3Babout.bmml%26bm%3Babout.bmml%26bm%3Babout.bmml%2Cpeople%26bm%3Bpeople.bmml%26bm%3Bpeople.bmml%26bm%3Bpeople.bmml%2Cprogram%26bm%3Bprogram.bmml%26bm%3Bprogram.bmml%26bm%3Bprogram.bmml%2Cpricing%26bm%3Bpricing.bmml%26bm%3Bpricing.bmml%26bm%3Bpricing.bmml%2Cenroll-package%26bm%3Benroll-package.bmml%26bm%3Benroll-package.bmml%26bm%3Benroll-package.bmml</hrefs>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22619%2C90%2C655%2C104%22%20href%3D%22home.bmml%22%20alt%3D%22home%22%20id%3D%22186%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22673%2C90%2C711%2C104%22%20href%3D%22about.bmml%22%20alt%3D%22about%22%20id%3D%22186%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22729%2C90%2C772%2C104%22%20href%3D%22people.bmml%22%20alt%3D%22people%22%20id%3D%22186%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22790%2C90%2C893%2C104%22%20href%3D%22program.bmml%22%20alt%3D%22program%22%20id%3D%22186%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22911%2C90%2C956%2C104%22%20href%3D%22pricing.bmml%22%20alt%3D%22pricing%22%20id%3D%22186%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22974%2C90%2C1009%2C104%22%20href%3D%22enroll-package.bmml%22%20alt%3D%22enroll-package%22%20id%3D%22186%22/%3E</map>
         <size>14</size>
         <text>Home%2CAbout%2CPeople%2CReview%20Program%2CPricing%2CEnroll</text>
       </controlProperties>
@@ -349,8 +349,8 @@
         </control>
         <control controlID="1" controlTypeID="com.balsamiq.mockups::Button" x="332" y="0" w="-1" h="-1" measuredW="87" measuredH="27" zOrder="1" locked="false" isInGroup="191">
           <controlProperties>
-            <href>enroll%26bm%3Benroll.bmml%26bm%3Benroll.bmml%26bm%3Benroll.bmml</href>
-            <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22623%2C2293%2C710%2C2320%22%20href%3D%22enroll.bmml%22%20alt%3D%22enroll%22%20id%3D%221%22/%3E</map>
+            <href>enroll-package%26bm%3Benroll-package.bmml%26bm%3Benroll-package.bmml%26bm%3Benroll-package.bmml</href>
+            <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22623%2C2293%2C710%2C2320%22%20href%3D%22enroll-package.bmml%22%20alt%3D%22enroll-package%22%20id%3D%221%22/%3E</map>
             <size>14</size>
             <text>Enroll%20now</text>
           </controlProperties>

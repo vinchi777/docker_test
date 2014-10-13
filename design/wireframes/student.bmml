@@ -1,6 +1,6 @@
-<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1501" measuredH="1013" mockupW="1342" mockupH="994">
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1500" measuredH="1013" mockupW="1425" mockupH="994">
   <controls>
-    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="159" y="19" w="1033" h="994" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="75" y="19" w="1200" h="994" measuredW="450" measuredH="400" zOrder="0" locked="true" isInGroup="-1">
       <controlProperties>
         <text>MaxRevOne%20%7C%20Acala%2C%20Maria%20Divina%0Ahttp%3A//www.maxrevone.ph/enrollees/123ab5f0</text>
       </controlProperties>
@@ -9,7 +9,7 @@
       <controlProperties>
         <bold>true</bold>
         <href>enrollees%26bm%3Benrollees.bmml%26bm%3Benrollees.bmml%26bm%3Benrollees.bmml</href>
-        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%2282%2C139%2C144%2C163%22%20href%3D%22enrollees.bmml%22%20alt%3D%22enrollees%22%20id%3D%225%22/%3E</map>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22166%2C139%2C228%2C163%22%20href%3D%22enrollees.bmml%22%20alt%3D%22enrollees%22%20id%3D%225%22/%3E</map>
         <size>16</size>
         <text>Student</text>
       </controlProperties>
@@ -356,9 +356,9 @@
         <text>*%20Address%20is%20required.</text>
       </controlProperties>
     </control>
-    <control controlID="139" controlTypeID="com.balsamiq.mockups::Component" x="241" y="185" w="1260" h="425" measuredW="1260" measuredH="425" zOrder="54" locked="false" isInGroup="-1">
+    <control controlID="139" controlTypeID="com.balsamiq.mockups::Component" x="241" y="185" w="1259" h="425" measuredW="1259" measuredH="425" zOrder="54" locked="false" isInGroup="-1">
       <controlProperties>
-        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%2282%2C269%2C182%2C302%22%20href%3D%22student_payment.bmml%22%20alt%3D%22student_payment%22%20id%3D%2222%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%2282%2C236%2C186%2C269%22%20href%3D%22student.bmml%22%20alt%3D%22student%22%20id%3D%2225%22/%3E</map>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22166%2C269%2C266%2C302%22%20href%3D%22student_payment.bmml%22%20alt%3D%22student_payment%22%20id%3D%2222%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22166%2C236%2C270%2C269%22%20href%3D%22student.bmml%22%20alt%3D%22student%22%20id%3D%2225%22/%3E</map>
         <src>./assets/student_view.bmml</src>
       </controlProperties>
     </control>
@@ -369,7 +369,7 @@
     </control>
     <control controlID="142" controlTypeID="com.balsamiq.mockups::Component" x="159" y="103" w="1032" h="40" measuredW="1032" measuredH="40" zOrder="56" locked="false" isInGroup="-1">
       <controlProperties>
-        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22621%2C87%2C657%2C101%22%20href%3D%22home.bmml%22%20alt%3D%22home%22%20id%3D%223%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22675%2C87%2C713%2C101%22%20href%3D%22about.bmml%22%20alt%3D%22about%22%20id%3D%223%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22731%2C87%2C774%2C101%22%20href%3D%22people.bmml%22%20alt%3D%22people%22%20id%3D%223%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22913%2C87%2C958%2C101%22%20href%3D%22pricing.bmml%22%20alt%3D%22pricing%22%20id%3D%223%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22976%2C87%2C1011%2C101%22%20href%3D%22enroll.bmml%22%20alt%3D%22enroll%22%20id%3D%223%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22628%2C87%2C664%2C101%22%20href%3D%22home.bmml%22%20alt%3D%22home%22%20id%3D%223%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22682%2C87%2C720%2C101%22%20href%3D%22about.bmml%22%20alt%3D%22about%22%20id%3D%223%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22738%2C87%2C781%2C101%22%20href%3D%22people.bmml%22%20alt%3D%22people%22%20id%3D%223%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22920%2C87%2C965%2C101%22%20href%3D%22pricing.bmml%22%20alt%3D%22pricing%22%20id%3D%223%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22983%2C87%2C1018%2C101%22%20href%3D%22enroll.bmml%22%20alt%3D%22enroll%22%20id%3D%223%22/%3E</map>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22168%2C85%2C277%2C112%22%20href%3D%22student.bmml%22%20alt%3D%22student%22%20id%3D%221%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22705%2C87%2C741%2C101%22%20href%3D%22home.bmml%22%20alt%3D%22home%22%20id%3D%223%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22759%2C87%2C797%2C101%22%20href%3D%22about.bmml%22%20alt%3D%22about%22%20id%3D%223%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22815%2C87%2C858%2C101%22%20href%3D%22people.bmml%22%20alt%3D%22people%22%20id%3D%223%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22997%2C87%2C1042%2C101%22%20href%3D%22pricing.bmml%22%20alt%3D%22pricing%22%20id%3D%223%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%221060%2C87%2C1095%2C101%22%20href%3D%22enroll-personal.bmml%22%20alt%3D%22enroll-personal%22%20id%3D%223%22/%3E</map>
         <src>./assets/header_admin.bmml</src>
       </controlProperties>
     </control>

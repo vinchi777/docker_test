@@ -163,14 +163,13 @@
     </control>
     <control controlID="216" controlTypeID="com.balsamiq.mockups::Component" x="130" y="110" w="1032" h="40" measuredW="1032" measuredH="40" zOrder="7" locked="false" isInGroup="-1">
       <controlProperties>
-        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22621%2C87%2C657%2C101%22%20href%3D%22home.bmml%22%20alt%3D%22home%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22675%2C87%2C713%2C101%22%20href%3D%22about.bmml%22%20alt%3D%22about%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22731%2C87%2C774%2C101%22%20href%3D%22people.bmml%22%20alt%3D%22people%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22792%2C87%2C895%2C101%22%20href%3D%22program.bmml%22%20alt%3D%22program%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22913%2C87%2C958%2C101%22%20href%3D%22pricing.bmml%22%20alt%3D%22pricing%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22976%2C87%2C1011%2C101%22%20href%3D%22enroll.bmml%22%20alt%3D%22enroll%22%20id%3D%220%22/%3E</map>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22621%2C87%2C657%2C101%22%20href%3D%22home.bmml%22%20alt%3D%22home%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22675%2C87%2C713%2C101%22%20href%3D%22about.bmml%22%20alt%3D%22about%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22731%2C87%2C774%2C101%22%20href%3D%22people.bmml%22%20alt%3D%22people%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22792%2C87%2C895%2C101%22%20href%3D%22program.bmml%22%20alt%3D%22program%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22913%2C87%2C958%2C101%22%20href%3D%22pricing.bmml%22%20alt%3D%22pricing%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22976%2C87%2C1011%2C101%22%20href%3D%22enroll-personal.bmml%22%20alt%3D%22enroll-personal%22%20id%3D%220%22/%3E</map>
         <src>./assets/header.bmml</src>
       </controlProperties>
     </control>
     <control controlID="217" controlTypeID="com.balsamiq.mockups::Component" x="130" y="1117" w="1031" h="127" measuredW="1031" measuredH="127" zOrder="8" locked="false" isInGroup="-1">
       <controlProperties>
         <override controlID="3" x="644" y="22" w="83" h="73"/>
-        <override controlID="-1"/>
         <src>./assets/footer.bmml</src>
       </controlProperties>
     </control>

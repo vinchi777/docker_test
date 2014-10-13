@@ -1,0 +1,92 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1284" measuredH="720" mockupW="1200" mockupH="703">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="84" y="17" w="1200" h="703" measuredW="450" measuredH="400" zOrder="0" locked="true" isInGroup="-1">
+      <controlProperties>
+        <text>MaxRevOne%20%7C%20Acala%2C%20Maria%20Divina%0Ahttp%3A//www.maxrevone.ph/enrollees/123ab5f0</text>
+      </controlProperties>
+    </control>
+    <control controlID="5" controlTypeID="com.balsamiq.mockups::Label" x="252" y="169" w="-1" h="-1" measuredW="42" measuredH="24" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <size>16</size>
+        <text>Enroll</text>
+      </controlProperties>
+    </control>
+    <control controlID="140" controlTypeID="com.balsamiq.mockups::Button" x="1016" y="463" w="78" h="36" measuredW="66" measuredH="27" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>11982760</color>
+        <href>enroll-payment%26bm%3Benroll-payment.bmml%26bm%3Benroll-payment.bmml%26bm%3Benroll-payment.bmml</href>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22932%2C446%2C1010%2C482%22%20href%3D%22enroll-payment.bmml%22%20alt%3D%22enroll-payment%22%20id%3D%22140%22/%3E</map>
+        <menuIcon>false</menuIcon>
+        <rotation>180</rotation>
+        <text>I%20Agree</text>
+      </controlProperties>
+    </control>
+    <control controlID="152" controlTypeID="com.balsamiq.mockups::Button" x="252" y="462" w="78" h="36" measuredW="51" measuredH="27" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <align>center</align>
+        <color>11982760</color>
+        <href>enroll-edu%26bm%3Benroll-edu.bmml%26bm%3Benroll-edu.bmml%26bm%3Benroll-edu.bmml</href>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22168%2C445%2C246%2C481%22%20href%3D%22enroll-edu.bmml%22%20alt%3D%22enroll-edu%22%20id%3D%22152%22/%3E</map>
+        <menuIcon>false</menuIcon>
+        <rotation>180</rotation>
+        <text>Back</text>
+      </controlProperties>
+    </control>
+    <control controlID="174" controlTypeID="com.balsamiq.mockups::Component" x="496" y="473" w="346" h="15" measuredW="346" measuredH="15" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <override controlID="1">
+          <color>9684093</color>
+        </override>
+        <override controlID="2">
+          <color>9684093</color>
+        </override>
+        <override controlID="3">
+          <color>9684093</color>
+        </override>
+        <override controlID="4">
+          <color>11982760</color>
+        </override>
+        <override controlID="5">
+          <color>9684093</color>
+        </override>
+        <override controlID="6">
+          <color>11982760</color>
+        </override>
+        <src>./assets/symbols.bmml#progress_bar_enroll</src>
+      </controlProperties>
+    </control>
+    <control controlID="177" controlTypeID="com.balsamiq.mockups::Component" x="159" y="553" w="1031" h="127" measuredW="1031" measuredH="127" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>./assets/footer.bmml</src>
+      </controlProperties>
+    </control>
+    <control controlID="179" controlTypeID="com.balsamiq.mockups::Label" x="597" y="193" w="-1" h="-1" measuredW="145" measuredH="22" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <size>14</size>
+        <text>Terms%20and%20Conditions</text>
+      </controlProperties>
+    </control>
+    <control controlID="180" controlTypeID="com.balsamiq.mockups::TextArea" x="252" y="222" w="842" h="213" measuredW="200" measuredH="140" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>1</backgroundAlpha>
+        <text>Max%20Rev%20One%20wants%20to%20maintain%20a%20high%20quality%20service%20to%20its%20reviewees%20and%20this%20memorandum%20of%20agreement%20aims%20to%20explain%20the%20policies%20made%20and%20implemented%20by%20Max%20Rev%20One%20in%20which%20every%20reviewee%20must%20understand%20and%20comply.%0A%20%0A*Section%201.%20*Each%20reviewee%20is%20entitled%20for%20a%20full%20review%20program%20%28Phase%201-8%29%20as%20part%20of%20the%20enrollment%20package.%20Provided%20that%20they%20avail%20the%20said%20review%20program%20upon%20enrollment.%0A%20%0A*Section%202.*%20Each%20reviewee%20shall%20pay%20an%20initial%20amount%20of%20Php%203%2C000%20as%20minimum%20reservation%20fee%20deductible%20to%20the%20amount%20to%20be%20paid%20for%20the%20entire%20review.%20Reservation%20fee%20is%20non-refundable%20and%20non-transferable%3B%20for%20whatever%20reason.%0A%20%0A*Section%203.*%20Reviewees%20who%20were%20able%20to%20avail%20a%20promo%20of%20whatever%20kind%20shall%20pay%20in%20full%20on%20or%20before%20the%20commencement%20of%20review%20classes.%20Failure%20to%20pay%20in%20full%20will%20forfeit%20the%20promo%20availed%20of%20and%20regular%20rates%20will%20apply.%0A%20%0A*Section%204.*%20For%20reviewees%20who%20failed%20to%20settle%20their%20balance%20will%20be%20entitled%20for%20consideration%20though%20a%20valid%20promissory%20note%20for%20the%20settlement%20of%20their%20accounts%20shall%20not%20exceed%20fifteen%20%2815%29%20days%20from%20the%20start%20of%20the%20review.%20Students%20that%20will%20discontinue%20shall%20pay%20the%20number%20of%20hours%20he%20attended%20that%20cannot%20be%20covered%20by%20his%20initial%20payment%2C%20subject%20to%20computation%20to%20be%20made%20by%20the%20management.%0A%20%0A*Section%205.*%20Reviewes%20in%20good%20standing%20in%20paying%20their%20accounts%20are%20entitled%20for%20the%20%22Money%20Back%20Guarantee%2C%22%20under%20the%20terms%20and%20conditions%20of%20the%20said%20guarantee%2C%20provided%20that%20they%20manifestly%20show%20their%20interest%20that%20they%20want%20to%20avai%20said%20guarantee.%0A%20%0A*Section%206.*%20Reviewes%20are%20required%20and%20expected%20to%20have%20a%20complete%20attendance%20in%20all%20review%20classes%20and%20activities%20that%20the%20review%20center%20will%20be%20conducting%20and%20to%20pass%20all%20the%20examinations%20given.</text>
+        <value>0</value>
+        <verticalScrollbar>true</verticalScrollbar>
+      </controlProperties>
+    </control>
+    <control controlID="181" controlTypeID="com.balsamiq.mockups::Component" x="159" y="101" w="1032" h="40" measuredW="1032" measuredH="40" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22770%2C87%2C806%2C101%22%20href%3D%22home.bmml%22%20alt%3D%22home%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22824%2C87%2C862%2C101%22%20href%3D%22about.bmml%22%20alt%3D%22about%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22880%2C87%2C923%2C101%22%20href%3D%22people.bmml%22%20alt%3D%22people%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22941%2C87%2C1044%2C101%22%20href%3D%22program.bmml%22%20alt%3D%22program%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%221062%2C87%2C1107%2C101%22%20href%3D%22pricing.bmml%22%20alt%3D%22pricing%22%20id%3D%220%22/%3E</map>
+        <override controlID="0" x="695" y="1" w="-1" h="-1">
+          <hrefs>home%26bm%3Bhome.bmml%26bm%3Bhome.bmml%26bm%3Bhome.bmml%2Cabout%26bm%3Babout.bmml%26bm%3Babout.bmml%26bm%3Babout.bmml%2Cpeople%26bm%3Bpeople.bmml%26bm%3Bpeople.bmml%26bm%3Bpeople.bmml%2Cprogram%26bm%3Bprogram.bmml%26bm%3Bprogram.bmml%26bm%3Bprogram.bmml%2Cpricing%26bm%3Bpricing.bmml%26bm%3Bpricing.bmml%26bm%3Bpricing.bmml</hrefs>
+          <text>Home%2CAbout%2CPeople%2CReview%20Program%2CPricing</text>
+        </override>
+        <override controlID="1" x="18" y="0" w="25" h="24"/>
+        <override controlID="2" x="0" y="30" w="1032" h="-1"/>
+        <src>./assets/header.bmml</src>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>
