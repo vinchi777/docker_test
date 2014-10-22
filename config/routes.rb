@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  get 'site/home'
-  get 'site/about'
-  get 'site/founders'
-  get 'site/reviewers'
-  get 'site/pricing'
+  get 'home' => 'site#home'
+  get 'about' => 'site#about'
+  get 'founders' => 'site#founders'
+  get 'reviewers' => 'site#reviewers'
+  get 'pricing' => 'site#pricing'
 
   root 'site#home'
 
