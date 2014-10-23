@@ -8,7 +8,7 @@
     background-size: cover;
     position: relative;
 
-    .container .wrap{
+    .container .wrap {
       position: absolute;
       bottom: 22px;
       color: #fff;
@@ -27,35 +27,40 @@
     padding: 20px 0px;
   }
 
-  .history{
-    h6 {
-      margin-top: 2px;
-    }
-
-    .row {
+  .history {
+    > .row {
       padding: 5px 0px;
     }
 
-    @bar-color: #EDCA66;
-    .bar {
-      height: 14px;
-      margin-top: 4px;
-      float: right;
-    }
+    .rating {
+      text-align: right;
 
-    .bar1 {
-      width: 90%;
-      background-color: @bar-color;
-    }
+      .percent {
+        color: #555;
+        vertical-align: top;
+      }
 
-    .bar2 {
-      width: 95%;
-      background-color: darken(@bar-color,15);
-    }
+      @bar-color: #EDCA66;
+      .bar {
+        height: 14px;
+        margin: 5px 0px 0px 5px;
+        display: inline-block;
+      }
 
-    .bar3 {
-      width: 100%;
-      background-color: darken(@bar-color,30);
+      .bar1 {
+        width: 55%;
+        background-color: @bar-color;
+      }
+
+      .bar2 {
+        width: 65%;
+        background-color: darken(@bar-color, 10);
+      }
+
+      .bar3 {
+        width: 75%;
+        background-color: darken(@bar-color, 20);
+      }
     }
   }
 }

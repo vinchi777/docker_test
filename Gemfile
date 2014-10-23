@@ -26,8 +26,6 @@ gem 'jbuilder', '~> 2.0'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
-  gem 'guard'
-  gem 'guard-livereload', require: false
 end
 
 group :development, :test do
