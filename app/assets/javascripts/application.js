@@ -15,4 +15,5 @@
 //= require jquery_ujs
 //= require bootstrap.min
 //= require turbolinks
+//= require map_api
 //= require_tree .

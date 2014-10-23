@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'home' => 'site#home'
+  get 'about' => 'site#about'
+  get 'founders' => 'site#founders'
+  get 'reviewers' => 'site#reviewers'
+  get 'pricing' => 'site#pricing'
+
+  root 'site#home'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
