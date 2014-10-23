@@ -4,7 +4,7 @@
 $ ->
   map = new GMaps({
     div: '#map'
-    lat: 11.24500
+    lat: 11.24450
     lng: 124.998627
     zoom: 18
   })
