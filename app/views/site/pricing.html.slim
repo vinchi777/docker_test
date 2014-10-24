@@ -1,69 +1,128 @@
-#pricing.container
+#pricing
   .banner
     h1 Affordable Pricing
     h4 We make sure our price is right.
-  .row
-    .col-md-10.col-md-offset-1.packages
-      .row
-        .col-md-4.package
-          h4 Final Coaching
-          h2.price
-            span.currency ₱
-            span.value< 5,000
-          .hours
-            | 40++
-            span< hours
-          .description &nbsp
-          hr.transparent
-          .promos
-            h5 &nbsp
-            .row
-              .col-md-4.col-md-offset-2
-                b &nbsp
-              .col-md-4 &nbsp
-              .col-md-4.col-md-offset-2
-                b &nbsp
-              .col-md-4 &nbsp
-          a.btn.btn-default href='#' Enroll
-        .col-md-4.package
-          h4 Standard Review
-          h2.price
-            span.currency ₱
-            span.value< 16,000
-          .hours
-            | 730++
-            span< hours
-          .description Final coaching included
-          hr
-          .promos
-            h5 Promos
-            .row
-              .col-md-4.col-md-offset-2
-                b ₱14,000
-              .col-md-4 1st Taker
-              .col-md-4.col-md-offset-2
-                b ₱12,000
-              .col-md-4 Repeater
-          a.btn.btn-black href='#'
-            b Enroll
-        .col-md-4.package
-          h4 Double Review
-          h2.price
-            span.currency ₱
-            span.value< 22,000
-          .hours
-            | 1,460++
-            span< hours
-          .description 2x Standard Review
-          hr
-          .promos
-            h5 Promos
-            div Price already discounted
-            div
-              | by
-              b< ₱12,000
-          a.btn.btn-default href='#'
-            b Enroll
+  .container.packages
+    .row
+      .col-md-10.col-md-offset-1.content
+        .row
+          .col-md-4.package
+            h4 Final Coaching
+            h2.price
+              span.currency ₱
+              span.value< 5,000
+            .hours
+              | 40++
+              span< hours
+            .description &nbsp
+            hr.transparent
+            .promos
+              h5 &nbsp
+              .row
+                .col-md-4.col-md-offset-2
+                  b &nbsp
+                .col-md-4 &nbsp
+                .col-md-4.col-md-offset-2
+                  b &nbsp
+                .col-md-4 &nbsp
+            a.btn.btn-default href='#' Enroll
+          .col-md-4.package
+            h4 Standard Review
+            h2.price
+              span.currency ₱
+              span.value< 16,000
+            .hours
+              | 730++
+              span< hours
+            .description Final coaching included
+            hr
+            .promos
+              h5 Promos
+              .row
+                .col-md-4.col-md-offset-2
+                  b ₱14,000
+                .col-md-4 1st Taker
+                .col-md-4.col-md-offset-2
+                  b ₱12,000
+                .col-md-4 Repeater
+            a.btn.btn-black href='#'
+              b Enroll
+          .col-md-4.package
+            h4 Double Review
+            h2.price
+              span.currency ₱
+              span.value< 22,000
+            .hours
+              | 1,460++
+              span< hours
+            .description 2x Standard Review
+            hr
+            .promos
+              h5 Promos
+              div Price already discounted
+              div
+                | by
+                b< ₱12,000
+            a.btn.btn-default href='#'
+              b Enroll
+    p.info Promos for the Standard Review are valid from October 1, 2014 until October 22, 2014 only.
+  hr
+  .container.plans
+    h3 All Plans Include
+    .row
+      .col-md-3.col-md-offset-3
+        = image_tag 'pricing/logbook.svg'
+        span Logbook
+      .col-md-3
+        = image_tag 'pricing/material.svg'
+        span Review Materials
+    .row
+      .col-md-3.col-md-offset-3
+        = image_tag 'pricing/testpapers.svg'
+        span Test Papers
+      .col-md-6
+        = image_tag 'pricing/more.svg'
+        span A Lot More
+  hr
+  .container.moneyback
+    h3 100% Money Back Guarantee
+    .row
+      .col-md-3.col-md-offset-1
+        = image_tag 'moneyback.svg'
+      .col-md-7
+        p.requirements
+          i.fa.fa-check-circle-o
+          span Perfect attendance
+          i.fa.fa-check-circle-o
+          span Pass all review exams
+          i.fa.fa-check-circle-o
+          span Submit all requirements
+        p
+          | We guarantee that any student who fulfills our requirements will definitely pass the board exam because we
+            are confident in our review program and in our capability to bring out the best in our students.
+        p
+          b
+            | Any student who does so and still fails the board exam will be given full reimbursement of all fees paid
+              during the review.
+  hr
+  .container.scholarships
+    h3 Scholarships
+    h5 We recognize your hard work and achievements.
+    .row
+      .col-md-5.col-md-offset-1
+        = image_tag 'half_scholar.svg'
+        h5 50% Scholar
+        span President of the Student Government Council
+        span Highest Academic Award
+        span With Distinction
+      .col-md-5.full-scholar
+        = image_tag 'full_scholar.svg'
+        h5 Full Scholar
+        span Summa Cum Laude
+        span Magna Cum Laude
+        span Cum Laude
+        span Dean’s Choice Scholarship Grant (1 Slot)
+        span Owner’s Choice Scholarship Grant (1 Slot)
 
 
 
