@@ -2,20 +2,25 @@
   padding: 20px 0px;
 }
 
+.bar-properties(@color, @width) {
+  background-color: @color;
+  width: @width;
+}
+
 #about {
   .banner {
-    height: 355px;
     background: url("about.jpg") no-repeat center center fixed;
+    background-size: cover;
+    height: 355px;
+    position: relative;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background-size: cover;
-    position: relative;
 
     .container .wrap {
-      position: absolute;
       bottom: 22px;
       color: #fff;
+      position: absolute;
 
       h1, h4 {
         margin: 0px;
@@ -50,24 +55,21 @@
 
       @bar-color: #EDCA66;
       .bar {
+        display: inline-block;
         height: 14px;
         margin: 5px 0px 0px 5px;
-        display: inline-block;
       }
 
       .bar1 {
-        width: 55%;
-        background-color: @bar-color;
+        .bar-properties(@bar-color, 55%)
       }
 
       .bar2 {
-        width: 65%;
-        background-color: darken(@bar-color, 10);
+        .bar-properties(darken(@bar-color, 10), 65%)
       }
 
       .bar3 {
-        width: 75%;
-        background-color: darken(@bar-color, 20);
+        .bar-properties(darken(@bar-color, 20), 75%)
       }
     }
   }
