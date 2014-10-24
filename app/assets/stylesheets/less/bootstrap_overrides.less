@@ -4,6 +4,20 @@
 
 .navbar {
   border-bottom-width: 2px;
+
+  &.for-home {
+    background-color: transparent;
+    border-bottom-color: transparent;
+
+    .navbar-nav > li > a {
+        color: white;
+      }
+
+    .divider-vertical {
+      border-right-color: white;
+      border-left-color: white;
+    }
+  }
 }
 
 .navbar-brand {
@@ -21,7 +35,7 @@
   height: @divider-height;
   margin: (@navbar-height - @divider-height) /2 9px;
   border-right: 1px solid @divider-color;
-  border-left: 1px solid @divider-color;
+//  border-left: 1px solid @divider-color;
 }
 
 @media (max-width: 767px) {
