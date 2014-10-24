@@ -11,6 +11,9 @@ class SiteController < ApplicationController
   def reviewers
   end
 
+  def courses
+  end
+
   def pricing
   end
 end
