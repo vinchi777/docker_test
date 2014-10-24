@@ -46,3 +46,21 @@ b {
   }
 }
 
+.btn, a,  {
+  @in: 300ms;
+  -webkit-transition: background-color @in ease, border-color @in ease;
+  -moz-transition: background-color @in ease, border-color @in ease;
+  -o-transition: background-color @in ease, border-color @in ease;
+  transition: background-color @in ease, border-color @in ease;
+}
+
+.btn-black {
+  background-color: lighten(@gray-dark, 5%);
+  color: #fff;
+}
+
+.btn-black:hover {
+  background-color: @gray-dark;
+  color: #fff;
+}
+

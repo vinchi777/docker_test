@@ -9,22 +9,10 @@
       a.navbar-brand href='#'
         = image_tag 'logo-small.svg'
     .navbar-collapse.collapse
-      /ul.nav.navbar-nav
-      /  li.active
-      /    a href='#' Home
-      /  li.dropdown
-      /    a.dropdown-toggle href='#' data-toggle='dropdown'
-      /      | Dropdown
-      /      span.caret
-      /    ul.dropdown-menu role='menu'
-      /      li
-      /        a href='#' Action
-      /      li
-      /        a href='#' Another action
       .nav.navbar-nav.navbar-right
         li
           a href=root_path Home
-        li
+        li class=('active' if yield(:title)== 'About Us')
           a href=about_path About
         li.dropdown
           a.dropdown-toggle href='#' data-toggle='dropdown'
@@ -35,9 +23,9 @@
               a href=founders_path Founders
             li
               a href=reviewers_path Reviewers
-        li
-          a href=program_path Program
-        li
+        li class=('active' if yield(:title)== 'Courses')
+          a href=courses_path Courses
+        li class=('active' if yield(:title)== 'Pricing')
           a href=pricing_path Pricing
         li.divider-vertical
         li
