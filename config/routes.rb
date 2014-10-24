@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'about' => 'site#about'
   get 'founders' => 'site#founders'
   get 'reviewers' => 'site#reviewers'
-  get 'program' => 'site#courses'
+  get 'courses' => 'site#courses'
   get 'pricing' => 'site#pricing'
 
   root 'site#home'

@@ -1,0 +1,67 @@
+#pricing {
+  text-align: center;
+
+  .banner {
+    padding: 40px 0px;
+
+    h1, h4 {
+      margin: 0px;
+    }
+
+    h4 {
+      font-family: 'Signika Light';
+    }
+  }
+
+  .packages {
+    border-top: solid 3px #EFC94C;
+
+    .package {
+      border: solid 1px #CCCCCC;
+      border-top: none;
+      padding: 10px 0px 20px 0px;
+
+      &:nth-of-type(even){
+        border-left: none;
+        border-right: none;
+      }
+
+      .price {
+        color: #4D4D4D;
+        padding: 10px 0px;
+
+        .currency {
+          font-size: 28px;
+          vertical-align: top;
+        }
+      }
+
+      .hours span {
+        color: #808080;
+      }
+
+      hr {
+        border-top: solid 1px #E6E6E6;
+        width: 80%;
+      }
+
+      hr.transparent {
+        border-top: solid 1px #fff;
+      }
+
+      .promos .row {
+        > :nth-child(even) {
+          color: #808080;
+        }
+      }
+
+      .btn {
+        font-size: 18px;
+        margin-top: 30px;
+        width: 200px;
+      }
+    }
+
+  }
+
+}
