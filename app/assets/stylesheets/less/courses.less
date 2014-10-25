@@ -78,7 +78,23 @@
     margin-left: 15px;
     margin-top: 15px;
     border-radius: 3px;
-    width: 48.2%;
+  }
+
+  @media only screen and (min-width: 992px) {
+
+    .panel.content .phase {
+      width: 48.2%;
+    }
+
+    .panel.content .phase:nth-child(even) {
+      float: right;
+      clear: right;
+    }
+
+    .panel.content .phase:nth-child(odd) {
+      float: left;
+      clear: left;
+    }
   }
 
   .tab-content {
