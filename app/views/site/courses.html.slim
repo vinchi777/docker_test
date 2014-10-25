@@ -3,22 +3,23 @@
     p The MOST UPDATED; The MOST COMPREHENSIVE & The MOST COMPLETE
     h1 Review Program
 
-  ul.nav.nav-pills.courses role="tablist"
-    li.active: a[href="#nursing" role="tab" data-toggle="tab"]
-      =image_tag 'nurse.svg'
-      div Nursing
-    li: a[href="#crim" role="tab" data-toggle="tab"]
-      =image_tag 'police.svg'
-      div Criminology
-    li: a[href="#let" role="tab" data-toggle="tab"]
-      =image_tag 'professor.svg'
-      div LET
-    li: a[href="#civil" role="tab" data-toggle="tab"]
-      =image_tag 'employee.svg'
-      div Civil Service
-    li: a[href="#midwifery" role="tab" data-toggle="tab"]
-      =image_tag 'midwife.svg'
-      div Midwifery
+  .courses-tab
+    ul.nav.nav-pills.courses role="tablist"
+      li.active: a[href="#nursing" role="tab" data-toggle="tab"]
+        =image_tag 'nurse.svg'
+        div Nursing
+      li: a[href="#crim" role="tab" data-toggle="tab"]
+        =image_tag 'police.svg'
+        div Criminology
+      li: a[href="#let" role="tab" data-toggle="tab"]
+        =image_tag 'professor.svg'
+        div LET
+      li: a[href="#civil" role="tab" data-toggle="tab"]
+        =image_tag 'employee.svg'
+        div Civil Service
+      li: a[href="#midwifery" role="tab" data-toggle="tab"]
+        =image_tag 'midwife.svg'
+        div Midwifery
 
   .tab-content
     .tab-pane.active[id="nursing"]

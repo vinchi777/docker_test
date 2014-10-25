@@ -1,5 +1,8 @@
+@light-yellow: #FFF9DE;
+
 #program {
-  padding-top: 100px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 
   > header p {
     font-family: 'Signika Light';
@@ -13,6 +16,10 @@
     margin-top: 0px;
   }
 
+  .courses-tab {
+    margin: 0 auto;
+  }
+
   ul.nav.courses > li > a {
     font-family: 'Signika Semibold';
     width: 156px;
@@ -23,7 +30,7 @@
     text-align: center;
 
     &:hover {
-      background: #FFF9DE;
+      background: @light-yellow;
     }
 
     div {
@@ -32,6 +39,46 @@
     img {
       height: 32px;
     }
+  }
+
+  ul.nav.courses > li.active > a {
+    background: @light-yellow;
+  }
+
+  ul.nav.course-outline > li > a > h1 {
+    font-size: 16px;
+    font-family: 'Signika Semibold';
+    margin: 0px;
+  }
+
+  ul.nav.course-outline > li > a > span {
+    font-family: 'Signika Light';
+  }
+
+  ul.nav.course-outline > li > a {
+    color: #191919;
+    background: #F2F2F2;
+    border-right: 4px solid #E5E5E5;
+  }
+
+  ul.nav.course-outline > li.active > a {
+    background: #E5E5E5;
+    border-right: 4px solid #FED24E;
+  }
+
+  .panel.content {
+    margin-left: 0;
+    padding-left: 0;
+    padding-bottom: 15px;
+  }
+
+  .panel.content .phase {
+    padding: 15px;
+    background: #FFF5CC;
+    margin-left: 15px;
+    margin-top: 15px;
+    border-radius: 3px;
+    width: 48.2%;
   }
 
   .tab-content {
@@ -61,5 +108,10 @@
   .coming-soon .text p {
     font-size: 20px;
     color: #4C4C4C;
+  }
+
+  .panel.content {
+    background: #FFFCEE;
+    border: 1px solid #EFC94C;
   }
 }
