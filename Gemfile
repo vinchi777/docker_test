@@ -14,8 +14,6 @@ gem 'jquery-turbolinks'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
 
-gem 'less-rails'
-gem 'therubyracer', platforms: :ruby
 gem 'quiet_assets'
 
 gem 'slim-rails'
