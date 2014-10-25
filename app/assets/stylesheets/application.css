@@ -11,7 +11,7 @@
  * file per style scope.
  *
  *= require custom_bootstrap
- *= require fontawesome/font-awesome
+ *= require font-awesome
  *= require_directory .
  *= require_self
  */
