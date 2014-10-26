@@ -2,18 +2,22 @@
   margin-top: 30px;
   margin-bottom: 30px;
 }
+#program > header {
+  text-align: center;
+}
 #program > header p {
   font-family: 'Signika Light';
-  font-size: 16px;
+  font-size: 21px;
   margin-bottom: 0px;
 }
 #program > header h1 {
   font-family: 'Signika Semibold';
-  font-size: 24px;
+  font-size: 48px;
   margin-top: 0px;
 }
 #program .courses-tab {
   margin: 0 auto;
+  width: 790px;
 }
 #program ul.nav.courses > li > a {
   font-family: 'Signika Semibold';
@@ -29,6 +33,7 @@
 }
 #program ul.nav.courses > li > a div {
   margin-top: 2px;
+  height: 20px;
 }
 #program ul.nav.courses > li > a img {
   height: 32px;
