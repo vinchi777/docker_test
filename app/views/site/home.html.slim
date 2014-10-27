@@ -10,4 +10,94 @@
         span
           | Your success is our life’s commitment and passion.
         a.btn.btn-black.btn-lg href='' Make it happen
+  .reviewers
+    .container
+      h3 Learn from high caliber national reviewers.
+      p
+        | Our reviewers consists of experienced professors and former BONs who are excellently rated and seasoned in
+          their own field, topics and lectures, who emanate from the best nursing schools nationwide.
+      .coverflow-wrapper
+        .coverflow
+          - Dir.glob("#{Rails.root.join('app', 'assets', 'images', 'coverflow')}/*.jpg").each do |f|
+            = image_tag "coverflow/#{f.split('/').last}"
+      a.more href=reviewers_path
+        i.fa.fa-chevron-circle-right
+        | Find out the rest of the crew.
+  .services
+    .row
+      .col-md-4.service style="background-image: url(#{asset_path 'assets/coverflow'}/thewall.jpg)"
+        p Air-conditioned Lecture Rooms
+      .col-md-4.service style="background-image: url(#{asset_path 'assets/coverflow'}/bluesalley.jpg)"
+        p Test Bank
+      .col-md-4.service style="background-image: url(#{asset_path 'assets/coverflow'}/icecream.jpg)"
+        p In-house Affordable Catering
+    .container
+      h3 We make sure you get the best there is.
+      p We provide facilities and services that will enable you learn in an effecient and comfortable style.
+    .row
+      .col-md-4.service style="background-image: url(#{asset_path 'assets/coverflow'}/jazzgiant.jpg)"
+        p Scantron Sheet
+      .col-md-4.service style="background-image: url(#{asset_path 'assets/coverflow'}/milestones.jpg)"
+        p Scantron Machine
+      .col-md-4.service style="background-image: url(#{asset_path 'assets/coverflow'}/studyinbrown.jpg)"
+        p Mini Library with Wifi
+  .price-affordable
+    .container
+      .row
+        .col-md-8.description
+          h3 Get more than what you pay for.
+          p
+            | It is unimaginable how our affordable review fee could give so much in return. Added with a bundle of
+              promos and lots of freebies, we can say that we could make the best out of every peso you pay.
+          a.more href=pricing_path
+            i.fa.fa-chevron-circle-right
+            | Learn more about our price plans and packages.
+        .col-md-4
+          = image_tag 'student.png'
+  .trackrecord
+    .container
+      .row
+        .col-md-5
+          = image_tag 'statistics.svg'
+        .col-md-7.description
+          h3 We just don't talk. We deliver.
+          p
+            | As a former famous review center member among the 26 branches nationwide, we always belong to Top 3
+              Performing Branches w/ the highest passing rate. We were awarded as the best managed branch and assigned
+              as the main branch in Visayas.
+          a.more href=pricing_path
+            | Our track record says it all.
+            i.fa.fa-chevron-circle-right
+  .testimonials
+    .container
+      h3 What people say about us.
+      .row
+        .col-md-6.testimony
+          = image_tag 'testmonials/1.png'
+          b Jules Salazar
+          p.title President of the Philippine Doctors Association
+          p.quote
+            | I have only seen a handful of institutions who really care about their students. MaxRevOne is one of those few.
+        .col-md-6.testimony
+          = image_tag 'testmonials/2.png'
+          b Jovie Bonne
+          p.title Top 1 NLE 2014
+          p.quote
+            | Enrolling at MaxRevOne is like cheating all because it makes the board exam look like nothing.
+        .col-md-6.testimony
+          = image_tag 'testmonials/3.png'
+          b Juan Makatawtaw
+          p.title Head Scientist at Geneva Labs International
+          p.quote
+            | My wonderful experience made me want to enrol again. I wasn't given another chance because I passed the
+              board. Thank you MaxRevOne!
+        .col-md-6.testimony
+          = image_tag 'testmonials/4.png'
+          b Ameliza Kingston
+          p.title Pediatrician
+          p.quote
+            | It was MaxRevOne who paved the way to where I am today. With that, I am truly grateful. Kudos!
+
+
+
 
