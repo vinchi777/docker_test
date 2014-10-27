@@ -3,18 +3,29 @@ class StudentsController < AdminController
 
   def index
     # @students = Student.all
-    @students = [{
-                     firstName: 'Maria Divina',
-                     middleInitial: 'D.',
-                     lastName: 'Acala',
-                     school: 'St. Scholasticas College',
-                     address: 'District 4, Burauen, Leyte',
-                     status: {
-                         name: 'Enrolled',
-                         season: 'April 2014'
-                     },
-                     balance: 13000
-                 }]
+    @students = [
+        {
+            firstName: 'Maria Divina',
+            middleInitial: 'D.',
+            lastName: 'Acala',
+            school: 'St. Scholasticas College',
+            address: 'District 4, Burauen, Leyte',
+            status: {
+                name: 'Enrolled',
+                season: 'April 2014'
+            },
+            balance: 13000
+        }, {
+             firstName: 'Mariz',
+             middleInitial: 'T.',
+             lastName: 'Advincula',
+             school: 'Remedios Trinidad Romualdez Medical School',
+             address: 'Brgy. Casuntingan, McArthur, Leyte',
+             status: {
+                 name: 'Enrolling',
+                 season: 'April 2014'
+             }
+        }]
   end
 
   def show
