@@ -13,3 +13,37 @@
   padding: 3px;
   height: 28px;
 }
+.navbar {
+  border-bottom-width: 2px;
+}
+.navbar.for-home {
+  background-color: transparent;
+  border-bottom-color: transparent;
+}
+.navbar.for-home .navbar-nav > li > a {
+  color: white;
+}
+.navbar.for-home .divider-vertical {
+  border-right-color: white;
+  border-left-color: white;
+}
+.navbar.for-home .navbar-brand {
+  display: none;
+}
+.navbar-brand {
+  font-family: 'Signika Semibold';
+  padding-top: 10px;
+}
+.navbar-nav > li > a {
+  font-family: 'Signika Semibold';
+}
+.navbar .divider-vertical {
+  height: 30px;
+  margin: 17.5px 9px;
+  border-right: 1px solid #737373;
+}
+@media (max-width: 767px) {
+  .navbar-collapse .nav > .divider-vertical {
+    display: none;
+  }
+}
