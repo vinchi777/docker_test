@@ -1,16 +1,6 @@
 # Place all the behaviors and hooks related to the matching controller here.
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
-
-
-anchor = $('.reviewers').offset().top - 30
-$(document).scroll ->
-  if $('#home').length
-    if $(this).scrollTop() > anchor
-      $('.header').removeClass('for-home')
-    else
-      $('.header').addClass('for-home')
-
 $ ->
   map = new GMaps({
     div: '#map'
@@ -26,4 +16,12 @@ $ ->
   })
 
   $('.coverflow').coverflow({active: 4})
+
+  anchor = $('.reviewers').offset().top - 30
+  $(document).scroll ->
+    if $('#home').length
+      if $(this).scrollTop() > anchor
+        $('.header').removeClass('for-home')
+      else
+        $('.header').addClass('for-home')
 
