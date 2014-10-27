@@ -13,6 +13,9 @@
   padding: 3px;
   height: 28px;
 }
+.panel.panel-yellow {
+  border: 1px solid #efc94c;
+}
 .navbar {
   border-bottom-width: 2px;
 }

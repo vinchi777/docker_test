@@ -1,5 +1,7 @@
 @import "bootstrap/variables";
 
+@light-yellow: #EFC94C;
+
 .panel.panel-default {
   background: #F9F9F9;
 }
@@ -19,9 +21,13 @@
   height: 28px;
 }
 
+.panel.panel-yellow {
+  border: 1px solid @light-yellow;
+}
+
 //Navbar
 @divider-height: 30px;
-@divider-color: lighten(@navbar-default-link-color,15%);
+@divider-color: lighten(@navbar-default-link-color, 15%);
 
 .navbar {
   border-bottom-width: 2px;
