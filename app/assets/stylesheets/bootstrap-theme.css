@@ -1,1 +1,11 @@
-.panel.panel-default{background:#f9f9f9}
+.panel.panel-default {
+  background: #F9F9F9;
+}
+.panel.panel-light {
+  background: #ffffff;
+  border: 1px solid #F2F2F2;
+}
+.btn.btn-primary {
+  background: #4C4C4C;
+  color: #F2F2F2;
+}
