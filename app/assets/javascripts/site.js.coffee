@@ -16,3 +16,11 @@ $ ->
   })
 
   $('.coverflow').coverflow({active: 4});
+
+  if $('#home').length
+    anchor = $('.reviewers').offset().top - 30
+    $(document).scroll ->
+      if $(this).scrollTop() > anchor
+        $('.header').removeClass('for-home')
+      else
+        $('.header').addClass('for-home')
