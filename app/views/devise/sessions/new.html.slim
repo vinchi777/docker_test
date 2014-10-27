@@ -1,0 +1,25 @@
+.login.panel.panel-yellow.center-block
+  h1 Login
+
+  = form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'form-horizontal', role: 'form'}) do |f|
+    .form-group
+      = f.label :email, class: 'control-label col-lg-3'
+      .col-lg-9
+        = f.email_field :email, autofocus: true, class: 'form-control'
+    .form-group
+      = f.label :password, class: 'control-label col-lg-3'
+      .col-lg-9
+        = f.password_field :password, autocomplete: 'off', class: 'form-control'
+
+    - if devise_mapping.rememberable?
+      .form-group
+        .col-lg-9.col-lg-offset-3
+          = f.label :remember_me, class: 'control-label'
+            = f.check_box :remember_me, class: 'remember-me'
+            | Remember me
+
+    .form-group.actions
+      .col-lg-9 = render 'devise/shared/links'
+      .col-lg-3 = f.submit 'Log in', class: 'btn btn-primary'
+
+
