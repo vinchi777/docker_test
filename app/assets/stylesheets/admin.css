@@ -1,0 +1,26 @@
+html,
+body,
+.admin,
+.admin-nav {
+  height: 100%;
+}
+.admin {
+  padding-top: 67px;
+}
+.admin-nav {
+  background: #4C4C4C;
+  padding: 0;
+}
+.admin-nav ul > li > a {
+  background: #3E3E3E;
+  border-left: 3px solid #2980B9;
+  border-radius: 0;
+  color: #B2B2B2;
+  font-family: "Signika Semibold";
+  font-size: 16px;
+  height: 40px;
+}
+.admin-nav ul > li.active > a,
+.admin-nav ul > li > a:hover {
+  background: #323232;
+}

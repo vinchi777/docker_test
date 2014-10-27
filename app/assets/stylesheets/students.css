@@ -1,0 +1,62 @@
+#students {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+#students header h1 {
+  font-size: 20px;
+  color: #4C4C4C;
+}
+#students header .search input[type='search'] {
+  width: 100%;
+  background: url('/assets/search.svg') no-repeat scroll 9px 9px;
+  background-size: 17px;
+  padding-left: 33px;
+}
+#students .students {
+  margin-top: 15px;
+}
+#students .students ul {
+  padding: 0;
+}
+#students .students .student {
+  margin-top: 10px;
+}
+#students .students .student .profile-pic {
+  width: 64px;
+}
+#students .students .student .profile-pic img {
+  width: 48px;
+}
+#students .students .student .info .name {
+  color: #45B29D;
+  font-family: "Signika Semibold";
+  font-size: 15px;
+}
+#students .students .student .info .school {
+  color: #323232;
+  font-family: 'Signika Light';
+  font-size: 14px;
+}
+#students .students .student .info .address {
+  color: #999999;
+  font-family: 'Signika Light';
+  font-size: 14px;
+}
+#students .students .student i.fa {
+  margin-right: 8px;
+}
+#students .students .student .enroll i.fa.fa-check {
+  color: #45B29D;
+}
+#students .students .student .payment i.fa.fa-money {
+  color: #DF5A49;
+}
+#students .students .student .actions {
+  color: #E5E5E5;
+  text-align: right;
+}
+#students .students .student .enroll,
+#students .students .student .payment,
+#students .students .student .actions {
+  line-height: 58px;
+}

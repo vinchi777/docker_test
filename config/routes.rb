@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :students
+
   get 'home' => 'site#home'
   get 'about' => 'site#about'
   get 'founders' => 'site#founders'

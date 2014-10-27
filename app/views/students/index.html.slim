@@ -1,0 +1,102 @@
+#students
+  header
+    h1 Students
+
+    .row
+      .search.col-lg-8
+        form.form-inline.row
+          .form-group.col-lg-12
+            input.form-control[type="search" placeholder="Search for name, school or address of the students"]
+
+      .col-lg-2.col-lg-offset-2
+        = link_to 'New Student', new_student_path, class: 'btn btn-primary pull-right'
+
+    .filter
+
+  .panel.panel-light.students.col-lg-12
+    ul
+      - @students.each do |student|
+        .student.row
+          .profile-pic.col-lg-1
+            = image_tag 'founders/rommel.png'
+          .info.col-lg-4
+            .name = student[:lastName] + ', '+ student[:firstName] + ' ' +student[:middleInitial]
+            .school = student[:school]
+            .address = student[:address]
+          .enroll.col-lg-4
+            i.fa.fa-lg.fa-check
+            = student[:status][:name] + ' ' + student[:status][:season]
+          .payment.col-lg-2
+            i.fa.fa-lg.fa-money
+            = number_to_currency student[:balance], unit: 'Php', format: '%u %n'
+          .actions.col-lg-1
+            i.fa.fa-lg.fa-trash-o
+
+
+              /h1 Listing students
+              /
+              /table
+              /  thead
+              /    tr
+              /      th Firstname
+              /      th Middlename
+              /      th Lastname
+              /      th Birthdate
+              /      th Sex
+              /      th Address
+              /      th Contactno
+              /      th Email
+              /      th Parentfirstname
+              /      th Parentlastname
+              /      th Parentcontact
+              /      th Lastattended
+              /      th Yeargrad
+              /      th Recognition
+              /      th Hs
+              /      th Hsyear
+              /      th Elem
+              /      th Elemyear
+              /      th Referrerfirstname
+              /      th Referrerlastname
+              /      th Why
+              /      th Facebook
+              /      th Twitter
+              /      th Linkedin
+              /      th
+              /      th
+              /      th
+              /
+              /  tbody
+              /    - @students.each do |student|
+              /      tr
+              /        td = student.firstName
+              /        td = student.middleName
+              /        td = student.lastName
+              /        td = student.birthdate
+              /        td = student.sex
+              /        td = student.address
+              /        td = student.contactNo
+              /        td = student.email
+              /        td = student.parentFirstName
+              /        td = student.parentLastName
+              /        td = student.parentContact
+              /        td = student.lastAttended
+              /        td = student.yearGrad
+              /        td = student.recognition
+              /        td = student.hs
+              /        td = student.hsYear
+              /        td = student.elem
+              /        td = student.elemYear
+              /        td = student.referrerFirstName
+              /        td = student.referrerLastName
+              /        td = student.why
+              /        td = student.facebook
+              /        td = student.twitter
+              /        td = student.linkedin
+              /        td = link_to 'Show', student
+              /        td = link_to 'Edit', edit_student_path(student)
+              /        td = link_to 'Destroy', student, data: {:confirm => 'Are you sure?'}, :method => :delete
+              /
+              /br
+              /
+              /= link_to 'New Student', new_student_path
