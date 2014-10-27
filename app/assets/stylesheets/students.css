@@ -12,20 +12,32 @@
   background-size: 17px;
   padding-left: 33px;
 }
+#students .filter .form-group {
+  margin-top: 10px;
+  margin-right: 10px;
+}
+#students .filter .form-group label {
+  margin-right: 6px;
+  margin-left: 6px;
+}
 #students .students {
   margin-top: 15px;
 }
-#students .students ul {
-  padding: 0;
-}
 #students .students .student {
-  margin-top: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+#students .students .student:nth-child(odd) {
+  background: #F8F8F8;
 }
 #students .students .student .profile-pic {
   width: 64px;
 }
 #students .students .student .profile-pic img {
   width: 48px;
+}
+#students .students .student .info {
+  line-height: 17px;
 }
 #students .students .student .info .name {
   color: #45B29D;
@@ -48,6 +60,9 @@
 #students .students .student .enroll i.fa.fa-check {
   color: #45B29D;
 }
+#students .students .student .enroll i.fa.fa-clock-o {
+  color: #F2E394;
+}
 #students .students .student .payment i.fa.fa-money {
   color: #DF5A49;
 }
@@ -58,5 +73,36 @@
 #students .students .student .enroll,
 #students .students .student .payment,
 #students .students .student .actions {
-  line-height: 58px;
+  line-height: 50px;
+}
+#students div.pagination {
+  clear: both;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+#students .pagination {
+  margin: 0;
+}
+#students .pagination > li > a {
+  border: none;
+  border-radius: 100px;
+  margin-left: 5px;
+  margin-right: 5px;
+  color: #000000;
+}
+#students .pagination > li > a:hover {
+  background: #fed24e;
+}
+#students .pagination > li.active > a {
+  background: #fed24e;
+}
+#students .pagination > li > span {
+  border: none;
+}
+#students .pagination > li > span:hover {
+  background: none;
+  border: none;
 }
