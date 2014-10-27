@@ -16,4 +16,5 @@
 //= require bootstrap.min
 //= require turbolinks
 //= require map_api
+//= require coverflow
 //= require_tree .

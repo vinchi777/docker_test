@@ -14,3 +14,5 @@ $ ->
     lng: 124.998656
     title: 'Maximum Review Center One'
   })
+
+  $('.coverflow').coverflow({active: 4});
