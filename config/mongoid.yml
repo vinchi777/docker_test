@@ -69,11 +69,11 @@ test:
         retry_interval: 0
 production:
   sessions:
-  default:
-    uri: mongodb://limpiado_james@yahoo.com:Jamexerver12@linus.mongohq.com:10028/maxrevone
-    options:
-      consistency: :strong
-      max_retries: 1
-      retry_interval: 0
-      persist_in_safe_mode: true
-      skip_version_check: true
+    default:
+      uri: mongodb://limpiado_james@yahoo.com:Jamexerver12@linus.mongohq.com:10028/maxrevone
+      options:
+        consistency: :strong
+        max_retries: 1
+        retry_interval: 0
+        persist_in_safe_mode: true
+        skip_version_check: true
