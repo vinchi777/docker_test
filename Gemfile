@@ -6,7 +6,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin]
 gem 'thin'
 
 gem 'mongoid', '~> 4.0.0'
-gem 'devise'
+gem 'devise', '~> 3.4.0'
 gem 'cancan'
 
 gem 'jquery-rails'
