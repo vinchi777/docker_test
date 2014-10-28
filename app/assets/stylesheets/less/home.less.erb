@@ -1,4 +1,5 @@
 @import 'bootstrap/variables';
+//
 
 .top-bottom-padding(@padding: 50px){
   padding-top: @padding;
@@ -25,7 +26,7 @@
   }
 
   .banner {
-    background: url('<%= asset_path "home.jpg"%>') no-repeat center -600px fixed;
+    background: url(<%= asset_path 'home.jpg'%>) no-repeat center -600px fixed;
     color: #fff;
     height: 600px;
     padding-top: 60px;
