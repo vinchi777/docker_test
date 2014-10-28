@@ -75,3 +75,5 @@ production:
       consistency: :strong
       max_retries: 1
       retry_interval: 0
+      persist_in_safe_mode: true
+      skip_version_check: true
