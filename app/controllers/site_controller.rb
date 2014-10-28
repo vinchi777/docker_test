@@ -6,6 +6,7 @@ class SiteController < ApplicationController
   end
 
   def founders
+    @founders = Founder.seed
   end
 
   def reviewers
