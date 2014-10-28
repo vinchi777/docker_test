@@ -11,7 +11,7 @@
  * file per style scope.
  *
  *= require bootstrap
- *= require font-awesome
+ *= require font-awesome.css.erb
  *= require coverflow
  *= require_directory .
  *= require_self
@@ -19,10 +19,10 @@
 
 @font-face {
     font-family: 'Signika Light';
-    src: url('Signika-Light.ttf') format('truetype');
+    src: url(<%= asset_path 'Signika-Light.ttf'%>) format('truetype');
 }
 
 @font-face {
     font-family: 'Signika Semibold';
-    src: url('Signika-Semibold.ttf') format('truetype');
+    src: url(<%= asset_path 'Signika-Semibold.ttf'%>) format('truetype');
 }
