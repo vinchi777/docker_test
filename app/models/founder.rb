@@ -6,10 +6,9 @@ class Founder
 
   def initialize(name, position, background)
     @name = name
-    @position = position
+    @title = position
     @background = background.strip
     @image = "#{PATH}#{name.split(' ').last.downcase}#{EXT}"
-    puts @image
   end
 
   def self.seed

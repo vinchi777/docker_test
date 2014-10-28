@@ -10,6 +10,7 @@ class SiteController < ApplicationController
   end
 
   def reviewers
+    @reviewers = Reviewer.seed
   end
 
   def courses
