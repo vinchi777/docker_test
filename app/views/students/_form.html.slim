@@ -1,4 +1,15 @@
-= form_for @student do |f|
+= form_for @student, html: {class: 'form-horizontal', role: 'form'} do |f|
+
+  header.row
+    .profile-pic.col-lg-1
+      = image_tag 'founders/capungcol.jpg'
+    .name.col-lg-8
+      = f.text_field :firstName, placeholder: 'First name', class: 'form-control required'
+      = f.text_field :lastName, placeholder: 'Middle name', class: 'form-control required col-lg-2'
+      = f.text_field :middleName, placeholder: 'Last name', class: 'form-control required col-lg-2'
+    .actions.col-lg-3
+      = f.submit 'Save', class: 'btn btn-primary pull-right col-lg-2'
+
   - if @student.errors.any?
     #error_explanation
       h2 = "#{pluralize(@student.errors.count, "error")} prohibited this student from being saved:"
@@ -6,76 +17,85 @@
         - @student.errors.full_messages.each do |message|
           li = message
 
-  .field
-    = f.label :firstName
-    = f.text_field :firstName
-  .field
-    = f.label :middleName
-    = f.text_field :middleName
-  .field
-    = f.label :lastName
-    = f.text_field :lastName
-  .field
-    = f.label :birthdate
-    = f.date_select :birthdate
-  .field
-    = f.label :sex
-    = f.text_field :sex
-  .field
-    = f.label :address
-    = f.text_field :address
-  .field
-    = f.label :contactNo
-    = f.text_field :contactNo
-  .field
-    = f.label :email
-    = f.text_field :email
-  .field
-    = f.label :parentFirstName
-    = f.text_field :parentFirstName
-  .field
-    = f.label :parentLastName
-    = f.text_field :parentLastName
-  .field
-    = f.label :parentContact
-    = f.text_field :parentContact
-  .field
-    = f.label :lastAttended
-    = f.text_field :lastAttended
-  .field
-    = f.label :yearGrad
-    = f.text_field :yearGrad
-  .field
-    = f.label :recognition
-    = f.text_field :recognition
-  .field
-    = f.label :hs
-    = f.text_field :hs
-  .field
-    = f.label :hsYear
-    = f.text_field :hsYear
-  .field
-    = f.label :elem
-    = f.text_field :elem
-  .field
-    = f.label :elemYear
-    = f.text_field :elemYear
-  .field
-    = f.label :referrerFirstName
-    = f.text_field :referrerFirstName
-  .field
-    = f.label :referrerLastName
-    = f.text_field :referrerLastName
-  .field
-    = f.label :why
-    = f.text_area :why
-  .field
-    = f.label :facebook
-    = f.text_field :facebook
-  .field
-    = f.label :twitter
-    = f.text_field :twitter
-  .field
-    = f.label :linkedin
-    = f.text_field :linkedin
-  .actions = f.submit 'Save'
+  .personal.panel
+    .panel-title
+      span Personal
+    .panel-body
+      .row
+        .col-lg-6
+          .form-group
+            = f.label :birthdate, 'Birthdate', class: 'control-label col-lg-3 '
+            .col-lg-4 = f.text_field :birthdate, class: 'form-control date-picker required', 'data-date-format'.to_sym => "MMM DD, YYYY"
+          .form-group
+            = f.label :sex, class: 'control-label col-lg-3'
+            .col-lg-3 = f.select :sex, %w{Male Female}, {}, {class: 'form-control required'}
+          .form-group
+            = f.label :address, class: 'control-label col-lg-3'
+            .col-lg-9 = f.text_field :address, class: 'form-control required'
+          .form-group
+            = f.label :contactNo, 'Contact No.', class: 'control-label col-lg-3'
+            .col-lg-9 = f.text_field :contactNo, class: 'form-control required'
+          .form-group
+            = f.label :email, 'Email', class: 'control-label col-lg-3'
+            .col-lg-9 = f.email_field :email, class: 'form-control required'
+        .col-lg-6
+          .form-group.inline
+            label.control-label.col-lg-12 Parent or Guardian
+            .col-lg-6 = f.text_field :parentFirstName, class: 'form-control', placeholder: 'First name'
+            .col-lg-6 = f.text_field :parentLastName, class: 'form-control', placeholder: 'Last name'
+          .form-group
+            = f.label 'Contact', class: 'control-label col-lg-2'
+            .col-lg-10 = f.text_field :parentContact, class: 'form-control', placeholder: "Parent's contact no."
+
+  .education.panel
+    .panel-title
+      span Education
+    .panel-body
+      .row
+        .form-group.col-lg-7
+          = f.label :lastAttended, 'School Last Attended', class: 'control-label col-lg-4'
+          .col-lg-8 = f.text_field :lastAttended, class: 'form-control required'
+        .form-group.col-lg-5
+          = f.label :yearGrad, 'Year Graduated', class: 'control-label col-lg-4'
+          .col-lg-3 = select_year Date.today, {field_name: 'student[yearGrad]', start_year: 1980, end_year: Date.today.year}, {class: 'form-control required'}
+      .row
+        .form-group.col-lg-7
+          = f.label :recognition, 'Recognitions/Awards', class: 'control-label col-lg-4'
+          .col-lg-8 = f.text_field :recognition, class: 'form-control'
+      .row
+        .form-group.col-lg-7
+          = f.label :hs, 'High School', class: 'control-label col-lg-4'
+          .col-lg-8 = f.text_field :hs, class: 'form-control required'
+        .form-group.col-lg-5
+          = f.label :hsYear, 'Year Graduated', class: 'control-label col-lg-4'
+          .col-lg-3 = select_year Date.today, {field_name: 'student[hsYear]', start_year: 1980, end_year: Date.today.year}, {class: 'form-control required'}
+      .row
+        .form-group.col-lg-7
+          = f.label 'Elementary', class: 'control-label col-lg-4'
+          .col-lg-8 = f.text_field :elem, class: 'form-control required'
+        .form-group.col-lg-5
+          = f.label :elemYear, 'Year Graduated', class: 'control-label col-lg-4'
+          .col-lg-3 = select_year Date.today, {field_name: 'student[elemYear]', start_year: 1980, end_year: Date.today.year}, {class: 'form-control required'}
+
+  .others.panel
+    .panel-title
+      span Others
+    .panel-body
+      .col-lg-6
+        .form-group.inline
+          label.control-label.col-lg-12 Referred by
+          .col-lg-6 = f.text_field :referrerFirstName, class: 'form-control', placeholder: 'First name'
+          .col-lg-6 = f.text_field :referrerLastName, class: 'form-control', placeholder: 'Last name'
+        .form-group.inline
+          = f.label :why, 'Why did you choose MaxRevOne?', class: 'control-label col-lg-12', cols: '50'
+          .col-lg-12 = f.text_area :why, class: 'form-control'
+      .col-lg-6.social
+        .form-group
+          label.col-lg-2.control-label: i.fa.fa-facebook-square
+          .col-lg-6 = f.text_field :facebook, class: 'form-control'
+        .form-group
+          label.col-lg-2.control-label: i.fa.fa-twitter-square
+          .col-lg-6 = f.text_field :twitter, class: 'form-control'
+        .form-group
+          label.col-lg-2.control-label: i.fa.fa-linkedin-square
+          .col-lg-6 = f.text_field :linkedin, class: 'form-control'

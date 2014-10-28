@@ -1,3 +1,5 @@
+@import "variables";
+
 #students {
 
   padding-left: 10px;
@@ -133,4 +135,102 @@
       border: none;
     }
   }
+}
+
+#student {
+
+  padding-top: 18px;
+
+  header {
+    margin-bottom: 10px;
+  }
+
+  header .profile-pic img {
+    height: 64px;
+  }
+
+  header .name {
+    padding-left: 0;
+  }
+
+  header .name input.form-control {
+    width: 30%;
+    float: left;
+    margin-right: 5px;
+    margin-top: 14px;
+  }
+
+  header .actions {
+    padding-top: 15px;
+  }
+
+  header .actions .btn {
+    width: 90px;
+  }
+
+  .panel {
+    margin-bottom: 10px;
+  }
+
+  .others textarea {
+    height: 75px;
+  }
+
+  .others i.fa {
+    font-size: 1.6em;
+  }
+
+  .others .social {
+    margin-top: 8px;
+  }
+
+  .others .social label {
+    padding-right: 0;
+  }
+
+  /** Bootstrap Override */
+  .form-group {
+    margin-bottom: 10px;
+  }
+
+  .form-control {
+    height: 30px;
+    padding: 2px 8px;
+  }
+
+  .form-horizontal .control-label {
+    padding-top: 2px;
+  }
+
+  .date-picker {
+    width: 100%;
+    background-image: url('/assets/calendar.svg');
+    background-repeat: no-repeat;
+    background-position: 7px 6px;
+    background-size: 17px;
+    padding-left: 33px;
+  }
+}
+
+/*****************
+/* Titled Panel */
+/****************/
+.panel {
+  border: 1px solid @lightest-gray;
+  border-radius: 3px;
+}
+
+.panel .panel-title {
+  background: #F2F2F2;
+  color: #323232;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, .3);
+  font-family: 'Signika Semibold';
+  font-size: 15px;
+  padding: 3px 12px 2px 12px;
+  border-radius: 3px;
+}
+
+.form-group.inline label {
+  text-align: left;
+  margin-bottom: 5px;
 }
