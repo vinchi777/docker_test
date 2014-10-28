@@ -18,28 +18,28 @@
           their own field, topics and lectures, who emanate from the best nursing schools nationwide.
       .coverflow-wrapper
         .coverflow
-          - Dir.glob("#{Rails.root.join('app', 'assets', 'images', 'coverflow')}/*.jpg").each do |f|
-            = image_tag "coverflow/#{f.split('/').last}"
+          - Dir.glob("#{Rails.root.join('app', 'assets', 'images', 'reviewers','full')}/*.jpg").sample(8).each do |f|
+            = image_tag "reviewers/full/#{f.split('/').last}"
       a.more href=reviewers_path
         i.fa.fa-chevron-circle-right
         | Find out the rest of the crew.
   .services
     .row
-      .col-md-4.service style="background-image: url(#{asset_path 'assets/coverflow'}/thewall.jpg)"
+      .col-md-4.service style="background-image: url(#{asset_path 'assets/services'}/room.jpg)"
         p Air-conditioned Lecture Rooms
-      .col-md-4.service style="background-image: url(#{asset_path 'assets/coverflow'}/bluesalley.jpg)"
+      .col-md-4.service style="background-image: url(#{asset_path 'assets/services'}/test.jpg)"
         p Test Bank
-      .col-md-4.service style="background-image: url(#{asset_path 'assets/coverflow'}/icecream.jpg)"
+      .col-md-4.service style="background-image: url(#{asset_path 'assets/services'}/catering.jpg)"
         p In-house Affordable Catering
     .container
       h3 We make sure you get the best there is.
       p We provide facilities and services that will enable you learn in an effecient and comfortable style.
     .row
-      .col-md-4.service style="background-image: url(#{asset_path 'assets/coverflow'}/jazzgiant.jpg)"
+      .col-md-4.service style="background-image: url(#{asset_path 'assets/services'}/sheet.jpg)"
         p Scantron Sheet
-      .col-md-4.service style="background-image: url(#{asset_path 'assets/coverflow'}/milestones.jpg)"
+      .col-md-4.service style="background-image: url(#{asset_path 'assets/services'}/machine.jpg)"
         p Scantron Machine
-      .col-md-4.service style="background-image: url(#{asset_path 'assets/coverflow'}/studyinbrown.jpg)"
+      .col-md-4.service style="background-image: url(#{asset_path 'assets/services'}/library.jpg)"
         p Mini Library with Wifi
   .price-affordable
     .container

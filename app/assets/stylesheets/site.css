@@ -3,7 +3,7 @@ b {
   font-weight: normal;
 }
 .header + * {
-  margin-top: 65px;
+  margin-top: 67px;
 }
 .footer .main {
   background-color: #333333;
