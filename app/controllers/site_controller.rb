@@ -1,5 +1,6 @@
 class SiteController < ApplicationController
   def home
+    @testimonials = Testimonial.seed
   end
 
   def about
