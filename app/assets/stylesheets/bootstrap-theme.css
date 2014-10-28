@@ -6,6 +6,7 @@
   border: 1px solid #F2F2F2;
 }
 .btn.btn-primary {
+  font-family: 'Signika Semibold';
   background: #4C4C4C;
   color: #F2F2F2;
 }
@@ -59,4 +60,8 @@
 }
 .navbar-default .navbar-toggle .icon-bar {
   background-color: #4d4d4d;
+}
+.form-control.required {
+  border: 1px solid #F2AE72;
+  background-color: #fffcea;
 }

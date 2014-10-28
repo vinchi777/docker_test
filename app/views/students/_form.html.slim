@@ -2,11 +2,11 @@
 
   header.row
     .profile-pic.col-lg-1
-      = image_tag 'founders/rommel.png'
+      = image_tag 'founders/capungcol.jpg'
     .name.col-lg-8
-      = f.text_field :firstName, placeholder: 'First name', class: 'form-control'
-      = f.text_field :lastName, placeholder: 'Middle name', class: 'form-control col-lg-2'
-      = f.text_field :middleName, placeholder: 'Last name', class: 'form-control col-lg-2'
+      = f.text_field :firstName, placeholder: 'First name', class: 'form-control required'
+      = f.text_field :lastName, placeholder: 'Middle name', class: 'form-control required col-lg-2'
+      = f.text_field :middleName, placeholder: 'Last name', class: 'form-control required col-lg-2'
     .actions.col-lg-3
       = f.submit 'Save', class: 'btn btn-primary pull-right col-lg-2'
 
@@ -24,20 +24,20 @@
       .row
         .col-lg-6
           .form-group
-            = f.label :birthdate, 'Birthdate', class: 'control-label col-lg-3'
-            .col-lg-9 = f.text_field :birthdate, class: 'form-control', id: 'birthdate'
+            = f.label :birthdate, 'Birthdate', class: 'control-label col-lg-3 '
+            .col-lg-4 = f.text_field :birthdate, class: 'form-control date-picker required', 'data-date-format'.to_sym => "MMM DD, YYYY"
           .form-group
             = f.label :sex, class: 'control-label col-lg-3'
-            .col-lg-9 = f.select :sex, %w{Male Female}, html_options: {class: 'form-control'}
+            .col-lg-3 = f.select :sex, %w{Male Female}, {}, {class: 'form-control required'}
           .form-group
             = f.label :address, class: 'control-label col-lg-3'
-            .col-lg-9 = f.text_field :address, class: 'form-control'
+            .col-lg-9 = f.text_field :address, class: 'form-control required'
           .form-group
             = f.label :contactNo, 'Contact No.', class: 'control-label col-lg-3'
-            .col-lg-9 = f.text_field :contactNo, class: 'form-control'
+            .col-lg-9 = f.text_field :contactNo, class: 'form-control required'
           .form-group
             = f.label :email, 'Email', class: 'control-label col-lg-3'
-            .col-lg-9 = f.email_field :email, class: 'form-control'
+            .col-lg-9 = f.email_field :email, class: 'form-control required'
         .col-lg-6
           .form-group.inline
             label.control-label.col-lg-12 Parent or Guardian
@@ -54,10 +54,10 @@
       .row
         .form-group.col-lg-7
           = f.label :lastAttended, 'School Last Attended', class: 'control-label col-lg-4'
-          .col-lg-8 = f.text_field :lastAttended, class: 'form-control'
+          .col-lg-8 = f.text_field :lastAttended, class: 'form-control required'
         .form-group.col-lg-5
           = f.label :yearGrad, 'Year Graduated', class: 'control-label col-lg-4'
-          .col-lg-5 = f.text_field :yearGrad, class: 'form-control'
+          .col-lg-3 = select_year Date.today, {field_name: 'student[yearGrad]', start_year: 1980, end_year: Date.today.year}, {class: 'form-control required'}
       .row
         .form-group.col-lg-7
           = f.label :recognition, 'Recognitions/Awards', class: 'control-label col-lg-4'
@@ -65,17 +65,17 @@
       .row
         .form-group.col-lg-7
           = f.label :hs, 'High School', class: 'control-label col-lg-4'
-          .col-lg-8 = f.text_field :hs, class: 'form-control'
+          .col-lg-8 = f.text_field :hs, class: 'form-control required'
         .form-group.col-lg-5
           = f.label :hsYear, 'Year Graduated', class: 'control-label col-lg-4'
-          .col-lg-5 = f.text_field :hsYear, class: 'form-control'
+          .col-lg-3 = select_year Date.today, {field_name: 'student[hsYear]', start_year: 1980, end_year: Date.today.year}, {class: 'form-control required'}
       .row
         .form-group.col-lg-7
           = f.label 'Elementary', class: 'control-label col-lg-4'
-          .col-lg-8 = f.text_field :elem, class: 'form-control'
+          .col-lg-8 = f.text_field :elem, class: 'form-control required'
         .form-group.col-lg-5
           = f.label :elemYear, 'Year Graduated', class: 'control-label col-lg-4'
-          .col-lg-5 = f.text_field :elemYear, class: 'form-control'
+          .col-lg-3 = select_year Date.today, {field_name: 'student[elemYear]', start_year: 1980, end_year: Date.today.year}, {class: 'form-control required'}
 
   .others.panel
     .panel-title

@@ -5,6 +5,9 @@ $(window).load ->
   $('.coverflow').coverflow({active: 4})
 
 $ ->
+  $('.date-picker').datetimepicker
+    pickTime: false
+
   map = new GMaps({
     div: '#map'
     lat: 11.24450

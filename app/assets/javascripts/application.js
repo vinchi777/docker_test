@@ -15,4 +15,6 @@
 //= require bootstrap.min
 //= require map_api
 //= require coverflow
+//= require moment
+//= require bootstrap-datetimepicker
 //= require_tree .
