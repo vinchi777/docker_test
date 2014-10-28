@@ -1,6 +1,9 @@
 # Place all the behaviors and hooks related to the matching controller here.
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
+$(window).load ->
+  $('.coverflow').coverflow({active: 4})
+
 $ ->
   map = new GMaps({
     div: '#map'
@@ -15,11 +18,10 @@ $ ->
     title: 'Maximum Review Center One'
   })
 
-  $('.coverflow').coverflow({active: 4})
-
-  anchor = $('.reviewers').offset().top - 30
-  $(document).scroll ->
-    if $('#home').length
+  # Change navbar bg color dynamically in home
+  if $('#home').length
+    anchor = $('.reviewers').offset().top - 30
+    $(document).scroll ->
       if $(this).scrollTop() > anchor
         $('.header').removeClass('for-home')
       else

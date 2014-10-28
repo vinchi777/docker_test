@@ -6,7 +6,7 @@ b {
   font-weight: normal;
 }
 .header + * {
-  margin-top: 65px;
+  margin-top: 67px;
 }
 .footer .main {
   background-color: #333333;
@@ -40,7 +40,7 @@ b {
   height: 330px;
   width: 100%;
 }
-.btn,
+button,
 a {
   -webkit-transition: background-color 300ms ease, border-color 300ms ease;
   -moz-transition: background-color 300ms ease, border-color 300ms ease;

@@ -5,19 +5,8 @@
     h1 Reviewers
     h4 Our driving force and frontlines.
   .list.row
-    .col-md-6
-      = image_tag 'founders/rommel.png'
-      h5 Prof. Eufemia F. Octaviano
-      p.type Former Chairman of the Board of Nursing
-    .col-md-6
-      = image_tag 'founders/rommel.png'
-      h5 Rommel D. Capungcol
-      p.type Primary Owner
-    .col-md-6
-      = image_tag 'founders/rommel.png'
-      h5 Rommel D. Capungcol
-      p.type Primary Owner
-    .col-md-6
-      = image_tag 'founders/rommel.png'
-      h5 Rommel D. Capungcol
-      p.type Primary Owner
+    - @reviewers.each do |reviewer|
+      .col-lg-3.col-md-4.col-sm-6
+        = image_tag reviewer.image
+        h5= reviewer.name
+        p.type = reviewer.title

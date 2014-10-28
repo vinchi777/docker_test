@@ -50,3 +50,13 @@
     display: none;
   }
 }
+.navbar-default .navbar-toggle {
+  border-color: #ecc02e;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background-color: #ecc02e;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #4d4d4d;
+}
