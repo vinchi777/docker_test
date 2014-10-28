@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.1.1'
-gem 'turbolinks'
+# gem 'turbolinks'
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 gem 'thin'
 

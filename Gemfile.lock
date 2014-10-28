@@ -239,6 +239,5 @@ DEPENDENCIES
   simplecov
   slim-rails
   thin
-  turbolinks
   tzinfo-data
   uglifier (>= 1.3.0)

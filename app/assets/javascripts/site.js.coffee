@@ -17,9 +17,9 @@ $ ->
 
   $('.coverflow').coverflow({active: 4})
 
-  anchor = $('.reviewers').offset().top - 30
-  $(document).scroll ->
-    if $('#home').length
+  if $('#home').length
+    anchor = $('.reviewers').offset().top - 30
+    $(document).scroll ->
       if $(this).scrollTop() > anchor
         $('.header').removeClass('for-home')
       else
