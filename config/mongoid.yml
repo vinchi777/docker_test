@@ -70,7 +70,7 @@ test:
 production:
   sessions:
   default:
-    uri: <%= ENV['MONGOHQ_URL'] %>
+    uri: mongodb://limpiado_james@yahoo.com:Jamexerver12@linus.mongohq.com:10028/maxrevone
     options:
       consistency: :strong
       max_retries: 1
