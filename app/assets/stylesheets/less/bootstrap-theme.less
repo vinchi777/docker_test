@@ -12,6 +12,7 @@
 }
 
 .btn.btn-primary {
+  font-family: 'Signika Semibold';
   background: #4C4C4C;
   color: #F2F2F2;
 }
@@ -56,10 +57,8 @@
   padding-top: 10px;
 }
 
-.navbar-nav {
-  > li > a {
+.navbar-nav li > a, .navbar-nav li > a span {
     font-family: 'Signika Semibold'
-  }
 }
 
 .navbar .divider-vertical {
@@ -85,4 +84,9 @@
   .icon-bar {
     background-color: @navbar-default-color;
   }
+}
+
+.form-control.required {
+  border: 1px solid #F2AE72;
+  background-color: rgb(255, 252, 234);
 }
