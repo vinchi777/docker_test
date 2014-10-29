@@ -19,5 +19,7 @@ body
         li.active: a[href=students_path] Students
         li: a[href='#'] Review Seasons
 
-    .col-lg-10
+    .col-lg-10.admin-content
       == yield
+
+  == render 'layouts/admin_footer'
