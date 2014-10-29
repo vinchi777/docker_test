@@ -6,6 +6,10 @@ b {
   font-weight: normal;
 }
 
+h2 {
+  margin: 0;
+}
+
 .header + * {
   margin-top: @navbar-height + 2px;
 }
@@ -49,7 +53,7 @@ b {
   }
 }
 
-button, a  {
+button, a {
   @in: 300ms;
   -webkit-transition: background-color @in ease, border-color @in ease;
   -moz-transition: background-color @in ease, border-color @in ease;
@@ -65,4 +69,15 @@ button, a  {
 .btn-black:hover {
   background-color: darken(@gray-dark, 5%);
   color: #fff;
+}
+
+.error.panel {
+  background: #D96459;
+  color: #ffffff;
+  padding: 10px 10px 0px 10px;
+}
+
+.error.panel h2 {
+  font-size: 15px;
+  margin-bottom: 5px;
 }

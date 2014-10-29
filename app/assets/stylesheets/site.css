@@ -5,6 +5,9 @@ b {
   font-family: 'Signika Semibold';
   font-weight: normal;
 }
+h2 {
+  margin: 0;
+}
 .header + * {
   margin-top: 67px;
 }
@@ -54,4 +57,13 @@ a {
 .btn-black:hover {
   background-color: #262626;
   color: #fff;
+}
+.error.panel {
+  background: #D96459;
+  color: #ffffff;
+  padding: 10px 10px 0px 10px;
+}
+.error.panel h2 {
+  font-size: 15px;
+  margin-bottom: 5px;
 }

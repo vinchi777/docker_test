@@ -28,16 +28,18 @@
   .panel.panel-light.students.col-lg-12
     - @students.each do |student|
       .student.row
-        .profile-pic.col-lg-1
-          = image_tag 'founders/capungcol.jpg'
-        .info.col-lg-4
-          .name = student[:lastName] + ', '+ student[:firstName] + ' ' +student[:middleInitial]
-          .school = student[:school]
-          .address = student[:address]
+        .col-lg-1.profile-pic
+          = link_to edit_student_path(student)
+            = image_tag 'founders/capungcol.jpg'
+        .col-lg-4.info
+          = link_to edit_student_path(student)
+            .name = student.lastName + ', '+ student.firstName + ' ' + student.middleName
+            .school = student.lastAttended
+            .address = student.address
         .enroll.col-lg-4
           = enrollment_status student
         .payment.col-lg-2
-          = payment_status(student)
+          = payment_status student
         .actions.col-lg-1
           i.fa.fa-lg.fa-trash-o
 

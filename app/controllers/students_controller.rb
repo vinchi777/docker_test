@@ -2,34 +2,13 @@ class StudentsController < AdminController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
 
   def index
-    # @students = Student.all
-    @students = [
-        {
-            firstName: 'Maria Divina',
-            middleInitial: 'D.',
-            lastName: 'Acala',
-            school: 'St. Scholasticas College',
-            address: 'District 4, Burauen, Leyte',
-            status: {
-                name: 'Enrolled',
-                season: 'April 2014'
-            },
-            balance: 13000
-        }, {
-             firstName: 'Mariz',
-             middleInitial: 'T.',
-             lastName: 'Advincula',
-             school: 'Remedios Trinidad Romualdez Medical School',
-             address: 'Brgy. Casuntingan, McArthur, Leyte',
-             status: {
-                 name: 'Enrolling',
-                 season: 'April 2014'
-             }
-        }]
+    @students = Student.all
   end
 
   def show
-    respond_with(@student)
+    respond_to do |format|
+      format.html { render :edit }
+    end
   end
 
   def new
@@ -41,13 +20,23 @@ class StudentsController < AdminController
 
   def create
     @student = Student.new(student_params)
-    @student.save
-    respond_with(@student)
+    respond_to do |format|
+      if @student.save
+        format.html { redirect_to students_path }
+      else
+        format.html { render :new }
+      end
+    end
   end
 
   def update
-    @student.update(student_params)
-    respond_with(@student)
+    respond_to do |format|
+      if @student.update(student_params)
+        format.html { redirect_to students_path }
+      else
+        format.html { render :edit }
+      end
+    end
   end
 
   def destroy
