@@ -16,7 +16,24 @@ body
   .admin
     .col-lg-2.admin-nav
       ul.nav.nav-pills.nav-stacked
-        li.active: a[href=students_path] Students
+        li.active
+          a[href=students_path] Students
+          - unless @student.nil?
+            ul.student.nav.nav-pills.nav-stacked
+              li.student
+                .pic = image_tag 'profile-placeholder.png'
+                .name
+                  div = @student.lastName
+                  div = @student.firstName
+              li.profile.active
+                a[href="#"]
+                  .ico = image_tag 'profile-ico.svg'
+                  .title Profile
+              li.payment
+                a[href="#"]
+                  .ico = image_tag 'payment-ico.svg'
+                  .title Payment
+
         li: a[href='#'] Review Seasons
 
     .col-lg-10.admin-content

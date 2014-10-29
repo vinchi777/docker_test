@@ -1,21 +1,78 @@
 .admin-nav {
   background: #4C4C4C;
   padding: 0;
-}
 
-.admin-nav ul > li > a {
-  background: #3E3E3E;
-  border-left: 3px solid #2980B9;
-  border-radius: 0;
-  color: #B2B2B2;
-  font-family: "Signika Semibold";
-  font-size: 16px;
-  height: 40px;
-}
+  > ul > li > a {
+    background: #3E3E3E;
+    border-left: 3px solid #2980B9;
+    border-radius: 0;
+    color: #B2B2B2;
+    font-family: "Signika Semibold";
+    font-size: 16px;
+    height: 40px;
+  }
 
-.admin-nav ul > li.active > a,
-.admin-nav ul > li > a:hover {
-  background: #323232;
+  > ul > li.active > a,
+  > ul > li > a:hover {
+    background: #323232;
+  }
+
+  ul.student {
+    color: #CCC;
+    font-family: 'Signika Semibold';
+
+    a {
+      color: #CCC;
+    }
+
+    li,
+    li a:hover,
+    li a:focus,
+    li.active a,
+    li.active > a:hover,
+    li.active > a:focus {
+      background: #585858;
+    }
+
+    li.active {
+      border-right: 3px solid #DF5A49;
+      width: 228px;
+    }
+
+    li.student {
+      padding: 9px 10px;
+      box-shadow: 0 2px 1px rgba(0, 0, 0, 0.2) inset;
+    }
+
+    li.student img {
+      height: 48px;
+    }
+
+    li.student .pic {
+      width: 60px;
+      float: left;
+    }
+
+    li.profile,
+    li.payment {
+      font-size: 16px;
+    }
+
+    li.profile img,
+    li.payment img {
+      width: 24px;
+    }
+
+    li.profile .ico,
+    li.payment .ico {
+      width: 35px;
+      float: left;
+    }
+    li.profile .title,
+    li.payment .title {
+      padding-top: 2px;
+    }
+  }
 }
 
 footer.admin {
