@@ -30,6 +30,12 @@
   padding-top: 10px;
   padding-bottom: 10px;
 }
+#students .students .student:hover {
+  background: #E5E5E5 !important;
+}
+#students .students .student:hover .actions {
+  color: #919191;
+}
 #students .students .student:nth-child(odd) {
   background: #F8F8F8;
 }
