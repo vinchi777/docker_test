@@ -15,9 +15,11 @@ body
 
   .admin
     .col-lg-2.admin-nav
-      ul.nav.nav-pills.nav-stacked
-        li.active
-          a[href=students_path] Students
+      ul.admin-nav.nav.nav-pills.nav-stacked
+        li.students class=('active' if current_page? controller: 'students')
+          = link_to students_path
+            .ico = image_tag 'students-ico.svg'
+            .name Students
           - unless @student.nil?
             ul.student.nav.nav-pills.nav-stacked
               li.student
@@ -34,8 +36,10 @@ body
                   .ico = image_tag 'payment-ico.svg'
                   .title Payment
 
-        li = link_to review_seasons_path
-          | Review Seasons
+        li.review-seasons class=('active' if current_page? controller: 'review_seasons')
+          = link_to review_seasons_path
+            .ico = image_tag 'review-season-ico.svg'
+            .name Review Seasons
 
     .col-lg-10.admin-content
       == yield

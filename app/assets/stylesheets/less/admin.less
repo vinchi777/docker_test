@@ -2,7 +2,7 @@
   background: #4C4C4C;
   padding: 0;
 
-  > ul > li > a {
+  ul.admin-nav > li > a {
     background: #3E3E3E;
     border-left: 3px solid #2980B9;
     border-radius: 0;
@@ -12,10 +12,16 @@
     height: 40px;
   }
 
-  > ul > li.active > a,
-  > ul > li.active > a:hover,
-  > ul > li > a:hover {
+  ul.admin-nav > li.active > a,
+  ul.admin-nav > li.active > a:hover,
+  ul.admin-nav > li > a:hover {
     background: #323232;
+  }
+
+  ul.admin-nav > li > a .ico {
+    width: 22px;
+    float: left;
+    margin-right: 10px;
   }
 
   ul.student {
@@ -41,7 +47,6 @@
 
     li.active {
       border-right: 3px solid #DF5A49;
-      width: 228px;
     }
 
     li.student {
@@ -84,7 +89,11 @@
       padding-top: 1px;
     }
   }
+  li.review-seasons a {
+    padding-top: 8px;
+  }
 }
+
 
 .admin-content {
   padding: 30px;
