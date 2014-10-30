@@ -2,7 +2,22 @@ class StudentsController < AdminController
   before_action :set_student, only: [:show, :edit, :update, :destroy, :payment]
 
   def index
-    @students = Student.all
+    q = params[:q]
+
+    if q.nil?
+      @students = Student.all
+    else
+      search(q)
+    end
+  end
+
+  def search(q)
+    a = Student.where(lastName: /#{q}/i).to_set
+    b = Student.where(firstName: /#{q}/i).to_set
+    c = Student.where(lastAttended: /#{q}/i).to_set
+    d = Student.where(address: /#{q}/i).to_set
+    res = a | b | c | d
+    @students = res.nil? ? [] : res
   end
 
   def show

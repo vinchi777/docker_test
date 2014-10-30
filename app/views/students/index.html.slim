@@ -4,28 +4,34 @@
 
     .row
       .search.col-lg-8
-        form.form-inline.row
+        form.form-inline.row action= students_path
           .form-group.col-lg-12
-            input.form-control[type="search" placeholder="Search for name, school or address of the students"]
+            input.form-control type="search" placeholder="Search for name, school or address of the students" name='q' value=params[:q]
 
       .col-lg-2.col-lg-offset-2
         = link_to 'New Student', new_student_path, class: 'btn btn-primary pull-right'
 
-    .filter
-      form.form-inline
-        .form-group
-          label Season
-          select.form-control.mini
-            option Apr. 2014
-            option Nov. 2013
-        .form-group
-          label Type
-          select.form-control.mini
-            option All
-            option Enrollees
-            option Students
+    /.filter
+    /  form.form-inline action=students_path
+    /    .form-group
+    /      label Season
+    /      select.form-control.mini name='season'
+    /        option Apr. 2014
+    /        option Nov. 2013
+    /    .form-group
+    /      label Type
+    /      select.form-control.mini name='type'
+    /        option All
+    /        option Enrollees
+    /        option Students
+    /    .form-group
+    /      input.btn.btn-default.filter type='submit' value='Filter'
 
   .panel.panel-light.students.col-lg-12
+    - if @students.empty?
+      .no-result
+        i.fa.fa-exclamation-circle
+        div No result found
     - @students.each do |student|
       .student.row
         .col-lg-1.profile-pic
