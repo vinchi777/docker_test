@@ -1,1 +1,107 @@
-#pricing{text-align:center}#pricing .banner{padding:40px 0}#pricing .banner h1,#pricing .banner h4{margin:0}#pricing .banner h4{font-family:'Signika Light'}#pricing h3{font-family:'Signika Light';margin-bottom:30px}#pricing hr{border-top:solid 1px #eaeaea}#pricing .packages{padding-bottom:15px}#pricing .packages .content{border-top:solid 3px #efc94c;background-color:#f4f4f4}#pricing .packages .content .package{border:solid 1px #ccc;border-top:0;padding:10px 0 30px 0}#pricing .packages .content .package:nth-of-type(even){border-left:none;border-right:0}#pricing .packages .content .package .price{color:#4d4d4d;padding:10px 0}#pricing .packages .content .package .price .currency{font-size:21px;vertical-align:top}#pricing .packages .content .package .hours span,#pricing .packages .content .package .down span{color:#808080}#pricing .packages .content .package .description{padding-top:20px}#pricing .packages .content .package hr{border-top:solid 1px #ddd;margin:25px auto;width:80%}#pricing .packages .content .package hr.transparent{border-top-color:transparent}#pricing .packages .content .package .promos .row>:nth-child(even){color:#808080}#pricing .packages .content .package .btn{font-size:18px;margin-top:40px;width:65%}#pricing .packages .info{padding-top:15px;color:#999}#pricing .plans{padding-bottom:25px}#pricing .plans .row{padding:10px;text-align:left}#pricing .plans .row img{margin-right:15px}#pricing .moneyback{padding-bottom:25px}#pricing .moneyback .requirements{font-size:18px}#pricing .moneyback .requirements span{padding:0 20px 0 5px}#pricing .moneyback p{text-align:left}#pricing .scholarships{padding-bottom:40px}#pricing .scholarships h3{margin-bottom:10px}#pricing .scholarships>h5{color:#666;font-family:'Signika Light';margin-bottom:30px}#pricing .scholarships span{display:block}
+#pricing {
+  text-align: center;
+}
+#pricing .banner {
+  padding: 40px 0px;
+}
+#pricing .banner h1,
+#pricing .banner h4 {
+  margin: 0px;
+}
+#pricing .banner h4 {
+  font-family: 'Signika Light';
+}
+#pricing h3 {
+  font-family: 'Signika Light';
+  margin-bottom: 30px;
+}
+#pricing hr {
+  border-top: solid 1px #eaeaea;
+}
+#pricing .packages {
+  padding-bottom: 15px;
+}
+#pricing .packages .content {
+  border-top: solid 3px #EFC94C;
+  background-color: #f4f4f4;
+}
+#pricing .packages .content .package {
+  border: solid 1px #CCCCCC;
+  border-top: none;
+  padding: 10px 0px 30px 0px;
+}
+#pricing .packages .content .package:nth-of-type(even) {
+  border-left: none;
+  border-right: none;
+}
+#pricing .packages .content .package .price {
+  color: #4D4D4D;
+  padding: 10px 0px;
+}
+#pricing .packages .content .package .price .currency {
+  font-size: 21px;
+  vertical-align: top;
+}
+#pricing .packages .content .package .hours span,
+#pricing .packages .content .package .down span {
+  color: #808080;
+}
+#pricing .packages .content .package .description {
+  padding-top: 20px;
+}
+#pricing .packages .content .package hr {
+  border-top: solid 1px #dddddd;
+  margin: 25px auto;
+  width: 80%;
+}
+#pricing .packages .content .package hr.transparent {
+  border-top-color: transparent;
+}
+#pricing .packages .content .package .promos .row > :nth-child(even) {
+  color: #808080;
+}
+#pricing .packages .content .package .btn {
+  font-size: 18px;
+  margin-top: 40px;
+  width: 65%;
+}
+#pricing .packages .info {
+  padding-top: 15px;
+  color: #999999;
+}
+#pricing .plans {
+  padding-bottom: 25px;
+}
+#pricing .plans .row {
+  padding: 10px;
+  text-align: left;
+}
+#pricing .plans .row img {
+  margin-right: 15px;
+}
+#pricing .moneyback {
+  padding-bottom: 25px;
+}
+#pricing .moneyback .requirements {
+  font-size: 18px;
+}
+#pricing .moneyback .requirements span {
+  padding: 0px 20px 0px 5px;
+}
+#pricing .moneyback p {
+  text-align: left;
+}
+#pricing .scholarships {
+  padding-bottom: 40px;
+}
+#pricing .scholarships h3 {
+  margin-bottom: 10px;
+}
+#pricing .scholarships > h5 {
+  color: #666666;
+  font-family: 'Signika Light';
+  margin-bottom: 30px;
+}
+#pricing .scholarships span {
+  display: block;
+}

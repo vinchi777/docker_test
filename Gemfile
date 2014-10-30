@@ -36,6 +36,7 @@ group :test do
   gem 'simplecov', :require => false
 end
 
+gem 'rails_12factor', group: :production
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use Capistrano for deployment

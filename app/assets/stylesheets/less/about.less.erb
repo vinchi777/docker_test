@@ -1,0 +1,77 @@
+.content-space {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.bar-properties(@color, @width) {
+  background-color: @color;
+  width: @width;
+}
+
+#about {
+  .banner {
+    background: url("<%= asset_path 'about2.jpg'%>") no-repeat center -70px fixed;
+    background-size: cover;
+    height: 400px;
+    position: relative;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+
+    .container .wrap {
+      bottom: 22px;
+      color: #fff;
+      position: absolute;
+
+      h1, h4 {
+        margin: 0px;
+      }
+
+      h4 {
+        font-family: 'Signika Light';
+      }
+    }
+  }
+
+  > .container {
+    .content-space
+  }
+
+  article {
+    .content-space
+  }
+
+  .history {
+    > .row {
+      padding: 5px 0px;
+    }
+
+    .rating {
+      text-align: right;
+
+      .percent {
+        color: #555;
+        vertical-align: top;
+      }
+
+      @bar-color: #EDCA66;
+      .bar {
+        display: inline-block;
+        height: 14px;
+        margin: 5px 0px 0px 5px;
+      }
+
+      .bar1 {
+        .bar-properties(@bar-color, 55%)
+      }
+
+      .bar2 {
+        .bar-properties(darken(@bar-color, 10), 65%)
+      }
+
+      .bar3 {
+        .bar-properties(darken(@bar-color, 20), 75%)
+      }
+    }
+  }
+}
