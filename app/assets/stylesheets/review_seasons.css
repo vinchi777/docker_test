@@ -1,4 +1,41 @@
-#review-seasons {
-  margin-top: 20px;
-  margin-left: 10px;
+#review-seasons label {
+  font-family: 'Signika Light';
+  color: #4C4C4C;
+  float: left;
+  width: 120px;
+  padding: 2px;
+}
+#review-seasons label.light {
+  font-weight: normal;
+}
+#review-seasons label.to {
+  width: 26px;
+  margin-left: 6px;
+}
+#review-seasons input {
+  height: 30px;
+  width: 110px;
+}
+#review-seasons .review-seasons {
+  margin-top: 18px;
+}
+#review-seasons .review-season {
+  background: #F9F9F9;
+}
+#review-seasons .range,
+#review-seasons .discount {
+  float: left;
+  width: 100%;
+}
+#review-seasons .discount {
+  margin-top: 10px;
+}
+#review-seasons .form-group {
+  margin-bottom: 4px;
+}
+#review-seasons .range * {
+  float: left;
+}
+#review-seasons .range input {
+  width: 140px;
 }

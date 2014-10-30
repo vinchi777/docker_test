@@ -163,11 +163,6 @@
 }
 #student .date-picker {
   width: 100%;
-  background-image: url('/assets/calendar.svg');
-  background-repeat: no-repeat;
-  background-position: 7px 6px;
-  background-size: 17px;
-  padding-left: 33px;
 }
 #student-payment .invoices {
   margin-top: 19px;
