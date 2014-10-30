@@ -247,10 +247,11 @@
   width: 40%;
 }
 #student-payment .invoice .panel-footer .text {
-  width: 15%;
+  width: 30%;
+  text-align: right;
 }
 #student-payment .invoice .panel-footer .amount {
-  width: 45%;
+  width: 30%;
   text-align: right;
   font-size: 18px;
 }

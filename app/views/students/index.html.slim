@@ -29,10 +29,10 @@
     - @students.each do |student|
       .student.row
         .col-lg-1.profile-pic
-          = link_to edit_student_path(student)
+          = link_to student
             = image_tag 'founders/capungcol.jpg'
         .col-lg-4.info
-          = link_to edit_student_path(student)
+          = link_to student
             .name = student.lastName + ', '+ student.firstName + ' ' + student.middleName
             .school = student.lastAttended
             .address = student.address

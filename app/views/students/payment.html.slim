@@ -1,5 +1,9 @@
 #student-payment
-  h2 Payments
+  .row
+    .col-lg-8
+      h2 Payments
+    .col-lg-4
+      .btn.btn-primary.pull-right Add Invoice
 
   .invoices
     - [1, 2, 3].each do |i|
@@ -31,6 +35,11 @@
             .or 12201111
             .method Cash
             .amount 14,000.00
+          .data
+            .date March. 1, 2014
+            .or 12201134
+            .method Cash
+            .amount 2,000.00
           .add
             a[href="#"] Add Transaction
 
