@@ -1,0 +1,42 @@
+#student-payment
+  h2 Payments
+
+  .invoices
+    - [1, 2, 3].each do |i|
+      .invoice.panel.col-lg-6
+        .panel-title
+          .row
+            .package.col-lg-6
+              | Full Package
+            .balance.col-lg-6
+              .pull-right Php 8,000.00
+          .row
+            .season.col-lg-6
+              | Sept. 2014
+            .description.col-lg-6
+              .pull-right Php 16,000.00 with 50% discount
+        .panel-body
+          .head
+            .date Date
+            .or OR No.
+            .method Method
+            .amount Amount
+          .data
+            .date Jan. 26, 2014
+            .or 12344545
+            .method Cash
+            .amount 3,000.00
+          .data
+            .date Feb. 2, 2014
+            .or 12201111
+            .method Cash
+            .amount 14,000.00
+          .add
+            a[href="#"] Add Transaction
+
+        .panel-footer
+          .trash: i.fa.fa-trash
+          .text Balance
+          .amount: b Php 0.00
+
+

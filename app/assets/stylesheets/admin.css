@@ -22,6 +22,9 @@
 .admin-nav ul.student a {
   color: #CCC;
 }
+.admin-nav ul.student > li > a {
+  padding: 8px 15px;
+}
 .admin-nav ul.student li,
 .admin-nav ul.student li a:hover,
 .admin-nav ul.student li a:focus,
@@ -32,7 +35,6 @@
 }
 .admin-nav ul.student li.active {
   border-right: 3px solid #DF5A49;
-  width: 228px;
 }
 .admin-nav ul.student li.student {
   padding: 9px 10px;
@@ -48,6 +50,7 @@
 .admin-nav ul.student li.profile,
 .admin-nav ul.student li.payment {
   font-size: 16px;
+  height: 40px;
 }
 .admin-nav ul.student li.profile img,
 .admin-nav ul.student li.payment img {
@@ -60,7 +63,7 @@
 }
 .admin-nav ul.student li.profile .title,
 .admin-nav ul.student li.payment .title {
-  padding-top: 2px;
+  padding-top: 1px;
 }
 footer.admin {
   float: left;

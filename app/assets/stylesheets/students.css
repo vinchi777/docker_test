@@ -169,6 +169,91 @@
   background-size: 17px;
   padding-left: 33px;
 }
+#student-payment {
+  margin-top: 20px;
+  margin-left: 10px;
+}
+#student-payment h2 {
+  font-family: 'Signika Semibold';
+  font-size: 20px;
+  color: #4C4C4C;
+}
+#student-payment .invoices {
+  margin-top: 19px;
+}
+#student-payment .invoice {
+  padding-left: 0;
+  padding-right: 0;
+  margin-right: 15px;
+  width: 47%;
+  background: #F9F9F9;
+}
+#student-payment .invoice .panel-title {
+  padding: 9px 15px;
+}
+#student-payment .invoice .panel-title .season,
+#student-payment .invoice .panel-title .description {
+  font-family: 'Signika Light';
+}
+#student-payment .invoice .panel-body * {
+  float: left;
+}
+#student-payment .invoice .panel-body .head {
+  font-size: 15px;
+  color: #7F7F7F;
+  width: 100%;
+}
+#student-payment .invoice .panel-body .data {
+  width: 100%;
+}
+#student-payment .invoice .panel-body .date {
+  width: 28%;
+  padding-left: 10px;
+}
+#student-payment .invoice .panel-body .or {
+  width: 30%;
+}
+#student-payment .invoice .panel-body .method {
+  width: 10%;
+}
+#student-payment .invoice .panel-body .amount {
+  width: 32%;
+  text-align: right;
+  padding-right: 10px;
+}
+#student-payment .invoice .panel-body .data:nth-child(even) {
+  background: #F2E394;
+  border-radius: 3px;
+}
+#student-payment .invoice .panel-body .add,
+#student-payment .invoice .panel-body .add * {
+  text-align: center;
+  width: 100%;
+  font-size: 14px;
+  margin-top: 3px;
+}
+#student-payment .invoice i.fa {
+  color: #E5E5E5;
+  font-size: 22px;
+}
+#student-payment .invoice .panel-footer {
+  padding: 10px 25px 0 17px;
+  height: 40px;
+}
+#student-payment .invoice .panel-footer > div {
+  float: left;
+}
+#student-payment .invoice .panel-footer .trash {
+  width: 40%;
+}
+#student-payment .invoice .panel-footer .text {
+  width: 15%;
+}
+#student-payment .invoice .panel-footer .amount {
+  width: 45%;
+  text-align: right;
+  font-size: 18px;
+}
 /*****************
 /* Titled Panel */
 /****************/

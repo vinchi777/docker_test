@@ -1,5 +1,5 @@
 class StudentsController < AdminController
-  before_action :set_student, only: [:show, :edit, :update, :destroy]
+  before_action :set_student, only: [:show, :edit, :update, :destroy, :payment]
 
   def index
     @students = Student.all
@@ -42,6 +42,10 @@ class StudentsController < AdminController
   def destroy
     @student.destroy
     respond_with(@student)
+  end
+
+  def payment
+
   end
 
   private

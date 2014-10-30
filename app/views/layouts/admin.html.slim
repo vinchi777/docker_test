@@ -26,11 +26,11 @@ body
                   div = @student.lastName
                   div = @student.firstName
               li.profile.active
-                a[href="#"]
+                = link_to @student
                   .ico = image_tag 'profile-ico.svg'
                   .title Profile
               li.payment
-                a[href="#"]
+                = link_to payment_student_path
                   .ico = image_tag 'payment-ico.svg'
                   .title Payment
 

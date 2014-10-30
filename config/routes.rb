@@ -5,7 +5,11 @@ Rails.application.routes.draw do
     get 'login', to: 'devise/sessions#new'
   end
 
-  resources :students
+  resources :students do
+    member do
+      get 'payment'
+    end
+  end
 
   get 'home' => 'site#home'
   get 'about' => 'site#about'
