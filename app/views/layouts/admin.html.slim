@@ -34,7 +34,8 @@ body
                   .ico = image_tag 'payment-ico.svg'
                   .title Payment
 
-        li: a[href='#'] Review Seasons
+        li = link_to review_seasons_path
+          | Review Seasons
 
     .col-lg-10.admin-content
       == yield

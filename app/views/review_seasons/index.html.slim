@@ -1,0 +1,44 @@
+#review-seasons
+  header.row
+    .col-lg-8
+      h2 Review Seasons
+    .col-lg-4
+      .btn.btn-primary.pull-right Add Review Season
+
+/h1 Listing review_seasons
+/
+/table
+/  thead
+/    tr
+/      th Start
+/      th End
+/      th Promostart
+/      th Promoend
+/      th Repeater
+/      th Fullreview
+/      th Doublereview
+/      th Coaching
+/      th Reservation
+/      th
+/      th
+/      th
+/
+/  tbody
+/    - @review_seasons.each do |review_season|
+/      tr
+/        td = review_season.start
+/        td = review_season.end
+/        td = review_season.promoStart
+/        td = review_season.promoEnd
+/        td = review_season.repeater
+/        td = review_season.fullReview
+/        td = review_season.doubleReview
+/        td = review_season.coaching
+/        td = review_season.reservation
+/        td = link_to 'Show', review_season
+/        td = link_to 'Edit', edit_review_season_path(review_season)
+/        td = link_to 'Destroy', review_season, data: {:confirm => 'Are you sure?'}, :method => :delete
+/
+/br
+/
+/= link_to 'New Review season', new_review_season_path

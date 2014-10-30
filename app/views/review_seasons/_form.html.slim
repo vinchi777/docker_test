@@ -1,0 +1,36 @@
+= form_for @review_season do |f|
+  - if @review_season.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@review_season.errors.count, "error")} prohibited this review_season from being saved:"
+      ul
+        - @review_season.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :start
+    = f.date_select :start
+  .field
+    = f.label :end
+    = f.date_select :end
+  .field
+    = f.label :promoStart
+    = f.date_select :promoStart
+  .field
+    = f.label :promoEnd
+    = f.date_select :promoEnd
+  .field
+    = f.label :repeater
+    = f.text_field :repeater
+  .field
+    = f.label :fullReview
+    = f.text_field :fullReview
+  .field
+    = f.label :doubleReview
+    = f.text_field :doubleReview
+  .field
+    = f.label :coaching
+    = f.text_field :coaching
+  .field
+    = f.label :reservation
+    = f.text_field :reservation
+  .actions = f.submit 'Save'
