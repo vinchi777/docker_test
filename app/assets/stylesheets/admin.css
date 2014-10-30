@@ -12,6 +12,7 @@
   height: 40px;
 }
 .admin-nav > ul > li.active > a,
+.admin-nav > ul > li.active > a:hover,
 .admin-nav > ul > li > a:hover {
   background: #323232;
 }
@@ -35,6 +36,7 @@
 }
 .admin-nav ul.student li.active {
   border-right: 3px solid #DF5A49;
+  width: 228px;
 }
 .admin-nav ul.student li.student {
   padding: 9px 10px;
@@ -51,6 +53,10 @@
 .admin-nav ul.student li.payment {
   font-size: 16px;
   height: 40px;
+}
+.admin-nav ul.student li.profile > a:hover,
+.admin-nav ul.student li.payment > a:hover {
+  color: #EEE;
 }
 .admin-nav ul.student li.profile img,
 .admin-nav ul.student li.payment img {
