@@ -1,18 +1,3 @@
-/<% if notice %>
-/    <div class="alert alert-info">
-/      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-/      <%= notice %>
-/    </div>
-/<% end %>
-/
-/
-/ <% if alert %>
-/    <div class="alert alert-warning alert-dismissable">
-/      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-/      <%= alert %>
-/    </div>
-/<% end %>
-
 - if notice
   .alert.alert-info
     button.close type="button" data-dismiss="alert" aria-hidden="true" &times;
@@ -20,5 +5,5 @@
 
 - if alert
   .alert.alert-warning.alert-dismissable
-    button.close type="button" aria-hidden="true" &times;
+    button.close type="button" data-dismiss="alert" aria-hidden="true" &times;
     = alert

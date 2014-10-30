@@ -71,7 +71,10 @@
 .admin-nav ul.student li.payment .title {
   padding-top: 1px;
 }
-header h2 {
+.admin-content {
+  padding: 30px;
+}
+.admin-content header h2 {
   font-family: 'Signika Semibold';
   font-size: 20px;
   color: #4C4C4C;

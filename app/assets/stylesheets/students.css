@@ -4,6 +4,7 @@
 #students header h2 {
   font-size: 20px;
   color: #4C4C4C;
+  margin-bottom: 12px;
 }
 #students header .search input[type='search'] {
   width: 100%;
@@ -112,7 +113,6 @@
   border: none;
 }
 #student {
-  padding-top: 18px;
   /** Bootstrap Override */
 }
 #student header {
@@ -169,10 +169,6 @@
   background-size: 17px;
   padding-left: 33px;
 }
-#student-payment {
-  margin-top: 20px;
-  margin-left: 10px;
-}
 #student-payment .invoices {
   margin-top: 19px;
 }
@@ -217,7 +213,7 @@
   padding-right: 10px;
 }
 #student-payment .invoice .panel-body .data:nth-child(even) {
-  background: #F2E394;
+  background: rgba(242, 227, 148, 0.5);
   border-radius: 3px;
 }
 #student-payment .invoice .panel-body .add,

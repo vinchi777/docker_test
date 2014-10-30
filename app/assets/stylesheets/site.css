@@ -11,6 +11,14 @@ h2 {
 .header + * {
   margin-top: 67px;
 }
+/*** Alert Box ****/
+.alert {
+  position: fixed;
+  left: 30px;
+  right: 30px;
+  bottom: 14px;
+  z-index: 100;
+}
 .footer .main {
   background-color: #333333;
   color: #E6E6E6;
@@ -58,9 +66,13 @@ a {
   background-color: #262626;
   color: #fff;
 }
-.error.panel {
+.error.panel,
+.alert-warning {
   background: #D96459;
   color: #ffffff;
+  border: none;
+}
+.error.panel {
   padding: 10px 10px 0px 10px;
 }
 .error.panel h2 {
