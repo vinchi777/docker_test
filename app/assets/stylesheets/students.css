@@ -133,14 +133,21 @@
 #student header .actions {
   padding-top: 15px;
 }
-#student header .actions .btn {
-  width: 90px;
+#student .save.btn {
+  width: 110px;
 }
 #student .panel {
   margin-bottom: 10px;
 }
+#student .first-name {
+  padding-right: 5px;
+}
+#student .last-name {
+  padding-left: 5px;
+}
 #student .others textarea {
   height: 75px;
+  max-width: 485px;
 }
 #student .others i.fa {
   font-size: 1.6em;

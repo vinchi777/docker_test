@@ -8,7 +8,7 @@
       = f.text_field :middleName, placeholder: 'Middle name', class: 'form-control col-lg-2'
       = f.text_field :lastName, placeholder: 'Last name', class: 'form-control required col-lg-2'
     .actions.col-lg-3
-      = f.submit 'Save', class: 'btn btn-primary pull-right col-lg-2'
+      = f.submit 'Save', class: 'save btn btn-primary pull-right col-lg-2'
 
   - if @student.errors.any?
     #error_explanation.error.panel
@@ -41,8 +41,8 @@
         .col-lg-6
           .form-group.inline
             label.control-label.col-lg-12 Parent or Guardian
-            .col-lg-6 = f.text_field :parentFirstName, class: 'form-control', placeholder: 'First name'
-            .col-lg-6 = f.text_field :parentLastName, class: 'form-control', placeholder: 'Last name'
+            .col-lg-6.first-name = f.text_field :parentFirstName, class: 'form-control', placeholder: 'First name'
+            .col-lg-6.last-name = f.text_field :parentLastName, class: 'form-control', placeholder: 'Last name'
           .form-group
             = f.label 'Contact', class: 'control-label col-lg-2'
             .col-lg-10 = f.text_field :parentContact, class: 'form-control', placeholder: "Parent's contact no."
@@ -84,8 +84,8 @@
       .col-lg-6
         .form-group.inline
           label.control-label.col-lg-12 Referred by
-          .col-lg-6 = f.text_field :referrerFirstName, class: 'form-control', placeholder: 'First name'
-          .col-lg-6 = f.text_field :referrerLastName, class: 'form-control', placeholder: 'Last name'
+          .first-name.col-lg-6 = f.text_field :referrerFirstName, class: 'form-control', placeholder: 'First name'
+          .last-name.col-lg-6 = f.text_field :referrerLastName, class: 'form-control', placeholder: 'Last name'
         .form-group.inline
           = f.label :why, 'Why did you choose MaxRevOne?', class: 'control-label col-lg-12', cols: '50'
           .col-lg-12 = f.text_area :why, class: 'form-control'
@@ -99,3 +99,6 @@
         .form-group
           label.col-lg-2.control-label: i.fa.fa-linkedin-square
           .col-lg-6 = f.text_field :linkedin, class: 'form-control'
+
+  footer
+    = f.submit 'Save', class: 'save btn btn-primary pull-right col-lg-2'

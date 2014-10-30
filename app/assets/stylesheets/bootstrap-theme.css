@@ -19,6 +19,7 @@
 }
 .navbar {
   border-bottom-width: 2px;
+  z-index: 50;
 }
 .navbar.for-home {
   background-color: transparent;
@@ -65,4 +66,8 @@
 .form-control.required {
   border: 1px solid #F2AE72;
   background-color: #fffcea;
+}
+/*** Bootstrap Datepicker Override ***/
+.bootstrap-datetimepicker-widget {
+  z-index: 20 !important;
 }
