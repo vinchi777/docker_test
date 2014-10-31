@@ -3,7 +3,7 @@
     .col-lg-8
       h2 Payments
     .col-lg-4
-      .btn.btn-primary.pull-right Add Invoice
+      .btn.btn-primary.pull-right data-target='#invoice-modal' data-toggle='modal' Add Invoice
 
   .invoices
     - [1, 2, 3].each do |i|
@@ -36,16 +36,51 @@
             .method Cash
             .amount 14,000.00
           .data
-            .date March. 1, 2014
+            .date Mar. 1, 2014
             .or 12201134
             .method Cash
             .amount 2,000.00
+          .action
+            i.fa.fa-trash
           .add
-            a[href="#"] Add Transaction
+            - if i == 2
+              form
+                .date: input.form-control
+                .or: input.form-control
+                .method: input.form-control
+                .amount: input.form-control
+              .action: i.fa.fa-trash
+            - else
+              a[href="#"] Add Transaction
 
         .panel-footer
           .trash: i.fa.fa-trash
           .text Balance
           .amount: b Php 0.00
 
-
+  #invoice-modal.modal.fade
+    .modal-dialog
+      .modal-content
+        .modal-header
+          button.close type='button' data-dismiss='modal': span aria-hidden='true' &times;
+          h4.modal-title New Invoice
+        .modal-body
+          form
+            .form-group.description
+              label Description
+              input.form-control.required type='text'
+            .form-group.season
+              label Review Season(s)
+              input.form-control.required  type='text'
+            .form-group.amount
+              label Amount
+              input.form-control.required  type='text'
+            .form-group.discount
+              label Discount
+              input.form-control  type='text'
+        .modal-footer
+          .total
+            .value Php 8,000.00
+            .text TOTAL
+          .actions
+            .add-invoice.btn.btn-primary Add Invoice
