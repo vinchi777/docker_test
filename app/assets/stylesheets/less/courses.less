@@ -28,14 +28,13 @@
   ul.nav.courses > li > a {
     font-family: 'Signika Semibold';
     width: 156px;
-    border: 1px solid #EFC94C;
-    background: none;
+    background: rgba(239, 201, 76, 0.70);
     color: black;
     font-size: 16px;
     text-align: center;
 
     &:hover {
-      background: @light-yellow;
+      background: rgba(239, 201, 76, 1.0);
     }
 
     div {
@@ -44,17 +43,18 @@
     }
     img {
       height: 32px;
+      color: #000000;
     }
   }
 
   ul.nav.courses > li.active > a {
-    background: @light-yellow;
+    background: rgba(239, 201, 76, 1.0);
   }
 
   ul.nav.course-outline > li > a > h1 {
     font-size: 16px;
     font-family: 'Signika Semibold';
-    margin: 0px;
+    margin: 0;
   }
 
   ul.nav.course-outline > li > a > span {
@@ -63,13 +63,26 @@
 
   ul.nav.course-outline > li > a {
     color: #191919;
-    background: #F2F2F2;
-    border-right: 4px solid #E5E5E5;
+    border-right: 4px solid rgba(254, 210, 78, 0.50);
+    border-top: 1px solid rgba(254, 210, 78, 0.50);
+    border-left: 1px solid rgba(254, 210, 78, 0.50);
+    border-bottom: 1px solid rgba(254, 210, 78, 0.50);
+
+    &:hover {
+      background: rgba(254, 210, 78, 0.50);
+    }
   }
 
   ul.nav.course-outline > li.active > a {
-    background: #E5E5E5;
+    background: none;
     border-right: 4px solid #FED24E;
+    border-top: 1px solid #EFC94C;
+    border-left: 1px solid #EFC94C;
+    border-bottom: 1px solid #EFC94C;
+
+    &:hover {
+      background: rgba(254, 210, 78, 0.50);
+    }
   }
 
   .panel.content {
@@ -80,7 +93,6 @@
 
   .panel.content .phase {
     padding: 15px;
-    background: #FFF5CC;
     margin-left: 15px;
     margin-top: 15px;
     border-radius: 3px;
@@ -109,7 +121,9 @@
 
   .coming-soon {
     height: 195px;
-    padding-top: 65px;
+    padding-top: 76px;
+    border: 1px solid #EFC94C;
+    background: none;
   }
 
   .coming-soon .content {
@@ -128,12 +142,10 @@
     margin-left: 12px;
   }
   .coming-soon .text p {
-    font-size: 20px;
     color: #4C4C4C;
   }
 
   .panel.content {
-    background: #FFFCEE;
     border: 1px solid #EFC94C;
   }
 }
