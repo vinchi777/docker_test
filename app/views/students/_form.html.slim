@@ -57,7 +57,7 @@
           .col-lg-8 = f.text_field :lastAttended, class: 'form-control required'
         .form-group.col-lg-5
           = f.label :yearGrad, 'Year Graduated', class: 'control-label col-lg-4'
-          .col-lg-3 = select_year Date.today, {start_year: 1980, end_year: Date.today.year}, {class: 'form-control required', name: 'student[yearGrad]'}
+          .year.col-lg-3 = select_year Date.today, {start_year: 1980, end_year: Date.today.year}, {class: 'form-control required', name: 'student[yearGrad]'}
       .row
         .form-group.col-lg-7
           = f.label :recognition, 'Recognitions/Awards', class: 'control-label col-lg-4'
@@ -68,14 +68,14 @@
           .col-lg-8 = f.text_field :hs, class: 'form-control required'
         .form-group.col-lg-5
           = f.label :hsYear, 'Year Graduated', class: 'control-label col-lg-4'
-          .col-lg-3 = select_year Date.today, {start_year: 1980, end_year: Date.today.year}, {class: 'form-control required', name: 'student[hsYear]'}
+          .year.col-lg-3 = select_year Date.today, {start_year: 1980, end_year: Date.today.year}, {class: 'form-control required', name: 'student[hsYear]'}
       .row
         .form-group.col-lg-7
           = f.label 'Elementary', class: 'control-label col-lg-4'
           .col-lg-8 = f.text_field :elem, class: 'form-control required'
         .form-group.col-lg-5
           = f.label :elemYear, 'Year Graduated', class: 'control-label col-lg-4'
-          .col-lg-3 = select_year Date.today, {start_year: 1980, end_year: Date.today.year}, {class: 'form-control required', name: 'student[elemYear]'}
+          .year.col-lg-3 = select_year Date.today, {start_year: 1980, end_year: Date.today.year}, {class: 'form-control required', name: 'student[elemYear]'}
 
   .others.panel
     .panel-title

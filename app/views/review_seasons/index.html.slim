@@ -17,14 +17,14 @@
             .col-lg-6
               .season.range
                 label Season
-                input.date-picker.form-control type='date' data-date-format='MMM DD, YYYY'
+                input.date-picker.form-control type='text' data-date-format='MMM DD, YYYY'
                 label.to.light to
-                input.date-picker.form-control type='date' data-date-format='MMM DD, YYYY'
+                input.date-picker.form-control type='text' data-date-format='MMM DD, YYYY'
               .promo.range
                 label Promo
-                input.date-picker.form-control type='date' data-date-format='MMM DD, YYYY'
+                input.date-picker.form-control type='text' data-date-format='MMM DD, YYYY'
                 label.to.light to
-                input.date-picker.form-control type='date' data-date-format='MMM DD, YYYY'
+                input.date-picker.form-control type='text' data-date-format='MMM DD, YYYY'
               .discount
                 header: b Discount
                 .form-group
@@ -48,47 +48,3 @@
                 .form-group
                   label.light Reservation
                   input.form-control.text-right type='text' value='Php 3,000'
-
-
-
-
-
-
-
-/h1 Listing review_seasons
-/
-/table
-/  thead
-/    tr
-/      th Start
-/      th End
-/      th Promostart
-/      th Promoend
-/      th Repeater
-/      th Fullreview
-/      th Doublereview
-/      th Coaching
-/      th Reservation
-/      th
-/      th
-/      th
-/
-/  tbody
-/    - @review_seasons.each do |review_season|
-/      tr
-/        td = review_season.start
-/        td = review_season.end
-/        td = review_season.promoStart
-/        td = review_season.promoEnd
-/        td = review_season.repeater
-/        td = review_season.fullReview
-/        td = review_season.doubleReview
-/        td = review_season.coaching
-/        td = review_season.reservation
-/        td = link_to 'Show', review_season
-/        td = link_to 'Edit', edit_review_season_path(review_season)
-/        td = link_to 'Destroy', review_season, data: {:confirm => 'Are you sure?'}, :method => :delete
-/
-/br
-/
-/= link_to 'New Review season', new_review_season_path

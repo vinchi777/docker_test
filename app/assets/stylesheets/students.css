@@ -163,6 +163,9 @@
 #student .last-name {
   padding-left: 5px;
 }
+#student .year {
+  width: 107px;
+}
 #student .others textarea {
   height: 75px;
   max-width: 485px;
