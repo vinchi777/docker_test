@@ -8,11 +8,11 @@ $ ->
   win = $(window)
   content = $('.admin .admin-content')
   nav = $('.admin-nav')
-  val = content.css('padding-top')
 
-  contentHeight = parsePixel(content.css('padding-top')) + parsePixel(content.css('padding-bottom')) + content.height()
-  height = win.height() - header.height() - footer.height() - 20
-  if (contentHeight < height)
-    nav.height(height)
-  else
-    nav.height(contentHeight)
+  if (content.size() != 0)
+    contentHeight = parsePixel(content.css('padding-top')) + parsePixel(content.css('padding-bottom')) + content.height()
+    height = win.height() - header.height() - footer.height() - 20
+    if (contentHeight < height)
+      nav.height(height)
+    else
+      nav.height(contentHeight)
