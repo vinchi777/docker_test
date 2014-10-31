@@ -79,6 +79,10 @@
   margin-left: 15px;
   margin-top: 15px;
   border-radius: 3px;
+  transition: background-color 0.5s ease;
+}
+#program .panel.content .phase.active {
+  background: rgba(239, 201, 76, 0.51);
 }
 @media only screen and (min-width: 992px) {
   #program .panel.content .phase {
