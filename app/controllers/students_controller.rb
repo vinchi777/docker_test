@@ -21,6 +21,7 @@ class StudentsController < AdminController
   end
 
   def show
+    @page = 'show'
     respond_to do |format|
       format.html { render :edit }
     end
@@ -57,7 +58,7 @@ class StudentsController < AdminController
   end
 
   def payment
-
+    @page = 'payment'
   end
 
   private
