@@ -4,3 +4,11 @@
 
 # Boostrap Datepicker
 $ ->
+  $('.student a.remove').click (e) ->
+    e.preventDefault()
+    $this = $(this)
+    $.ajax
+      url: $(this).attr('href')
+      type: 'delete'
+      success: ->
+        location.reload()

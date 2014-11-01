@@ -24,6 +24,9 @@
   height: 30px;
   padding-top: 3px;
 }
+#students .no-students {
+  padding-top: 10px;
+}
 #students .no-result {
   padding: 7px;
   height: 42px;

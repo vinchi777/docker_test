@@ -53,7 +53,7 @@ $ ->
         if show
           $('.error.panel').removeClass 'hide'
 
-  $('a.remove').click (e) ->
+  $('.invoice a.remove').click (e) ->
     e.preventDefault()
     $this = $(this)
     $.ajax

@@ -29,9 +29,16 @@
 
   .panel.panel-light.students.col-lg-12
     - if @students.empty?
-      .no-result
-        i.fa.fa-exclamation-circle
-        div No result found
+      - if params[:q].nil?
+        .no-students
+          p
+            | There is no existing students. Click the
+            b  'New Student'
+            |  button to create one.
+      - else
+        .no-result
+          i.fa.fa-exclamation-circle
+          div No result found
     - @students.each do |student|
       .student.row
         .col-lg-1.profile-pic
@@ -47,7 +54,20 @@
         .payment.col-lg-2
           = payment_status student
         .actions.col-lg-1
-          i.fa.fa-lg.fa-trash-o
+          a href='#' data-toggle='modal' data-target=('#confirm-' + student.id)
+            i.fa.fa-lg.fa-trash-o
+
+        .delete-confirm.modal.fade role='dialog' id=('confirm-' + student.id) tabindex='-1' aria-hidden='true'
+          .modal-dialog
+            .modal-content
+              .modal-header
+                h4.modal-title Confirmation
+              .modal-body
+                span Are you sure you want to remove this student?
+              .modal-footer
+                = link_to student, class: 'remove btn btn-default'
+                  | Yes
+                button.btn.btn-primary data-dismiss='modal' No
 
   div.pagination
     ul.pagination
