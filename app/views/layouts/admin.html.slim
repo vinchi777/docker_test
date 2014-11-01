@@ -32,7 +32,7 @@ body
                   .ico = image_tag 'profile-ico.svg'
                   .title Profile
               li.payment class=('active' if @page == 'payment')
-                = link_to payment_student_path(@student)
+                = link_to student_payments_path(id: @student.id)
                   .ico = image_tag 'payment-ico.svg'
                   .title Payment
 

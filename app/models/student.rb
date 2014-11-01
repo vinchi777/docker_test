@@ -53,4 +53,6 @@ class Student
   field :facebook, type: String
   field :twitter, type: String
   field :linkedin, type: String
+
+  embeds_many :payments, class_name: 'StudentPayment'
 end

@@ -1,5 +1,5 @@
 class StudentsController < AdminController
-  before_action :set_student, only: [:show, :edit, :update, :destroy, :payment]
+  before_action :set_student, only: [:show, :edit, :update, :destroy]
 
   def index
     q = params[:q]
@@ -55,10 +55,6 @@ class StudentsController < AdminController
   def destroy
     @student.destroy
     respond_with(@student)
-  end
-
-  def payment
-    @page = 'payment'
   end
 
   private
