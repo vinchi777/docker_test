@@ -6,6 +6,13 @@
       .btn.btn-primary.pull-right data-target='#invoice-modal' data-toggle='modal' Add Invoice
 
   .invoices
+    .no-invoice class=('hide' unless @student_payments.empty?)
+      p
+        | There is no existing invoice for
+        = ' ' + @student.firstName + ' ' + @student.lastName
+        | . Click the
+        b  'Add Invoice'
+        |  button to create one.
     - @student_payments.each do |i|
       = render 'form', i: i
 
@@ -32,7 +39,7 @@
               = f.text_field :review_seasons, class: 'form-control required'
             .form-group.amount
               label Amount
-              = f.text_field :amount, class: 'form-control required'
+              = f.text_field :amount, class: 'form-control required text-right'
             .form-group.discount
               label Discount
               = f.text_field :discount, class: 'form-control'

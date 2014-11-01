@@ -9,7 +9,7 @@
   background: #F9F9F9;
 }
 #student-payment .invoice i.fa {
-  color: #E5E5E5;
+  color: #A5A5A5;
   font-size: 22px;
 }
 #student-payment .invoice .panel-title {
@@ -101,6 +101,10 @@
 }
 #student-payment .invoice .panel-footer .trash {
   width: 40%;
+  height: 20px;
+}
+#student-payment .invoice .panel-footer .trash a {
+  display: none;
 }
 #student-payment .invoice .panel-footer .text {
   width: 30%;

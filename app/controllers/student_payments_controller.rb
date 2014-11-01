@@ -30,13 +30,20 @@ class StudentPaymentsController < AdminController
   end
 
   def destroy
-    @student_payment.destroy
-    respond_with(@student_payment)
+    # format.html { redirect_to taxpayers_url }
+    # format.json { head :no_content }
+    respond_to do |format|
+      if @student_payment.destroy
+        format.json { head :no_content }
+      else
+        format.json { render status: :unprocessable_entity }
+      end
+    end
   end
 
   private
   def set_student_payment
-    @student_payment = StudentPayment.find(params[:id])
+    @student_payment = Student.find(params[:student_id]).payments.where(id: params[:id])
   end
 
   def student_payment_params

@@ -45,6 +45,21 @@
       a[href="#"] Add Transaction
 
   .panel-footer
-    .trash: i.fa.fa-trash
+    .trash
+      a href='#' data-toggle='modal' data-target=('#confirm-' + i.id)
+        i.fa.fa-trash
+
     .text Balance
     .amount: b Php 0.00
+
+  .delete-confirm.modal.fade role='dialog' id=('confirm-' + i.id) tabindex='-1' aria-hidden='true'
+    .modal-dialog
+      .modal-content
+        .modal-header
+          h4.modal-title Confirmation
+        .modal-body
+          span Are you sure you want to remove this invoice?
+        .modal-footer
+          = link_to i, 'data-student'.to_s => i.student.id, class: 'remove btn btn-default'
+            | Yes
+          button.btn.btn-primary data-dismiss='modal' No

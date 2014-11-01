@@ -2,6 +2,7 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 $ ->
+  # New Invoice Validation
   $('#invoice-modal form').submit (e) ->
     e.preventDefault()
     $this = $(this)
@@ -52,4 +53,22 @@ $ ->
         if show
           $('.error.panel').removeClass 'hide'
 
+  $('a.remove').click (e) ->
+    e.preventDefault()
+    $this = $(this)
+    $.ajax
+      url: $(this).attr('href')
+      type: 'delete'
+      data:
+        student_id: $(this).data('student')
+      success: ->
+        location.reload()
+      error: ->
+        console.log 'Error'
+
+  $('.invoice').hover(
+    -> $(this).find('.trash a').show()
+    ,
+    -> $(this).find('.trash a').hide()
+  )
 
