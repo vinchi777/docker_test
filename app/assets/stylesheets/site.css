@@ -73,7 +73,10 @@ a {
   border: none;
 }
 .error.panel {
-  padding: 10px 10px 0px 10px;
+  padding: 7px 10px;
+}
+.error.panel ul {
+  margin-bottom: 0;
 }
 .error.panel h2 {
   font-size: 15px;

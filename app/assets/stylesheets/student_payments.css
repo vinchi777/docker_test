@@ -124,6 +124,9 @@
 #student-payment #invoice-modal .modal-body {
   padding: 16px 24px 16px 24px;
 }
+#student-payment #invoice-modal .modal-body .error ul {
+  padding-left: 20px;
+}
 #student-payment #invoice-modal .form-group {
   margin-bottom: 10px;
 }

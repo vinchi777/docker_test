@@ -17,18 +17,16 @@
             button.close type='button' data-dismiss='modal': span aria-hidden='true' &times;
             h4.modal-title New Invoice
           .modal-body
-            - if @payment.errors.any?
-              #error_explanation
-                h2 = "#{pluralize(@payment.errors.count, "error")} prohibited this review_season from being saved:"
-                ul
-                  - @payment.errors.full_messages.each do |message|
-                    li = message
+            .error.panel.hide
+              ul
+                - @payment.errors.full_messages.each do |message|
+                  li = message
             .form-group.package
               label Package
               = f.text_field :package, class: 'form-control required'
             .form-group.description
               label Description
-              = f.text_field :description, class: 'form-control required'
+              = f.text_field :description, class: 'form-control'
             .form-group.season
               label Review Season(s)
               = f.text_field :review_seasons, class: 'form-control required'
