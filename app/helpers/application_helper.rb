@@ -4,7 +4,7 @@ module ApplicationHelper
   end
 
   def admin_page?
-    (current_page? :students) || (current_page? :review_seasons)
+    controller_name == 'students' || controller_name == 'review_seasons' || controller_name == 'student_payments'
   end
 
   def people_page?
