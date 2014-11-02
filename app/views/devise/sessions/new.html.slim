@@ -1,6 +1,6 @@
-#login
-  .panel.panel-yellow.center-block
-    h1 Login
+#login.session
+  .panel.panel-yellow
+    h2 Login
 
     = form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'form-horizontal', role: 'form'}) do |f|
       .form-group
@@ -20,7 +20,7 @@
               | Remember me
 
       .form-group.actions
-        .col-lg-9 = render 'devise/shared/links'
-        .col-lg-3 = f.submit 'Log in', class: 'btn btn-primary'
+        .col-lg-6 = render 'devise/shared/links'
+        .col-lg-6 = f.submit 'Log in', class: 'btn btn-primary pull-right'
 
 
