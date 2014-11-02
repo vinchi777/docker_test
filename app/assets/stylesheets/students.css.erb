@@ -1,0 +1,217 @@
+/***
+ Site's variables
+*****/
+#students header h2 {
+  font-size: 20px;
+  color: #4C4C4C;
+  margin-bottom: 12px;
+}
+#students header .search input[type='search'] {
+  width: 100%;
+  background: url("<%= image_path 'search.svg' %>") no-repeat scroll 9px 9px;
+  background-size: 17px;
+  padding-left: 33px;
+}
+#students .filter .form-group {
+  margin-top: 10px;
+  margin-right: 10px;
+}
+#students .filter .form-group label {
+  margin-right: 6px;
+  margin-left: 6px;
+}
+#students .filter input.filter {
+  height: 30px;
+  padding-top: 3px;
+}
+#students .no-students {
+  padding-top: 10px;
+}
+#students .no-result {
+  padding: 7px;
+  height: 42px;
+  color: #555;
+}
+#students .no-result .fa {
+  font-size: 23px;
+  width: 27px;
+  margin-top: 3px;
+  float: left;
+}
+#students .no-result div {
+  padding-top: 3px;
+}
+#students .students {
+  margin-top: 15px;
+}
+#students .students .student {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+#students .students .student:hover {
+  background: #E5E5E5 !important;
+}
+#students .students .student:hover .actions {
+  color: #919191;
+}
+#students .students .student:nth-child(odd) {
+  background: #F8F8F8;
+}
+#students .students .student .profile-pic {
+  width: 64px;
+}
+#students .students .student .profile-pic img {
+  width: 48px;
+}
+#students .students .student .info {
+  line-height: 17px;
+}
+#students .students .student .info .name {
+  color: #45B29D;
+  font-family: "Signika Semibold";
+  font-size: 15px;
+}
+#students .students .student .info .school {
+  color: #323232;
+  font-family: 'Signika Light';
+  font-size: 14px;
+}
+#students .students .student .info .address {
+  color: #999999;
+  font-family: 'Signika Light';
+  font-size: 14px;
+}
+#students .students .student i.fa {
+  margin-right: 8px;
+}
+#students .students .student .enroll i.fa.fa-check {
+  color: #45B29D;
+}
+#students .students .student .enroll i.fa.fa-clock-o {
+  color: #F2E394;
+}
+#students .students .student .payment i.fa.fa-money {
+  color: #DF5A49;
+}
+#students .students .student .actions {
+  color: #E5E5E5;
+  text-align: right;
+}
+#students .students .student .enroll,
+#students .students .student .payment,
+#students .students .student .actions {
+  line-height: 50px;
+}
+#students div.pagination {
+  clear: both;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+#students .pagination {
+  margin: 0;
+}
+#students .pagination > li > a {
+  border: none;
+  border-radius: 100px;
+  margin-left: 5px;
+  margin-right: 5px;
+  color: #000000;
+}
+#students .pagination > li > a:hover {
+  background: #fed24e;
+}
+#students .pagination > li.active > a {
+  background: #fed24e;
+}
+#students .pagination > li > span {
+  border: none;
+}
+#students .pagination > li > span:hover {
+  background: none;
+  border: none;
+}
+#student {
+  /** Bootstrap Override */
+}
+#student header {
+  margin-bottom: 10px;
+}
+#student header .profile-pic img {
+  height: 64px;
+}
+#student header .name {
+  padding-left: 0;
+}
+#student header .name input.form-control {
+  width: 30%;
+  float: left;
+  margin-right: 5px;
+  margin-top: 14px;
+}
+#student header .actions {
+  padding-top: 15px;
+}
+#student .save.btn {
+  width: 110px;
+}
+#student .panel {
+  margin-bottom: 10px;
+}
+#student .first-name {
+  padding-right: 5px;
+}
+#student .last-name {
+  padding-left: 5px;
+}
+#student .year {
+  width: 107px;
+}
+#student .others textarea {
+  height: 75px;
+  max-width: 485px;
+}
+#student .others i.fa {
+  font-size: 1.6em;
+}
+#student .others .social {
+  margin-top: 8px;
+}
+#student .others .social label {
+  padding-right: 0;
+}
+#student .form-group {
+  margin-bottom: 10px;
+}
+#student .form-control {
+  height: 30px;
+  padding: 2px 8px;
+}
+#student .form-horizontal .control-label {
+  padding-top: 2px;
+}
+#student .date-picker {
+  width: 100%;
+}
+/*****************
+/* Titled Panel */
+/****************/
+.panel {
+  border: 1px solid F2F2F2;
+  border-radius: 3px;
+}
+.panel .panel-title {
+  background: #F2F2F2;
+  color: #323232;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+  font-family: 'Signika Semibold';
+  font-size: 15px;
+  padding: 3px 12px 2px 12px;
+  border-radius: 3px;
+}
+.form-group.inline label {
+  text-align: left;
+  margin-bottom: 5px;
+}

@@ -1,0 +1,32 @@
+.session h2 {
+  font-size: 38px;
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: 10px;
+}
+#login .panel {
+  width: 410px;
+  padding: 24px 35px 12px 35px;
+  margin: 110px auto;
+}
+#login .remember-me {
+  margin-right: 8px;
+}
+#login .actions {
+  margin-top: 40px;
+}
+#login .actions .btn {
+  width: 100px;
+}
+#forgot-password header h2 {
+  margin-bottom: 0;
+}
+#forgot-password header p {
+  text-align: center;
+  margin-bottom: 35px;
+}
+#forgot-password .panel {
+  width: 450px;
+  margin: 120px auto;
+  padding: 24px 35px 12px 35px;
+}
