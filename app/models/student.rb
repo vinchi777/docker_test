@@ -9,7 +9,7 @@ class Student
   field :lastName, type: String
   validates_presence_of :lastName
 
-  field :birthdate, type: Date
+  field :birthdate, type: Date, default: Date.today
   validates_presence_of :birthdate
 
   field :sex, type: Boolean
