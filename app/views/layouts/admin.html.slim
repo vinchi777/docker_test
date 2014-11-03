@@ -23,7 +23,7 @@ body
           - unless @student.nil? || @student.new_record?
             ul.student.nav.nav-pills.nav-stacked
               li.student
-                .pic = image_tag 'profile-placeholder.png'
+                .pic = image_tag 'profile-placeholder.png', class: 'profile'
                 .name
                   div = @student.lastName
                   div = @student.firstName
