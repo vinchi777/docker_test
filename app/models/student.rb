@@ -12,7 +12,7 @@ class Student
   field :birthdate, type: Date, default: Date.today
   validates_presence_of :birthdate
 
-  field :sex, type: Boolean
+  field :sex, type: String
   validates_presence_of :sex
 
   field :address, type: String
@@ -31,21 +31,23 @@ class Student
   field :lastAttended, type: String
   validates_presence_of :lastAttended
 
-  field :yearGrad, type: Date
-  validates_presence_of :yearGrad
+  field :yearGrad, type: Integer
+  validates :yearGrad, presence: true
+  validates_numericality_of :yearGrad, greater_than: :hsYear
 
   field :recognition, type: String
   field :hs, type: String
   validates_presence_of :hs
 
-  field :hsYear, type: Date
-  validates_presence_of :hsYear
+  field :hsYear, type: Integer
+  validates :hsYear, presence: true
+  validates :hsYear, numericality: {greater_than: :elemYear}
 
   field :elem, type: String
-  validates_presence_of :elem
+  validates_presence_of :elem, presence: true
 
-  field :elemYear, type: Date
-  validates_presence_of :elemYear
+  field :elemYear, type: Integer
+  validates :elemYear, presence: true
 
   field :referrerFirstName, type: String
   field :referrerLastName, type: String
@@ -53,6 +55,7 @@ class Student
   field :facebook, type: String
   field :twitter, type: String
   field :linkedin, type: String
+
 
   def middleInitial
     if middleName.nil?
