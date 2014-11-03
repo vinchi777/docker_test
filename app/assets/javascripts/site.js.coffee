@@ -32,9 +32,7 @@ $ ->
       lng: 124.998656
       title: 'Maximum Review Center One'
     })
-
-    $('#map').removeClass('hidden')
-
-
+  else
+    $('#map').hide()
 
 

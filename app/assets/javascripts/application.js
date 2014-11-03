@@ -20,5 +20,5 @@
 //= require_tree .
 
 window.has_google_map = function(){
-  typeof window.google === 'object' && window.google.maps
+  return typeof window.google === 'object' && window.google.maps
 }
