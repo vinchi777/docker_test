@@ -11,8 +11,8 @@ $ ->
 
   if (content.size() != 0)
     contentHeight = parsePixel(content.css('padding-top')) + parsePixel(content.css('padding-bottom')) + content.height()
-    height = win.height() - header.height() - footer.height() - 20
+    height = win.height() - header.height() - footer.height()
     if (contentHeight < height)
-      nav.height(height)
+      nav.height(height + 5)
     else
-      nav.height(contentHeight)
+      nav.height(contentHeight + 10)

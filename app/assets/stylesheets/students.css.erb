@@ -113,25 +113,35 @@
 #students .pagination {
   margin: 0;
 }
-#students .pagination > li > a {
+#students .pagination .previous_page {
+  width: 95px;
+}
+#students .pagination .next_page {
+  width: 72px;
+}
+#students .pagination > * {
   border: none;
-  border-radius: 100px;
+  border-radius: 16px;
   margin-left: 5px;
-  margin-right: 5px;
+  text-align: center;
   color: #000000;
+  font-style: normal;
+  font-weight: bold;
+  padding: 4px;
 }
-#students .pagination > li > a:hover {
+#students .pagination > em,
+#students .pagination > a {
+  width: 30px;
+}
+#students .pagination > a:hover {
+  background: #fed24e;
+  text-decoration: none;
+}
+#students .pagination > em {
   background: #fed24e;
 }
-#students .pagination > li.active > a {
-  background: #fed24e;
-}
-#students .pagination > li > span {
-  border: none;
-}
-#students .pagination > li > span:hover {
-  background: none;
-  border: none;
+#students .pagination > span {
+  color: lightgray;
 }
 #student {
   /** Bootstrap Override */

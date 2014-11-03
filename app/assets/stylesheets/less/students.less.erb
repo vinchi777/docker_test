@@ -2,272 +2,285 @@
 
 #students {
 
-  header h2 {
-    font-size: 20px;
-    color: #4C4C4C;
-    margin-bottom: 12px
-  }
-
-  header .search input[type='search'] {
-    width: 100%;
-    background: url("<%= image_path 'search.svg' %>") no-repeat scroll 9px 9px;
-    background-size: 17px;
-    padding-left: 33px;
-  }
-
-  .filter .form-group {
-    margin-top: 10px;
-    margin-right: 10px;
-  }
-
-  .filter .form-group label {
-    margin-right: 6px;
-    margin-left: 6px;
-  }
-
-  .filter input.filter {
-    height: 30px;
-    padding-top: 3px;
-  }
-
-  .no-students {
-    padding-top: 10px;
-  }
-
-  .no-result {
-    padding: 7px;
-    height: 42px;
-    color: #555;
-  }
-
-  .no-result .fa {
-    font-size: 23px;
-    width: 27px;
-    margin-top: 3px;
-    float: left;
-  }
-
-  .no-result div {
-    padding-top: 3px;
-  }
-
-  .students {
-    margin-top: 15px;
-  }
-
-  .students .student {
-    padding-top: 10px;
-    padding-bottom: 10px;
-
-    &:hover {
-      background: #E5E5E5 !important;
-
-      .actions {
-        color: #919191;
-      }
+    header h2 {
+        font-size: 20px;
+        color: #4C4C4C;
+        margin-bottom: 12px
     }
-  }
 
-  .students .student:nth-child(odd) {
-    background: #F8F8F8;
-  }
-
-  .students .student img.profile {
-    width: 68px;
-  }
-
-  .students .student img.profile {
-    width: 52px;
-  }
-
-  .students .student .info {
-    line-height: 17px;
-
-    .name {
-      color: #45B29D;
-      font-family: "Signika Semibold";
-      font-size: 15px;
+    header .search input[type='search'] {
+        width: 100%;
+        background: url("<%= image_path 'search.svg' %>") no-repeat scroll 9px 9px;
+        background-size: 17px;
+        padding-left: 33px;
     }
-    .school {
-      color: #323232;
-      font-family: 'Signika Light';
-      font-size: 14px;
+
+    .filter .form-group {
+        margin-top: 10px;
+        margin-right: 10px;
     }
-    .address {
-      color: #999999;
-      font-family: 'Signika Light';
-      font-size: 14px;
+
+    .filter .form-group label {
+        margin-right: 6px;
+        margin-left: 6px;
     }
-  }
 
-  .students .student i.fa {
-    margin-right: 8px;
-  }
-
-  .students .student .enroll i.fa.fa-check {
-    color: #45B29D;
-  }
-
-  .students .student .enroll i.fa.fa-clock-o {
-    color: #F2E394;
-  }
-
-  .students .student .payment i.fa.fa-money {
-    color: #DF5A49;
-  }
-
-  .students .student .actions {
-    color: #E5E5E5;
-    text-align: right;
-  }
-
-  .students .student .enroll,
-  .students .student .payment,
-  .students .student .actions {
-    line-height: 50px;
-  }
-
-  @yellow: #FED24E;
-
-  div.pagination {
-    clear: both;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .pagination {
-    margin: 0;
-  }
-
-  .pagination > li > a {
-    border: none;
-    border-radius: 100px;
-    margin-left: 5px;
-    margin-right: 5px;
-    color: #000000;
-
-    &:hover {
-      background: @yellow;
+    .filter input.filter {
+        height: 30px;
+        padding-top: 3px;
     }
-  }
 
-  .pagination > li.active > a {
-    background: @yellow;
-  }
-
-  .pagination > li > span {
-    border: none;
-
-    &:hover {
-      background: none;
-      border: none;
+    .no-students {
+        padding-top: 10px;
     }
-  }
+
+    .no-result {
+        padding: 7px;
+        height: 42px;
+        color: #555;
+    }
+
+    .no-result .fa {
+        font-size: 23px;
+        width: 27px;
+        margin-top: 3px;
+        float: left;
+    }
+
+    .no-result div {
+        padding-top: 3px;
+    }
+
+    .students {
+        margin-top: 15px;
+    }
+
+    .students .student {
+        padding-top: 10px;
+        padding-bottom: 10px;
+
+        &:hover {
+            background: #E5E5E5 !important;
+
+            .actions {
+                color: #919191;
+            }
+        }
+    }
+
+    .students .student:nth-child(odd) {
+        background: #F8F8F8;
+    }
+
+    .students .student img.profile {
+        width: 68px;
+    }
+
+    .students .student img.profile {
+        width: 52px;
+    }
+
+    .students .student .info {
+        line-height: 17px;
+
+        .name {
+            color: #45B29D;
+            font-family: "Signika Semibold";
+            font-size: 15px;
+        }
+        .school {
+            color: #323232;
+            font-family: 'Signika Light';
+            font-size: 14px;
+        }
+        .address {
+            color: #999999;
+            font-family: 'Signika Light';
+            font-size: 14px;
+        }
+    }
+
+    .students .student i.fa {
+        margin-right: 8px;
+    }
+
+    .students .student .enroll i.fa.fa-check {
+        color: #45B29D;
+    }
+
+    .students .student .enroll i.fa.fa-clock-o {
+        color: #F2E394;
+    }
+
+    .students .student .payment i.fa.fa-money {
+        color: #DF5A49;
+    }
+
+    .students .student .actions {
+        color: #E5E5E5;
+        text-align: right;
+    }
+
+    .students .student .enroll,
+    .students .student .payment,
+    .students .student .actions {
+        line-height: 50px;
+    }
+
+    @yellow: #FED24E;
+
+    div.pagination {
+        clear: both;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .pagination {
+        margin: 0;
+
+        .previous_page {
+            width: 95px;
+        }
+
+        .next_page {
+            width: 72px;
+        }
+
+        > * {
+
+            border: none;
+            border-radius: 16px;
+            margin-left: 5px;
+            text-align: center;
+            color: #000000;
+            font-style: normal;
+            font-weight: bold;
+            padding: 4px;
+        }
+
+        > em, > a {
+            width: 30px;
+
+        }
+
+        > a:hover {
+            background: @yellow;
+            text-decoration: none;
+        }
+
+        > em {
+            background: @yellow;
+        }
+
+        > span {
+            color: lightgray;
+        }
+    }
 }
 
 #student {
 
-  header {
-    margin-bottom: 10px;
-  }
+    header {
+        margin-bottom: 10px;
+    }
 
-  header img.profile {
-    height: 68px;
-  }
+    header img.profile {
+        height: 68px;
+    }
 
-  header .name {
-    padding-left: 0;
-  }
+    header .name {
+        padding-left: 0;
+    }
 
-  header .name input.form-control {
-    width: 30%;
-    float: left;
-    margin-right: 5px;
-    margin-top: 14px;
-  }
+    header .name input.form-control {
+        width: 30%;
+        float: left;
+        margin-right: 5px;
+        margin-top: 14px;
+    }
 
-  header .actions {
-    padding-top: 15px;
-  }
+    header .actions {
+        padding-top: 15px;
+    }
 
-  .save.btn {
-    width: 110px;
-  }
+    .save.btn {
+        width: 110px;
+    }
 
-  .panel {
-    margin-bottom: 10px;
-  }
+    .panel {
+        margin-bottom: 10px;
+    }
 
-  .first-name {
-    padding-right: 5px;
-  }
+    .first-name {
+        padding-right: 5px;
+    }
 
-  .last-name {
-    padding-left: 5px;
-  }
+    .last-name {
+        padding-left: 5px;
+    }
 
-  .year {
-    width: 107px;
-  }
+    .year {
+        width: 107px;
+    }
 
-  .others textarea {
-    height: 75px;
-    max-width: 485px;
-  }
+    .others textarea {
+        height: 75px;
+        max-width: 485px;
+    }
 
-  .others i.fa {
-    font-size: 1.6em;
-  }
+    .others i.fa {
+        font-size: 1.6em;
+    }
 
-  .others .social {
-    margin-top: 8px;
-  }
+    .others .social {
+        margin-top: 8px;
+    }
 
-  .others .social label {
-    padding-right: 0;
-  }
+    .others .social label {
+        padding-right: 0;
+    }
 
-  /** Bootstrap Override */
-  .form-group {
-    margin-bottom: 10px;
-  }
+    /** Bootstrap Override */
+    .form-group {
+        margin-bottom: 10px;
+    }
 
-  .form-control {
-    height: 30px;
-    padding: 2px 8px;
-  }
+    .form-control {
+        height: 30px;
+        padding: 2px 8px;
+    }
 
-  .form-horizontal .control-label {
-    padding-top: 2px;
-  }
+    .form-horizontal .control-label {
+        padding-top: 2px;
+    }
 
-  .date-picker {
-    width: 100%;
-  }
+    .date-picker {
+        width: 100%;
+    }
 }
 
 /*****************
 /* Titled Panel */
 /****************/
 .panel {
-  border: 1px solid @lightest-gray;
-  border-radius: 3px;
+    border: 1px solid @lightest-gray;
+    border-radius: 3px;
 }
 
 .panel .panel-title {
-  background: #F2F2F2;
-  color: #323232;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, .3);
-  font-family: 'Signika Semibold';
-  font-size: 15px;
-  padding: 3px 12px 2px 12px;
-  border-radius: 3px;
+    background: #F2F2F2;
+    color: #323232;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, .3);
+    font-family: 'Signika Semibold';
+    font-size: 15px;
+    padding: 3px 12px 2px 12px;
+    border-radius: 3px;
 }
 
 .form-group.inline label {
-  text-align: left;
-  margin-bottom: 5px;
+    text-align: left;
+    margin-bottom: 5px;
 }

@@ -4,11 +4,12 @@ class StudentsController < AdminController
   def index
     q = params[:q]
 
-    if q.nil?
-      @students = Student.all
-    else
-      search(q)
-    end
+    @students =
+        if q.nil?
+          Student.all.paginate(page: params[:page], per_page: 10)
+        else
+          search(q).paginate(page: params[:page], per_page: 10)
+        end
   end
 
   def search(q)
@@ -17,7 +18,7 @@ class StudentsController < AdminController
     c = Student.where(lastAttended: /#{q}/i).to_set
     d = Student.where(address: /#{q}/i).to_set
     res = a | b | c | d
-    @students = res.nil? ? [] : res
+    res.nil? ? [] : res
   end
 
   def show

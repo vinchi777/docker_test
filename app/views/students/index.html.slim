@@ -46,7 +46,7 @@
             = image_tag 'profile-placeholder.png', class: 'profile'
         .col-lg-4.info
           = link_to student
-            .name = student.lastName + ', '+ student.firstName + ' ' + student.middleName
+            .name = student.lastName + ', '+ student.firstName + ' ' + student.middleInitial
             .school = student.lastAttended
             .address = student.address
         .enroll.col-lg-4
@@ -69,14 +69,4 @@
                   | Yes
                 button.btn.btn-primary data-dismiss='modal' No
 
-  div.pagination
-    ul.pagination
-      li: a[href='#']
-        i.fa.fa-chevron-left
-      li: a[href='#'] 1
-      li: a[href='#'] 2
-      li: a[href='#'] 3
-      li: span ..
-      li: a[href='#'] 6
-      li: a[href='#']
-        i.fa.fa-chevron-right
+  = will_paginate @posts

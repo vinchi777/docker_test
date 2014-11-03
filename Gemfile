@@ -20,6 +20,7 @@ gem 'slim-rails'
 gem 'best_in_place'
 
 gem 'jbuilder', '~> 2.0'
+gem 'will_paginate_mongoid', '~> 2.0.1'
 
 group :development do
   gem 'better_errors'

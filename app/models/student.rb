@@ -54,5 +54,13 @@ class Student
   field :twitter, type: String
   field :linkedin, type: String
 
+  def middleInitial
+    if middleName.nil?
+      ''
+    else
+      middleName.first.capitalize + '.'
+    end
+  end
+
   embeds_many :payments, class_name: 'StudentPayment'
 end
