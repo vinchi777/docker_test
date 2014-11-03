@@ -4,7 +4,7 @@
 $(window).load ->
   coverflow = $('.coverflow')
   coverflow.removeClass('hidden')
-  coverflow.coverflow({active: 4})
+  coverflow.coverflow({active: 2})
 
 $ ->
   $('.date-picker').datetimepicker
@@ -12,7 +12,7 @@ $ ->
 
   # Change navbar bg color dynamically in home
   if $('#home').length
-    anchor = $('.reviewers').offset().top - 30
+    anchor = 0
     $(document).scroll ->
       if $(this).scrollTop() > anchor
         $('.header').removeClass('for-home')

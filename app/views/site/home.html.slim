@@ -14,15 +14,15 @@
     .container
       h3 Learn from high caliber national reviewers.
       p
-        | Our reviewers consists of experienced professors and former BONs who are excellently rated and seasoned in
-          their own field, topics and lectures, who emanate from the best nursing schools nationwide.
+        | Our reviewers consists of experienced professors and former BONs emanating from the best nursing schools nationwide who 
+          are excellently rated and seasoned in their own field, topics and lectures.
       .coverflow-wrapper
         .coverflow.hidden
-          - Dir.glob("#{Rails.root.join('app', 'assets', 'images', 'reviewers', 'full')}/*.jpg").sample(8).each do |f|
+          - Dir.glob("#{Rails.root.join('app', 'assets', 'images', 'reviewers', 'full')}/*.jpg").sample(5).each do |f|
             = image_tag "reviewers/full/#{f.split('/').last}"
       a.more href=reviewers_path
         i.fa.fa-chevron-circle-right
-        | Find out the rest of the crew.
+        | Find out the rest of our reviewers.
   .services
     .container-fluid
       .row
@@ -34,7 +34,7 @@
           p In-house Affordable Catering
       .description
         h3 We make sure you get the best there is.
-        p We provide facilities and services that will enable you learn in an effecient and comfortable style.
+        p We provide facilities and services that will enable you to learn in an effecient and comfortable style.
       .row
         .col-md-4.service style="background-image: url(#{asset_path 'services/sheet.jpg'})"
           p Scantron Sheet
@@ -63,7 +63,7 @@
         .col-md-7.description
           h3 We just don't talk. We deliver.
           p
-            | As a former famous review center member among the 26 branches nationwide, we always belong to Top 3
+            | As a former famous review center member, among the 26 branches nationwide, we always belong to Top 3
               Performing Branches w/ the highest passing rate. We were awarded as the best managed branch and assigned
               as the main branch in Visayas.
           a.more href=pricing_path
