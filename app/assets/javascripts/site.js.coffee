@@ -19,7 +19,7 @@ $ ->
       else
         $('.header').addClass('for-home')
 
-  if typeof window.google == 'object' && window.google.maps
+  if has_google_map()
     map = new GMaps({
       div: '#map'
       lat: 11.24450
