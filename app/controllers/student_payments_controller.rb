@@ -5,9 +5,10 @@ class StudentPaymentsController < AdminController
     @page = 'payment'
     @student = Student.find(params[:id])
     @payment = StudentPayment.new
-    @student_payments = @student.payments
+
     respond_to do |format|
       format.html
+      format.json { render json: @student.payments }
     end
   end
 
@@ -30,8 +31,6 @@ class StudentPaymentsController < AdminController
   end
 
   def destroy
-    # format.html { redirect_to taxpayers_url }
-    # format.json { head :no_content }
     respond_to do |format|
       if @student_payment.destroy
         format.json { head :no_content }

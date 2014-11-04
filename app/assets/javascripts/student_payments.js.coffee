@@ -53,22 +53,46 @@ $ ->
         if show
           $('.error.panel').removeClass 'hide'
 
-  $('.invoice a.remove').click (e) ->
-    e.preventDefault()
-    $this = $(this)
-    $.ajax
-      url: $(this).attr('href')
-      type: 'delete'
-      data:
-        student_id: $(this).data('student')
-      success: ->
-        location.reload()
-      error: ->
-        console.log 'Error'
+#  $('.invoice a.remove').click (e) ->
+#    e.preventDefault()
+#    $this = $(this)
+#    $.ajax
+#      url: $(this).attr('href')
+#      type: 'delete'
+#      data:
+#        student_id: $(this).data('student')
+#      success: ->
+#        location.reload()
+#      error: ->
+#        console.log 'Error'
 
-  $('.invoice').hover(
-    -> $(this).find('.trash a').show()
-    ,
-    -> $(this).find('.trash a').hide()
-  )
+#  $('.invoice').hover(
+#    -> $(this).find('.trash a').show()
+#    ,
+#    -> $(this).find('.trash a').hide()
+#  )
 
+@StudentPaymentCtrl = ($scope, $http) ->
+  studentId = $('.invoices').data 'student-id'
+  res = $http.get('/student_payments.json?id=' + studentId)
+  res.success (data) ->
+    if data == 'null'
+      $scope.invoices = []
+    else
+      $scope.invoices = data
+
+  $scope.balance = (i) ->
+    if i.discount != ''
+      i.amount * i.discount
+    else
+      i.amount
+
+  $scope.remove = (id) ->
+    r = $http.delete("/student_payments/#{id}.json?student_id=#{studentId}")
+
+    r.success (data) ->
+      $("confirm-#{id}").modal
+        show: false
+
+    r.error (e) ->
+      console.log 'Error removing invoice.'

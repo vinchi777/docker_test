@@ -1,20 +1,20 @@
-#student-payment
+#student-payment ng-controller='StudentPaymentCtrl'
   header.row
     .col-lg-8
       h2 Payments
     .col-lg-4
-      .btn.btn-primary.pull-right data-target='#invoice-modal' data-toggle='modal' Add Invoice
+      .btn.btn-primary.pull-right data-target='#invoice-modal' data-toggle='modal' ng-click='addInvoice()' Add Invoice
 
-  .invoices
-    .no-invoice class=('hide' unless @student_payments.empty?)
+  .invoices data-student-id=params[:id]
+    .no-invoice ng-show='invoices.length == 0'
       p
         | There is no existing invoice for
         = ' ' + @student.firstName + ' ' + @student.lastName
         | . Click the
         b  'Add Invoice'
         |  button to create one.
-    - @student_payments.each do |i|
-      = render 'form', i: i
+    /- @student_payments.each do |i|
+    = render 'form'
 
   #invoice-modal.modal.fade
     .modal-dialog

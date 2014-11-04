@@ -103,9 +103,6 @@
   width: 40%;
   height: 20px;
 }
-#student-payment .invoice .panel-footer .trash a {
-  display: none;
-}
 #student-payment .invoice .panel-footer .text {
   width: 30%;
   text-align: right;

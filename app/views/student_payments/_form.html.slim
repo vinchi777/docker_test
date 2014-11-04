@@ -1,15 +1,17 @@
-.invoice.panel.col-lg-6
+.invoice.panel.col-lg-6 ng-repeat='i in invoices'
   .panel-title
     .row
       .package.col-lg-6
-        = i.package
+        | {{i.package}}
       .balance.col-lg-6
-        .pull-right = i.amount
+        .pull-right
+          | {{i.amount}}
     .row
       .season.col-lg-6
-        = i.review_seasons
+        | {{i.review_seasons}}
       .description.col-lg-6
-        .pull-right = i.description
+        .pull-right
+          | {{i.description}}
   .panel-body
     .head
       .date Date
@@ -46,13 +48,14 @@
 
   .panel-footer
     .trash
-      a href='#' data-toggle='modal' data-target=('#confirm-' + i.id)
+      a href='#' data-toggle='modal' data-target=('#confirm-{{i._id.$oid}}')
         i.fa.fa-trash
 
     .text Balance
-    .amount: b Php 0.00
+    .amount: b
+      | {{balance(i)}}
 
-  .delete-confirm.modal.fade role='dialog' id=('confirm-' + i.id) tabindex='-1' aria-hidden='true'
+  .delete-confirm.modal.fade role='dialog' id=('confirm-{{i._id.$oid}}') tabindex='-1' aria-hidden='true'
     .modal-dialog
       .modal-content
         .modal-header
@@ -60,6 +63,5 @@
         .modal-body
           span Are you sure you want to remove this invoice?
         .modal-footer
-          = link_to i, 'data-student'.to_s => i.student.id, class: 'remove btn btn-default'
-            | Yes
+          a.btn.btn-default href='#' ng-click='remove(i._id.$oid)' Yes
           button.btn.btn-primary data-dismiss='modal' No
