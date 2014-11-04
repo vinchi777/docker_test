@@ -40,6 +40,7 @@ end
 group :heroku do
   gem 'unicorn'
   gem 'rack-timeout'
+  gem 'rack-handlers'
 end	
 
 gem 'rails_12factor', group: [:production, :heroku]
