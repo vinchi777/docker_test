@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.1.1'
+gem 'rails', '~> 4.1.7'
 # gem 'turbolinks'
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 gem 'thin'
@@ -23,7 +23,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'will_paginate_mongoid', '~> 2.0.1'
 
 group :development do
-  gem 'better_errors'
+  # gem 'better_errors'
   gem 'binding_of_caller'
 end
 
