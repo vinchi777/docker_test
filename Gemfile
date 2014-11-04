@@ -37,6 +37,7 @@ group :test do
   gem 'simplecov', :require => false
 end
 
+gem 'unicorn', group: :heroku
 gem 'rails_12factor', group: [:production, :heroku]
 gem 'sdoc', '~> 0.4.0', group: :doc
 
