@@ -23,6 +23,7 @@ class Student
 
   field :email, type: String
   validates_presence_of :email
+  validates_format_of :email, with: Devise::email_regexp, message: 'is not in valid format'
 
   field :parentFirstName, type: String
   field :parentLastName, type: String
@@ -32,19 +33,19 @@ class Student
   validates_presence_of :lastAttended
 
   field :yearGrad, type: Integer
-  validates :yearGrad, presence: true
-  validates_numericality_of :yearGrad, greater_than: :hsYear
+  validates_presence_of :yearGrad
+  validates_numericality_of :yearGrad, greater_than: :hsYear, message: 'must be later than High School Year'
 
   field :recognition, type: String
   field :hs, type: String
   validates_presence_of :hs
 
   field :hsYear, type: Integer
-  validates :hsYear, presence: true
-  validates :hsYear, numericality: {greater_than: :elemYear}
+  validates_presence_of :hsYear
+  validates_numericality_of :hsYear, greater_than: :elemYear, message: 'must be later than Elementary Year'
 
   field :elem, type: String
-  validates_presence_of :elem, presence: true
+  validates_presence_of :elem
 
   field :elemYear, type: Integer
   validates :elemYear, presence: true
