@@ -19,4 +19,7 @@ class SiteController < ApplicationController
 
   def pricing
   end
+
+  def enrollment
+  end
 end

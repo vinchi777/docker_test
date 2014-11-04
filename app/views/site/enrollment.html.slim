@@ -1,0 +1,88 @@
+== title 'Enrollment'
+
+#enrollment
+  .banner
+    h1 Enrollment
+    h4 Package Type
+  .container
+    .steps
+      .package-type.row.hidden
+        .col-lg-6.col-lg-offset-3.col-md-8.col-md-offset-2
+          p.text-muted Please choose a package below for the April 2014 review season.
+          .package
+            .radio
+              label
+                input type='radio' name='type' value='Standard'
+                | Full 8 Phase Package - Php 16,000.00
+            p Get the most complete and comprehensive 8-phase review program.
+          .package
+            .radio
+              label
+                input type='radio' name='type' value='Double'
+                | Double Review - Php 22,000.00
+            p Take a two full season review at a discounted price. Learn more, save more.
+          .package
+            .radio
+              label
+                input type='radio' name='type' value='Coaching'
+                | Final Coaching - Php 7,000.00
+              p Need a refresh? Get our Ultimate Final Coaching package.
+      .personal-information.row
+        form
+          .col-lg-2.profile-pic
+            = image_tag 'profile-placeholder.png'
+            input type='image' class='hidden'
+            a href='#' Upload Photo
+          .col-lg-10
+            .form-horizontal
+              .form-group
+                .col-lg-4 = text_field_tag :first_name,'', class: 'form-control required', placeholder: 'First Name'
+                .col-lg-4 = text_field_tag :middle_name,'', class: 'form-control', placeholder: 'Middle Name'
+                .col-lg-4 = text_field_tag :last_name,'', class: 'form-control required', placeholder: 'Last Name'
+              .form-group
+                label.control-label.col-lg-1 Birthdate
+                .col-lg-3 = text_field_tag :birth_date,'', class: 'form-control required', placeholder: 'Select birthdate', 'data-date-format' => 'MMM DD, YYYY'
+                .age.control-label.col-lg-1
+                  | Age
+                  span< 19
+            .form-inline
+              .form-group
+                label.control-label Sex
+                = select_tag :sex ,options_for_select(%w{Male Female}), class: 'form-control required'
+              .form-group
+                label.control-label Civil Status
+                = select_tag :civil ,options_for_select(%w{Single Married}), class: 'form-control required'
+            .form-horizontal
+              .form-group
+                label.control-label.col-lg-2 Address
+                .col-lg-6 = text_field_tag :address,'', class: 'form-control'
+              .form-group
+                label.control-label.col-lg-2 Contacts
+                .col-lg-6 = text_field_tag :contacts,'', class: 'form-control'
+              .form-group
+                label.control-label.col-lg-2 Email Address
+                .col-lg-6 = text_field_tag :email,'', class: 'form-control'
+              hr
+              .form-group
+                label.control-label.col-lg-4 Parent or Guardian Name
+                label.control-label.col-lg-4.col-lg-offset-4 Contact
+              .form-group
+                .col-lg-4 = text_field_tag :p_first_name, '', class: 'form-control', placeholder: 'First Name'
+                .col-lg-4 = text_field_tag :p_last_name, '', class: 'form-control', placeholder: 'Last Name'
+                .col-lg-4 = text_field_tag :p_contact, '', class: 'form-control'
+
+    .navigation.row
+      .col-lg-4.text-right
+        a.btn.btn-default href='#' Cancel
+      .col-lg-4.indicators
+        .wrapper
+          span.line
+          span.indicator
+          span.indicator
+          span.indicator
+          span.indicator
+          span.indicator
+          span.indicator
+          span.indicator
+      .col-lg-4.text-left
+        a.btn.btn-black href='#' Next
