@@ -1,4 +1,4 @@
-class StudentPayment
+class StudentInvoice
   include Mongoid::Document
 
   field :package, type: String

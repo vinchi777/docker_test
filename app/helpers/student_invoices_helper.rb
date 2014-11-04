@@ -1,0 +1,2 @@
+module StudentInvoicesHelper
+end

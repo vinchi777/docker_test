@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :student_payments
+  resources :student_invoices
   resources :review_seasons
 
   devise_for :users

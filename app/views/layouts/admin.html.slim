@@ -32,7 +32,7 @@ html lang='en' ng-app=''
                     .ico = image_tag 'profile-ico.svg'
                     .title Profile
                 li.payment class=('active' if @page == 'payment')
-                  = link_to student_payments_path(id: @student.id)
+                  = link_to student_invoices_path(id: @student.id)
                     .ico = image_tag 'payment-ico.svg'
                     .title Payment
 

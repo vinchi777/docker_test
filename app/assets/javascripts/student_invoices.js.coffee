@@ -74,7 +74,7 @@ $ ->
 
 @StudentPaymentCtrl = ($scope, $http) ->
   studentId = $('.invoices').data 'student-id'
-  res = $http.get('/student_payments.json?id=' + studentId)
+  res = $http.get('/student_invoices.json?id=' + studentId)
   res.success (data) ->
     if data == 'null'
       $scope.invoices = []
@@ -88,7 +88,7 @@ $ ->
       i.amount
 
   $scope.remove = (id) ->
-    r = $http.delete("/student_payments/#{id}.json?student_id=#{studentId}")
+    r = $http.delete("/student_invoices/#{id}.json?student_id=#{studentId}")
 
     r.success (data) ->
       $("confirm-#{id}").modal
