@@ -18,33 +18,26 @@
       .or OR No.
       .method Method
       .amount Amount
-    .data
-      .date Jan. 26, 2014
-      .or 12344545
-      .method Cash
-      .amount 3,000.00
-    .data
-      .date Feb. 2, 2014
-      .or 12201111
-      .method Cash
-      .amount 14,000.00
-    .data
-      .date Mar. 1, 2014
-      .or 12201134
-      .method Cash
-      .amount 2,000.00
+    .data ng-repeat='t in i.transactions'
+      .date
+        | {{t.date}}
+      .or
+        | {{t.or}}
+      .method
+        | {{t.method}}
+      .amount
+        | {{t.amount}}
     .action
       i.fa.fa-trash
     .add
-      /- if i == 2
-        form
-          .date: input.form-control
-          .or: input.form-control
-          .method: input.form-control
-          .amount: input.form-control
-        .action: i.fa.fa-trash
-      /- else
-      a[href="#"] Add Transaction
+      form ng-submit='saveTransaction(i)' ng-show='i.showTransaction'
+        .date: input.form-control ng-model='i.transaction.date'
+        .or: input.form-control ng-model='i.transaction.or'
+        .method: input.form-control ng-model='i.transaction.method'
+        .amount: input.form-control ng-model='i.transaction.amount'
+        input.hide type='submit'
+      .action  ng-show='i.showTransaction': a href='#' ng-click='hideTransaction(i)': i.fa.fa-trash
+      a href='#' ng-click='showTransaction(i)' Add Transaction
 
   .panel-footer
     .trash
@@ -63,5 +56,5 @@
         .modal-body
           span Are you sure you want to remove this invoice?
         .modal-footer
-          a.btn.btn-default href='#' ng-click='remove(i._id.$oid)' Yes
+          a.btn.btn-default href='#' ng-click='remove(i)' Yes
           button.btn.btn-primary data-dismiss='modal' No

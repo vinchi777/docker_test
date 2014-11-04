@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
 
-  resources :student_invoices
+  resources :student_invoices do
+    member do
+      post 'transaction', to: 'student_invoices#create_transaction'
+    end
+  end
+
   resources :review_seasons
 
   devise_for :users

@@ -1,5 +1,5 @@
 class StudentInvoicesController < AdminController
-  before_action :set_student_payment, only: [:show, :update, :destroy]
+  before_action :set_student_payment, only: [:show, :update, :destroy, :create_transaction]
 
   def index
     @page = 'payment'
@@ -40,12 +40,28 @@ class StudentInvoicesController < AdminController
     end
   end
 
+  def create_transaction
+    @student_invoice.transactions << Transaction.new(transaction_params.except :student_id, :id)
+
+    respond_to do |format|
+      if @student_invoice.save
+        format.json { render json: @student_invoice }
+      else
+        format.json { render json: @student_invoice.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   private
   def set_student_payment
-    @student_invoice = Student.find(params[:student_id]).invoices.where(id: params[:id])
+    @student_invoice = Student.find(params[:student_id]).invoices.find(params[:id])
   end
 
   def student_invoice_params
     params.require(:student_invoice).permit(:student_id, :package, :description, :review_seasons, :amount, :discount)
+  end
+
+  def transaction_params
+    params.require(:transaction).permit(:student_id, :id, :date, :or, :method, :amount)
   end
 end

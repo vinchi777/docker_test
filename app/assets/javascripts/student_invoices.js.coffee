@@ -80,6 +80,16 @@ $ ->
       $scope.invoices = []
     else
       $scope.invoices = data
+      for i in $scope.invoices
+        resetTransaction(i)
+
+  resetTransaction = (i) ->
+    i.transaction = {
+      date: ''
+      or: ''
+      method: ''
+      amount: ''
+    }
 
   $scope.balance = (i) ->
     if i.discount != ''
@@ -87,12 +97,47 @@ $ ->
     else
       i.amount
 
-  $scope.remove = (id) ->
-    r = $http.delete("/student_invoices/#{id}.json?student_id=#{studentId}")
+  $scope.remove = (i) ->
+    id = i._id.$oid
+    data =
+      student_id: studentId
 
-    r.success (data) ->
-      $("confirm-#{id}").modal
-        show: false
+    $.ajax
+      url: "/student_invoices/#{id}.json"
+      data: data
+      method: 'DELETE'
+      success: (data) ->
+        confirm = $("#confirm-#{id}")
+        confirm.on 'hidden.bs.modal', ->
+          idx = $scope.invoices.indexOf i
 
-    r.error (e) ->
-      console.log 'Error removing invoice.'
+          if idx != -1
+            $scope.$apply ->
+              $scope.invoices.splice(idx, 1)
+
+        confirm.modal('hide')
+
+      error: (e) ->
+        console.log 'Error removing invoice.'
+
+  $scope.saveTransaction = (i) ->
+    id = i._id.$oid
+    data =
+      student_id: studentId
+      transaction: i.transaction
+
+    $.ajax
+      url: "/student_invoices/#{id}/transaction"
+      data: data
+      method: 'POST'
+      success: (data) ->
+        $scope.$apply ->
+          i.transactions.push i.transaction
+          resetTransaction(i)
+          i.showTransaction = false
+
+  $scope.showTransaction = (i) ->
+    i.showTransaction = true
+
+  $scope.hideTransaction = (i) ->
+    i.showTransaction = false
