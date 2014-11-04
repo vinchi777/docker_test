@@ -8,7 +8,8 @@ class StudentsController < AdminController
         if q.nil?
           Student.all.paginate(page: params[:page], per_page: 10)
         else
-          search(q).paginate(page: params[:page], per_page: 10)
+          Student.where(lastName: /#{q}/i).paginate(page: params[:page], per_page: 10)
+          # search(q).paginate(page: params[:page], per_page: 10)
         end
   end
 

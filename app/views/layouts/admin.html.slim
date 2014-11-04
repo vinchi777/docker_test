@@ -1,47 +1,47 @@
 doctype html
 html lang='en'
-head
-  title
-    | MaxRevOne |
-    =< yield(:title).length > 0 ? yield(:title) : 'Online'
-  meta charset='utf-8'
-  meta http-equiv='X-UA-Compatible' content='IE=edge'
-  meta name='viewport' content='width=device-width, initial-scale=1'
-  == stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
-  == javascript_include_tag 'application', 'data-turbolinks-track' => true
-  == csrf_meta_tags
-body
-  == render 'layouts/header'
+  head
+    title
+      | MaxRevOne |
+      =< yield(:title).length > 0 ? yield(:title) : 'Online'
+    meta charset='utf-8'
+    meta http-equiv='X-UA-Compatible' content='IE=edge'
+    meta name='viewport' content='width=device-width, initial-scale=1'
+    == stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    == javascript_include_tag 'application', 'data-turbolinks-track' => true
+    == csrf_meta_tags
+  body
+    == render 'layouts/header'
 
-  .admin
-    .col-lg-2.admin-nav
-      ul.admin-nav.nav.nav-pills.nav-stacked
-        li.students class=('active' if current_page? controller: 'students')
-          = link_to students_path
-            .ico = image_tag 'students-ico.svg'
-            .name Students
-          - unless @student.nil? || @student.new_record?
-            ul.student.nav.nav-pills.nav-stacked
-              li.student
-                .pic = image_tag 'profile-placeholder.png', class: 'profile'
-                .name
-                  div = @student.lastName
-                  div = @student.firstName
-              li.profile class=('active' if @page == 'show')
-                = link_to @student
-                  .ico = image_tag 'profile-ico.svg'
-                  .title Profile
-              li.payment class=('active' if @page == 'payment')
-                = link_to student_payments_path(id: @student.id)
-                  .ico = image_tag 'payment-ico.svg'
-                  .title Payment
+    .admin-container
+      .col-lg-2.admin-nav
+        ul.admin-nav.nav.nav-pills.nav-stacked.col-lg-12
+          li.students class=('active' if current_page? controller: 'students')
+            = link_to students_path
+              .ico = image_tag 'students-ico.svg'
+              .name Students
+            - unless @student.nil? || @student.new_record?
+              ul.student.nav.nav-pills.nav-stacked
+                li.student
+                  .pic = image_tag 'profile-placeholder.png', class: 'profile'
+                  .name
+                    div = @student.lastName
+                    div = @student.firstName
+                li.profile class=('active' if @page == 'show')
+                  = link_to @student
+                    .ico = image_tag 'profile-ico.svg'
+                    .title Profile
+                li.payment class=('active' if @page == 'payment')
+                  = link_to student_payments_path(id: @student.id)
+                    .ico = image_tag 'payment-ico.svg'
+                    .title Payment
 
-        li.review-seasons class=('active' if @page =='review-seasons')
-          = link_to review_seasons_path
-            .ico = image_tag 'review-season-ico.svg'
-            .name Review Seasons
+          li.review-seasons class=('active' if @page =='review-seasons')
+            = link_to review_seasons_path
+              .ico = image_tag 'review-season-ico.svg'
+              .name Review Seasons
 
-    .col-lg-10.admin-content
-      == yield
+      .col-lg-10.admin-content.col-lg-offset-2
+        == yield
 
-  == render 'layouts/admin_footer'
+    == render 'layouts/admin_footer'

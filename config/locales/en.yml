@@ -21,3 +21,17 @@
 
 en:
   hello: "Hello world"
+  mongoid:
+    attributes:
+      student:
+        firstName: 'First name'
+        middleName: 'Middle name'
+        lastName: 'Last name'
+        birthdate: 'Birthdate'
+        contactNo: 'Contact No.'
+        lastAttended: 'School Last Attended'
+        recognition: 'Recognitions/Awards'
+        yearGrad: 'College Year'
+        hsYear: 'High School Year'
+        elemYear: 'Elementary Year'
+
