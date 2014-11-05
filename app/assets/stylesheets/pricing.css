@@ -47,22 +47,25 @@
   color: #808080;
 }
 #pricing .packages .content .package .description {
-  padding-top: 20px;
+  padding-top: 10px;
 }
 #pricing .packages .content .package hr {
   border-top: solid 1px #dddddd;
-  margin: 25px auto;
+  margin: 10px auto;
   width: 80%;
 }
 #pricing .packages .content .package hr.transparent {
   border-top-color: transparent;
+}
+#pricing .packages .content .package .promos h5 {
+  margin-bottom: 5px;
 }
 #pricing .packages .content .package .promos .row > :nth-child(even) {
   color: #808080;
 }
 #pricing .packages .content .package .btn {
   font-size: 18px;
-  margin-top: 40px;
+  margin-top: 20px;
   width: 65%;
 }
 #pricing .packages .info {

@@ -1,0 +1,114 @@
+.transition(@in:300ms) {
+  -webkit-transition: background-color @in ease, border-color @in ease;
+  -moz-transition: background-color @in ease, border-color @in ease;
+  -o-transition: background-color @in ease, border-color @in ease;
+  transition: background-color @in ease, border-color @in ease;
+}
+
+#enrollment {
+  margin-bottom: 50px;
+
+  .banner {
+    text-align: center;
+    padding: 40px 0px;
+
+    h1, h4 {
+      margin: 0px;
+    }
+
+    h4 {
+      font-family: 'Signika Light';
+    }
+  }
+
+  .steps {
+    .package-type {
+      .package {
+        padding: 10px 0px;
+
+        .radio {
+          font-family: 'Signika Semibold';
+          margin: 0px;
+        }
+
+        p {
+          margin: 0px;
+          padding-left: 19px;
+        }
+      }
+    }
+
+    .personal-information {
+      .profile-pic {
+        text-align: center;
+
+        img {
+          width: 150px;
+          padding-bottom: 10px;
+        }
+
+        a {
+          text-decoration: underline;
+        }
+      }
+
+      .control-label {
+        text-align: left;
+      }
+
+      .form-inline {
+        .form-group {
+          margin-right: 20px;
+          margin-bottom: 15px;
+
+          .control-label {
+            padding-right: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  .navigation {
+    padding-top: 20px;
+
+    .indicators {
+      text-align: center;
+
+      .wrapper {
+        display: inline-block;
+        padding-top: 7px;
+        position: relative;
+
+        span.indicator {
+          background-color: #B2B2B2;
+          border: solid 1px black;
+          border-radius: 100%;
+          display: inline-block;
+          height: 15px;
+          margin-right: 30px;
+          overflow: hidden;
+          width: 15px;
+          .transition;
+
+          &:last-of-type {
+            margin-right: 0px;
+          }
+
+          &.active {
+            background-color: #FED24E;
+          }
+        }
+
+        span.line {
+          background-color: #E5E5E5;
+          height: 8px;
+          position: absolute;
+          top: 13px;
+          width: 100%;
+          z-index: -1;
+        }
+      }
+    }
+  }
+}

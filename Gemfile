@@ -3,7 +3,6 @@ source 'https://rubygems.org'
 gem 'rails', '~> 4.1.7'
 # gem 'turbolinks'
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
-gem 'thin'
 
 gem 'mongoid', '~> 4.0.0'
 gem 'devise', '~> 3.4.0'
@@ -29,6 +28,7 @@ end
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
+  gem 'thin'
 end
 
 group :test do
@@ -37,7 +37,13 @@ group :test do
   gem 'simplecov', :require => false
 end
 
-gem 'rails_12factor', group: :production
+group :heroku do
+  gem 'unicorn'
+  gem 'rack-timeout'
+  gem 'rack-handlers'
+end	
+
+gem 'rails_12factor', group: [:production, :heroku]
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use Capistrano for deployment

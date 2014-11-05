@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   get 'reviewers' => 'site#reviewers'
   get 'courses' => 'site#courses'
   get 'pricing' => 'site#pricing'
+  get 'enrollment' => 'site#enrollment'
 
   root 'site#home'
 
