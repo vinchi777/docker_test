@@ -11,6 +11,14 @@
     width: 47%;
     background: #F9F9F9;
 
+    &:hover .trash a {
+      display: block;
+    }
+
+    .trash a {
+      display: none;
+    }
+
     i.fa {
       color: #A5A5A5;
       font-size: 22px;
@@ -43,6 +51,10 @@
       width: 95%;
     }
 
+    .data-container {
+      width: 100%;
+    }
+
     .panel-body .date {
       width: 28%;
       padding-left: 10px;
@@ -65,14 +77,22 @@
       text-align: right;
     }
 
+    .panel-body .data-container:nth-child(even) .data {
+      background: rgba(242, 227, 148, 0.50);
+      border-radius: 4px;
+    }
+
+    .panel-body .action a {
+      display: none;
+    }
+
+    .panel-body .data-container:hover .action a {
+      display: block;
+    }
+
     .panel-body .action {
       padding-top: 3px;
       padding-left: 8px;
-    }
-
-    .panel-body .data:nth-child(even) {
-      background: rgba(242, 227, 148, 0.50);
-      border-radius: 3px;
     }
 
     .panel-body .add {

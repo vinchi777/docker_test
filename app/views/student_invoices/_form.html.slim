@@ -18,20 +18,22 @@
       .or OR No.
       .method Method
       .amount Amount
-    .data ng-repeat='t in i.transactions'
-      .date
-        | {{t.date}}
-      .or
-        | {{t.or}}
-      .method
-        | {{t.method}}
-      .amount
-        | {{t.amount}}
-    .action
-      i.fa.fa-trash
+    .data-container ng-repeat='t in i.transactions'
+      .data
+        .date
+          | {{t.date}}
+        .or
+          | {{t.or}}
+        .method
+          | {{t.method}}
+        .amount
+          | {{t.amount}}
+      .action
+        a href='#'
+          i.fa.fa-trash
     .add
       form ng-submit='saveTransaction(i)' ng-show='i.showTransaction'
-        .date: input.form-control ng-model='i.transaction.date'
+        .date: input.form-control.date-picker ng-model='i.transaction.date'
         .or: input.form-control ng-model='i.transaction.or'
         .method: input.form-control ng-model='i.transaction.method'
         .amount: input.form-control ng-model='i.transaction.amount'
@@ -46,7 +48,6 @@
 
     .text Balance
     .amount: b
-      | {{balance(i)}}
 
   .delete-confirm.modal.fade role='dialog' id=('confirm-{{i._id.$oid}}') tabindex='-1' aria-hidden='true'
     .modal-dialog

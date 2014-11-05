@@ -8,6 +8,12 @@
   width: 47%;
   background: #F9F9F9;
 }
+#student-payment .invoice:hover .trash a {
+  display: block;
+}
+#student-payment .invoice .trash a {
+  display: none;
+}
 #student-payment .invoice i.fa {
   color: #A5A5A5;
   font-size: 22px;
@@ -33,6 +39,9 @@
 #student-payment .invoice .panel-body .data {
   width: 95%;
 }
+#student-payment .invoice .data-container {
+  width: 100%;
+}
 #student-payment .invoice .panel-body .date {
   width: 28%;
   padding-left: 10px;
@@ -51,13 +60,19 @@
 #student-payment .invoice .panel-body .amount * {
   text-align: right;
 }
+#student-payment .invoice .panel-body .data-container:nth-child(even) .data {
+  background: rgba(242, 227, 148, 0.5);
+  border-radius: 4px;
+}
+#student-payment .invoice .panel-body .action a {
+  display: none;
+}
+#student-payment .invoice .panel-body .data-container:hover .action a {
+  display: block;
+}
 #student-payment .invoice .panel-body .action {
   padding-top: 3px;
   padding-left: 8px;
-}
-#student-payment .invoice .panel-body .data:nth-child(even) {
-  background: rgba(242, 227, 148, 0.5);
-  border-radius: 3px;
 }
 #student-payment .invoice .panel-body .add {
   width: 100%;
