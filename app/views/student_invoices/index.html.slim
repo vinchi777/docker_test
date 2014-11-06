@@ -45,7 +45,7 @@
           .modal-footer
             .total
               .value
-                | {{balance(invoice) | currency:'Php '}}
+                | {{total(invoice) | currency:'Php '}}
               .text TOTAL
             .actions
               input.add-invoice.btn.btn-primary type='submit' value='Add Invoice'

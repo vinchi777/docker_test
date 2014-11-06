@@ -26,10 +26,14 @@ class Transaction
   field :date, type: Date
   validates_presence_of :date
 
-  field :or, type: String
+  field :or_no, type: String
+  validates_presence_of :or_no
+
   field :method, type: String
+  validates_presence_of :method
+
   field :amount, type: BigDecimal
-  validates_presence_of :amount
+  validates_numericality_of :amount, greater_than: 0
 
   embedded_in :student_invoice
 end

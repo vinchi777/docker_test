@@ -18,9 +18,9 @@ toHuman = (input, cap = true) =>
   resetTransaction = (i) ->
     i.transaction = {
       date: ''
-      or: ''
+      or_no: ''
       method: ''
-      amount: ''
+      amount: 0
     }
 
   resetInvoice = ->
@@ -73,8 +73,17 @@ toHuman = (input, cap = true) =>
             for v in vs
               $scope.invoiceErrors.push "#{toHuman(k)} #{v}"
 
-  $scope.balance = (i) ->
+  $scope.total = (i) ->
     i.amount * (1 - i.discount)
+
+  $scope.balance = (i) ->
+    totalTransaction =
+      if i.transactions.length != 0
+        i.transactions.map((t) -> parseFloat(t.amount)).reduce((t, s) -> t + s)
+      else
+        0
+
+    $scope.total(i) - totalTransaction - i.transaction.amount
 
   $scope.remove = (i) ->
     id = i._id.$oid
@@ -114,10 +123,48 @@ toHuman = (input, cap = true) =>
           i.transactions = data.transactions
           resetTransaction(i)
           i.showTransaction = false
+          i.transactionErrors = []
+
+      error: (xhr, status, e) ->
+        data = JSON.parse xhr.responseText
+
+        $scope.$apply ->
+          i.transactionErrors = []
+
+          for k,vs of data
+            for v in vs
+              i.transactionErrors.push "#{toHuman(k)} #{v}"
+
+  $scope.removeTransaction = (i, t) ->
+    id = i._id.$oid
+    data =
+      transaction:
+        tr_id: t._id.$oid
+      student_id: studentId
+
+    $.ajax
+      url: "/student_invoices/#{id}/transaction"
+      data: data
+      method: 'DELETE'
+      success: (data) ->
+        confirm = $("#confirm-tr-#{t._id.$oid}")
+        confirm.on 'hidden.bs.modal', ->
+          idx = i.transactions.indexOf t
+
+          if idx != -1
+            $scope.$apply ->
+              i.transactions.splice(idx, 1)
+
+        confirm.modal 'hide'
+
+      error: (e) ->
+        console.log 'not deleted'
+
 
   $scope.showTransaction = (i) ->
     i.showTransaction = true
 
   $scope.hideTransaction = (i) ->
+    i.transactionErrors = []
     i.showTransaction = false
 ]

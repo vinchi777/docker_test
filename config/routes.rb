@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :student_invoices do
     member do
       post 'transaction', to: 'student_invoices#create_transaction'
+      delete 'transaction', to: 'student_invoices#destroy_transaction'
     end
   end
 

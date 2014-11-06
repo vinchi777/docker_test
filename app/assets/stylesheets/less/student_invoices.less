@@ -41,95 +41,118 @@
       float: left;
     }
 
-    .panel-body .head {
-      font-size: 15px;
-      color: #7F7F7F;
-    }
-
-    .panel-body .head,
-    .panel-body .data {
-      width: 95%;
-    }
-
-    .data-container {
-      width: 100%;
-    }
-
-    .panel-body .date {
-      width: 28%;
-      padding-left: 10px;
-    }
-
-    .panel-body .or {
-      width: 25%;
-    }
-
-    .panel-body .method {
-      width: 23%;
-    }
-
-    .panel-body .amount {
-      width: 24%;
-      padding-right: 10px;
-    }
-    .panel-body .amount,
-    .panel-body .amount * {
-      text-align: right;
-    }
-
-    .panel-body .data-container:nth-child(even) .data {
-      background: rgba(242, 227, 148, 0.50);
-      border-radius: 4px;
-    }
-
-    .panel-body .action a {
-      display: none;
-    }
-
-    .panel-body .data-container:hover .action a {
-      display: block;
-    }
-
-    .panel-body .action {
-      padding-top: 3px;
-      padding-left: 8px;
-    }
-
-    .panel-body .add {
-      width: 100%;
-      margin-top: 5px;
-    }
-    .panel-body .add a {
-      font-size: 14px;
-      display: inline-block;
-      width: 100%;
-      text-align: center;
-      margin-top: 5px;
-    }
-
-    .panel-body .add div {
-      text-align: center;
-    }
-
-    .panel-body .action i.fa {
-      font-size: 17px;
-    }
-
-    .panel-body .add form {
-      width: 95%;
-      font-size: 15px;
-      > div {
-        padding-right: 8px;
+    .panel-body {
+      .error {
+        width: 100%;
       }
-      input {
-        height: 25px;
-        float: left;
+
+      .error ul {
+        padding-left: 20px;
       }
+
+      .error ul * {
+        float: none;
+      }
+
+      .head {
+        font-size: 15px;
+        color: #7F7F7F;
+      }
+
+      .head,
+      .data {
+        width: 95%;
+      }
+
+      .data-container {
+        width: 100%;
+      }
+
       .date {
-        padding-left: 0;
+        width: 28%;
+        padding-left: 10px;
       }
+
+      .or {
+        width: 25%;
+      }
+
+      .method {
+        width: 23%;
+      }
+
       .amount {
-        padding-right: 0;
+        width: 24%;
+        padding-right: 10px;
+      }
+      .amount,
+      .amount * {
+        text-align: right;
+      }
+
+      .data-container:nth-child(odd) .data {
+        background: rgba(242, 227, 148, 0.50);
+        border-radius: 4px;
+      }
+
+      .action a {
+        display: none;
+      }
+
+      .data-container:hover .action a {
+        display: block;
+      }
+      .action {
+        padding-top: 3px;
+        padding-left: 8px;
+      }
+
+      .delete-confirm-transaction * {
+        float: none;
+      }
+
+      .add {
+        width: 100%;
+        margin-top: 5px;
+      }
+      .add a {
+        font-size: 14px;
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+        margin-top: 2px;
+      }
+
+      .add div {
+        text-align: center;
+      }
+
+      .action i.fa {
+        font-size: 17px;
+      }
+
+      .add form {
+
+        width: 95%;
+        > div {
+          padding-right: 8px;
+        }
+        input {
+          height: 25px;
+          float: left;
+          font-size: 14px;
+        }
+        .date {
+          padding-left: 0;
+        }
+        .date input {
+          background-position: 6px 4px;
+          background-size: 15px;
+          padding-left: 28px !important;
+        }
+        .amount {
+          padding-right: 0;
+        }
       }
     }
 

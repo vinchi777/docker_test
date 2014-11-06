@@ -6,9 +6,12 @@ $(window).load ->
   coverflow.removeClass('hidden')
   coverflow.coverflow({active: 2})
 
-$ ->
+@bindDatePicker = ->
   $('.date-picker').datetimepicker
     pickTime: false
+
+$ ->
+  bindDatePicker()
 
   # Change navbar bg color dynamically in home
   if $('#home').length
