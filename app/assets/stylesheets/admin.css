@@ -111,3 +111,6 @@ footer.admin {
   padding-top: 16px;
   line-height: 20px;
 }
+footer.admin a {
+  color: #E6E6E6;
+}
