@@ -4,7 +4,6 @@ capFirst = (input) ->
 
 # Extracted from Morph https://github.com/cmoncrief/morph
 toHuman = (input, cap = true) =>
-
   output = input.replace /[-._]/g, ' '
   output = output.replace /([A-Z\d])([A-Z][a-z\d])/g, '$1 $2'
   output = output.replace /([a-z])([A-Z])/g, '$1 $2'
@@ -13,8 +12,7 @@ toHuman = (input, cap = true) =>
   output = if cap then capFirst output else lowerFirst output
   return output
 
-@StudentPaymentCtrl = ($scope, $http) ->
-
+@app.controller 'StudentPaymentCtrl', ['$scope', '$http', ($scope, $http) ->
   studentId = $('.invoices').data 'student-id'
 
   resetTransaction = (i) ->
@@ -122,3 +120,4 @@ toHuman = (input, cap = true) =>
 
   $scope.hideTransaction = (i) ->
     i.showTransaction = false
+]
