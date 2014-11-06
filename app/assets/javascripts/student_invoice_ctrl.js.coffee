@@ -30,6 +30,10 @@ toHuman = (input, cap = true) =>
       student_id: studentId
     }
 
+  addEmptyTransactions = (i) ->
+    if !i.hasOwnProperty 'transactions'
+      i.transactions = []
+
   res = $http.get('/student_invoices.json?id=' + studentId)
   res.success (data) ->
     if data == 'null'
@@ -38,6 +42,7 @@ toHuman = (input, cap = true) =>
       $scope.invoices = data
       for i in $scope.invoices
         resetTransaction(i)
+        addEmptyTransactions(i)
 
   $scope.enableAddInvoiceBtn = true
   resetInvoice()
@@ -59,8 +64,10 @@ toHuman = (input, cap = true) =>
         btn.removeClass('disabled')
 
         $scope.$apply ->
-          $scope.invoices.push i
+          addEmptyTransactions(i)
           resetInvoice()
+          resetTransaction(i)
+          $scope.invoices.push i
 
       error: (xhr, status, e) ->
         data = JSON.parse xhr.responseText
