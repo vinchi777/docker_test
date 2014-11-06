@@ -18,7 +18,7 @@ require 'rails_helper'
 # Message expectations are only used when there is no simpler way to specify
 # that an instance is receiving a specific message.
 
-RSpec.describe StudentPaymentsController, :type => :controller do
+RSpec.describe StudentInvoicesController, :type => :controller do
 
   # This should return the minimal set of attributes required to create a valid
   # StudentPayment. As you add validations to StudentPayment, be sure to
@@ -38,32 +38,32 @@ RSpec.describe StudentPaymentsController, :type => :controller do
 
   describe "GET index" do
     it "assigns all student_payments as @student_payments" do
-      student_payment = StudentPayment.create! valid_attributes
+      student_payment = StudentInvoice.create! valid_attributes
       get :index, {}, valid_session
-      expect(assigns(:student_payments)).to eq([student_payment])
+      expect(assigns(:student_invoices)).to eq([student_payment])
     end
   end
 
   describe "GET show" do
     it "assigns the requested student_payment as @student_payment" do
-      student_payment = StudentPayment.create! valid_attributes
+      student_payment = StudentInvoice.create! valid_attributes
       get :show, {:id => student_payment.to_param}, valid_session
-      expect(assigns(:student_payment)).to eq(student_payment)
+      expect(assigns(:student_invoice)).to eq(student_payment)
     end
   end
 
   describe "GET new" do
     it "assigns a new student_payment as @student_payment" do
       get :new, {}, valid_session
-      expect(assigns(:student_payment)).to be_a_new(StudentPayment)
+      expect(assigns(:student_invoice)).to be_a_new(StudentInvoice)
     end
   end
 
   describe "GET edit" do
     it "assigns the requested student_payment as @student_payment" do
-      student_payment = StudentPayment.create! valid_attributes
+      student_payment = StudentInvoice.create! valid_attributes
       get :edit, {:id => student_payment.to_param}, valid_session
-      expect(assigns(:student_payment)).to eq(student_payment)
+      expect(assigns(:student_invoice)).to eq(student_payment)
     end
   end
 
@@ -71,30 +71,30 @@ RSpec.describe StudentPaymentsController, :type => :controller do
     describe "with valid params" do
       it "creates a new StudentPayment" do
         expect {
-          post :create, {:student_payment => valid_attributes}, valid_session
-        }.to change(StudentPayment, :count).by(1)
+          post :create, {:student_invoice => valid_attributes}, valid_session
+        }.to change(StudentInvoice, :count).by(1)
       end
 
       it "assigns a newly created student_payment as @student_payment" do
-        post :create, {:student_payment => valid_attributes}, valid_session
-        expect(assigns(:student_payment)).to be_a(StudentPayment)
-        expect(assigns(:student_payment)).to be_persisted
+        post :create, {:student_invoice => valid_attributes}, valid_session
+        expect(assigns(:student_invoice)).to be_a(StudentInvoice)
+        expect(assigns(:student_invoice)).to be_persisted
       end
 
       it "redirects to the created student_payment" do
-        post :create, {:student_payment => valid_attributes}, valid_session
-        expect(response).to redirect_to(StudentPayment.last)
+        post :create, {:student_invoice => valid_attributes}, valid_session
+        expect(response).to redirect_to(StudentInvoice.last)
       end
     end
 
     describe "with invalid params" do
       it "assigns a newly created but unsaved student_payment as @student_payment" do
-        post :create, {:student_payment => invalid_attributes}, valid_session
-        expect(assigns(:student_payment)).to be_a_new(StudentPayment)
+        post :create, {:student_invoice => invalid_attributes}, valid_session
+        expect(assigns(:student_invoice)).to be_a_new(StudentInvoice)
       end
 
       it "re-renders the 'new' template" do
-        post :create, {:student_payment => invalid_attributes}, valid_session
+        post :create, {:student_invoice => invalid_attributes}, valid_session
         expect(response).to render_template("new")
       end
     end
@@ -107,35 +107,35 @@ RSpec.describe StudentPaymentsController, :type => :controller do
       }
 
       it "updates the requested student_payment" do
-        student_payment = StudentPayment.create! valid_attributes
-        put :update, {:id => student_payment.to_param, :student_payment => new_attributes}, valid_session
+        student_payment = StudentInvoice.create! valid_attributes
+        put :update, {:id => student_payment.to_param, :student_invoice => new_attributes}, valid_session
         student_payment.reload
         skip("Add assertions for updated state")
       end
 
       it "assigns the requested student_payment as @student_payment" do
-        student_payment = StudentPayment.create! valid_attributes
-        put :update, {:id => student_payment.to_param, :student_payment => valid_attributes}, valid_session
-        expect(assigns(:student_payment)).to eq(student_payment)
+        student_payment = StudentInvoice.create! valid_attributes
+        put :update, {:id => student_payment.to_param, :student_invoice => valid_attributes}, valid_session
+        expect(assigns(:student_invoice)).to eq(student_payment)
       end
 
       it "redirects to the student_payment" do
-        student_payment = StudentPayment.create! valid_attributes
-        put :update, {:id => student_payment.to_param, :student_payment => valid_attributes}, valid_session
+        student_payment = StudentInvoice.create! valid_attributes
+        put :update, {:id => student_payment.to_param, :student_invoice => valid_attributes}, valid_session
         expect(response).to redirect_to(student_payment)
       end
     end
 
     describe "with invalid params" do
       it "assigns the student_payment as @student_payment" do
-        student_payment = StudentPayment.create! valid_attributes
-        put :update, {:id => student_payment.to_param, :student_payment => invalid_attributes}, valid_session
-        expect(assigns(:student_payment)).to eq(student_payment)
+        student_payment = StudentInvoice.create! valid_attributes
+        put :update, {:id => student_payment.to_param, :student_invoice => invalid_attributes}, valid_session
+        expect(assigns(:student_invoice)).to eq(student_payment)
       end
 
       it "re-renders the 'edit' template" do
-        student_payment = StudentPayment.create! valid_attributes
-        put :update, {:id => student_payment.to_param, :student_payment => invalid_attributes}, valid_session
+        student_payment = StudentInvoice.create! valid_attributes
+        put :update, {:id => student_payment.to_param, :student_invoice => invalid_attributes}, valid_session
         expect(response).to render_template("edit")
       end
     end
@@ -143,14 +143,14 @@ RSpec.describe StudentPaymentsController, :type => :controller do
 
   describe "DELETE destroy" do
     it "destroys the requested student_payment" do
-      student_payment = StudentPayment.create! valid_attributes
+      student_payment = StudentInvoice.create! valid_attributes
       expect {
         delete :destroy, {:id => student_payment.to_param}, valid_session
-      }.to change(StudentPayment, :count).by(-1)
+      }.to change(StudentInvoice, :count).by(-1)
     end
 
     it "redirects to the student_payments list" do
-      student_payment = StudentPayment.create! valid_attributes
+      student_payment = StudentInvoice.create! valid_attributes
       delete :destroy, {:id => student_payment.to_param}, valid_session
       expect(response).to redirect_to(student_payments_url)
     end

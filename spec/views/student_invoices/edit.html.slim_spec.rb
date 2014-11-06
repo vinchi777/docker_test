@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "student_payments/edit", :type => :view do
   before(:each) do
-    @student_payment = assign(:student_payment, StudentPayment.create!(
+    @student_invoice = assign(:student_invoice, StudentInvoice.create!(
       :description => "MyString",
       :reviewSeasons => "MyString",
       :amount => "",
@@ -13,7 +13,7 @@ RSpec.describe "student_payments/edit", :type => :view do
   it "renders the edit student_payment form" do
     render
 
-    assert_select "form[action=?][method=?]", student_payment_path(@student_payment), "post" do
+    assert_select "form[action=?][method=?]", student_payment_path(@student_invoice), "post" do
 
       assert_select "input#student_payment_description[name=?]", "student_payment[description]"
 

@@ -1,52 +1,51 @@
-#student-payment
+#student-payment ng-controller='StudentPaymentCtrl'
   header.row
     .col-lg-8
       h2 Payments
     .col-lg-4
-      .btn.btn-primary.pull-right data-target='#invoice-modal' data-toggle='modal' Add Invoice
+      .btn.btn-primary.pull-right data-target='#invoice-modal' data-toggle='modal' ng-click='addInvoice()' Add Invoice
 
-  .invoices
-    .no-invoice class=('hide' unless @student_payments.empty?)
+  .invoices data-student-id=params[:id]
+    .no-invoice ng-show='invoices.length == 0'
       p
         | There is no existing invoice for
         = ' ' + @student.firstName + ' ' + @student.lastName
         | . Click the
         b  'Add Invoice'
         |  button to create one.
-    - @student_payments.each do |i|
-      = render 'form', i: i
+    = render 'form'
 
   #invoice-modal.modal.fade
     .modal-dialog
       .modal-content
-        = form_for @payment do |f|
+        form ng-submit='createInvoice()' data-url=student_invoices_path(@payment)
           .modal-header
             button.close type='button' data-dismiss='modal': span aria-hidden='true' &times;
             h4.modal-title New Invoice
           .modal-body
-            .error.panel.hide
+            .error.panel ng-show='invoiceErrors.length > 0'
               ul
-                - @payment.errors.full_messages.each do |message|
-                  li = message
+                li ng-repeat='e in invoiceErrors'
+                  | {{e}}
             .form-group.package
               label Package
-              = f.text_field :package, class: 'form-control required'
+              input.form-control.required type='text' ng-model='invoice.package'
             .form-group.description
               label Description
-              = f.text_field :description, class: 'form-control'
+              input.form-control type='text' ng-model='invoice.description'
             .form-group.season
               label Review Season(s)
-              = f.text_field :review_seasons, class: 'form-control required'
+              input.form-control.required type='text' ng-model='invoice.review_seasons'
             .form-group.amount
               label Amount
-              = f.text_field :amount, class: 'form-control required text-right'
+              input.form-control.required.text-right type='text' ng-model='invoice.amount'
             .form-group.discount
               label Discount
-              = f.text_field :discount, class: 'form-control'
+              input.form-control type='text' ng-model='invoice.discount'
           .modal-footer
             .total
-              .value Php 8,000.00
+              .value
+                | {{total(invoice) | currency:'Php '}}
               .text TOTAL
             .actions
-              input type='hidden' name='student_payment[student_id]' value=@student.id
               input.add-invoice.btn.btn-primary type='submit' value='Add Invoice'

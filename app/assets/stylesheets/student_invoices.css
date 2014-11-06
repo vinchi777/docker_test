@@ -8,6 +8,12 @@
   width: 47%;
   background: #F9F9F9;
 }
+#student-payment .invoice:hover .trash a {
+  display: block;
+}
+#student-payment .invoice .trash a {
+  display: none;
+}
 #student-payment .invoice i.fa {
   color: #A5A5A5;
   font-size: 22px;
@@ -25,6 +31,15 @@
 #student-payment .invoice .panel-body * {
   float: left;
 }
+#student-payment .invoice .panel-body .error {
+  width: 100%;
+}
+#student-payment .invoice .panel-body .error ul {
+  padding-left: 20px;
+}
+#student-payment .invoice .panel-body .error ul * {
+  float: none;
+}
 #student-payment .invoice .panel-body .head {
   font-size: 15px;
   color: #7F7F7F;
@@ -32,6 +47,9 @@
 #student-payment .invoice .panel-body .head,
 #student-payment .invoice .panel-body .data {
   width: 95%;
+}
+#student-payment .invoice .panel-body .data-container {
+  width: 100%;
 }
 #student-payment .invoice .panel-body .date {
   width: 28%;
@@ -51,13 +69,22 @@
 #student-payment .invoice .panel-body .amount * {
   text-align: right;
 }
+#student-payment .invoice .panel-body .data-container:nth-child(odd) .data {
+  background: rgba(242, 227, 148, 0.5);
+  border-radius: 4px;
+}
+#student-payment .invoice .panel-body .action a {
+  display: none;
+}
+#student-payment .invoice .panel-body .data-container:hover .action a {
+  display: block;
+}
 #student-payment .invoice .panel-body .action {
   padding-top: 3px;
   padding-left: 8px;
 }
-#student-payment .invoice .panel-body .data:nth-child(even) {
-  background: rgba(242, 227, 148, 0.5);
-  border-radius: 3px;
+#student-payment .invoice .panel-body .delete-confirm-transaction * {
+  float: none;
 }
 #student-payment .invoice .panel-body .add {
   width: 100%;
@@ -68,6 +95,7 @@
   display: inline-block;
   width: 100%;
   text-align: center;
+  margin-top: 2px;
 }
 #student-payment .invoice .panel-body .add div {
   text-align: center;
@@ -77,7 +105,6 @@
 }
 #student-payment .invoice .panel-body .add form {
   width: 95%;
-  font-size: 15px;
 }
 #student-payment .invoice .panel-body .add form > div {
   padding-right: 8px;
@@ -85,9 +112,15 @@
 #student-payment .invoice .panel-body .add form input {
   height: 25px;
   float: left;
+  font-size: 14px;
 }
 #student-payment .invoice .panel-body .add form .date {
   padding-left: 0;
+}
+#student-payment .invoice .panel-body .add form .date input {
+  background-position: 6px 4px;
+  background-size: 15px;
+  padding-left: 28px !important;
 }
 #student-payment .invoice .panel-body .add form .amount {
   padding-right: 0;
@@ -102,9 +135,6 @@
 #student-payment .invoice .panel-footer .trash {
   width: 40%;
   height: 20px;
-}
-#student-payment .invoice .panel-footer .trash a {
-  display: none;
 }
 #student-payment .invoice .panel-footer .text {
   width: 30%;

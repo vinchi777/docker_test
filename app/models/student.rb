@@ -66,5 +66,5 @@ class Student
     end
   end
 
-  embeds_many :payments, class_name: 'StudentPayment'
+  embeds_many :invoices, class_name: 'StudentInvoice'
 end

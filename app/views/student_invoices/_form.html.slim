@@ -1,0 +1,81 @@
+.invoice.panel.col-lg-6 ng-repeat='i in invoices'
+  .panel-title
+    .row
+      .package.col-lg-6
+        | {{i.package}}
+      .balance.col-lg-6
+        .pull-right
+          | {{i.amount | currency:'Php '}}
+    .row
+      .season.col-lg-6
+        | {{i.review_seasons}}
+      .description.col-lg-6
+        .pull-right
+          | {{i.description}}
+  .panel-body
+    .error.panel ng-show='i.transactionErrors.length > 0'
+      ul
+        li ng-repeat='e in i.transactionErrors'
+          | {{e}}
+    .head
+      .date Date
+      .or OR No.
+      .method Method
+      .amount Amount
+    .data-container ng-repeat='t in i.transactions'
+      .data
+        .date
+          | {{t.date}}
+        .or
+          | {{t.or_no}}&nbsp;
+        .method
+          | {{t.method}}&nbsp;
+        .amount
+          | {{t.amount | currency:''}}
+      .action
+        a href='#' data-toggle='modal' data-target=('#confirm-tr-{{t._id.$oid}}')
+          i.fa.fa-trash
+
+      .delete-confirm-transaction.modal.fade role='dialog' id=('confirm-tr-{{t._id.$oid}}') tabindex='-1' aria-hidden='true'
+        .modal-dialog
+          .modal-content
+            .modal-header
+              h4.modal-title Confirmation
+            .modal-body
+              span Are you sure you want to remove this transaction?
+            .modal-footer
+              a.btn.btn-default href='#' ng-click='removeTransaction(i,t)' Yes
+              button.btn.btn-primary data-dismiss='modal' No
+
+    .add
+      form ng-submit='saveTransaction(i)' ng-show='i.showTransaction'
+        .date: input.form-control.date-picker.required ng-model='i.transaction.date' data-date-format='YYYY-MM-DD'
+        .or: input.form-control.required ng-model='i.transaction.or_no'
+        .method: input.form-control.required ng-model='i.transaction.method'
+        .amount: input.form-control.required ng-model='i.transaction.amount'
+        input.hide type='submit'
+      .action  ng-show='i.showTransaction': a href='#' ng-click='hideTransaction(i)': i.fa.fa-trash
+      a href='#' ng-hide='i.showTransaction' ng-click='showTransaction(i)' Add Transaction
+
+  .panel-footer
+    .trash
+      a href='#' data-toggle='modal' data-target=('#confirm-{{i._id.$oid}}')
+        i.fa.fa-trash
+
+    .text Balance
+    .amount: b
+      | {{balance(i) |currency:'Php '}}
+
+  .delete-confirm.modal.fade role='dialog' id=('confirm-{{i._id.$oid}}') tabindex='-1' aria-hidden='true'
+    .modal-dialog
+      .modal-content
+        .modal-header
+          h4.modal-title Confirmation
+        .modal-body
+          span Are you sure you want to remove this invoice?
+        .modal-footer
+          a.btn.btn-default href='#' ng-click='remove(i)' Yes
+          button.btn.btn-primary data-dismiss='modal' No
+
+  javascript:
+    bindDatePicker()

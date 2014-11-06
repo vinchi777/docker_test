@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "student_payments/show", :type => :view do
   before(:each) do
-    @student_payment = assign(:student_payment, StudentPayment.create!(
+    @student_invoice = assign(:student_invoice, StudentInvoice.create!(
       :description => "Description",
       :reviewSeasons => "Review Seasons",
       :amount => "",

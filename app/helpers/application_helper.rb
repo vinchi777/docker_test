@@ -4,7 +4,7 @@ module ApplicationHelper
   end
 
   def admin_page?
-    controller_name == 'students' || controller_name == 'review_seasons' || controller_name == 'student_payments'
+    controller.is_a? AdminController
   end
 
   def people_page?

@@ -9,6 +9,7 @@
   font-family: 'Signika Semibold';
   background: #4C4C4C;
   color: #F2F2F2;
+  border: none;
 }
 .form-control.mini {
   padding: 3px;

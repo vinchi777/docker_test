@@ -2,14 +2,14 @@ require 'rails_helper'
 
 RSpec.describe "student_payments/index", :type => :view do
   before(:each) do
-    assign(:student_payments, [
-      StudentPayment.create!(
+    assign(:student_invoices, [
+      StudentInvoice.create!(
         :description => "Description",
         :reviewSeasons => "Review Seasons",
         :amount => "",
         :discount => "Discount"
       ),
-      StudentPayment.create!(
+      StudentInvoice.create!(
         :description => "Description",
         :reviewSeasons => "Review Seasons",
         :amount => "",
