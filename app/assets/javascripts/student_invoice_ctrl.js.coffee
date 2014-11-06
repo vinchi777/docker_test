@@ -31,7 +31,7 @@ toHuman = (input, cap = true) =>
     }
 
   addEmptyTransactions = (i) ->
-    if !i.hasOwnProperty 'transactions'
+    unless 'transactions' of i
       i.transactions = []
 
   res = $http.get('/student_invoices.json?id=' + studentId)
@@ -47,38 +47,24 @@ toHuman = (input, cap = true) =>
   $scope.enableAddInvoiceBtn = true
   resetInvoice()
 
-  $scope.createInvoice = ->
-    $this = $('#invoice-modal form')
-    url = $this.data('url')
+  $scope.createInvoice = (url) ->
+    $scope.addInvoiceClass = 'disabled'
 
-    btn = $this.find 'input[type="submit"]'
-    btn.addClass('disabled')
+    r = $http.post url + '.json', student_invoice: $scope.invoice
+    r.success (i) ->
+      $('#invoice-modal').modal('hide')
+      $scope.addInvoiceClass = ''
+      addEmptyTransactions(i)
+      resetInvoice()
+      resetTransaction(i)
+      $scope.invoices.push i
 
-    $.ajax
-      url: url
-      type: 'post'
-      data:
-        student_invoice: $scope.invoice
-      success: (i) ->
-        $('#invoice-modal').modal('hide')
-        btn.removeClass('disabled')
-
-        $scope.$apply ->
-          addEmptyTransactions(i)
-          resetInvoice()
-          resetTransaction(i)
-          $scope.invoices.push i
-
-      error: (xhr, status, e) ->
-        data = JSON.parse xhr.responseText
-        btn.removeClass('disabled')
-
-        $scope.$apply ->
-          $scope.invoiceErrors = []
-
-          for k,vs of data
-            for v in vs
-              $scope.invoiceErrors.push "#{toHuman(k)} #{v}"
+    r.error (d) ->
+      $scope.addInvoiceClass = ''
+      $scope.invoiceErrors = []
+      for k,vs of d
+        for v in vs
+          $scope.invoiceErrors.push "#{toHuman(k)} #{v}"
 
   $scope.total = (i) ->
     i.amount * (1 - i.discount)
@@ -89,31 +75,27 @@ toHuman = (input, cap = true) =>
         i.transactions.map((t) -> parseFloat(t.amount)).reduce((t, s) -> t + s)
       else
         0
-
     $scope.total(i) - totalTransaction - i.transaction.amount
 
   $scope.remove = (i) ->
     id = i._id.$oid
-    data =
+    params =
       student_id: studentId
 
-    $.ajax
-      url: "/student_invoices/#{id}.json"
-      data: data
-      method: 'DELETE'
-      success: (data) ->
-        confirm = $("#confirm-#{id}")
-        confirm.on 'hidden.bs.modal', ->
-          idx = $scope.invoices.indexOf i
+    r = $http.delete "/student_invoices/#{id}.json", params: params
+    r.success (d) ->
+      confirm = $("#confirm-#{id}")
+      confirm.on 'hidden.bs.modal', ->
+        idx = $scope.invoices.indexOf i
 
-          if idx != -1
-            $scope.$apply ->
-              $scope.invoices.splice(idx, 1)
+        if idx != -1
+          $scope.$apply ->
+            $scope.invoices.splice(idx, 1)
 
-        confirm.modal('hide')
+      confirm.modal('hide')
 
-      error: (e) ->
-        console.log 'Error removing invoice.'
+    r.error (e) ->
+      console.log 'Error removing invoice.'
 
   $scope.saveTransaction = (i) ->
     id = i._id.$oid
@@ -121,26 +103,19 @@ toHuman = (input, cap = true) =>
       student_id: studentId
       transaction: i.transaction
 
-    $.ajax
-      url: "/student_invoices/#{id}/transaction"
-      data: data
-      method: 'POST'
-      success: (data) ->
-        $scope.$apply ->
-          i.transactions = data.transactions
-          resetTransaction(i)
-          i.showTransaction = false
-          i.transactionErrors = []
+    r = $http.post "/student_invoices/#{id}/transaction.json", data
 
-      error: (xhr, status, e) ->
-        data = JSON.parse xhr.responseText
+    r.success (d)->
+      i.transactions = d.transactions
+      resetTransaction(i)
+      i.showTransaction = false
+      i.transactionErrors = []
 
-        $scope.$apply ->
-          i.transactionErrors = []
-
-          for k,vs of data
-            for v in vs
-              i.transactionErrors.push "#{toHuman(k)} #{v}"
+    r.error (d, s) ->
+      i.transactionErrors = []
+      for k,vs of d
+        for v in vs
+          i.transactionErrors.push "#{toHuman(k)} #{v}"
 
   $scope.removeTransaction = (i, t) ->
     id = i._id.$oid
@@ -149,24 +124,20 @@ toHuman = (input, cap = true) =>
         tr_id: t._id.$oid
       student_id: studentId
 
-    $.ajax
-      url: "/student_invoices/#{id}/transaction"
-      data: data
-      method: 'DELETE'
-      success: (data) ->
-        confirm = $("#confirm-tr-#{t._id.$oid}")
-        confirm.on 'hidden.bs.modal', ->
+    r = $http.post "/student_invoices/#{id}/transaction/destroy.json", data
+
+    r.success (d) ->
+      confirm = $("#confirm-tr-#{t._id.$oid}")
+      confirm.on 'hidden.bs.modal', ->
+        $scope.$apply ->
           idx = i.transactions.indexOf t
-
           if idx != -1
-            $scope.$apply ->
-              i.transactions.splice(idx, 1)
+            i.transactions.splice(idx, 1)
 
-        confirm.modal 'hide'
+      confirm.modal 'hide'
 
-      error: (e) ->
-        console.log 'not deleted'
-
+    r.error (d, s) ->
+      console.log 'not deleted'
 
   $scope.showTransaction = (i) ->
     i.showTransaction = true

@@ -18,7 +18,7 @@
   #invoice-modal.modal.fade
     .modal-dialog
       .modal-content
-        form ng-submit='createInvoice()' data-url=student_invoices_path(@payment)
+        form ng-submit=('createInvoice("' + student_invoices_path(@payment) + '")')
           .modal-header
             button.close type='button' data-dismiss='modal': span aria-hidden='true' &times;
             h4.modal-title New Invoice
@@ -48,4 +48,4 @@
                 | {{total(invoice) | currency:'Php '}}
               .text TOTAL
             .actions
-              input.add-invoice.btn.btn-primary type='submit' value='Add Invoice'
+              input.add-invoice.btn.btn-primary ng-class='addInvoiceClass' type='submit' value='Add Invoice'
