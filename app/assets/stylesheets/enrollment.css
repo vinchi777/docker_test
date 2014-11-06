@@ -12,6 +12,12 @@
 #enrollment .banner h4 {
   font-family: 'Signika Light';
 }
+#enrollment .steps > * {
+  display: none;
+}
+#enrollment .steps > .active {
+  display: block;
+}
 #enrollment .steps .package-type .package {
   padding: 10px 0px;
 }
@@ -36,12 +42,44 @@
 #enrollment .steps .personal-information .control-label {
   text-align: left;
 }
+#enrollment .steps .personal-information hr {
+  margin-bottom: 10px;
+}
 #enrollment .steps .personal-information .form-inline .form-group {
   margin-right: 20px;
   margin-bottom: 15px;
 }
 #enrollment .steps .personal-information .form-inline .form-group .control-label {
   padding-right: 10px;
+}
+#enrollment .steps .others .fa {
+  font-size: 25px;
+  margin-right: 5px;
+}
+#enrollment .steps .others textarea {
+  max-width: 100%;
+  min-width: 100%;
+}
+#enrollment .steps .terms .wrapper {
+  padding: 10px;
+  border: solid 1px #ccc;
+  overflow-y: scroll;
+  height: 350px;
+}
+#enrollment .steps .summary table {
+  margin-bottom: 10px;
+}
+#enrollment .steps .summary table tr:last-of-type {
+  font-family: 'Signika Semibold';
+}
+#enrollment .steps .summary table tr td:nth-of-type(1) {
+  width: 250px;
+}
+#enrollment .steps .summary table tr td:nth-of-type(2) {
+  width: 20px;
+}
+#enrollment .steps .summary table tr td:last-of-type {
+  text-align: right;
 }
 #enrollment .navigation {
   padding-top: 20px;
