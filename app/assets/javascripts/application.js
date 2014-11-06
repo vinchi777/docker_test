@@ -14,7 +14,7 @@
 //= require jquery_ujs
 //= require bootstrap.min
 //= require coverflow
-//= require angular.min
+//= require angular
 //= require moment
 //= require bootstrap-datetimepicker
 //= require_self
