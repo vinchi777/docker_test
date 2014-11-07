@@ -22,3 +22,11 @@ change_view = (element, mode) ->
   else
     window.location = '/'
 
+  last = $('.navigation .indicators .indicator.active').last()
+
+  if mode == PREV
+    last.removeClass 'active'
+  else
+    last.next().addClass 'active'
+
+

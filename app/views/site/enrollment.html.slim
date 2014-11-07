@@ -7,7 +7,7 @@
   .container
     .steps.row
       .package-type.active data-desc='Package Type'
-        .col-lg-6.col-lg-offset-3.col-md-8.col-md-offset-2
+        .wrapper.col-lg-6.col-lg-offset-3.col-md-8.col-md-offset-3.col-sm-10.col-sm-offset-2.col-xs-10.col-xs-offset-1
           p.text-muted Please choose a package below for the April 2014 review season.
           .package
             .radio
@@ -29,20 +29,22 @@
             p Need a refresh? Get our Ultimate Final Coaching package.
       .personal-information data-desc='Personal Information'
         form
-          .col-lg-2.profile-pic
-            = image_tag 'profile-placeholder.png'
+          .profile-pic.col-lg-2.col-md-3.col-sm-4
+            = image_tag 'user.png', class: 'profile'
             input type='image' class='hidden'
             a href='#' Upload Photo
-          .col-lg-10
+          .col-lg-10.col-md-9.col-sm-8
             .form-horizontal
               .form-group
-                .col-lg-4 = text_field_tag :first_name,'', class: 'form-control required', placeholder: 'First Name'
-                .col-lg-4 = text_field_tag :middle_name,'', class: 'form-control', placeholder: 'Middle Name'
-                .col-lg-4 = text_field_tag :last_name,'', class: 'form-control required', placeholder: 'Last Name'
+                .col-sm-4 = text_field_tag :first_name,'', class: 'form-control required', placeholder: 'First Name'
+                .col-sm-4 = text_field_tag :middle_name,'', class: 'form-control', placeholder: 'Middle Name'
+                .col-sm-4 = text_field_tag :last_name,'', class: 'form-control required', placeholder: 'Last Name'
+            .form-inline
               .form-group
-                label.control-label.col-lg-1 Birthdate
-                .col-lg-3 = text_field_tag :birth_date,'', class: 'form-control required', placeholder: 'Select birthdate', 'data-date-format' => 'MMM DD, YYYY'
-                .age.control-label.col-lg-1
+                label.control-label Birthdate
+                = text_field_tag :birth_date,'', class: 'form-control required', placeholder: 'Select birthdate', 'data-date-format' => 'MMM DD, YYYY'
+              .form-group
+                .age.control-label
                   | Age
                   span< 19
             .form-inline
@@ -54,68 +56,65 @@
                 = select_tag :civil ,options_for_select(%w{Single Married}), class: 'form-control required'
             .form-horizontal
               .form-group
-                label.control-label.col-lg-2 Address
-                .col-lg-6 = text_field_tag :address,'', class: 'form-control'
+                label.control-label.col-lg-2.col-md-3.col-sm-4 Address
+                .col-md-6.col-sm-8 = text_field_tag :address,'', class: 'form-control'
               .form-group
-                label.control-label.col-lg-2 Contacts
-                .col-lg-6 = text_field_tag :contacts,'', class: 'form-control'
+                label.control-label.col-lg-2.col-md-3.col-sm-4 Contacts
+                .col-md-6.col-sm-8 = text_field_tag :contacts,'', class: 'form-control'
               .form-group
-                label.control-label.col-lg-2 Email Address
-                .col-lg-6 = text_field_tag :email,'', class: 'form-control'
+                label.control-label.col-lg-2.col-md-3.col-sm-4 Email Address
+                .col-md-6.col-sm-8 = text_field_tag :email,'', class: 'form-control'
               hr
               .form-group
-                label.control-label.col-lg-4 Parent or Guardian Name
-                label.control-label.col-lg-4.col-lg-offset-4 Contact
+                label.control-label.col-sm-8 Parent or Guardian Name
+                label.control-label.col-sm-4 Contact
               .form-group
-                .col-lg-4 = text_field_tag :p_first_name, '', class: 'form-control', placeholder: 'First Name'
-                .col-lg-4 = text_field_tag :p_last_name, '', class: 'form-control', placeholder: 'Last Name'
-                .col-lg-4 = text_field_tag :p_contact, '', class: 'form-control'
+                .col-sm-4 = text_field_tag :p_first_name, '', class: 'form-control', placeholder: 'First Name'
+                .col-sm-4 = text_field_tag :p_last_name, '', class: 'form-control', placeholder: 'Last Name'
+                .col-sm-4 = text_field_tag :p_contact, '', class: 'form-control'
       .education data-desc='Educational Background'
-        form.form-horizontal.col-lg-10.col-lg-offset-1
+        form.form-horizontal.col-md-10.col-md-offset-1
           .form-group
-            label.control-label.col-lg-3 School Last Attended
-            .col-lg-5 = text_field_tag :college,'', class: 'form-control required'
-            label.control-label.col-lg-2 Year Graduated
-            .col-lg-2 = text_field_tag :college_year,'', class: 'form-control required'
+            label.control-label.col-md-3 School Last Attended
+            .col-lg-5.col-md-4 = text_field_tag :college,'', class: 'form-control required'
+            label.control-label.col-lg-2.col-md-3 Year Graduated
+            .col-md-2 = text_field_tag :college_year,'', class: 'form-control required'
           .form-group
-            label.control-label.col-lg-3 Recognition/Awards
-            .col-lg-5 = text_field_tag :school,'', class: 'form-control required'
+            label.control-label.col-md-3 Recognition/Awards
+            .col-lg-5.col-md-4 = text_field_tag :school,'', class: 'form-control required'
           .form-group
-            label.control-label.col-lg-3 High School
-            .col-lg-5 = text_field_tag :high_school, '', class: 'form-control required'
-            label.control-label.col-lg-2 Year Graduated
-            .col-lg-2 = text_field_tag :high_school_year, '', class: 'form-control required'
+            label.control-label.col-md-3 High School
+            .col-lg-5.col-md-4 = text_field_tag :high_school, '', class: 'form-control required'
+            label.control-label.col-lg-2.col-md-3 Year Graduated
+            .col-md-2 = text_field_tag :high_school_year, '', class: 'form-control required'
           .form-group
-            label.control-label.col-lg-3 Elementary
-            .col-lg-5 = text_field_tag :elementary, '', class: 'form-control required'
-            label.control-label.col-lg-2 Year Graduated
-            .col-lg-2 = text_field_tag :elementary_year, '', class: 'form-control required'
+            label.control-label.col-md-3 Elementary
+            .col-lg-5.col-md-4 = text_field_tag :elementary, '', class: 'form-control required'
+            label.control-label.col-lg-2.col-md-3 Year Graduated
+            .col-md-2 = text_field_tag :elementary_year, '', class: 'form-control required'
       .others data-desc='Other Information'
-        form.form-horizontal.col-lg-8.col-lg-offset-2
+        form.form-horizontal.col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1.col-xs-12
           .form-group
-            label.control-label.col-lg-2
+            label.control-label.col-xs-2
               i.fa.fa-facebook-square
-              | Facebook
-            .col-lg-5 = text_field_tag :facebook,'', class: 'form-control'
+            .col-xs-5 = text_field_tag :facebook,'', class: 'form-control', placeholder: 'Facebook'
           .form-group
-            label.control-label.col-lg-2
+            label.control-label.col-xs-2
               i.fa.fa-twitter-square
-              | Twitter
-            .col-lg-5 = text_field_tag :twitter,'', class: 'form-control'
+            .col-xs-5 = text_field_tag :twitter,'', class: 'form-control', placeholder: 'Twitter'
           .form-group
-            label.control-label.col-lg-2
+            label.control-label.col-xs-2
               i.fa.fa-linkedin-square
-              | Linkedin
-            .col-lg-5 = text_field_tag :linkedin,'', class: 'form-control'
+            .col-xs-5 = text_field_tag :linkedin,'', class: 'form-control', placeholder: 'Linkedin'
           .form-group
-            label.control-label.col-lg-2 Referred by
-            .col-lg-5 = text_field_tag :first_name,'', class: 'form-control', placeholder: 'First name'
-            .col-lg-5 = text_field_tag :last_name,'', class: 'form-control', placeholder: 'Last name'
+            label.control-label.col-xs-2 Referred by
+            .col-xs-5 = text_field_tag :first_name,'', class: 'form-control', placeholder: 'First name'
+            .col-xs-5 = text_field_tag :last_name,'', class: 'form-control', placeholder: 'Last name'
           .form-group
-            label.control-label.col-lg-12.auto-width Why did you choose MaxRevOne?
+            label.control-label.col-xs-12.auto-width Why did you choose MaxRevOne?
           .form-group
-            .col-lg-12 = text_area_tag :reason,'', class: 'form-control'
-      .terms.col-lg-10.col-lg-offset-1 data-desc='Terms and Conditions'
+            .col-xs-12 = text_area_tag :reason,'', class: 'form-control'
+      .terms.col-xs-12.col-md-10.col-md-offset-1 data-desc='Terms and Conditions'
         .wrapper
           p Max Rev One wants to maintain a high quality service to its reviewees and this memorandum of agreement aims to explain the policies
             made and implemented by Max Rev One in which every reviewee must understand and comply.
@@ -140,7 +139,7 @@
           p
             b> Section 6.
             | Reviewees are required and expected to have a complete attendance in all review classes and activities that the review center will be conducting and to pass all the examinations given.
-      .summary.col-lg-10.col-lg-offset-1 data-desc='Payment'
+      .summary.col-xs-12.col-md-10.col-md-offset-1 data-desc='Payment'
         p Here’s the summary of your payment:
         table
           tr
@@ -163,7 +162,7 @@
             enrollment.
         p MaxRevOne is using PayPal for online payment processing. You will be taken to a secured PayPal page
           once you choose Pay Now via PaypPal to process your payment.
-      .confirmation.col-lg-8.col-lg-offset-2 data-desc='Confirmation'
+      .confirmation.col-xs-12.col-sm-8.col-sm-offset-2 data-desc='Confirmation'
         p
           b Thank you
         p Thank you for choosing MaxRevOne.
@@ -175,17 +174,17 @@
 
 
     .navigation.row
-      .col-lg-4.text-right
+      .text-right.col-lg-4.col-md-3.col-xs-2
         a.btn.btn-default.previous href='#' Cancel
-      .col-lg-4.indicators
+      .indicators.col-lg-4.col-md-6.col-xs-8
         .wrapper
           span.line
+          span.indicator.active
           span.indicator
           span.indicator
           span.indicator
           span.indicator
           span.indicator
           span.indicator
-          span.indicator
-      .col-lg-4.text-left
+      .text-left.col-lg-4.col-md-3.col-xs-2
         a.btn.btn-primary.next href='#' Next
