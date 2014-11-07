@@ -125,6 +125,11 @@
 #student-payment .invoice .panel-body .add form .amount {
   padding-right: 0;
 }
+#student-payment .invoice .panel-body .add form .amount input {
+  background-position: 6px 5px;
+  background-size: 22px auto;
+  width: 100%;
+}
 #student-payment .invoice .panel-footer {
   padding: 10px 25px 0 17px;
   height: 40px;
