@@ -20,6 +20,13 @@
 //= require_self
 //= require_tree .
 
-window.has_google_map = function(){
+window.has_google_map = function () {
   return typeof window.google === 'object' && window.google.maps
+}
+
+window.do_scroll = function (target) {
+  if(target == undefined)
+    target = $('html')
+  scroll = target.offset().top
+  $('html, body').animate({scrollTop: scroll}, "fast")
 }

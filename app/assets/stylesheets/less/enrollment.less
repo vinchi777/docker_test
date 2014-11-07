@@ -22,6 +22,14 @@
   }
 
   .steps {
+    > * {
+      display: none;
+    }
+
+    > .active {
+      display: block;
+    }
+
     .package-type {
       .package {
         padding: 10px 0px;
@@ -56,6 +64,10 @@
         text-align: left;
       }
 
+      hr {
+        margin-bottom: 10px;
+      }
+
       .form-inline {
         .form-group {
           margin-right: 20px;
@@ -63,6 +75,50 @@
 
           .control-label {
             padding-right: 10px;
+          }
+        }
+      }
+    }
+
+    .others {
+      .fa {
+        font-size: 25px;
+        margin-right: 5px;
+      }
+
+      textarea {
+        max-width: 100%;
+        min-width: 100%;
+      }
+    }
+
+    .terms .wrapper {
+      padding: 10px;
+      border: solid 1px #ccc;
+      overflow-y: scroll;
+      height: 350px;
+    }
+
+    .summary {
+      table {
+        margin-bottom: 10px;
+        tr {
+          &:last-of-type {
+            font-family: 'Signika Semibold';
+          }
+
+          td {
+            &:nth-of-type(1) {
+              width: 250px;
+            }
+
+            &:nth-of-type(2) {
+              width: 20px;
+            }
+
+            &:last-of-type {
+              text-align: right;
+            }
           }
         }
       }
