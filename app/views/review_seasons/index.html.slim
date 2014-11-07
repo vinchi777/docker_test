@@ -3,7 +3,9 @@
     .col-lg-8
       h2 Review Seasons
     .col-lg-4
-      .btn.btn-primary.pull-right Add Review Season
+      .btn.btn-primary.pull-right data-target='#review-season-modal' data-toggle='modal' Add Review Season
+
+  = render 'form'
 
   .review-seasons
     .review-season.panel
@@ -29,22 +31,22 @@
                 header: b Discount
                 .form-group
                   label.light Repeater
-                  input.form-control.text-right type='text' value='Php 22,000'
+                  input.peso.form-control.text-right type='text' value='22,000'
                 .form-group
                   label.light First Timer
-                  input.form-control.text-right type='text' value='Php 13,000'
+                  input.peso.form-control.text-right type='text' value='13,000'
             .col-lg-4
               .package
                 header: b Pricing Package
                 .form-group
                   label.light Full Review
-                  input.form-control.text-right type='text' value='Php 16,000'
+                  input.peso.form-control type='text' value='16,000'
                 .form-group
                   label.light Double Review
-                  input.form-control.text-right type='text' value='Php 22,000'
+                  input.peso.form-control type='text' value='22,000'
                 .form-group
                   label.light Coaching
-                  input.form-control.text-right type='text' value='Php 7,000'
+                  input.peso.form-control type='text' value='7,000'
                 .form-group
                   label.light Reservation
-                  input.form-control.text-right type='text' value='Php 3,000'
+                  input.peso.form-control type='text' value='3,000'

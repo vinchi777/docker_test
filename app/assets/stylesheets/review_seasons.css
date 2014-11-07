@@ -12,31 +12,37 @@
   width: 26px;
   margin-left: 6px;
 }
-#review-seasons input {
+#review-seasons input[type='text'] {
   height: 30px;
-  width: 110px;
-}
-#review-seasons .review-seasons {
-  margin-top: 18px;
-}
-#review-seasons .review-season {
-  background: #F9F9F9;
-}
-#review-seasons .range,
-#review-seasons .discount {
-  float: left;
-  width: 100%;
-  margin-bottom: 3px;
-}
-#review-seasons .discount {
-  margin-top: 10px;
-}
-#review-seasons .form-group {
-  margin-bottom: 4px;
 }
 #review-seasons .range * {
   float: left;
 }
 #review-seasons .range input {
   width: 140px;
+}
+#review-seasons .range {
+  float: left;
+  width: 100%;
+  margin-bottom: 3px;
+}
+#review-seasons .form-group {
+  margin-bottom: 4px;
+}
+#review-seasons .modal .promo {
+  margin-bottom: 20px;
+}
+#review-seasons .review-seasons {
+  margin-top: 18px;
+}
+#review-seasons .review-seasons .review-season {
+  background: #F9F9F9;
+}
+#review-seasons .review-seasons .review-season .discount {
+  float: left;
+  width: 100%;
+  margin-bottom: 3px;
+}
+#review-seasons .review-seasons .review-season .discount {
+  margin-top: 10px;
 }

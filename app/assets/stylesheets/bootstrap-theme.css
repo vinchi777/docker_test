@@ -80,5 +80,5 @@
 }
 /*** Bootstrap Datepicker Override ***/
 .bootstrap-datetimepicker-widget {
-  z-index: 20 !important;
+  z-index: 2000 !important;
 }
