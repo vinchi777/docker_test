@@ -126,3 +126,6 @@
   width: 100%;
   z-index: -1;
 }
+#enrollment .navigation .paypal span {
+  margin: 0px 10px;
+}
