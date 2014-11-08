@@ -1,52 +1,87 @@
-#review-seasons
+#review-seasons ng-controller='ReviewSeasonsCtrl'
   header.row
     .col-lg-8
       h2 Review Seasons
     .col-lg-4
-      .btn.btn-primary.pull-right data-target='#review-season-modal' data-toggle='modal' Add Review Season
+      .btn.btn-primary.pull-right data-target='#review-season-modal' ng-click='addReviewSeason()' data-toggle='modal' Add Review Season
 
   = render 'form'
 
   .review-seasons
-    .review-season.panel
-      .panel-title April 2014
+    .no-review-season ng-show='reviewSeasons.length == 0'
+      p
+        | There is no existing review season. Click the
+        b  'Add Review Season'
+        |  button to create one.
+    .review-season.panel ng-repeat='r in reviewSeasons'
+      .panel-title
+        | {{r.season}}
       .panel-body
         .row
           form role='form'
             .col-lg-2
               div: a href='#' 150 students
               div: a href='#' 35 enrollees
+              .actions
+                a href='#' data-toggle='modal' data-target=('#confirm-{{r._id.$oid}}')
+                  i.fa.fa-trash
+                a href=''
+                  i.fa.fa-pencil-square-o data-target='#review-season-modal' ng-click='editReviewSeason(r)' data-toggle='modal'
+
             .col-lg-6
               .season.range
                 label Season
-                input.date-picker.form-control type='text' data-date-format='MMM DD, YYYY'
+                span
+                  | {{r.start}}
                 label.to.light to
-                input.date-picker.form-control type='text' data-date-format='MMM DD, YYYY'
-              .promo.range
+                span
+                  | {{r.end}}
+              .promo.range ng-show='r.promoStart'
                 label Promo
-                input.date-picker.form-control type='text' data-date-format='MMM DD, YYYY'
+                span
+                  | {{r.promoStart}}
                 label.to.light to
-                input.date-picker.form-control type='text' data-date-format='MMM DD, YYYY'
+                span
+                  | {{r.promoEnd}}
               .discount
                 header: b Discount
                 .form-group
                   label.light Repeater
-                  input.peso.form-control.text-right type='text' value='22,000'
+                  span
+                    | {{r.repeater}}
                 .form-group
                   label.light First Timer
-                  input.peso.form-control.text-right type='text' value='13,000'
+                  span
+                    | {{r.firstTimer}}
             .col-lg-4
               .package
                 header: b Pricing Package
                 .form-group
                   label.light Full Review
-                  input.peso.form-control type='text' value='16,000'
+                  span
+                    | {{r.fullReview}}
                 .form-group
                   label.light Double Review
-                  input.peso.form-control type='text' value='22,000'
+                  span
+                    | {{r.doubleReview}}
                 .form-group
                   label.light Coaching
-                  input.peso.form-control type='text' value='7,000'
+                  span
+                    | {{r.coaching}}
                 .form-group
                   label.light Reservation
-                  input.peso.form-control type='text' value='3,000'
+                  span
+                    | {{r.reservation}}
+
+      .delete-confirm.modal.fade role='dialog' id=('confirm-{{r._id.$oid}}') tabindex='-1' aria-hidden='true'
+        .modal-dialog
+          .modal-content
+            .modal-header
+              h4.modal-title Confirmation
+            .modal-body
+              span Are you sure you want to remove this review season?
+            .modal-footer
+              a.btn.btn-default href='#' ng-click='remove(r)' Yes
+              button.btn.btn-primary data-dismiss='modal' No
+      javascript:
+        bindDatePicker()

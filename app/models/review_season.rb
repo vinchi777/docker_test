@@ -1,6 +1,9 @@
 class ReviewSeason
   include Mongoid::Document
 
+  field :season, type: String
+  validates_presence_of :season
+
   field :start, type: Date
   validates_presence_of :start
 
@@ -9,6 +12,8 @@ class ReviewSeason
 
   field :promoStart, type: Date
   field :promoEnd, type: Date
+
+  field :firstTimer, type: BigDecimal
   field :repeater, type: BigDecimal
 
   field :fullReview, type: BigDecimal

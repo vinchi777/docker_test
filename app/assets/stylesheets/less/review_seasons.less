@@ -5,7 +5,6 @@
     color: #4C4C4C;
     float: left;
     width: 120px;
-    padding: 2px;
   }
 
   label.light {
@@ -21,39 +20,81 @@
     height: 30px;
   }
 
-  .range * {
-    float: left;
-  }
-  .range input {
-    width: 140px;
-  }
-  .range {
-    float: left;
-    width: 100%;
-    margin-bottom: 3px
+  input.season {
+    width: 312px;
   }
 
-  .form-group {
-    margin-bottom: 4px;
-  }
-
-  .modal .promo {
-    margin-bottom: 20px;
-  }
   .review-seasons {
     margin-top: 18px;
   }
 
-  .review-seasons .review-season {
+  .review-season {
     background: #F9F9F9;
+  }
 
-    .discount {
-      float: left;
-      width: 100%;
-      margin-bottom: 3px
+  .range * {
+    float: left;
+  }
+
+  .range input {
+    width: 140px;
+  }
+
+  .range {
+    float: left;
+    width: 100%;
+  }
+
+  .discount {
+    float: left;
+    margin-bottom: 3px;
+  }
+
+  .review-season {
+    header {
+      margin-bottom: 6px;
     }
 
+    .form-group {
+      margin-bottom: 0;
+      float: left;
+      clear: left;
+    }
+    .season label:first-child,
+    .promo label:first-child{
+      font-family: 'Signika Semibold';
+      font-weight: normal;
+      color: #333;
+    }
     .discount {
+      margin-top: 10px;
+    }
+
+    .actions {
+      margin-top: 104px;
+    }
+
+    .actions i.fa {
+      color: #A5A5A5;
+      font-size: 20px;
+    }
+
+    .actions a {
+      margin-right: 8px;
+    }
+  }
+
+  .modal {
+    label {
+      padding: 2px;
+    }
+    .promo {
+      margin-bottom: 20px;
+    }
+    .range {
+      margin-bottom: 3px
+    }
+    .discount, .package {
       margin-top: 10px;
     }
   }

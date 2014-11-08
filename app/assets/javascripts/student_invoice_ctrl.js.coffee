@@ -1,9 +1,9 @@
 # Extracted from Morph https://github.com/cmoncrief/morph
-capFirst = (input) ->
+@capFirst = (input) ->
   "#{input[0].toUpperCase()}#{input.slice 1}"
 
 # Extracted from Morph https://github.com/cmoncrief/morph
-toHuman = (input, cap = true) =>
+@toHuman = (input, cap = true) =>
   output = input.replace /[-._]/g, ' '
   output = output.replace /([A-Z\d])([A-Z][a-z\d])/g, '$1 $2'
   output = output.replace /([a-z])([A-Z])/g, '$1 $2'
