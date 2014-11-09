@@ -63,6 +63,6 @@ class ReviewSeasonsController < AdminController
   end
 
   def review_season_params
-    params.require(:review_season).permit(:season, :start, :end, :promoStart, :promoEnd, :firstTimer, :repeater, :fullReview, :doubleReview, :coaching, :reservation)
+    params.require(:review_season).permit(:season, :season_start, :season_end, :promo_start, :promo_end, :first_timer, :repeater, :full_review, :double_review, :coaching, :reservation)
   end
 end

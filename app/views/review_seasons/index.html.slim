@@ -15,7 +15,7 @@
         |  button to create one.
     .review-season.panel ng-repeat='r in reviewSeasons'
       .panel-title
-        | {{r.season}}
+        | {{r.season}} &nbsp;
       .panel-body
         .row
           form role='form'
@@ -32,17 +32,17 @@
               .season.range
                 label Season
                 span
-                  | {{r.start}}
+                  | {{r.season_start}}
                 label.to.light to
                 span
-                  | {{r.end}}
+                  | {{r.season_end}}
               .promo.range ng-show='r.promoStart'
                 label Promo
                 span
-                  | {{r.promoStart}}
+                  | {{r.promo_start}}
                 label.to.light to
                 span
-                  | {{r.promoEnd}}
+                  | {{r.promo_end}}
               .discount
                 header: b Discount
                 .form-group
@@ -52,18 +52,18 @@
                 .form-group
                   label.light First Timer
                   span
-                    | {{r.firstTimer}}
+                    | {{r.first_timer}}
             .col-lg-4
               .package
                 header: b Pricing Package
                 .form-group
                   label.light Full Review
                   span
-                    | {{r.fullReview}}
+                    | {{r.full_review}}
                 .form-group
                   label.light Double Review
                   span
-                    | {{r.doubleReview}}
+                    | {{r.double_review}}
                 .form-group
                   label.light Coaching
                   span

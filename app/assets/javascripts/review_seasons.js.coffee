@@ -5,14 +5,14 @@
   resetReviewSeason = ->
     $scope.reviewSeason =
       season: null
-      start: null
-      end: null
-      promoStart: null
-      promoEnd: null
+      season_start: null
+      season_end: null
+      promo_start: null
+      promo_end: null
       repeater: 0.0
-      firstTimer: 0.0
-      fullReview: 0.0
-      doubleReview: 0.0
+      first_time: 0.0
+      full_review: 0.0
+      double_review: 0.0
       coaching: 0.0
       reservation: 0.0
 
