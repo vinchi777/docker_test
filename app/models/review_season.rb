@@ -20,7 +20,6 @@ class ReviewSeason
 
   field :full_review, type: BigDecimal
   validates_presence_of :full_review
-  validates_numericality_of :full_review
 
   field :double_review, type: BigDecimal
   validates_presence_of :double_review
