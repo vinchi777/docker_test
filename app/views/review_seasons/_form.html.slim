@@ -30,10 +30,10 @@
               header: b Discount
               .form-group
                 label.light Repeater
-                input.peso.form-control type='text' value='{{reviewSeason.repeater|currency:" "}}'
+                input.peso.form-control type='text' ng-model='reviewSeason.repeater'
               .form-group
                 label.light First Timer
-                input.peso.form-control type='text' value='{{reviewSeason.first_timer|currency:" "}}'
+                input.peso.form-control type='text' ng-model='reviewSeason.first_timer'
 
             .package.col-lg-6
               header: b Pricing Package

@@ -10,7 +10,7 @@
       promo_start: null
       promo_end: null
       repeater: 0.0
-      first_time: 0.0
+      first_timer: 0.0
       full_review: 0.0
       double_review: 0.0
       coaching: 0.0
