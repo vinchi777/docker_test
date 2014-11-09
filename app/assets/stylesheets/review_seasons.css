@@ -45,6 +45,14 @@
   float: left;
   clear: left;
 }
+#review-seasons .review-season .form-group .currency {
+  float: left;
+}
+#review-seasons .review-season .form-group .value {
+  float: left;
+  width: 85px;
+  text-align: right;
+}
 #review-seasons .review-season .season label:first-child,
 #review-seasons .review-season .promo label:first-child {
   font-family: 'Signika Semibold';

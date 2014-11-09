@@ -47,31 +47,37 @@
                 header: b Discount
                 .form-group
                   label.light Repeater
-                  span
-                    | {{r.repeater}}
+                  .currency ₱
+                  .value
+                    | {{r.repeater|currency:''}}
                 .form-group
                   label.light First Timer
-                  span
-                    | {{r.first_timer}}
+                  .currency ₱
+                  .value
+                    | {{r.first_timer|currency:''}}
             .col-lg-4
               .package
                 header: b Pricing Package
                 .form-group
                   label.light Full Review
-                  span
-                    | {{r.full_review}}
+                  .currency ₱
+                  .value
+                    | {{r.full_review|currency:''}}
                 .form-group
                   label.light Double Review
-                  span
-                    | {{r.double_review}}
+                  .currency ₱
+                  .value
+                    | {{r.double_review|currency:''}}
                 .form-group
                   label.light Coaching
-                  span
-                    | {{r.coaching}}
+                  .currency ₱
+                  .value
+                    | {{r.coaching|currency:''}}
                 .form-group
                   label.light Reservation
-                  span
-                    | {{r.reservation}}
+                  .currency ₱
+                  .value
+                    | {{r.reservation|currency:''}}
 
       .delete-confirm.modal.fade role='dialog' id=('confirm-{{r._id.$oid}}') tabindex='-1' aria-hidden='true'
         .modal-dialog
