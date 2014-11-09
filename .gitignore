@@ -17,3 +17,4 @@
 /.idea
 /.vagrant
 /public/assets
+vendor/cache
