@@ -16,6 +16,10 @@
       coaching: 0.0
       reservation: 0.0
 
+  sortReviewSeason = ->
+    $scope.reviewSeasons.sort (a,b) ->
+      new Date(b.season_start).valueOf() - new Date(a.season_start).valueOf()
+
   $scope.addReviewSeason = ->
     resetReviewSeason()
     $scope.reviewSeasonErrors = []
@@ -38,6 +42,7 @@
       $scope.reviewSeasons = []
     else
       $scope.reviewSeasons = data
+      sortReviewSeason()
 
   $scope.submitReviewSeason = ->
     $scope.addBtnClass = 'disabled'
@@ -55,6 +60,7 @@
       $scope.addBtnClass = ''
       resetReviewSeason()
       $scope.reviewSeasons.push i
+      sortReviewSeason()
 
     r.error (d) ->
       $scope.addBtnClass = ''
@@ -70,6 +76,7 @@
       $('#review-season-modal').modal 'hide'
       $scope.addBtnClass = ''
       resetReviewSeason()
+      sortReviewSeason()
 
     r.error (d) ->
       $scope.addBtnClass = ''
