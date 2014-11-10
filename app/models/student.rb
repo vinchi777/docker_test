@@ -1,5 +1,6 @@
 class Student
   include Mongoid::Document
+  DAYS_TILL_EXPIRATION = 3
 
   field :firstName, type: String
   validates_presence_of :firstName, if: :can_validate_info?
@@ -115,6 +116,10 @@ class Student
     self.enrollment_status = ''
     self.finish_enrollment_on = DateTime.now
     save
+  end
+
+  def expired?
+    (finish_enrollment_on && DateTime.now > finish_enrollment_on + DAYS_TILL_EXPIRATION.days) || (!finish_enrollment_on && enrollment_status.present?)
   end
 
   private
