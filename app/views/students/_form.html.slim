@@ -19,6 +19,8 @@
             | Enrolling for {{student.current_season}}
             a.btn.btn-primary.btn-confirm href='' ng-click='confirm(student)'
               | Confirm
+          span.no-info ng-switch-default=''
+            | No enrollment information.
     .actions.col-lg-3
       = f.submit 'Save', class: 'save btn btn-primary pull-right col-lg-2'
 
