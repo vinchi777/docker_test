@@ -1,20 +1,22 @@
-.education data-desc='Educational Background'
-  form.form-horizontal.col-md-10.col-md-offset-1
-    .form-group
-      label.control-label.col-md-3 School Last Attended
-      .col-lg-5.col-md-4 = text_field_tag :college,'', class: 'form-control required'
-      label.control-label.col-lg-2.col-md-3 Year Graduated
-      .col-md-2 = text_field_tag :college_year,'', class: 'form-control required'
-    .form-group
-      label.control-label.col-md-3 Recognition/Awards
-      .col-lg-5.col-md-4 = text_field_tag :school,'', class: 'form-control required'
-    .form-group
-      label.control-label.col-md-3 High School
-      .col-lg-5.col-md-4 = text_field_tag :high_school, '', class: 'form-control required'
-      label.control-label.col-lg-2.col-md-3 Year Graduated
-      .col-md-2 = text_field_tag :high_school_year, '', class: 'form-control required'
-    .form-group
-      label.control-label.col-md-3 Elementary
-      .col-lg-5.col-md-4 = text_field_tag :elementary, '', class: 'form-control required'
-      label.control-label.col-lg-2.col-md-3 Year Graduated
-      .col-md-2 = text_field_tag :elementary_year, '', class: 'form-control required'
+= fields_for @student do|f|
+  .education data-desc='Educational Background'
+    = render 'defaults', f: f
+    .form-horizontal.col-md-10.col-md-offset-1
+      .form-group
+        label.control-label.col-md-3 School Last Attended
+        .col-lg-5.col-md-4 = f.text_field :lastAttended, class: 'form-control required'
+        label.control-label.col-lg-2.col-md-3 Year Graduated
+        .col-md-2 = f.text_field :yearGrad, class: 'form-control required'
+      .form-group
+        label.control-label.col-md-3 Recognition/Awards
+        .col-lg-5.col-md-4 = f.text_field :recognition, class: 'form-control required'
+      .form-group
+        label.control-label.col-md-3 High School
+        .col-lg-5.col-md-4 = f.text_field :hs, class: 'form-control required'
+        label.control-label.col-lg-2.col-md-3 Year Graduated
+        .col-md-2 = f.text_field :hsYear, class: 'form-control required'
+      .form-group
+        label.control-label.col-md-3 Elementary
+        .col-lg-5.col-md-4 = f.text_field :elem, class: 'form-control required'
+        label.control-label.col-lg-2.col-md-3 Year Graduated
+        .col-md-2 = f.text_field :elemYear, class: 'form-control required'

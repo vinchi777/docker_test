@@ -57,4 +57,29 @@ class ReviewSeason
       errors[:promo_end] << 'must be after the start of the promo'
     end
   end
+
+  def self.current
+    if ReviewSeason.exists?
+      ReviewSeason.all.sort_by { |r| r.season_start }.last
+    else
+      ReviewSeason.new(full_review: 16000, double_review: 22000, coaching: 7000, reservation: 3000)
+    end
+  end
+
+  def get_fee(package)
+    case package
+      when 'Standard'
+        full_review
+      when 'Double'
+        double_review
+      when 'Coaching'
+        coaching
+    end
+  end
+
+  def get_fee(package)
+    if package.eql? 'Standard'
+
+    end
+  end
 end
