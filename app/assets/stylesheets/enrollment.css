@@ -12,12 +12,6 @@
 #enrollment .banner h4 {
   font-family: 'Signika Light';
 }
-#enrollment .steps > * {
-  display: none;
-}
-#enrollment .steps > .active {
-  display: block;
-}
 #enrollment .steps .package-type .package {
   padding: 10px 0px;
 }

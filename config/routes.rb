@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  # get 'enrollment', to: 'enrollment#index'
+  # get 'enrollment/package_type', to: 'enrollment#package_type'
+  resources :enrollment
 
   resources :student_invoices do
     member do
@@ -26,7 +29,6 @@ Rails.application.routes.draw do
   get 'reviewers' => 'site#reviewers'
   get 'courses' => 'site#courses'
   get 'pricing' => 'site#pricing'
-  get 'enrollment' => 'site#enrollment'
 
   root 'site#home'
 

@@ -28,7 +28,7 @@
         li class=('active' if yield(:title)== 'Pricing')
           a href=pricing_path Pricing
         li class=('active' if yield(:title)== 'Enrollment')
-          a href=enrollment_path Enroll
+          a href=enrollment_path(:package_type) Enroll
         - if user_signed_in?
           li.dropdown class=('active' if admin_page?)
             a.dropdown-toggle href=students_path data-toggle='dropdown'

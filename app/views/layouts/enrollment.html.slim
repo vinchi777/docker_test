@@ -1,0 +1,41 @@
+== title "Enrollment-#{step.to_s.titleize}"
+
+doctype html
+html lang='en' ng-app=''
+  head
+    title
+      | MaxRevOne |
+      =< yield(:title).length > 0 ? yield(:title) : 'Online'
+    meta charset='utf-8'
+    meta http-equiv='X-UA-Compatible' content='IE=edge'
+    meta name='viewport' content='width=device-width, initial-scale=1'
+    == stylesheet_link_tag 'application', media: 'all'
+    script src='https://maps.google.com/maps/api/js?sensor=true'
+    == javascript_include_tag 'application'
+    == csrf_meta_tags
+  body
+    == render 'layouts/header'
+    = render 'layouts/flash'
+    #enrollment
+      .banner
+        h1 Enrollment
+        h4.description = step.to_s.titleize
+      .container
+        .steps.row
+          == yield
+        .navigation.row
+          .text-right.col-lg-4.col-md-3.col-xs-2
+            a.btn.btn-default.previous href=(first_step? ? root_path: previous_wizard_path) = first_step? ? 'Cancel' : 'Back'
+          .indicators.col-lg-4.col-md-6.col-xs-8
+            .wrapper
+              span.line
+              - wizard_steps.each do|_step|
+                span.indicator class=('active' if active_indicator?(_step))
+          .text-left.col-lg-4.col-md-3.col-xs-2
+            span.paypal.hidden
+              a.btn.btn-primary href='#' Paypal
+              span or
+            a.btn.btn-primary.next href=next_wizard_path = last_step? ? 'Done' : 'Next'
+    == render 'layouts/footer'
+
+

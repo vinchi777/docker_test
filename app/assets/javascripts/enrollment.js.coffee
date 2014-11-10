@@ -1,12 +1,12 @@
 PREV = 1
 NEXT = 2
 
-$(document).on 'click', '#enrollment .navigation .btn', ->
+###$(document).on 'click', '#enrollment .navigation .btn', ->
   me = $(this)
   mode = if me.hasClass 'previous' then PREV else NEXT
   change_view me, mode
 
-  false
+  false###
 
 
 change_view = (element, mode) ->
