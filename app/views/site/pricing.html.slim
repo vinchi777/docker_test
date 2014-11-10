@@ -35,7 +35,7 @@
                 .col-md-6
                   b &nbsp
                 .col-md-6 &nbsp
-            a.btn.btn-default.btn-lg href='#' Enroll
+            a.btn.btn-default.btn-lg href=pricing_link('Coaching') Enroll
           .col-md-4.col-sm-6.package
             h4 Standard Review
             h2.price
@@ -72,7 +72,7 @@
                   .col-md-6
                     b &nbsp
                   .col-md-6 &nbsp
-            a.btn.btn-black.btn-lg href='#'
+            a.btn.btn-black.btn-lg href=pricing_link('Standard')
               b Enroll
           .col-md-4.package
             h4 Double Review
@@ -96,7 +96,7 @@
               div
                 | by
                 b< = number_to_currency @season.full_review * 2 - @season.double_review, unit: '₱ ', precision: 0
-            a.btn.btn-default.btn-lg href='#' Enroll
+            a.btn.btn-default.btn-lg href=pricing_link('Double') Enroll
     p.info
       - if @season.promo_start.present?
         | Promos for the Standard Review are valid from
