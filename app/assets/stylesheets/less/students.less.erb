@@ -1,5 +1,21 @@
 @import "variables";
 
+/* Common */
+
+#students, #student {
+    i.fa {
+        margin-right: 8px;
+    }
+
+    .enroll i.fa.fa-check {
+        color: #45B29D;
+    }
+
+    .enroll i.fa.fa-clock-o {
+        color: #F2E394;
+    }
+}
+
 #students {
 
     header h2 {
@@ -100,18 +116,6 @@
         }
     }
 
-    .students .student i.fa {
-        margin-right: 8px;
-    }
-
-    .students .student .enroll i.fa.fa-check {
-        color: #45B29D;
-    }
-
-    .students .student .enroll i.fa.fa-clock-o {
-        color: #F2E394;
-    }
-
     .students .student .payment i.fa.fa-money {
         color: #DF5A49;
     }
@@ -196,15 +200,21 @@
         text-align: center;
     }
 
-    header .name {
+    header .middle {
         padding-left: 0;
     }
 
-    header .name input.form-control {
+    header .middle input.form-control {
         width: 30%;
         float: left;
         margin-right: 5px;
-        margin-top: 14px;
+        margin-top: 6px;
+    }
+
+    header .middle .status {
+        float: left;
+        clear: both;
+        margin-top: 9px;
     }
 
     header .actions {

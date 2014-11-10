@@ -1,6 +1,6 @@
 == title 'Students'
 
-#students
+#students ng-controller='StudentsCtrl' data-q=params[:q] data-page=params[:page]
   header
     h2 Students
 
@@ -13,62 +13,71 @@
       .col-lg-2.col-lg-offset-2
         = link_to 'New Student', new_student_path, class: 'btn btn-primary pull-right'
 
-    /.filter
-    /  form.form-inline action=students_path
-    /    .form-group
-    /      label Season
-    /      select.form-control.mini name='season'
-    /        option Apr. 2014
-    /        option Nov. 2013
-    /    .form-group
-    /      label Type
-    /      select.form-control.mini name='type'
-    /        option All
-    /        option Enrollees
-    /        option Students
-    /    .form-group
-    /      input.btn.btn-default.filter type='submit' value='Filter'
+  /.filter
+  /  form.form-inline action=students_path
+  /    .form-group
+  /      label Season
+  /      select.form-control.mini name='season'
+  /        option Apr. 2014
+  /        option Nov. 2013
+  /    .form-group
+  /      label Type
+  /      select.form-control.mini name='type'
+  /        option All
+  /        option Enrollees
+  /        option Students
+  /    .form-group
+  /      input.btn.btn-default.filter type='submit' value='Filter'
 
   .panel.panel-light.students.col-lg-12
-    - if @students.empty?
-      - if params[:q].nil?
-        .no-students
-          p
-            | There is no existing students. Click the
-            b  'New Student'
-            |  button to create one.
-      - else
-        .no-result
-          i.fa.fa-exclamation-circle
-          div No result found
-    - @students.each do |student|
-      .student.row
-        .col-lg-1.profile-pic
-          = link_to student
-            = image_tag 'profile-placeholder.png', class: 'profile'
-        .col-lg-4.info
-          = link_to student
-            .name = student.lastName + ', '+ student.firstName + ' ' + student.middleInitial
-            .school = student.lastAttended
-            .address = student.address
-        .enroll.col-lg-4
-          = enrollment_status student
-        .payment.col-lg-2
-          = payment_status student
-        .actions.col-lg-1
-          a href='#' data-toggle='modal' data-target=('#confirm-' + student.id)
-            i.fa.fa-lg.fa-trash-o
+    .no-students ng-show='student.length == 0 && q == null'
+      p
+        | There is no existing students. Click the
+        b  'New Student'
+        |  button to create one.
+    .no-result ng-show='student.length == 0 && q != null'
+      i.fa.fa-exclamation-circle
+      div No result found
 
-        .delete-confirm.modal.fade role='dialog' id=('confirm-' + student.id) tabindex='-1' aria-hidden='true'
-          .modal-dialog
-            .modal-content
-              .modal-header
-                h4.modal-title Confirmation
-              .modal-body
-                span Are you sure you want to remove this student?
-              .modal-footer
-                = link_to student, class: 'remove btn btn-default'
-                  | Yes
-                button.btn.btn-primary data-dismiss='modal' No
+    .student.row ng-repeat='student in students'
+      .col-lg-1.profile-pic
+        a href='/students/{{student.id}}'
+          = image_tag 'profile-placeholder.png', class: 'profile'
+      .col-lg-4.info
+        a href='/students/{{student.id}}'
+          .name
+            | {{student.lastName}}, {{student.firstName}} {{student.middleInitial}}
+          .school
+            | {{student.lastAttended}}
+          .address
+            | {{student.address}}
+      .enroll.col-lg-4
+        div ng-switch='student.enrollment_status'
+          span ng-switch-when='enrolled'
+            i.fa.fa-lg.fa-check
+            | Enrolled for {{student.current_season}}
+          span ng-switch-when='enrolling'
+            i.fa.fa-lg.fa-clock-o
+            | Enrolling for {{student.current_season}}
+            a.btn.btn-primary.btn-confirm href='' ng-click='confirm(student)'
+              | Confirm
+
+      .payment.col-lg-2
+        /= payment_status student
+      .actions.col-lg-1
+        a href='#' data-toggle='modal' data-target=('#confirm-{{student.id}}')
+          i.fa.fa-lg.fa-trash-o
+
+      .delete-confirm.modal.fade role='dialog' id=('confirm-{{student.id}}') tabindex='-1' aria-hidden='true'
+        .modal-dialog
+          .modal-content
+            .modal-header
+              h4.modal-title Confirmation
+            .modal-body
+              span Are you sure you want to remove this student?
+            .modal-footer
+              a.remove.btn.btn-default href='/students/{{student.id}}'
+                | Yes
+              button.btn.btn-primary data-dismiss='modal' No
 
   = will_paginate @posts

@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   resources :students do
     member do
       get 'payment'
+      put 'confirm'
     end
   end
 

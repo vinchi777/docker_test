@@ -113,6 +113,16 @@ class Student
     end
   end
 
+  def enrollment_status
+    if enrolling?
+      :enrolling
+    elsif enrolled?
+      :enrolled
+    else
+      nil
+    end
+  end
+
   def enrolled?
     if current_invoice
       current_invoice.enrolled
@@ -122,7 +132,11 @@ class Student
   end
 
   def current_season
-    current_invoice.review_season.season
+    if current_invoice
+      current_invoice.review_season.season
+    else
+      ''
+    end
   end
 
   def current_invoice
@@ -148,6 +162,14 @@ class Student
 
   def expired?
     (finish_enrollment_on && DateTime.now > finish_enrollment_on + DAYS_TILL_EXPIRATION.days) || (!finish_enrollment_on && enrollment_status.present?)
+  end
+
+  def as_json(opt = nil)
+    hash = self.serializable_hash(nil)
+    hash[:id] = id.to_s
+    hash[:enrollment_status] = enrollment_status
+    hash[:current_season] = current_season
+    hash.as_json(nil)
   end
 
   private
