@@ -71,13 +71,10 @@ class ReviewSeason
   has_many :student_invoices, dependent: :restrict
 
   def get_fee(package)
-    case package
-      when 'Standard'
-        full_review
-      when 'Double'
-        double_review
-      when 'Coaching'
-        coaching
+    if package == 'Coaching'
+      coaching
+    else
+      full_review
     end
   end
 end

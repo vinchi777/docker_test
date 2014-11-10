@@ -2,53 +2,53 @@ class Student
   include Mongoid::Document
 
   field :firstName, type: String
-  validates_presence_of :firstName, if: :personal_info_step?
+  validates_presence_of :firstName, if: :can_validate_info?
 
   field :middleName, type: String
 
   field :lastName, type: String
-  validates_presence_of :lastName, if: :personal_info_step?
+  validates_presence_of :lastName, if: :can_validate_info?
 
   field :birthdate, type: Date, default: Date.today
-  validates_presence_of :birthdate, if: :personal_info_step?
+  validates_presence_of :birthdate, if: :can_validate_info?
 
   field :sex, type: String
-  validates_presence_of :sex, if: :personal_info_step?
+  validates_presence_of :sex, if: :can_validate_info?
 
   field :address, type: String
-  validates_presence_of :address, if: :personal_info_step?
+  validates_presence_of :address, if: :can_validate_info?
 
   field :contactNo, type: String
-  validates_presence_of :contactNo, if: :personal_info_step?
+  validates_presence_of :contactNo, if: :can_validate_info?
 
   field :email, type: String
-  validates_presence_of :email, if: :personal_info_step?
-  validates_format_of :email, with: Devise::email_regexp, message: 'is not in valid format', if: :personal_info_step?
+  validates_presence_of :email, if: :can_validate_info?
+  validates_format_of :email, with: Devise::email_regexp, message: 'is not in valid format', if: :can_validate_info?
 
   field :parentFirstName, type: String
   field :parentLastName, type: String
   field :parentContact, type: String
 
   field :lastAttended, type: String
-  validates_presence_of :lastAttended, if: :education_step?
+  validates_presence_of :lastAttended, if: :can_validate_education?
 
   field :yearGrad, type: Integer
-  validates_presence_of :yearGrad, if: :education_step?
-  validates_numericality_of :yearGrad, greater_than: :hsYear, message: 'must be later than High School Year', if: :education_step?
+  validates_presence_of :yearGrad, if: :can_validate_education?
+  validates_numericality_of :yearGrad, greater_than: :hsYear, message: 'must be later than High School Year', if: :can_validate_education?
 
   field :recognition, type: String
   field :hs, type: String
-  validates_presence_of :hs, if: :education_step?
+  validates_presence_of :hs, if: :can_validate_education?
 
   field :hsYear, type: Integer
-  validates_presence_of :hsYear, if: :education_step?
-  validates_numericality_of :hsYear, greater_than: :elemYear, message: 'must be later than Elementary Year', if: :education_step?
+  validates_presence_of :hsYear, if: :can_validate_education?
+  validates_numericality_of :hsYear, greater_than: :elemYear, message: 'must be later than Elementary Year', if: :can_validate_education?
 
   field :elem, type: String
-  validates_presence_of :elem, if: :education_step?
+  validates_presence_of :elem, if: :can_validate_education?
 
   field :elemYear, type: Integer
-  validates :elemYear, presence: true, if: :education_step?
+  validates :elemYear, presence: true, if: :can_validate_education?
 
   field :referrerFirstName, type: String
   field :referrerLastName, type: String
@@ -74,22 +74,38 @@ class Student
     end
   end
 
-  # def create_invoice
-  #   season = ReviewSeason.current
-  #   my_invoice = StudentInvoice.new({
-  #                                       package: package_type,
-  #                                       review_seasons: season.season,
-  #                                       amount: season.get_fee(package_type)
-  #                                   })
-  #   self.invoices << my_invoice
-  #   save
-  # end
-  #
-  # def current_invoice
-  #   if invoices
-  #     invoices.sort_by { |i| ReviewSeason.where(season: i.season).first.season_start }.last
-  #   end
-  # end
+  def setup_payment
+    season = ReviewSeason.current
+    invoice1 = StudentInvoice.new({
+                                        package: package_type,
+                                        review_season: season,
+                                        amount: season.get_fee(package_type)
+                                    })
+    if package_type == 'Double'
+      invoice1.description = 'Invoice 1 of 2 for Double Review'
+      invoice2 = StudentInvoice.new({
+                                        package: package_type,
+                                        description: 'Invoice 2 of 2 for Double Review',
+                                        review_season: season,
+                                        amount: season.double_review - season.full_review
+                                    })
+    end
+
+    self.invoices << invoice1
+    self.invoices << invoice2 if invoice2
+    save
+  end
+
+  def current_invoice
+    invoices.sort_by { |i| ReviewSeason.where(season: i.season).first.season_start }.last
+  end
+
+  def current_invoices
+    if invoices
+      invoices.sort_by { |i| ReviewSeason.where(season: i.season).first.season_start }.last
+      invoices.where(season: current_invoice.season)
+    end
+  end
 
   def finish_enrollment_process
     self.reference_no = "random reference no."
@@ -99,15 +115,15 @@ class Student
   end
 
   private
-  def personal_info_step?
-    enrollment_status.empty? || enrollment_status.eql?('personal_information')
+  def can_validate_info?
+    !enrollment_status || enrollment_status.empty? || enrollment_status.eql?('personal_information')
   end
 
-  def education_step?
-    enrollment_status.empty? || enrollment_status.eql?('education')
+  def can_validate_education?
+    !enrollment_status || enrollment_status.empty? || enrollment_status.eql?('education')
   end
 
-  def other_step?
-    enrollment_status.empty? || enrollment_status.eql?('other_information')
+  def can_validate_others?
+    !enrollment_status || enrollment_status.empty? || enrollment_status.eql?('other_information')
   end
 end
