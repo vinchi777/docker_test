@@ -79,7 +79,7 @@ class Student
     invoice1 = StudentInvoice.new({
                                         package: package_type,
                                         review_season: season,
-                                        amount: season.get_fee(package_type)
+                                        amount: season.get_fee(package_type),
                                     })
     if package_type == 'Double'
       invoice1.description = 'Invoice 1 of 2 for Double Review'

@@ -1,6 +1,7 @@
 = fields_for @student do|f|
   .personal-information data-desc='Personal Information'
     = render 'defaults', f: f
+    = f.hidden_field :package_type
     .profile-pic.col-lg-2.col-md-3.col-sm-4
       = image_tag 'user.png', class: 'profile'
       input type='image' class='hidden'
