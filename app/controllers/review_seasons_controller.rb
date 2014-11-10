@@ -14,16 +14,6 @@ class ReviewSeasonsController < AdminController
     end
   end
 
-  def show
-  end
-
-  def new
-    @review_season = ReviewSeason.new
-  end
-
-  def edit
-  end
-
   def create
     @review_season = ReviewSeason.new(review_season_params)
 
