@@ -16,7 +16,7 @@
 }
 #student-payment .invoice i.fa {
   color: #A5A5A5;
-  font-size: 22px;
+  font-size: 20px;
 }
 #student-payment .invoice .panel-title {
   padding: 9px 15px;
@@ -124,6 +124,11 @@
 }
 #student-payment .invoice .panel-body .add form .amount {
   padding-right: 0;
+}
+#student-payment .invoice .panel-body .add form .amount input {
+  background-position: 6px 5px;
+  background-size: 22px auto;
+  width: 100%;
 }
 #student-payment .invoice .panel-footer {
   padding: 10px 25px 0 17px;

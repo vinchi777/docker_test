@@ -3,17 +3,25 @@
   color: #4C4C4C;
   float: left;
   width: 120px;
-  padding: 2px;
 }
 #review-seasons label.light {
   font-weight: normal;
 }
 #review-seasons label.to {
-  width: 26px;
+  width: 23px;
   margin-left: 6px;
 }
 #review-seasons input[type='text'] {
   height: 30px;
+}
+#review-seasons input.season {
+  width: 312px;
+}
+#review-seasons .review-seasons {
+  margin-top: 18px;
+}
+#review-seasons .review-season {
+  background: #F9F9F9;
 }
 #review-seasons .range * {
   float: left;
@@ -24,25 +32,56 @@
 #review-seasons .range {
   float: left;
   width: 100%;
+}
+#review-seasons .discount {
+  float: left;
   margin-bottom: 3px;
 }
-#review-seasons .form-group {
-  margin-bottom: 4px;
+#review-seasons .review-season header {
+  margin-bottom: 6px;
+}
+#review-seasons .review-season .form-group {
+  margin-bottom: 0;
+  float: left;
+  clear: left;
+}
+#review-seasons .review-season .form-group .currency {
+  float: left;
+}
+#review-seasons .review-season .form-group .value {
+  float: left;
+  width: 85px;
+  text-align: right;
+}
+#review-seasons .review-season .season label:first-child,
+#review-seasons .review-season .promo label:first-child {
+  font-family: 'Signika Semibold';
+  font-weight: normal;
+  color: #333;
+}
+#review-seasons .review-season .discount {
+  margin-top: 10px;
+}
+#review-seasons .review-season .actions {
+  margin-top: 104px;
+}
+#review-seasons .review-season .actions i.fa {
+  color: #A5A5A5;
+  font-size: 20px;
+}
+#review-seasons .review-season .actions a {
+  margin-right: 8px;
+}
+#review-seasons .modal label {
+  padding: 2px;
 }
 #review-seasons .modal .promo {
   margin-bottom: 20px;
 }
-#review-seasons .review-seasons {
-  margin-top: 18px;
-}
-#review-seasons .review-seasons .review-season {
-  background: #F9F9F9;
-}
-#review-seasons .review-seasons .review-season .discount {
-  float: left;
-  width: 100%;
+#review-seasons .modal .range {
   margin-bottom: 3px;
 }
-#review-seasons .review-seasons .review-season .discount {
+#review-seasons .modal .discount,
+#review-seasons .modal .package {
   margin-top: 10px;
 }

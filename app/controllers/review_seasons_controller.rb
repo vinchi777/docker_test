@@ -1,6 +1,6 @@
 class ReviewSeasonsController < AdminController
   before_action :set_review_season, only: [:show, :edit, :update, :destroy]
-  before_action :set_page, only: [:show, :edit , :index, :new]
+  before_action :set_page, only: [:show, :edit, :index, :new]
 
   def set_page
     @page = 'review-seasons'
@@ -10,6 +10,7 @@ class ReviewSeasonsController < AdminController
     @review_seasons = ReviewSeason.all
     respond_to do |format|
       format.html { render :index }
+      format.json { render json: @review_seasons }
     end
   end
 
@@ -28,9 +29,9 @@ class ReviewSeasonsController < AdminController
 
     respond_to do |format|
       if @review_season.save
-        format.html { redirect_to review_seasons_path }
+        format.json { render json: @review_season }
       else
-        format.html { render :new }
+        format.json { render json: @review_season.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -38,15 +39,22 @@ class ReviewSeasonsController < AdminController
   def update
     respond_to do |format|
       if  @review_season.update(review_season_params)
-        format.html { redirect_to review_seasons_path }
+        format.json { render json: {status: :ok} }
       else
-        format.html { render :edit }
+        format.json { render json: @review_season.errors, status: :unprocessable_entity }
       end
     end
   end
 
   def destroy
     @review_season.destroy
+    respond_to do |format|
+      if @review_season.destroy
+        format.json { head :no_content }
+      else
+        format.json { render status: :unprocessable_entity }
+      end
+    end
   end
 
   private
@@ -55,6 +63,6 @@ class ReviewSeasonsController < AdminController
   end
 
   def review_season_params
-    params.require(:review_season).permit(:start, :end, :promoStart, :promoEnd, :repeater, :fullReview, :doubleReview, :coaching, :reservation)
+    params.require(:review_season).permit(:season, :season_start, :season_end, :promo_start, :promo_end, :first_timer, :repeater, :full_review, :double_review, :coaching, :reservation)
   end
 end

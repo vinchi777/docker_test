@@ -5,8 +5,9 @@
     h1 Affordable Pricing
     h4
       | Our low down payment of
-      b<> ₱ 3,000
-      | is enough to get you started.
+      b<>
+      b = number_to_currency @season.reservation, unit: '₱ '
+      span< is enough to get you started.
   .container.packages
     .row
       .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1.content
@@ -14,13 +15,13 @@
           .col-md-4.col-sm-6.package
             h4 Final Coaching
             h2.price
-              span.currency ₱
-              span.value< 5,000
+              span.currency> ₱
+              span.value = number_to_currency @season.coaching, unit: ''
             .hours
               | 40++
               span< hours
             .down
-              | ₱3,000
+              = number_to_currency @season.reservation, unit: '₱ '
               span< down payment
             .description &nbsp
             hr.transparent
@@ -38,38 +39,51 @@
           .col-md-4.col-sm-6.package
             h4 Standard Review
             h2.price
-              span.currency ₱
-              span.value< 16,000
+              span.currency> ₱
+              span.value = number_to_currency @season.full_review, unit: ''
             .hours
               | 730++
               span< hours
             .down
-              | ₱3,000
+              = number_to_currency @season.reservation, unit: '₱ '
               span< down payment
-            .description Final coaching included
-            hr
-            .promos
-              h5 Promos
-              .row
-                .col-md-6
-                  b ₱14,000
-                .col-md-6 1st Taker
-              .row
-                .col-md-6
-                  b ₱12,000
-                .col-md-6 Repeater
+            .description &nbsp
+            - if @season.promo_start.present?
+              hr
+              .promos
+                h5 Promos
+                .row
+                  .col-md-6
+                    b = number_to_currency @season.first_timer, unit: '₱ '
+                  .col-md-6 1st Taker
+                .row
+                  .col-md-6
+                    b = number_to_currency @season.repeater, unit: '₱ '
+                  .col-md-6 Repeater
+            - else
+              hr.transparent
+              .promos
+                h5 &nbsp
+                .row
+                  .col-md-6
+                    b &nbsp
+                  .col-md-6 &nbsp
+                .row
+                  .col-md-6
+                    b &nbsp
+                  .col-md-6 &nbsp
             a.btn.btn-black.btn-lg href='#'
               b Enroll
           .col-md-4.package
             h4 Double Review
             h2.price
-              span.currency ₱
-              span.value< 22,000
+              span.currency> ₱
+              span.value =  number_to_currency@season.double_review, unit: ''
             .hours
               | 1,460++
               span< hours
             .down
-              | ₱3,000
+              = number_to_currency @season.reservation, unit: '₱ '
               span< down payment
             .description 2x Standard Review
             hr
@@ -81,9 +95,18 @@
                 b &nbsp
               div
                 | by
-                b< ₱12,000
+                b< = number_to_currency @season.full_review * 2 - @season.double_review, unit: '₱ '
             a.btn.btn-default.btn-lg href='#' Enroll
-    p.info Promos for the Standard Review are valid from October 1, 2014 until October 22, 2014 only.
+    p.info
+      - if @season.promo_start.present?
+        | Promos for the Standard Review are valid from
+        span<> = @season.promo_start.strftime '%B %d, %Y'
+        |until
+        span<> = @season.promo_end.strftime '%B %d, %Y'
+        | only.
+      - else
+        | &nbsp
+
   hr
   .container.plans
     h3 All Plans Include

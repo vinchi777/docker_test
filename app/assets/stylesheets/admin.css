@@ -114,3 +114,6 @@ footer.admin {
 footer.admin a {
   color: #E6E6E6;
 }
+.modal .error ul {
+  padding-left: 20px;
+}

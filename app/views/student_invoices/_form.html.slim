@@ -52,7 +52,7 @@
         .date: input.form-control.date-picker.required ng-model='i.transaction.date' data-date-format='YYYY-MM-DD'
         .or: input.form-control.required ng-model='i.transaction.or_no'
         .method: input.form-control.required ng-model='i.transaction.method'
-        .amount: input.form-control.required ng-model='i.transaction.amount'
+        .amount: input.peso.form-control.required ng-model='i.transaction.amount'
         input.hide type='submit'
       .action  ng-show='i.showTransaction': a href='#' ng-click='hideTransaction(i)': i.fa.fa-trash
       a href='#' ng-hide='i.showTransaction' ng-click='showTransaction(i)' Add Transaction
