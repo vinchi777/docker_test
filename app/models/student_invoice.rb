@@ -17,6 +17,10 @@ class StudentInvoice
   belongs_to :review_season
   validates_presence_of :review_season
 
+  def balance
+    amount * discount - transactions.map { |t| t.amount }.sum
+  end
+
   def as_json(opt = nil)
     json = {
         _id: id,

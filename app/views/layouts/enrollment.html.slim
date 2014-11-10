@@ -21,21 +21,10 @@ html lang='en' ng-app=''
         h1 Enrollment
         h4.description = step.to_s.titleize
       .container
-        .steps.row
-          == yield
-        .navigation.row
-          .text-right.col-lg-4.col-md-3.col-xs-2
-            a.btn.btn-default.previous href=(first_step? ? root_path: previous_wizard_path) = first_step? ? 'Cancel' : 'Back'
-          .indicators.col-lg-4.col-md-6.col-xs-8
-            .wrapper
-              span.line
-              - wizard_steps.each do|_step|
-                span.indicator class=('active' if active_indicator?(_step))
-          .text-left.col-lg-4.col-md-3.col-xs-2
-            span.paypal.hidden
-              a.btn.btn-primary href='#' Paypal
-              span or
-            a.btn.btn-primary.next href=next_wizard_path = last_step? ? 'Done' : 'Next'
+        = form_tag wizard_path, method: :put
+          .steps.row
+            == yield
+          = render 'navigation'
     == render 'layouts/footer'
 
 

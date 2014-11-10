@@ -1,22 +1,25 @@
 .package-type data-desc='Package Type'
   .wrapper.col-lg-6.col-lg-offset-3.col-md-8.col-md-offset-3.col-sm-10.col-sm-offset-2.col-xs-10.col-xs-offset-1
-    p.text-muted Please choose a package below for the April 2014 review season.
-    .package
-      .radio
-        label
-          input type='radio' name='type' value='Standard'
-          | Full 8 Phase Package - Php 16,000.00
-      p Get the most complete and comprehensive 8-phase review program.
-    .package
-      .radio
-        label
-          input type='radio' name='type' value='Double'
-          | Double Review - Php 22,000.00
-      p Take a two full season review at a discounted price. Learn more, save more.
-    .package
-      .radio
-        label
-          input type='radio' name='type' value='Coaching'
-          | Final Coaching - Php 7,000.00
-      p Need a refresh? Get our Ultimate Final Coaching package.
+      p.text-muted Please choose a package below for the April 2014 review season.
+      .package
+        .radio
+          label
+            input type='radio' name='package_type' value='Standard'
+            | Full 8 Phase Package - Php
+            =< number_to_currency @season.full_review, unit: ''
+        p Get the most complete and comprehensive 8-phase review program.
+      .package
+        .radio
+          label
+            input type='radio' name='package_type' value='Double'
+            | Double Review - Php
+            =< number_to_currency @season.double_review, unit: ''
+        p Take a two full season review at a discounted price. Learn more, save more.
+      .package
+        .radio
+          label
+            input type='radio' name='package_type' value='Coaching'
+            | Final Coaching - Php
+            =< number_to_currency @season.coaching, unit: ''
+        p Need a refresh? Get our Ultimate Final Coaching package.
 
