@@ -39,6 +39,8 @@ class ReviewSeason
 
   validate :date_precedence
 
+  has_many :student_invoices, dependent: :restrict
+
   def date_precedence
 
     if season_start.present? && season_end.present? && season_start + 1.day > season_end
@@ -82,4 +84,5 @@ class ReviewSeason
 
     end
   end
+
 end

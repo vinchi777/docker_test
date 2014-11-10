@@ -52,6 +52,8 @@ class Student
 
   field :referrerFirstName, type: String
   field :referrerLastName, type: String
+  field :referrerContact, type: String
+
   field :why, type: String
   field :facebook, type: String
   field :twitter, type: String

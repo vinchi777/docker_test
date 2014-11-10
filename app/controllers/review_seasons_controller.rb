@@ -14,14 +14,11 @@ class ReviewSeasonsController < AdminController
     end
   end
 
-  def show
-  end
-
-  def new
-    @review_season = ReviewSeason.new
-  end
-
-  def edit
+  def list
+    @review_seasons = ReviewSeason.all.map { |r| {id: r.id.to_s, season: r.season} }
+    respond_to do |format|
+      format.json { render json: @review_seasons }
+    end
   end
 
   def create

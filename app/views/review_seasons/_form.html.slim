@@ -26,15 +26,6 @@
             input.date-picker.form-control type='text' data-date-format='MMM DD, YYYY' ng-model='reviewSeason.promo_end'
 
           .row
-            .discount.col-lg-6
-              header: b Discount
-              .form-group
-                label.light Repeater
-                input.peso.form-control type='text' ng-model='reviewSeason.repeater'
-              .form-group
-                label.light First Timer
-                input.peso.form-control type='text' ng-model='reviewSeason.first_timer'
-
             .package.col-lg-6
               header: b Pricing Package
               .form-group
@@ -49,6 +40,16 @@
               .form-group
                 label.light Reservation
                 input.peso.form-control.required type='text' ng-model='reviewSeason.reservation'
+
+            .discount.col-lg-6
+              header: b Discount
+              .form-group
+                label.light Repeater
+                input.peso.form-control type='text' ng-model='reviewSeason.repeater'
+              .form-group
+                label.light First Timer
+                input.peso.form-control type='text' ng-model='reviewSeason.first_timer'
+
         .modal-footer
           .actions
             input.btn.btn-primary ng-class='addBtnClass' type='submit' value='{{btnPrefix}} Review Season'

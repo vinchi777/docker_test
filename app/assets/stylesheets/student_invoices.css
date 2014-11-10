@@ -184,8 +184,8 @@
 #student-payment #invoice-modal .description input {
   width: 383px;
 }
-#student-payment #invoice-modal .season input {
-  width: 180px;
+#student-payment #invoice-modal .season select {
+  width: 120px;
 }
 #student-payment #invoice-modal .amount.form-group {
   width: 270px;

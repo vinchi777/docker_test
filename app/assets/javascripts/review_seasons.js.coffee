@@ -17,7 +17,7 @@
       reservation: 0.0
 
   sortReviewSeason = ->
-    $scope.reviewSeasons.sort (a,b) ->
+    $scope.reviewSeasons.sort (a, b) ->
       new Date(b.season_start).valueOf() - new Date(a.season_start).valueOf()
 
   $scope.addReviewSeason = ->
@@ -100,5 +100,6 @@
       confirm.modal('hide')
 
     p.error (e) ->
-      console.log 'Error removing review season.'
+      $("#confirm-#{id}").modal 'hide'
+      $('#error-delete').modal 'show'
 ]

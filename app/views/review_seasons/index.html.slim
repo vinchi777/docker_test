@@ -1,3 +1,5 @@
+== title 'Review Seasons'
+
 #review-seasons ng-controller='ReviewSeasonsCtrl'
   header.row
     .col-lg-8
@@ -89,5 +91,16 @@
             .modal-footer
               a.btn.btn-default href='#' ng-click='remove(r)' Yes
               button.btn.btn-primary data-dismiss='modal' No
+
+    #error-delete.modal.fade
+      .modal-dialog
+        .modal-content
+          .modal-header
+            h4.modal-title Error
+          .modal-body
+            span Cannot delete review season. Other records are still dependent on it.
+          .modal-footer
+            button.btn.btn-primary data-dismiss='modal' Close
+
       javascript:
         bindDatePicker()

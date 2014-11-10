@@ -6,17 +6,35 @@ class StudentInvoice
 
   field :description, type: String
 
-  field :review_seasons, type: String
-  validates_presence_of :review_seasons
-
   field :amount, type: BigDecimal
   validates_presence_of :amount
   validates :amount, numericality: {greater_than: 0.0}
 
   field :discount, type: String
 
-  embedded_in :student
+  belongs_to :student
   embeds_many :transactions
+  belongs_to :review_season
+  validates_presence_of :review_season
+
+  def as_json(opt = nil)
+    json = {
+        _id: id,
+        package: package,
+        description: description,
+        amount: amount,
+        discount: discount,
+        transactions: transactions,
+    }
+    if review_season
+      json.merge review_season: {
+                     id: review_season.id,
+                     season: review_season.season
+                 }
+    else
+      json
+    end
+  end
 end
 
 
