@@ -6,6 +6,15 @@ $(window).load ->
   coverflow.removeClass('hidden')
   coverflow.coverflow({active: 2})
 
+  config = {
+    easing: 'hustle',
+    reset:  true,
+    delay:  'onload',
+    vFactor: 0.70
+  }
+
+  window.sr = new scrollReveal(config);
+
 @bindDatePicker = ->
   $('.date-picker').datetimepicker
     pickTime: false
@@ -40,6 +49,5 @@ $ ->
   else
     $('#map').hide()
 
-window.sr = new scrollReveal();
 
 

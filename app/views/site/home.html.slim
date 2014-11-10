@@ -54,7 +54,7 @@
             i.fa.fa-chevron-circle-right
             | Learn more about our price plans and packages.
         .col-md-6
-          = image_tag 'student3.png'
+          = image_tag 'student3.png', 'data-sr' => '', 'data-sr-id' =>'affordable'
   .trackrecord
     .container
       .row
@@ -74,7 +74,7 @@
       h3 What people say about us.
       .row
         - @testimonials.each_with_index do |testimonial, i|
-          .col-md-6.testimony class=('col-md-offset-3' if @testimonials.length.odd? && i == @testimonials.length - 1) data-sr='wait 2.5s and then ease-in-out 100px'
+          .col-md-6.testimony class=('col-md-offset-3' if @testimonials.length.odd? && i == @testimonials.length - 1) data-sr="enter top wait #{0.5*i}s" data-sr-id=i
             = image_tag testimonial.image
             b = testimonial.student
             p.title = testimonial.title
