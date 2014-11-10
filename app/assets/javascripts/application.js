@@ -27,6 +27,6 @@ window.has_google_map = function () {
 window.do_scroll = function (target) {
   if(target == undefined)
     target = $('html')
-  scroll = target.offset().top
+  scroll = target.offset().top - 100
   $('html, body').animate({scrollTop: scroll}, "fast")
 }
