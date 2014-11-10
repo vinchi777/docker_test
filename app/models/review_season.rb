@@ -68,6 +68,8 @@ class ReviewSeason
     end
   end
 
+  has_many :student_invoices, dependent: :restrict
+
   def get_fee(package)
     if package == 'Coaching'
       coaching
