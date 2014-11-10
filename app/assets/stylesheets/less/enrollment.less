@@ -22,14 +22,6 @@
   }
 
   .steps {
-    > * {
-      display: none;
-    }
-
-    > .active {
-      display: block;
-    }
-
     .package-type {
       .package {
         padding: 10px 0px;
@@ -52,11 +44,13 @@
 
         img {
           width: 150px;
-          padding-bottom: 10px;
+          margin-bottom: 10px;
         }
 
         a {
+          display: block;
           text-decoration: underline;
+          color: #333;
         }
       }
 
@@ -81,6 +75,10 @@
     }
 
     .others {
+      .control-label {
+        text-align: right;
+      }
+
       .fa {
         font-size: 25px;
         margin-right: 5px;
@@ -126,7 +124,7 @@
   }
 
   .navigation {
-    padding-top: 20px;
+    padding-top: 30px;
 
     .indicators {
       text-align: center;
@@ -137,15 +135,15 @@
         position: relative;
 
         span.indicator {
-          background-color: #B2B2B2;
-          border: solid 1px black;
+          background-color: #fbfbfb;
+          border: solid 1px #dddddd;
           border-radius: 100%;
           display: inline-block;
-          height: 15px;
+          height: 20px;
           margin-right: 30px;
           overflow: hidden;
-          width: 15px;
-          .transition;
+          width: 20px;
+          .transition(750ms);
 
           &:last-of-type {
             margin-right: 0px;
@@ -153,18 +151,23 @@
 
           &.active {
             background-color: #FED24E;
+            border: solid 1px #ECC02E;
           }
         }
 
         span.line {
-          background-color: #E5E5E5;
+          background-color: #f3f3f3;
           height: 8px;
           position: absolute;
-          top: 13px;
+          top: 14px;
           width: 100%;
           z-index: -1;
         }
       }
+    }
+
+    .paypal span {
+      margin: 0px 10px;
     }
   }
 }

@@ -1,0 +1,22 @@
+.others data-desc='Other Information'
+  form.form-horizontal.col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1.col-xs-12
+    .form-group
+      label.control-label.col-xs-2
+        i.fa.fa-facebook-square
+      .col-xs-5 = text_field_tag :facebook,'', class: 'form-control', placeholder: 'Facebook'
+    .form-group
+      label.control-label.col-xs-2
+        i.fa.fa-twitter-square
+      .col-xs-5 = text_field_tag :twitter,'', class: 'form-control', placeholder: 'Twitter'
+    .form-group
+      label.control-label.col-xs-2
+        i.fa.fa-linkedin-square
+      .col-xs-5 = text_field_tag :linkedin,'', class: 'form-control', placeholder: 'Linkedin'
+    .form-group
+      label.control-label.col-xs-2 Referred by
+      .col-xs-5 = text_field_tag :first_name,'', class: 'form-control', placeholder: 'First name'
+      .col-xs-5 = text_field_tag :last_name,'', class: 'form-control', placeholder: 'Last name'
+    .form-group
+      label.control-label.col-xs-12.auto-width Why did you choose MaxRevOne?
+    .form-group
+      .col-xs-12 = text_area_tag :reason,'', class: 'form-control'

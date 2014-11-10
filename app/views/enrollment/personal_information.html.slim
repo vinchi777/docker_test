@@ -1,0 +1,45 @@
+.personal-information data-desc='Personal Information'
+  form
+    .profile-pic.col-lg-2.col-md-3.col-sm-4
+      = image_tag 'user.png', class: 'profile'
+      input type='image' class='hidden'
+      a href='#' Upload Photo
+    .col-lg-10.col-md-9.col-sm-8
+      .form-horizontal
+        .form-group
+          .col-sm-4 = text_field_tag :first_name,'', class: 'form-control required', placeholder: 'First Name'
+          .col-sm-4 = text_field_tag :middle_name,'', class: 'form-control', placeholder: 'Middle Name'
+          .col-sm-4 = text_field_tag :last_name,'', class: 'form-control required', placeholder: 'Last Name'
+      .form-inline
+        .form-group
+          label.control-label Birthdate
+          = text_field_tag :birth_date,'', class: 'form-control required', placeholder: 'Select birthdate', 'data-date-format' => 'MMM DD, YYYY'
+        .form-group
+          .age.control-label
+            | Age
+            span< 19
+      .form-inline
+        .form-group
+          label.control-label Sex
+          = select_tag :sex ,options_for_select(%w{Male Female}), class: 'form-control required'
+        .form-group
+          label.control-label Civil Status
+          = select_tag :civil ,options_for_select(%w{Single Married}), class: 'form-control required'
+      .form-horizontal
+        .form-group
+          label.control-label.col-lg-2.col-md-3.col-sm-4 Address
+          .col-md-6.col-sm-8 = text_field_tag :address,'', class: 'form-control'
+        .form-group
+          label.control-label.col-lg-2.col-md-3.col-sm-4 Contacts
+          .col-md-6.col-sm-8 = text_field_tag :contacts,'', class: 'form-control'
+        .form-group
+          label.control-label.col-lg-2.col-md-3.col-sm-4 Email Address
+          .col-md-6.col-sm-8 = text_field_tag :email,'', class: 'form-control'
+        hr
+        .form-group
+          label.control-label.col-sm-8 Parent or Guardian Name
+          label.control-label.col-sm-4 Contact
+        .form-group
+          .col-sm-4 = text_field_tag :p_first_name, '', class: 'form-control', placeholder: 'First Name'
+          .col-sm-4 = text_field_tag :p_last_name, '', class: 'form-control', placeholder: 'Last Name'
+          .col-sm-4 = text_field_tag :p_contact, '', class: 'form-control'
