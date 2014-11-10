@@ -77,4 +77,8 @@ class ReviewSeason
       full_review
     end
   end
+
+  def to_s
+    season
+  end
 end

@@ -38,6 +38,7 @@ class EnrollmentController < ApplicationController
         success = @student.setup_payment
       when :payment
         set_student
+        @student.finish_enrollment_process
       else
         set_student
         success = @student.update_attributes student_params

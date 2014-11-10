@@ -2,22 +2,22 @@
   .summary.col-xs-12.col-md-10.col-md-offset-1 data-desc='Payment'
     = render 'defaults', f: f
     p Here’s the summary of your payment:
-    - invoices = @student.current_invoices
     table
-      tr
-        - invoices.each do |invoice|
+      - @student.current_invoices.each do |invoice|
+        tr
           td
-            = "#{invoice.season} | Review Fee (#{invoice.package_type})"
+            = "#{invoice.review_season} | Review Fee (#{invoice.package}) - #{invoice.description}"
           td -
-          td = "P #{invoice.amount}"
-      tr class=('hidden' if @student.package == 'Double')
-        td Discount
-        td -
-        td = "P #{@season.get_discount @student.package_type}"
+          td = "P #{to_currency invoice.amount}"
+        - unless invoice.package == 'Double'
+          tr
+            td Discount
+            td -
+            td = "P #{to_currency @season.get_discount @student.package_type}"
       tr
         td Total
         td -
-        td = invoices.reduce(0) { |sum, i| sum+i.amount }
+        td = "P #{to_currency @student.total_current_amount}"
     p
       | We support online payment of reservation fee (downpayment) of
       b<> P 3,000

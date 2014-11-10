@@ -82,10 +82,10 @@ class Student
                                         amount: season.get_fee(package_type),
                                     })
     if package_type == 'Double'
-      invoice1.description = 'Invoice 1 of 2 for Double Review'
+      invoice1.description = 'Invoice 1 of 2'
       invoice2 = StudentInvoice.new({
                                         package: package_type,
-                                        description: 'Invoice 2 of 2 for Double Review',
+                                        description: 'Invoice 2 of 2',
                                         review_season: season,
                                         amount: season.double_review - season.full_review
                                     })
@@ -97,14 +97,17 @@ class Student
   end
 
   def current_invoice
-    invoices.sort_by { |i| ReviewSeason.where(season: i.season).first.season_start }.last
+    invoices.sort_by { |i| i.review_season.season_start }.last
   end
 
   def current_invoices
     if invoices
-      invoices.sort_by { |i| ReviewSeason.where(season: i.season).first.season_start }.last
-      invoices.where(season: current_invoice.season)
+      invoices.where({review_season: current_invoice.review_season})
     end
+  end
+
+  def total_current_amount
+    current_invoices.reduce(0) { |sum, i| sum+i.amount }
   end
 
   def finish_enrollment_process

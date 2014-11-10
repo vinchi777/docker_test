@@ -10,4 +10,8 @@ module ApplicationHelper
   def people_page?
     (current_page? :reviewers) || (current_page? :founders)
   end
+
+  def to_currency(money)
+    number_to_currency money, unit: ''
+  end
 end
