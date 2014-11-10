@@ -3,6 +3,7 @@
   header.row
     .profile-pic.col-lg-1
       = image_tag 'profile-placeholder.png', class: 'profile'
+      .upload: a href='#' Upload
     .name.col-lg-8
       = f.text_field :firstName, placeholder: 'First name', class: 'form-control required'
       = f.text_field :middleName, placeholder: 'Middle name', class: 'form-control col-lg-2'
@@ -44,7 +45,6 @@
             .col-lg-6.first-name = f.text_field :parentFirstName, class: 'form-control', placeholder: 'First name'
             .col-lg-6.last-name = f.text_field :parentLastName, class: 'form-control', placeholder: 'Last name'
           .form-group
-            = f.label 'Contact', class: 'control-label col-lg-2'
             .col-lg-10 = f.text_field :parentContact, class: 'form-control', placeholder: "Parent's contact no."
 
   .education.panel
@@ -86,6 +86,8 @@
           label.control-label.col-lg-12 Referred by
           .first-name.col-lg-6 = f.text_field :referrerFirstName, class: 'form-control', placeholder: 'First name'
           .last-name.col-lg-6 = f.text_field :referrerLastName, class: 'form-control', placeholder: 'Last name'
+        .form-group.inline
+          .referrer-contact.col-lg-8 = f.text_field :referrerContact, class: 'form-control', placeholder: 'Referrer contact no.'
         .form-group.inline
           = f.label :why, 'Why did you choose MaxRevOne?', class: 'control-label col-lg-12', cols: '50'
           .col-lg-12 = f.text_area :why, class: 'form-control'
