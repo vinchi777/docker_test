@@ -25,6 +25,10 @@ class StudentInvoice
     BigDecimal(amount) * (1 - BigDecimal(discount)) - transactions.map { |t| t.amount }.sum
   end
 
+  def has_balance?
+    balance > 0
+  end
+
   def as_json(opt = nil)
     json = {
         _id: id,
