@@ -11,7 +11,11 @@ class EnrollmentController < ApplicationController
       when :package_type
         set_season
       when :personal_information
-        @student = Student.new({enrollment_status: step, package_type: params[:package_type]})
+        if params[:student_id]
+          set_student
+        else
+          @student = Student.new({enrollment_status: step, package_type: params[:package_type]})
+        end
       when :payment
         set_season
         update_enrollment_status
@@ -30,7 +34,11 @@ class EnrollmentController < ApplicationController
         set_season
         success = false unless type
       when :personal_information
-        @student = Student.new student_params
+        if params[:student_id]
+          set_student
+        else
+          @student = Student.new student_params
+        end
         success = @student.save
       when :terms_and_conditions
         set_student

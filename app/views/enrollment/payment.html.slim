@@ -13,16 +13,16 @@
           tr
             td Discount
             td -
-            td = "P #{to_currency @season.get_discount @student.package_type}"
+            td = "P #{invoice.discount ? to_currency(invoice.discount) : 0}"
       tr
         td Total
         td -
         td = "P #{to_currency @student.total_current_amount}"
     p
-      | We support online payment of reservation fee (downpayment) of
+      | We support online payment of reservation fee (down payment) of
       b<> P 3,000
       | to confirm your application. Should you
               wish to pay manually, you may Skip the button and do payment at our office within three days to verify your
               enrollment.
     p MaxRevOne is using PayPal for online payment processing. You will be taken to a secured PayPal page
-            once you choose Pay Now via PaypPal to process your payment.
+            once you choose Pay Now via PayPal to process your payment.
