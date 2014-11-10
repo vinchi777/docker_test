@@ -69,20 +69,10 @@ class ReviewSeason
   end
 
   def get_fee(package)
-    case package
-      when 'Standard'
-        full_review
-      when 'Double'
-        double_review
-      when 'Coaching'
-        coaching
+    if package == 'Coaching'
+      coaching
+    else
+      full_review
     end
   end
-
-  def get_fee(package)
-    if package.eql? 'Standard'
-
-    end
-  end
-
 end
