@@ -77,10 +77,10 @@ class Student
   def setup_payment
     season = ReviewSeason.current
     invoice1 = StudentInvoice.new({
-                                        package: package_type,
-                                        review_season: season,
-                                        amount: season.get_fee(package_type),
-                                    })
+                                      package: package_type,
+                                      review_season: season,
+                                      amount: season.get_fee(package_type),
+                                  })
     if package_type == 'Double'
       invoice1.description = 'Invoice 1 of 2 for Double Review'
       invoice2 = StudentInvoice.new({
@@ -94,6 +94,34 @@ class Student
     self.invoices << invoice1
     self.invoices << invoice2 if invoice2
     save
+  end
+
+  def balance
+    invoices.map { |i| i.balance }.sum
+  end
+
+  def has_balance?
+    balance > 0
+  end
+
+  def enrolling?
+    if current_invoice
+      current_invoice.has_balance? && !current_invoice.enrolled
+    else
+      false
+    end
+  end
+
+  def enrolled?
+    if current_invoice
+      current_invoice.enrolled
+    else
+      false
+    end
+  end
+
+  def current_season
+    current_invoice.review_season.season
   end
 
   def current_invoice

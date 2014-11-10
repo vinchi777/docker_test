@@ -10,7 +10,9 @@ class StudentInvoice
   validates_presence_of :amount
   validates :amount, numericality: {greater_than: 0.0}
 
-  field :discount, type: String
+  field :discount, type: BigDecimal
+
+  field :enrolled, type: Boolean, default: false
 
   belongs_to :student
   validates_presence_of :student
@@ -20,7 +22,7 @@ class StudentInvoice
   validates_presence_of :review_season
 
   def balance
-    amount * discount - transactions.map { |t| t.amount }.sum
+    BigDecimal(amount) * (1 - BigDecimal(discount)) - transactions.map { |t| t.amount }.sum
   end
 
   def as_json(opt = nil)
