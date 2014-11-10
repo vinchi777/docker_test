@@ -13,6 +13,8 @@ $(window).load ->
 $ ->
   bindDatePicker()
 
+  $('#home .banner').height($(window).height())
+
   # Change navbar bg color dynamically in home
   if $('#home').length
     anchor = 0
@@ -37,5 +39,7 @@ $ ->
     })
   else
     $('#map').hide()
+
+window.sr = new scrollReveal();
 
 

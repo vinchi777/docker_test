@@ -10,19 +10,19 @@
         span
           | Your success is our life’s commitment and passion.
         a.btn.btn-black.btn-lg href='' Make it happen
-  .reviewers
-    .container
-      h3 Learn from high caliber national reviewers.
-      p
-        | Our reviewers consists of experienced professors and former BONs emanating from the best nursing schools nationwide who 
-          are excellently rated and seasoned in their own field, topics and lectures.
-      .coverflow-wrapper
-        .coverflow.hidden
-          - Dir.glob("#{Rails.root.join('app', 'assets', 'images', 'reviewers', 'full')}/*.jpg").sample(5).each do |f|
-            = image_tag "reviewers/full/#{f.split('/').last}"
-      a.more href=reviewers_path
-        i.fa.fa-chevron-circle-right
-        | Find out the rest of our reviewers.
+  /.reviewers
+  /  .container
+  /    h3 Learn from high caliber national reviewers.
+  /    p
+  /      | Our reviewers consists of experienced professors and former BONs emanating from the best nursing schools nationwide who
+  /        are excellently rated and seasoned in their own field, topics and lectures.
+  /    .coverflow-wrapper
+  /      .coverflow.hidden
+  /        - Dir.glob("#{Rails.root.join('app', 'assets', 'images', 'reviewers', 'full')}/*.jpg").sample(5).each do |f|
+  /          = image_tag "reviewers/full/#{f.split('/').last}"
+  /    a.more href=reviewers_path
+  /      i.fa.fa-chevron-circle-right
+  /      | Find out the rest of our reviewers.
   .services
     .container-fluid
       .row
@@ -74,7 +74,7 @@
       h3 What people say about us.
       .row
         - @testimonials.each_with_index do |testimonial, i|
-          .col-md-6.testimony class=('col-md-offset-3' if @testimonials.length.odd? && i == @testimonials.length - 1)
+          .col-md-6.testimony class=('col-md-offset-3' if @testimonials.length.odd? && i == @testimonials.length - 1) data-sr='wait 2.5s and then ease-in-out 100px'
             = image_tag testimonial.image
             b = testimonial.student
             p.title = testimonial.title

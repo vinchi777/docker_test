@@ -17,7 +17,9 @@
 //= require angular
 //= require moment
 //= require bootstrap-datetimepicker
+//= require scrollReveal
 //= require_self
+//= require gmaps
 //= require_tree .
 
 window.has_google_map = function () {
