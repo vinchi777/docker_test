@@ -6,7 +6,7 @@
     h4
       | Our low down payment of
       b<>
-      b = number_to_currency @season.reservation, unit: '₱ '
+      b = number_to_currency @season.reservation, unit: '₱ ', precision: 0
       span< is enough to get you started.
   .container.packages
     .row
@@ -16,12 +16,12 @@
             h4 Final Coaching
             h2.price
               span.currency> ₱
-              span.value = number_to_currency @season.coaching, unit: ''
+              span.value = number_to_currency @season.coaching, unit: '', precision: 0
             .hours
               | 40++
               span< hours
             .down
-              = number_to_currency @season.reservation, unit: '₱ '
+              = number_to_currency @season.reservation, unit: '₱ ', precision: 0
               span< down payment
             .description &nbsp
             hr.transparent
@@ -40,12 +40,12 @@
             h4 Standard Review
             h2.price
               span.currency> ₱
-              span.value = number_to_currency @season.full_review, unit: ''
+              span.value = number_to_currency @season.full_review, unit: '', precision: 0
             .hours
               | 730++
               span< hours
             .down
-              = number_to_currency @season.reservation, unit: '₱ '
+              = number_to_currency @season.reservation, unit: '₱ ', precision: 0
               span< down payment
             .description &nbsp
             - if @season.promo_start.present?
@@ -54,11 +54,11 @@
                 h5 Promos
                 .row
                   .col-md-6
-                    b = number_to_currency @season.first_timer, unit: '₱ '
+                    b = number_to_currency @season.first_timer, unit: '₱ ', precision: 0
                   .col-md-6 1st Taker
                 .row
                   .col-md-6
-                    b = number_to_currency @season.repeater, unit: '₱ '
+                    b = number_to_currency @season.repeater, unit: '₱ ', precision: 0
                   .col-md-6 Repeater
             - else
               hr.transparent
@@ -78,12 +78,12 @@
             h4 Double Review
             h2.price
               span.currency> ₱
-              span.value =  number_to_currency@season.double_review, unit: ''
+              span.value =  number_to_currency@season.double_review, unit: '', precision: 0
             .hours
               | 1,460++
               span< hours
             .down
-              = number_to_currency @season.reservation, unit: '₱ '
+              = number_to_currency @season.reservation, unit: '₱ ', precision: 0
               span< down payment
             .description 2x Standard Review
             hr
@@ -95,7 +95,7 @@
                 b &nbsp
               div
                 | by
-                b< = number_to_currency @season.full_review * 2 - @season.double_review, unit: '₱ '
+                b< = number_to_currency @season.full_review * 2 - @season.double_review, unit: '₱ ', precision: 0
             a.btn.btn-default.btn-lg href='#' Enroll
     p.info
       - if @season.promo_start.present?
