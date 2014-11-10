@@ -13,6 +13,8 @@ class StudentInvoice
   field :discount, type: String
 
   belongs_to :student
+  validates_presence_of :student
+
   embeds_many :transactions
   belongs_to :review_season
   validates_presence_of :review_season

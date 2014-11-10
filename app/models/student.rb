@@ -64,7 +64,7 @@ class Student
   field :finish_enrollment_on, type: DateTime
   field :package_type, type: String
 
-  embeds_many :invoices, class_name: 'StudentInvoice'
+  has_many :invoices, class_name: 'StudentInvoice'
 
   def middleInitial
     if middleName.nil?
