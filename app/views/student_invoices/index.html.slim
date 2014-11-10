@@ -36,8 +36,8 @@
               label Description
               input.form-control type='text' ng-model='invoice.description'
             .form-group.season
-              label Review Season(s)
-              input.form-control.required type='text' ng-model='invoice.review_seasons'
+              label Review Season
+              select.form-control.required ng-model='invoice.review_season' ng-options='r.season for r in reviewSeasons'
             .form-group.amount
               label Amount
               input.form-control.required.text-right type='text' ng-model='invoice.amount'

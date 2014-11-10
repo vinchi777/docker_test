@@ -47,6 +47,11 @@
   $scope.enableAddInvoiceBtn = true
   resetInvoice()
 
+  $scope.addInvoice = ->
+    res = $http.get '/review_seasons/list.json'
+    res.success (d) ->
+      $scope.reviewSeasons = d
+
   $scope.createInvoice = (url) ->
     $scope.addInvoiceClass = 'disabled'
 

@@ -16,6 +16,11 @@ class StudentInvoicesController < AdminController
     student = Student.find(student_invoice_params[:student_id])
     @student_invoice = StudentInvoice.new(student_invoice_params.except :student_id)
     @student_invoice.student = student
+
+    if params[:student_invoice][:review_season]
+      @student_invoice.review_season = ReviewSeason.find(params[:student_invoice][:review_season][:id])
+    end
+
     respond_to do |format|
       if @student_invoice.save
         format.json { render json: @student_invoice }
@@ -71,7 +76,7 @@ class StudentInvoicesController < AdminController
   end
 
   def student_invoice_params
-    params.require(:student_invoice).permit(:student_id, :package, :description, :review_seasons, :amount, :discount)
+    params.require(:student_invoice).permit(:student_id, :package, :description, :amount, :discount)
   end
 
   def transaction_params

@@ -10,7 +10,11 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :review_seasons
+  resources :review_seasons do
+    collection do
+      get 'list', to: 'review_seasons#list'
+    end
+  end
 
   devise_for :users
   devise_scope :user do

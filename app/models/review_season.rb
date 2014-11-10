@@ -57,4 +57,6 @@ class ReviewSeason
       errors[:promo_end] << 'must be after the start of the promo'
     end
   end
+
+  has_many :student_invoices, dependent: :restrict
 end
