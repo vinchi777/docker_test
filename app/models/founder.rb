@@ -6,7 +6,7 @@ class Founder
 
   def initialize(name, position, background)
     @name = name
-    @title = position
+    @position = position
     @background = background.strip
     @image = "#{PATH}#{name.split(' ').last.downcase}#{EXT}"
   end
@@ -16,18 +16,18 @@ class Founder
     [
         Founder.new(
             "Rommel D. Capungcol",
-            "Primary Owner",
+            "President",
             "Rommel graduated with a bachelor's degree in Nursing from the Remedios Trinidad Romualdez Medical Foundation in 1993. That same year, he took and passed the Nursing board examinations. Finding his thirst for knowledge unquenched, he pursued Medicine in the same year and graduated in 1997. Rommel joined the Eastern Visayas Regional Medical Center twice, as an intern in 1997-1998 and then as a resident-in-training in 1999-2002. He passed the medical board in 1998. In 2011, Rommel graduated from the Southwestern University with a master's degree in Public Administration. The following year, he graduated with a master's degree in Business Administration from the Asian Development Foundation College. At present, Rommel is a Medical Officer at the Philippine National Police - Regional Health Service, a Director at the Philippine National Red Cross - Leyte Chapter, and a student of Law at the Dr. Vicente Orestes Romualdez Educational Foundation."
-        ),
-        Founder.new(
-            "Mariel C. Villaflor-Capungcol",
-            "Primary Owner",
-            "Mariel is a Medical Technology graduate of the Divine Word University. She took and passed the Medical Technologist board examinations in 1989. In 2004, Mariel graduated with a bachelor's degree in Law from Dr. Vicente Orestes Romualdez Educational Foundation. She later studied at the Southwestern University, where she graduated with a master's degree in Public Administration in 2011. Today, Mariel is a faculty member of the College of Medical Technology at the Remedios Trinidad Romualdez Medical Foundation."
         ),
         Founder.new(
             "Jose Van P. Tan",
             "Vice President and Treasurer",
             "Joe took up Nursing at Far Eastern University - Manila, where he graduated with a Bachelor of Science degree in April 2010. In the same year, he passed the Nurse Licensure Examination. After passing the examination, Joe co-founded SRG - Tacloban, the forerunner of Max Rev One. When he's not reviewing finances and overseeing the day-to-day operations of Max Rev One, Joe pursues his lifelong dream of becoming a lawyer at the Don Vicente Orestes Romualdez Educational Foundation (DVOREF), where he takes up Law."
+        ),
+        Founder.new(
+            "Mariel C. Villaflor-Capungcol",
+            "Owner",
+            "Mariel is a Medical Technology graduate of the Divine Word University. She took and passed the Medical Technologist board examinations in 1989. In 2004, Mariel graduated with a bachelor's degree in Law from Dr. Vicente Orestes Romualdez Educational Foundation. She later studied at the Southwestern University, where she graduated with a master's degree in Public Administration in 2011. Today, Mariel is a faculty member of the College of Medical Technology at the Remedios Trinidad Romualdez Medical Foundation."
         ),
         Founder.new(
             "Christine Almedilla-Pablico",
