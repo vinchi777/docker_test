@@ -73,11 +73,11 @@ class StudentsController < AdminController
 
   def confirm
     if @student.enrolling?
-      @student.current_invoice.enrolled = true
+      @student.current_enrollment.enroll
     end
 
     respond_to do |format|
-      if @student.current_invoice.save
+      if @student.current_enrollment.save
         format.json { render json: {enrollment_status: @student.enrollment_status} }
       else
         format.json { render status: :unprocessable_entity }

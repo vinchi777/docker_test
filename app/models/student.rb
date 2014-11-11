@@ -66,6 +66,7 @@ class Student
   field :package_type, type: String
 
   has_many :invoices, class_name: 'StudentInvoice'
+  has_many :enrollments, class_name: 'StudentEnrollment'
 
   def middleInitial
     if middleName.nil?
@@ -106,26 +107,32 @@ class Student
   end
 
   def enrolling?
-    if current_invoice
-      current_invoice.has_balance? && !current_invoice.enrolled
+    if current_enrollment
+      current_enrollment.enrolling?
     else
       false
     end
   end
 
+  def has_enrollment_on(season)
+    enrollments.any? { |x| x.review_season = season }
+  end
+
   def enrollment_status
-    if enrolling?
-      :enrolling
-    elsif enrolled?
-      :enrolled
+    if current_enrollment
+      current_enrollment.status
     else
-      nil
+      0
     end
   end
 
+  def current_enrollment
+    enrollments.sort_by { |i| i.review_season.season_start }.last
+  end
+
   def enrolled?
-    if current_invoice
-      current_invoice.enrolled
+    if current_enrollment
+      current_enrollment.enrolled?
     else
       false
     end

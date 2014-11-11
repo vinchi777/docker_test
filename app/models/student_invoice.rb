@@ -12,8 +12,6 @@ class StudentInvoice
 
   field :discount, type: BigDecimal
 
-  field :enrolled, type: Boolean, default: false
-
   belongs_to :student
   validates_presence_of :student
 

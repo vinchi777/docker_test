@@ -53,10 +53,10 @@
             | {{student.address}}
       .enroll.col-lg-4
         div ng-switch='student.enrollment_status'
-          span ng-switch-when='enrolled'
+          span ng-switch-when='2'
             i.fa.fa-lg.fa-check
             | Enrolled for {{student.current_season}}
-          span ng-switch-when='enrolling'
+          span ng-switch-when='1'
             i.fa.fa-lg.fa-clock-o
             | Enrolling for {{student.current_season}}
             a.btn.btn-primary.btn-confirm href='' ng-click='confirm(student)'
