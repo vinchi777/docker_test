@@ -28,13 +28,18 @@
   /    .form-group
   /      input.btn.btn-default.filter type='submit' value='Filter'
 
+  .count ng-show='students.length != 0 && !loading'
+    | Found
+    b<>
+      | {{totalItems}}
+    | students
   .panel.panel-light.students.col-lg-12
-    .no-students ng-show='student.length == 0 && q == null'
+    .no-students ng-show='students.length == 0 && q == null'
       p
         | There is no existing students. Click the
         b  'New Student'
         |  button to create one.
-    .no-result ng-show='student.length == 0 && q != null'
+    .no-result ng-show='students.length == 0 && q != null'
       i.fa.fa-exclamation-circle
       div No result found
 
@@ -83,17 +88,6 @@
     .loading ng-show='loading'
       i.fa.fa-refresh.fa-spin
       span< Loading students...
-  /div.pagination
-  /  ul.pagination
-  /    li: a[href='#']
-  /      i.fa.fa-chevron-left
-  /    li: a[href='#'] 1
-  /    li: a[href='#'] 2
-  /    li: a[href='#'] 3
-  /    li: span ..
-  /    li: a[href='#'] 6
-  /    li: a[href='#']
-  /      i.fa.fa-chevron-right
 
   div.pagination
     pagination total-items="totalItems" ng-model="currentPage" max-size='maxSize' boundary-links="true"  ng-change="pageChanged()"
