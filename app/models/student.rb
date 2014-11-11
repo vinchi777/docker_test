@@ -122,7 +122,7 @@ class Student
     if current_enrollment
       current_enrollment.status
     else
-      0
+      :undefined
     end
   end
 

@@ -11,10 +11,10 @@
         = f.text_field :lastName, placeholder: 'Last name', class: 'form-control required col-lg-2'
       .status
         .enroll ng-switch='student.enrollment_status'
-          span ng-switch-when='2'
+          span ng-switch-when='enrolled'
             i.fa.fa-lg.fa-check
             | Enrolled for {{student.current_season}}
-          span ng-switch-when='1'
+          span ng-switch-when='enrolling'
             i.fa.fa-lg.fa-clock-o
             | Enrolling for {{student.current_season}}
             a.btn.btn-primary.btn-confirm href='' ng-click='confirm(student)'

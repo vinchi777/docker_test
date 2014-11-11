@@ -1,18 +1,19 @@
 class StudentEnrollment
   include Mongoid::Document
+  include SimpleEnum::Mongoid
 
-  field :status, type: Integer, default: 0 # 0 - Undefined, 1 - Enrolling, 2 - Enrolled
+  as_enum :status, undefined: 0, enrolling: 1, enrolled: 2
 
   def enrolled?
-    status == 2
+    status == :enrolled
   end
 
   def enrolling?
-    status == 1
+    status == :enrolling
   end
 
   def enroll
-    self.status = 2
+    self.status = :enrolled
   end
 
   belongs_to :student
