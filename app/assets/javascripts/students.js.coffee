@@ -17,3 +17,5 @@ $ ->
   $('#students ul.pagination li:nth-child(2) a').html '<i class="fa fa-chevron-left"></i>'
   $('#students ul.pagination li:nth-last-child(2) a').html '<i class="fa fa-chevron-right"></i>'
   $('#students ul.pagination li:last-child a').html '<i class="fa fa-chevron-circle-right"></i>'
+
+  $('#students .loading').height($('.admin-container').height() - 285)

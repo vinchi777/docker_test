@@ -7,9 +7,11 @@
   params = {}
 
   loadStudents = ->
+    $scope.loading = true
     url = '/students.json'
     r = $http.get url, params: params
     r.success (d) ->
+      $scope.loading = false
       $scope.students = d.students
       $scope.totalItems = d.totalSize
       window.history.pushState({}, '', '/students?' + $.param(params))

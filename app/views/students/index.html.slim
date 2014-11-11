@@ -38,7 +38,7 @@
       i.fa.fa-exclamation-circle
       div No result found
 
-    .student.row ng-repeat='student in students'
+    .student.row ng-repeat='student in students' ng-hide='loading'
       .col-lg-1.profile-pic
         a href='/students/{{student.id}}'
           = image_tag 'profile-placeholder.png', class: 'profile'
@@ -79,6 +79,10 @@
                 | Yes
               button.btn.btn-primary data-dismiss='modal' No
 
+
+    .loading ng-show='loading'
+      i.fa.fa-refresh.fa-spin
+      span< Loading students...
   /div.pagination
   /  ul.pagination
   /    li: a[href='#']
