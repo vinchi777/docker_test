@@ -3,12 +3,11 @@
 #students ng-controller='StudentsCtrl' data-q=params[:q] data-page=params[:page]
   header
     h2 Students
-
     .row
       .search.col-lg-8
-        form.form-inline.row action= students_path
+        form.form-inline.row ng-submit='search()'
           .form-group.col-lg-12
-            input.form-control type="search" placeholder="Search for name, school or address of the students" name='q' value=params[:q]
+            input.form-control type="search" placeholder="Search for name, school or address of the students" ng-model='q' name='q' value=params[:q]
 
       .col-lg-2.col-lg-offset-2
         = link_to 'New Student', new_student_path, class: 'btn btn-primary pull-right'
@@ -80,4 +79,17 @@
                 | Yes
               button.btn.btn-primary data-dismiss='modal' No
 
-  = will_paginate @posts
+  /div.pagination
+  /  ul.pagination
+  /    li: a[href='#']
+  /      i.fa.fa-chevron-left
+  /    li: a[href='#'] 1
+  /    li: a[href='#'] 2
+  /    li: a[href='#'] 3
+  /    li: span ..
+  /    li: a[href='#'] 6
+  /    li: a[href='#']
+  /      i.fa.fa-chevron-right
+
+  div.pagination
+    pagination total-items="totalItems" ng-model="currentPage" max-size='maxSize' boundary-links="true"  ng-change="pageChanged()"

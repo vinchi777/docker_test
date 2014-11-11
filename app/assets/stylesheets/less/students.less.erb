@@ -144,44 +144,52 @@
 
     .pagination {
         margin: 0;
+    }
 
-        .previous_page {
-            width: 95px;
-        }
+    .pagination > li:first-child > a,
+    .pagination > li:last-child > a{
+        font-size: 24px;
+        padding-top: 0;
+        padding-bottom: 0;
+        padding-left: 6px;
+        width: 32px;
+    }
 
-        .next_page {
-            width: 72px;
-        }
+    .pagination > li:nth-child(2) > a,
+    .pagination > li:nth-last-child(2) > a {
+        padding-left: 9px;
+        padding-right: 0;
+        padding-top: 6px;
+        width: 32px;
+        height: 32px;
+    }
 
-        > * {
+    .pagination > li > a {
+        border: none;
+        border-radius: 100%;
+        margin-left: 5px;
+        margin-right: 5px;
+        color: #000000;
+        height: 32px;
+        padding-top: 5px;
+        font-weight: bold;
 
-            border: none;
-            border-radius: 16px;
-            margin-left: 5px;
-            text-align: center;
-            color: #000000;
-            font-style: normal;
-            font-weight: bold;
-            padding: 4px;
-        }
-
-        > em, > a {
-            width: 30px;
-
-        }
-
-        > a:hover {
+        &:hover {
             background: @yellow;
-            text-decoration: none;
         }
+    }
 
-        > em {
-            background: @yellow;
-        }
+    .pagination > li.disabled > a {
+        color: #DDD;
+    }
 
-        > span {
-            color: lightgray;
-        }
+    .pagination > li.disabled > a:hover {
+        background: none;
+    }
+
+    .pagination > li.active > a {
+        background: @yellow;
+        width: 32px;
     }
 }
 

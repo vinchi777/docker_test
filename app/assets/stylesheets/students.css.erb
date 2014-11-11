@@ -117,35 +117,44 @@
 #students .pagination {
   margin: 0;
 }
-#students .pagination .previous_page {
-  width: 95px;
+#students .pagination > li:first-child > a,
+#students .pagination > li:last-child > a {
+  font-size: 24px;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 6px;
+  width: 32px;
 }
-#students .pagination .next_page {
-  width: 72px;
+#students .pagination > li:nth-child(2) > a,
+#students .pagination > li:nth-last-child(2) > a {
+  padding-left: 9px;
+  padding-right: 0;
+  padding-top: 6px;
+  width: 32px;
+  height: 32px;
 }
-#students .pagination > * {
+#students .pagination > li > a {
   border: none;
-  border-radius: 16px;
+  border-radius: 100%;
   margin-left: 5px;
-  text-align: center;
+  margin-right: 5px;
   color: #000000;
-  font-style: normal;
+  height: 32px;
+  padding-top: 5px;
   font-weight: bold;
-  padding: 4px;
 }
-#students .pagination > em,
-#students .pagination > a {
-  width: 30px;
-}
-#students .pagination > a:hover {
-  background: #fed24e;
-  text-decoration: none;
-}
-#students .pagination > em {
+#students .pagination > li > a:hover {
   background: #fed24e;
 }
-#students .pagination > span {
-  color: lightgray;
+#students .pagination > li.disabled > a {
+  color: #DDD;
+}
+#students .pagination > li.disabled > a:hover {
+  background: none;
+}
+#students .pagination > li.active > a {
+  background: #fed24e;
+  width: 32px;
 }
 #student {
   /** Bootstrap Override */

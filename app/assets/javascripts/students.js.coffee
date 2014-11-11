@@ -12,3 +12,8 @@ $ ->
       type: 'delete'
       success: ->
         location.reload()
+
+  $('#students ul.pagination li:first-child a').html '<i class="fa fa-chevron-circle-left"></i>'
+  $('#students ul.pagination li:nth-child(2) a').html '<i class="fa fa-chevron-left"></i>'
+  $('#students ul.pagination li:nth-last-child(2) a').html '<i class="fa fa-chevron-right"></i>'
+  $('#students ul.pagination li:last-child a').html '<i class="fa fa-chevron-circle-right"></i>'

@@ -3,18 +3,21 @@ class StudentsController < AdminController
 
   def index
     q = params[:q]
-
-    @students =
-        if q.nil?
-          Student.all.paginate(page: params[:page], per_page: 10)
-        else
-          Student.where(lastName: /#{q}/i).paginate(page: params[:page], per_page: 10)
-          # search(q).paginate(page: params[:page], per_page: 10)
-        end
+    page = params[:page]
 
     respond_to do |format|
       format.html { render :index }
-      format.json { render json: @students }
+      format.json do
+        if q.nil? || q.blank?
+          @students = Student.asc('lastName', 'firstName').paginate(page: page, per_page: 10)
+          size = Student.all.length
+        else
+          r = Student.where(lastName: /#{q}/i)
+          @students = r.paginate(page: page, per_page: 10)
+          size = r.length
+        end
+        render json: {students: @students, totalSize: size}
+      end
     end
   end
 
