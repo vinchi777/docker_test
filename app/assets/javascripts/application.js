@@ -18,7 +18,11 @@
 //= require ui-bootstrap-tpls-0.11.2
 //= require moment
 //= require bootstrap-datetimepicker
+//= require scrollReveal
+//= require isInViewport
+//= require countUp
 //= require_self
+//= require gmaps
 //= require_tree .
 
 window.has_google_map = function () {
