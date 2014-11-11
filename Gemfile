@@ -22,6 +22,10 @@ gem 'jbuilder', '~> 2.0'
 gem 'will_paginate_mongoid', '~> 2.0.1'
 gem 'wicked'
 
+gem 'delayed_job_mongoid'
+gem 'delayed_job_web'
+
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
