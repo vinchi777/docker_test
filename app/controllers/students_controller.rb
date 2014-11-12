@@ -1,16 +1,24 @@
 class StudentsController < AdminController
-  before_action :set_student, only: [:show, :edit, :update, :destroy]
+  before_action :set_student, only: [:show, :edit, :update, :destroy, :confirm]
 
   def index
     q = params[:q]
+    page = params[:page]
 
-    @students =
-        if q.nil?
-          Student.all.paginate(page: params[:page], per_page: 10)
+    respond_to do |format|
+      format.html { render :index }
+      format.json do
+        if q.nil? || q.blank?
+          @students = Student.asc('lastName', 'firstName').paginate(page: page, per_page: 10)
+          size = Student.all.length
         else
-          Student.where(lastName: /#{q}/i).paginate(page: params[:page], per_page: 10)
-          # search(q).paginate(page: params[:page], per_page: 10)
+          r = Student.where(lastName: /#{q}/i)
+          @students = r.paginate(page: page, per_page: 10)
+          size = r.length
         end
+        render json: {students: @students, totalSize: size}
+      end
+    end
   end
 
   def search(q)
@@ -23,9 +31,11 @@ class StudentsController < AdminController
   end
 
   def show
+    @student.as_json
     @page = 'show'
     respond_to do |format|
       format.html { render :edit }
+      format.json { render json: @student }
     end
   end
 
@@ -58,6 +68,20 @@ class StudentsController < AdminController
     respond_to do |format|
       if @student.destroy
         format.json { head :no_content }
+      else
+        format.json { render status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def confirm
+    if @student.enrolling?
+      @student.current_enrollment.enroll
+    end
+
+    respond_to do |format|
+      if @student.current_enrollment.save
+        format.json { render json: {enrollment_status: @student.enrollment_status} }
       else
         format.json { render status: :unprocessable_entity }
       end

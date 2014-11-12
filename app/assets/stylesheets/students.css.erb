@@ -1,6 +1,19 @@
 /***
  Site's variables
 *****/
+/* Common */
+#students i.fa,
+#student i.fa {
+  margin-right: 8px;
+}
+#students .enroll i.fa.fa-check,
+#student .enroll i.fa.fa-check {
+  color: #45B29D;
+}
+#students .enroll i.fa.fa-clock-o,
+#student .enroll i.fa.fa-clock-o {
+  color: #F2E394;
+}
 #students header h2 {
   font-size: 20px;
   color: #4C4C4C;
@@ -41,8 +54,16 @@
 #students .no-result div {
   padding-top: 3px;
 }
+#students .loading {
+  padding-top: 150px;
+  text-align: center;
+}
+#students .count {
+  font-size: 14px;
+  margin-top: 5px;
+}
 #students .students {
-  margin-top: 15px;
+  margin-top: 7px;
 }
 #students .students .student {
   padding-top: 10px;
@@ -81,15 +102,6 @@
   font-family: 'Signika Light';
   font-size: 14px;
 }
-#students .students .student i.fa {
-  margin-right: 8px;
-}
-#students .students .student .enroll i.fa.fa-check {
-  color: #45B29D;
-}
-#students .students .student .enroll i.fa.fa-clock-o {
-  color: #F2E394;
-}
 #students .students .student .payment i.fa.fa-money {
   color: #DF5A49;
 }
@@ -113,35 +125,44 @@
 #students .pagination {
   margin: 0;
 }
-#students .pagination .previous_page {
-  width: 95px;
+#students .pagination > li:first-child > a,
+#students .pagination > li:last-child > a {
+  font-size: 24px;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 6px;
+  width: 32px;
 }
-#students .pagination .next_page {
-  width: 72px;
+#students .pagination > li:nth-child(2) > a,
+#students .pagination > li:nth-last-child(2) > a {
+  padding-left: 9px;
+  padding-right: 0;
+  padding-top: 6px;
+  width: 32px;
+  height: 32px;
 }
-#students .pagination > * {
+#students .pagination > li > a {
   border: none;
-  border-radius: 16px;
+  border-radius: 100%;
   margin-left: 5px;
-  text-align: center;
+  margin-right: 5px;
   color: #000000;
-  font-style: normal;
+  height: 32px;
+  padding-top: 5px;
   font-weight: bold;
-  padding: 4px;
 }
-#students .pagination > em,
-#students .pagination > a {
-  width: 30px;
-}
-#students .pagination > a:hover {
-  background: #fed24e;
-  text-decoration: none;
-}
-#students .pagination > em {
+#students .pagination > li > a:hover {
   background: #fed24e;
 }
-#students .pagination > span {
-  color: lightgray;
+#students .pagination > li.disabled > a {
+  color: #DDD;
+}
+#students .pagination > li.disabled > a:hover {
+  background: none;
+}
+#students .pagination > li.active > a {
+  background: #fed24e;
+  width: 32px;
 }
 #student {
   /** Bootstrap Override */
@@ -156,14 +177,22 @@
   width: 100%;
   text-align: center;
 }
-#student header .name {
+#student header .middle {
   padding-left: 0;
 }
-#student header .name input.form-control {
+#student header .middle input.form-control {
   width: 30%;
   float: left;
   margin-right: 5px;
-  margin-top: 14px;
+  margin-top: 6px;
+}
+#student header .middle .status {
+  float: left;
+  clear: both;
+  margin-top: 9px;
+}
+#student header .middle .status .no-info {
+  color: #a0a0a0;
 }
 #student header .actions {
   padding-top: 15px;

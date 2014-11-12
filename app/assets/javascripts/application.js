@@ -15,6 +15,7 @@
 //= require bootstrap.min
 //= require coverflow
 //= require angular
+//= require ui-bootstrap-tpls-0.11.2
 //= require moment
 //= require bootstrap-datetimepicker
 //= require scrollReveal

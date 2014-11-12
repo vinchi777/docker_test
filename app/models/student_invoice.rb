@@ -12,8 +12,6 @@ class StudentInvoice
 
   field :discount, type: BigDecimal
 
-  field :enrolled, type: Boolean, default: false
-
   belongs_to :student
   validates_presence_of :student
 
@@ -23,6 +21,10 @@ class StudentInvoice
 
   def balance
     BigDecimal(amount) * (1 - BigDecimal(discount)) - transactions.map { |t| t.amount }.sum
+  end
+
+  def has_balance?
+    balance > 0
   end
 
   def as_json(opt = nil)

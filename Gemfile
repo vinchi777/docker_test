@@ -8,6 +8,8 @@ gem 'mongoid', '~> 4.0.0'
 gem 'devise', '~> 3.4.0'
 gem 'cancan'
 
+gem 'simple_enum', '~> 2.0.0' , require: 'simple_enum/mongoid' # Enum for Mongoid
+
 gem 'jquery-rails'
 gem 'jquery-turbolinks'
 gem 'coffee-rails', '~> 4.0.0'
@@ -40,6 +42,7 @@ group :test do
   gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
   gem 'simplecov', :require => false
+  gem 'capybara'
 end
 
 group :heroku do

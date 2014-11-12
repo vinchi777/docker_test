@@ -66,6 +66,7 @@ class Student
   field :package_type, type: String
 
   has_many :invoices, class_name: 'StudentInvoice'
+  has_many :enrollments, class_name: 'StudentEnrollment'
 
   def middleInitial
     if middleName.nil?
@@ -106,23 +107,43 @@ class Student
   end
 
   def enrolling?
-    if current_invoice
-      current_invoice.has_balance? && !current_invoice.enrolled
+    if current_enrollment
+      current_enrollment.enrolling?
     else
       false
     end
   end
 
+  def has_enrollment_on(season)
+    enrollments.any? { |x| x.review_season = season }
+  end
+
+  def enrollment_status
+    if current_enrollment
+      current_enrollment.status
+    else
+      :undefined
+    end
+  end
+
+  def current_enrollment
+    enrollments.sort_by { |i| i.review_season.season_start }.last
+  end
+
   def enrolled?
-    if current_invoice
-      current_invoice.enrolled
+    if current_enrollment
+      current_enrollment.enrolled?
     else
       false
     end
   end
 
   def current_season
-    current_invoice.review_season.season
+    if current_invoice
+      current_invoice.review_season.season
+    else
+      ''
+    end
   end
 
   def current_invoice
@@ -148,6 +169,14 @@ class Student
 
   def expired?
     (finish_enrollment_on && DateTime.now > finish_enrollment_on + DAYS_TILL_EXPIRATION.days) || (!finish_enrollment_on && enrollment_status.present?)
+  end
+
+  def as_json(opt = nil)
+    hash = self.serializable_hash(nil)
+    hash[:id] = id.to_s
+    hash[:enrollment_status] = enrollment_status
+    hash[:current_season] = current_season
+    hash.as_json(nil)
   end
 
   private

@@ -1,1 +1,1 @@
-@app = angular.module('maxRevApp', []);
+@app = angular.module('maxRevApp', ['ui.bootstrap']);

@@ -1,5 +1,21 @@
 @import "variables";
 
+/* Common */
+
+#students, #student {
+    i.fa {
+        margin-right: 8px;
+    }
+
+    .enroll i.fa.fa-check {
+        color: #45B29D;
+    }
+
+    .enroll i.fa.fa-clock-o {
+        color: #F2E394;
+    }
+}
+
 #students {
 
     header h2 {
@@ -51,8 +67,18 @@
         padding-top: 3px;
     }
 
+    .loading {
+        padding-top: 150px;
+        text-align: center;
+    }
+
+    .count {
+        font-size: 14px;
+        margin-top: 5px;
+    }
+
     .students {
-        margin-top: 15px;
+        margin-top: 7px;
     }
 
     .students .student {
@@ -100,18 +126,6 @@
         }
     }
 
-    .students .student i.fa {
-        margin-right: 8px;
-    }
-
-    .students .student .enroll i.fa.fa-check {
-        color: #45B29D;
-    }
-
-    .students .student .enroll i.fa.fa-clock-o {
-        color: #F2E394;
-    }
-
     .students .student .payment i.fa.fa-money {
         color: #DF5A49;
     }
@@ -140,44 +154,52 @@
 
     .pagination {
         margin: 0;
+    }
 
-        .previous_page {
-            width: 95px;
-        }
+    .pagination > li:first-child > a,
+    .pagination > li:last-child > a {
+        font-size: 24px;
+        padding-top: 0;
+        padding-bottom: 0;
+        padding-left: 6px;
+        width: 32px;
+    }
 
-        .next_page {
-            width: 72px;
-        }
+    .pagination > li:nth-child(2) > a,
+    .pagination > li:nth-last-child(2) > a {
+        padding-left: 9px;
+        padding-right: 0;
+        padding-top: 6px;
+        width: 32px;
+        height: 32px;
+    }
 
-        > * {
+    .pagination > li > a {
+        border: none;
+        border-radius: 100%;
+        margin-left: 5px;
+        margin-right: 5px;
+        color: #000000;
+        height: 32px;
+        padding-top: 5px;
+        font-weight: bold;
 
-            border: none;
-            border-radius: 16px;
-            margin-left: 5px;
-            text-align: center;
-            color: #000000;
-            font-style: normal;
-            font-weight: bold;
-            padding: 4px;
-        }
-
-        > em, > a {
-            width: 30px;
-
-        }
-
-        > a:hover {
+        &:hover {
             background: @yellow;
-            text-decoration: none;
         }
+    }
 
-        > em {
-            background: @yellow;
-        }
+    .pagination > li.disabled > a {
+        color: #DDD;
+    }
 
-        > span {
-            color: lightgray;
-        }
+    .pagination > li.disabled > a:hover {
+        background: none;
+    }
+
+    .pagination > li.active > a {
+        background: @yellow;
+        width: 32px;
     }
 }
 
@@ -196,15 +218,25 @@
         text-align: center;
     }
 
-    header .name {
+    header .middle {
         padding-left: 0;
     }
 
-    header .name input.form-control {
+    header .middle input.form-control {
         width: 30%;
         float: left;
         margin-right: 5px;
-        margin-top: 14px;
+        margin-top: 6px;
+    }
+
+    header .middle .status {
+        float: left;
+        clear: both;
+        margin-top: 9px;
+    }
+
+    header .middle .status .no-info {
+        color: #a0a0a0;
     }
 
     header .actions {

@@ -40,6 +40,7 @@ class ReviewSeason
   validate :date_precedence
 
   has_many :student_invoices, dependent: :restrict
+  has_many :enrollments, class_name: 'StudentEnrollment'
 
   def date_precedence
 

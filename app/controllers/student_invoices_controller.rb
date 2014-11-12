@@ -21,6 +21,13 @@ class StudentInvoicesController < AdminController
       @student_invoice.review_season = ReviewSeason.find(params[:student_invoice][:review_season][:id])
     end
 
+    # Create enrollment data
+    unless student.has_enrollment_on @student_invoice.review_season
+      enrollment = StudentEnrollment.new(status: 1, student: student)
+      enrollment.review_season = @student_invoice.review_season
+      enrollment.save
+    end
+
     respond_to do |format|
       if @student_invoice.save
         format.json { render json: @student_invoice }
