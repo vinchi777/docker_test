@@ -29,7 +29,7 @@ gem 'delayed_job_web'
 
 
 group :development do
-  gem 'better_errors'
+  gem 'better_errors', '~> 1.1.0'
   gem 'binding_of_caller'
 end
 
@@ -40,9 +40,9 @@ end
 
 group :test do
   gem 'cucumber-rails', :require => false
-  gem 'database_cleaner'
   gem 'simplecov', :require => false
   gem 'capybara'
+  gem 'selenium-webdriver'
 end
 
 group :heroku do
