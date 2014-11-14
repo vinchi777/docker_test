@@ -18,3 +18,4 @@
 /.vagrant
 /public/assets
 vendor/cache
+/public/uploads

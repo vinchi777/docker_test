@@ -45,6 +45,8 @@ class StudentsController < AdminController
 
   def create
     @student = Student.new(student_params)
+    @student.save_profile_pic params[:student][:profile_pic], params[:student][:clean]
+
     respond_to do |format|
       if @student.save
         format.html { redirect_to students_path }
@@ -55,6 +57,8 @@ class StudentsController < AdminController
   end
 
   def update
+    @student.save_profile_pic params[:student][:profile_pic], params[:student][:clean]
+
     respond_to do |format|
       if @student.update(student_params)
         format.html { redirect_to students_path }

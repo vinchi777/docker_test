@@ -19,3 +19,19 @@ $ ->
   $('#students ul.pagination li:last-child a').html '<i class="fa fa-chevron-circle-right"></i>'
 
   $('#students .loading').height($('.admin-container').height() - 285)
+
+  $(document).on 'change', 'input[type="file"].preview', ->
+    preview_img this
+
+preview_img = (input) ->
+  preview = $('#student .profile-pic img.profile')
+  if input.files && input.files[0] && preview
+    reader = new FileReader()
+
+    reader.onload = (e) ->
+      img = $(preview[0])
+      img.attr 'src', e.target.result
+
+      $('.profile-pic .clean').val false
+
+    reader.readAsDataURL input.files[0]

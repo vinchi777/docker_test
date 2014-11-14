@@ -62,6 +62,7 @@ body {
 }
 .admin-nav ul.student li.student img {
   height: 48px;
+  width: 48px;
 }
 .admin-nav ul.student li.student .pic {
   width: 60px;
