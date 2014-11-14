@@ -38,6 +38,8 @@
 
   $scope.confirm = (s) -> confirmEnrollment($scope, $http, s)
 
+  $scope.profile_pic_exists = (s) ->
+    s.profile_pic != null
 ]
 
 @app.controller 'StudentCtrl', ['$scope', '$http', ($scope, $http) ->

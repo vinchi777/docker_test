@@ -1,5 +1,7 @@
 class Student
   include Mongoid::Document
+  include Util
+
   DAYS_TILL_EXPIRATION = 3
 
   field :firstName, type: String
@@ -64,6 +66,8 @@ class Student
   field :reference_no, type: String
   field :finish_enrollment_on, type: DateTime
   field :package_type, type: String
+
+  field :profile_pic, type: String
 
   has_many :invoices, class_name: 'StudentInvoice'
   has_many :enrollments, class_name: 'StudentEnrollment'
@@ -179,13 +183,23 @@ class Student
     hash.as_json(nil)
   end
 
+  def has_profile_pic?
+    profile_pic.present?
+  end
+
+  def save_profile_pic(img, clean)
+    unless clean == 'true'
+      self.profile_pic = save_file(img, id.to_s, profile_pic, 'students')
+    end
+  end
+
   private
   def can_validate_info?
     enrollment_status == :undefined || enrollment_status.empty? || enrollment_status.eql?('personal_information')
   end
 
   def can_validate_education?
-    enrollment_status == :undefined  || enrollment_status.empty? || enrollment_status.eql?('education')
+    enrollment_status == :undefined || enrollment_status.empty? || enrollment_status.eql?('education')
   end
 
   def can_validate_others?

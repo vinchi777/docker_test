@@ -10,4 +10,8 @@ module StudentsHelper
         end
     raw(res)
   end
+
+  def placeholder_pic
+    'user.png'
+  end
 end

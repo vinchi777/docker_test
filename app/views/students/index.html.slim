@@ -46,7 +46,8 @@
     .student.row ng-repeat='student in students' ng-hide='loading'
       .col-lg-1.profile-pic
         a href='/students/{{student.id}}'
-          = image_tag 'profile-placeholder.png', class: 'profile'
+          img.profile src='{{student.profile_pic}}' ng-show='profile_pic_exists(student)'
+          img.profile src='/assets/user.png' ng-hide='profile_pic_exists(student)'
       .col-lg-4.info
         a href='/students/{{student.id}}'
           .name
@@ -67,7 +68,7 @@
               | Confirm
 
       .payment.col-lg-2
-        /= payment_status student
+      /= payment_status student
       .actions.col-lg-1
         a href='#' data-toggle='modal' data-target=('#confirm-{{student.id}}')
           i.fa.fa-lg.fa-trash-o
@@ -90,4 +91,4 @@
       span< Loading students...
 
   div.pagination
-    pagination total-items="totalItems" ng-model="currentPage" max-size='maxSize' boundary-links="true"  ng-change="pageChanged()"
+    pagination total-items="totalItems" ng-model="currentPage" max-size='maxSize' boundary-links="true" ng-change="pageChanged()"

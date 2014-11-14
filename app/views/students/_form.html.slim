@@ -1,9 +1,12 @@
-= form_for @student, html: {class: 'form-horizontal', role: 'form'} do |f|
+= form_for @student, multipart: true, html: {class: 'form-horizontal', role: 'form'} do |f|
 
   header.row ng-init=("setStudent('#{@student.id}')")
     .profile-pic.col-lg-1
-      = image_tag 'profile-placeholder.png', class: 'profile'
-      .upload: a href='#' Upload
+      = image_tag @student.profile_pic, class: 'profile' if @student.has_profile_pic?
+      = image_tag placeholder_pic, class: 'profile' unless @student.has_profile_pic?
+      .upload
+        = f.hidden_field :clean, value: true, class: 'clean'
+        = f.file_field :profile_pic, class: 'preview'
     .middle.col-lg-8
       .name
         = f.text_field :firstName, placeholder: 'First name', class: 'form-control required'

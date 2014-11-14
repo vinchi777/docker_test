@@ -23,7 +23,9 @@ html lang='en' ng-app='maxRevApp'
             - unless @student.nil? || @student.new_record?
               ul.student.nav.nav-pills.nav-stacked
                 li.student
-                  .pic = image_tag 'profile-placeholder.png', class: 'profile'
+                  .pic
+                    = image_tag 'user.png', class: 'profile' if @student.profile_pic == nil
+                    = image_tag @student.profile_pic, class: 'profile' unless @student.profile_pic == nil
                   .name
                     div = @student.lastName
                     div = @student.firstName
