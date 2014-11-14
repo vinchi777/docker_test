@@ -37,8 +37,16 @@ ActionController::Base.allow_rescue = false
 # end
 
 Before do
+
+end
+
+Before('@admin') do
   Mongoid::Config.purge!
   User.create(email: 'admin@example.com', password: '123456789')
+  visit '/login'
+  fill_in 'user_email', with: 'admin@example.com'
+  fill_in 'user_password', with: '123456789'
+  click_on 'Log in'
 end
 
 # You may also want to configure DatabaseCleaner to use different strategies for certain features and scenarios.

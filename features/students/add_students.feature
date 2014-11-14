@@ -1,7 +1,7 @@
+@admin
 Feature: Add students
 
   Scenario: Insert required information
-    Given I login successfully as an admin
     When I am on the new student page
     And I fill up these student information
       | student[firstName]    | John                        | text   |
@@ -21,7 +21,6 @@ Feature: Add students
     Then I should be on the students page
 
   Scenario: Insert all fields
-    Given I login successfully as an admin
     When I am on the new student page
     And I fill up these student information
       | student[firstName]          | John                        | text   |
@@ -42,12 +41,14 @@ Feature: Add students
       | student[elemYear]           | 2000                        | select |
       | student[referrerFirstName]  | JK                          | text   |
       | student[referrerLastName]   | de Veyra                    | text   |
-      | student[referrerContact]    | +63 921 197 5523            | text   |
+      | student[why]                | I just like MaxRevOne       | text   |
+      | student[facebook]           | juan                        | text   |
+      | student[twitter]            | juan                        | text   |
+      | student[linkedin]           | juan                        | text   |
     And I submit the student form
     Then I should be on the students page
 
   Scenario: Insert blank data
-    Given I login successfully as an admin
     When I am on the new student page
     And I submit the student form
-    Then I should see 13 errors
+    Then I should see 11 errors

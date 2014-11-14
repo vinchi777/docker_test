@@ -1,10 +1,3 @@
-Given /^I login successfully as an admin$/ do
-  visit '/login'
-  fill_in 'user_email', with: 'admin@example.com'
-  fill_in 'user_password', with: '123456789'
-  click_on 'Log in'
-end
-
 When /^I am on the new student page$/ do
   visit new_student_path
 end
@@ -29,5 +22,7 @@ Then /^I should see (\d+) errors/ do |i|
 end
 
 Then /^I should be on the students page$/ do
+  puts page
+  sleep 5
   expect(current_path).to eq students_path
 end

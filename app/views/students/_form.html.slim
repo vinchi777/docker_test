@@ -22,7 +22,7 @@
           span.no-info ng-switch-default=''
             | No enrollment information.
     .actions.col-lg-3
-      = f.submit 'Save', class: 'save btn btn-primary pull-right col-lg-2'
+      = f.submit 'Save', id: 'save-btn', class: 'save btn btn-primary pull-right col-lg-2'
 
   - if @student.errors.any?
     #error_explanation.error.panel

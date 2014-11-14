@@ -181,14 +181,14 @@ class Student
 
   private
   def can_validate_info?
-    !enrollment_status || enrollment_status.empty? || enrollment_status.eql?('personal_information')
+    enrollment_status == :undefined || enrollment_status.empty? || enrollment_status.eql?('personal_information')
   end
 
   def can_validate_education?
-    !enrollment_status || enrollment_status.empty? || enrollment_status.eql?('education')
+    enrollment_status == :undefined  || enrollment_status.empty? || enrollment_status.eql?('education')
   end
 
   def can_validate_others?
-    !enrollment_status || enrollment_status.empty? || enrollment_status.eql?('other_information')
+    enrollment_status == :undefined || enrollment_status.empty? || enrollment_status.eql?('other_information')
   end
 end
