@@ -23,6 +23,7 @@
 }
 .panel.panel-yellow {
   border: 1px solid #efc94c;
+  background: rgba(239, 201, 76, 0.08);
 }
 .navbar {
   border-bottom-width: 2px;

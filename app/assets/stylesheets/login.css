@@ -1,17 +1,21 @@
 #login .panel {
-  width: 387px;
-  padding: 20px 20px 5px;
-  margin: 110px auto;
+    width: 387px;
+    padding: 20px 20px 5px;
+    margin: 110px auto;
+    height: 330px;
 }
+
 #login h1 {
-  font-size: 38px;
-  text-align: center;
-  margin-bottom: 30px;
-  margin-top: 10px;
+    font-size: 38px;
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 10px;
 }
+
 #login .remember-me {
-  margin-right: 8px;
+    margin-right: 8px;
 }
+
 #login .actions {
-  margin-top: 40px;
+    margin-top: 40px;
 }
