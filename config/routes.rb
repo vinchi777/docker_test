@@ -21,6 +21,13 @@ Rails.application.routes.draw do
     get 'login', to: 'devise/sessions#new'
   end
 
+  resources :users do
+    collection do
+      get 'change_password'
+      patch 'update_password'
+    end
+  end
+
   resources :students do
     member do
       get 'payment'

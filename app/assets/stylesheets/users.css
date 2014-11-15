@@ -1,0 +1,18 @@
+#change-password header {
+  padding-bottom: 20px;
+}
+#change-password label {
+  width: 150px;
+  float: left;
+}
+#change-password .field {
+  width: 300px;
+  float: left;
+  margin-left: 15px;
+}
+#change-password .form-group.actions {
+  width: 464px;
+}
+#change-password .form-group .actions {
+  float: right;
+}

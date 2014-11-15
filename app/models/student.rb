@@ -61,7 +61,7 @@ class Student
   field :facebook, type: String
   field :twitter, type: String
   field :linkedin, type: String
-  field :enrollment_status, type: String
+  field :enrollment_status, type: String # Used for online enrollment, refactor to avoid confusions
   field :agreed, type: Boolean
   field :reference_no, type: String
   field :finish_enrollment_on, type: DateTime
