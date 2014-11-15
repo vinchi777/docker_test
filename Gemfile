@@ -1,4 +1,5 @@
 # source 'https://rubygems.org'
+source 'https://10.10.0.143:8808'
 
 gem 'rails', '~> 4.1.7'
 # gem 'turbolinks'
