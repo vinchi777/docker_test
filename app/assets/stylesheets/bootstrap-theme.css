@@ -17,6 +17,10 @@
   margin-left: 8px;
   background: #45B29D;
 }
+.form-control {
+  height: 30px;
+  padding: 2px 8px;
+}
 .form-control.mini {
   padding: 3px;
   height: 28px;
