@@ -6,7 +6,7 @@
       = image_tag placeholder_pic, class: 'profile' unless @student.has_profile_pic?
       .upload
         = f.hidden_field :clean, value: true, class: 'clean'
-        = f.file_field :profile_pic, class: 'preview'
+        = f.file_field :profile_pic, class: 'preview', accept: 'image/*'
     .middle.col-lg-8
       .name
         = f.text_field :firstName, placeholder: 'First name', class: 'form-control required'
