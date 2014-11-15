@@ -12,22 +12,13 @@ class StudentsController < AdminController
           @students = Student.asc('lastName', 'firstName').paginate(page: page, per_page: 10)
           size = Student.all.length
         else
-          r = Student.where(lastName: /#{q}/i)
+          r = Student.or({lastName: /#{q}/i}, {firstName: /#{q}/i}, {address:  /#{q}/i}, {lastAttended:  /#{q}/i}).asc('lastName', 'firstName')
           @students = r.paginate(page: page, per_page: 10)
           size = r.length
         end
         render json: {students: @students, totalSize: size}
       end
     end
-  end
-
-  def search(q)
-    a = Student.where(lastName: /#{q}/i).to_set
-    b = Student.where(firstName: /#{q}/i).to_set
-    c = Student.where(lastAttended: /#{q}/i).to_set
-    d = Student.where(address: /#{q}/i).to_set
-    res = a | b | c | d
-    res.nil? ? [] : res
   end
 
   def show
