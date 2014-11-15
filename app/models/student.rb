@@ -61,7 +61,7 @@ class Student
   field :facebook, type: String
   field :twitter, type: String
   field :linkedin, type: String
-  field :enrollment_status, type: String # Used for online enrollment, refactor to avoid confusions
+  field :enrollment_process, type: Integer, default: 0
   field :agreed, type: Boolean
   field :reference_no, type: String
   field :finish_enrollment_on, type: DateTime
@@ -166,9 +166,8 @@ class Student
 
   def finish_enrollment_process
     self.reference_no = "random reference no."
-    self.enrollment_status = ''
     self.finish_enrollment_on = DateTime.now
-    save
+    self.save
   end
 
   def expired?
@@ -195,14 +194,14 @@ class Student
 
   private
   def can_validate_info?
-    enrollment_status == :undefined || enrollment_status.empty? || enrollment_status.eql?('personal_information')
+    enrollment_process == 0 || enrollment_process == 6 || enrollment_process == 1
   end
 
   def can_validate_education?
-    enrollment_status == :undefined || enrollment_status.empty? || enrollment_status.eql?('education')
+    enrollment_process == 0 || enrollment_process == 6 || enrollment_process == 2
   end
 
   def can_validate_others?
-    enrollment_status == :undefined || enrollment_status.empty? || enrollment_status.eql?('other_information')
+    enrollment_process == 0 || enrollment_process == 6 || enrollment_process == 3
   end
 end

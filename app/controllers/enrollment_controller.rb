@@ -14,11 +14,13 @@ class EnrollmentController < ApplicationController
         if params[:student_id]
           set_student
         else
-          @student = Student.new({enrollment_status: step, package_type: params[:package_type]})
+          @student = Student.new({enrollment_process: step_index_for(step), package_type: params[:package_type]})
         end
       when :payment
         set_season
         update_enrollment_status
+      when :confirmation
+        set_student
       else
         update_enrollment_status
     end
@@ -79,11 +81,11 @@ class EnrollmentController < ApplicationController
   end
 
   def student_params
-    params.require(:student).permit(:firstName, :middleName, :lastName, :birthdate, :sex, :address, :contactNo, :email, :parentFirstName, :parentLastName, :parentContact, :lastAttended, :yearGrad, :recognition, :hs, :hsYear, :elem, :elemYear, :referrerFirstName, :referrerLastName, :why, :facebook, :twitter, :linkedin, :enrollment_status, :package_type)
+    params.require(:student).permit(:firstName, :middleName, :lastName, :birthdate, :sex, :address, :contactNo, :email, :parentFirstName, :parentLastName, :parentContact, :lastAttended, :yearGrad, :recognition, :hs, :hsYear, :elem, :elemYear, :referrerFirstName, :referrerLastName, :why, :facebook, :twitter, :linkedin, :enrollment_process, :package_type)
   end
 
   def update_enrollment_status
     set_student
-    @student.enrollment_status = step
+      @student.enrollment_process = step_index_for step
   end
 end
