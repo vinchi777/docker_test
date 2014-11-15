@@ -42,6 +42,10 @@ html lang='en' ng-app='maxRevApp'
             = link_to review_seasons_path
               .ico = image_tag 'review-season-ico.svg'
               .name Review Seasons
+          li.user class=('active' if @page == 'users')
+            = link_to users_path
+              .ico = image_tag 'users-ico.svg'
+              .title Users
 
       .col-lg-10.admin-content.col-lg-offset-2
         == yield

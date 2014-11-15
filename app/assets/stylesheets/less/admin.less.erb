@@ -1,151 +1,158 @@
 .navbar.header .container.admin {
-  width: 98%;
+    width: 98%;
 }
 
 body {
-  height: 100%;
+    height: 100%;
 }
 
 .admin-container {
-  position: relative;
-  float: left;
-  width: 100%;
-  min-height: 550px;
+    position: relative;
+    float: left;
+    width: 100%;
+    min-height: 550px;
 }
 
 .admin-nav {
-  background: #4C4C4C;
-  padding: 0;
-  position: absolute;
-  height: 100%;
+    background: #4C4C4C;
+    padding: 0;
+    position: absolute;
+    height: 100%;
 
-  ul.admin-nav > li > a {
-    background: #3E3E3E;
-    border-left: 3px solid #2980B9;
-    border-radius: 0;
-    color: #B2B2B2;
-    font-family: "Signika Semibold";
-    font-size: 16px;
-    height: 40px;
-  }
-
-  ul.admin-nav > li.active > a,
-  ul.admin-nav > li.active > a:hover,
-  ul.admin-nav > li > a:hover {
-    background: #323232;
-  }
-
-  ul.admin-nav > li > a .ico {
-    width: 22px;
-    float: left;
-    margin-right: 10px;
-  }
-
-  ul.student {
-    color: #CCC;
-    font-family: 'Signika Semibold';
-
-    a {
-      color: #CCC;
+    ul.admin-nav > li > a {
+        background: #3E3E3E;
+        border-left: 3px solid #2980B9;
+        border-radius: 0;
+        color: #B2B2B2;
+        font-family: "Signika Semibold";
+        font-size: 16px;
+        height: 40px;
     }
 
-    > li > a {
-      padding: 8px 15px;
+    ul.admin-nav > li.active > a,
+    ul.admin-nav > li.active > a:hover,
+    ul.admin-nav > li > a:hover {
+        background: #323232;
     }
 
-    li,
-    li a:hover,
-    li a:focus,
-    li.active a,
-    li.active > a:hover,
-    li.active > a:focus {
-      background: #585858;
+    ul.admin-nav > li > a .ico {
+        width: 22px;
+        float: left;
+        margin-right: 10px;
     }
 
-    li.active {
-      border-right: 3px solid #DF5A49;
+    ul.student {
+        color: #CCC;
+        font-family: 'Signika Semibold';
+
+        a {
+            color: #CCC;
+        }
+
+        > li > a {
+            padding: 8px 15px;
+        }
+
+        li,
+        li a:hover,
+        li a:focus,
+        li.active a,
+        li.active > a:hover,
+        li.active > a:focus {
+            background: #585858;
+        }
+
+        li.active {
+            border-right: 3px solid #DF5A49;
+        }
+
+        li.student {
+            padding: 9px 10px;
+            box-shadow: 0 2px 1px rgba(0, 0, 0, 0.2) inset;
+        }
+
+        li.student img {
+            height: 48px;
+            width: 48px;
+        }
+
+        li.student .pic {
+            width: 60px;
+            float: left;
+        }
+
+        li.profile,
+        li.payment {
+            font-size: 16px;
+            height: 40px;
+        }
+
+        li.profile > a:hover,
+        li.payment > a:hover {
+            color: #EEE;
+        }
+
+        li.profile img,
+        li.payment img {
+            width: 24px;
+        }
+
+        li.profile .ico,
+        li.payment .ico {
+            width: 35px;
+            float: left;
+        }
+        li.profile .title,
+        li.payment .title {
+            padding-top: 1px;
+        }
+
+
+    }
+    li.review-seasons a {
+        padding-top: 8px;
     }
 
-    li.student {
-      padding: 9px 10px;
-      box-shadow: 0 2px 1px rgba(0, 0, 0, 0.2) inset;
+    li.user img {
+        height: 18px;
+        margin-top: -2px;
     }
-
-    li.student img {
-      height: 48px;
-      width: 48px;
-    }
-
-    li.student .pic {
-      width: 60px;
-      float: left;
-    }
-
-    li.profile,
-    li.payment {
-      font-size: 16px;
-      height: 40px;
-    }
-
-    li.profile > a:hover,
-    li.payment > a:hover {
-      color: #EEE;
-    }
-
-    li.profile img,
-    li.payment img {
-      width: 24px;
-    }
-
-    li.profile .ico,
-    li.payment .ico {
-      width: 35px;
-      float: left;
-    }
-    li.profile .title,
-    li.payment .title {
-      padding-top: 1px;
-    }
-  }
-  li.review-seasons a {
-    padding-top: 8px;
-  }
 }
 
 .admin-content {
-  padding: 30px;
+    padding: 30px;
 
-  header h2 {
-    font-family: 'Signika Semibold';
-    font-size: 20px;
-    color: #4C4C4C;
-    margin-bottom: 12px
-  }
+    header h2 {
+        font-family: 'Signika Semibold';
+        font-size: 20px;
+        color: #4C4C4C;
+        margin-bottom: 12px
+    }
 
-  header .search input[type='search'] {
-    width: 100%;
-    background: url("<%= image_path 'search.svg' %>") no-repeat scroll 7px 6px;
-    background-size: 17px;
-    padding-left: 33px;
-  }
+    header .search input[type='search'] {
+        width: 100%;
+        background: url("<%= image_path 'search.svg' %>") no-repeat scroll 7px 6px;
+        background-size: 17px;
+        padding-left: 33px;
+    }
 }
 
 footer.admin {
-  float: left;
-  width: 100%;
-  background-color: #333333;
-  color: #E6E6E6;
-  text-align: center;
-  height: 70px;
-  font-size: 15px;
-  padding-top: 16px;
-  line-height: 20px;
+    float: left;
+    width: 100%;
+    background-color: #333333;
+    color: #E6E6E6;
+    text-align: center;
+    height: 70px;
+    font-size: 15px;
+    padding-top: 16px;
+    line-height: 20px;
 }
 
 footer.admin a {
-  color: #E6E6E6;
+    color: #E6E6E6;
 }
 
 .modal .error ul {
-  padding-left: 20px;
+    padding-left: 20px;
 }

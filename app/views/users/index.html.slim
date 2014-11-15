@@ -1,0 +1,15 @@
+== title 'Users'
+
+#students ng-controller='UsersCtrl' data-q=params[:q] data-page=params[:page]
+  header
+    h2 Users
+    .row
+      .search.col-lg-8
+        form.form-inline.row ng-submit='search()'
+          .form-group.col-lg-12
+            input.form-control type="search" placeholder="Search for email and name of user" ng-model='q' name='q' value=params[:q]
+
+      .col-lg-2.col-lg-offset-2
+        .btn.btn-primary.pull-right data-target='#user-modal' ng-click='add()' data-toggle='modal' Add User
+
+  = render 'form'

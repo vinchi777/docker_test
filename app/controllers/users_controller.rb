@@ -1,7 +1,22 @@
 class UsersController < AdminController
   load_and_authorize_resource skip_load_resource only: [:create]
 
-  before_action :set_user, except: [:update_password, :change_password]
+  before_action :set_user, except: [:index, :update_password, :change_password]
+
+  def index
+    @page = 'users'
+  end
+
+  # GET /Users/new
+  # GET /Users/new.json
+  def new
+    @user = User.new
+
+    respond_to do |format|
+      format.html # new.html.erb
+      format.json { render json: @user }
+    end
+  end
 
   def change_password
   end
