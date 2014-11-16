@@ -41,6 +41,28 @@
       q: $scope.q
     loadUsers()
 
+  $scope.editPassword = (u) ->
+    $scope.editPasswordError = []
+    $scope.userEdit =
+      id: u.id
+      password: null
+      password_confirmation: null
+
+  $scope.changePassword = ->
+    $scope.editPasswordBtn = 'disabled'
+    url = "/users/#{$scope.userEdit.id}/update_user_password.json"
+    r = $http.patch url, user: $scope.userEdit
+    r.success (d) ->
+      $scope.editPasswordBtn = ''
+      $('#password-modal').modal('hide')
+
+    r.error (e) ->
+      $scope.editPasswordBtn = ''
+      $scope.editPasswordError = []
+      for k,vs of e
+        for v in vs
+          $scope.editPasswordError.push "#{toHuman(k)} #{v}"
+
   $scope.add = ->
     $scope.userErrors = []
     resetUser()

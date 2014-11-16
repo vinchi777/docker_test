@@ -62,9 +62,11 @@ class UsersController < AdminController
     end
   end
 
+  # Shows own change password html
   def change_password
   end
 
+  # Updates own user password
   def update_password
     @user = current_user
     if @user.update_with_password(user_params)
@@ -76,11 +78,25 @@ class UsersController < AdminController
     end
   end
 
+  # Update other user password
+  def update_user_password
+    respond_to do |format|
+      format.json do
+        if @user.update_attributes(user_params)
+          sign_in @user, bypass: true if @user == current_user
+          head :no_content
+        else
+          render json: @user.errors, status: :unprocessable_entity
+        end
+      end
+    end
+  end
+
   # Use this method to whitelist the permissible parameters. Example:
   # params.require(:person).permit(:name, :age)
   # Also, you can specialize this method with per-user checking of permissible attributes.
   def user_params
-    params.require(:user).permit(:current_password, :password, :password_confirmation, :person)
+    params.require(:user).permit(:current_password, :password, :password_confirmation)
   end
 
   def person_params

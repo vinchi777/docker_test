@@ -13,6 +13,7 @@
         .btn.btn-primary.pull-right data-target='#user-modal' ng-click='add()' data-toggle='modal' Add User
 
   = render 'form'
+  = render 'password_modal'
 
   .count.listing ng-show='users.length != 0 && !loading'
     | Found
@@ -29,7 +30,9 @@
         .stat
           | Last login on Sept. 25, 2015 6:45pm
       .actions
-        .password Change Password
+        .password
+          a href='#' data-toggle='modal' data-target='#password-modal' ng-click='editPassword(user)'
+            | Change Password
         .remove
           a href='#' data-toggle='modal' data-target=('#confirm-{{user.id}}')
             i.fa.fa-lg.fa-trash-o

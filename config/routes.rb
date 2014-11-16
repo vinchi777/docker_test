@@ -26,6 +26,9 @@ Rails.application.routes.draw do
       get 'change_password'
       patch 'update_password'
     end
+    member do
+      patch 'update_user_password'
+    end
   end
 
   resources :students do
