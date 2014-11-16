@@ -12,6 +12,10 @@
       email: null
     }
 
+  $userPage = $('#users')
+  $scope.currentPage = $userPage.data 'page'
+  $scope.q = $userPage.data 'q'
+  $scope.maxSize = 5
   $scope.users = []
   params = []
 
@@ -26,6 +30,16 @@
       window.history.pushState({}, '', '/users?' + $.param(params))
 
   $scope.search = ->
+    params =
+      q: $scope.q
+    $scope.currentPage = 1
+    loadUsers()
+
+  $scope.pageChanged = ->
+    params =
+      page: $scope.currentPage
+      q: $scope.q
+    loadUsers()
 
   $scope.add = ->
     $scope.userErrors = []
@@ -71,6 +85,11 @@
       $("#confirm-#{u.id}").modal 'hide'
       $('#error-delete').modal 'show'
 
+  if $scope.currentPage
+    params['page'] = $scope.currentPage
+
+  if $scope.q
+    params['q'] = $scope.q
+
   loadUsers()
-  resetUser()
 ]

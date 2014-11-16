@@ -7,7 +7,7 @@
       .search.col-md-8
         form.form-inline.row ng-submit='search()'
           .form-group.col-md-12
-            input.form-control type="search" placeholder="Search for email and name of user" ng-model='q' name='q' value=params[:q]
+            input.form-control type="search" placeholder="Search for emails" ng-model='q' name='q' value=params[:q]
 
       .col-md-2.col-md-offset-2
         .btn.btn-primary.pull-right data-target='#user-modal' ng-click='add()' data-toggle='modal' Add User
@@ -55,3 +55,5 @@
               | {{deleteError}}
           .modal-footer
             button.btn.btn-primary data-dismiss='modal' Close
+  div.pagination
+    pagination total-items="totalItems" ng-model="currentPage" max-size='maxSize' boundary-links="true" ng-change="pageChanged()"

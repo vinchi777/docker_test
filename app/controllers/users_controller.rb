@@ -3,10 +3,22 @@ class UsersController < AdminController
 
   def index
     @page = 'users'
+    q = params[:q]
+    page = params[:page]
 
     respond_to do |format|
       format.html
-      format.json { render json: {users: User.all, totalSize: User.all.count} }
+      format.json do
+        if q.nil? || q.blank?
+          users = User.asc('email').paginate(page: page, per_page: 10)
+          size = User.all.count
+        else
+          r = User.or({email: /#{q}/i}).asc('email')
+          users = r.paginate(page: page, per_page: 10)
+          size = r.length
+        end
+        render json: {users: users, totalSize: size}
+      end
     end
   end
 

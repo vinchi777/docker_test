@@ -30,14 +30,16 @@ def rand_address
 end
 
 def rand_student
+  first_name = rand_name
+  last_name = rand_last_name
   Student.create(
-      firstName: rand_name,
-      lastName: rand_last_name,
+      firstName: first_name,
+      lastName: last_name,
       middleName: rand_last_name,
       sex: rand_sex,
       address: rand_address,
       contactNo: '321-444',
-      email: 'jkdeveyra@gmail.com',
+      email: "#{first_name}_#{last_name}@gmail.com",
       lastAttended: rand_schools,
       yearGrad: 2014,
       hs: 'St. Marys Academy',
@@ -50,9 +52,9 @@ end
 s = rand_student
 s.email = 'admin@example.com'
 s.save
-
 User.create(password: '123456789', person: s)
 
-30.times {
-  rand_student
-}
+30.times do |i|
+  s = rand_student
+  User.create(password: '123456789', person: s) if i < 12
+end
