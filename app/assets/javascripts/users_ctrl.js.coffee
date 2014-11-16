@@ -53,6 +53,24 @@
           for v in vs
             $scope.userErrors.push "#{toHuman(k)} #{v}"
 
+  $scope.remove = (u) ->
+    p = $http.delete "/users/#{u.id}.json"
+    p.success (d) ->
+      confirm = $("#confirm-#{u.id}")
+      confirm.on 'hidden.bs.modal', ->
+        idx = $scope.users.indexOf u
+
+        if idx != -1
+          $scope.$apply ->
+            $scope.users.splice(idx, 1)
+
+      confirm.modal('hide')
+
+    p.error (e) ->
+      $scope.deleteError = e.message
+      $("#confirm-#{u.id}").modal 'hide'
+      $('#error-delete').modal 'show'
+
   loadUsers()
   resetUser()
 ]

@@ -37,6 +37,19 @@ class UsersController < AdminController
     end
   end
 
+  def destroy
+    own = @user == current_user
+    msg = 'You cannot delete your own account.' if own
+    msg = 'Cannot delete user. ' unless own
+    respond_to do |format|
+      if !own &&@user.destroy
+        format.json { head :no_content }
+      else
+        format.json { render json: {message: msg}, status: :unprocessable_entity }
+      end
+    end
+  end
+
   def change_password
   end
 

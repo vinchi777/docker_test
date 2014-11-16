@@ -44,7 +44,6 @@ class ReviewSeasonsController < AdminController
   end
 
   def destroy
-    @review_season.destroy
     respond_to do |format|
       if @review_season.destroy
         format.json { head :no_content }

@@ -42,6 +42,16 @@
             .modal-body
               span Are you sure you want to remove this user?
             .modal-footer
-              a.remove.btn.btn-default href='/user/{{user.id}}'
-                | Yes
+              a.remove.btn.btn-default href='#' ng-click='remove(user)' Yes
               button.btn.btn-primary data-dismiss='modal' No
+
+    #error-delete.modal.fade
+      .modal-dialog
+        .modal-content
+          .modal-header
+            h4.modal-title Error
+          .modal-body
+            span
+              | {{deleteError}}
+          .modal-footer
+            button.btn.btn-primary data-dismiss='modal' Close
