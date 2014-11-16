@@ -28,12 +28,12 @@
   /    .form-group
   /      input.btn.btn-default.filter type='submit' value='Filter'
 
-  .count ng-show='students.length != 0 && !loading'
+  .count.listing ng-show='students.length != 0 && !loading'
     | Found
     b<>
       | {{totalItems}}
     | students
-  .panel.panel-light.students.col-lg-12
+  .students.listing.panel.panel-light.col-lg-12
     .no-students ng-show='students.length == 0 && q == null'
       p
         | There is no existing students. Click the
@@ -43,7 +43,7 @@
       i.fa.fa-exclamation-circle
       div No result found
 
-    .student.row ng-repeat='student in students' ng-hide='loading'
+    .student.item.row ng-repeat='student in students' ng-hide='loading'
       .col-lg-1.profile-pic
         a href='/students/{{student.id}}'
           img.profile src='{{student.profile_pic}}' ng-show='profile_pic_exists(student)'

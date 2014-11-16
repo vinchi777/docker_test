@@ -6,45 +6,53 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-def randName
+def rand_name
   ['Willie', 'Kim', 'Alice', 'Eric', 'John', 'Mary', 'Bob', 'Gloria', 'Franco', 'Sarah', 'Leah'][rand(11)]
 end
 
-def randLastName
+def rand_last_name
   ['Lopez', 'dela Cruz', 'dela Torre', 'Gutierrez', 'Estrada', 'Chiu', 'Martin', 'Aquino', 'de Veyra', 'Enage', 'Rizal', 'Aguinaldo'][rand(12)]
 end
 
-def randSex
+def rand_sex
   ['Male', 'Female'][rand(2)]
 end
 
-def randSchools
+def rand_schools
   ['University of the Philippines', 'Adamson University', 'National University', 'dela Salle Univeristy', 'Far East University'][rand(5)]
 end
 
-def randAddress
+def rand_address
   street = ['Policarpio', 'Burgos', 'Magsaysay', 'Gomez', 'Rizal', 'Real'][rand(6)] + ' St.'
   mun = ['Tacloban City', 'Palo', 'Tanauan', 'Ormoc City', 'Baybay City', 'Tolosa'][rand(6)]
   province = ['Leyte', 'Southern Leyte', 'Cebu', 'Bohol', 'Palawan', 'Masbate'][rand(6)]
   "#{street}, #{mun}, #{province}"
 end
 
-User.create(email: 'admin@example.com', password: '123456789')
-
-30.times {
+def rand_student
   Student.create(
-      firstName: randName,
-      lastName: randLastName,
-      middleName: randLastName,
-      sex: randSex,
-      address: randAddress,
+      firstName: rand_name,
+      lastName: rand_last_name,
+      middleName: rand_last_name,
+      sex: rand_sex,
+      address: rand_address,
       contactNo: '321-444',
       email: 'jkdeveyra@gmail.com',
-      lastAttended: randSchools,
+      lastAttended: rand_schools,
       yearGrad: 2014,
       hs: 'St. Marys Academy',
       hsYear: 2006,
       elem: 'Luntad Elem. School',
       elemYear: 2002
   )
+end
+
+s = rand_student
+s.email = 'admin@example.com'
+s.save
+
+User.create(password: '123456789', person: s)
+
+30.times {
+  rand_student
 }

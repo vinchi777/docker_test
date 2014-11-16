@@ -1,32 +1,12 @@
-class Student
-  include Mongoid::Document
+class Student < Person
   include Util
 
   DAYS_TILL_EXPIRATION = 3
 
-  field :firstName, type: String
-  validates_presence_of :firstName, if: :can_validate_info?
-
-  field :middleName, type: String
-
-  field :lastName, type: String
-  validates_presence_of :lastName, if: :can_validate_info?
-
-  field :birthdate, type: Date, default: Date.today
-  validates_presence_of :birthdate, if: :can_validate_info?
-
-  field :sex, type: String
   validates_presence_of :sex, if: :can_validate_info?
-
-  field :address, type: String
   validates_presence_of :address, if: :can_validate_info?
-
-  field :contactNo, type: String
   validates_presence_of :contactNo, if: :can_validate_info?
-
-  field :email, type: String
   validates_presence_of :email, if: :can_validate_info?
-  validates_format_of :email, with: Devise::email_regexp, message: 'is not in valid format', if: :can_validate_info?
 
   field :parentFirstName, type: String
   field :parentLastName, type: String
@@ -71,14 +51,6 @@ class Student
 
   has_many :invoices, class_name: 'StudentInvoice'
   has_many :enrollments, class_name: 'StudentEnrollment'
-
-  def middleInitial
-    if middleName.nil?
-      ''
-    else
-      middleName.first.capitalize + '.'
-    end
-  end
 
   def setup_payment
     season = ReviewSeason.current
@@ -176,6 +148,7 @@ class Student
 
   def as_json(opt = nil)
     hash = self.serializable_hash(nil)
+    hash[:middle_initial] = middle_initial
     hash[:id] = id.to_s
     hash[:enrollment_status] = enrollment_status
     hash[:current_season] = current_season
