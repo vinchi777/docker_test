@@ -1,5 +1,5 @@
 # config/unicorn.rb
-worker_processes 1
+worker_processes 3
 timeout 15
 preload_app true
 
@@ -10,7 +10,7 @@ before_fork do |server, worker|
   end
 
   defined?(ActiveRecord::Base) and
-    ActiveRecord::Base.connection.disconnect!
+      ActiveRecord::Base.connection.disconnect!
 end
 
 after_fork do |server, worker|
@@ -18,6 +18,9 @@ after_fork do |server, worker|
     puts 'Unicorn worker intercepting TERM and doing nothing. Wait for master to send QUIT'
   end
 
-  defined?(ActiveRecord::Base) and
-    ActiveRecord::Base.establish_connection
+  if defined?(ActiveRecord::Base)
+    config = ActiveRecord::Base.configurations[Rails.env] || Rails.application.config.database_configuration[Rails.env]
+    config['pool'] = 1
+    ActiveRecord::Base.establish_connection(config)
+  end
 end
