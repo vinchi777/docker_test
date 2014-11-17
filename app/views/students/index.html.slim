@@ -81,10 +81,19 @@
             .modal-body
               span Are you sure you want to remove this student?
             .modal-footer
-              a.remove.btn.btn-default href='/students/{{student.id}}'
-                | Yes
+              a.remove.btn.btn-default href='#' ng-click='remove(student)' Yes
               button.btn.btn-primary data-dismiss='modal' No
 
+    #error-delete.modal.fade
+      .modal-dialog
+        .modal-content
+          .modal-header
+            h4.modal-title Error
+          .modal-body
+            span
+              | {{deleteError}}
+          .modal-footer
+            button.btn.btn-primary data-dismiss='modal' Close
 
     .loading ng-show='loading'
       i.fa.fa-refresh.fa-spin

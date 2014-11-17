@@ -28,6 +28,25 @@
       q: $scope.q
     loadStudents()
 
+  $scope.remove = (u) ->
+    p = $http.delete "/students/#{u.id}.json"
+    p.success (d) ->
+      confirm = $("#confirm-#{u.id}")
+      confirm.on 'hidden.bs.modal', ->
+        idx = $scope.students.indexOf u
+
+        if idx != -1
+          $scope.$apply ->
+            $scope.students.splice(idx, 1)
+            $scope.totalItems--
+
+      confirm.modal('hide')
+
+    p.error (e) ->
+      $scope.deleteError = e.message
+      $("#confirm-#{u.id}").modal 'hide'
+      $('#error-delete').modal 'show'
+
   if $scope.currentPage
     params['page'] = $scope.currentPage
 

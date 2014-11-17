@@ -60,11 +60,12 @@ class StudentsController < AdminController
   end
 
   def destroy
+    msg = 'Cannot delete student.'
     respond_to do |format|
       if @student.destroy
         format.json { head :no_content }
       else
-        format.json { render status: :unprocessable_entity }
+        format.json { render json: {message: msg}, status: :unprocessable_entity }
       end
     end
   end
