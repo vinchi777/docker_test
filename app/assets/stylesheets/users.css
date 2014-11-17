@@ -1,36 +1,39 @@
-#students .users .user {
+/***
+ Site's variables
+*****/
+#users .users .user {
   height: 55px;
 }
-#students .users .user .name {
+#users .users .user .name {
   color: #45B29D;
   font-family: "Signika Semibold";
   font-size: 15px;
   float: left;
   margin-right: 5px;
 }
-#students .users .user .email {
+#users .users .user .email {
   font-family: 'Signika Semibold';
   font-size: 14px;
 }
-#students .users .user .stat {
+#users .users .user .stat {
   color: #999999;
   font-family: 'Signika Light';
   font-size: 14px;
   margin-top: 2px;
 }
-#students .users .user .actions {
+#users .users .user .actions {
   width: 147px;
   float: right;
   margin-top: 6px;
 }
-#students .users .user .actions .password {
+#users .users .user .actions .password {
   float: left;
   margin-right: 10px;
   color: #858585;
   font-size: 14px;
   padding-top: 1px;
 }
-#students .users .user .actions .remove {
+#users .users .user .actions .remove {
   float: left;
 }
 #password-modal .modal-dialog {
