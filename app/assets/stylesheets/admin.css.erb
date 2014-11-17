@@ -1,3 +1,6 @@
+/***
+ Site's variables
+*****/
 .navbar.header .container.admin {
   width: 98%;
 }
@@ -142,6 +145,56 @@ body {
 .listing.panel > .item.row .actions {
   color: #E5E5E5;
   text-align: right;
+}
+div.pagination {
+  clear: both;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+div.pagination .pagination {
+  margin: 0;
+}
+div.pagination .pagination > li:first-child > a,
+div.pagination .pagination > li:last-child > a {
+  font-size: 24px;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 6px;
+  width: 32px;
+}
+div.pagination .pagination > li:nth-child(2) > a,
+div.pagination .pagination > li:nth-last-child(2) > a {
+  padding-left: 9px;
+  padding-right: 0;
+  padding-top: 6px;
+  width: 32px;
+  height: 32px;
+}
+div.pagination .pagination > li > a {
+  border: none;
+  border-radius: 100%;
+  margin-left: 5px;
+  margin-right: 5px;
+  color: #000000;
+  height: 32px;
+  padding-top: 5px;
+  font-weight: bold;
+}
+div.pagination .pagination > li > a:hover {
+  background: #fed24e;
+}
+div.pagination .pagination > li.disabled > a {
+  color: #DDD;
+}
+div.pagination .pagination > li.disabled > a:hover {
+  background: none;
+}
+div.pagination .pagination > li.active > a {
+  background: #fed24e;
+  width: 32px;
 }
 footer.admin {
   float: left;
