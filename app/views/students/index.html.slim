@@ -34,7 +34,7 @@
       | {{totalItems}}
     | students
   .students.listing.panel.panel-light.col-lg-12
-    .no-students ng-show='students.length == 0 && q == null'
+    .empty-list ng-show='students.length == 0 && q == null'
       p
         | There is no existing students. Click the
         b  'New Student'
