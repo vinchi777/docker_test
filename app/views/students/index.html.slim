@@ -99,5 +99,5 @@
       i.fa.fa-refresh.fa-spin
       span< Loading students...
 
-  div.pagination
+  div.pagination ng-show='totalItems > 10'
     pagination total-items="totalItems" ng-model="currentPage" max-size='maxSize' boundary-links="true" ng-change="pageChanged()"

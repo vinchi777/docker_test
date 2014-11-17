@@ -67,5 +67,5 @@
               | {{deleteError}}
           .modal-footer
             button.btn.btn-primary data-dismiss='modal' Close
-  div.pagination
+  div.pagination ng-show='totalItems > 10'
     pagination total-items="totalItems" ng-model="currentPage" max-size='maxSize' boundary-links="true" ng-change="pageChanged()"
