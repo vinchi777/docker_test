@@ -27,6 +27,7 @@ gem 'wicked'
 gem 'delayed_job_mongoid'
 gem 'delayed_job_web'
 
+gem 'thin'
 
 group :development do
   gem 'better_errors', '~> 1.1.0'
@@ -35,7 +36,6 @@ end
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
-  gem 'thin'
 end
 
 group :test do
