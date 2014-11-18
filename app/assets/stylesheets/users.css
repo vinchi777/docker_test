@@ -1,18 +1,88 @@
+/***
+ Site's variables
+*****/
+#users .users .user {
+  height: 55px;
+}
+#users .users .user .name {
+  color: #45B29D;
+  font-family: "Signika Semibold";
+  font-size: 15px;
+  float: left;
+  margin-right: 5px;
+}
+#users .users .user .email {
+  font-family: 'Signika Semibold';
+  font-size: 14px;
+}
+#users .users .user .stat {
+  color: #999999;
+  font-family: 'Signika Light';
+  font-size: 14px;
+  margin-top: 2px;
+}
+#users .users .user .actions {
+  width: 147px;
+  float: right;
+  margin-top: 6px;
+}
+#users .users .user .actions .password {
+  float: left;
+  margin-right: 10px;
+  color: #858585;
+  font-size: 14px;
+  padding-top: 1px;
+}
+#users .users .user .actions .remove {
+  float: left;
+}
+#password-modal .modal-dialog {
+  width: 490px;
+}
+#password-modal .modal-dialog .actions.form-group {
+  margin-bottom: 0;
+}
 #change-password header {
   padding-bottom: 20px;
 }
-#change-password label {
+form.change-password label {
   width: 150px;
   float: left;
 }
-#change-password .field {
+form.change-password .field {
   width: 300px;
   float: left;
   margin-left: 15px;
 }
-#change-password .form-group.actions {
+form.change-password .form-group.actions {
   width: 464px;
 }
-#change-password .form-group .actions {
+form.change-password .form-group .actions {
   float: right;
+}
+#user-modal .modal-content {
+  width: 700px;
+}
+#user-modal .form-group {
+  width: 100%;
+  height: 50px;
+}
+#user-modal .form-group label {
+  width: 100%;
+}
+#user-modal .form-group.name .form-control {
+  width: 200px;
+  margin-right: 8px;
+  float: left;
+}
+#user-modal .form-group.email .form-control {
+  width: 250px;
+}
+#user-modal .passwords.row {
+  margin: 0;
+}
+#user-modal .form-group.password {
+  width: 220px;
+  float: left;
+  margin-right: 10px;
 }

@@ -1,0 +1,32 @@
+#user-modal.modal.fade
+  .modal-dialog
+    .modal-content
+      form ng-submit=("create('#{users_path}')")
+        .modal-header
+          button.close type='button' data-dismiss='modal' ng-click='resetUnsaved()': span aria-hidden='true' &times;
+          h4.modal-title User
+
+        .modal-body
+          .error.panel ng-show='userErrors.length > 0'
+            ul
+              li ng-repeat='e in userErrors'
+                | {{e}}
+          .form-group.name
+            label.control-label Name
+            input.form-control.first_name.required type='text' placeholder='First name' ng-model='person.firstName'
+            input.form-control.middle_name type='text' placeholder='Middle name' ng-model='person.middleName'
+            input.form-control.last_name.required type='text' placeholder='Last name' ng-model='person.lastName'
+          .form-group.email
+            label Email
+            input.form-control.required type='email' ng-model='person.email'
+          .row.passwords
+            .form-group.password
+              label Password
+              input.form-control.required type='password' ng-model='user.password'
+            .form-group.password.confirm
+              label Confirm Password
+              input.form-control.required type='password' ng-model='user.password_confirmation'
+
+        .modal-footer
+          .actions
+            input.btn.btn-primary ng-class='addBtnClass' type='submit' value='Add User'

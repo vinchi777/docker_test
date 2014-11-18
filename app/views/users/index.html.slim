@@ -1,0 +1,62 @@
+== title 'Users'
+
+#users ng-controller='UsersCtrl' data-q=params[:q] data-page=params[:page]
+  header
+    h2 Users
+    .row
+      .search.col-md-8
+        form.form-inline.row ng-submit='search()'
+          .form-group.col-md-12
+            input.form-control type="search" placeholder="Search for emails" ng-model='q' name='q' value=params[:q]
+
+      .col-md-2.col-md-offset-2
+        .btn.btn-primary.pull-right data-target='#user-modal' ng-click='add()' data-toggle='modal' Add User
+
+  = render 'form'
+  = render 'password_modal'
+
+  .count.listing ng-show='users.length != 0 && !loading'
+    | Found
+    b<>
+      | {{totalItems}}
+    | users
+  .users.listing.panel.panel-light.col-md-12
+    .user.item.row ng-repeat='user in users'
+      .info.col-md-4
+        .name
+          | {{user.person.lastName}}, {{user.person.firstName}} {{user.person.middleInitial}}
+        .email
+          | {{user.email}}
+        .stat
+          | Last login on Sept. 25, 2015 6:45pm
+      .actions
+        .password
+          a href='#' data-toggle='modal' data-target='#password-modal' ng-click='editPassword(user)'
+            | Change Password
+        .remove
+          a href='#' data-toggle='modal' data-target=('#confirm-{{user.id}}')
+            i.fa.fa-lg.fa-trash-o
+
+      .delete-confirm.modal.fade role='dialog' id=('confirm-{{user.id}}') tabindex='-1' aria-hidden='true'
+        .modal-dialog
+          .modal-content
+            .modal-header
+              h4.modal-title Confirmation
+            .modal-body
+              span Are you sure you want to remove this user?
+            .modal-footer
+              a.remove.btn.btn-default href='#' ng-click='remove(user)' Yes
+              button.btn.btn-primary data-dismiss='modal' No
+
+    #error-delete.modal.fade
+      .modal-dialog
+        .modal-content
+          .modal-header
+            h4.modal-title Error
+          .modal-body
+            span
+              | {{deleteError}}
+          .modal-footer
+            button.btn.btn-primary data-dismiss='modal' Close
+  div.pagination
+    pagination total-items="totalItems" ng-model="currentPage" max-size='maxSize' boundary-links="true" ng-change="pageChanged()"

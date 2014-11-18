@@ -1,3 +1,6 @@
+/***
+ Site's variables
+*****/
 .panel.panel-default {
   background: #F9F9F9;
 }
@@ -16,6 +19,10 @@
   padding: 2px 9px;
   margin-left: 8px;
   background: #45B29D;
+}
+.form-control {
+  height: 30px;
+  padding: 2px 8px;
 }
 .form-control.mini {
   padding: 3px;
@@ -81,9 +88,20 @@
 .navbar-default .navbar-toggle .icon-bar {
   background-color: #4d4d4d;
 }
+.modal .modal-header {
+  border-bottom: none;
+  padding-bottom: 0;
+  background: #ffffff;
+}
+.modal .modal-body {
+  background: #ffffff;
+}
+.modal .modal-footer {
+  background: #fafafa;
+}
 .form-control.required {
-  border: 1px solid #F2AE72;
-  background-color: #fffcea;
+  border: 1px solid #FFDA44;
+  background-color: #FFFDE7;
 }
 /*** Bootstrap Datepicker Override ***/
 .bootstrap-datetimepicker-widget {
