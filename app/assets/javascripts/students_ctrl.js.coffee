@@ -16,6 +16,9 @@
       $scope.totalItems = d.totalSize
       window.history.pushState({}, '', '/students?' + $.param(params))
 
+    r.error (e) ->
+      $scope.loading = false
+
   $scope.search = ->
     params =
       q: $scope.q

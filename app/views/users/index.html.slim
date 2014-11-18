@@ -30,7 +30,7 @@
       i.fa.fa-exclamation-circle
       div No result found
 
-    .user.item.row ng-repeat='user in users'
+    .user.item.row ng-repeat='user in users' ng-hide='loading'
       .info.col-md-4
         .name
           | {{user.person.lastName}}, {{user.person.firstName}} {{user.person.middleInitial}}
@@ -67,5 +67,10 @@
               | {{deleteError}}
           .modal-footer
             button.btn.btn-primary data-dismiss='modal' Close
+
+    .loading-list ng-show='loading'
+      i.fa.fa-refresh.fa-spin
+      span< Loading users...
+
   div.pagination ng-show='totalItems > 10'
     pagination total-items="totalItems" ng-model="currentPage" max-size='maxSize' boundary-links="true" ng-change="pageChanged()"
