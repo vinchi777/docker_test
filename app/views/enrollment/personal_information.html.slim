@@ -1,11 +1,14 @@
-= fields_for @student do|f|
+= fields_for @student do |f|
   .personal-information data-desc='Personal Information'
     = render 'defaults', f: f
     = f.hidden_field :package_type
     .profile-pic.col-lg-2.col-md-3.col-sm-4
-      = image_tag 'user.png', class: 'profile'
-      input type='image' class='hidden'
-      a href='#' Upload Photo
+      = image_tag @student.profile_pic, class: 'profile' if @student.has_profile_pic?
+      = image_tag placeholder_pic, class: 'profile' unless @student.has_profile_pic?
+      .upload
+        = f.hidden_field :clean, value: true, class: 'clean'
+        = f.file_field :profile_pic, class: 'preview hidden', accept: 'image/*'
+      a href='#' class='trigger-file-field' Upload Photo
     .col-lg-10.col-md-9.col-sm-8
       .form-horizontal
         .form-group
@@ -23,22 +26,22 @@
       .form-horizontal
         .form-group
           label.control-label.col-lg-2.col-md-3.col-sm-4 Sex
-          .col-md-2.col-sm-3 = f.select :sex ,%w{Male Female},{}, class: 'form-control required'
+          .col-md-2.col-sm-3 = f.select :sex, %w{Male Female}, {}, class: 'form-control required'
       .form-horizontal
         .form-group
           label.control-label.col-lg-2.col-md-3.col-sm-4 Address
           .col-md-6.col-sm-8 = f.text_field :address, class: 'form-control required'
         .form-group
           label.control-label.col-lg-2.col-md-3.col-sm-4 Contacts
-          .col-md-6.col-sm-8 =  f.text_field :contactNo, class: 'form-control required'
+          .col-md-6.col-sm-8 = f.text_field :contactNo, class: 'form-control required'
         .form-group
           label.control-label.col-lg-2.col-md-3.col-sm-4 Email Address
-          .col-md-6.col-sm-8 =  f.text_field :email, class: 'form-control required'
+          .col-md-6.col-sm-8 = f.text_field :email, class: 'form-control required'
         hr
         .form-group
           label.control-label.col-sm-8 Parent or Guardian Name
           label.control-label.col-sm-4 Contact
         .form-group
-          .col-sm-4 =  f.text_field :parentFirstName,  class: 'form-control', placeholder: 'First Name'
-          .col-sm-4 =  f.text_field :parentLastName,  class: 'form-control', placeholder: 'Last Name'
-          .col-sm-4 =  f.text_field :parentContact,  class: 'form-control'
+          .col-sm-4 = f.text_field :parentFirstName, class: 'form-control', placeholder: 'First Name'
+          .col-sm-4 = f.text_field :parentLastName, class: 'form-control', placeholder: 'Last Name'
+          .col-sm-4 = f.text_field :parentContact, class: 'form-control'

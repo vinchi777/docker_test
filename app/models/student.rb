@@ -53,20 +53,19 @@ class Student < Person
   has_many :enrollments, class_name: 'StudentEnrollment'
 
   def setup_payment
-    season = ReviewSeason.current
-    invoice1 = StudentInvoice.new({
-                                      package: package_type,
-                                      review_season: season,
-                                      amount: season.get_fee(package_type),
-                                  })
+    current_season = ReviewSeason.current
+
+    enrollment = StudentEnrollment.new(status: 1, student: self)
+    enrollment.review_season = current_season
+    enrollment.save
+
+    invoice1 = StudentInvoice.new({package: package_type, review_season: current_season,
+                                   amount: current_season.get_fee(package_type)})
     if package_type == 'Double'
       invoice1.description = 'Invoice 1 of 2'
-      invoice2 = StudentInvoice.new({
-                                        package: package_type,
-                                        description: 'Invoice 2 of 2',
-                                        review_season: season,
-                                        amount: season.double_review - season.full_review
-                                    })
+      amount = current_season.double_review - current_season.full_review
+      invoice2 = StudentInvoice.new({package: package_type, description: 'Invoice 2 of 2',
+                                     review_season: current_season, amount: amount})
     end
 
     self.invoices << invoice1
@@ -167,14 +166,14 @@ class Student < Person
 
   private
   def can_validate_info?
-    enrollment_process == 0 || enrollment_process == 6 || enrollment_process == 1
+    enrollment_process == 0 || enrollment_process == 1
   end
 
   def can_validate_education?
-    enrollment_process == 0 || enrollment_process == 6 || enrollment_process == 2
+    enrollment_process == 0 ||enrollment_process == 2
   end
 
   def can_validate_others?
-    enrollment_process == 0 || enrollment_process == 6 || enrollment_process == 3
+    enrollment_process == 0 || enrollment_process == 3
   end
 end

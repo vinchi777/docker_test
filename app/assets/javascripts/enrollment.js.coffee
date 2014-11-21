@@ -7,6 +7,9 @@ NEXT = 2
   change_view me, mode
 
   false###
+$(document).on 'click', '#enrollment .trigger-file-field', ->
+  $(this).parent().find('input:file').click()
+  false
 
 
 change_view = (element, mode) ->

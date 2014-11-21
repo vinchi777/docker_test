@@ -21,7 +21,7 @@ html lang='en' ng-app=''
         h1 Enrollment
         h4.description = step.to_s.titleize
       .container
-        = form_tag wizard_path, method: :put
+        = form_tag wizard_path, method: :put, multipart: true
           .steps.row
             == yield
           = render 'navigation'

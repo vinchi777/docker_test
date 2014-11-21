@@ -41,6 +41,7 @@ class EnrollmentController < ApplicationController
         else
           @student = Student.new student_params
         end
+        @student.save_profile_pic student_params[:profile_pic], student_params[:clean]
         success = @student.save
       when :terms_and_conditions
         set_student
@@ -81,7 +82,11 @@ class EnrollmentController < ApplicationController
   end
 
   def student_params
-    params.require(:student).permit(:firstName, :middleName, :lastName, :birthdate, :sex, :address, :contactNo, :email, :parentFirstName, :parentLastName, :parentContact, :lastAttended, :yearGrad, :recognition, :hs, :hsYear, :elem, :elemYear, :referrerFirstName, :referrerLastName, :why, :facebook, :twitter, :linkedin, :enrollment_process, :package_type)
+    params.require(:student).permit(:firstName, :middleName, :lastName, :birthdate, :sex, :address, :contactNo, :email,
+                                    :parentFirstName, :parentLastName, :parentContact, :lastAttended, :yearGrad,
+                                    :recognition, :hs, :hsYear, :elem, :elemYear, :referrerFirstName, :referrerLastName,
+                                    :why, :facebook, :twitter, :linkedin, :enrollment_process, :package_type,
+                                    :profile_pic,:clean)
   end
 
   def update_enrollment_status

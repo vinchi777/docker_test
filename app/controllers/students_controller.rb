@@ -37,6 +37,7 @@ class StudentsController < AdminController
   def create
     @student = Student.new(student_params)
     @student.save_profile_pic params[:student][:profile_pic], params[:student][:clean]
+    @student.enrollment_process=0
 
     respond_to do |format|
       if @student.save
@@ -49,6 +50,7 @@ class StudentsController < AdminController
 
   def update
     @student.save_profile_pic params[:student][:profile_pic], params[:student][:clean]
+    @student.enrollment_process=0
 
     respond_to do |format|
       if @student.update(student_params)

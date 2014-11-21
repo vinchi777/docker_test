@@ -1,125 +1,156 @@
 #enrollment {
-  margin-bottom: 50px;
+    margin-bottom: 50px;
 }
+
 #enrollment .banner {
-  text-align: center;
-  padding: 40px 0px;
+    text-align: center;
+    padding: 40px 0px;
 }
+
 #enrollment .banner h1,
 #enrollment .banner h4 {
-  margin: 0px;
+    margin: 0px;
 }
+
 #enrollment .banner h4 {
-  font-family: 'Signika Light';
+    font-family: 'Signika Light';
 }
+
 #enrollment .steps .package-type .package {
-  padding: 10px 0px;
+    padding: 10px 0px;
 }
+
 #enrollment .steps .package-type .package .radio {
-  font-family: 'Signika Semibold';
-  margin: 0px;
+    font-family: 'Signika Semibold';
+    margin: 0px;
 }
+
 #enrollment .steps .package-type .package p {
-  margin: 0px;
-  padding-left: 19px;
+    margin: 0px;
+    padding-left: 19px;
 }
+
 #enrollment .steps .personal-information .profile-pic {
-  text-align: center;
+    text-align: center;
 }
+
 #enrollment .steps .personal-information .profile-pic img {
-  width: 150px;
-  margin-bottom: 10px;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 10px;
 }
+
 #enrollment .steps .personal-information .profile-pic a {
-  display: block;
-  text-decoration: underline;
-  color: #333;
+    display: block;
+    text-decoration: underline;
+    color: #333;
 }
+
 #enrollment .steps .personal-information .control-label {
-  text-align: left;
+    text-align: left;
 }
+
 #enrollment .steps .personal-information hr {
-  margin-bottom: 10px;
+    margin-bottom: 10px;
 }
+
 #enrollment .steps .personal-information .form-inline .form-group {
-  margin-right: 20px;
-  margin-bottom: 15px;
+    margin-right: 20px;
+    margin-bottom: 15px;
 }
+
 #enrollment .steps .personal-information .form-inline .form-group .control-label {
-  padding-right: 10px;
+    padding-right: 10px;
 }
+
 #enrollment .steps .others .control-label {
-  text-align: right;
+    text-align: right;
 }
+
 #enrollment .steps .others .fa {
-  font-size: 25px;
-  margin-right: 5px;
+    font-size: 25px;
+    margin-right: 5px;
 }
+
 #enrollment .steps .others textarea {
-  max-width: 100%;
-  min-width: 100%;
+    max-width: 100%;
+    min-width: 100%;
 }
+
 #enrollment .steps .terms .wrapper {
-  padding: 10px;
-  border: solid 1px #ccc;
-  overflow-y: scroll;
-  height: 350px;
+    padding: 10px;
+    border: solid 1px #ccc;
+    overflow-y: scroll;
+    height: 350px;
 }
+
 #enrollment .steps .summary table {
-  margin-bottom: 10px;
+    margin-bottom: 10px;
 }
+
 #enrollment .steps .summary table tr:last-of-type {
-  font-family: 'Signika Semibold';
+    font-family: 'Signika Semibold';
 }
+
 #enrollment .steps .summary table tr td:nth-of-type(1) {
-  width: 250px;
+    width: 250px;
 }
+
 #enrollment .steps .summary table tr td:nth-of-type(2) {
-  width: 20px;
+    width: 20px;
 }
+
 #enrollment .steps .summary table tr td:last-of-type {
-  text-align: right;
+    text-align: right;
 }
+
 #enrollment .navigation {
-  padding-top: 30px;
+    padding-top: 30px;
 }
+
 #enrollment .navigation .indicators {
-  text-align: center;
+    text-align: center;
 }
+
 #enrollment .navigation .indicators .wrapper {
-  display: inline-block;
-  padding-top: 7px;
-  position: relative;
+    display: inline-block;
+    padding-top: 7px;
+    position: relative;
 }
+
 #enrollment .navigation .indicators .wrapper span.indicator {
-  background-color: #fbfbfb;
-  border: solid 1px #dddddd;
-  border-radius: 100%;
-  display: inline-block;
-  height: 20px;
-  margin-right: 30px;
-  overflow: hidden;
-  width: 20px;
-  -webkit-transition: background-color 750ms ease, border-color 750ms ease;
-  -moz-transition: background-color 750ms ease, border-color 750ms ease;
-  -o-transition: background-color 750ms ease, border-color 750ms ease;
-  transition: background-color 750ms ease, border-color 750ms ease;
+    background-color: #fbfbfb;
+    border: solid 1px #dddddd;
+    border-radius: 100%;
+    display: inline-block;
+    height: 20px;
+    margin-right: 30px;
+    overflow: hidden;
+    width: 20px;
+    -webkit-transition: background-color 750ms ease, border-color 750ms ease;
+    -moz-transition: background-color 750ms ease, border-color 750ms ease;
+    -o-transition: background-color 750ms ease, border-color 750ms ease;
+    transition: background-color 750ms ease, border-color 750ms ease;
 }
+
 #enrollment .navigation .indicators .wrapper span.indicator:last-of-type {
-  margin-right: 0px;
+    margin-right: 0px;
 }
+
 #enrollment .navigation .indicators .wrapper span.indicator.active {
-  background-color: #FED24E;
-  border: solid 1px #ECC02E;
+    background-color: #FED24E;
+    border: solid 1px #ECC02E;
 }
+
 #enrollment .navigation .indicators .wrapper span.line {
-  background-color: #f3f3f3;
-  height: 8px;
-  position: absolute;
-  top: 14px;
-  width: 100%;
-  z-index: -1;
+    background-color: #f3f3f3;
+    height: 8px;
+    position: absolute;
+    top: 14px;
+    width: 100%;
+    z-index: -1;
 }
+
 #enrollment .navigation .paypal span {
-  margin: 0px 10px;
+    margin: 0px 10px;
 }

@@ -15,11 +15,11 @@ $ ->
 
   $('#students .loading').height($('.admin-container').height() - 285)
 
-  $(document).on 'change', 'input[type="file"].preview', ->
-    preview_img this
+$(document).on 'change', 'input[type="file"].preview', ->
+  preview_img this
 
 preview_img = (input) ->
-  preview = $('#student .profile-pic img.profile')
+  preview = $('.profile-pic img.profile')
   if input.files && input.files[0] && preview
     reader = new FileReader()
 
