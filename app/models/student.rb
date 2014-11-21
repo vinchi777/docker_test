@@ -54,10 +54,7 @@ class Student < Person
   def setup_payment
     current_season = ReviewSeason.current
 
-    enrollment = StudentEnrollment.new(status: 1, student: self)
-    enrollment.review_season = current_season
-    enrollment.save
-
+    add_enrollment(current_season)
     invoice1 = StudentInvoice.new({package: package_type, review_season: current_season,
                                    amount: current_season.get_fee(package_type)})
     if package_type == 'Double'
@@ -160,6 +157,12 @@ class Student < Person
     unless clean == 'true'
       self.profile_pic = save_file(img, id.to_s, profile_pic, 'students')
     end
+  end
+
+  def add_enrollment(review_season)
+    enrollment = StudentEnrollment.new(status: 1, student: self)
+    enrollment.review_season = review_season
+    enrollment.save
   end
 
   private

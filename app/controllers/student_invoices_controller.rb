@@ -22,11 +22,7 @@ class StudentInvoicesController < AdminController
     end
 
     # Create enrollment data
-    unless student.has_enrollment_on @student_invoice.review_season
-      enrollment = StudentEnrollment.new(status: 1, student: student)
-      enrollment.review_season = @student_invoice.review_season
-      enrollment.save
-    end
+    student.add_enrollment(@student_invoice.review_season) unless student.has_enrollment_on @student_invoice.review_season
 
     respond_to do |format|
       if @student_invoice.save
