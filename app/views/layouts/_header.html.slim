@@ -23,6 +23,8 @@
               a href=founders_path Founders
             li
               a href=reviewers_path Reviewers
+        li class=('active' if yield(:title)== 'Our Students')
+          a href=our_students_path Students
         li class=('active' if yield(:title)== 'Courses')
           a href=courses_path Courses
         li class=('active' if yield(:title)== 'Pricing')

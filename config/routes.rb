@@ -44,7 +44,7 @@ Rails.application.routes.draw do
   get 'reviewers' => 'site#reviewers'
   get 'courses' => 'site#courses'
   get 'pricing' => 'site#pricing'
-  get 'our_students' => 'site#students'
+  get 'our_students' => 'site#our_students'
 
   root 'site#home'
 

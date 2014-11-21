@@ -21,7 +21,7 @@ class SiteController < ApplicationController
     @season = ReviewSeason.current
   end
 
-  def students
+  def our_students
     @batches = StudentEnrollment.all.group_by { |e| e.review_season }
   end
 end
