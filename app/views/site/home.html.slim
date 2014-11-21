@@ -10,20 +10,6 @@
         span
           | Your success is our life’s commitment and passion.
         a.btn.btn-black.btn-lg href='' Make it happen
-  /.reviewers
-  /  .container
-  /    h3 Learn from high caliber national reviewers.
-  /    p
-  /      | Our reviewers consists of experienced professors and former BONs emanating from the best nursing schools nationwide who
-  /        are excellently rated and seasoned in their own field, topics and lectures.
-  /    .coverflow-wrapper
-  /      .coverflow.hidden
-  /        - Dir.glob("#{Rails.root.join('app', 'assets', 'images', 'reviewers', 'full')}/*.jpg").sample(5).each do |f|
-  /          = image_tag "reviewers/full/#{f.split('/').last}"
-  /    a.more href=reviewers_path
-  /      i.fa.fa-chevron-circle-right
-  /      | Find out the rest of our reviewers.
-
   .strategic-location
     .container
       .row
@@ -32,12 +18,12 @@
           h3 We are strategically located.
           p Need something? We are surrounded with anything you need.
           .row.content
-            .col-md-3
+            .col-md-3 data-sr='enter top'
               = image_tag 'food.svg'
               h5 Food
               p McDonalds
               p Jollibee
-            .col-md-3
+            .col-md-3 data-sr='enter top wait 0.2s'
               = image_tag 'transportation.svg'
               h5 Transportation
               p Campetic
@@ -45,13 +31,13 @@
               p San Jose
               p Diit
               p Kassel Homes
-            .col-md-3
+            .col-md-3 data-sr='enter top wait 0.4s'
               = image_tag 'shopping.svg'
               h5 Shopping
               p SM
               p Gaisano
               p Tacloban Market
-            .col-md-3
+            .col-md-3 data-sr='enter top wait 0.6s'
               = image_tag 'building.svg'
               h5 Accommodation
               p Hotel d' Angelo
@@ -88,7 +74,7 @@
             i.fa.fa-chevron-circle-right
             | Learn more about our price plans and packages.
         .col-md-6
-          = image_tag 'student3.png', 'data-sr' => '', 'data-sr-id' =>'affordable'
+          = image_tag 'student3.png', 'data-sr' => 'enter top'
   .trackrecord
     .container
       .row
@@ -111,9 +97,11 @@
   .testimonials
     .container
       h3 What people say about us.
-      .row
+      .row data-sr="enter top"
         - @testimonials.each_with_index do |testimonial, i|
-          .col-md-6.testimony class=('col-md-offset-3' if @testimonials.length.odd? && i == @testimonials.length - 1) data-sr="enter top wait #{0.5*i}s" data-sr-id=i
+          - if @testimonials.length.odd? && i == @testimonials.length - 1
+            .col-md-3
+          .col-md-6.testimony
             = image_tag testimonial.image
             b = testimonial.student
             p.title = testimonial.title

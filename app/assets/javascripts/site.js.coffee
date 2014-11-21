@@ -1,20 +1,6 @@
 # Place all the behaviors and hooks related to the matching controller here.
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
-$(window).load ->
-  coverflow = $('.coverflow')
-  coverflow.removeClass('hidden')
-  coverflow.coverflow({active: 2})
-
-  config = {
-    easing: 'hustle',
-    reset:  true,
-    delay:  'onload',
-    vFactor: 0.90
-  }
-
-  window.sr = new scrollReveal(config);
-
 @bindDatePicker = ->
   $('.date-picker').datetimepicker
     pickTime: false
@@ -49,17 +35,25 @@ $ ->
   else
     $('#map').hide()
 
-    $(window).scroll( ->
-      $('#countup:in-viewport(-100)').run(animateCountup)
-    )
-canAnimate = true
-animateCountup = ->
-  if canAnimate
-    canAnimate = false
-    options = { useEasing: true, useGrouping: true,separator: ',', decimal: '.', prefix: '', suffix: ''}
-    limit = parseInt($('#countup').data('count'))
-    countup = new countUp("countup", 0, limit, 0, 2, options);
-    countup.start(finishAnimate);
+  $(window).scroll(->
+    $('#countup:in-viewport(-100)').run(animateCountup)
+  )
 
-finishAnimate = ->
-  canAnimate = true
+  countDone = false
+  animateCountup = ->
+    unless countDone
+      countDone = true
+      options = {useEasing: true, useGrouping: true, separator: ',', decimal: '.', prefix: '', suffix: ''}
+      limit = parseInt($('#countup').data('count'))
+      countup = new countUp("countup", 0, limit, 0, 10, options);
+      countup.start();
+
+$(window).load ->
+  config = {
+    easing: 'hustle',
+    reset: false,
+    delay: 'once',
+    vFactor: 0.90,
+  }
+
+  window.sr = new scrollReveal(config);
