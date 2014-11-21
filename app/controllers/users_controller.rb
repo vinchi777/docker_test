@@ -13,7 +13,7 @@ class UsersController < AdminController
           users = User.asc('email').paginate(page: page, per_page: 10)
           size = User.all.count
         else
-          r = User.or({email: /#{q}/i}).asc('email')
+          r = User.or({email: /#{q}/i},{first_name: /#{q}/i},{last_name: /#{q}/i}).asc('email')
           users = r.paginate(page: page, per_page: 10)
           size = r.length
         end

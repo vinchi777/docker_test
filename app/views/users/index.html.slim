@@ -21,6 +21,15 @@
       | {{totalItems}}
     | users
   .users.listing.panel.panel-light.col-md-12
+    .empty-list ng-show='users.length == 0 && q == null'
+      p
+        | There is no existing user. Click the
+        b  'Add User'
+        |  button to create one.
+    .no-result ng-show='users.length == 0 && q != null'
+      i.fa.fa-exclamation-circle
+      div No result found
+
     .user.item.row ng-repeat='user in users'
       .info.col-md-4
         .name
@@ -58,5 +67,5 @@
               | {{deleteError}}
           .modal-footer
             button.btn.btn-primary data-dismiss='modal' Close
-  div.pagination
+  div.pagination ng-show='totalItems > 10'
     pagination total-items="totalItems" ng-model="currentPage" max-size='maxSize' boundary-links="true" ng-change="pageChanged()"

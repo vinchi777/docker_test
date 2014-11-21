@@ -34,7 +34,7 @@
       | {{totalItems}}
     | students
   .students.listing.panel.panel-light.col-lg-12
-    .no-students ng-show='students.length == 0 && q == null'
+    .empty-list ng-show='students.length == 0 && q == null'
       p
         | There is no existing students. Click the
         b  'New Student'
@@ -81,14 +81,23 @@
             .modal-body
               span Are you sure you want to remove this student?
             .modal-footer
-              a.remove.btn.btn-default href='/students/{{student.id}}'
-                | Yes
+              a.remove.btn.btn-default href='#' ng-click='remove(student)' Yes
               button.btn.btn-primary data-dismiss='modal' No
 
+    #error-delete.modal.fade
+      .modal-dialog
+        .modal-content
+          .modal-header
+            h4.modal-title Error
+          .modal-body
+            span
+              | {{deleteError}}
+          .modal-footer
+            button.btn.btn-primary data-dismiss='modal' Close
 
     .loading ng-show='loading'
       i.fa.fa-refresh.fa-spin
       span< Loading students...
 
-  div.pagination
+  div.pagination ng-show='totalItems > 10'
     pagination total-items="totalItems" ng-model="currentPage" max-size='maxSize' boundary-links="true" ng-change="pageChanged()"

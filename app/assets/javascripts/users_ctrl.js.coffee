@@ -99,6 +99,7 @@
         if idx != -1
           $scope.$apply ->
             $scope.users.splice(idx, 1)
+            $scope.totalItems--
 
       confirm.modal('hide')
 

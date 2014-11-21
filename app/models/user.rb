@@ -25,6 +25,10 @@ class User
   field :current_sign_in_ip, type: String
   field :last_sign_in_ip, type: String
 
+  ## Person cached fields
+  field :first_name, type: String
+  field :last_name, type: String
+
   ## Confirmable
   # field :confirmation_token,   type: String
   # field :confirmed_at,         type: Time
@@ -40,6 +44,8 @@ class User
 
   before_validation do |d|
     d.email = d.person.email
+    d.first_name = d.person.firstName
+    d.last_name = d.person.lastName
   end
 
   def self.serialize_into_session(record)
