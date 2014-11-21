@@ -43,7 +43,6 @@ class Student < Person
   field :linkedin, type: String
   field :enrollment_process, type: Integer, default: 0
   field :agreed, type: Boolean
-  field :reference_no, type: String
   field :finish_enrollment_on, type: DateTime
   field :package_type, type: String
 
@@ -136,7 +135,6 @@ class Student < Person
   end
 
   def finish_enrollment_process
-    self.reference_no = "random reference no."
     self.finish_enrollment_on = DateTime.now
     self.save
   end

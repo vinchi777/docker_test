@@ -6,60 +6,21 @@ class EnrollmentController < ApplicationController
   steps :package_type, :personal_information, :education, :other_information, :terms_and_conditions,
         :payment, :confirmation
 
-  def show
-    case step
-      when :package_type
-        set_season
-      when :personal_information
-        if params[:student_id]
-          set_student
-        else
-          @student = Student.new({enrollment_process: step_index_for(step), package_type: params[:package_type]})
-        end
-      when :payment
-        set_season
-        update_enrollment_status
-      when :confirmation
-        set_student
-      else
-        update_enrollment_status
-    end
+  before_action :set_student, only: [:show]
+  before_action :set_student_2, only: [:update]
+  before_action :set_season
+  before_action :update_enrollment_status, only: [:show]
 
+  def show
     render_wizard
   end
 
   def update
-    success = true
-    case step
-      when :package_type
-        type = params[:package_type]
-        set_season
-        success = false unless type
-      when :personal_information
-        if params[:student_id]
-          set_student
-        else
-          @student = Student.new student_params
-        end
-        @student.save_profile_pic student_params[:profile_pic], student_params[:clean]
-        success = @student.save
-      when :terms_and_conditions
-        set_student
-        @student.update_attributes({agreed: true})
-        success = @student.setup_payment
-      when :payment
-        set_student
-        @student.finish_enrollment_process
-      else
-        set_student
-        success = @student.update_attributes student_params
-    end
-
-    if success
+    if process_step
       if @student
         redirect_to next_wizard_path(:student_id => @student.id)
-      elsif type
-        redirect_to next_wizard_path(package_type: type)
+      elsif @type
+        redirect_to next_wizard_path(package_type: @type)
       else
         redirect_to next_wizard_path
       end
@@ -73,24 +34,51 @@ class EnrollmentController < ApplicationController
   end
 
   private
+  def process_step
+    if step == :package_type
+      @type = params[:package_type]
+      @type.present?
+    elsif step ==:personal_information
+      @student.save_profile_pic params[:student][:profile_pic], params[:student][:clean]
+      @student.save
+    elsif step == :terms_and_conditions
+      @student.update_attributes({agreed: true})
+      @student.setup_payment
+    elsif step == :payment
+      @student.finish_enrollment_process
+    else
+      @student.update_attributes student_params
+    end
+  end
   def set_season
     @season = ReviewSeason.current
   end
 
   def set_student
-    @student = Student.find(params[:student_id])
+    if params[:student_id]
+      @student = Student.find(params[:student_id])
+    else
+      @student = Student.new({enrollment_process: step_index_for(step), package_type: params[:package_type]})
+    end
+  end
+
+  def set_student_2
+    return if step == :package_type
+    if params[:student_id]
+      @student = Student.find(params[:student_id])
+    else
+      @student = Student.new student_params
+    end
   end
 
   def student_params
     params.require(:student).permit(:firstName, :middleName, :lastName, :birthdate, :sex, :address, :contactNo, :email,
                                     :parentFirstName, :parentLastName, :parentContact, :lastAttended, :yearGrad,
                                     :recognition, :hs, :hsYear, :elem, :elemYear, :referrerFirstName, :referrerLastName,
-                                    :why, :facebook, :twitter, :linkedin, :enrollment_process, :package_type,
-                                    :profile_pic,:clean)
+                                    :why, :facebook, :twitter, :linkedin, :enrollment_process, :package_type)
   end
 
   def update_enrollment_status
-    set_student
-      @student.enrollment_process = step_index_for step
+    @student.enrollment_process = step_index_for step
   end
 end
