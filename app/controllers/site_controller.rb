@@ -20,4 +20,8 @@ class SiteController < ApplicationController
   def pricing
     @season = ReviewSeason.current
   end
+
+  def students
+    @batches = StudentEnrollment.all.group_by { |e| e.review_season }
+  end
 end

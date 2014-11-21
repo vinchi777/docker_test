@@ -1,0 +1,19 @@
+#our-students.container
+  .banner
+    h1 Our Students
+    h4 The source of our inspiration.
+  - @batches.each do |season, enrollments|
+    .batch
+      h4
+        = season
+        span.count =< "(#{enrollments.size})"
+      .row
+        - enrollments.map{|e| e.student}.each do|student|
+          .student.col-md-4
+            span.profile-pic
+              = image_tag student.profile_pic, class: 'profile'
+            span
+              b = student.lastName
+              = ", #{student.firstName} #{student.middleName}"
+
+

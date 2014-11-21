@@ -25,4 +25,8 @@ class Person
       middleName.first.capitalize + '.'
     end
   end
+
+  def to_s
+    "#{lastName}, #{firstName} #{middleName}"
+  end
 end
