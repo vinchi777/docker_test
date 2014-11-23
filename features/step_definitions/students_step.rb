@@ -22,7 +22,5 @@ Then /^I should see (\d+) errors/ do |i|
 end
 
 Then /^I should be on the students page$/ do
-  puts page
-  sleep 5
   expect(current_path).to eq students_path
 end
