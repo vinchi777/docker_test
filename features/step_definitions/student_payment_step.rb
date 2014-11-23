@@ -1,4 +1,4 @@
-And /^I select a student$/ do
+Given /^I select a student$/ do
   if Student.exists?
     @student = Student.first
   else
@@ -33,7 +33,7 @@ And /^I select a student$/ do
   visit student_path(@student)
 end
 
-When /^I add a student invoice$/ do
+And /^I add a student invoice$/ do
   visit student_invoices_path(id: @student.id)
   find('.new-invoice.btn').click
 end
@@ -54,6 +54,7 @@ And /^I submit the invoice form$/ do
 end
 
 Then /^I should see these invoice information on the student invoice form$/ do |table|
+  sleep 0.5
   expect(all('.modal').count).to eq 0
   table.raw.each do |text|
     expect(page).to have_content text[0]
