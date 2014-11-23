@@ -24,3 +24,47 @@ end
 Then /^I should be on the students page$/ do
   expect(current_path).to eq students_path
 end
+
+Given /^I see students for searching$/ do
+  Student.create!(
+      firstName: 'John',
+      lastName: 'dela Cruz',
+      sex: 'Male',
+      address: 'Tacloban City',
+      contactNo: '321-444',
+      email: 'jdelacruz@gmail.com',
+      lastAttended: 'Cebu Institute of Medicine',
+      yearGrad: 2014,
+      hs: 'St. Marys Academy',
+      hsYear: 2006,
+      elem: 'Luntad Elem. School',
+      elemYear: 2002
+  )
+  Student.create!(
+      firstName: 'Maria',
+      lastName: 'dela Cruz',
+      sex: 'Male',
+      address: 'Tacloban City',
+      contactNo: '321-444',
+      email: 'maria@gmail.com',
+      lastAttended: 'St. Therese School of Medicine',
+      yearGrad: 2014,
+      hs: 'St. Marys Academy',
+      hsYear: 2006,
+      elem: 'Luntad Elem. School',
+      elemYear: 2002
+  )
+end
+
+Given /^I am on the students page$/ do
+  visit students_path
+end
+
+When(/^I search for "(.*?)"/) do |query|
+  fill_in 'q', with: query
+  execute_script('$(".search form").submit()')
+end
+
+And /^I should see "(.*?)" students$/ do |count|
+  expect(page).to have_content "Found #{count} student(s)"
+end
