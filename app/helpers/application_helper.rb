@@ -11,6 +11,10 @@ module ApplicationHelper
     (current_page? :reviewers) || (current_page? :founders)
   end
 
+  def login_page?
+    (current_page? :login)
+  end
+
   def to_currency(money)
     number_to_currency money, unit: ''
   end

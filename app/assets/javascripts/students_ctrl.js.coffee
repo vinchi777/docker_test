@@ -3,6 +3,7 @@
   $scope.currentPage = $students.data 'page'
   $scope.q = $students.data 'q'
   $scope.maxSize = 5
+  $scope.students = []
 
   params = {}
 

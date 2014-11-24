@@ -32,7 +32,7 @@
     | Found
     b<>
       | {{totalItems}}
-    | students
+    | student(s)
   .students.listing.panel.panel-light.col-lg-12
     .empty-list ng-show='students.length == 0 && q == null'
       p
@@ -46,7 +46,7 @@
     .student.item.row ng-repeat='student in students' ng-hide='loading'
       .col-lg-1.profile-pic
         a href='/students/{{student.id}}'
-          img.profile src='{{student.profile_pic}}' ng-show='profile_pic_exists(student)'
+          img.profile ng-src='{{student.profile_pic}}' ng-show='profile_pic_exists(student)'
           img.profile src=(image_url 'user.png') ng-hide='profile_pic_exists(student)'
       .col-lg-4.info
         a href='/students/{{student.id}}'
