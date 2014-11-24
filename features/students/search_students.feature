@@ -2,7 +2,6 @@
 Feature: Search students
 
   Scenario Outline: Search students
-    Given I see students for searching
     And I am on the students page
     When I search for "<Query>"
     Then I should see "<Text>"

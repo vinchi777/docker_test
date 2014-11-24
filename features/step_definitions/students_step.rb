@@ -25,7 +25,7 @@ Then /^I should be on the students page$/ do
   expect(current_path).to eq students_path
 end
 
-Given /^I see students for searching$/ do
+Given /^I am on the students page$/ do
   Student.create!(
       firstName: 'John',
       lastName: 'dela Cruz',
@@ -54,9 +54,6 @@ Given /^I see students for searching$/ do
       elem: 'Luntad Elem. School',
       elemYear: 2002
   )
-end
-
-Given /^I am on the students page$/ do
   visit students_path
 end
 
@@ -67,4 +64,28 @@ end
 
 And /^I should see "(.*?)" students$/ do |count|
   expect(page).to have_content "Found #{count} student(s)"
+end
+
+When /^I remove a student$/ do
+  @count = Student.count
+  all('.student .actions a').first.click
+  sleep 0.5
+  click_on 'Yes'
+end
+
+Then /^I should not see the student$/ do
+  expect(Student.count).to eq @count - 1
+  expect(current_path).to eq students_path
+end
+
+When /^I cancel the removal of student$/ do
+  @count = Student.count
+  all('.student .actions a').first.click
+  sleep 0.5
+  click_on 'No'
+end
+
+Then /^I should see the student$/ do
+  expect(Student.count).to eq @count
+  expect(current_path).to eq students_path
 end
