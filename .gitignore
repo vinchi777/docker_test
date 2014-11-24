@@ -20,3 +20,4 @@
 vendor/cache
 /public/uploads
 /features/_screenshots/*.png
+/coverage
