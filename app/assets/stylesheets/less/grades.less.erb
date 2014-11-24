@@ -1,0 +1,52 @@
+.test-dimension {
+    height: 150px;
+    width: auto;
+}
+
+@gray: #b2b2b2;
+
+#grades-tests {
+    .description {
+        text-align: center;
+        h6 {
+            margin: 15px 0px 0px 0px;
+            line-height: 0.6;
+        }
+    }
+
+    .new-test {
+        background: url("<%= asset_path 'new-test.svg' %>") no-repeat center top;
+        .test-dimension;
+    }
+
+    .test {
+        .summary {
+            background: url("<%= asset_path 'test.svg' %>") no-repeat center top;
+            .test-dimension;
+            color: #ffffff;
+
+            .timer {
+                padding: 5px 0px 0px 23px;
+
+                img {
+                    height: 17px;
+                    width: 17px;
+                }
+            }
+
+            .points {
+                margin-top: 50px;
+                text-align: center;
+
+                h2 {
+                    line-height: 0.5;
+                }
+
+                span {
+                    font-size: 14px;
+                    color: @gray;
+                }
+            }
+        }
+    }
+}

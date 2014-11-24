@@ -47,6 +47,10 @@ html lang='en' ng-app='maxRevApp'
             = link_to users_path
               .ico = image_tag 'users-ico.svg'
               .title Users
+          li.user class=('active' if @page == 'grades')
+            = link_to grades_path
+              .ico = image_tag 'grades-test.svg'
+              .title Grades and Tests
 
       .col-lg-10.admin-content.col-lg-offset-2
         == yield

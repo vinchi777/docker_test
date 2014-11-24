@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :grades
+
   # get 'enrollment', to: 'enrollment#index'
   # get 'enrollment/package_type', to: 'enrollment#package_type'
   resources :enrollment
