@@ -14,7 +14,7 @@ When /^I fill up these student information/ do |table|
 end
 
 When /^I submit the student form/ do
-  click_on 'save-btn'
+  all('.save.btn').first.click
 end
 
 Then /^I should see (\d+) errors/ do |i|
