@@ -1,18 +1,90 @@
-= form_for @grade do |f|
-  - if @grade.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@grade.errors.count, "error")} prohibited this grade from being saved:"
-      ul
-        - @grade.errors.full_messages.each do |message|
-          li = message
+= form_tag
+  header.row
+    .col-md-3
+      h2 New Batch of Grades
+    .col-md-9.actions
+      button.btn.btn-primary type='Submit' Save
+  table.table
+    thead
+      td.table-actions
+        a.edit-students href='#'
+          i.fa.fa-pencil
+        .search-wrapper
+          input.form-control.search-students type='text' placeholder='Search students'
+      td.active
+        h6 100 points
+        | Mockup Exam for NLE
+      td
+        h6 250 points
+        | Semi Finals
+      td
+        h6 300 points
+        | Finals
+      td
+        a.add-grade href='#'
+          i.fa.fa-plus-circle
+    tbody
+      - @students.each do |student|
+        tr
+          td.student
+            span.profile-pic
+              = render 'students/profile_pic', student: student
+            span
+              b = student.lastName
+              = student.trailing_name
+          td
+            input.form-control type='text'
+          td
+            input.form-control type='text'
+          td
+            input.form-control type='text'
+          td
+      tr.error
+        td.student
+          span.profile-pic
+            = image_tag 'testimonials/agaton.jpg', class: 'profile'
+          span
+            b Agaton
+            | , Maricris Julianne
+        td
+          input.form-control type='text'
+        td
+          input.form-control type='text'
+        td
+          input.form-control type='text'
+        td
+      tr
+        td.student
+          span.profile-pic
+            = image_tag 'testimonials/pastelero.jpg', class: 'profile'
+          span
+            b Pastelero
+            | , Angeline San Isidro
+        td
+          input.form-control type='text'
+        td
+          input.form-control type='text'
+        td
+          input.form-control type='text'
+        td
+      tr
+        td.student
+          span.profile-pic
+            = image_tag 'testimonials/ticao.jpg', class: 'profile'
+          span
+            b Ticao
+            | , Josefine Mariluna
+        td
+          input.form-control type='text'
+        td
+          input.form-control type='text'
+        td
+          input.form-control type='text'
+        td
 
-  .field
-    = f.label :description
-    = f.text_field :description
-  .field
-    = f.label :date
-    = f.date_select :date
-  .field
-    = f.label :points
-    = f.number_field :points
-  .actions = f.submit 'Save'
+
+
+
+
+
+

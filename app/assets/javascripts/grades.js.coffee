@@ -1,6 +1,20 @@
 # Place all the behaviors and hooks related to the matching controller here.
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
+
+$(document).on 'click', 'table tr *', ->
+  $(this).closest('table').find('tr.current').removeClass 'current'
+  $(this).closest('tr').addClass 'current'
+
+$(document).on 'click', 'table td .form-control', ->
+  table = $(this).closest('table')
+  table.find('thead .active').removeClass 'active'
+  td = $(this).closest('td')
+  index = td.index()
+  if index > 0 && index < td.siblings().length
+    target = table.find('thead td')[index]
+    $(target).addClass 'active'
+
 $ ->
   # adjust percent indicator
   $('.grade').each ->
@@ -12,7 +26,6 @@ $ ->
     $('#grade-modal').modal('show');
 
 
-
 adjust_gauge = (level, percent, container) ->
   if percent <= 0
     return
@@ -21,10 +34,22 @@ adjust_gauge = (level, percent, container) ->
   else
     deg = 90 - percent / 25 * 90
 
-  container.find(".arc#{level}").css('transform', "rotate(#{90*level}deg) skewX(#{deg}deg)")
-  container.find(".arc#{level}:before").css('transform', "skewX(#{-deg}deg) !important")
+  arc = container.find(".arc#{level}")
+  arc.css('transform', "rotate(#{90*level}deg) skewX(#{deg}deg)")
+  arc.attr('data-content',arc_style(deg))
 
   adjust_gauge(level+1, percent-25, container)
 
+arc_style = (deg) ->
+  """
+  box-sizing: border-box;
+  display: block;
+  border: solid @border-size @green;
+  width: 200%;
+  height: 200%;
+  border-radius: 50%;
+  transform: skewX(#{-deg}def);
+  content: '';
+  """
 
 

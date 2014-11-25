@@ -88,4 +88,8 @@ class ReviewSeason
   def to_s
     season
   end
+
+  def students
+    enrollments.map { |e| e.student }
+  end
 end

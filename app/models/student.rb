@@ -185,6 +185,10 @@ class Student < Person
     enrollment.save
   end
 
+  def trailing_name
+    ", #{firstName} #{middleName}"
+  end
+
   private
   def can_validate_info?
     enrollment_process == 0 || enrollment_process == 1
