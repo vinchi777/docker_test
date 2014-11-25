@@ -96,6 +96,7 @@
   transform-origin: 100% 100%;
 }
 #grades-tests .grade .wrapper .summary .arc:before {
+  content: attr(data-content);
   box-sizing: border-box;
   display: block;
   border: solid 6px #45b29d;
@@ -183,4 +184,94 @@
   margin-left: 2px;
   vertical-align: top;
   margin-top: 5px;
+}
+#batch-grades form .actions {
+  text-align: right;
+}
+#batch-grades form .actions * {
+  vertical-align: top;
+}
+#batch-grades form table {
+  margin-top: 10px;
+}
+#batch-grades form table * {
+  text-align: center;
+}
+#batch-grades form table thead td {
+  padding-top: 0px;
+  padding-bottom: 2px;
+  border-bottom: solid 4px #999999;
+}
+#batch-grades form table thead td.active {
+  border-bottom-color: #EFC94C;
+  background-color: transparent;
+}
+#batch-grades form table thead h6 {
+  margin: 0px;
+}
+#batch-grades form table thead .table-actions {
+  text-align: left;
+  padding-left: 20px;
+  padding-top: 2px;
+}
+#batch-grades form table thead .table-actions * {
+  display: inline-block;
+  vertical-align: top;
+}
+#batch-grades form table thead .table-actions .edit-students {
+  margin-top: 10px;
+  color: #cccccc;
+  font-size: 20px;
+}
+#batch-grades form table thead .table-actions .search-wrapper {
+  margin-left: 21px;
+  width: 80%;
+}
+#batch-grades form table thead .table-actions .search-wrapper .form-control {
+  width: 100%;
+  height: 30px;
+  background: url("<%= asset_path 'search.svg' %>") no-repeat 7px 6px;
+  background-size: 17px;
+  padding-left: 33px;
+  text-align: left;
+}
+#batch-grades form table thead .add-grade {
+  display: inline-block;
+  font-size: 35px;
+  color: #cccccc;
+  height: 30px;
+  line-height: 1.2;
+}
+#batch-grades form table thead .add-grade:hover,
+#batch-grades form table thead .edit-students:hover {
+  color: #7f7f7f;
+}
+#batch-grades form table tbody tr:nth-of-type(odd) {
+  background-color: #f2f2f2;
+}
+#batch-grades form table tbody tr:hover {
+  background-color: #f4e8c1;
+}
+#batch-grades form table tbody tr.current {
+  background-color: #f2e394;
+}
+#batch-grades form table td {
+  width: 140px;
+  border-top: none;
+}
+#batch-grades form table td:last-of-type {
+  width: 50px;
+}
+#batch-grades form table .student {
+  text-align: left;
+  width: 350px;
+}
+#batch-grades form table .student .profile {
+  width: 40px;
+  height: 40px;
+}
+#batch-grades form table .form-control {
+  width: 65px;
+  margin: 0 auto;
+  margin-top: 4px;
 }

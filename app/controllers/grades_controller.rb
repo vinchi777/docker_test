@@ -16,6 +16,7 @@ class GradesController < ApplicationController
 
   def new
     @grade = Grade.new
+    @students = ReviewSeason.current.students
     respond_with(@grade)
   end
 

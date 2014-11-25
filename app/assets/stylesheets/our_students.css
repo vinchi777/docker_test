@@ -17,14 +17,3 @@
 #our-students .batch .count {
   font-family: 'Signika Light';
 }
-#our-students .batch .student {
-  text-align: left;
-  margin-bottom: 10px;
-}
-#our-students .batch .student .profile-pic {
-  margin-right: 10px;
-}
-#our-students .batch .student .profile-pic img {
-  width: 50px;
-  height: 50px;
-}
