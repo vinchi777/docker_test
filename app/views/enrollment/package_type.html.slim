@@ -4,21 +4,21 @@
       .package
         .radio
           label
-            input type='radio' name='package_type' value='Standard'
+            input type='radio' name='package_type' id='standard_package' value='Standard'
             | Full 8 Phase Package - Php
             =< number_to_currency @season.full_review, unit: ''
         p Get the most complete and comprehensive 8-phase review program.
       .package
         .radio
           label
-            input type='radio' name='package_type' value='Double'
+            input type='radio' name='package_type' id='double_package' value='Double'
             | Double Review - Php
             =< number_to_currency @season.double_review, unit: ''
         p Take a two full season review at a discounted price. Learn more, save more.
       .package
         .radio
           label
-            input type='radio' name='package_type' value='Coaching'
+            input type='radio' name='package_type' id='coaching_package' value='Coaching'
             | Final Coaching - Php
             =< number_to_currency @season.coaching, unit: ''
         p Need a refresh? Get our Ultimate Final Coaching package.

@@ -40,7 +40,7 @@ ActionController::Base.allow_rescue = false
 # end
 
 Before do
-
+  Mongoid::Config.purge!
 end
 
 # You may also want to configure DatabaseCleaner to use different strategies for certain features and scenarios.
