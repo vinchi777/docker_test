@@ -12,21 +12,14 @@
       .col-lg-2.col-lg-offset-2
         = link_to 'New Student', new_student_path, class: 'btn btn-primary pull-right'
 
-  /.filter
-  /  form.form-inline action=students_path
-  /    .form-group
-  /      label Season
-  /      select.form-control.mini name='season'
-  /        option Apr. 2014
-  /        option Nov. 2013
-  /    .form-group
-  /      label Type
-  /      select.form-control.mini name='type'
-  /        option All
-  /        option Enrollees
-  /        option Students
-  /    .form-group
-  /      input.btn.btn-default.filter type='submit' value='Filter'
+  .filter
+    form.form-inline action=students_path
+      .form-group
+        label Season
+        select.form-control.mini name='season' ng-model='season' ng-options='s.season for s in seasons' ng-change='filter()'
+      .form-group
+        label Type
+        select.form-control.mini name='type' ng-model='enrollment_status' ng-options='s.key for s in enrollment_statuses' ng-change='filter()'
 
   .count.listing ng-show='students.length != 0 && !loading'
     | Found

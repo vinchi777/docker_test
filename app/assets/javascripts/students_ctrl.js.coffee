@@ -20,6 +20,27 @@
     r.error (e) ->
       $scope.loading = false
 
+  loadSeasons = ->
+    url = '/review_seasons.json'
+    r = $http.get url
+    r.success (d) ->
+      d.push {season: 'All', id: 0}
+      $scope.seasons = d
+      $scope.season = d[d.length - 1]
+
+  loadEnrollmentStatus = ->
+    r = $http.get '/students/enrollment_status'
+    r.success (d) ->
+      d.push {key: 'All', value: -1}
+      $scope.enrollment_statuses = d
+      $scope.enrollment_status = d[d.length - 1]
+
+  $scope.filter = ->
+    params =
+      season: $scope.season.id
+      status: $scope.enrollment_status.value
+    loadStudents()
+
   $scope.search = ->
     params =
       q: $scope.q
@@ -58,6 +79,8 @@
     params['q'] = $scope.q
 
   loadStudents()
+  loadSeasons()
+  loadEnrollmentStatus()
 
   $scope.confirm = (s) -> confirmEnrollment($scope, $http, s)
 

@@ -4,15 +4,18 @@ class StudentsController < AdminController
   def index
     q = params[:q]
     page = params[:page]
+    season = params[:season]
+    status = params[:status]
 
     respond_to do |format|
       format.html { render :index }
       format.json do
         if q.nil? || q.blank?
-          @students = Student.asc('lastName', 'firstName').paginate(page: page, per_page: 10)
-          size = Student.all.length
+          students = Student.filter(season, status)
+          @students = students.asc('lastName', 'firstName').paginate(page: page, per_page: 10)
+          size = students.length
         else
-          r = Student.or({lastName: /#{q}/i}, {firstName: /#{q}/i}, {address:  /#{q}/i}, {lastAttended:  /#{q}/i}).asc('lastName', 'firstName')
+          r = Student.filter(season, status).or({lastName: /#{q}/i}, {firstName: /#{q}/i}, {address: /#{q}/i}, {lastAttended: /#{q}/i}).asc('lastName', 'firstName')
           @students = r.paginate(page: page, per_page: 10)
           size = r.length
         end
@@ -84,6 +87,10 @@ class StudentsController < AdminController
         format.json { render status: :unprocessable_entity }
       end
     end
+  end
+
+  def enrollment_status
+    render json: StudentEnrollment.status_json
   end
 
   private

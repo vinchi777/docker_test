@@ -38,6 +38,9 @@ Rails.application.routes.draw do
       get 'payment'
       put 'confirm'
     end
+    collection do
+      get 'enrollment_status'
+    end
   end
 
   get 'home' => 'site#home'

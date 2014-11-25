@@ -45,11 +45,28 @@ class Student < Person
   field :agreed, type: Boolean
   field :finish_enrollment_on, type: DateTime
   field :package_type, type: String
-
   field :profile_pic, type: String
 
   has_many :invoices, class_name: 'StudentInvoice'
   has_many :enrollments, class_name: 'StudentEnrollment'
+
+  scope :filter, ->(season, status) do
+    if season.nil? || season == '0'
+      if status.nil? || status == '-1'
+        Student.all
+      else
+        ids = StudentEnrollment.where(status_cd: status.to_i).map { |e| e.student.id }
+        Student.in(id: ids)
+      end
+    else
+      s = ReviewSeason.find(season)
+      if s
+        Student.in(id: s.enrollments.map { |e| e.student.id })
+      else
+        Student.all
+      end
+    end
+  end
 
   def setup_payment
     current_season = ReviewSeason.current
