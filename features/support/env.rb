@@ -7,7 +7,7 @@
 require 'cucumber/rails'
 require 'simplecov'
 
-SimpleCov.start
+SimpleCov.start 'rails'
 
 # Capybara defaults to CSS3 selectors rather than XPath.
 # If you'd prefer to use XPath, just uncomment this line and adjust any
