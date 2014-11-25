@@ -8,6 +8,11 @@ $ ->
     percent = parseInt(self.find('.percent').val())
     # adjust_gauge(1, percent, self)
 
+  $('.new-grade').click ->
+    $('#grade-modal').modal('show');
+
+
+
 adjust_gauge = (level, percent, container) ->
   if percent <= 0
     return

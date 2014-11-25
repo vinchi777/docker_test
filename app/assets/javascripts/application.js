@@ -21,6 +21,8 @@
 //= require scrollReveal
 //= require isInViewport
 //= require countUp
+//= require math
+//= require auto_compute
 //= require_self
 //= require gmaps
 //= require_tree .
