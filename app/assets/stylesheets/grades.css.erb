@@ -1,3 +1,10 @@
+#grades-tests h5 {
+  margin-bottom: 5px;
+  color: #4c4c4c;
+}
+#grades-tests hr {
+  margin-top: 0px;
+}
 #grades-tests .description {
   text-align: center;
 }
@@ -5,8 +12,13 @@
   margin: 15px 0px 0px 0px;
   line-height: 0.6;
 }
+#grades-tests .new-test-wrapper,
+#grades-tests .new-grade-wrapper {
+  padding-right: 0px;
+  margin-right: -28px;
+}
 #grades-tests .new-test {
-  background: url("<%= asset_path 'new-test.svg' %>") no-repeat center top;
+  background: url("<%= asset_path 'new-test.svg' %>") no-repeat;
   height: 120px;
 }
 #grades-tests .test {
@@ -53,10 +65,9 @@
   font-size: 12px;
 }
 #grades-tests .new-grade {
-  background: url("<%= asset_path 'new-grade.svg' %>") no-repeat center 6px;
+  background: url("<%= asset_path 'new-grade.svg' %>") no-repeat left 6px;
   height: 132px;
   width: 120px;
-  margin: 0 auto;
 }
 #grades-tests .grade {
   text-align: center;

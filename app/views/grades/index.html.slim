@@ -7,8 +7,9 @@
 
   .tests
     h5 April 2013
+    hr
     .row
-      .col-md-2
+      .col-md-2.new-test-wrapper
         a
           .new-test
       .col-md-2
@@ -47,8 +48,9 @@
 
   .grades
     h5 April 2013
+    hr
     .row
-      .col-md-2
+      .col-md-2.new-grade-wrapper
         a
           .new-grade
       .col-md-2
@@ -62,12 +64,52 @@
               input.percent type='hidden' value='90'
               .points
                 .point-wrapper
-                  h2.inline 300
+                  h2.inline 100
                   span.pr %
-                span 150 points
+                span 100 points
               .status
                 span.test-indicator = image_tag 'test-on.svg'
                 span.timer-indicator = image_tag 'timer-on.svg'
+          .description
+            h6 NLT Mockup
+            span December 9
+      .col-md-2
+        .grade
+          .wrapper
+            .summary
+              .arc.arc1
+              .arc.arc2
+              .arc.arc3
+              .arc.arc4
+              input.percent type='hidden' value='90'
+              .points
+                .point-wrapper
+                  h2.inline 84
+                  span.pr %
+                span 300 points
+              .status
+                span.test-indicator = image_tag 'test-off.svg'
+                span.timer-indicator = image_tag 'timer-on.svg'
+          .description
+            h6 NLT Mockup
+            span December 9
+      .col-md-2
+        .grade
+          .wrapper
+            .summary
+              .arc.arc1
+              .arc.arc2
+              .arc.arc3
+              .arc.arc4
+              input.percent type='hidden' value='90'
+              .points
+                .point-wrapper
+                  h2.inline 96
+                  span.pr %
+                span 250 points
+              .status
+                span.test-indicator = image_tag 'test-off.svg'
+                span.timer-indicator = image_tag 'timer-off.svg'
           .description
             h6 NLT Mockup
             span December 9

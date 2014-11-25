@@ -37,6 +37,14 @@
 }
 
 #grades-tests {
+    h5 {
+        margin-bottom: 5px;
+        color: #4c4c4c;
+    }
+
+    hr{
+        margin-top: 0px;
+    }
     .description {
         text-align: center;
         h6 {
@@ -45,8 +53,13 @@
         }
     }
 
+    .new-test-wrapper, .new-grade-wrapper {
+        padding-right: 0px;
+        margin-right: -28px;
+    }
+
     .new-test {
-        background: url("<%= asset_path 'new-test.svg' %>") no-repeat center top;
+        background: url("<%= asset_path 'new-test.svg' %>") no-repeat;
         height: @height;
     }
 
@@ -70,10 +83,9 @@
     @border-size: 6px;
     @skew: 0deg;
     .new-grade {
-        background: url("<%= asset_path 'new-grade.svg' %>") no-repeat center @border-size;
+        background: url("<%= asset_path 'new-grade.svg' %>") no-repeat left @border-size;
         height: @height+@border-size*2;
         width: @height;
-        margin: 0 auto;
     }
     .grade {
         text-align: center;
@@ -99,10 +111,17 @@
                     left: -@border-size+1;
                     transform-origin: 100% 100%;
 
+                    // border colors
+                    @green: #45b29d;
+                    @green2: #84d3c4;
+                    @yellow: #efc94c;
+                    @yellow2: #e4c382;
+                    @red: #df5a49;
+                    @red2: #cc7371;
                     &:before{
                         box-sizing: border-box;
                         display: block;
-                        border: solid @border-size #45b29d;
+                        border: solid @border-size @green;
                         width: 200%;
                         height: 200%;
                         border-radius: 50%;
