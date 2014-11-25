@@ -3,47 +3,71 @@
 #grades-tests
   header.row
     .col-lg-8
-      h2 April 2012
-  .row
-    .col-md-2
-      .new-test
-    .col-md-2
-      .test
-        .summary
-          .timer
-            = image_tag 'timer-off.svg'
-          .points
-            h2 50
-            span items
-        .description
-          h6 Semi Finals
-          span August 13
-    .col-md-2
-      .test
-        .summary
-          .timer
-            = image_tag 'timer-on.svg'
-          .points
-            h2 300
-            span items
-        .description
-          h6 Finals
-          span October 23
-    .col-md-2
-      .test
-        .summary
-          .timer
-            = image_tag 'timer-on.svg'
-          .points
-            h2 250
-            span items
-        .description
-          h6 NLT Mockup
-          span December 9
-  header.row
-    .col-lg-8
-      h2 April 2012
-  .row
+      h2 Grades and Tests
 
+  .tests
+    h5 April 2013
+    .row
+      .col-md-2
+        a
+          .new-test
+      .col-md-2
+        .test
+          .summary
+            .timer
+              = image_tag 'timer-off.svg'
+            .points
+              h2 50
+              span items
+          .description
+            h6 Semi Finals
+            span August 13
+      .col-md-2
+        .test
+          .summary
+            .timer
+              = image_tag 'timer-on.svg'
+            .points
+              h2 300
+              span items
+          .description
+            h6 Finals
+            span October 23
+      .col-md-2
+        .test
+          .summary
+            .timer
+              = image_tag 'timer-on.svg'
+            .points
+              h2 250
+              span items
+          .description
+            h6 NLT Mockup
+            span December 9
 
-
+  .grades
+    h5 April 2013
+    .row
+      .col-md-2
+        a
+          .new-grade
+      .col-md-2
+        .grade
+          .wrapper
+            .summary
+              .arc.arc1
+              .arc.arc2
+              .arc.arc3
+              .arc.arc4
+              input.percent type='hidden' value='90'
+              .points
+                .point-wrapper
+                  h2.inline 300
+                  span.pr %
+                span 150 points
+              .status
+                span.test-indicator = image_tag 'test-on.svg'
+                span.timer-indicator = image_tag 'timer-on.svg'
+          .description
+            h6 NLT Mockup
+            span December 9

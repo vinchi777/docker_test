@@ -1,7 +1,3 @@
-.test-dimension {
-  height: 150px;
-  width: auto;
-}
 #grades-tests .description {
   text-align: center;
 }
@@ -11,30 +7,142 @@
 }
 #grades-tests .new-test {
   background: url("<%= asset_path 'new-test.svg' %>") no-repeat center top;
-  height: 150px;
-  width: auto;
+  height: 120px;
+}
+#grades-tests .test {
+  text-align: center;
+  margin-bottom: 15px;
 }
 #grades-tests .test .summary {
   background: url("<%= asset_path 'test.svg' %>") no-repeat center top;
-  height: 150px;
-  width: auto;
-  color: #ffffff;
+  height: 120px;
 }
 #grades-tests .test .summary .timer {
-  padding: 5px 0px 0px 23px;
+  padding: 5px 65px 0px 0px;
 }
 #grades-tests .test .summary .timer img {
   height: 17px;
   width: 17px;
 }
 #grades-tests .test .summary .points {
-  margin-top: 50px;
-  text-align: center;
+  margin-top: 35px;
+  z-index: 1;
+  color: #ffffff;
 }
 #grades-tests .test .summary .points h2 {
+  line-height: 0.5;
+}
+#grades-tests .test .summary .points h2.inline {
+  display: inline-block;
+}
+#grades-tests .test .summary .points .point-wrapper {
+  line-height: 0.5;
+}
+#grades-tests .test .summary .points b {
+  font-size: 36px;
   line-height: 0.5;
 }
 #grades-tests .test .summary .points span {
   font-size: 14px;
   color: #b2b2b2;
+}
+#grades-tests .test .summary .points .pr {
+  vertical-align: top;
+  margin-right: -12px;
+  margin-left: 1px;
+  font-size: 12px;
+}
+#grades-tests .new-grade {
+  background: url("<%= asset_path 'new-grade.svg' %>") no-repeat center 6px;
+  height: 132px;
+  width: 120px;
+  margin: 0 auto;
+}
+#grades-tests .grade {
+  text-align: center;
+  margin-bottom: 15px;
+}
+#grades-tests .grade .wrapper {
+  height: 132px;
+}
+#grades-tests .grade .wrapper .summary {
+  height: 120px;
+  width: 120px;
+  position: absolute;
+  border-radius: 50%;
+  background: #4c4c4c;
+  top: 5px;
+  z-index: -1;
+  left: 17%;
+}
+#grades-tests .grade .wrapper .summary .arc {
+  overflow: hidden;
+  position: absolute;
+  top: -5px;
+  right: 50%;
+  bottom: 50%;
+  left: -5px;
+  transform-origin: 100% 100%;
+}
+#grades-tests .grade .wrapper .summary .arc:before {
+  box-sizing: border-box;
+  display: block;
+  border: solid 6px #45b29d;
+  width: 200%;
+  height: 200%;
+  border-radius: 50%;
+  transform: skewX(0deg);
+  content: '';
+}
+#grades-tests .grade .wrapper .summary .arc.arc1 {
+  transform: rotate(90deg) skewX(0deg);
+}
+#grades-tests .grade .wrapper .summary .arc.arc2 {
+  transform: rotate(180deg) skewX(0deg);
+}
+#grades-tests .grade .wrapper .summary .arc.arc3 {
+  transform: rotate(270deg) skewX(0deg);
+}
+#grades-tests .grade .wrapper .summary .arc.arc4 {
+  transform: rotate(0deg) skewX(0deg);
+}
+#grades-tests .grade .wrapper .summary .points {
+  margin-top: 35px;
+  z-index: 1;
+  color: #ffffff;
+}
+#grades-tests .grade .wrapper .summary .points h2 {
+  line-height: 0.5;
+}
+#grades-tests .grade .wrapper .summary .points h2.inline {
+  display: inline-block;
+}
+#grades-tests .grade .wrapper .summary .points .point-wrapper {
+  line-height: 0.5;
+}
+#grades-tests .grade .wrapper .summary .points b {
+  font-size: 36px;
+  line-height: 0.5;
+}
+#grades-tests .grade .wrapper .summary .points span {
+  font-size: 14px;
+  color: #b2b2b2;
+}
+#grades-tests .grade .wrapper .summary .points .pr {
+  vertical-align: top;
+  margin-right: -12px;
+  margin-left: 1px;
+  font-size: 12px;
+}
+#grades-tests .grade .wrapper .summary .status {
+  margin-top: 5px;
+}
+#grades-tests .grade .wrapper .summary .status img {
+  height: 17px;
+}
+#grades-tests .grade .wrapper .summary .status img:first-of-type {
+  margin-right: 4px;
+}
+#grades-tests .grade .wrapper .summary .status img:last-of-type {
+  margin-left: 4px;
 }
