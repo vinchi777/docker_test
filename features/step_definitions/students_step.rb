@@ -89,3 +89,26 @@ Then /^I should see the student$/ do
   expect(Student.count).to eq @count
   expect(current_path).to eq students_path
 end
+
+When /^I attach a photo$/ do
+  attach_file 'student_profile_pic', "#{Rails.root}/features/fixtures/james.jpg", 'image/jpeg'
+end
+
+Then /^I should see the uploaded photo$/ do
+  expect(Student.first.has_profile_pic?).to be true
+end
+
+Given /^I am on the enrollment package type page$/ do
+  ReviewSeason.create!(
+      season: 'May 2014',
+      season_start: Date.new(2014, 4, 1),
+      season_end: Date.new(2014, 4, 5),
+      first_timer: 17000,
+      repeater: 10000,
+      full_review: 17000,
+      double_review: 22000,
+      coaching: 7000,
+      reservation: 3000
+  )
+  visit enrollment_index_path
+end

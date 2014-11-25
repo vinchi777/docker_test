@@ -1,5 +1,4 @@
 Before('@admin') do
-  Mongoid::Config.purge!
   p = Person.create(firstName: 'John', lastName: 'dela Cruz', email: 'admin@example.com')
   User.create(password: '123456789', person: p)
   visit '/login'

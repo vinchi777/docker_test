@@ -5,6 +5,9 @@
 # files.
 
 require 'cucumber/rails'
+require 'simplecov'
+
+SimpleCov.start 'rails'
 
 # Capybara defaults to CSS3 selectors rather than XPath.
 # If you'd prefer to use XPath, just uncomment this line and adjust any
@@ -37,7 +40,7 @@ ActionController::Base.allow_rescue = false
 # end
 
 Before do
-
+  Mongoid::Config.purge!
 end
 
 # You may also want to configure DatabaseCleaner to use different strategies for certain features and scenarios.
