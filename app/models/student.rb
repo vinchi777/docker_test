@@ -51,17 +51,20 @@ class Student < Person
   has_many :enrollments, class_name: 'StudentEnrollment'
 
   scope :filter, ->(season, status) do
-    if season.nil? || season == '0'
+    if season.nil? || season == '0' # No season filter
       if status.nil? || status == '-1'
         Student.all
       else
         ids = StudentEnrollment.where(status_cd: status.to_i).map { |e| e.student.id }
         Student.in(id: ids)
       end
-    else
+    else # With season filter
       s = ReviewSeason.find(season)
-      if s
+      if s && status.nil? || status == '-1'
         Student.in(id: s.enrollments.map { |e| e.student.id })
+      elsif s
+        ids = s.enrollments.select { |e| e.status_cd == status.to_i }.map { |e| e.student.id }
+        Student.in(id: ids)
       else
         Student.all
       end

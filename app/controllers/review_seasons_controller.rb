@@ -15,7 +15,7 @@ class ReviewSeasonsController < AdminController
   end
 
   def list
-    @review_seasons = ReviewSeason.all.map { |r| {id: r.id.to_s, season: r.season} }
+    @review_seasons = ReviewSeason.desc('season_start').map { |r| {id: r.id.to_s, season: r.season} }
     respond_to do |format|
       format.json { render json: @review_seasons }
     end

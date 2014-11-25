@@ -9,8 +9,9 @@
 
   loadStudents = ->
     $scope.loading = true
+
     url = '/students.json'
-    r = $http.get url, params: params
+    r = $http.get url, params: season: $scope.season.id
     r.success (d) ->
       $scope.loading = false
       $scope.students = d.students
@@ -20,13 +21,14 @@
     r.error (e) ->
       $scope.loading = false
 
-  loadSeasons = ->
+  loadSeasonsAndStudents = ->
     url = '/review_seasons.json'
     r = $http.get url
     r.success (d) ->
       d.push {season: 'All', id: 0}
       $scope.seasons = d
-      $scope.season = d[d.length - 1]
+      $scope.season = d[0]
+      loadStudents()
 
   loadEnrollmentStatus = ->
     r = $http.get '/students/enrollment_status'
@@ -51,6 +53,8 @@
     params =
       page: $scope.currentPage
       q: $scope.q
+      season: $scope.season.id
+      status: $scope.enrollment_status.value
     loadStudents()
 
   $scope.remove = (u) ->
@@ -78,9 +82,8 @@
   if $scope.q
     params['q'] = $scope.q
 
-  loadStudents()
-  loadSeasons()
   loadEnrollmentStatus()
+  loadSeasonsAndStudents()
 
   $scope.confirm = (s) -> confirmEnrollment($scope, $http, s)
 
