@@ -1,0 +1,37 @@
+#grade-modal.modal.fade
+  .modal-dialog.modal-sm
+    .modal-content
+      form.form-horizontal.ac-scope
+        .modal-header
+          button.close type='button' data-dismiss='modal'
+            span aria-hidden='true' &times;
+          h4.modal-title New Grade
+
+        .modal-body
+          .error.panel.hidden
+            ul
+              li
+
+          .form-group
+            label.col-md-3.control-label Title
+            .col-md-9
+              input.form-control.required type='text'
+          .form-group
+            label.col-md-3.control-label Date
+            .col-md-9
+              input.form-control.required.date-picker type='text' data-date-format="MMM DD, YYYY"
+          .form-group
+            label.col-md-3.control-label Score
+            .col-md-4.score-wrapper
+              input.form-control.required.score type='text' placeholder='Acquired'
+            label.col-md-1.control-label.over
+              ="/"
+            .col-md-4.points-wrapper
+              input.form-control.required.points type='text' placeholder='Total'
+
+        .modal-footer
+          span.pull-left
+            b.ac-target data-ac-expr='$.score / $.points * 100' 50
+            span.pr %
+          .actions
+            input.btn.btn-primary type='submit' value='Save'
