@@ -19,6 +19,10 @@ body {
   position: absolute;
   height: 100%;
 }
+.admin-nav ul.admin-nav > li {
+  float: left;
+  width: 100%;
+}
 .admin-nav ul.admin-nav > li > a {
   background: #3E3E3E;
   border-left: 3px solid #2980B9;
@@ -26,7 +30,8 @@ body {
   color: #B2B2B2;
   font-family: "Signika Semibold";
   font-size: 16px;
-  height: 40px;
+  float: left;
+  width: 100%;
 }
 .admin-nav ul.admin-nav > li.active > a,
 .admin-nav ul.admin-nav > li.active > a:hover,
@@ -38,9 +43,14 @@ body {
   float: left;
   margin-right: 10px;
 }
+.admin-nav ul.admin-nav > li > a > .title {
+  margin-left: 32px;
+}
 .admin-nav ul.student {
   color: #CCC;
   font-family: 'Signika Semibold';
+  float: left;
+  width: 100%;
 }
 .admin-nav ul.student a {
   color: #CCC;
@@ -60,6 +70,7 @@ body {
   border-right: 3px solid #DF5A49;
 }
 .admin-nav ul.student li.student {
+  height: 64px;
   padding: 9px 10px;
   box-shadow: 0 2px 1px rgba(0, 0, 0, 0.2) inset;
 }
