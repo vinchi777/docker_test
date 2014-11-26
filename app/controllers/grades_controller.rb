@@ -39,6 +39,11 @@ class GradesController < ApplicationController
     respond_with(@grade)
   end
 
+  def temp_show
+    @students = ReviewSeason.current.students
+    render 'show'
+  end
+
   private
     def set_grade
       @grade = Grade.find(params[:id])

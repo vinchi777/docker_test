@@ -1,0 +1,45 @@
+#students-select-modal.modal.fade
+  .modal-dialog.modal-lg
+    .modal-content.ac-scope
+      form.form-horizontal.ac-scope
+        .modal-header
+          /button.close type='button' data-dismiss='modal'
+          /  span aria-hidden='true' &times;
+          h4.modal-title
+            | Select Students
+          .search-wrapper
+            input.form-control.search-students type='text' placeholder='Search students'
+          .overall-count.pull-right
+            b.ac-target data-ac-expr='loop($.batch-count,+)'> 4
+            span Students
+          hr
+
+        .modal-body
+          .batch
+            .bar
+              a.toggle href='#'
+                i.fa.fa-circle-o
+                i.fa.fa-check-circle-o.hidden
+              h5 April 2014
+              .count
+                b.batch-count 0
+                span<> of
+                span = @students.size
+
+            .form-group.student-list
+              - @students.each do |student|
+                a.col-md-4.student.excluded href=''
+                  span.profile-pic
+                    i.fa.fa-check
+                    = render 'students/profile_pic', student: student
+                  span
+                    b = student.lastName
+                    = student.trailing_name
+          .previous-batch
+            a href='#'
+              p Show students from previous batch
+              i.fa.fa-chevron-down
+
+        .modal-footer
+          .actions
+            input.btn.btn-default type='submit' value='Confirm'

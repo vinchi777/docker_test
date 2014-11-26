@@ -15,15 +15,51 @@ $(document).on 'click', 'table td .form-control', ->
     target = table.find('thead td')[index]
     $(target).addClass 'active'
 
+$(document).on 'click', '#students-select-modal .toggle', ->
+  self = $(this)
+  hidden = self.children('.hidden').removeClass('hidden')
+  hidden.siblings().first().addClass('hidden')
+  container = $(this).closest('.batch')
+  if self.children('.fa-check-circle-o:visible').length
+    container.find('a.student').removeClass('excluded')
+  else
+    container.find('a.student').addClass('excluded')
+  count_selected_students(container)
+  false
+
+$(document).on 'click', '#students-select-modal a.student', ->
+  self = $(this)
+  self.toggleClass('excluded')
+  count_selected_students(self.closest('.batch'))
+  false
+
+count_selected_students = (batch) ->
+  count = batch.find('a.student').not('.excluded').length
+  batch.find('.count b').text(count).change()
+
 $ ->
   # adjust percent indicator
   $('.grade').each ->
     self = $(this)
     percent = parseInt(self.find('.percent').val())
-    # adjust_gauge(1, percent, self)
+  # adjust_gauge(1, percent, self)
 
   $('.new-grade').click ->
-    $('#grade-modal').modal('show');
+    $('#grade-modal').modal('show')
+    false
+
+  $('#batch-grades .edit-students').click ->
+    $('#students-select-modal').modal('show')
+    false
+
+  $('#batch-grades .add-grade, #batch-grades .edit-grade').click ->
+    $('#grade-modal').modal('show')
+    ###table = $('#batch-grades table')
+    $('<td><h6>500 points</h6>NLE Examination</td>').insertBefore(table.find('thead td').last()).hide().fadeIn()
+    table.find('tbody tr').each ->
+      $("<td><input type='text' class='form-control'></input></td>").insertBefore($(this).find('td').last()).hide().fadeIn()
+    do_scroll_x($('#batch-grades .table-wrapper').first(), $(this))###
+    false
 
 
 adjust_gauge = (level, percent, container) ->
@@ -35,10 +71,10 @@ adjust_gauge = (level, percent, container) ->
     deg = 90 - percent / 25 * 90
 
   arc = container.find(".arc#{level}")
-  arc.css('transform', "rotate(#{90*level}deg) skewX(#{deg}deg)")
-  arc.attr('data-content',arc_style(deg))
+  arc.css('transform', "rotate(#{90 * level}deg) skewX(#{deg}deg)")
+  arc.attr('data-content', arc_style(deg))
 
-  adjust_gauge(level+1, percent-25, container)
+  adjust_gauge(level + 1, percent - 25, container)
 
 arc_style = (deg) ->
   """

@@ -158,32 +158,39 @@
 #grades-tests .grade .wrapper .summary .status img:last-of-type {
   margin-left: 4px;
 }
-#grades-tests #grade-modal .control-label {
+#grade-modal .control-label {
   padding-top: 3px;
 }
-#grades-tests #grade-modal .over {
+#grade-modal .over {
   padding-left: 0px;
   padding-right: 0px;
   text-align: center;
   font-weight: normal;
 }
-#grades-tests #grade-modal .score-wrapper {
+#grade-modal .score-wrapper {
   padding-right: 0px;
 }
-#grades-tests #grade-modal .points-wrapper {
+#grade-modal .points-wrapper {
   padding-left: 0px;
 }
-#grades-tests #grade-modal .modal-footer b {
+#grade-modal .modal-footer b {
   display: inline-block;
   padding-top: 2px;
   font-size: 21px;
 }
-#grades-tests #grade-modal .modal-footer .pr {
+#grade-modal .modal-footer .pr {
   font-size: 12px;
   display: inline-block;
   margin-left: 2px;
   vertical-align: top;
   margin-top: 5px;
+}
+.search-wrapper .form-control {
+  height: 30px;
+  background: url("<%= asset_path 'search.svg' %>") no-repeat 7px 6px;
+  background-size: 17px;
+  padding-left: 33px;
+  text-align: left;
 }
 #batch-grades form .actions {
   text-align: right;
@@ -191,22 +198,38 @@
 #batch-grades form .actions * {
   vertical-align: top;
 }
+#batch-grades form .table-wrapper {
+  overflow-x: auto;
+}
 #batch-grades form table {
   margin-top: 10px;
 }
 #batch-grades form table * {
   text-align: center;
 }
-#batch-grades form table thead td {
+#batch-grades form table thead td,
+#batch-grades form table thead th {
+  vertical-align: middle;
   padding-top: 0px;
   padding-bottom: 2px;
   border-bottom: solid 4px #999999;
 }
-#batch-grades form table thead td.active {
+#batch-grades form table thead td.active,
+#batch-grades form table thead th.active {
   border-bottom-color: #EFC94C;
   background-color: transparent;
 }
-#batch-grades form table thead h6 {
+#batch-grades form table thead td a.edit-grade,
+#batch-grades form table thead th a.edit-grade {
+  color: #777;
+  text-decoration: none;
+}
+#batch-grades form table thead td a.edit-grade:hover,
+#batch-grades form table thead th a.edit-grade:hover {
+  color: #333;
+}
+#batch-grades form table thead td a.edit-grade h6,
+#batch-grades form table thead th a.edit-grade h6 {
   margin: 0px;
 }
 #batch-grades form table thead .table-actions {
@@ -228,12 +251,8 @@
   width: 80%;
 }
 #batch-grades form table thead .table-actions .search-wrapper .form-control {
-  width: 100%;
-  height: 30px;
-  background: url("<%= asset_path 'search.svg' %>") no-repeat 7px 6px;
-  background-size: 17px;
-  padding-left: 33px;
   text-align: left;
+  width: 100%;
 }
 #batch-grades form table thead .add-grade {
   display: inline-block;
@@ -260,16 +279,15 @@
   color: #ffffff;
 }
 #batch-grades form table td {
-  width: 140px;
-  min-width: 140px;
+  min-width: 180px;
   border-top: none;
 }
-#batch-grades form table td:last-of-type {
-  width: 50px;
-}
 #batch-grades form table .student {
+  border-top: none;
+  font-weight: 300;
   text-align: left;
   width: 350px;
+  min-width: 350px;
 }
 #batch-grades form table .student .profile {
   width: 40px;
@@ -279,4 +297,117 @@
   width: 65px;
   margin: 0 auto;
   margin-top: 4px;
+}
+#batch-grades.new td:last-of-type {
+  width: 50px;
+  min-width: 50px;
+}
+#batch-grades.old .total-score {
+  width: 55%;
+}
+#batch-grades.old hr {
+  margin-bottom: 0px;
+}
+#batch-grades.old td span {
+  display: inline-block;
+  margin-top: 7px;
+}
+#batch-grades.old header .btn {
+  margin-top: 10px;
+}
+#students-select-modal .modal-lg {
+  width: 80%;
+}
+#students-select-modal .modal-lg .modal-header h4,
+#students-select-modal .modal-lg .modal-header .search-wrapper {
+  display: inline-block;
+  vertical-align: top;
+}
+#students-select-modal .modal-lg .modal-header .search-wrapper {
+  margin-left: 10px;
+  width: 40%;
+  min-width: 400px;
+}
+#students-select-modal .modal-lg .modal-header .overall-count span {
+  color: #b2b2b2;
+}
+#students-select-modal .modal-lg .modal-header hr {
+  margin-bottom: 0px;
+}
+#students-select-modal .modal-lg .modal-body {
+  max-height: 420px;
+  overflow-y: auto;
+}
+#students-select-modal .modal-lg .modal-body .batch {
+  margin-bottom: 25px;
+}
+#students-select-modal .modal-lg .modal-body .batch .bar {
+  text-align: center;
+  margin-bottom: 10px;
+  color: #4c4c4c;
+}
+#students-select-modal .modal-lg .modal-body .batch .bar .toggle,
+#students-select-modal .modal-lg .modal-body .batch .bar span {
+  color: #b2b2b2;
+}
+#students-select-modal .modal-lg .modal-body .batch .bar .toggle {
+  float: left;
+}
+#students-select-modal .modal-lg .modal-body .batch .bar .toggle:hover {
+  color: #4c4c4c;
+}
+#students-select-modal .modal-lg .modal-body .batch .bar h5 {
+  display: inline-block;
+  margin: 0;
+}
+#students-select-modal .modal-lg .modal-body .batch .bar .count {
+  float: right;
+}
+#students-select-modal .modal-lg .modal-body .batch .student {
+  text-decoration: none;
+  color: #4C4C4C;
+  margin-bottom: 10px;
+}
+#students-select-modal .modal-lg .modal-body .batch .student .profile-pic {
+  position: relative;
+}
+#students-select-modal .modal-lg .modal-body .batch .student .profile-pic .fa-check {
+  visibility: visible;
+  position: absolute;
+  color: #efc94c;
+  bottom: -17px;
+  right: -6px;
+  font-size: 13px;
+}
+#students-select-modal .modal-lg .modal-body .batch .student.excluded .fa-check {
+  visibility: hidden;
+}
+#students-select-modal .modal-lg .modal-body .batch .student.excluded img {
+  border-color: #cccccc;
+}
+#students-select-modal .modal-lg .modal-body .batch .student:hover .profile-pic img {
+  border-color: #efd87a;
+}
+#students-select-modal .modal-lg .modal-body .previous-batch {
+  text-align: center;
+  margin-bottom: 20px;
+}
+#students-select-modal .modal-lg .modal-body .previous-batch a {
+  color: #cccccc;
+  text-decoration: none;
+}
+#students-select-modal .modal-lg .modal-body .previous-batch a p {
+  margin: 0px;
+  line-height: 0.5;
+}
+#students-select-modal .modal-lg .modal-body .previous-batch a:hover {
+  color: #4d4d4d;
+}
+#students-select-modal .modal-lg .modal-footer {
+  background-color: #588c7e;
+  border-top: solid 2px #4e7c70;
+}
+#students-select-modal .modal-lg .modal-footer .btn {
+  font-family: 'Signika Semibold';
+  padding: 6px 20px;
 }

@@ -1,15 +1,43 @@
-p#notice = notice
+== title 'Batch Grades'
 
-p
-  strong Description:
-  = @grade.description
-p
-  strong Date:
-  = @grade.date
-p
-  strong Points:
-  = @grade.points
-
-= link_to 'Edit', edit_grade_path(@grade)
-'|
-= link_to 'Back', grades_path
+#batch-grades.old
+  = form_tag
+    header.row
+      .col-md-3
+        label.control-label Description
+        input.form-control type='text'
+      .col-md-2
+        label.control-label Date
+        input.form-control.date-picker type='text' data-date-format="MMM DD, YYYY"
+      .col-md-2
+        label.control-label Score
+        input.form-control.total-score type='text'
+      .col-md-5.actions
+        button.btn.btn-primary type='Submit' Save
+    hr
+    .table-wrapper
+      table.table
+        thead
+          td.table-actions
+            a.edit-students href='#'
+              i.fa.fa-pencil
+            .search-wrapper
+              input.form-control.search-students type='text' placeholder='Search students'
+          th Grades
+          th Percentage
+        tbody.student-list
+          - @students.each do |student|
+            tr.ac-scope
+              th.student
+                span.profile-pic
+                  = render 'students/profile_pic', student: student
+                span
+                  b = student.lastName
+                  = student.trailing_name
+              td
+                input.form-control.grade type='text'
+              td
+                span.pr.ac-target data-ac-expr='$.grade / @.total-score * 100' 0
+                | %
+= render 'students_select'
+= render 'grade_category'

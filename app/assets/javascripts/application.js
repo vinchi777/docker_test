@@ -37,3 +37,8 @@ window.do_scroll = function (target) {
   scroll = target.offset().top - 100
   $('html, body').animate({scrollTop: scroll}, "fast")
 }
+
+window.do_scroll_x = function (container, target) {
+  scroll = target.offset().left
+  container.animate({scrollLeft: scroll}, "fast")
+}
