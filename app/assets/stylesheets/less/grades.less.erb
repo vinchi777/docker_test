@@ -217,6 +217,9 @@
                 vertical-align: top;
             }
         }
+        .table-wrapper {
+            overflow-x: auto;
+        }
 
         table {
             margin-top: 10px;
@@ -232,10 +235,18 @@
                         border-bottom-color: #EFC94C;
                         background-color: transparent;
                     }
+                    a.edit-grade {
+                        color: #777;
+                        text-decoration: none;
+                        &:hover {
+                            color: #333;
+                        }
+                        h6 {
+                            margin: 0px
+                        }
+                    }
                 }
-                h6 {
-                    margin: 0px
-                }
+
                 .table-actions {
                     text-align: left;
                     padding-left: 20px;
@@ -286,16 +297,19 @@
                 }
             }
             td {
-                width: 140px;
-                min-width: 140px;
+                min-width: 180px;
                 border-top: none;
                 &:last-of-type {
                     width: 50px;
+                    min-width: 50px;
                 }
             }
             .student {
+                border-top: none;
+                font-weight: 300;
                 text-align: left;
                 width: 350px;
+                min-width: 350px;
 
                 .profile {
                     width: 40px;
@@ -339,14 +353,15 @@
                 .bar {
                     text-align: center;
                     margin-bottom: 10px;
-                    *, .fa-checked-circle-o {
-                        color: #4c4c4c;
-                    }
-                    .fa-circle-o, span {
+                    color: #4c4c4c;
+                    .toggle, span {
                         color: #b2b2b2;
                     }
                     .toggle {
                         float: left;
+                        &:hover {
+                            color: #4c4c4c;
+                        }
                     }
                     h5 {
                         display: inline-block;

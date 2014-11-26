@@ -198,6 +198,9 @@
 #batch-grades form .actions * {
   vertical-align: top;
 }
+#batch-grades form .table-wrapper {
+  overflow-x: auto;
+}
 #batch-grades form table {
   margin-top: 10px;
 }
@@ -213,7 +216,14 @@
   border-bottom-color: #EFC94C;
   background-color: transparent;
 }
-#batch-grades form table thead h6 {
+#batch-grades form table thead td a.edit-grade {
+  color: #777;
+  text-decoration: none;
+}
+#batch-grades form table thead td a.edit-grade:hover {
+  color: #333;
+}
+#batch-grades form table thead td a.edit-grade h6 {
   margin: 0px;
 }
 #batch-grades form table thead .table-actions {
@@ -263,16 +273,19 @@
   color: #ffffff;
 }
 #batch-grades form table td {
-  width: 140px;
-  min-width: 140px;
+  min-width: 180px;
   border-top: none;
 }
 #batch-grades form table td:last-of-type {
   width: 50px;
+  min-width: 50px;
 }
 #batch-grades form table .student {
+  border-top: none;
+  font-weight: 300;
   text-align: left;
   width: 350px;
+  min-width: 350px;
 }
 #batch-grades form table .student .profile {
   width: 40px;
@@ -312,17 +325,17 @@
 #students-select-modal .modal-lg .modal-body .batch .bar {
   text-align: center;
   margin-bottom: 10px;
-}
-#students-select-modal .modal-lg .modal-body .batch .bar *,
-#students-select-modal .modal-lg .modal-body .batch .bar .fa-checked-circle-o {
   color: #4c4c4c;
 }
-#students-select-modal .modal-lg .modal-body .batch .bar .fa-circle-o,
+#students-select-modal .modal-lg .modal-body .batch .bar .toggle,
 #students-select-modal .modal-lg .modal-body .batch .bar span {
   color: #b2b2b2;
 }
 #students-select-modal .modal-lg .modal-body .batch .bar .toggle {
   float: left;
+}
+#students-select-modal .modal-lg .modal-body .batch .bar .toggle:hover {
+  color: #4c4c4c;
 }
 #students-select-modal .modal-lg .modal-body .batch .bar h5 {
   display: inline-block;
