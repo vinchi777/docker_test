@@ -80,7 +80,6 @@
       $("#confirm-#{u.id}").modal 'hide'
       $('#error-delete').modal 'show'
 
-
   loadEnrollmentStatus()
   loadSeasonsAndStudents()
 
