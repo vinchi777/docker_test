@@ -1,0 +1,21 @@
+p#notice = notice
+
+p
+  strong Description:
+  = @test.description
+p
+  strong Date:
+  = @test.date
+p
+  strong Deadline:
+  = @test.deadline
+p
+  strong Timer:
+  = @test.timer
+p
+  strong Random:
+  = @test.random
+
+= link_to 'Edit', edit_test_path(@test)
+'|
+= link_to 'Back', tests_path

@@ -1,0 +1,106 @@
+#test form {
+  /*.question-wrapper {
+            position: relative;
+
+            .left-side {
+                width: 100px;
+                float: left;
+                position: absolute;
+            }
+            .right-side {
+                float: left;
+                margin-left: 100px;
+                width: 90%;
+                textarea {
+                    width: 100%;
+                }
+            }
+        }*/
+}
+#test form header .actions {
+  text-align: right;
+}
+#test form header .actions * {
+  vertical-align: top;
+}
+#test form header .actions .btn {
+  margin-top: 22px;
+}
+#test form header .row {
+  margin-bottom: 10px;
+}
+#test form header .row img {
+  width: 17px;
+}
+#test form header .row .timer {
+  margin: 0px 5px 0px 10px;
+  width: 50px;
+  display: inline-block;
+}
+#test form header .row .radio {
+  margin-top: 4px;
+}
+#test form header .bar .pull-left {
+  color: #999999;
+  margin-bottom: 3px;
+}
+#test form header hr {
+  clear: both;
+}
+#test form .question tr :last-of-type {
+  padding-bottom: 0px;
+}
+#test form .question td {
+  padding-top: 0px;
+  border-top: none;
+}
+#test form .question td:nth-of-type(2) {
+  width: 10px;
+  border-left: solid 1px #e5e5e5;
+}
+#test form .question td:first-of-type {
+  width: 50px;
+  padding-left: 0px;
+}
+#test form .question td:last-of-type {
+  padding-right: 0px;
+}
+#test form .question td .question-no,
+#test form .question td .new-question {
+  width: 32px;
+  height: 38px;
+}
+#test form .question td .question-no {
+  background: url("<%= image_path 'test-yellow.svg' %>");
+  text-align: center;
+  font-family: 'Signika Semibold';
+  color: white;
+  padding-top: 10px;
+}
+#test form .question td a.new-question {
+  display: inline-block;
+  background: url("<%= image_path 'new-question.svg' %>");
+}
+#test form .question td .add-rationale {
+  color: #999;
+  text-decoration: none;
+}
+#test form .question td .add-rationale .fa {
+  margin-right: 5px;
+}
+#test form .question td .add-rationale:hover {
+  color: #333;
+}
+#test form .question textarea {
+  padding: 3px 10px;
+  min-width: 100%;
+  max-width: 100%;
+  min-height: 30px;
+  height: 30px;
+  /*&.big {
+                    height: 55px;
+                }*/
+}
+#test form .question input[type='radio'] {
+  margin-top: 9px;
+}

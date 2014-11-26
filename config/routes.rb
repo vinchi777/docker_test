@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :tests
+
   resources :grades do
     collection do
       get 'temp_show'
