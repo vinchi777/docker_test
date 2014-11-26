@@ -26,38 +26,10 @@ Then /^I should be on the students page$/ do
 end
 
 Given /^I am on the students page$/ do
-  Student.create!(
-      firstName: 'John',
-      lastName: 'dela Cruz',
-      sex: 'Male',
-      address: 'Tacloban City',
-      contactNo: '321-444',
-      email: 'jdelacruz@gmail.com',
-      lastAttended: 'Cebu Institute of Medicine',
-      yearGrad: 2014,
-      hs: 'St. Marys Academy',
-      hsYear: 2006,
-      elem: 'Luntad Elem. School',
-      elemYear: 2002
-  )
-  Student.create!(
-      firstName: 'Maria',
-      lastName: 'dela Cruz',
-      sex: 'Male',
-      address: 'Tacloban City',
-      contactNo: '321-444',
-      email: 'maria@gmail.com',
-      lastAttended: 'St. Therese School of Medicine',
-      yearGrad: 2014,
-      hs: 'St. Marys Academy',
-      hsYear: 2006,
-      elem: 'Luntad Elem. School',
-      elemYear: 2002
-  )
   visit students_path
 end
 
-When(/^I search for "(.*?)"/) do |query|
+When /^I search for "(.*?)"/ do |query|
   fill_in 'q', with: query
   execute_script('$(".search form").submit()')
 end
@@ -68,6 +40,7 @@ end
 
 When /^I remove a student$/ do
   @count = Student.count
+  sleep 1.0
   all('.student .actions a').first.click
   sleep 0.5
   click_on 'Yes'
@@ -80,6 +53,7 @@ end
 
 When /^I cancel the removal of student$/ do
   @count = Student.count
+  sleep 1.0
   all('.student .actions a').first.click
   sleep 0.5
   click_on 'No'
@@ -94,21 +68,15 @@ When /^I attach a photo$/ do
   attach_file 'student_profile_pic', "#{Rails.root}/features/fixtures/james.jpg", 'image/jpeg'
 end
 
+When /^I choose "(.*?)" season and "(.*?)" type$/ do |season, type|
+  select season, from: 'season'
+  select type, from: 'type'
+end
+
 Then /^I should see the uploaded photo$/ do
   expect(Student.first.has_profile_pic?).to be true
 end
 
 Given /^I am on the enrollment package type page$/ do
-  ReviewSeason.create!(
-      season: 'May 2014',
-      season_start: Date.new(2014, 4, 1),
-      season_end: Date.new(2014, 4, 5),
-      first_timer: 17000,
-      repeater: 10000,
-      full_review: 17000,
-      double_review: 22000,
-      coaching: 7000,
-      reservation: 3000
-  )
   visit enrollment_index_path
 end

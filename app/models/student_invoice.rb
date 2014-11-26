@@ -10,7 +10,7 @@ class StudentInvoice
   validates_presence_of :amount
   validates :amount, numericality: {greater_than: 0.0}
 
-  field :discount, type: BigDecimal
+  field :discount, type: BigDecimal, default: 0
 
   belongs_to :student
   validates_presence_of :student

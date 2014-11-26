@@ -33,11 +33,16 @@
     .user.item.row ng-repeat='user in users' ng-hide='loading'
       .info.col-md-4
         .name
-          | {{user.person.lastName}}, {{user.person.firstName}} {{user.person.middleInitial}}
+          | {{user.last_name}}, {{user.first_name}} {{user.middle_initial}}
         .email
           | {{user.email}}
         .stat
-          | Last login on Sept. 25, 2015 6:45pm
+          span ng-show='user.current_sign_in_at == null && user.last_sign_in_at == null'
+            | Never logged in
+          span ng-show='user.current_sign_in_at != null'
+            | Last login {{moment(user.current_sign_in_at)}}
+          span ng-show='user.current_sign_in_at == null && user.last_sign_in_at != null'
+            | Last login {{moment(user.last_sign_in_at)}}
       .actions
         .password
           a href='#' data-toggle='modal' data-target='#password-modal' ng-click='editPassword(user)'

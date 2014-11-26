@@ -14,6 +14,7 @@ class StudentEnrollment
 
   def enroll
     self.status = :enrolled
+    save
   end
 
   belongs_to :student
