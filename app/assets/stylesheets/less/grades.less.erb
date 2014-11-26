@@ -358,6 +358,8 @@
                 }
 
                 .student {
+                    text-decoration: none;
+                    color: #4C4C4C;
                     margin-bottom: 10px;
                     .profile-pic {
                         position: relative;
@@ -369,14 +371,18 @@
                             right: -6px;
                             font-size: 13px;
                         }
-                        &.excluded {
-                            .fa-check {
-                                visibility: hidden;
-                            }
-                            img {
-                                border-color: #cccccc;
-                            }
+                    }
+                    &.excluded {
+                        .fa-check {
+                            visibility: hidden;
                         }
+                        img {
+                            border-color: #cccccc;
+                        }
+                    }
+
+                    &:hover .profile-pic img {
+                        border-color: #efd87a;
                     }
                 }
             }

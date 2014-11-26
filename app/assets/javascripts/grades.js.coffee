@@ -16,16 +16,33 @@ $(document).on 'click', 'table td .form-control', ->
     $(target).addClass 'active'
 
 $(document).on 'click', '#students-select-modal .toggle', ->
-  hidden = $(this).children('.hidden').removeClass('hidden')
+  self = $(this)
+  hidden = self.children('.hidden').removeClass('hidden')
   hidden.siblings().first().addClass('hidden')
+  container = $(this).closest('.batch')
+  if self.children('.fa-check-circle-o:visible').length
+    container.find('a.student').removeClass('excluded')
+  else
+    container.find('a.student').addClass('excluded')
+  count_selected_students(container)
   false
+
+$(document).on 'click', '#students-select-modal a.student', ->
+  self = $(this)
+  self.toggleClass('excluded')
+  count_selected_students(self.closest('.batch'))
+  false
+
+count_selected_students = (batch) ->
+  count = batch.find('a.student').not('.excluded').length
+  batch.find('.count b').text(count).change()
 
 $ ->
   # adjust percent indicator
   $('.grade').each ->
     self = $(this)
     percent = parseInt(self.find('.percent').val())
-    # adjust_gauge(1, percent, self)
+  # adjust_gauge(1, percent, self)
 
   $('.new-grade').click ->
     $('#grade-modal').modal('show')

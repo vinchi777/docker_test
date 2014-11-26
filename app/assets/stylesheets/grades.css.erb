@@ -332,6 +332,8 @@
   float: right;
 }
 #students-select-modal .modal-lg .modal-body .batch .student {
+  text-decoration: none;
+  color: #4C4C4C;
   margin-bottom: 10px;
 }
 #students-select-modal .modal-lg .modal-body .batch .student .profile-pic {
@@ -345,11 +347,14 @@
   right: -6px;
   font-size: 13px;
 }
-#students-select-modal .modal-lg .modal-body .batch .student .profile-pic.excluded .fa-check {
+#students-select-modal .modal-lg .modal-body .batch .student.excluded .fa-check {
   visibility: hidden;
 }
-#students-select-modal .modal-lg .modal-body .batch .student .profile-pic.excluded img {
+#students-select-modal .modal-lg .modal-body .batch .student.excluded img {
   border-color: #cccccc;
+}
+#students-select-modal .modal-lg .modal-body .batch .student:hover .profile-pic img {
+  border-color: #efd87a;
 }
 #students-select-modal .modal-lg .modal-body .previous-batch {
   text-align: center;
