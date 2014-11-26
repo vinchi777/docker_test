@@ -22,13 +22,13 @@
                 i.fa.fa-check-circle-o.hidden
               h5 April 2014
               .count
-                b.batch-count 0
+                b.batch-count = @students.size
                 span<> of
                 span = @students.size
 
             .form-group.student-list
               - @students.each do |student|
-                a.col-md-4.student.excluded href=''
+                a.col-md-4.student href=''
                   span.profile-pic
                     i.fa.fa-check
                     = render 'students/profile_pic', student: student
@@ -42,4 +42,5 @@
 
         .modal-footer
           .actions
+            a.btn data-dismiss='modal' type='submit' Cancel
             input.btn.btn-default type='submit' value='Confirm'
