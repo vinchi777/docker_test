@@ -71,7 +71,7 @@
   height: 38px;
 }
 #test form .question td .question-no {
-  background: url("<%= image_path 'test-yellow.svg' %>");
+  background: url("<%= image_path 'test-yellow.svg' %>") no-repeat;
   text-align: center;
   font-family: 'Signika Semibold';
   color: white;
@@ -79,7 +79,7 @@
 }
 #test form .question td a.new-question {
   display: inline-block;
-  background: url("<%= image_path 'new-question.svg' %>");
+  background: url("<%= image_path 'new-question.svg' %>") no-repeat;
 }
 #test form .question td .add-rationale {
   color: #999;
@@ -97,6 +97,7 @@
   max-width: 100%;
   min-height: 30px;
   height: 30px;
+  margin-bottom: 5px;
   /*&.big {
                     height: 55px;
                 }*/
