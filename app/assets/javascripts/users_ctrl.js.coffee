@@ -111,6 +111,9 @@
       $("#confirm-#{u.id}").modal 'hide'
       $('#error-delete').modal 'show'
 
+  $scope.moment = (t) ->
+    moment(t).fromNow()
+
   if $scope.currentPage
     params['page'] = $scope.currentPage
 

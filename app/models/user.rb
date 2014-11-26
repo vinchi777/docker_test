@@ -28,6 +28,7 @@ class User
   ## Person cached fields
   field :first_name, type: String
   field :last_name, type: String
+  field :middle_initial, type: String
 
   ## Confirmable
   # field :confirmation_token,   type: String
@@ -46,6 +47,7 @@ class User
     d.email = d.person.email
     d.first_name = d.person.firstName
     d.last_name = d.person.lastName
+    d.middle_initial = d.person.middleName.first
   end
 
   def self.serialize_into_session(record)
@@ -54,8 +56,9 @@ class User
 
   def as_json(opt = nil)
     hash = self.serializable_hash(nil)
-    hash[:person] = person.serializable_hash(nil)
-    hash[:id] =id.to_s
+    hash[:id] = id.to_s
+    hash[:last_sign_in_at] = last_sign_in_at
+    hash[:current_sign_in_at] = current_sign_in_at
     hash.as_json(nil)
   end
 end
