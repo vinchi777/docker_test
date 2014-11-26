@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :grades
+  resources :grades do
+    collection do
+      get 'temp_show'
+    end
+  end
 
   # get 'enrollment', to: 'enrollment#index'
   # get 'enrollment/package_type', to: 'enrollment#package_type'

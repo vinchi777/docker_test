@@ -227,7 +227,8 @@
                 text-align: center;
             }
             thead {
-                td {
+                td, th {
+                    vertical-align: middle;
                     padding-top: 0px;
                     padding-bottom: 2px;
                     border-bottom: solid 4px #999999;
@@ -299,10 +300,6 @@
             td {
                 min-width: 180px;
                 border-top: none;
-                &:last-of-type {
-                    width: 50px;
-                    min-width: 50px;
-                }
             }
             .student {
                 border-top: none;
@@ -321,6 +318,29 @@
                 margin: 0 auto;
                 margin-top: 4px;
             }
+        }
+    }
+
+    &.new {
+        td:last-of-type {
+            width: 50px;
+            min-width: 50px;
+        }
+    }
+
+    &.old {
+        .total-score {
+            width: 55%;
+        }
+        hr {
+            margin-bottom: 0px;
+        }
+        td span {
+            display: inline-block;
+            margin-top: 7px;
+        }
+        header .btn {
+            margin-top: 10px;
         }
     }
 }

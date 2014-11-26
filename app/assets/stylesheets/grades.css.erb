@@ -207,23 +207,29 @@
 #batch-grades form table * {
   text-align: center;
 }
-#batch-grades form table thead td {
+#batch-grades form table thead td,
+#batch-grades form table thead th {
+  vertical-align: middle;
   padding-top: 0px;
   padding-bottom: 2px;
   border-bottom: solid 4px #999999;
 }
-#batch-grades form table thead td.active {
+#batch-grades form table thead td.active,
+#batch-grades form table thead th.active {
   border-bottom-color: #EFC94C;
   background-color: transparent;
 }
-#batch-grades form table thead td a.edit-grade {
+#batch-grades form table thead td a.edit-grade,
+#batch-grades form table thead th a.edit-grade {
   color: #777;
   text-decoration: none;
 }
-#batch-grades form table thead td a.edit-grade:hover {
+#batch-grades form table thead td a.edit-grade:hover,
+#batch-grades form table thead th a.edit-grade:hover {
   color: #333;
 }
-#batch-grades form table thead td a.edit-grade h6 {
+#batch-grades form table thead td a.edit-grade h6,
+#batch-grades form table thead th a.edit-grade h6 {
   margin: 0px;
 }
 #batch-grades form table thead .table-actions {
@@ -276,10 +282,6 @@
   min-width: 180px;
   border-top: none;
 }
-#batch-grades form table td:last-of-type {
-  width: 50px;
-  min-width: 50px;
-}
 #batch-grades form table .student {
   border-top: none;
   font-weight: 300;
@@ -295,6 +297,23 @@
   width: 65px;
   margin: 0 auto;
   margin-top: 4px;
+}
+#batch-grades.new td:last-of-type {
+  width: 50px;
+  min-width: 50px;
+}
+#batch-grades.old .total-score {
+  width: 55%;
+}
+#batch-grades.old hr {
+  margin-bottom: 0px;
+}
+#batch-grades.old td span {
+  display: inline-block;
+  margin-top: 7px;
+}
+#batch-grades.old header .btn {
+  margin-top: 10px;
 }
 #students-select-modal .modal-lg {
   width: 80%;
