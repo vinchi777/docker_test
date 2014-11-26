@@ -37,11 +37,11 @@
       div No result found
 
     .student.item.row ng-repeat='student in students' ng-hide='loading'
-      .col-lg-1.profile-pic
+      .profile-pic.col-lg-1
         a href='/students/{{student.id}}'
           img.profile ng-src='{{student.profile_pic}}' ng-show='profile_pic_exists(student)'
           img.profile src=(image_url 'user.png') ng-hide='profile_pic_exists(student)'
-      .col-lg-4.info
+      .info.col-lg-4
         a href='/students/{{student.id}}'
           .name
             | {{student.lastName}}, {{student.firstName}} {{student.middleInitial}}
@@ -61,7 +61,10 @@
               | Confirm
 
       .payment.col-lg-2
-      /= payment_status student
+        div ng-show='student.balance > 0'
+          i.fa.fa-lg.fa-money
+          span.amount
+            | {{student.balance | currency:"Php "}}
       .actions.col-lg-1
         a href='#' data-toggle='modal' data-target=('#confirm-{{student.id}}')
           i.fa.fa-lg.fa-trash-o
