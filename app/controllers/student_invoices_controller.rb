@@ -15,14 +15,12 @@ class StudentInvoicesController < AdminController
   def create
     student = Student.find(student_invoice_params[:student_id])
     @student_invoice = StudentInvoice.new(student_invoice_params.except :student_id)
-    @student_invoice.student = student
 
     if params[:student_invoice][:review_season]
       @student_invoice.review_season = ReviewSeason.find(params[:student_invoice][:review_season][:id])
     end
 
-    # Create enrollment data
-    student.add_enrollment(@student_invoice.review_season) unless student.has_enrollment_on @student_invoice.review_season
+    student.add_invoice(@student_invoice)
 
     respond_to do |format|
       if @student_invoice.save

@@ -1,4 +1,4 @@
-@admin
+@admin @student_list
 Feature: Add students
 
   Scenario: Insert required information

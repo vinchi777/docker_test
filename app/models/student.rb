@@ -73,19 +73,24 @@ class Student < Person
 
   def setup_payment
     current_season = ReviewSeason.current
+    invoice1 = StudentInvoice.create(
+        package: package_type,
+        review_season: current_season,
+        amount: current_season.get_fee(package_type)
+    )
+    add_invoice(invoice1)
 
-    add_enrollment(current_season)
-    invoice1 = StudentInvoice.new({package: package_type, review_season: current_season,
-                                   amount: current_season.get_fee(package_type)})
     if package_type == 'Double'
       invoice1.description = 'Invoice 1 of 2'
       amount = current_season.double_review - current_season.full_review
-      invoice2 = StudentInvoice.new({package: package_type, description: 'Invoice 2 of 2',
-                                     review_season: current_season, amount: amount})
+      invoice2 = StudentInvoice.create(
+          package: package_type,
+          description: 'Invoice 2 of 2',
+          review_season: current_season,
+          amount: amount
+      )
+      add_invoice(invoice2)
     end
-
-    self.invoices << invoice1
-    self.invoices << invoice2 if invoice2
     save
   end
 
@@ -142,9 +147,7 @@ class Student < Person
   end
 
   def current_invoices
-    if invoices
-      invoices.where({review_season: current_invoice.review_season})
-    end
+    invoices.where(review_season: current_invoice.review_season) if invoices
   end
 
   def total_current_amount
@@ -166,7 +169,7 @@ class Student < Person
     hash[:id] = id.to_s
     hash[:enrollment_status] = enrollment_status
     hash[:current_season] = current_season
-    hash[:balance] = balance
+    hash[:balance] = balance unless balance.nil?
     hash.as_json(nil)
   end
 
@@ -180,10 +183,14 @@ class Student < Person
     end
   end
 
-  def add_enrollment(review_season)
-    enrollment = StudentEnrollment.new(status: 1, student: self)
-    enrollment.review_season = review_season
-    enrollment.save
+  def add_invoice(invoice)
+    invoice.student = self
+    invoice.save
+    unless has_enrollment_on invoice.review_season
+      enrollment = StudentEnrollment.new(status: 1, student: self)
+      enrollment.review_season = invoice.review_season
+      enrollment.save
+    end
   end
 
   def trailing_name

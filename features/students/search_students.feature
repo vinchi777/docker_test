@@ -1,4 +1,4 @@
-@admin
+@admin @student_list
 Feature: Search students
 
   Scenario Outline: Search students

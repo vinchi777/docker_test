@@ -1,4 +1,4 @@
-@admin
+@admin @student_list
 Feature: Remove student
   Scenario: Remove student successfully
     Given I am on the students page

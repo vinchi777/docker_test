@@ -1,5 +1,6 @@
 Feature: Online enrollment for students
 
+  @review_season
   Scenario: Full package enrollment
     Given I am on the enrollment package type page
     When I select "standard_package"
