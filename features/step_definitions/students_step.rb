@@ -68,6 +68,7 @@ end
 
 When /^I remove a student$/ do
   @count = Student.count
+  sleep 1.0
   all('.student .actions a').first.click
   sleep 0.5
   click_on 'Yes'
@@ -80,6 +81,7 @@ end
 
 When /^I cancel the removal of student$/ do
   @count = Student.count
+  sleep 1.0
   all('.student .actions a').first.click
   sleep 0.5
   click_on 'No'
