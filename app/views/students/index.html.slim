@@ -4,12 +4,12 @@
   header
     h2 Students
     .row
-      .search.col-lg-8
+      .search.col-md-8
         form.form-inline.row ng-submit='search()'
-          .form-group.col-lg-12
+          .form-group.col-md-12
             input.form-control type="search" placeholder="Search for name, school or address of the students" ng-model='q' name='q' value=params[:q]
 
-      .col-lg-2.col-lg-offset-2
+      .col-md-2.col-md-offset-2
         = link_to 'New Student', new_student_path, class: 'btn btn-primary pull-right'
 
   .filter
@@ -26,7 +26,7 @@
     b<>
       | {{totalItems}}
     | student(s)
-  .students.listing.panel.panel-light.col-lg-12
+  .students.listing.panel.panel-light.col-md-12
     .empty-list ng-show='students.length == 0 && q == null'
       p
         | There is no existing students. Click the
@@ -37,11 +37,11 @@
       div No result found
 
     .student.item.row ng-repeat='student in students' ng-hide='loading'
-      .profile-pic.col-lg-1
+      .profile-pic.col-md-1
         a href='/students/{{student.id}}'
           img.profile ng-src='{{student.profile_pic}}' ng-show='profile_pic_exists(student)'
           img.profile src=(image_url 'user.png') ng-hide='profile_pic_exists(student)'
-      .info.col-lg-4
+      .info.col-md-4
         a href='/students/{{student.id}}'
           .name
             | {{student.lastName}}, {{student.firstName}} {{student.middleInitial}}
@@ -49,7 +49,7 @@
             | {{student.lastAttended}}
           .address
             | {{student.address}}
-      .enroll.col-lg-4
+      .enroll.col-md-4
         div ng-switch='student.enrollment_status'
           span ng-switch-when='enrolled'
             i.fa.fa-lg.fa-check
@@ -60,12 +60,12 @@
             a.btn.btn-primary.btn-confirm href='' ng-click='confirm(student)'
               | Confirm
 
-      .payment.col-lg-2
+      .payment.col-md-2
         div ng-show='student.balance > 0'
           i.fa.fa-lg.fa-money
           span.amount
             | {{student.balance | currency:"Php "}}
-      .actions.col-lg-1
+      .actions.col-md-1
         a href='#' data-toggle='modal' data-target=('#confirm-{{student.id}}')
           i.fa.fa-lg.fa-trash-o
 

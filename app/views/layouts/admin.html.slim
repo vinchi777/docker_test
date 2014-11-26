@@ -15,44 +15,44 @@ html lang='en' ng-app='maxRevApp'
     == render 'layouts/header'
 
     .admin-container
-      .col-lg-2.admin-nav
-        ul.admin-nav.nav.nav-pills.nav-stacked.col-lg-12
+      .admin-nav.col-md-2.col-sm-1
+        ul.admin-nav.nav.nav-pills.nav-stacked.col-sm-12
           li.students class=('active' if current_page? controller: 'students')
             = link_to students_path
               .ico = image_tag 'students-ico.svg'
-              .name Students
+              .title.name.visible-lg.visible-md Students
             - unless @student.nil? || @student.new_record?
               ul.student.nav.nav-pills.nav-stacked
                 li.student
                   .pic
                     = image_tag 'user.png', class: 'profile' if @student.profile_pic == nil
                     = image_tag @student.profile_pic, class: 'profile' unless @student.profile_pic == nil
-                  .name
+                  .name.visible-lg.visible-md
                     div = @student.lastName
                     div = @student.firstName
                 li.profile class=('active' if @page == 'show')
                   = link_to @student
                     .ico = image_tag 'profile-ico.svg'
-                    .title Profile
+                    .title.visible-lg.visible-md Profile
                 li.payment class=('active' if @page == 'payment')
                   = link_to student_invoices_path(id: @student.id)
                     .ico = image_tag 'payment-ico.svg'
-                    .title Payment
+                    .title.visible-lg.visible-md Payment
 
           li.review-seasons class=('active' if @page =='review-seasons')
             = link_to review_seasons_path
               .ico = image_tag 'review-season-ico.svg'
-              .name Review Seasons
+              .title.name.visible-lg.visible-md Review Seasons
           li.user class=('active' if @page == 'users')
             = link_to users_path
               .ico = image_tag 'users-ico.svg'
-              .title Users
+              .title.visible-lg.visible-md Users
           li.user class=('active' if @page == 'grades')
             = link_to grades_path
               .ico = image_tag 'grades-test.svg'
-              .title Grades and Tests
+              .title.visible-lg.visible-md Grades and Tests
 
-      .col-lg-10.admin-content.col-lg-offset-2
+      .admin-content.col-md-10.col-md-offset-2.col-sm-11.col-sm-offset-1
         == yield
 
     == render 'layouts/admin_footer'
