@@ -9,9 +9,23 @@
 
   loadStudents = ->
     $scope.loading = true
-
     url = '/students.json'
-    r = $http.get url, params: season: $scope.season.id
+
+    if $scope.currentPage
+      params['page'] = $scope.currentPage
+
+    if $scope.q
+      params['q'] = $scope.q
+    else
+      params['q'] = null
+
+    if $scope.enrollment_status
+      params['status'] = $scope.enrollment_status.value
+
+    if $scope.season
+      params['season'] = $scope.season.id
+
+    r = $http.get url, params: params
     r.success (d) ->
       $scope.loading = false
       $scope.students = d.students
@@ -38,23 +52,13 @@
       $scope.enrollment_status = d[d.length - 1]
 
   $scope.filter = ->
-    params =
-      season: $scope.season.id
-      status: $scope.enrollment_status.value
     loadStudents()
 
   $scope.search = ->
-    params =
-      q: $scope.q
     $scope.currentPage = 1
     loadStudents()
 
   $scope.pageChanged = ->
-    params =
-      page: $scope.currentPage
-      q: $scope.q
-      season: $scope.season.id
-      status: $scope.enrollment_status.value
     loadStudents()
 
   $scope.remove = (u) ->
@@ -76,11 +80,6 @@
       $("#confirm-#{u.id}").modal 'hide'
       $('#error-delete').modal 'show'
 
-  if $scope.currentPage
-    params['page'] = $scope.currentPage
-
-  if $scope.q
-    params['q'] = $scope.q
 
   loadEnrollmentStatus()
   loadSeasonsAndStudents()
