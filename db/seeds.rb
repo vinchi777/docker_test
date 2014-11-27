@@ -54,6 +54,18 @@ s.email = 'admin@example.com'
 s.save
 User.create(password: '123456789', person: s)
 
+ReviewSeason.create!(
+    season: 'May 2014',
+    season_start: Date.new(2014, 4, 1),
+    season_end: Date.new(2014, 4, 5),
+    first_timer: 17000,
+    repeater: 10000,
+    full_review: 17000,
+    double_review: 22000,
+    coaching: 7000,
+    reservation: 3000
+)
+
 30.times do |i|
   s = rand_student
   User.create(password: '123456789', person: s) if i < 12
