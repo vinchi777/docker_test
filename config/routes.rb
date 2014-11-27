@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :tests
+  resources :tests do
+    collection do
+      get 'answer'
+    end
+  end
 
   resources :grades do
     collection do

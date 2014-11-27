@@ -11,6 +11,33 @@
                     margin-top: 22px;
                 }
             }
+            .top-nav {
+                text-align: center;
+                .timer {
+                    display: inline-block;
+                    margin-top: 7px;
+                    .img-wrapper {
+                        display: inline-block;
+                        padding: 2px 5px 0px 0px;
+                        .inject-me {
+                            width: 20px;
+                            circle {
+                                fill: #45b29d;
+                            }
+                            polyline {
+                                stroke: white;
+                            }
+                        }
+                        &.near circle {
+                            fill: #df5a49;
+                        }
+                    }
+                    b {
+                        vertical-align: top;
+                        color: #4c4c4c;
+                    }
+                }
+            }
             .row {
                 margin-bottom: 10px;
                 img {
@@ -28,6 +55,7 @@
                 }
             }
             .bar {
+                clear: both;
                 .pull-left {
                     color: #999999;
                     margin-bottom: 3px;
@@ -77,8 +105,11 @@
                         width: 20px;
                         display: table-cell;
                         vertical-align: top;
-                        input {
-                            margin-top: 9px;
+                        input{
+                            margin-top: 5px;
+                            &.marginized {
+                                margin-top: 9px;
+                            }
                         }
                     }
                     &:last-of-type textarea {
@@ -98,16 +129,21 @@
                     color: #333;
                 }
             }
-            .rationale textarea {
-                margin-bottom: 0px;
+            .rationale {
+                span {
+                    color: #999;
+                }
+                textarea {
+                    margin-bottom: 0px;
+                }
             }
         }
         .new-question {
             display: inline-block;
             .injected-svg {
                 width: 32px;
-                &:hover .fill path{
-                    fill: #aaa;
+                &:hover .fill path {
+                    fill: #999;
                 }
             }
         }

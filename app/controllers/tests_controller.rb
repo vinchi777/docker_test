@@ -37,6 +37,10 @@ class TestsController < ApplicationController
     respond_with(@test)
   end
 
+  def answer
+    render 'show'
+  end
+
   private
     def set_test
       @test = Test.find(params[:id])
