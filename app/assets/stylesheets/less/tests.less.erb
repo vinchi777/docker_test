@@ -86,6 +86,12 @@
                     padding-top: 10px;
                 }
             }
+            &.correct .question-no{
+                background-image: url("<%= image_path 'test-green.svg' %>");
+            }
+            &.wrong .question-no{
+                background-image: url("<%= image_path 'test-red.svg' %>");
+            }
             .details {
                 padding-left: 10px;
                 border-left: solid 1px #e5e5e5;
