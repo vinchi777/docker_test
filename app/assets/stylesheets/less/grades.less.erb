@@ -59,8 +59,12 @@
     }
 
     .new-test {
-        background: url("<%= asset_path 'new-test.svg' %>") no-repeat;
-        height: @height;
+        .injected-svg {
+            height: @height;
+        }
+        &:hover .fill path{
+            fill: #999;
+        }
     }
 
     .test {
@@ -83,9 +87,12 @@
     @border-size: 6px;
     @skew: 0deg;
     .new-grade {
-        background: url("<%= asset_path 'new-grade.svg' %>") no-repeat left @border-size;
-        height: @height+@border-size*2;
-        width: @height;
+        .injected-svg {
+            height: @height+@border-size*2;
+        }
+        &:hover .fill{
+            fill: #999;
+        }
     }
     .grade {
         text-align: center;
@@ -279,7 +286,7 @@
                     line-height: 1.2;
                 }
                 .add-grade:hover, .edit-students:hover {
-                    color: #7f7f7f;
+                    color: #999;
                 }
             }
             tbody tr {
@@ -450,7 +457,7 @@
                 font-family: 'Signika Semibold';
                 padding: 6px 20px;
             }
-            a{
+            a {
                 color: #d1eee6;
                 box-shadow: none;
                 text-decoration: underline;

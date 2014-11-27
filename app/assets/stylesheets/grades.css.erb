@@ -17,9 +17,11 @@
   padding-right: 0px;
   margin-right: -28px;
 }
-#grades-tests .new-test {
-  background: url("<%= asset_path 'new-test.svg' %>") no-repeat;
+#grades-tests .new-test .injected-svg {
   height: 120px;
+}
+#grades-tests .new-test:hover .fill path {
+  fill: #999;
 }
 #grades-tests .test {
   text-align: center;
@@ -64,10 +66,11 @@
   margin-left: 1px;
   font-size: 12px;
 }
-#grades-tests .new-grade {
-  background: url("<%= asset_path 'new-grade.svg' %>") no-repeat left 6px;
+#grades-tests .new-grade .injected-svg {
   height: 132px;
-  width: 120px;
+}
+#grades-tests .new-grade:hover .fill {
+  fill: #999;
 }
 #grades-tests .grade {
   text-align: center;
@@ -263,7 +266,7 @@
 }
 #batch-grades form table thead .add-grade:hover,
 #batch-grades form table thead .edit-students:hover {
-  color: #7f7f7f;
+  color: #999;
 }
 #batch-grades form table tbody tr:nth-of-type(odd) {
   background-color: #f2f2f2;
