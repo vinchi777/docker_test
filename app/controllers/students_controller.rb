@@ -12,10 +12,10 @@ class StudentsController < AdminController
       format.json do
         if q.nil? || q.blank?
           students = Student.filter(season, status)
-          @students = students.asc('lastName', 'firstName').paginate(page: page, per_page: 10)
+          @students = students.desc('is_enrolling').asc('lastName', 'firstName').paginate(page: page, per_page: 10)
           size = students.length
         else
-          r = Student.filter(season, status).or({lastName: /#{q}/i}, {firstName: /#{q}/i}, {address: /#{q}/i}, {lastAttended: /#{q}/i}).asc('lastName', 'firstName')
+          r = Student.filter(season, status).or({lastName: /#{q}/i}, {firstName: /#{q}/i}, {address: /#{q}/i}, {lastAttended: /#{q}/i}).desc('is_enrolling').asc('lastName', 'firstName')
           @students = r.paginate(page: page, per_page: 10)
           size = r.length
         end

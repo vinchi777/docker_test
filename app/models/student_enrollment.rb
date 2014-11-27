@@ -14,6 +14,8 @@ class StudentEnrollment
 
   def enroll
     self.status = :enrolled
+    student.is_enrolling = false
+    student.save
     save
   end
 
