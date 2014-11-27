@@ -34,87 +34,88 @@
           | items
       hr
 
-    table.table.question
-      tbody
-        tr
-          td
-            .question-no 1
-          td colspan='2'
-            textarea.form-control.big placeholder='Write question here'
-        tr.choice
-          td
-          td
+    .question
+      .question-no-wrapper
+        .question-no 1
+      .details
+        textarea.form-control.big placeholder='Write question here'
+        .choice
+          .radio-wrapper
             input type='radio' name='1'
-          td
-            textarea.form-control placeholder='Write first choice here'
-        tr.choice
-          td
-          td
+          .description
+            textarea.form-control name='2' placeholder='Write first choice here'
+        .choice
+          .radio-wrapper
             input type='radio' name='1'
-          td
-            textarea.form-control placeholder='Write second choice here'
-        tr.choice
-          td
-          td
+          .description
+            textarea.form-control name='2' placeholder='Write second choice here'
+        .choice
+          .radio-wrapper
             input type='radio' name='1'
-          td
-            textarea.form-control placeholder='Write third choice here'
-        tr.choice
-          td
-          td
+          .description
+            textarea.form-control name='2' placeholder='Write third choice here'
+        .choice
+          .radio-wrapper
             input type='radio' name='1'
-          td
-            textarea.form-control placeholder='Write fourth choice here'
-        tr
-          td
-          td colspan='2'
-            a.add-rationale href=''
-              i.fa.fa-plus-circle
-              | Add rationale
-    table.table.question
-      tbody
-        tr
-          td
-            .question-no 2
-          td colspan='2'
-            textarea.form-control.big placeholder='Write question here'
-        tr.choice
-          td
-          td
-            input type='radio' name='2'
-          td
-            textarea.form-control placeholder='Write first choice here'
-        tr.choice
-          td
-          td
-            input type='radio' name='2'
-          td
-            textarea.form-control placeholder='Write second choice here'
-        tr.choice
-          td
-          td
-            input type='radio' name='2'
-          td
-            textarea.form-control placeholder='Write third choice here'
-        tr.choice
-          td
-          td
-            input type='radio'
-          td
+          .description
             textarea.form-control name='2' placeholder='Write fourth choice here'
-        tr
-          td
-          td colspan='2'
-            b Rationale
-            textarea.form-control placeholder='Write rationale here'
-    table.table.question
-      tbody
-        tr
-          td colspan='3'
-            a.new-question href='#'
-    /.question-wrapper
-    /  .left-side
-    /    | asdas
-    /  .right-side
-    /    textarea.form-control
+        a.add-rationale href=''
+          i.fa.fa-plus-circle
+          | Add rationale
 
+    .question
+      .question-no-wrapper
+        .question-no 2
+      .details
+        textarea.form-control.big placeholder='Write question here'
+        .choice
+          .radio-wrapper
+            input type='radio' name='2'
+          .description
+            textarea.form-control name='2' placeholder='Write first choice here'
+        .choice
+          .radio-wrapper
+            input type='radio' name='2'
+          .description
+            textarea.form-control name='2' placeholder='Write second choice here'
+        .choice
+          .radio-wrapper
+            input type='radio' name='2'
+          .description
+            textarea.form-control name='2' placeholder='Write third choice here'
+        .choice
+          .radio-wrapper
+            input type='radio' name='2'
+          .description
+            textarea.form-control name='2' placeholder='Write fourth choice here'
+        .rationale
+          b Rationale
+          textarea.form-control placeholder='Write rationale here'
+
+    .question
+      .question-no-wrapper
+        .question-no 3
+      .details
+        textarea.form-control.big placeholder='Write question here'
+        .choice
+          .radio-wrapper
+            input type='radio' name='3'
+          .description
+            textarea.form-control name='2' placeholder='Write first choice here'
+        .choice
+          .radio-wrapper
+            input type='radio' name='3'
+          .description
+            textarea.form-control name='2' placeholder='Write second choice here'
+        .choice
+          .radio-wrapper
+            input type='radio' name='3'
+          .description
+            textarea.form-control name='2' placeholder='Write third choice here'
+        .choice
+          .radio-wrapper
+            input type='radio' name='3'
+          .description
+            textarea.form-control name='2' placeholder='Write fourth choice here'
+
+    .new-question
