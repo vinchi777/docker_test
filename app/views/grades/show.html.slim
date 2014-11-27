@@ -5,13 +5,13 @@
     header.row
       .col-md-3
         label.control-label Description
-        input.form-control type='text'
+        input.form-control.required type='text'
       .col-md-2
         label.control-label Date
-        input.form-control.date-picker type='text' data-date-format="MMM DD, YYYY"
+        input.form-control.required.date-picker type='text' data-date-format="MMM DD, YYYY"
       .col-md-2
-        label.control-label Score
-        input.form-control.total-score type='text'
+        label.control-label Total Points
+        input.form-control.required.total-score type='text'
       .col-md-5.actions
         button.btn.btn-primary type='Submit' Save
     hr
