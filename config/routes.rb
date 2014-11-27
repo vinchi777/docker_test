@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :grades do
     collection do
       get 'temp_show'
+      get 'read_only'
     end
   end
 

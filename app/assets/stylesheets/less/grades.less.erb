@@ -217,124 +217,119 @@
 }
 
 #batch-grades {
-    form {
-        .actions {
-            text-align: right;
-            * {
-                vertical-align: top;
-            }
-        }
-        .table-wrapper {
-            overflow-x: auto;
-        }
-
-        table {
-            margin-top: 10px;
-            * {
-                text-align: center;
-            }
-            thead {
-                td, th {
-                    vertical-align: middle;
-                    padding-top: 0px;
-                    padding-bottom: 2px;
-                    border-bottom: solid 4px #999999;
-                    &.active {
-                        border-bottom-color: #EFC94C;
-                        background-color: transparent;
-                    }
-                    a.edit-grade {
-                        color: #777;
-                        text-decoration: none;
-                        &:hover {
-                            color: #333;
-                        }
-                        h6 {
-                            margin: 0px
-                        }
-                    }
-                }
-
-                .table-actions {
-                    text-align: left;
-                    padding-left: 20px;
-                    padding-top: 2px;
-                    * {
-                        display: inline-block;
-                        vertical-align: top;
-                    }
-                    .edit-students {
-                        margin-top: 10px;
-                        color: #cccccc;
-                        font-size: 20px;
-                    }
-                    .search-wrapper {
-                        margin-left: 21px;
-                        width: 80%;
-                        .form-control {
-                            text-align: left;
-                            width: 100%;
-                        }
-
-                    }
-                }
-                .add-grade {
-                    display: inline-block;
-                    font-size: 35px;
-                    color: #cccccc;
-                    height: 30px;
-                    line-height: 1.2;
-                }
-                .add-grade:hover, .edit-students:hover {
-                    color: #999;
-                }
-            }
-            tbody tr {
-                &:nth-of-type(odd) {
-                    background-color: #f2f2f2;
-                }
-                &:hover {
-                    background-color: #f4e8c1;
-                }
-                &.current {
-                    background-color: #f2e394;
-                }
-                &.error {
-                    background-color: #d39090;
-                    color: #ffffff;
-                }
-            }
-            td {
-                min-width: 180px;
-                border-top: none;
-            }
-            .student {
-                border-top: none;
-                font-weight: 300;
-                text-align: left;
-                width: 350px;
-                min-width: 350px;
-
-                .profile {
-                    width: 40px;
-                    height: 40px;
-                }
-            }
-            .form-control {
-                width: 65px;
-                margin: 0 auto;
-                margin-top: 4px;
-            }
+    .actions {
+        text-align: right;
+        * {
+            vertical-align: top;
         }
     }
+    .table-wrapper {
+        overflow-x: auto;
+    }
+    table {
+        margin-top: 10px;
+        * {
+            text-align: center;
+        }
+        thead {
+            td, th {
+                vertical-align: middle;
+                padding-top: 0px;
+                padding-bottom: 2px;
+                border-bottom: solid 4px #999999;
+                &.active {
+                    border-bottom-color: #EFC94C;
+                    background-color: transparent;
+                }
+                a.edit-grade {
+                    color: #777;
+                    text-decoration: none;
+                    &:hover {
+                        color: #333;
+                    }
+                    h6 {
+                        margin: 0px
+                    }
+                }
+            }
 
+            .table-actions {
+                text-align: left;
+                padding-left: 20px;
+                padding-top: 2px;
+                * {
+                    display: inline-block;
+                    vertical-align: top;
+                }
+                .edit-students {
+                    margin-top: 10px;
+                    color: #cccccc;
+                    font-size: 20px;
+                }
+                .search-wrapper {
+                    margin-left: 21px;
+                    width: 80%;
+                    .form-control {
+                        text-align: left;
+                        width: 100%;
+                    }
+
+                }
+            }
+            .add-grade {
+                display: inline-block;
+                font-size: 35px;
+                color: #cccccc;
+                height: 30px;
+                line-height: 1.2;
+            }
+            .add-grade:hover, .edit-students:hover {
+                color: #999;
+            }
+        }
+        tbody tr {
+            &:nth-of-type(odd) {
+                background-color: #f2f2f2;
+            }
+            &:hover {
+                background-color: #f4e8c1;
+            }
+            &.current {
+                background-color: #f2e394;
+            }
+            &.error {
+                background-color: #d39090;
+                color: #ffffff;
+            }
+        }
+        td {
+            min-width: 180px;
+            border-top: none;
+        }
+        .student {
+            border-top: none;
+            font-weight: 300;
+            text-align: left;
+            width: 350px;
+            min-width: 350px;
+
+            .profile {
+                width: 40px;
+                height: 40px;
+            }
+        }
+        .form-control {
+            width: 65px;
+            margin: 0 auto;
+            margin-top: 4px;
+        }
+    }
     &.new {
         td:last-of-type {
             width: 50px;
             min-width: 50px;
         }
     }
-
     &.old {
         .total-score {
             width: 55%;
@@ -348,6 +343,34 @@
         }
         header .btn {
             margin-top: 10px;
+        }
+    }
+    &.read-only{
+        header {
+            h5 {
+                margin: 0px;
+            }
+            b {
+                margin-right: 5px;
+            }
+            span {
+                color: #bbb;
+            }
+        }
+        hr {
+            margin-top: 10px;
+            margin-bottom: 0px;
+        }
+        tbody td span {
+            margin-top: 7px;
+            display: inline-block;
+        }
+        .table-actions {
+            padding-left: 8px;
+            padding-bottom: 6px;
+            .search-wrapper{
+                margin-left: 0px;
+            }
         }
     }
 }
