@@ -94,7 +94,11 @@
   margin-bottom: 0px;
 }
 #test form .new-question {
+  display: inline-block;
+}
+#test form .new-question .injected-svg {
   width: 32px;
-  height: 38px;
-  background: url("<%= image_path 'new-question.svg' %>") no-repeat;
+}
+#test form .new-question .injected-svg:hover .fill path {
+  fill: #aaa;
 }

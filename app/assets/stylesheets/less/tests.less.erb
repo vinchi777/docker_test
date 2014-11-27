@@ -103,9 +103,13 @@
             }
         }
         .new-question {
-            width: 32px;
-            height: 38px;
-            background: url("<%= image_path 'new-question.svg' %>") no-repeat;
+            display: inline-block;
+            .injected-svg {
+                width: 32px;
+                &:hover .fill path{
+                    fill: #aaa;
+                }
+            }
         }
     }
 }

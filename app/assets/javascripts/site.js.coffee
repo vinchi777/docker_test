@@ -39,6 +39,9 @@ $ ->
     $('#countup:in-viewport(-100)').run(animateCountup)
   )
 
+  mySVGsToInject = document.querySelectorAll('img.inject-me');
+  SVGInjector(mySVGsToInject);
+
   countDone = false
   animateCountup = ->
     unless countDone
