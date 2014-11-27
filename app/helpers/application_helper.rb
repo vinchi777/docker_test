@@ -12,7 +12,7 @@ module ApplicationHelper
   end
 
   def login_page?
-    (current_page? :login)
+    (current_page? :new_user_session)
   end
 
   def to_currency(money)

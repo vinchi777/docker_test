@@ -42,6 +42,13 @@
             color: #45B29D;
             font-family: "Signika Semibold";
             font-size: 15px;
+            float: left;
+            margin-right: 6px;
+        }
+        .email {
+            font-size: 14px;
+            font-style: italic;
+            color: darkgray;
         }
         .school {
             color: #323232;
@@ -53,6 +60,20 @@
             font-family: 'Signika Light';
             font-size: 14px;
         }
+    }
+
+    .students .student .account a.no-user {
+        color: #d3d3d3;
+    }
+
+    .students .student .account a.has-user {
+        color: #5f5f5f;
+    }
+
+    .students .student .account,
+    .students .student .actions {
+        padding: 0;
+        width: 3.3%;
     }
 
     .students .student .enroll {
@@ -72,6 +93,10 @@
         float: right;
     }
 
+    .students .student .account {
+        line-height: 55px;
+        font-size: 21px;
+    }
     .students .student .enroll,
     .students .student .payment,
     .students .student .actions {

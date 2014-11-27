@@ -31,9 +31,11 @@ Rails.application.routes.draw do
     collection do
       get 'change_password'
       patch 'update_password'
+      post 'create_student_account'
     end
     member do
       patch 'update_user_password'
+      post 'resend_confirmation'
     end
   end
 

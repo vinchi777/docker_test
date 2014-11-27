@@ -25,6 +25,8 @@
     r = $http.get url, params: params
     r.success (d) ->
       $scope.loading = false
+      for i in d.users
+        i.sending = false
       $scope.users = d.users
       $scope.totalItems = d.totalSize
       window.history.pushState({}, '', '/users?' + $.param(params))
@@ -110,6 +112,12 @@
       $scope.deleteError = e.message
       $("#confirm-#{u.id}").modal 'hide'
       $('#error-delete').modal 'show'
+
+  $scope.resend = (u) ->
+    r = $http.post "/users/#{u.id}/resend_confirmation"
+    u.sending = true
+    r.success (d) ->
+      u.sending = false
 
   $scope.moment = (t) ->
     moment(t).fromNow()

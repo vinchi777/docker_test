@@ -1,5 +1,5 @@
 class UsersController < AdminController
-  before_action :set_user, except: [:index, :create, :update_password, :change_password]
+  before_action :set_user, except: [:index, :new, :create, :update_password, :change_password, :create_student_account]
 
   def index
     @page = 'users'
@@ -13,7 +13,7 @@ class UsersController < AdminController
           users = User.asc('email').paginate(page: page, per_page: 10)
           size = User.all.count
         else
-          r = User.or({email: /#{q}/i},{first_name: /#{q}/i},{last_name: /#{q}/i}).asc('email')
+          r = User.or({email: /#{q}/i}, {first_name: /#{q}/i}, {last_name: /#{q}/i}).asc('email')
           users = r.paginate(page: page, per_page: 10)
           size = r.length
         end
@@ -49,12 +49,34 @@ class UsersController < AdminController
     end
   end
 
+  def resend_confirmation
+    @user.password = Devise.friendly_token.first(8)
+    @user.resend_confirmation_instructions
+
+    if @user.update
+      render json: @user, status: :created, location: @user
+    else
+      render json: {user_errors: @user.errors}, status: :unprocessable_entity
+    end
+  end
+
+  def create_student_account
+    s = Student.find(params[:id])
+    u = User.new(password: Devise.friendly_token.first(8), person: s)
+
+    if u.save
+      render json: u, status: :created, location: u
+    else
+      render json: {user_errors: u.errors}, status: :unprocessable_entity
+    end
+  end
+
   def destroy
     own = @user == current_user
     msg = 'You cannot delete your own account.' if own
     msg = 'Cannot delete user. ' unless own
     respond_to do |format|
-      if !own &&@user.destroy
+      if !own && @user.destroy
         format.json { head :no_content }
       else
         format.json { render json: {message: msg}, status: :unprocessable_entity }

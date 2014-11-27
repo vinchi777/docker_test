@@ -52,7 +52,7 @@ end
 s = rand_student
 s.email = 'admin@example.com'
 s.save
-User.create(password: '123456789', person: s)
+User.create(password: '123456789', person: s, confirmed_at: Date.new)
 
 ReviewSeason.create!(
     season: 'May 2014',
@@ -68,5 +68,5 @@ ReviewSeason.create!(
 
 30.times do |i|
   s = rand_student
-  User.create(password: '123456789', person: s) if i < 12
+  # User.create(password: '123456789', person: s) if i < 12
 end

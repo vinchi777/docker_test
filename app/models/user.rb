@@ -3,7 +3,7 @@ class User
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable,
-         :recoverable, :trackable, :validatable
+         :recoverable, :trackable, :validatable, :confirmable
 
   ## Database authenticatable
 
@@ -31,10 +31,10 @@ class User
   field :middle_initial, type: String
 
   ## Confirmable
-  # field :confirmation_token,   type: String
-  # field :confirmed_at,         type: Time
-  # field :confirmation_sent_at, type: Time
-  # field :unconfirmed_email,    type: String # Only if using reconfirmable
+  field :confirmation_token,   type: String
+  field :confirmed_at,         type: Time
+  field :confirmation_sent_at, type: Time
+  field :unconfirmed_email,    type: String # Only if using reconfirmable
 
   ## Lockable
   # field :failed_attempts, type: Integer, default: 0 # Only if lock strategy is :failed_attempts
@@ -57,6 +57,7 @@ class User
   def as_json(opt = nil)
     hash = self.serializable_hash(nil)
     hash[:id] = id.to_s
+    hash[:confirmed] = !confirmed_at.nil?
     hash[:last_sign_in_at] = last_sign_in_at
     hash[:current_sign_in_at] = current_sign_in_at
     hash.as_json(nil)

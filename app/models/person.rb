@@ -18,6 +18,10 @@ class Person
 
   belongs_to :user
 
+  before_validation do |d|
+    d.email = d.email.downcase
+  end
+
   def middle_initial
     if middleName.nil?
       ''

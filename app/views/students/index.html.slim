@@ -41,14 +41,22 @@
         a href='/students/{{student.id}}'
           img.profile ng-src='{{student.profile_pic}}' ng-show='profile_pic_exists(student)'
           img.profile src=(image_url 'user.png') ng-hide='profile_pic_exists(student)'
-      .info.col-md-4
+      .info.col-md-3
         a href='/students/{{student.id}}'
           .name
             | {{student.lastName}}, {{student.firstName}} {{student.middleInitial}}
+          .email
+            | {{student.email}}
           .school
             | {{student.lastAttended}}
           .address
             | {{student.address}}
+      .account.col-md-1
+        a.no-user href='#' data-toggle='modal' data-target='#confirm-user-modal' ng-click='setForUser(student)' ng-show='student.user_id == null'
+          i.fa.fa-user
+        a.has-user href='/users?q={{student.email}}' ng-hide='student.user_id == null'
+          i.fa.fa-user
+
       .enroll.col-md-4
         div ng-switch='student.enrollment_status'
           span ng-switch-when='enrolled'
@@ -59,7 +67,6 @@
             | Enrolling for {{student.current_season}}
             a.btn.btn-primary.btn-confirm href='' ng-click='confirm(student)'
               | Confirm
-
       .payment.col-md-2
         div ng-show='student.balance > 0'
           i.fa.fa-lg.fa-money
@@ -97,3 +104,24 @@
 
   div.pagination ng-show='totalItems > 10'
     pagination total-items="totalItems" ng-model="currentPage" max-size='maxSize' boundary-links="true" ng-change="pageChanged()"
+
+  #confirm-user-modal.modal.fade
+    .modal-dialog
+      .modal-content
+        .modal-header
+          h4.modal-title Create Account
+        .modal-body
+          span Are you sure you want to create an account for this student?
+        .modal-footer
+          button.btn.btn-default data-dismiss='modal' No
+          a.btn.btn-primary href='#' ng-click='createUser()' Yes
+
+  #error-user-modal.modal.fade
+    .modal-dialog
+      .modal-content
+        .modal-header
+          h4.modal-title Error
+        .modal-body
+          span Error creating user.
+        .modal-footer
+          button.btn.btn-primary data-dismiss='modal' Close

@@ -172,6 +172,8 @@ class Student < Person
     hash[:id] = id.to_s
     hash[:enrollment_status] = enrollment_status
     hash[:current_season] = current_season
+    hash[:user_id] = user.id.to_s if user.present?
+    hash[:user_id] = nil if user.nil?
     hash[:balance] = balance unless balance.nil?
     hash.as_json(nil)
   end
