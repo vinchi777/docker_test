@@ -31,10 +31,10 @@ class User
   field :middle_initial, type: String
 
   ## Confirmable
-  field :confirmation_token,   type: String
-  field :confirmed_at,         type: Time
+  field :confirmation_token, type: String
+  field :confirmed_at, type: Time
   field :confirmation_sent_at, type: Time
-  field :unconfirmed_email,    type: String # Only if using reconfirmable
+  field :unconfirmed_email, type: String # Only if using reconfirmable
 
   ## Lockable
   # field :failed_attempts, type: Integer, default: 0 # Only if lock strategy is :failed_attempts
@@ -61,5 +61,14 @@ class User
     hash[:last_sign_in_at] = last_sign_in_at
     hash[:current_sign_in_at] = current_sign_in_at
     hash.as_json(nil)
+  end
+
+  def resend_confirmation_instructions
+    self.password = Devise.friendly_token.first(8)
+    update
+
+    pending_any_confirmation do
+      send_confirmation_instructions
+    end
   end
 end

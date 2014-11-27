@@ -1,5 +1,5 @@
 class UsersController < AdminController
-  before_action :set_user, except: [:index, :new, :create, :update_password, :change_password, :create_student_account]
+  before_action :set_user, except: [:index, :new, :create, :update_password, :change_password, :resend_confirmation, :create_student_account]
 
   def index
     @page = 'users'
@@ -50,7 +50,7 @@ class UsersController < AdminController
   end
 
   def resend_confirmation
-    @user.password = Devise.friendly_token.first(8)
+    @user = User.find_by(email: user_params[:email])
     @user.resend_confirmation_instructions
 
     if @user.update
@@ -118,7 +118,7 @@ class UsersController < AdminController
   # params.require(:person).permit(:name, :age)
   # Also, you can specialize this method with per-user checking of permissible attributes.
   def user_params
-    params.require(:user).permit(:current_password, :password, :password_confirmation)
+    params.require(:user).permit(:current_password, :password, :password_confirmation, :email)
   end
 
   def person_params

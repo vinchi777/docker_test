@@ -114,7 +114,10 @@
       $('#error-delete').modal 'show'
 
   $scope.resend = (u) ->
-    r = $http.post "/users/#{u.id}/resend_confirmation"
+    params =
+      user:
+        email: u.email
+    r = $http.post "/users/resend_confirmation", params
     u.sending = true
     r.success (d) ->
       u.sending = false
