@@ -5,6 +5,8 @@
   $('.date-picker').datetimepicker
     pickTime: false
 
+  $('.datetime-picker').datetimepicker()
+
 $ ->
   bindDatePicker()
 

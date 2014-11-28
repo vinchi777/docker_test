@@ -30,9 +30,12 @@ class TestsController < AdminController
   end
 
   def update
-    @test.update(test_params)
     respond_with @test do |format|
-      format.json { render :show }
+      if @test.update(test_params)
+        format.json { render :show }
+      else
+        format.json { render json: @test.errors, status: :unprocessable_entity }
+      end
     end
   end
 

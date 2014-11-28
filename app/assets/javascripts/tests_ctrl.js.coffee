@@ -35,7 +35,7 @@
 
   $scope.save = ->
     r = if $scope.test.id
-      $http.patch "/tests/#{$scope.test.id}", test: $scope.test
+      $http.patch "/tests/#{$scope.test.id}.json", test: $scope.test
     else
       $http.post '/tests.json', test: $scope.test
     $scope.saving = true
@@ -49,9 +49,9 @@
     r.error (d) ->
       $scope.saving = false
       $scope.errors = []
-      for k,vs of d.errors
+      for k,vs of d
         for v in vs
-          $scope.errors.push "#{toHuman(k)} #{v}"
+          $scope.errors.push "#{toHuman(k)} #{v}" unless "#{toHuman(k)} #{v}" in $scope.errors
 
 
   $scope.publish = ->

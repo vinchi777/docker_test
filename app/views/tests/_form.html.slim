@@ -13,7 +13,7 @@ form
         input.form-control.required.date-picker type='text' data-date-format="MMM DD, YYYY" ng-model='test.date'
       .col-md-2
         label.control-label Deadline
-        input.form-control.date-picker type='text' data-date-format="MMM DD, YYYY" ng-model='test.deadline'
+        input.form-control.required.datetime-picker type='text' data-date-format="MMM DD, YYYY hh:mm A/PM" ng-model='test.deadline'
       .col-md-5.actions
         button.btn.btn-default ng-click='save()' ng-show='test.id == null' Save
         button.btn.btn-default ng-click='save()' ng-hide='test.id == null' Update
@@ -39,7 +39,7 @@ form
         span< item(s)
     hr
 
-  .question ng-repeat='(i, q) in test.questions'
+  .question ng-repeat='(i, q) in test.questions' ng-class='{wrong: q.answer == null}'
     .question-no-wrapper
       .question-no
         | {{i + 1}}
@@ -71,6 +71,8 @@ form
       a.add-rationale href='' ng-show='q.ratio == null' ng-click='q.ratio = ""'
         i.fa.fa-plus-circle
         | Add rationale
+      .notice ng-show='q.answer == null'
+        span Answer for this question is required.
 
   a.new-question href='' ng-click='addQuestion(test)'
     = image_tag 'new-question.svg', class: 'inject-me'

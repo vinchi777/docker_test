@@ -34,4 +34,9 @@ en:
         yearGrad: 'College Year'
         hsYear: 'High School Year'
         elemYear: 'Elementary Year'
-
+    errors:
+      models:
+        test:
+          attributes:
+            questions:
+              invalid: 'are invalid'

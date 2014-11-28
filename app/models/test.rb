@@ -7,12 +7,16 @@ class Test
   validates_presence_of :date
 
   field :deadline, type: Time
+  validates_presence_of :deadline
+
   field :timer, type: Integer
+  validates_numericality_of :timer, greater_than_or_equal_to: 0, less_than_or_equal_to: 360, only_integer: true
+
   field :random, type: Boolean
 
   embeds_many :questions
   accepts_nested_attributes_for :questions
-  validates_presence_of :questions
+  validates_associated :questions, message: 'are invalid'
 end
 
 class Question
@@ -27,6 +31,14 @@ class Question
   field :choice4, type: String
 
   field :answer, type: Integer
+  validate :has_answer
+
+  def has_answer
+    if answer.nil? || answer < 0 || answer > 3
+      errors.add :answer, 'not found'
+    end
+  end
+
   field :ratio, type: String
 
   embedded_in :test
