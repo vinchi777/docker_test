@@ -12,7 +12,11 @@ class EnrollmentController < ApplicationController
   before_action :update_enrollment_status, only: [:show]
 
   def show
-    render_wizard
+    if step == :personal_information && !%w{Standard Double Coaching}.include?(params[:package_type])
+      redirect_to previous_wizard_path, flash: {error: 'Package type is invalid.'}
+    else
+      render_wizard
+    end
   end
 
   def update
