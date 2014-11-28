@@ -1,21 +1,21 @@
 class TestsController < AdminController
   before_action :set_test, only: [:show, :edit, :update, :destroy]
 
-  respond_to :html
+  respond_to :html, :json
   layout 'admin'
 
   def index
     @tests = Test.all
-    respond_with(@tests)
+    respond_with @tests
   end
 
   def show
-    respond_with(@test)
+    respond_with @test
   end
 
   def new
     @test = Test.new
-    respond_with(@test)
+    respond_with @test
   end
 
   def edit
@@ -24,17 +24,21 @@ class TestsController < AdminController
   def create
     @test = Test.new(test_params)
     @test.save
-    respond_with(@test)
+    respond_with @test do |format|
+      format.json { render :show }
+    end
   end
 
   def update
     @test.update(test_params)
-    respond_with(@test)
+    respond_with @test do |format|
+      format.json { render :show }
+    end
   end
 
   def destroy
     @test.destroy
-    respond_with(@test)
+    respond_with @test
   end
 
   def answer
@@ -42,11 +46,11 @@ class TestsController < AdminController
   end
 
   private
-    def set_test
-      @test = Test.find(params[:id])
-    end
+  def set_test
+    @test = Test.find(params[:id])
+  end
 
-    def test_params
-      params.require(:test).permit(:description, :date, :deadline, :timer, :random)
-    end
+  def test_params
+    params.require(:test).permit(:description, :date, :deadline, :timer, :random, questions: [{_id: :$oid}, :text, :choice1, :choice2, :choice3, :choice4, :answer, :ratio])
+  end
 end

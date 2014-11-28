@@ -5,43 +5,27 @@
     .col-lg-8
       h2 Grades and Tests
 
-  .tests-container
+  .tests-container ng-controller='TestsCtrl'
     h5 Draft Tests
     hr
     .tests.row
       .col-md-2.new-test-wrapper
         = link_to new_test_path, class: 'new-test'
           = image_tag 'new-test.svg', class: 'inject-me'
-      .test.col-md-2
-        .summary
-          .timer
-            = image_tag 'timer-off.svg'
-          .points
-            h2 50
-            span items
-        .description
-          h6 Semi Finals
-          span August 13
-      .test.col-md-2
-        .summary
-          .timer
-            = image_tag 'timer-on.svg'
-          .points
-            h2 300
-            span items
-        .description
-          h6 Finals
-          span October 23
-      .test.col-md-2
-        .summary
-          .timer
-            = image_tag 'timer-on.svg'
-          .points
-            h2 250
-            span items
-        .description
-          h6 NLT Mockup
-          span December 9
+      .test.col-md-2 ng-repeat='t in tests'
+        a href='/tests/{{t.id}}/edit'
+          .summary
+            .timer ng-show='t.timer == null || t.timer == 0' = image_tag 'timer-off.svg'
+            .timer ng-hide='t.timer == null || t.timer == 0' = image_tag 'timer-on.svg'
+            .points
+              h2
+                | {{t.questions_length}}
+              span item(s)
+          .description
+            h6
+              | {{t.description}}
+            span
+              | {{t.date | date:'mediumDate'}}
 
   .grades-container
     h5 April 2013

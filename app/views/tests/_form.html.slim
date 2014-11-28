@@ -1,122 +1,76 @@
-== title 'New Test'
+form
+  header
+    .error.panel ng-show='errors.length > 0'
+      ul
+        li ng-repeat='e in errors'
+          | {{e}}
+    .row
+      .col-md-3
+        label.control-label Description
+        input.form-control.required type='text' ng-model='test.description'
+      .col-md-2
+        label.control-label Date
+        input.form-control.required.date-picker type='text' data-date-format="MMM DD, YYYY" ng-model='test.date'
+      .col-md-2
+        label.control-label Deadline
+        input.form-control.date-picker type='text' data-date-format="MMM DD, YYYY" ng-model='test.deadline'
+      .col-md-5.actions
+        button.btn.btn-default ng-click='save()' ng-show='test.id == null' Save
+        button.btn.btn-default ng-click='save()' ng-hide='test.id == null' Update
+        button.btn.btn-primary type='Submit' ng-click='publish()'
+          span ng-hide='publishing' Publish
+          span ng-show='publishing' Publishing...
+    .row
+      .col-md-4.auto-width
+        i.fa.fa-clock-o
+        input.form-control.timer type='text' ng-model='test.timer'
+        | minutes
+      .col-md-8
+        .radio
+          label
+            input type='checkbox' name='random' ng-model='test.random'
+            | Randomize questions
+    .bar
+      .pull-left ng-show='saving'
+        | Saving...
+      .pull-right
+        b>
+        | {{test.questions.length}}
+        span< item(s)
+    hr
 
-#test
-  = form_tag
-    header
-      .row
-        .col-md-3
-          label.control-label Description
-          input.form-control.required type='text'
-        .col-md-2
-          label.control-label Date
-          input.form-control.required.date-picker type='text' data-date-format="MMM DD, YYYY"
-        .col-md-2
-          label.control-label Deadline
-          input.form-control.date-picker type='text' data-date-format="MMM DD, YYYY"
-        .col-md-5.actions
-          button.btn.btn-primary type='Submit' Save
-      .row
-        .col-md-4.auto-width
-          i.fa.fa-clock-o
-          input.form-control.timer type='text'
-          | minutes
-        .col-md-8
-          .radio
-            label
-              input type='radio'
-              | Randomize questions
-      .bar
-        .pull-left
-          | Autosaved
-          span< 10 minutes ago
-        .pull-right
-          b> 100
-          | items
-      hr
+  .question ng-repeat='(i, q) in test.questions'
+    .question-no-wrapper
+      .question-no
+        | {{i + 1}}
+    .details
+      textarea.form-control.big placeholder='Write question here' ng-model='q.text'
+      .choice
+        .radio-wrapper
+          input.marginized type='radio' name='choice{{q.id}}' ng-model='q.answer' value='0'
+        .description
+          textarea.form-control name='2' placeholder='Write first choice here' ng-model='q.choice1'
+      .choice
+        .radio-wrapper
+          input.marginized type='radio' name='choice{{q.id}}' ng-model='q.answer' value='1'
+        .description
+          textarea.form-control name='2' placeholder='Write second choice here' ng-model='q.choice2'
+      .choice
+        .radio-wrapper
+          input.marginized type='radio' name='choice{{q.id}}' ng-model='q.answer' value='2'
+        .description
+          textarea.form-control name='2' placeholder='Write third choice here' ng-model='q.choice3'
+      .choice
+        .radio-wrapper
+          input.marginized type='radio' name='choice{{q.id}}' ng-model='q.answer' value='3'
+        .description
+          textarea.form-control name='2' placeholder='Write fourth choice here' ng-model='q.choice4'
+      .rationale ng-show='q.ratio != null'
+        b Rationale
+        textarea.form-control placeholder='Write rationale here' ng-model='q.ratio'
+      a.add-rationale href='' ng-show='q.ratio == null' ng-click='q.ratio = ""'
+        i.fa.fa-plus-circle
+        | Add rationale
 
-    .question
-      .question-no-wrapper
-        .question-no 1
-      .details
-        textarea.form-control.big placeholder='Write question here'
-        .choice
-          .radio-wrapper
-            input.marginized type='radio' name='1'
-          .description
-            textarea.form-control name='2' placeholder='Write first choice here'
-        .choice
-          .radio-wrapper
-            input.marginized type='radio' name='1'
-          .description
-            textarea.form-control name='2' placeholder='Write second choice here'
-        .choice
-          .radio-wrapper
-            input.marginized type='radio' name='1'
-          .description
-            textarea.form-control name='2' placeholder='Write third choice here'
-        .choice
-          .radio-wrapper
-            input.marginized type='radio' name='1'
-          .description
-            textarea.form-control name='2' placeholder='Write fourth choice here'
-        a.add-rationale href=''
-          i.fa.fa-plus-circle
-          | Add rationale
-
-    .question
-      .question-no-wrapper
-        .question-no 2
-      .details
-        textarea.form-control.big placeholder='Write question here'
-        .choice
-          .radio-wrapper
-            input.marginized type='radio' name='2'
-          .description
-            textarea.form-control name='2' placeholder='Write first choice here'
-        .choice
-          .radio-wrapper
-            input.marginized type='radio' name='2'
-          .description
-            textarea.form-control name='2' placeholder='Write second choice here'
-        .choice
-          .radio-wrapper
-            input.marginized type='radio' name='2'
-          .description
-            textarea.form-control name='2' placeholder='Write third choice here'
-        .choice
-          .radio-wrapper
-            input.marginized type='radio' name='2'
-          .description
-            textarea.form-control name='2' placeholder='Write fourth choice here'
-        .rationale
-          b Rationale
-          textarea.form-control placeholder='Write rationale here'
-
-    .question
-      .question-no-wrapper
-        .question-no 3
-      .details
-        textarea.form-control.big placeholder='Write question here'
-        .choice
-          .radio-wrapper
-            input.marginized type='radio' name='3'
-          .description
-            textarea.form-control name='2' placeholder='Write first choice here'
-        .choice
-          .radio-wrapper
-            input.marginized type='radio' name='3'
-          .description
-            textarea.form-control name='2' placeholder='Write second choice here'
-        .choice
-          .radio-wrapper
-            input.marginized type='radio' name='3'
-          .description
-            textarea.form-control name='2' placeholder='Write third choice here'
-        .choice
-          .radio-wrapper
-            input.marginized type='radio' name='3'
-          .description
-            textarea.form-control name='2' placeholder='Write fourth choice here'
-
-    a.new-question href=''
-      = image_tag 'new-question.svg', class: 'inject-me'
+  a.new-question href='' ng-click='addQuestion(test)'
+    = image_tag 'new-question.svg', class: 'inject-me'

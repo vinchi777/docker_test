@@ -1,4 +1,7 @@
 #test {
+    .error ul {
+        padding-left: 22px;
+    }
     form {
         header {
             .actions {
@@ -9,6 +12,7 @@
 
                 .btn {
                     margin-top: 22px;
+                    margin-left: 10px;
                 }
             }
             .top-nav {
@@ -96,10 +100,10 @@
                     padding-top: 10px;
                 }
             }
-            &.correct .question-no{
+            &.correct .question-no {
                 background-image: url("<%= image_path 'test-green.svg' %>");
             }
-            &.wrong .question-no{
+            &.wrong .question-no {
                 background-image: url("<%= image_path 'test-red.svg' %>");
             }
             .details {
@@ -121,7 +125,7 @@
                         width: 20px;
                         display: table-cell;
                         vertical-align: top;
-                        input{
+                        input {
                             margin-top: 5px;
                             &.marginized {
                                 margin-top: 9px;
