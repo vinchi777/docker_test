@@ -93,6 +93,10 @@ class StudentsController < AdminController
     render json: StudentEnrollment.status_json
   end
 
+  def current_students
+    render json: ReviewSeason.current.students
+  end
+
   private
   def set_student
     @student = Student.find(params[:id])

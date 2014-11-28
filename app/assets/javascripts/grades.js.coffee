@@ -87,5 +87,3 @@ arc_style = (deg) ->
   transform: skewX(#{-deg}def);
   content: '';
   """
-
-

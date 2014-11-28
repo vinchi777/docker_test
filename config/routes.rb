@@ -51,6 +51,7 @@ Rails.application.routes.draw do
     end
     collection do
       get 'enrollment_status'
+      get 'current_students'
     end
   end
 
