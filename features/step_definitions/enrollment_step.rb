@@ -38,3 +38,11 @@ Then /^should be enrolled for the "(.*?)" package$/ do |package|
   end
   expect(find('#student_package_type',visible: false).value).to eq p
 end
+
+Given /^I skip the enrollment package step with an invalid package type$/ do
+  visit '/enrollment/personal_information?package_type=Standardz'
+end
+
+Then /^I should see an invalid package type error$/ do
+  expect(page).to have_content('Package type is invalid.')
+end

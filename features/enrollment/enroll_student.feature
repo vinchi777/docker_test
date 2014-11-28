@@ -66,3 +66,7 @@ Feature: Online enrollment for students
       | Final Coaching   |
       | Standard Package |
       | Double Review    |
+
+  Scenario: Invalid package type in url
+    Given I skip the enrollment package step with an invalid package type
+    Then I should see an invalid package type error
