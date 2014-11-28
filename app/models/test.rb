@@ -4,5 +4,5 @@ class Test
   field :date, type: Time
   field :deadline, type: Time
   field :timer, type: Integer
-  field :random, type: Mongoid::Boolean
+  field :random, type: Boolean
 end

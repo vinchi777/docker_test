@@ -1,5 +1,5 @@
 class StudentsController < AdminController
-  before_action :set_student, only: [:show, :edit, :update, :destroy, :confirm]
+  before_action :set_student, only: [:show, :edit, :update, :destroy, :confirm, :grades_tests]
 
   def index
     q = params[:q]
@@ -73,6 +73,10 @@ class StudentsController < AdminController
         format.json { render json: {message: msg}, status: :unprocessable_entity }
       end
     end
+  end
+
+  def grades_tests
+    @page = 'grades_and_tests'
   end
 
   def confirm

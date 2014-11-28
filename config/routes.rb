@@ -49,6 +49,7 @@ Rails.application.routes.draw do
   resources :students do
     member do
       get 'payment'
+      get 'grades_tests'
       put 'confirm'
     end
     collection do
