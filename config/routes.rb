@@ -38,6 +38,8 @@ Rails.application.routes.draw do
     collection do
       get 'change_password'
       patch 'update_password'
+      post 'create_student_account'
+      post 'resend_confirmation'
     end
     member do
       patch 'update_user_password'
@@ -47,11 +49,11 @@ Rails.application.routes.draw do
   resources :students do
     member do
       get 'payment'
+      get 'grades_tests'
       put 'confirm'
     end
     collection do
       get 'enrollment_status'
-      get 'current_students'
     end
   end
 

@@ -47,6 +47,9 @@ class Student < Person
   field :package_type, type: String
   field :profile_pic, type: String
 
+  # Caching purposes
+  field :is_enrolling, type: Boolean, default: false
+
   has_many :invoices, class_name: 'StudentInvoice'
   has_many :enrollments, class_name: 'StudentEnrollment'
 
@@ -169,6 +172,8 @@ class Student < Person
     hash[:id] = id.to_s
     hash[:enrollment_status] = enrollment_status
     hash[:current_season] = current_season
+    hash[:user_id] = user.id.to_s if user.present?
+    hash[:user_id] = nil if user.nil?
     hash[:balance] = balance unless balance.nil?
     hash.as_json(nil)
   end
@@ -190,6 +195,7 @@ class Student < Person
       enrollment = StudentEnrollment.new(status: 1, student: self)
       enrollment.review_season = invoice.review_season
       enrollment.save
+      self.is_enrolling = true
     end
   end
 

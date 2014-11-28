@@ -1,0 +1,18 @@
+#resend.devise.shared
+  .panel.panel-yellow
+    header
+      h2 Resend Confirmation
+
+    = form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: {method: :post}) do |f|
+
+      - if resource.errors.any?
+        #error_explanation.error.panel
+          h2 = "#{pluralize(resource.errors.count, 'error')} found:"
+          ul
+            - resource.errors.full_messages.each do |message|
+              li = message
+
+      .form-group
+        = f.label :email, class: 'control-label col-lg-2'
+        .col-lg-7 = f.email_field :email, autofocus: true, class: 'form-control'
+        = f.submit 'Resend', class: 'btn btn-primary col-lg-3'

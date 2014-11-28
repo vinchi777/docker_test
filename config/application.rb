@@ -29,5 +29,9 @@ module Maxrevone
     # add vendor fonts for precompile
     config.assets.paths << Rails.root.join('vendor', 'assets', 'fonts')
     config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/
+
+    config.to_prepare do
+      Devise::Mailer.layout 'email' # email.haml or email.erb
+    end
   end
 end

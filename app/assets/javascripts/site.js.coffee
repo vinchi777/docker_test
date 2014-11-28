@@ -5,6 +5,8 @@
   $('.date-picker').datetimepicker
     pickTime: false
 
+  $('.datetime-picker').datetimepicker()
+
 $ ->
   bindDatePicker()
 
@@ -58,5 +60,4 @@ $(window).load ->
     delay: 'once',
     vFactor: 0.90,
   }
-
   window.sr = new scrollReveal(config);

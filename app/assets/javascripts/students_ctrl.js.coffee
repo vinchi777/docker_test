@@ -4,6 +4,7 @@
   $scope.q = $students.data 'q'
   $scope.maxSize = 5
   $scope.students = []
+  forUser = null
 
   params = {}
 
@@ -80,10 +81,26 @@
       $("#confirm-#{u.id}").modal 'hide'
       $('#error-delete').modal 'show'
 
+  $scope.setForUser = (s) ->
+    forUser = s
+
+  $scope.createUser = ->
+    params =
+      id: forUser.id
+    r = $http.post '/users/create_student_account.json', params
+    r.success (d) ->
+      $('#confirm-user-modal').modal 'hide'
+      forUser.user_id = d.id
+    r.error (e) ->
+      $('#confirm-user-modal').modal 'hide'
+      $('#error-user-modal').modal 'show'
+
+
   loadEnrollmentStatus()
   loadSeasonsAndStudents()
 
-  $scope.confirm = (s) -> confirmEnrollment($scope, $http, s)
+  $scope.confirm = (s) ->
+    confirmEnrollment($scope, $http, s)
 
   $scope.profile_pic_exists = (s) ->
     s.profile_pic != null
@@ -95,7 +112,8 @@
     r.success (d) ->
       $scope.student = d
 
-  $scope.confirm = (s) -> confirmEnrollment($scope, $http, s)
+  $scope.confirm = (s) ->
+    confirmEnrollment($scope, $http, s)
 ]
 
 @confirmEnrollment = ($scope, $http, s) ->

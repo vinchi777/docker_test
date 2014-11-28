@@ -21,6 +21,13 @@
   font-size: 14px;
   margin-top: 2px;
 }
+#users .users .user .confirm {
+  margin-top: 6px;
+}
+#users .users .user .confirm > span {
+  color: #eca02e;
+  font-weight: bold;
+}
 #users .users .user .actions {
   width: 147px;
   float: right;

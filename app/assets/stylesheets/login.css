@@ -2,7 +2,6 @@
     width: 387px;
     padding: 20px 20px 5px;
     margin: 110px auto;
-    height: 330px;
 }
 
 #login h1 {
@@ -17,5 +16,5 @@
 }
 
 #login .actions {
-    margin-top: 40px;
+    margin-top: 60px;
 }

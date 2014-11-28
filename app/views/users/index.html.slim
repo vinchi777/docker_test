@@ -7,19 +7,19 @@
       .search.col-md-8
         form.form-inline.row ng-submit='search()'
           .form-group.col-md-12
-            input.form-control type="search" placeholder="Search for emails" ng-model='q' name='q' value=params[:q]
+            input.form-control type="search" placeholder="Search for name and email of user" ng-model='q' name='q' value=params[:q]
 
       .col-md-2.col-md-offset-2
         .btn.btn-primary.pull-right data-target='#user-modal' ng-click='add()' data-toggle='modal' Add User
 
   = render 'form'
-  = render 'password_modal'
+  = render 'password_modal', modal_title: 'Change Password', modal_submit: 'Update Password'
 
   .count.listing ng-show='users.length != 0 && !loading'
     | Found
     b<>
       | {{totalItems}}
-    | users
+    | user(s)
   .users.listing.panel.panel-light.col-md-12
     .empty-list ng-show='users.length == 0 && q == null'
       p
@@ -43,6 +43,14 @@
             | Last login {{moment(user.current_sign_in_at)}}
           span ng-show='user.current_sign_in_at == null && user.last_sign_in_at != null'
             | Last login {{moment(user.last_sign_in_at)}}
+      .confirm.col-md-4
+        span ng-hide='user.confirmed'
+          | Unconfirmed
+          a.btn.btn-primary.btn-resend ng-click='resend(user)'
+            span ng-hide='user.sending' Resend Confirmation
+            span ng-show='user.sending'
+              | Sending
+              i.fa.fa-spinner.fa-spin<
       .actions
         .password
           a href='#' data-toggle='modal' data-target='#password-modal' ng-click='editPassword(user)'

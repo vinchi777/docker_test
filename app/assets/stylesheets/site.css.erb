@@ -96,12 +96,16 @@ a:focus {
   font-size: 15px;
   margin-bottom: 5px;
 }
-input.form-control.date-picker {
+input.form-control.date-picker,
+input.form-control.datetime-picker {
   background-image: url("<%= image_path 'calendar.svg'%>");
   background-repeat: no-repeat;
   background-position: 7px 6px;
   background-size: 17px;
   padding-left: 33px !important;
+}
+input.form-control.datetime-picker {
+  width: 200px;
 }
 img.profile {
   border-radius: 100%;

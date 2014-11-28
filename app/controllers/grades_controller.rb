@@ -1,4 +1,4 @@
-class GradesController < ApplicationController
+class GradesController < AdminController
   before_action :set_grade, only: [:show, :edit, :update, :destroy]
   before_action :set_page
 
@@ -7,17 +7,17 @@ class GradesController < ApplicationController
 
   def index
     @grades = Grade.all
-    respond_with(@grades)
+    respond_with @grades
   end
 
   def show
-    respond_with(@grade)
+    respond_with @grade
   end
 
   def new
     @grade = Grade.new
     @students = ReviewSeason.current.students
-    respond_with(@grade)
+    respond_with @grade
   end
 
   def edit
@@ -26,17 +26,17 @@ class GradesController < ApplicationController
   def create
     @grade = Grade.new(grade_params)
     @grade.save
-    respond_with(@grade)
+    respond_with @grade
   end
 
   def update
     @grade.update(grade_params)
-    respond_with(@grade)
+    respond_with @grade
   end
 
   def destroy
     @grade.destroy
-    respond_with(@grade)
+    respond_with @grade
   end
 
   def temp_show
@@ -49,13 +49,13 @@ class GradesController < ApplicationController
   end
 
   private
-    def set_grade
-      @grade = Grade.find(params[:id])
-    end
+  def set_grade
+    @grade = Grade.find(params[:id])
+  end
 
-    def grade_params
-      params.require(:grade).permit(:description, :date, :points)
-    end
+  def grade_params
+    params.require(:grade).permit(:description, :date, :points)
+  end
 
   def set_page
     @page = 'grades'

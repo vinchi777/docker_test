@@ -1,4 +1,10 @@
-@app = angular.module('maxRevApp', ['ui.bootstrap']);
+@app = angular.module('maxRevApp', ['ui.bootstrap', 'ngResource']);
+
+@app.factory "Test", ($resource) ->
+  $resource "/tests/:id.json"
+
+@app.factory 'Grade', ($resource)  ->
+  $resource "/grades/:id.json"
 
 $ ->
   $('ul.pagination li:first-child a').html '<i class="fa fa-chevron-circle-left"></i>'

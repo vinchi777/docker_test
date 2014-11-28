@@ -1,8 +1,4 @@
-h1 Editing test
+== title 'Edit Test'
 
-== render 'form'
-
-= link_to 'Show', @test
-'|
-= link_to 'Back', tests_path
-
+#test ng-controller='TestCtrl' ng-init=("load('#{params[:id]}')")
+  == render 'form'
