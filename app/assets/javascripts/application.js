@@ -23,6 +23,7 @@
 //= require countUp
 //= require math
 //= require auto_compute
+//= require svg-injector
 //= require_self
 //= require gmaps
 //= require_tree .

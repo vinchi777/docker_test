@@ -1,0 +1,167 @@
+#test {
+    form {
+        header {
+            .actions {
+                text-align: right;
+                * {
+                    vertical-align: top;
+                }
+
+                .btn {
+                    margin-top: 22px;
+                }
+            }
+            .top-nav {
+                text-align: center;
+                .timer {
+                    display: inline-block;
+                    margin-top: 7px;
+                    .img-wrapper {
+                        display: inline-block;
+                        padding: 2px 5px 0px 0px;
+                        .inject-me {
+                            width: 20px;
+                            circle {
+                                fill: #45b29d;
+                            }
+                            polyline {
+                                stroke: white;
+                            }
+                        }
+                        &.near circle {
+                            fill: #df5a49;
+                        }
+                    }
+                    b {
+                        vertical-align: top;
+                        color: #4c4c4c;
+                    }
+                }
+                .answer-action {
+                    b {
+                        display: inline-block;
+                        margin-top: 8px;
+                        margin-right: 5px
+                    }
+                    span {
+                        color: #bbb;
+                    }
+                }
+            }
+            .row {
+                margin-bottom: 10px;
+                img {
+                    width: 17px;
+                }
+
+                .timer {
+                    margin: 0px 5px 0px 10px;
+                    width: 50px;
+                    display: inline-block;
+                }
+
+                .radio {
+                    margin-top: 4px;
+                }
+            }
+            .bar {
+                clear: both;
+                .pull-left {
+                    color: #999999;
+                    margin-bottom: 3px;
+                }
+            }
+            hr {
+                clear: both;
+            }
+        }
+        .question {
+            display: table;
+            width: 100%;
+            margin-bottom: 20px;
+            .question-no {
+                width: 32px;
+                height: 38px;
+            }
+            .question-no-wrapper {
+                width: 40px;
+                display: table-cell;
+                vertical-align: top;
+                .question-no {
+                    display: inline-block;
+                    background: url("<%= image_path 'test-yellow.svg' %>") no-repeat;
+                    text-align: center;
+                    font-family: 'Signika Semibold';
+                    color: white;
+                    padding-top: 10px;
+                }
+            }
+            &.correct .question-no{
+                background-image: url("<%= image_path 'test-green.svg' %>");
+            }
+            &.wrong .question-no{
+                background-image: url("<%= image_path 'test-red.svg' %>");
+            }
+            .details {
+                padding-left: 10px;
+                border-left: solid 1px #e5e5e5;
+                display: table-cell;
+                textarea {
+                    padding: 3px 10px;
+                    min-width: 100%;
+                    max-width: 100%;
+                    min-height: 30px;
+                    height: 30px;
+                    margin-bottom: 8px;
+                }
+                .choice {
+                    display: table;
+                    width: 100%;
+                    .radio-wrapper {
+                        width: 20px;
+                        display: table-cell;
+                        vertical-align: top;
+                        input{
+                            margin-top: 5px;
+                            &.marginized {
+                                margin-top: 9px;
+                            }
+                        }
+                    }
+                    &:last-of-type textarea {
+                        margin-bottom: 0px;
+                    }
+                }
+            }
+            .add-rationale {
+                color: #999;
+                text-decoration: none;
+                margin-top: 8px;
+                display: inline-block;
+                .fa {
+                    margin-right: 5px;
+                }
+                &:hover {
+                    color: #333;
+                }
+            }
+            .rationale {
+                span {
+                    color: #999;
+                }
+                textarea {
+                    margin-bottom: 0px;
+                }
+            }
+        }
+        .new-question {
+            display: inline-block;
+            .injected-svg {
+                width: 32px;
+                &:hover .fill path {
+                    fill: #999;
+                }
+            }
+        }
+    }
+}

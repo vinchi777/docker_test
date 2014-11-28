@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
+  resources :tests do
+    collection do
+      get 'answer'
+    end
+  end
+
   resources :grades do
     collection do
       get 'temp_show'
+      get 'read_only'
     end
   end
 

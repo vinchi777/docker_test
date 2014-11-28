@@ -10,8 +10,8 @@
     hr
     .row
       .col-md-2.new-test-wrapper
-        a
-          .new-test
+        a.new-test href='#'
+          = image_tag 'new-test.svg', class: 'inject-me'
       .col-md-2
         .test
           .summary
@@ -51,8 +51,8 @@
     hr
     .row
       .col-md-2.new-grade-wrapper
-        a href='#'
-          .new-grade
+        a.new-grade href='#'
+          = image_tag 'new-grade.svg', class: 'inject-me'
       .col-md-2
         .grade
           .wrapper

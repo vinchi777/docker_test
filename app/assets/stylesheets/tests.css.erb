@@ -1,0 +1,154 @@
+#test form header .actions {
+  text-align: right;
+}
+#test form header .actions * {
+  vertical-align: top;
+}
+#test form header .actions .btn {
+  margin-top: 22px;
+}
+#test form header .top-nav {
+  text-align: center;
+}
+#test form header .top-nav .timer {
+  display: inline-block;
+  margin-top: 7px;
+}
+#test form header .top-nav .timer .img-wrapper {
+  display: inline-block;
+  padding: 2px 5px 0px 0px;
+}
+#test form header .top-nav .timer .img-wrapper .inject-me {
+  width: 20px;
+}
+#test form header .top-nav .timer .img-wrapper .inject-me circle {
+  fill: #45b29d;
+}
+#test form header .top-nav .timer .img-wrapper .inject-me polyline {
+  stroke: white;
+}
+#test form header .top-nav .timer .img-wrapper.near circle {
+  fill: #df5a49;
+}
+#test form header .top-nav .timer b {
+  vertical-align: top;
+  color: #4c4c4c;
+}
+#test form header .top-nav .answer-action b {
+  display: inline-block;
+  margin-top: 8px;
+  margin-right: 5px;
+}
+#test form header .top-nav .answer-action span {
+  color: #bbb;
+}
+#test form header .row {
+  margin-bottom: 10px;
+}
+#test form header .row img {
+  width: 17px;
+}
+#test form header .row .timer {
+  margin: 0px 5px 0px 10px;
+  width: 50px;
+  display: inline-block;
+}
+#test form header .row .radio {
+  margin-top: 4px;
+}
+#test form header .bar {
+  clear: both;
+}
+#test form header .bar .pull-left {
+  color: #999999;
+  margin-bottom: 3px;
+}
+#test form header hr {
+  clear: both;
+}
+#test form .question {
+  display: table;
+  width: 100%;
+  margin-bottom: 20px;
+}
+#test form .question .question-no {
+  width: 32px;
+  height: 38px;
+}
+#test form .question .question-no-wrapper {
+  width: 40px;
+  display: table-cell;
+  vertical-align: top;
+}
+#test form .question .question-no-wrapper .question-no {
+  display: inline-block;
+  background: url("<%= image_path 'test-yellow.svg' %>") no-repeat;
+  text-align: center;
+  font-family: 'Signika Semibold';
+  color: white;
+  padding-top: 10px;
+}
+#test form .question.correct .question-no {
+  background-image: url("<%= image_path 'test-green.svg' %>");
+}
+#test form .question.wrong .question-no {
+  background-image: url("<%= image_path 'test-red.svg' %>");
+}
+#test form .question .details {
+  padding-left: 10px;
+  border-left: solid 1px #e5e5e5;
+  display: table-cell;
+}
+#test form .question .details textarea {
+  padding: 3px 10px;
+  min-width: 100%;
+  max-width: 100%;
+  min-height: 30px;
+  height: 30px;
+  margin-bottom: 8px;
+}
+#test form .question .details .choice {
+  display: table;
+  width: 100%;
+}
+#test form .question .details .choice .radio-wrapper {
+  width: 20px;
+  display: table-cell;
+  vertical-align: top;
+}
+#test form .question .details .choice .radio-wrapper input {
+  margin-top: 5px;
+}
+#test form .question .details .choice .radio-wrapper input.marginized {
+  margin-top: 9px;
+}
+#test form .question .details .choice:last-of-type textarea {
+  margin-bottom: 0px;
+}
+#test form .question .add-rationale {
+  color: #999;
+  text-decoration: none;
+  margin-top: 8px;
+  display: inline-block;
+}
+#test form .question .add-rationale .fa {
+  margin-right: 5px;
+}
+#test form .question .add-rationale:hover {
+  color: #333;
+}
+#test form .question .rationale span {
+  color: #999;
+}
+#test form .question .rationale textarea {
+  margin-bottom: 0px;
+}
+#test form .new-question {
+  display: inline-block;
+}
+#test form .new-question .injected-svg {
+  width: 32px;
+}
+#test form .new-question .injected-svg:hover .fill path {
+  fill: #999;
+}
