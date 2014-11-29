@@ -1,12 +1,14 @@
 @app.controller 'StudentsModalCtrl', ['$scope', '$http', 'ReviewSeason',
   ($scope, $http, ReviewSeason) ->
     $scope.selected = []
+    $scope.students = []
 
     loadStudents = ->
       ReviewSeason.query (r) ->
         params =
           season: r[0].id
           per_page: 0
+          status: 2 # enrolled
         $scope.season = r[0]
         r = $http.get '/students.json', params: params
         r.success (d) ->
@@ -34,5 +36,7 @@
         $scope.selected = angular.copy $scope.students
         s.selected = true for s in $scope.students
 
+    $scope.commit = ->
+      $scope.$emit 'students_selected', $scope.selected
 
 ]

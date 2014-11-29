@@ -44,6 +44,18 @@ class TestsController < AdminController
     respond_with @test
   end
 
+  def publish
+    test = Test.find(params[:id])
+    if test
+      sheets = Student.find(params[:students]).map do |s|
+        test.create_answer_sheet_for(s).errors
+      end
+      render json: {errors: sheets}, status: :ok
+    else
+      render json: {status: :unprocessable_entity}
+    end
+  end
+
   def answer
     render 'show'
   end

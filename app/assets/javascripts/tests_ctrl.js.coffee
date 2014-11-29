@@ -53,15 +53,21 @@
         for v in vs
           $scope.errors.push "#{toHuman(k)} #{v}" unless "#{toHuman(k)} #{v}" in $scope.errors
 
-
-  $scope.publish = ->
-    r = $http.patch "tests/#{$scope.test.id}/publish.json"
-    $scope.publishing = true
-    r.success (d) ->
-      $scope.publishing = false
-
   $scope.selectStudents = ->
     $scope.$broadcast 'student_modal_show', null
+
+  $scope.$on 'students_selected', (e, a) ->
+    params =
+      students: (s.id for s in a)
+    $scope.publishing = true
+
+    r = $http.patch "/tests/#{$scope.test.id}/publish.json", params
+    r.success (d) ->
+      $scope.publishing = false
+      $('#students-select-modal').modal('hide')
+    r.error (e) ->
+      $scope.publishing = false
+      $('#students-select-modal').modal('hide')
 ]
 
 @app.controller 'TestsCtrl', ['$scope', '$http', 'Test', ($scope, $http, Test) ->

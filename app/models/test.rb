@@ -16,7 +16,11 @@ class Test
 
   embeds_many :questions
   accepts_nested_attributes_for :questions
-  validates_associated :questions, message: 'are invalid'
+  validates_associated :questions
+
+  def create_answer_sheet_for(student)
+    AnswerSheet.create(student: student, test: self)
+  end
 end
 
 class Question
