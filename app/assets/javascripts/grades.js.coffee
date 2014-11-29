@@ -87,3 +87,18 @@ arc_style = (deg) ->
   transform: skewX(#{-deg}def);
   content: '';
   """
+
+# Start of ember codes
+window.Grades = Ember.Application.create
+  rootElement: '.grades-container'
+
+Grades.IndexController = Ember.Controller.extend
+  firstname: 'James',
+  lastname: 'Limpiado',
+  actions:
+    changeName: ->
+      this.set('firstname','Wew')
+
+Grades.IndexRoute = Ember.Route.extend
+  renderTemplate: ->
+    this.render 'grades'

@@ -14,6 +14,8 @@ GEM
       activesupport (= 4.1.7)
       builder (~> 3.1)
       erubis (~> 2.7.0)
+    active_model_serializers (0.9.0)
+      activemodel (>= 3.2)
     activemodel (4.1.7)
       activesupport (= 4.1.7)
       builder (~> 3.1)
@@ -28,6 +30,13 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
     arel (5.0.1.20140414130214)
+    barber (0.5.0)
+      ember-source
+      execjs
+      handlebars-source (>= 1.0.0.rc.4)
+    barber-emblem (0.1.1)
+      barber (>= 0.4.1)
+      emblem-source
     bcrypt (3.1.9)
     bcrypt (3.1.9-x86-mingw32)
     best_in_place (3.0.0)
@@ -90,6 +99,23 @@ GEM
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
     docile (1.1.5)
+    ember-data-source (1.0.0.beta.12)
+      ember-source
+    ember-rails (0.15.0)
+      active_model_serializers
+      barber (>= 0.4.1)
+      ember-data-source (>= 1.0.0.beta.5)
+      ember-source (>= 1.1.0)
+      execjs (>= 1.2)
+      handlebars-source (> 1.0.0)
+      jquery-rails (>= 1.0.17)
+      railties (>= 3.1)
+    ember-source (1.8.0)
+      handlebars-source (~> 1.0)
+    emblem-rails (0.2.1)
+      barber-emblem (~> 0.1.1)
+      ember-rails (>= 0.14.0)
+    emblem-source (0.3.17)
     erubis (2.7.0)
     eventmachine (1.0.3)
     eventmachine (1.0.3-x86-mingw32)
@@ -100,6 +126,7 @@ GEM
       multi_json (~> 1.3)
     gherkin (2.12.2-x86-mingw32)
       multi_json (~> 1.3)
+    handlebars-source (1.3.0)
     hike (1.2.3)
     i18n (0.6.11)
     jbuilder (2.2.4)
@@ -264,6 +291,9 @@ DEPENDENCIES
   delayed_job_mongoid
   delayed_job_web
   devise (~> 3.4.0)
+  ember-rails
+  ember-source (= 1.8.0)
+  emblem-rails
   jbuilder (~> 2.0)
   jquery-rails
   jquery-turbolinks
