@@ -25,8 +25,9 @@
 //= require math
 //= require auto_compute
 //= require svg-injector
-//= require handlebars-v1.3.0
 //= require ember-1.8.1
+//= require emblem
+//= require handlebars-v1.3.0
 //= require_self
 //= require gmaps
 //= require_tree .
