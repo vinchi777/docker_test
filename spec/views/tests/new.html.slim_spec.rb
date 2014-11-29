@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "tests/new", :type => :view do
   before(:each) do
-    assign(:test, Test.new(
+    assign(:sheet, Test.new(
       :description => "MyString",
       :timer => 1,
       :random => false

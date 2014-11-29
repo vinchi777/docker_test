@@ -1,8 +1,11 @@
 class AnswerSheet
   include Mongoid::Document
 
+  field :started, type: Boolean
   field :start_time, type: Time
   embeds_many :answers
+
+  field :submitted, type: Boolean
 
   belongs_to :test
   validates_presence_of :test
@@ -10,7 +13,7 @@ class AnswerSheet
   belongs_to :student
   validates_presence_of :student
 
-  validate :one_instance
+  validate :one_instance, on: :create
 
   def one_instance
     if AnswerSheet.where(test: test, student: student).exists?
@@ -22,8 +25,11 @@ end
 class Answer
   include Mongoid::Document
 
-  field :question_index, type: Integer
-  field :answer_index, type: Integer
+  field :index, type: Integer
 
-  embedded_in :answer_key
+  def question
+    answer_sheet.test.questions.find(id)
+  end
+
+  embedded_in :answer_sheet
 end

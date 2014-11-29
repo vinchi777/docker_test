@@ -1,0 +1,49 @@
+== title 'Answer Test'
+#test ng-controller='StudentAnswerSheetCtrl' ng-init=("load('#{params[:id]}')")
+  form
+    header
+      .top-nav
+        .title.pull-left
+          h5
+            | {{sheet.test.description}}
+        .timer ng-show='sheet.test.timer > 0 && !sheet.submitted'
+          .img-wrapper
+            = image_tag 'timer-off.svg', class: 'inject-me'
+          b
+            | {{remaining()}}
+        .answer-action.pull-right
+          .summary.hidden
+            b 80%
+            span 120|150
+          input.btn.btn-primary type='Submit' value='Submit' ng-click='submit()' ng-hide='sheet.submitted'
+      .bar
+        .pull-left
+          span ng-show='saving' Saving...
+        .pull-right
+          b>
+            | {{sheet.answers.length}}
+          | item(s)
+      hr
+
+    .question ng-repeat='(i, a) in sheet.answers'
+      .question-no-wrapper
+        .question-no
+          | {{i + 1}}
+      .details
+        | {{a.text}}
+        .choice
+          .radio-wrapper: input type='radio' name='1' ng-model='a.index' value='0' ng-click='update()' ng-disabled='sheet.submitted'
+          .description: span
+            | {{a.choice1}}
+        .choice
+          .radio-wrapper: input type='radio' name='1' ng-model='a.index' value='1' ng-click='update()' ng-disabled='sheet.submitted'
+          .description: span
+            | {{a.choice2}}
+        .choice
+          .radio-wrapper: input type='radio' name='1' ng-model='a.index' value='2' ng-click='update()' ng-disabled='sheet.submitted'
+          .description: span
+            | {{a.choice3}}
+        .choice
+          .radio-wrapper: input type='radio' name='1' ng-model='a.index' value='3' ng-click='update()' ng-disabled='sheet.submitted'
+          .description: span
+            | {{a.choice4}}

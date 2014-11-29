@@ -8,6 +8,12 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :answer_sheets do
+    member do
+      patch 'submit'
+    end
+  end
+
   resources :grades do
     collection do
       get 'temp_show'
