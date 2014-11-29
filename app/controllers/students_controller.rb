@@ -7,16 +7,23 @@ class StudentsController < AdminController
     season = params[:season]
     status = params[:status]
 
+    # per_page = 0 means no pagination
+    if params[:per_page]
+      per_page = params[:per_page]
+    else
+      per_page = 10
+    end
+
     respond_to do |format|
       format.html { render :index }
       format.json do
         if q.nil? || q.blank?
           students = Student.filter(season, status)
-          @students = students.desc('is_enrolling').asc('lastName', 'firstName').paginate(page: page, per_page: 10)
+          @students = students.desc('is_enrolling').asc('lastName', 'firstName').paginate(page: page, per_page: per_page)
           size = students.length
         else
           r = Student.filter(season, status).or({lastName: /#{q}/i}, {firstName: /#{q}/i}, {address: /#{q}/i}, {lastAttended: /#{q}/i}).desc('is_enrolling').asc('lastName', 'firstName')
-          @students = r.paginate(page: page, per_page: 10)
+          @students = r.paginate(page: page, per_page: per_page)
           size = r.length
         end
         render json: {students: @students, totalSize: size}

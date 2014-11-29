@@ -59,6 +59,9 @@
     $scope.publishing = true
     r.success (d) ->
       $scope.publishing = false
+
+  $scope.selectStudents = ->
+    $scope.$broadcast 'student_modal_show', null
 ]
 
 @app.controller 'TestsCtrl', ['$scope', '$http', 'Test', ($scope, $http, Test) ->

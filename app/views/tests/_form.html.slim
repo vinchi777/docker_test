@@ -7,6 +7,7 @@ form
     .row
       .col-md-3
         label.control-label Description
+
         input.form-control.required type='text' ng-model='test.description'
       .col-md-2
         label.control-label Date
@@ -17,7 +18,7 @@ form
       .col-md-5.actions
         button.btn.btn-default ng-click='save()' ng-show='test.id == null' Save
         button.btn.btn-default ng-click='save()' ng-hide='test.id == null' Update
-        button.btn.btn-primary type='Submit' ng-click='publish()'
+        button.btn.btn-primary type='Submit' data-target='#students-select-modal' data-toggle='modal' ng-click='selectStudents()'
           span ng-hide='publishing' Publish
           span ng-show='publishing' Publishing...
     .row
@@ -76,3 +77,5 @@ form
 
   a.new-question href='' ng-click='addQuestion(test)'
     = image_tag 'new-question.svg', class: 'inject-me'
+
+= render 'grades/students_select'
