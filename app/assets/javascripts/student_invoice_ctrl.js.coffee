@@ -1,17 +1,3 @@
-# Extracted from Morph https://github.com/cmoncrief/morph
-@capFirst = (input) ->
-  "#{input[0].toUpperCase()}#{input.slice 1}"
-
-# Extracted from Morph https://github.com/cmoncrief/morph
-@toHuman = (input, cap = true) =>
-  output = input.replace /[-._]/g, ' '
-  output = output.replace /([A-Z\d])([A-Z][a-z\d])/g, '$1 $2'
-  output = output.replace /([a-z])([A-Z])/g, '$1 $2'
-  output = output.replace /(\s([a-zA-Z])\s)/g, (str, p1) -> "#{p1.toLowerCase()}"
-  output = output.replace /([A-Z])([a-z])/g, (str, p1, p2) -> "#{p1.toLowerCase()}#{p2}"
-  output = if cap then capFirst output else lowerFirst output
-  return output
-
 @app.controller 'StudentPaymentCtrl', ['$scope', '$http', ($scope, $http) ->
   studentId = $('.invoices').data 'student-id'
 
@@ -83,11 +69,10 @@
     $scope.total(i) - totalTransaction - i.transaction.amount
 
   $scope.remove = (i) ->
-    id = i._id.$oid
     params =
       student_id: studentId
 
-    r = $http.delete "/student_invoices/#{id}.json", params: params
+    r = $http.delete "/student_invoices/#{i.id}.json", params: params
     r.success (d) ->
       confirm = $("#confirm-#{id}")
       confirm.on 'hidden.bs.modal', ->
@@ -103,12 +88,11 @@
       console.log 'Error removing invoice.'
 
   $scope.saveTransaction = (i) ->
-    id = i._id.$oid
     data =
       student_id: studentId
       transaction: i.transaction
 
-    r = $http.post "/student_invoices/#{id}/transaction.json", data
+    r = $http.post "/student_invoices/#{i.id}/transaction.json", data
 
     r.success (d)->
       i.transactions = d.transactions
@@ -123,16 +107,14 @@
           i.transactionErrors.push "#{toHuman(k)} #{v}"
 
   $scope.removeTransaction = (i, t) ->
-    id = i._id.$oid
     data =
       transaction:
-        tr_id: t._id.$oid
+        tr_id: t.id
       student_id: studentId
 
-    r = $http.post "/student_invoices/#{id}/transaction/destroy.json", data
-
+    r = $http.post "/student_invoices/#{i.id}/transaction/destroy.json", data
     r.success (d) ->
-      confirm = $("#confirm-tr-#{t._id.$oid}")
+      confirm = $("#confirm-tr-#{t.id}")
       confirm.on 'hidden.bs.modal', ->
         $scope.$apply ->
           idx = i.transactions.indexOf t
