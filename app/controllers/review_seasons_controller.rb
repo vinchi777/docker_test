@@ -3,6 +3,7 @@ class ReviewSeasonsController < AdminController
   before_action :set_page, only: [:show, :edit, :index, :new]
 
   layout '_admin'
+  respond_to :html, :json
 
   def set_page
     @page = 'review-seasons'
@@ -10,25 +11,19 @@ class ReviewSeasonsController < AdminController
 
   def index
     @review_seasons = ReviewSeason.all
-    respond_to do |format|
-      format.html { render :index }
-      format.json { render json: @review_seasons }
-    end
+    respond_with @review_seasons
   end
 
   def list
-    @review_seasons = ReviewSeason.desc('season_start').map { |r| {id: r.id.to_s, season: r.season} }
-    respond_to do |format|
-      format.json { render json: @review_seasons }
-    end
+    @review_seasons = ReviewSeason.desc('season_start')
+    respond_with @review_seasons
   end
 
   def create
     @review_season = ReviewSeason.new(review_season_params)
-
-    respond_to do |format|
+    respond_with do |format|
       if @review_season.save
-        format.json { render json: @review_season }
+        format.json { render :show }
       else
         format.json { render json: @review_season.errors, status: :unprocessable_entity }
       end
@@ -36,9 +31,9 @@ class ReviewSeasonsController < AdminController
   end
 
   def update
-    respond_to do |format|
+    respond_with do |format|
       if  @review_season.update(review_season_params)
-        format.json { render json: {status: :ok} }
+        format.json { render :show }
       else
         format.json { render json: @review_season.errors, status: :unprocessable_entity }
       end

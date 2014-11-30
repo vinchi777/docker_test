@@ -27,7 +27,7 @@
               div: a href='#' 150 students
               div: a href='#' 35 enrollees
               .actions
-                a href='#' data-toggle='modal' data-target=('#confirm-{{r._id.$oid}}')
+                a href='#' data-toggle='modal' data-target=('#confirm-{{r.id}}')
                   i.fa.fa-trash
                 a href=''
                   i.fa.fa-pencil-square-o data-target='#review-season-modal' ng-click='editReviewSeason(r)' data-toggle='modal'
@@ -83,7 +83,7 @@
                   .value
                     | {{r.reservation|currency:''}}
 
-      .delete-confirm.modal.fade role='dialog' id=('confirm-{{r._id.$oid}}') tabindex='-1' aria-hidden='true'
+      .delete-confirm.modal.fade role='dialog' id=('confirm-{{r.id}}') tabindex='-1' aria-hidden='true'
         .modal-dialog
           .modal-content
             .modal-header

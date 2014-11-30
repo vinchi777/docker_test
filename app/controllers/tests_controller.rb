@@ -20,9 +20,12 @@ class TestsController < AdminController
 
   def create
     @test = Test.new(test_params)
-    @test.save
     respond_with @test do |format|
-      format.json { render :show }
+      if @test.save
+        format.json { render :show }
+      else
+        format.json { render json: @test.errors, status: :unprocessable_entity }
+      end
     end
   end
 

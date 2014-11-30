@@ -2,16 +2,13 @@ class StudentInvoicesController < AdminController
   before_action :set_student_payment, only: [:show, :update, :destroy, :create_transaction, :destroy_transaction]
 
   layout 'students'
+  respond_to :html, :json
 
   def index
     @page = 'payment'
     @student = Student.find(params[:id])
-    @payment = StudentInvoice.new
-
-    respond_to do |format|
-      format.html
-      format.json { render json: @student.invoices }
-    end
+    @invoices = @student.invoices
+    respond_with @invoices
   end
 
   def create
@@ -26,7 +23,7 @@ class StudentInvoicesController < AdminController
 
     respond_to do |format|
       if @student_invoice.save
-        format.json { render json: @student_invoice }
+        format.json { render }
       else
         format.json { render json: @student_invoice.errors, status: :unprocessable_entity }
       end
@@ -35,7 +32,7 @@ class StudentInvoicesController < AdminController
 
   def update
     @student_invoice.update(student_invoice_params)
-    respond_with(@student_invoice)
+    respond_with @student_invoice
   end
 
   def destroy

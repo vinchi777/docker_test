@@ -33,10 +33,10 @@
         .amount
           | {{t.amount | currency:''}}
       .action
-        a href='#' data-toggle='modal' data-target=('#confirm-tr-{{t._id.$oid}}')
+        a href='#' data-toggle='modal' data-target=('#confirm-tr-{{t.id}}')
           i.fa.fa-trash
 
-      .delete-confirm-transaction.modal.fade role='dialog' id=('confirm-tr-{{t._id.$oid}}') tabindex='-1' aria-hidden='true'
+      .delete-confirm-transaction.modal.fade role='dialog' id=('confirm-tr-{{t.id}}') tabindex='-1' aria-hidden='true'
         .modal-dialog
           .modal-content
             .modal-header
@@ -59,14 +59,14 @@
 
   .panel-footer
     .trash
-      a href='#' data-toggle='modal' data-target=('#confirm-{{i._id.$oid}}')
+      a href='#' data-toggle='modal' data-target=('#confirm-{{i.id}}')
         i.fa.fa-trash
 
     .text Balance
     .amount: b
       | {{balance(i) |currency:'Php '}}
 
-  .delete-confirm.modal.fade role='dialog' id=('confirm-{{i._id.$oid}}') tabindex='-1' aria-hidden='true'
+  .delete-confirm.modal.fade role='dialog' id=('confirm-{{i.id}}') tabindex='-1' aria-hidden='true'
     .modal-dialog
       .modal-content
         .modal-header
