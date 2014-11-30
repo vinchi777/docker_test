@@ -41,6 +41,7 @@ class ReviewSeason
 
   has_many :student_invoices, dependent: :restrict
   has_many :enrollments, class_name: 'StudentEnrollment', dependent: :restrict
+  has_many :grades, dependent: :destroy
 
   def date_precedence
 

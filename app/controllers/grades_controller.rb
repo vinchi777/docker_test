@@ -3,7 +3,7 @@ class GradesController < AdminController
   before_action :set_page
 
   layout 'admin'
-  respond_to :html
+  respond_to :html, :json
 
   def index
     @grades = Grade.all
@@ -44,8 +44,9 @@ class GradesController < AdminController
     render 'show'
   end
 
-  def read_only
-    @students = ReviewSeason.current.students
+  def grades_per_season
+    @grades = Grade.all.group_by {|g| g.review_season}
+    respond_with @grades
   end
 
   private
