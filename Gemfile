@@ -29,6 +29,10 @@ gem 'delayed_job_web'
 
 gem 'thin'
 
+gem 'emblem-rails'
+gem 'ember-rails'
+gem 'ember-source', '1.8.0'
+
 group :development do
   gem 'better_errors', '~> 1.1.0'
   gem 'binding_of_caller'

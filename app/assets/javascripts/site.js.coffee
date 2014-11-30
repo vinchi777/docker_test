@@ -41,8 +41,9 @@ $ ->
     $('#countup:in-viewport(-100)').run(animateCountup)
   )
 
-  mySVGsToInject = document.querySelectorAll('img.inject-me');
-  SVGInjector(mySVGsToInject);
+  $('body').on 'DOMNodeInserted', ->
+    mySVGsToInject = this.querySelectorAll('img.inject-me:not(.injected-svg)')
+    SVGInjector(mySVGsToInject);
 
   countDone = false
   animateCountup = ->
@@ -60,5 +61,4 @@ $(window).load ->
     delay: 'once',
     vFactor: 0.90,
   }
-
   window.sr = new scrollReveal(config);

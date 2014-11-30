@@ -99,7 +99,8 @@
   loadEnrollmentStatus()
   loadSeasonsAndStudents()
 
-  $scope.confirm = (s) -> confirmEnrollment($scope, $http, s)
+  $scope.confirm = (s) ->
+    confirmEnrollment($scope, $http, s)
 
   $scope.profile_pic_exists = (s) ->
     s.profile_pic != null
@@ -111,7 +112,8 @@
     r.success (d) ->
       $scope.student = d
 
-  $scope.confirm = (s) -> confirmEnrollment($scope, $http, s)
+  $scope.confirm = (s) ->
+    confirmEnrollment($scope, $http, s)
 ]
 
 @confirmEnrollment = ($scope, $http, s) ->

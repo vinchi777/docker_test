@@ -21,6 +21,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # within the machine from a port on the host machine. In the example below,
   # accessing "localhost:8080" will access port 80 on the guest machine.
   config.vm.network "forwarded_port", guest: 3000, host: 3000
+  config.vm.network "forwarded_port", guest: 31337, host: 31337
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
@@ -45,17 +46,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # backing providers for Vagrant. These expose provider-specific options.
   # Example for VirtualBox:
   #
-  config.vm.provider "virtualbox" do |vb|
-    # Don't boot with headless mode
-    # vb.gui = true
-
-    # Use VBoxManage to customize the VM. For example to change memory:
-    vb.customize ["modifyvm", :id, "--memory", "1024"]
-    vb.customize ["modifyvm", :id, "--cpus", 4]
-
-    # Use NFS for shared folders for better performance
-    config.vm.synced_folder '.', '/vagrant', nfs: true
-  end
+  # config.vm.provider "virtualbox" do |vb|
+  #   # Don't boot with headless mode
+  #   vb.gui = true
+  #
+  #   # Use VBoxManage to customize the VM. For example to change memory:
+  #   vb.customize ["modifyvm", :id, "--memory", "1024"]
+  # end
   #
   # View the documentation for the provider you're using for more
   # information on available options.
@@ -83,7 +80,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   #
   # config.vm.provision "puppet" do |puppet|
   #   puppet.manifests_path = "manifests"
-  #   puppet.manifest_file  = "site.pp"
+  #   puppet.manifest_file  = "default.pp"
   # end
 
   # Enable provisioning with chef solo, specifying a cookbooks path, roles

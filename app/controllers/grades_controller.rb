@@ -44,8 +44,9 @@ class GradesController < AdminController
     render 'show'
   end
 
-  def read_only
-    @students = ReviewSeason.current.students
+  def grades_per_season
+    @grades = Grade.all.group_by {|g| g.review_season}
+    respond_with @grades
   end
 
   private

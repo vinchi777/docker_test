@@ -3,10 +3,10 @@ require 'rails_helper'
 RSpec.describe "tests/new", :type => :view do
   before(:each) do
     assign(:sheet, Test.new(
-      :description => "MyString",
-      :timer => 1,
-      :random => false
-    ))
+                     :description => "MyString",
+                     :timer => 1,
+                     :random => false
+                 ))
   end
 
   it "renders new test form" do

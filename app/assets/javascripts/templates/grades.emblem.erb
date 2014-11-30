@@ -1,0 +1,38 @@
+each
+  h5 = description
+  hr
+  .grades.row
+    .col-md-2.new-grade-wrapper
+      a.new-grade href='#'
+        <%= image_tag 'new-grade.svg', class: 'inject-me' %>
+    each grade in grades
+      .col-md-2
+        .grade
+          .wrapper
+            .summary
+              .arc.arc1
+              .arc.arc2
+              .arc.arc3
+              .arc.arc4
+              input.percent type='hidden' value='90'
+              .points
+                .point-wrapper
+                  h2.inline = grade.score
+                  span.pr %
+                span
+                  = grade.points
+                  | points
+              .status
+                span.test-indicator
+                  if grade.test
+                    <%= image_tag 'test-on.svg' %>
+                  else
+                    <%= image_tag 'test-off.svg' %>
+                span.timer-indicator
+                  if grade.timer
+                    <%= image_tag 'timer-on.svg' %>
+                  else
+                    <%= image_tag 'timer-off.svg' %>
+          .description
+            h6 = grade.description
+            span = grade.date

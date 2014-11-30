@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap.min
+//= require coverflow
 //= require angular
 //= require angular-resource
 //= require ui-bootstrap-tpls-0.11.2
@@ -23,6 +24,8 @@
 //= require svg-injector
 //= require gmaps
 //= require site
+//= require handlebars
+//= require ember
 //= require_self
 
 window.has_google_map = function () {

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 = title 'Courses'
 = stylesheet_link_tag 'courses'
 = javascript_include_tag 'courses'
@@ -36,3 +37,41 @@
       = render 'program_coming_soon'
     .tab-pane[id="midwifery"]
       = render 'program_coming_soon'
+=======
+== title 'Courses'
+
+#program.container
+  header
+    p The most updated; The most comprehensive & The most complete
+    h1 Review Program
+
+  .courses-tab
+    ul.nav.nav-pills.courses role="tablist"
+      li.active: a[href="#nursing" role="tab" data-toggle="tab"]
+        =image_tag 'nurse.svg'
+        div Nursing
+      li: a[href="#crim" role="tab" data-toggle="tab"]
+        =image_tag 'police.svg'
+        div Criminology
+      li: a[href="#let" role="tab" data-toggle="tab"]
+        =image_tag 'professor.svg'
+        div LET
+      li: a[href="#civil" role="tab" data-toggle="tab"]
+        =image_tag 'employee.svg'
+        div Civil Service
+      li: a[href="#midwifery" role="tab" data-toggle="tab"]
+        =image_tag 'midwife.svg'
+        div Midwifery
+
+  .tab-content
+    .tab-pane.active[id="nursing"]
+      = render 'program_outline'
+    .tab-pane[id="crim"]
+      = render 'program_coming_soon'
+    .tab-pane[id="let"]
+      = render 'program_coming_soon'
+    .tab-pane[id="civil"]
+      = render 'program_coming_soon'
+    .tab-pane[id="midwifery"]
+      = render 'program_coming_soon'
+>>>>>>> fa7ae307a9d31552dda327420aead7d99d03bbb6

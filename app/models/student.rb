@@ -53,6 +53,7 @@ class Student < Person
   has_many :invoices, class_name: 'StudentInvoice'
   has_many :enrollments, class_name: 'StudentEnrollment'
   has_many :answer_sheets
+  has_many :student_grades, dependent: :destroy
 
   scope :filter, ->(season, status) do
     if season.nil? || season == '0' # No season filter
