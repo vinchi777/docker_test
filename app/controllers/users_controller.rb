@@ -1,6 +1,8 @@
 class UsersController < AdminController
   before_action :set_user, except: [:index, :new, :create, :update_password, :change_password, :resend_confirmation, :create_student_account]
 
+  layout 'users'
+
   def index
     @page = 'users'
     q = params[:q]

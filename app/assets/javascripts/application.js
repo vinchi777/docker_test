@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap.min
-//= require coverflow
 //= require angular
 //= require angular-resource
 //= require ui-bootstrap-tpls-0.11.2
@@ -21,13 +20,10 @@
 //= require bootstrap-datetimepicker
 //= require scrollReveal
 //= require isInViewport
-//= require countUp
-//= require math
-//= require auto_compute
 //= require svg-injector
-//= require_self
 //= require gmaps
-//= require_tree .
+//= require site
+//= require_self
 
 window.has_google_map = function () {
   return typeof window.google === 'object' && window.google.maps

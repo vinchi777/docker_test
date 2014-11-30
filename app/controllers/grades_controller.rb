@@ -2,7 +2,7 @@ class GradesController < AdminController
   before_action :set_grade, only: [:show, :edit, :update, :destroy]
   before_action :set_page
 
-  layout 'admin'
+  layout 'grades'
   respond_to :html
 
   def index

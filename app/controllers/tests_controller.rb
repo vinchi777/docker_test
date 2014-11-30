@@ -1,6 +1,7 @@
 class TestsController < AdminController
   before_action :set_test, only: [:show, :edit, :update, :destroy]
 
+  layout 'tests'
   respond_to :html, :json
 
   def index

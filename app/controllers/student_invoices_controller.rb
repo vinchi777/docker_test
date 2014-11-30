@@ -1,6 +1,8 @@
 class StudentInvoicesController < AdminController
   before_action :set_student_payment, only: [:show, :update, :destroy, :create_transaction, :destroy_transaction]
 
+  layout 'students'
+
   def index
     @page = 'payment'
     @student = Student.find(params[:id])

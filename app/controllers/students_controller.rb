@@ -1,6 +1,8 @@
 class StudentsController < AdminController
   before_action :set_student, only: [:show, :edit, :update, :destroy, :confirm, :grades_tests]
 
+  layout 'students'
+
   def index
     q = params[:q]
     page = params[:page]

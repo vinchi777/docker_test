@@ -2,6 +2,7 @@ class AnswerSheetsController < AdminController
   before_action :set_sheet, only: [:show, :edit, :update, :destroy, :submit]
 
   respond_to :html, :json
+  layout 'students', only: [:show]
 
   def index
     @sheets = AnswerSheet.where(student: params[:student])

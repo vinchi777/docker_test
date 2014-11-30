@@ -2,6 +2,8 @@ class ReviewSeasonsController < AdminController
   before_action :set_review_season, only: [:show, :edit, :update, :destroy]
   before_action :set_page, only: [:show, :edit, :index, :new]
 
+  layout '_admin'
+
   def set_page
     @page = 'review-seasons'
   end
