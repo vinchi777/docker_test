@@ -16,7 +16,7 @@ class GradesController < AdminController
 
   def new
     @grade = Grade.new
-    ReviewSeason.current.enrollments.each do |e|
+    ReviewSeason.current.enrolled.each do |e|
       @grade.student_grades << StudentGrade.new(student_enrollment: e)
     end
     respond_with @grade
