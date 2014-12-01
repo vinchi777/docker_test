@@ -6,7 +6,7 @@ class GradesController < AdminController
   respond_to :html, :json
 
   def index
-    @grades = Grade.all.group_by {|g| g.review_season}
+    @grades = Grade.all.sort { |a, b| b.date <=> a.date }.group_by { |g| g.review_season }
     respond_with @grades
   end
 
