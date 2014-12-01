@@ -201,6 +201,14 @@
   padding-left: 33px;
   text-align: left;
 }
+#batch-grades {
+  /*&.new {
+        td:last-of-type {
+            width: 50px;
+            min-width: 50px;
+        }
+    }*/
+}
 #batch-grades .actions {
   text-align: right;
 }
@@ -274,6 +282,15 @@
 #batch-grades table thead .edit-students:hover {
   color: #999;
 }
+#batch-grades table tr td,
+#batch-grades table tr th {
+  min-width: 180px;
+  border-top: none;
+}
+#batch-grades table tr td:first-of-type,
+#batch-grades table tr th:first-of-type {
+  min-width: 350px;
+}
 #batch-grades table tbody tr:nth-of-type(odd) {
   background-color: #f2f2f2;
 }
@@ -291,15 +308,10 @@
   background-color: #b25757;
   color: #ffffff;
 }
-#batch-grades table td {
-  min-width: 180px;
-  border-top: none;
-}
 #batch-grades table .student {
   border-top: none;
   font-weight: 300;
   text-align: left;
-  width: 350px;
   min-width: 350px;
 }
 #batch-grades table .student .profile-pic {
@@ -313,10 +325,6 @@
   width: 65px;
   margin: 0 auto;
   margin-top: 4px;
-}
-#batch-grades.new td:last-of-type {
-  width: 50px;
-  min-width: 50px;
 }
 #batch-grades.old .total-score {
   width: 55%;

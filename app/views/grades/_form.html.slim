@@ -35,7 +35,7 @@
         - @grade.student_grades.each do |e|
           - student = e.student
           = f.fields_for :student_grades, e do |f|
-            tr.ac-scope
+            tr data-query=student.to_s
               th.student
                 = f.hidden_field :id unless @grade.new_record?
                 = f.hidden_field :student_enrollment_id, value: e.student_enrollment.id
@@ -47,7 +47,7 @@
               td
                 = f.text_field :score, class: 'form-control'
               td
-                span.pr.ac-target data-ac-expr='$.grade / @.total-score * 100' 0
+                span.pr 0
                 | %
                 /= render 'students_select'
 
