@@ -32,7 +32,6 @@ Feature: Add student payment
       | 8,500        |
 
   Scenario: Remove an invoice
-    Given there are existing students
     And there's a student invoice
     When I remove the invoice
     Then I should not see the invoice
