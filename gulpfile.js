@@ -6,7 +6,7 @@ var changed = require('gulp-changed');
 var tap = require('gulp-tap');
 var gutil = require('gulp-util')
 
-var less_files = 'app/assets/stylesheets/less/*.less*'
+var less_files = 'our/assets/stylesheets/less/*.less*'
 var dest = 'app/assets/stylesheets'
 
 function do_less(f_path){
