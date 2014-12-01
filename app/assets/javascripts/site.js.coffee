@@ -37,14 +37,28 @@ $ ->
   else
     $('#map').hide()
 
+  $('body').on 'DOMNodeInserted', ->
+    #svg-injector
+    mySVGsToInject = this.querySelectorAll('img.inject-me:not(.injected-svg)')
+    SVGInjector(mySVGsToInject)
+
+    #datepicker
+    $(this).find('.date-picker:not(.picked)').each ->
+      $(this).addClass 'picked'
+      $(this).datetimepicker
+        pickTime: false
+
+    #momentjs
+    $(this).find('.moment:not(.momented)').each ->
+      $(this).addClass('momented')
+      date = $(this).text()
+      m = moment(date).format('MMMM D');
+      $(this).text(m)
+
+  #count animation in homepage
   $(window).scroll(->
     $('#countup:in-viewport(-100)').run(animateCountup)
   )
-
-  $('body').on 'DOMNodeInserted', ->
-    mySVGsToInject = this.querySelectorAll('img.inject-me:not(.injected-svg)')
-    SVGInjector(mySVGsToInject);
-
   countDone = false
   animateCountup = ->
     unless countDone

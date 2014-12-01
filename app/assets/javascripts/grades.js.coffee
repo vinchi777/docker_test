@@ -88,37 +88,3 @@ arc_style = (deg) ->
   content: '';
   """
 
-# Start of ember codes
-window.Grades = Ember.Application.create
-  rootElement: '.grades-container'
-
-Grades.IndexController = Ember.ArrayController.extend
-  actions:
-    changeName: ->
-      this.set('firstname','Wew')
-
-Grades.IndexRoute = Ember.Route.extend
-  model: ->
-    Ember.$.getJSON('/grades/grades_per_season.json')
-  ,renderTemplate: ->
-    this.render 'grades'
-
-###grades = [
-  {
-    description: 'April 2013',
-    grades: [
-      {score: 100, points: 100, description: 'NLT Mockup', date: 'December 9', timer: true, test:true},
-      {score: 200, points: 500, description: 'Mock Exam', date: 'August 15', timer: false, test:false},
-    ]
-  },
-  {
-    description: 'April 2012',
-    grades: [
-      {score: 100, points: 100, description: 'NLT Mockup', date: 'December 9', timer: true, test:true}
-    ]
-  },
-]###
-###console.log '------------'
-grades =
-console.log grades###
-

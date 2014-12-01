@@ -55,7 +55,7 @@ class GradesController < AdminController
   end
 
   def grade_params
-    params.require(:grade).permit(:description, :date, :points)
+    params.require(:grade).permit(:description, :date, :points, :review_season_id)
   end
 
   def set_page
