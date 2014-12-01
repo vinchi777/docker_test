@@ -28,13 +28,24 @@ class GradesController < AdminController
   def create
     @grade = Grade.new(grade_params)
     @grade.review_season = ReviewSeason.current
-    @grade.save
-    redirect_to grades_path
+
+    respond_to do |format|
+      if @grade.save
+        format.html { redirect_to grades_path }
+      else
+        format.html { render :new }
+      end
+    end
   end
 
   def update
-    @grade.update(grade_params)
-    redirect_to grades_path
+    respond_to do |format|
+      if @grade.update(grade_params)
+        format.html { redirect_to grades_path }
+      else
+        format.html { render :edit }
+      end
+    end
   end
 
   def destroy

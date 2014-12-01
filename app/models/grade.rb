@@ -9,6 +9,10 @@ class Grade
   has_many :student_grades, dependent: :destroy
   accepts_nested_attributes_for :student_grades
 
+  validates_presence_of :description
+  validates_presence_of :date
+  validates_presence_of :points
+
   before_save :calculate_average
 
   def test?
