@@ -4,4 +4,8 @@ class StudentGrade
 
   belongs_to :grade
   belongs_to :student_enrollment
+
+  def student
+    student_enrollment.student
+  end
 end

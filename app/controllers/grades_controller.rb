@@ -6,7 +6,7 @@ class GradesController < AdminController
   respond_to :html, :json
 
   def index
-    @grades = Grade.all
+    @grades = Grade.all.group_by {|g| g.review_season}
     respond_with @grades
   end
 
@@ -16,7 +16,9 @@ class GradesController < AdminController
 
   def new
     @grade = Grade.new
-    @students = ReviewSeason.current.students
+    ReviewSeason.current.enrollments.each do |e|
+      @grade.student_grades << StudentGrade.new(student_enrollment: e)
+    end
     respond_with @grade
   end
 
@@ -25,13 +27,14 @@ class GradesController < AdminController
 
   def create
     @grade = Grade.new(grade_params)
+    @grade.review_season = ReviewSeason.current
     @grade.save
-    respond_with @grade
+    redirect_to grades_path
   end
 
   def update
     @grade.update(grade_params)
-    respond_with @grade
+    redirect_to grades_path
   end
 
   def destroy
@@ -45,7 +48,7 @@ class GradesController < AdminController
   end
 
   def grades_per_season
-    @grades = Grade.all.group_by {|g| g.review_season}
+    @grades = Grade.all.group_by { |g| g.review_season }
     respond_with @grades
   end
 
@@ -55,7 +58,7 @@ class GradesController < AdminController
   end
 
   def grade_params
-    params.require(:grade).permit(:description, :date, :points, :review_season_id)
+    params.require(:grade).permit(:description, :date, :points, :review_season_id, student_grades_attributes: [:id, :score, :student_enrollment_id])
   end
 
   def set_page
