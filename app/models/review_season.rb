@@ -93,4 +93,8 @@ class ReviewSeason
   def students
     enrollments.map { |e| e.student }
   end
+
+  def enrolled
+    enrollments.where(status_cd: 2)
+  end
 end
