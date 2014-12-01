@@ -3,7 +3,7 @@ class GradesController < AdminController
   before_action :set_page
 
   layout 'grades'
-  respond_to :html
+  respond_to :html, :json
 
   def index
     @grades = Grade.all

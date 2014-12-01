@@ -49,13 +49,6 @@ Grades.ApplicationRoute = Ember.Route.extend
   ,renderTemplate: ->
     this.render 'grades',
   , setupController: (controller, model) ->
-    Ember.$.getJSON('/review_seasons.json').then (data) ->
-      _hash = []
-      for _, value of data
-        for v in value
-          _hash.push({
-            name: v.season,
-            id: v._id.$oid
-          })
-      controller.set('review_seasons',_hash)
+    Ember.$.getJSON('/review_seasons/list.json').then (data) ->
+      controller.set('review_seasons',data)
     controller.set('model',model)
