@@ -1,6 +1,9 @@
 @app.controller 'StudentAnswerSheetsCtrl', ['$scope', '$http', ($scope, $http) ->
   $scope.ongoing = []
   $scope.answerSheets = []
+  $scope.sheet = {
+    remaining: 0
+  }
 
   $scope.load = (id) ->
     r = $http.get '/answer_sheets.json', params:
@@ -21,15 +24,23 @@
     r.success (d) ->
       $scope.saving = false
       $scope.sheet = d
+
     r.error (e) ->
       $scope.saving = false
 
-  $scope.remaining = ->
-    if $scope.sheet && $scope.sheet.test.timer > 0
-      r = $scope.sheet.test.timer - ($scope.sheet.elapsed / 60)
-      m = parseInt r
-      s = parseInt((r - m) * 60)
-      "#{m}:#{s}"
+  $scope.$watch (-> $scope.sheet), (v) ->
+    if v
+      d = new Date(new Date().getTime() + v.remaining * 1000)
+      $('#remaining').countdown d, (e) ->
+        $scope.$apply ->
+          $scope.remaining = e.offset.hours * 360 + e.offset.minutes * 60 + e.offset.seconds
+
+        if e.offset.hours > 0
+          $(this).html e.strftime('%H hr %M min %S sec')
+        else if e.offset.minutes > 0
+          $(this).html e.strftime('%M min %S sec')
+        else
+          $(this).html e.strftime('%S sec')
 
   $scope.submit = ->
     r = $http.patch "/answer_sheets/#{$scope.sheet.id}/submit.json", answer_sheet: $scope.sheet
