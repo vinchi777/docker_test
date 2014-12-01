@@ -100,6 +100,8 @@
         }
     }
     .grade {
+        text-decoration: none;
+        color: #4C4C4C;
         text-align: center;
         margin-bottom: 15px;
         .wrapper {
@@ -292,6 +294,13 @@
                 color: #999;
             }
         }
+        tr td, tr th {
+            min-width: 180px;
+            border-top: none;
+            &:first-of-type {
+                min-width: 350px;
+            }
+        }
         tbody tr {
             &:nth-of-type(odd) {
                 background-color: #f2f2f2;
@@ -311,20 +320,18 @@
                 color: #ffffff;
             }
         }
-        td {
-            min-width: 180px;
-            border-top: none;
-        }
         .student {
             border-top: none;
             font-weight: 300;
             text-align: left;
-            width: 350px;
             min-width: 350px;
 
-            .profile {
-                width: 40px;
-                height: 40px;
+            .profile-pic {
+                margin-right: 10px;
+                .profile {
+                    width: 40px;
+                    height: 40px;
+                }
             }
         }
         .form-control {
@@ -333,12 +340,12 @@
             margin-top: 4px;
         }
     }
-    &.new {
+    /*&.new {
         td:last-of-type {
             width: 50px;
             min-width: 50px;
         }
-    }
+    }*/
     &.old {
         .total-score {
             width: 55%;

@@ -34,6 +34,10 @@ en:
         yearGrad: 'College Year'
         hsYear: 'High School Year'
         elemYear: 'Elementary Year'
+      grade:
+        description: 'Description'
+        date: 'Date'
+        points: 'Total Points'
     errors:
       models:
         test:

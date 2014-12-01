@@ -1,9 +1,26 @@
-= form_tag
+= form_for @grade do |f|
   header.row
     .col-md-3
-      h2 New Batch of Grades
-    .col-md-9.actions
+      label.control-label Description
+      = f.text_field :description, class: 'form-control required'
+    .col-md-2
+      label.control-label Date
+      = f.text_field :date, class: 'form-control required date-picker', 'data-date-format' => 'MMM DD, YYYY'
+    .col-md-2
+      label.control-label Total Points
+      = f.text_field :points, class: 'form-control required total-score'
+    .col-md-5.actions
       button.btn.btn-primary type='Submit' Save
+  hr
+
+  - if @grade.errors.size > 0
+    p.error.panel
+      - @grade.errors.each do |key, val|
+        => key.to_s.humanize
+        = val
+        | .
+        br
+
   .table-wrapper
     table.table
       thead
@@ -12,77 +29,114 @@
             i.fa.fa-pencil
           .search-wrapper
             input.form-control.search-students type='text' placeholder='Search students'
-        td.active
-          a.edit-grade href=''
-            h6 100 points
-            | Mockup Exam for NLE
-        td
-          a.edit-grade href=''
-            h6 250 points
-            | Semi Finals
-        td
-          a.edit-grade href=''
-            h6 300 points
-            | Finals
-        td.add-grade-wrapper
-          a.add-grade href='#'
-            i.fa.fa-plus-circle
+        th Grades
+        th Percentage
       tbody.student-list
-        - @students.each do |student|
-          tr
-            th.student
-              span.profile-pic
-                = render 'students/profile_pic', student: student
-              span
-                b = student.lastName
-                = student.trailing_name
-            td
-              input.form-control type='text'
-            td
-              input.form-control type='text'
-            td
-              input.form-control type='text'
-            td
-        tr
-          th.student
-            span.profile-pic
-              = image_tag 'testimonials/agaton.jpg', class: 'profile'
-            span
-              b Agaton
-              | , Maricris Julianne
-          td
-            input.form-control type='text'
-          td
-            input.form-control type='text'
-          td
-            input.form-control type='text'
-          td
-        tr
-          th.student
-            span.profile-pic
-              = image_tag 'testimonials/pastelero.jpg', class: 'profile'
-            span
-              b Pastelero
-              | , Angeline San Isidro
-          td
-            input.form-control type='text'
-          td
-            input.form-control type='text'
-          td
-            input.form-control type='text'
-          td
-        tr
-          th.student
-            span.profile-pic
-              = image_tag 'testimonials/ticao.jpg', class: 'profile'
-            span
-              b Ticao
-              | , Josefine Mariluna
-          td
-            input.form-control type='text'
-          td
-            input.form-control type='text'
-          td
-            input.form-control type='text'
-          td
-= render 'students_select'
+        - @grade.student_grades.each do |e|
+          - student = e.student
+          = f.fields_for :student_grades, e do |f|
+            tr data-query=student.to_s
+              th.student
+                = f.hidden_field :id unless @grade.new_record?
+                = f.hidden_field :student_enrollment_id, value: e.student_enrollment.id
+                span.profile-pic
+                  = render 'students/profile_pic', student: student
+                span
+                  b = student.lastName
+                  = student.trailing_name
+              td
+                = f.text_field :score, class: 'form-control'
+              td
+                span.pr 0
+                | %
+                /= render 'students_select'
+
+                /= render 'grade_modal'
+                /= form_tag
+                /  header.row
+                /    .col-md-3
+                /      h2 New Batch of Grades
+                /    .col-md-9.actions
+                /      button.btn.btn-primary type='Submit' Save
+                /  .table-wrapper
+                /    table.table
+                /      thead
+                /        td.table-actions
+                /          a.edit-students href='#'
+                /            i.fa.fa-pencil
+                /          .search-wrapper
+                /            input.form-control.search-students type='text' placeholder='Search students'
+                /        td.active
+                /          a.edit-grade href=''
+                /            h6 100 points
+                /            | Mockup Exam for NLE
+                /        td
+                /          a.edit-grade href=''
+                /            h6 250 points
+                /            | Semi Finals
+                /        td
+                /          a.edit-grade href=''
+                /            h6 300 points
+                /            | Finals
+                /        td.add-grade-wrapper
+                /          a.add-grade href='#'
+                /            i.fa.fa-plus-circle
+                /      tbody.student-list
+                /        - @students.each do |student|
+                /          tr
+                /            th.student
+                /              span.profile-pic
+                /                = render 'students/profile_pic', student: student
+                /              span
+                /                b = student.lastName
+                /                = student.trailing_name
+                /            td
+                /              input.form-control type='text'
+                /            td
+                /              input.form-control type='text'
+                /            td
+                /              input.form-control type='text'
+                /            td
+                /        tr
+                /          th.student
+                /            span.profile-pic
+                /              = image_tag 'testimonials/agaton.jpg', class: 'profile'
+                /            span
+                /              b Agaton
+                /              | , Maricris Julianne
+                /          td
+                /            input.form-control type='text'
+                /          td
+                /            input.form-control type='text'
+                /          td
+                /            input.form-control type='text'
+                /          td
+                /        tr
+                /          th.student
+                /            span.profile-pic
+                /              = image_tag 'testimonials/pastelero.jpg', class: 'profile'
+                /            span
+                /              b Pastelero
+                /              | , Angeline San Isidro
+                /          td
+                /            input.form-control type='text'
+                /          td
+                /            input.form-control type='text'
+                /          td
+                /            input.form-control type='text'
+                /          td
+                /        tr
+                /          th.student
+                /            span.profile-pic
+                /              = image_tag 'testimonials/ticao.jpg', class: 'profile'
+                /            span
+                /              b Ticao
+                /              | , Josefine Mariluna
+                /          td
+                /            input.form-control type='text'
+                /          td
+                /            input.form-control type='text'
+                /          td
+                /            input.form-control type='text'
+                /          td
+                /= render 'students_select'

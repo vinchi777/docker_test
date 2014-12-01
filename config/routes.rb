@@ -61,7 +61,7 @@ Rails.application.routes.draw do
       put 'confirm'
     end
     collection do
-      get 'enrollment_status'
+      get :enrollment_status, :current_enrollments
     end
   end
 

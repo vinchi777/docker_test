@@ -44,9 +44,9 @@ $ ->
     percent = parseInt(self.find('.percent').val())
   # adjust_gauge(1, percent, self)
 
-  $('.new-grade').click ->
+  ###$('.new-grade').click ->
     $('#grade-modal').modal('show')
-    false
+    false###
 
   $('#batch-grades .edit-students').click ->
     $('#students-select-modal').modal('show')
