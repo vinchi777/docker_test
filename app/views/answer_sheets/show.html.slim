@@ -10,10 +10,9 @@
           h5
             | {{sheet.test.description}}
         .timer ng-show='sheet.test.timer > 0 && !sheet.submitted'
-          .img-wrapper
+          .img-wrapper ng-class='{near: near}'
             = image_tag 'timer-off.svg', class: 'inject-me'
-          b
-            | {{remaining()}}
+          b#remaining
         .answer-action.pull-right
           .summary.hidden
             b 80%

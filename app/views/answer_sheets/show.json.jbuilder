@@ -1,5 +1,5 @@
 json.id @sheet.id.to_s
-json.elapsed Time.now - @sheet.start_time
+json.remaining @sheet.start_time + @sheet.test.timer * 60 - Time.now
 json.submitted @sheet.submitted
 json.answers @sheet.answers do |a|
   json.id a.id.to_s

@@ -22,6 +22,7 @@
 //= require scrollReveal
 //= require isInViewport
 //= require svg-injector
+//= require jquery.countdown
 //= require_self
 //= require gmaps
 //= require site
