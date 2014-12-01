@@ -20,7 +20,7 @@ Given /^I have logged in as admin$/ do
   sleep 0.5
 end
 
-Given /^There are existing students$/ do
+Given /^there are existing students$/ do
   Student.create!(
       firstName: 'John',
       lastName: 'dela Cruz',
@@ -49,4 +49,5 @@ Given /^There are existing students$/ do
       elem: 'Luntad Elem. School',
       elemYear: 2002
   )
+  @student = Student.first
 end

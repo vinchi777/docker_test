@@ -1,4 +1,4 @@
-.invoice.panel.col-lg-6 ng-repeat='i in invoices'
+.invoice.panel.col-lg-6 ng-repeat='i in invoices' id='invoice-{{i.id}}'
   .panel-title
     .row
       .package.col-lg-6
@@ -22,7 +22,7 @@
       .or OR No.
       .method Method
       .amount Amount
-    .data-container ng-repeat='t in i.transactions'
+    .transaction.data-container ng-repeat='t in i.transactions'
       .data
         .date
           | {{t.date}}
@@ -33,7 +33,7 @@
         .amount
           | {{t.amount | currency:''}}
       .action
-        a href='#' data-toggle='modal' data-target=('#confirm-tr-{{t.id}}')
+        a.remove-transaction href='#' data-toggle='modal' data-target=('#confirm-tr-{{t.id}}')
           i.fa.fa-trash
 
       .delete-confirm-transaction.modal.fade role='dialog' id=('confirm-tr-{{t.id}}') tabindex='-1' aria-hidden='true'
@@ -48,18 +48,22 @@
               button.btn.btn-primary data-dismiss='modal' No
 
     .add
-      form ng-submit='saveTransaction(i)' ng-show='i.showTransaction'
-        .date: input.form-control.date-picker.required ng-model='i.transaction.date' data-date-format='YYYY-MM-DD'
-        .or: input.form-control.required ng-model='i.transaction.or_no'
-        .method: input.form-control.required ng-model='i.transaction.method'
-        .amount: input.peso.form-control.required ng-model='i.transaction.amount'
-        input.hide type='submit'
+      form.new-transaction ng-submit='saveTransaction(i)' ng-show='i.showTransaction'
+        .date
+          input.form-control.date-picker.required name='transaction[date]' ng-model='i.transaction.date' data-date-format='YYYY-MM-DD'
+        .or
+          input.form-control.required name='transaction[or_no]' ng-model='i.transaction.or_no'
+        .method
+          input.form-control.required name='transaction[method]' ng-model='i.transaction.method'
+        .amount
+          input.peso.form-control.required name='transaction[amount]' ng-model='i.transaction.amount'
+        input.hide.save-transaction type='submit'
       .action  ng-show='i.showTransaction': a href='#' ng-click='hideTransaction(i)': i.fa.fa-trash
-      a href='#' ng-hide='i.showTransaction' ng-click='showTransaction(i)' Add Transaction
+      a class='add-transaction' href='#' ng-hide='i.showTransaction' ng-click='showTransaction(i)' Add Transaction
 
   .panel-footer
     .trash
-      a href='#' data-toggle='modal' data-target=('#confirm-{{i.id}}')
+      a id='remove-{{i.id}}' href='#' data-toggle='modal' data-target=('#confirm-{{i.id}}')
         i.fa.fa-trash
 
     .text Balance
