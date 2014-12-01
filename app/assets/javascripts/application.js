@@ -22,11 +22,11 @@
 //= require scrollReveal
 //= require isInViewport
 //= require svg-injector
+//= require_self
 //= require gmaps
 //= require site
 //= require handlebars
 //= require ember
-//= require_self
 
 window.has_google_map = function () {
   return typeof window.google === 'object' && window.google.maps
