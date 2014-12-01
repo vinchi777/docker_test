@@ -54,6 +54,7 @@ class EnrollmentController < ApplicationController
       @student.update_attributes student_params
     end
   end
+
   def set_season
     @season = ReviewSeason.current
   end
