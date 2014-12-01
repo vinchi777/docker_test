@@ -44,16 +44,21 @@ $ ->
 
     #datepicker
     $(this).find('.date-picker:not(.picked)').each ->
-      $(this).addClass 'picked'
-      $(this).datetimepicker
-        pickTime: false
+      self = $(this)
+      unless self.hasClass('picked')
+        self.addClass 'picked'
+        self.datetimepicker
+          pickTime: false
 
     #momentjs
     $(this).find('.moment:not(.momented)').each ->
-      $(this).addClass('momented')
-      date = $(this).text()
-      m = moment(date).format('MMMM D');
-      $(this).text(m)
+      self = $(this)
+      unless self.hasClass('momented')
+        self.addClass('momented')
+        date = self.text()
+        console.log date
+        m = moment(date).format('MMMM D');
+        self.text(m)
 
   #count animation in homepage
   $(window).scroll(->
