@@ -14,6 +14,8 @@
 ]
 
 @app.controller 'StudentAnswerSheetCtrl', ['$scope', '$http', 'AnswerSheet', ($scope, $http, AnswerSheet) ->
+  audioPlayed = false
+
   $scope.load = (id) ->
     AnswerSheet.get id: id, (s) ->
       $scope.sheet = s
@@ -33,7 +35,10 @@
       d = new Date(new Date().getTime() + v.remaining * 1000)
       $('#remaining').countdown d, (e) ->
         $scope.$apply ->
-          $scope.remaining = e.offset.hours * 360 + e.offset.minutes * 60 + e.offset.seconds
+          $scope.near = (e.offset.hours * 360 + e.offset.minutes * 60 + e.offset.seconds) <= 300
+          if $scope.near && !audioPlayed
+            audioPlayed = true
+            new Audio('/assets/countdown.mp3').play()
 
         if e.offset.hours > 0
           $(this).html e.strftime('%H hr %M min %S sec')
