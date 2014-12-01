@@ -52,7 +52,7 @@ Feature: Online enrollment for students
       | email     | john@gmail.com | text   |
     When I press the "Next" button
     And I press the "Next" button
-    Then I should see 8 errors
+    Then I should see 5 errors
 
 
   Scenario Outline: Enrollment via pricing page
