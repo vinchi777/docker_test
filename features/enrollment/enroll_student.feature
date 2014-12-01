@@ -15,12 +15,12 @@ Feature: Online enrollment for students
       | email     | john@gmail.com | text   |
     And I press the "Next" button
     And I fill up these student information
-      | lastAttended | Cebu Institute of Medicine  | text |
-      | yearGrad     | 2014                        | text |
-      | hs           | Bethel International School | text |
-      | hsYear       | 2010                        | text |
-      | elem         | Bethel International School | text |
-      | elemYear     | 2000                        | text |
+      | lastAttended | Cebu Institute of Medicine  | text   |
+      | yearGrad     | 2014                        | select |
+      | hs           | Bethel International School | text   |
+      | hsYear       | 2010                        | select |
+      | elem         | Bethel International School | text   |
+      | elemYear     | 2000                        | select |
     And I press the "Next" button
     And I press the "Next" button
     And I press the "I Agree" button
@@ -61,11 +61,11 @@ Feature: Online enrollment for students
     Then I should skip the enrollment package step
     And should be enrolled for the "<Package>" package
 
-    Examples:
-      | Package          |
-      | Final Coaching   |
-      | Standard Package |
-      | Double Review    |
+  Examples:
+    | Package          |
+    | Final Coaching   |
+    | Standard Package |
+    | Double Review    |
 
   Scenario: Invalid package type in url
     Given I skip the enrollment package step with an invalid package type
