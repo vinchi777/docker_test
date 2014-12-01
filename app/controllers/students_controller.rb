@@ -1,6 +1,6 @@
 class StudentsController < AdminController
   before_action :set_student, only: [:show, :edit, :update, :destroy, :confirm, :grades_tests]
-  layout 'students'
+  layout 'tests'
 
   respond_to :json, only: [:enrollment_status]
 

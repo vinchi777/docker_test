@@ -28,6 +28,7 @@
 //= require site
 //= require handlebars
 //= require ember
+//= require ember-data
 
 window.has_google_map = function () {
   return typeof window.google === 'object' && window.google.maps
