@@ -42,9 +42,9 @@ When /^I fill up these invoice information$/ do |table|
   table.raw.each do |name, value, type|
     case type
       when 'text'
-        fill_in name, with: value
+        fill_in "invoice[#{name}]", with: value
       when 'select'
-        select value, from: name
+        select value, from: "invoice[#{name}]"
     end
   end
 end
