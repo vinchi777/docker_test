@@ -1,0 +1,64 @@
+doctype html
+html lang='en' ng-app='maxRevApp'
+  head
+    title
+      | MaxRevOne |
+      =< yield(:title).length > 0 ? yield(:title) : 'Online'
+    meta charset='utf-8'
+    meta http-equiv='X-UA-Compatible' content='IE=edge'
+    meta name='viewport' content='width=device-width, initial-scale=1'
+    == stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    == javascript_include_tag 'application', 'data-turbolinks-track' => true
+    == stylesheet_link_tag 'admin'
+    == javascript_include_tag 'admin'
+    == csrf_meta_tags
+    == render 'layouts/metas'
+  body
+    == render 'layouts/header'
+
+    .admin-container
+      .admin-nav.col-md-2.col-sm-1
+        ul.admin-nav.nav.nav-pills.nav-stacked.col-sm-12
+          li.students class=('active' if current_page? controller: 'students')
+            = link_to students_path
+              .ico = image_tag 'students-ico.svg'
+              .title.name.visible-lg.visible-md Students
+            - unless @student.nil? || @student.new_record?
+              ul.student.nav.nav-pills.nav-stacked
+                li.student
+                  .pic
+                    = image_tag 'user.png', class: 'profile' if @student.profile_pic == nil
+                    = image_tag @student.profile_pic, class: 'profile' unless @student.profile_pic == nil
+                  .name.visible-lg.visible-md
+                    div = @student.lastName
+                    div = @student.firstName
+                li.profile.attr class=('active' if @page == 'show')
+                  = link_to @student
+                    .ico = image_tag 'profile-ico.svg'
+                    .title.visible-lg.visible-md Profile
+                li.payment.attr class=('active' if @page == 'payment')
+                  = link_to student_invoices_path(id: @student.id)
+                    .ico = image_tag 'payment-ico.svg'
+                    .title.visible-lg.visible-md Payment
+                li.grades.attr class=('active' if @page == 'grades_and_tests')
+                  = link_to grades_tests_student_path(@student)
+                    .ico = image_tag 'grades-test.svg'
+                    .title.visible-lg.visible-md Grades and Tests
+
+          li.review-seasons class=('active' if @page =='review-seasons')
+            = link_to review_seasons_path
+              .ico = image_tag 'review-season-ico.svg'
+              .title.name.visible-lg.visible-md Review Seasons
+          li.user class=('active' if @page == 'users')
+            = link_to users_path
+              .ico = image_tag 'users-ico.svg'
+              .title.visible-lg.visible-md Users
+          li.user class=('active' if @page == 'grades')
+            = link_to grades_path
+              .ico = image_tag 'grades-test.svg'
+              .title.visible-lg.visible-md Grades and Tests
+
+      .admin-content.col-md-10.col-md-offset-2.col-sm-11.col-sm-offset-1
+        == yield
+
+    == render 'layouts/admin_footer'

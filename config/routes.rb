@@ -3,6 +3,15 @@ Rails.application.routes.draw do
     collection do
       get 'answer'
     end
+    member do
+      patch 'publish'
+    end
+  end
+
+  resources :answer_sheets do
+    member do
+      patch 'submit'
+    end
   end
 
   resources :grades do

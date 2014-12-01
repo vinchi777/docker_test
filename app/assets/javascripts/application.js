@@ -21,15 +21,13 @@
 //= require bootstrap-datetimepicker
 //= require scrollReveal
 //= require isInViewport
-//= require countUp
-//= require math
-//= require auto_compute
 //= require svg-injector
+//= require_self
+//= require gmaps
+//= require site
 //= require handlebars
 //= require ember
 //= require ember-data
-//= require_self
-//= require_tree .
 
 window.has_google_map = function () {
   return typeof window.google === 'object' && window.google.maps

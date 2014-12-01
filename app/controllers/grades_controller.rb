@@ -2,8 +2,8 @@ class GradesController < AdminController
   before_action :set_grade, only: [:show, :edit, :update, :destroy]
   before_action :set_page
 
-  layout 'admin'
-  respond_to :html, :json
+  layout 'grades'
+  respond_to :html
 
   def index
     @grades = Grade.all

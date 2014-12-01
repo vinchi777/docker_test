@@ -1,8 +1,8 @@
 class TestsController < AdminController
   before_action :set_test, only: [:show, :edit, :update, :destroy]
 
+  layout 'tests'
   respond_to :html, :json
-  layout 'admin'
 
   def index
     @tests = Test.all
@@ -18,14 +18,14 @@ class TestsController < AdminController
     respond_with @test
   end
 
-  def edit
-  end
-
   def create
     @test = Test.new(test_params)
-    @test.save
     respond_with @test do |format|
-      format.json { render :show }
+      if @test.save
+        format.json { render :show }
+      else
+        format.json { render json: @test.errors, status: :unprocessable_entity }
+      end
     end
   end
 
@@ -44,6 +44,18 @@ class TestsController < AdminController
     respond_with @test
   end
 
+  def publish
+    test = Test.find(params[:id])
+    if test
+      Student.find(params[:students]).map do |s|
+        test.create_answer_sheet_for(s)
+      end
+      render json: {status: :ok}
+    else
+      render json: {status: :unprocessable_entity}
+    end
+  end
+
   def answer
     render 'show'
   end
@@ -54,6 +66,6 @@ class TestsController < AdminController
   end
 
   def test_params
-    params.require(:test).permit(:description, :date, :deadline, :timer, :random, questions: [{_id: :$oid}, :text, :choice1, :choice2, :choice3, :choice4, :answer, :ratio])
+    params.require(:test).permit(:description, :date, :deadline, :timer, :random, questions: [:id, :text, :choice1, :choice2, :choice3, :choice4, :answer, :ratio])
   end
 end

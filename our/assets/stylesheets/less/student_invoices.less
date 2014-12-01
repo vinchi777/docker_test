@@ -1,0 +1,262 @@
+#student-payment {
+
+  .invoices {
+    margin-top: 19px;
+  }
+
+  .invoice {
+    padding-left: 0;
+    padding-right: 0;
+    margin-right: 15px;
+    width: 47%;
+    background: #F9F9F9;
+
+    &:hover .trash a {
+      display: block;
+    }
+
+    .trash a {
+      display: none;
+    }
+
+    i.fa {
+      color: #A5A5A5;
+      font-size: 20px;
+    }
+
+    .panel-title {
+      padding: 9px 15px;
+    }
+
+    .panel-title .season,
+    .panel-title .description {
+      font-family: 'Signika Light';
+    }
+
+    .panel-body {
+      padding: 15px 7px 15px 15px;
+    }
+
+    .panel-body * {
+      float: left;
+    }
+
+    .panel-body {
+      .error {
+        width: 100%;
+      }
+
+      .error ul {
+        padding-left: 20px;
+      }
+
+      .error ul * {
+        float: none;
+      }
+
+      .head {
+        font-size: 15px;
+        color: #7F7F7F;
+      }
+
+      .head,
+      .data {
+        width: 95%;
+      }
+
+      .data-container {
+        width: 100%;
+      }
+
+      .date {
+        width: 28%;
+        padding-left: 10px;
+      }
+
+      .or {
+        width: 25%;
+      }
+
+      .method {
+        width: 23%;
+      }
+
+      .amount {
+        width: 24%;
+        padding-right: 10px;
+      }
+      .amount,
+      .amount * {
+        text-align: right;
+      }
+
+      .data-container:nth-child(odd) .data {
+        background: rgba(242, 227, 148, 0.50);
+        border-radius: 4px;
+      }
+
+      .action a {
+        display: none;
+      }
+
+      .data-container:hover .action a {
+        display: block;
+      }
+      .action {
+        padding-top: 3px;
+        padding-left: 8px;
+      }
+
+      .delete-confirm-transaction * {
+        float: none;
+      }
+
+      .add {
+        width: 100%;
+        margin-top: 5px;
+      }
+      .add a {
+        font-size: 14px;
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+        margin-top: 2px;
+      }
+
+      .add div {
+        text-align: center;
+      }
+
+      .action i.fa {
+        font-size: 17px;
+      }
+
+      .add form {
+
+        width: 95%;
+        > div {
+          padding-right: 8px;
+        }
+        input {
+          height: 25px;
+          float: left;
+          font-size: 14px;
+        }
+        .date {
+          padding-left: 0;
+        }
+        .date input {
+          background-position: 6px 4px;
+          background-size: 15px;
+          padding-left: 28px !important;
+        }
+        .amount {
+          padding-right: 0;
+        }
+
+        .amount input {
+          background-position: 6px 5px;
+          background-size: 22px auto;
+          width: 100%;
+        }
+      }
+    }
+
+    .panel-footer {
+      padding: 10px 25px 0 17px;
+      height: 40px;
+
+      > div {
+        float: left;
+      }
+
+      .trash {
+        width: 40%;
+        height: 20px;
+      }
+      .text {
+        width: 30%;
+        text-align: right;
+      }
+      .amount {
+        width: 30%;
+        text-align: right;
+        font-size: 18px;
+      }
+    }
+  }
+
+  #invoice-modal {
+    .modal-dialog {
+      width: 527px;
+    }
+    .modal-header {
+      border: none;
+      padding: 20px 24px 0 24px;
+    }
+    .modal-header h4 {
+      font-size: 20px;
+    }
+    .modal-body {
+      padding: 16px 24px 16px 24px;
+    }
+    .modal-body .error ul {
+      padding-left: 20px;
+    }
+    .form-group {
+      margin-bottom: 10px;
+    }
+    label {
+      float: left;
+      margin-top: 4px;
+      margin-right: 10px;
+      font-weight: normal;
+    }
+    input.form-control {
+      height: 30px;
+    }
+    .package input {
+      width: 404px;
+    }
+    .description input {
+      width: 383px;
+    }
+    .season select {
+      width: 120px;
+    }
+    .amount.form-group {
+      width: 270px;
+      float: left;
+    }
+    .amount input {
+      width: 180px;
+    }
+    .discount input {
+      width: 130px;
+    }
+    .modal-footer {
+      background: #588C7E;
+      padding: 16px 24px;
+    }
+    .modal-footer .total {
+      width: 320px;
+      float: left;
+      text-align: left;
+    }
+    .modal-footer .total .value {
+      font-size: 19px;
+      color: #ffffff;
+      height: 24px;
+    }
+    .modal-footer .total .text {
+      font-size: 13px;
+    }
+    .modal-footer .actions {
+      padding-top: 3px;
+    }
+    .modal-footer .actions .btn {
+      color: #334D5C;
+      background: white;
+    }
+  }
+}

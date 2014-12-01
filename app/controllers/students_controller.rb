@@ -1,5 +1,8 @@
 class StudentsController < AdminController
   before_action :set_student, only: [:show, :edit, :update, :destroy, :confirm, :grades_tests]
+  layout 'students'
+
+  respond_to :json, only: [:enrollment_status]
 
   def index
     q = params[:q]
@@ -7,25 +10,31 @@ class StudentsController < AdminController
     season = params[:season]
     status = params[:status]
 
+    # per_page = 0 means no pagination
+    if params[:per_page]
+      per_page = params[:per_page]
+    else
+      per_page = 10
+    end
+
     respond_to do |format|
       format.html { render :index }
       format.json do
         if q.nil? || q.blank?
           students = Student.filter(season, status)
-          @students = students.desc('is_enrolling').asc('lastName', 'firstName').paginate(page: page, per_page: 10)
-          size = students.length
+          @students = students.desc('is_enrolling').asc('lastName', 'firstName').paginate(page: page, per_page: per_page)
+          @size = students.length
         else
           r = Student.filter(season, status).or({lastName: /#{q}/i}, {firstName: /#{q}/i}, {address: /#{q}/i}, {lastAttended: /#{q}/i}).desc('is_enrolling').asc('lastName', 'firstName')
-          @students = r.paginate(page: page, per_page: 10)
-          size = r.length
+          @students = r.paginate(page: page, per_page: per_page)
+          @size = r.length
         end
-        render json: {students: @students, totalSize: size}
+        render :index
       end
     end
   end
 
   def show
-    @student.as_json
     @page = 'show'
     respond_to do |format|
       format.html { render :edit }
@@ -94,7 +103,8 @@ class StudentsController < AdminController
   end
 
   def enrollment_status
-    render json: StudentEnrollment.status_json
+    @statuses = StudentEnrollment.statuses
+    respond_with @statuses
   end
 
   private

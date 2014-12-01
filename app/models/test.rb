@@ -16,7 +16,21 @@ class Test
 
   embeds_many :questions
   accepts_nested_attributes_for :questions
-  validates_associated :questions, message: 'are invalid'
+  validates_associated :questions
+
+  def create_answer_sheet_for(student)
+    unless student.answer_sheets.where(test: self).exists?
+      a = AnswerSheet.create(student: student, test: self)
+      questions.each do |q|
+        a.answers.create(id: q.id)
+      end
+      a.save
+    end
+  end
+
+  def deadline?
+    Time.now > deadline
+  end
 end
 
 class Question

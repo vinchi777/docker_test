@@ -67,6 +67,5 @@ ReviewSeason.create!(
 )
 
 30.times do |i|
-  s = rand_student
-  # User.create(password: '123456789', person: s) if i < 12
+  rand_student
 end

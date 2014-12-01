@@ -13,7 +13,7 @@
         = link_to new_test_path, class: 'new-test'
           = image_tag 'new-test.svg', class: 'inject-me'
       .test.col-md-2 ng-repeat='t in tests'
-        a href='/tests/{{t.id}}/edit'
+        a href='/tests/{{t.id}}'
           .summary
             .timer ng-show='t.timer == null || t.timer == 0' = image_tag 'timer-off.svg'
             .timer ng-hide='t.timer == null || t.timer == 0' = image_tag 'timer-on.svg'

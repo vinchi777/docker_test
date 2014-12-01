@@ -46,7 +46,7 @@
 
   $scope.submitReviewSeason = ->
     $scope.addBtnClass = 'disabled'
-    if '_id' of $scope.reviewSeason
+    if 'id' of $scope.reviewSeason
       updateReviewSeason()
     else
       createReviewSeason()
@@ -70,7 +70,7 @@
           $scope.reviewSeasonErrors.push "#{toHuman(k)} #{v}"
 
   updateReviewSeason = ->
-    url = '/review_seasons/' + $scope.reviewSeason._id.$oid + '.json'
+    url = '/review_seasons/' + $scope.reviewSeason.id + '.json'
     r = $http.patch url, review_season: $scope.reviewSeason
     r.success (i) ->
       $('#review-season-modal').modal 'hide'
@@ -86,8 +86,7 @@
           $scope.reviewSeasonErrors.push "#{toHuman(k)} #{v}"
 
   $scope.remove = (r) ->
-    id = r._id.$oid
-    p = $http.delete "/review_seasons/#{id}.json"
+    p = $http.delete "/review_seasons/#{r.id}.json"
     p.success (d) ->
       confirm = $("#confirm-#{id}")
       confirm.on 'hidden.bs.modal', ->

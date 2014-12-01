@@ -1,4 +1,5 @@
-== title 'Our Students'
+= title 'Our Students'
+= stylesheet_link_tag 'our_students'
 
 #our-students.container
   .banner
@@ -10,12 +11,10 @@
         = season
         span.count =< "(#{enrollments.size})"
       .row.student-list
-        - enrollments.map{|e| e.student}.each do|student|
+        - enrollments.map { |e| e.student }.each do |student|
           .student.col-md-4
             span.profile-pic
               = render 'students/profile_pic', student: student
             span
               b = student.lastName
               = student.trailing_name
-
-

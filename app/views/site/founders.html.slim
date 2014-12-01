@@ -1,11 +1,12 @@
-== title 'Founders'
+= title 'Founders'
+= stylesheet_link_tag 'people'
 
 #founders.container
   .banner
     h1 Founders
     h4 The backbone and pillars of MaxRevOne.
   .list
-    - @founders.each do|founder|
+    - @founders.each do |founder|
       .col-lg-10.col-lg-offset-1
         = image_tag founder.image
         h5 = founder.name

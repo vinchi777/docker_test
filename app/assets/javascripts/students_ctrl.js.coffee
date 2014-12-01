@@ -46,7 +46,7 @@
       loadStudents()
 
   loadEnrollmentStatus = ->
-    r = $http.get '/students/enrollment_status'
+    r = $http.get '/students/enrollment_status.json'
     r.success (d) ->
       d.push {key: 'All', value: -1}
       $scope.enrollment_statuses = d

@@ -1,4 +1,5 @@
-== title 'Pricing'
+= title 'Pricing'
+= stylesheet_link_tag 'pricing'
 
 #pricing
   .banner
@@ -12,7 +13,7 @@
     .row
       .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1.content
         .row
-          .col-md-4.col-sm-6.package.coaching-package
+          .col-md-4.col-sm-6.package
             h4 Final Coaching
             h2.price
               span.currency> ₱
@@ -36,7 +37,7 @@
                   b &nbsp
                 .col-md-6 &nbsp
             a.btn.btn-default.btn-lg href=pricing_link('Coaching') Enroll
-          .col-md-4.col-sm-6.package.standard-package
+          .col-md-4.col-sm-6.package
             h4 Standard Review
             h2.price
               span.currency> ₱
@@ -74,11 +75,11 @@
                   .col-md-6 &nbsp
             a.btn.btn-black.btn-lg href=pricing_link('Standard')
               b Enroll
-          .col-md-4.package.double-package
+          .col-md-4.package
             h4 Double Review
             h2.price
               span.currency> ₱
-              span.value =  number_to_currency@season.double_review, unit: '', precision: 0
+              span.value = number_to_currency @season.double_review, unit: '', precision: 0
             .hours
               | 1,460++
               span< hours
@@ -164,9 +165,3 @@
         span Cum Laude
         span Dean’s Choice Scholarship Grant (1 Slot)
         span Owner’s Choice Scholarship Grant (1 Slot)
-
-
-
-
-
-

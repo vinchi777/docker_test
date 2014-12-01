@@ -28,7 +28,7 @@ module Maxrevone
     # config.i18n.default_locale = :de
     # add vendor fonts for precompile
     config.assets.paths << Rails.root.join('vendor', 'assets', 'fonts')
-    config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/
+    config.assets.precompile << /\.(?:svg|eot|woff|ttf|css|js)$/
 
     config.to_prepare do
       Devise::Mailer.layout 'email' # email.haml or email.erb
