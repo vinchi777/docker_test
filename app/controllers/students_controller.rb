@@ -2,7 +2,7 @@ class StudentsController < AdminController
   before_action :set_student, only: [:show, :edit, :update, :destroy, :confirm, :grades_tests]
   layout 'tests'
 
-  respond_to :json, only: [:enrollment_status]
+  respond_to :json, only: [:enrollment_status, :current_enrollments]
 
   def index
     q = params[:q]
@@ -105,6 +105,11 @@ class StudentsController < AdminController
   def enrollment_status
     @statuses = StudentEnrollment.statuses
     respond_with @statuses
+  end
+
+  def current_enrollments
+    @enrollments = ReviewSeason.current.enrollments
+    respond_with @enrollments
   end
 
   private

@@ -21,6 +21,7 @@ class StudentEnrollment
 
   belongs_to :student
   belongs_to :review_season
+  has_many :student_grades, dependent: :destroy
 
   def self.status_json
     StudentEnrollment.statuses.map do |e|

@@ -3,7 +3,8 @@ each season in review_seasons
   hr
   .grades.row
     .col-md-2.new-grade-wrapper
-      a.new-grade{action 'new' season.id} href='#'
+      /a.new-grade{action 'new' season.id} href='#'
+      a.new-grade href='/grades/new'
         <%= image_tag 'new-grade.svg', class: 'inject-me' %>
     each grade in model
       .col-md-2

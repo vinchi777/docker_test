@@ -3,5 +3,5 @@ class StudentGrade
   field :score, type: Integer
 
   belongs_to :grade
-  belongs_to :student
+  belongs_to :student_enrollment
 end
