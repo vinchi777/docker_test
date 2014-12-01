@@ -74,7 +74,7 @@
 
     r = $http.delete "/student_invoices/#{i.id}.json", params: params
     r.success (d) ->
-      confirm = $("#confirm-#{id}")
+      confirm = $("#confirm-#{i.id}")
       confirm.on 'hidden.bs.modal', ->
         idx = $scope.invoices.indexOf i
 

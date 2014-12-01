@@ -13,31 +13,33 @@ class StudentInvoicesController < AdminController
 
   def create
     student = Student.find(student_invoice_params[:student_id])
-    @student_invoice = StudentInvoice.new(student_invoice_params.except :student_id)
+    @invoice = StudentInvoice.new(student_invoice_params.except :student_id)
 
     if params[:student_invoice][:review_season]
-      @student_invoice.review_season = ReviewSeason.find(params[:student_invoice][:review_season][:id])
+      @invoice.review_season = ReviewSeason.find(params[:student_invoice][:review_season][:id])
     end
 
-    student.add_invoice(@student_invoice)
+    student.add_invoice(@invoice)
 
     respond_to do |format|
-      if @student_invoice.save
-        format.json { render }
+      if @invoice.save
+        format.json { render :show }
       else
-        format.json { render json: @student_invoice.errors, status: :unprocessable_entity }
+        format.json { render json: @invoice.errors, status: :unprocessable_entity }
       end
     end
   end
 
   def update
-    @student_invoice.update(student_invoice_params)
-    respond_with @student_invoice
+    @invoice.update(student_invoice_params)
+    respond_with @invoice do |format|
+      format.json { render :show }
+    end
   end
 
   def destroy
     respond_to do |format|
-      if @student_invoice.destroy
+      if @invoice.destroy
         format.json { head :no_content }
       else
         format.json { render status: :unprocessable_entity }
@@ -47,11 +49,11 @@ class StudentInvoicesController < AdminController
 
   def create_transaction
     tr = Transaction.new(transaction_params.except :student_id, :id)
-    @student_invoice.transactions << tr
+    @invoice.transactions << tr
 
     respond_to do |format|
-      if @student_invoice.save
-        format.json { render json: @student_invoice }
+      if @invoice.save
+        format.json { render :show }
       else
         format.json { render json: tr.errors, status: :unprocessable_entity }
       end
@@ -59,10 +61,10 @@ class StudentInvoicesController < AdminController
   end
 
   def destroy_transaction
-    @student_invoice.transactions.find(params[:transaction][:tr_id]).destroy
+    @invoice.transactions.find(params[:transaction][:tr_id]).destroy
 
     respond_to do |format|
-      if @student_invoice.save
+      if @invoice.save
         format.json { head :no_content }
       else
         format.json { render status: :unprocessable_entity }
@@ -72,7 +74,7 @@ class StudentInvoicesController < AdminController
 
   private
   def set_student_payment
-    @student_invoice = Student.find(params[:student_id]).invoices.find(params[:id])
+    @invoice = Student.find(params[:student_id]).invoices.find(params[:id])
   end
 
   def student_invoice_params
