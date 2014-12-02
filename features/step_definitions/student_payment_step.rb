@@ -33,7 +33,8 @@ Given /there's a student invoice/ do
 end
 
 When /I remove the invoice/ do
-  find("#remove-#{@invoice.id}", visible: false).click
+  execute_script "$('#remove-#{@invoice.id}').show()"
+  find("#remove-#{@invoice.id}").click
   sleep 0.1
   click_on 'Yes'
 end
