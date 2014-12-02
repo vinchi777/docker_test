@@ -24,6 +24,7 @@ class Grade
   end
 
   def calculate_average
+    return if student_grades.empty?
     ave = student_grades.inject(0) { |sum, grade| sum + grade.score } / student_grades.size * 100.0 / points
     self.average = ave.round
   end

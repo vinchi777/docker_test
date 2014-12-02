@@ -6,7 +6,8 @@ class GradesController < AdminController
   respond_to :html, :json
 
   def index
-    @grades = Grade.all.sort { |a, b| b.date <=> a.date }.group_by { |g| g.review_season }
+    @review_seasons = ReviewSeason.all.sort { |a, b| b.season_start <=> a.season_start }
+    @grades = Grade.all
     respond_with @grades
   end
 
@@ -16,6 +17,7 @@ class GradesController < AdminController
 
   def new
     @grade = Grade.new
+    @grade.review_season = ReviewSeason.find(params[:season])
     ReviewSeason.current.enrolled.each do |e|
       @grade.student_grades << StudentGrade.new(student_enrollment: e)
     end
