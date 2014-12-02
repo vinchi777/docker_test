@@ -11,5 +11,7 @@ json.array! @review_seasons do |s|
   json.double_review s.double_review
   json.coaching s.coaching
   json.reservation s.reservation
+  json.enrolled s.enrolled.length
+  json.enrolling s.enrolling.length
   json.url review_season_url(s, format: :json)
 end
