@@ -9,11 +9,15 @@
         .title.pull-left
           h5
             | {{sheet.test.description}}
-        .timer ng-show='sheet.test.timer > 0 && !sheet.submitted'
+          span ng-show='sheet.started'
+            | Started {{moment(sheet.start_time)}}.
+        .timer ng-show='sheet.test.timer > 0 && !sheet.submitted || !sheet.expired'
           .img-wrapper ng-class='{near: near}'
             = image_tag 'timer-off.svg', class: 'inject-me'
           b#remaining
-        .answer-action.pull-right
+        .answer-action.pull-right.text-right
+          div Submitted {{moment(sheet.submission_date)}}.
+          div Awaiting result after deadline.
           .summary.hidden
             b 80%
             span 120|150
