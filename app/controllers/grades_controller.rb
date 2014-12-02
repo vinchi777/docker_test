@@ -6,7 +6,7 @@ class GradesController < AdminController
   respond_to :html, :json
 
   def index
-    @review_seasons = ReviewSeason.all.sort { |a, b| b.season_start <=> a.season_start }
+    @review_seasons = ReviewSeason.descending
     @grades = Grade.all
     respond_with @grades
   end
