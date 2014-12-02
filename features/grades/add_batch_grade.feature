@@ -56,3 +56,12 @@ Feature: Add grades by batch
     And I submit the grade form
     Then I should not see a grade with an average of 32
 
+  Scenario: Searching students
+    Given Students exists
+    And I am on the new grade page
+    Then I should be able to search for the following student queries
+      | Keyword   | Result |
+      | bc        | 1      |
+      | ef        | 1      |
+      | dela Cruz | 2      |
+

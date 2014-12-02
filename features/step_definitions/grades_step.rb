@@ -75,10 +75,19 @@ And /^I fill up the following student grades$/ do |data|
   end
 end
 
-And /^I should (.*?)see a grade with an average of (\d+)$/ do |inverse, grade|
+And /^I should(.*?) see a grade with an average of (\d+)$/ do |inverse, grade|
   has_grade = false
   all('.point-wrapper .inline').each do |w|
     has_grade = true if w.has_content? grade
   end
   expect(has_grade).to eq inverse.empty?
+end
+
+Then /^I should be able to search for the following student queries$/ do |data|
+  data.rows.each do |row|
+    fill_in 'q', with: row[0]
+    sleep 0.5
+    visibles = all('.student-list tr').select { |tr| tr.visible? }
+    expect(visibles.count).to eq row[1].to_i
+  end
 end
