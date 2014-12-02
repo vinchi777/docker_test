@@ -4,6 +4,7 @@ module SiteHelper
   end
 
   def pretty_date(date)
+    return unless date
     date.strftime('%b %e, %Y')
   end
 end

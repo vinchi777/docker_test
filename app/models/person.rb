@@ -33,4 +33,8 @@ class Person
   def to_s
     "#{lastName}, #{firstName} #{middleName}"
   end
+
+  def trailing_name
+    ", #{firstName} #{middleName}"
+  end
 end
