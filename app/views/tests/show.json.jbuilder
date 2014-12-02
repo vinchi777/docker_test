@@ -12,5 +12,6 @@ json.questions @test.questions.each do |q|
   json.choice3 q.choice3
   json.choice4 q.choice4
   json.answer q.answer
+  json.ratio q.ratio
 end
 json.url test_path(@test)

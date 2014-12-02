@@ -5,8 +5,6 @@ class AnswerSheet
   field :submission_date, type: Time
   embeds_many :answers
 
-  field :submitted, type: Boolean
-
   belongs_to :test
   validates_presence_of :test
 
@@ -42,11 +40,27 @@ class AnswerSheet
   end
 
   def expired?
-    remaining <= 0
+    if remaining
+      remaining <= 0
+    else
+      false
+    end
   end
 
   def remaining
-    start_time + test.timer * 60 - Time.now
+    start_time + test.timer * 60 - Time.now if start_time
+  end
+
+  def correct_points
+    answers.count { |a| a.correct? } if deadline?
+  end
+
+  def total_points
+    test.questions.length
+  end
+
+  def percent
+    '%.1f' % (correct_points / total_points.to_d * 100) if deadline?
   end
 end
 
@@ -57,6 +71,10 @@ class Answer
 
   def question
     answer_sheet.test.questions.find(id)
+  end
+
+  def correct?
+    index == question.answer
   end
 
   embedded_in :answer_sheet

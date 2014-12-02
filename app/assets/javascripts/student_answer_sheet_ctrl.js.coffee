@@ -1,8 +1,5 @@
 @app.controller 'StudentAnswerSheetsCtrl', ['$scope', '$http', ($scope, $http) ->
   $scope.sheets = []
-  $scope.sheet = {
-    remaining: 0
-  }
 
   $scope.load = (id) ->
     r = $http.get '/answer_sheets.json', params:
@@ -12,11 +9,18 @@
 ]
 
 @app.controller 'StudentAnswerSheetCtrl', ['$scope', '$http', 'AnswerSheet', ($scope, $http, AnswerSheet) ->
+
+  $scope.sheet = {
+    remaining: 0
+    answers: []
+  }
+
   audioPlayed = false
 
   $scope.load = (id) ->
     AnswerSheet.get id: id, (s) ->
       $scope.sheet = s
+      updateTimer()
 
   $scope.update = ->
     $scope.saving = true
@@ -24,19 +28,23 @@
     r.success (d) ->
       $scope.saving = false
       $scope.sheet = d
+      updateTimer()
 
     r.error (e) ->
       $scope.saving = false
 
-  $scope.$watch (-> $scope.sheet), (v) ->
-    if v
-      d = new Date(new Date().getTime() + v.remaining * 1000)
+  $scope.done = ->
+    a for a in $scope.sheet.answers when a.index != null
+
+  updateTimer = ->
+    if $scope.sheet
+      d = new Date(new Date().getTime() + $scope.sheet.remaining * 1000)
       $('#remaining').countdown d, (e) ->
         $scope.$apply ->
           $scope.near = (e.offset.hours * 360 + e.offset.minutes * 60 + e.offset.seconds) <= 300
-          if !$scope.sheet.submitted && $scope.near && !audioPlayed
-            audioPlayed = true
-            new Audio('/assets/countdown.mp3').play()
+        if !$scope.sheet.submitted && $scope.near && !audioPlayed
+          audioPlayed = true
+          new Audio('/assets/countdown.mp3').play()
 
         if e.offset.hours > 0
           $(this).html e.strftime('%H hr %M min %S sec')
@@ -49,6 +57,7 @@
     r = $http.patch "/answer_sheets/#{$scope.sheet.id}/submit.json", answer_sheet: $scope.sheet
     r.success (d) ->
       $scope.sheet = d
+      updateTimer()
 
   $scope.moment = (i) ->
     moment(i).fromNow()
