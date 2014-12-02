@@ -91,3 +91,7 @@ Then /^I should be able to search for the following student queries$/ do |data|
     expect(visibles.count).to eq row[1].to_i
   end
 end
+
+Given /^No review season exists$/ do
+  ReviewSeason.destroy_all
+end
