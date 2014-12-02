@@ -19,7 +19,7 @@ class GradesController < AdminController
     @grade = Grade.new
     if params[:season]
       review_season = ReviewSeason.find(params[:season])
-    elsif ReviewSeason.current
+    elsif ReviewSeason.exists?
       review_season = ReviewSeason.current
       flash[:notice] = 'Since no season is specified, the current review season will be used.'
     else
