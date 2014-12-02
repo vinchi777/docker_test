@@ -33,7 +33,7 @@
       hr
       .grades.row
         .col-md-2.new-grade-wrapper
-          = link_to new_grade_path, class: 'new-grade'
+          = link_to new_grade_path(season: review_season), class: 'new-grade'
             = image_tag 'new-grade.svg', class: 'inject-me'
         - grades_in_season(review_season).each do |g|
           .col-md-2

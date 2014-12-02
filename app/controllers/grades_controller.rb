@@ -17,6 +17,7 @@ class GradesController < AdminController
 
   def new
     @grade = Grade.new
+    @grade.review_season = ReviewSeason.find(params[:season])
     ReviewSeason.current.enrolled.each do |e|
       @grade.student_grades << StudentGrade.new(student_enrollment: e)
     end
