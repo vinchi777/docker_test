@@ -21,7 +21,7 @@ class AnswerSheetsController < AdminController
 
   def show
     @student = @sheet.student
-    unless @sheet.started? && !@sheet.deadline?
+    unless @sheet.started? || @sheet.deadline?
       @sheet.start
       @sheet.save
     end
@@ -51,15 +51,15 @@ class AnswerSheetsController < AdminController
   def submit
     respond_with @sheet do |format|
       if @sheet.test.deadline?
-        @sheet.submitted = true
+        @sheet.submit
         if @sheet.update
           format.json { render :show }
         else
           format.json { render json: @sheet.errors, status: :unprocessable_entity }
         end
-      elsif !@sheet.submitted
+      elsif !@sheet.submitted?
         @sheet.assign_attributes(sheet_params)
-        @sheet.submitted = true
+        @sheet.submit
         if @sheet.update
           format.json { render :show }
         else
