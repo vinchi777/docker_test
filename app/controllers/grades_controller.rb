@@ -6,7 +6,7 @@ class GradesController < AdminController
   respond_to :html, :json
 
   def index
-    @review_seasons = ReviewSeason.all.sort { |a, b| b.season_start <=> a.season_start }
+    @review_seasons = ReviewSeason.descending
     @grades = Grade.all
     respond_with @grades
   end
@@ -17,11 +17,24 @@ class GradesController < AdminController
 
   def new
     @grade = Grade.new
-    @grade.review_season = ReviewSeason.find(params[:season])
-    ReviewSeason.current.enrolled.each do |e|
-      @grade.student_grades << StudentGrade.new(student_enrollment: e)
+    if params[:season]
+      review_season = ReviewSeason.find(params[:season])
+    elsif ReviewSeason.current
+      review_season = ReviewSeason.current
+      flash[:notice] = 'Since no season is specified, the current review season will be used.'
+    else
+      flash[:alert] = 'No season available. Please add review season first.'
     end
-    respond_with @grade
+
+    if flash[:alert]
+      redirect_to grades_path
+    else
+      @grade.review_season = review_season
+      review_season.enrolled.each do |e|
+        @grade.student_grades << StudentGrade.new(student_enrollment: e)
+      end
+      respond_with @grade
+    end
   end
 
   def edit
@@ -71,7 +84,7 @@ class GradesController < AdminController
   end
 
   def grade_params
-    params.require(:grade).permit(:description, :date, :points, :review_season_id, student_grades_attributes: [:id, :score, :student_enrollment_id])
+    params.require(:grade).permit(:id, :description, :date, :points, :review_season_id, student_grades_attributes: [:id, :score, :student_enrollment_id])
   end
 
   def set_page

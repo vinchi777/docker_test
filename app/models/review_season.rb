@@ -101,4 +101,8 @@ class ReviewSeason
   def enrolled
     enrollments.where(status_cd: 2)
   end
+
+  def self.descending
+    ReviewSeason.desc(:season_start)
+  end
 end

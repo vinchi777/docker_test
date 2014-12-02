@@ -1,12 +1,12 @@
 = form_for @grade do |f|
-  = f.hidden_field :review_season
+  = f.hidden_field :review_season_id
   header.row
     .col-md-3
       label.control-label Description
       = f.text_field :description, class: 'form-control required'
     .col-md-2
       label.control-label Date
-      = f.text_field :date, class: 'form-control required date-picker', 'data-date-format' => 'MMM DD, YYYY'
+      = f.text_field :date, value: pretty_date(@grade.date), class: 'form-control required date-picker', 'data-date-format' => 'MMM DD, YYYY'
     .col-md-2
       label.control-label Total Points
       = f.text_field :points, class: 'form-control required total-score'
@@ -50,94 +50,4 @@
               td
                 span.pr 0
                 | %
-/= render 'students_select'
-
-/= render 'grade_modal'
-/= form_tag
-/  header.row
-/    .col-md-3
-/      h2 New Batch of Grades
-/    .col-md-9.actions
-/      button.btn.btn-primary type='Submit' Save
-/  .table-wrapper
-/    table.table
-/      thead
-/        td.table-actions
-/          a.edit-students href='#'
-/            i.fa.fa-pencil
-/          .search-wrapper
-/            input.form-control.search-students type='text' placeholder='Search students'
-/        td.active
-/          a.edit-grade href=''
-/            h6 100 points
-/            | Mockup Exam for NLE
-/        td
-/          a.edit-grade href=''
-/            h6 250 points
-/            | Semi Finals
-/        td
-/          a.edit-grade href=''
-/            h6 300 points
-/            | Finals
-/        td.add-grade-wrapper
-/          a.add-grade href='#'
-/            i.fa.fa-plus-circle
-/      tbody.student-list
-/        - @students.each do |student|
-/          tr
-/            th.student
-/              span.profile-pic
-/                = render 'students/profile_pic', student: student
-/              span
-/                b = student.lastName
-/                = student.trailing_name
-/            td
-/              input.form-control type='text'
-/            td
-/              input.form-control type='text'
-/            td
-/              input.form-control type='text'
-/            td
-/        tr
-/          th.student
-/            span.profile-pic
-/              = image_tag 'testimonials/agaton.jpg', class: 'profile'
-/            span
-/              b Agaton
-/              | , Maricris Julianne
-/          td
-/            input.form-control type='text'
-/          td
-/            input.form-control type='text'
-/          td
-/            input.form-control type='text'
-/          td
-/        tr
-/          th.student
-/            span.profile-pic
-/              = image_tag 'testimonials/pastelero.jpg', class: 'profile'
-/            span
-/              b Pastelero
-/              | , Angeline San Isidro
-/          td
-/            input.form-control type='text'
-/          td
-/            input.form-control type='text'
-/          td
-/            input.form-control type='text'
-/          td
-/        tr
-/          th.student
-/            span.profile-pic
-/              = image_tag 'testimonials/ticao.jpg', class: 'profile'
-/            span
-/              b Ticao
-/              | , Josefine Mariluna
-/          td
-/            input.form-control type='text'
-/          td
-/            input.form-control type='text'
-/          td
-/            input.form-control type='text'
-/          td
-/= render 'students_select'
+= render 'students_select_modal'

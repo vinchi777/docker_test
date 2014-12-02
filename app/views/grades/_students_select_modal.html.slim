@@ -1,0 +1,48 @@
+#students-select-modal.modal.fade
+  .modal-dialog.modal-lg
+    .modal-content.ac-scope
+      form.form-horizontal.ac-scope
+        .modal-header
+          h4.modal-title
+            | Select Students
+          .search-wrapper
+            input.form-control.search-students type='text' placeholder='Search students'
+          .overall-count.pull-right
+            .count
+              - count = @grade.student_grades.size
+              b.batch-count = count
+              span<> of
+              span.total-count = count
+              span< students
+
+        .modal-body
+          .batch
+            .bar
+              a.toggle href='#'
+                i.fa.fa-circle-o.hide
+                i.fa.fa-check-circle-o
+                i.fa.fa-dot-circle-o.hide
+              h5
+                = @grade.review_season
+            .form-group.student-list
+              - if @grade.student_grades.empty?
+                div.col-md-12.text-center
+                  | No enrolled students found for season @grade.review_season
+              - else
+                - @grade.student_grades.each do|g|
+                  - student = g.student
+                  a.col-md-4.student href='#'
+                    span.profile-pic
+                      i.fa.fa-check
+                      - if student.has_profile_pic?
+                        img.profile src=(image_url student.profile_pic)
+                      - else
+                        img.profile src=(image_url 'user.png')
+                    span
+                      b = student.lastName
+                      = student.trailing_name
+
+        .modal-footer
+          .actions
+            a.btn data-dismiss='modal' type='submit' Cancel
+            input.btn.btn-default type='submit' value='Start' ng-click='commit()'
