@@ -18,7 +18,7 @@
       .form-inline
         .form-group
           label.control-label Birthdate
-          = f.text_field :birthdate, value: @student.birthdate.strftime('%b %e, %Y'), class: 'form-control date-picker required', placeholder: 'Select birthdate', 'data-date-format' => 'MMM DD, YYYY'
+          = f.text_field :birthdate, value: pretty_date(@student.birthdate), class: 'form-control date-picker required', placeholder: 'Select birthdate', 'data-date-format' => 'MMM DD, YYYY'
         .form-group
           .age.control-label
             | Age
