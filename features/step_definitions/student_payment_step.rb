@@ -68,6 +68,7 @@ Then /I see the balance updated/ do
 end
 
 And /I press the remove transaction button/ do
+  execute_script '$("a.remove-transaction").show()'
   all('a.remove-transaction').first.click
   sleep 0.1
   click_on 'Yes'
