@@ -1,6 +1,10 @@
 json.id @sheet.id.to_s
-json.remaining @sheet.start_time + @sheet.test.timer * 60 - Time.now
-json.submitted @sheet.submitted
+json.remaining @sheet.remaining
+json.submitted @sheet.submitted?
+json.submission_date @sheet.submission_date
+json.start_time @sheet.start_time
+json.expired @sheet.expired?
+json.deadline @sheet.deadline?
 json.answers @sheet.answers do |a|
   json.id a.id.to_s
   json.text a.question.text

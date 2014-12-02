@@ -6,22 +6,32 @@ class AnswerSheetsController < AdminController
 
   def index
     @sheets = AnswerSheet.where(student: params[:student])
+    @sheets.each do |s|
+      set_submission s
+    end
     respond_with @sheets
+  end
+
+  def set_submission(sheet)
+    if !sheet.submitted? && (sheet.deadline? || sheet.expired?)
+      sheet.submit
+      sheet.save
+    end
   end
 
   def show
     @student = @sheet.student
-    unless @sheet.started
-      @sheet.start_time = Time.now
-      @sheet.started = true
+    unless @sheet.started? && !@sheet.deadline?
+      @sheet.start
       @sheet.save
     end
+    set_submission @sheet
     respond_with @sheet
   end
 
   def update
     respond_with @sheet do |format|
-      if @sheet.submitted
+      if @sheet.submitted?
         format.json { render json: {error: 'already submitted'}, status: :unprocessable_entity }
       else
         if @sheet.update(sheet_params)
@@ -67,6 +77,6 @@ class AnswerSheetsController < AdminController
   end
 
   def sheet_params
-    params.require(:answer_sheet).permit(:start_time, :answers, :student, :test, answers: [:id, :index])
+    params.require(:answer_sheet).permit(:answers, :student, :test, answers: [:id, :index])
   end
 end

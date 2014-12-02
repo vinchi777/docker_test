@@ -7,13 +7,13 @@
     .col-lg-8
       h2 Grades and Tests
 
-  .tests-container ng-controller='StudentAnswerSheetsCtrl' ng-init=("load('#{params[:id]}')") ng-show='ongoing.length != 0'
-    h5 Ongoing Tests
+  .tests-container ng-controller='StudentAnswerSheetsCtrl' ng-init=("load('#{params[:id]}')")
+    h5 Tests
     hr
     .tests.row
-      .test.col-md-2 ng-repeat='t in ongoing'
+      .test.col-md-2 ng-repeat='t in sheets'
         a href='/answer_sheets/{{t.id}}'
-          .summary
+          .summary ng-class='{done: t.submitted}'
             .timer ng-show='t.timer == null || t.timer == 0' = image_tag 'timer-off.svg'
             .timer ng-hide='t.timer == null || t.timer == 0' = image_tag 'timer-on.svg'
             .points

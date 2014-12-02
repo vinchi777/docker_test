@@ -1,6 +1,5 @@
 @app.controller 'StudentAnswerSheetsCtrl', ['$scope', '$http', ($scope, $http) ->
-  $scope.ongoing = []
-  $scope.answerSheets = []
+  $scope.sheets = []
   $scope.sheet = {
     remaining: 0
   }
@@ -9,8 +8,7 @@
     r = $http.get '/answer_sheets.json', params:
       student: id
     r.success (d) ->
-      $scope.answerSheets = d
-      $scope.ongoing = (s for s in d when !s.submitted)
+      $scope.sheets = d
 ]
 
 @app.controller 'StudentAnswerSheetCtrl', ['$scope', '$http', 'AnswerSheet', ($scope, $http, AnswerSheet) ->
@@ -36,7 +34,7 @@
       $('#remaining').countdown d, (e) ->
         $scope.$apply ->
           $scope.near = (e.offset.hours * 360 + e.offset.minutes * 60 + e.offset.seconds) <= 300
-          if $scope.near && !audioPlayed
+          if !$scope.sheet.submitted && $scope.near && !audioPlayed
             audioPlayed = true
             new Audio('/assets/countdown.mp3').play()
 
@@ -51,4 +49,7 @@
     r = $http.patch "/answer_sheets/#{$scope.sheet.id}/submit.json", answer_sheet: $scope.sheet
     r.success (d) ->
       $scope.sheet = d
+
+  $scope.moment = (i) ->
+    moment(i).fromNow()
 ]
