@@ -52,14 +52,14 @@ $ ->
     $('#students-select-modal').modal('show')
     false
 
-  $('#batch-grades .add-grade, #batch-grades .edit-grade').click ->
+  ###$('#batch-grades .add-grade, #batch-grades .edit-grade').click ->
     $('#grade-modal').modal('show')
-    ###table = $('#batch-grades table')
+    table = $('#batch-grades table')
     $('<td><h6>500 points</h6>NLE Examination</td>').insertBefore(table.find('thead td').last()).hide().fadeIn()
     table.find('tbody tr').each ->
       $("<td><input type='text' class='form-control'></input></td>").insertBefore($(this).find('td').last()).hide().fadeIn()
-    do_scroll_x($('#batch-grades .table-wrapper').first(), $(this))###
-    false
+    do_scroll_x($('#batch-grades .table-wrapper').first(), $(this))
+    false###
 
 
 adjust_gauge = (level, percent, container) ->

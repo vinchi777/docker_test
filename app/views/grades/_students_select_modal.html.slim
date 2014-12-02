@@ -1,0 +1,45 @@
+#students-select-modal.modal.fade ng-controller='StudentsModalCtrl'
+  .modal-dialog.modal-lg
+    .modal-content.ac-scope
+      form.form-horizontal.ac-scope
+        .modal-header
+          h4.modal-title
+            | Select Students
+          .search-wrapper
+            input.form-control.search-students type='text' placeholder='Search students' ng-model='filter'
+          .overall-count.pull-right ng-hide='students.length == 0'
+            .count
+              b.batch-count
+                | {{selected.length}}
+              span<> of
+              span
+                | {{totalSize}}
+              span< students
+
+        .modal-body
+          .batch
+            .bar
+              a.toggle href='#' ng-click='toggleAll()'
+                i.fa.fa-circle-o ng-show='selected.length == 0 && students.length != 0'
+                i.fa.fa-check-circle-o ng-show='selected.length == students.length && students.length != 0'
+                i.fa.fa-dot-circle-o ng-show='selected.length != 0 && selected.length != students.length'
+              h5
+                | {{season.season}}
+
+            .form-group.student-list
+              div.col-md-12.text-center ng-show='students.length == 0'
+                | No enrolled students found for seasons {{season.season}}
+              a.col-md-4.student href='' ng-repeat='s in students | filter:filter' ng-click='toggle(s)' ng-class='{excluded:!s.selected}'
+                span.profile-pic
+                  i.fa.fa-check
+                  img.profile ng-src='{{s.profile_pic}}' ng-show='s.profile_pic != null'
+                  img.profile src=(image_url 'user.png') ng-hide='s.profile_pic != null'
+                span
+                  b<>
+                    | {{s.lastName}}
+                  | {{s.firstName}}
+
+        .modal-footer
+          .actions
+            a.btn data-dismiss='modal' type='submit' Cancel
+            input.btn.btn-default type='submit' value='Start' ng-click='commit()'

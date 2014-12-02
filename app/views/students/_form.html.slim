@@ -42,7 +42,7 @@
         .col-lg-6
           .form-group
             = f.label :birthdate, 'Birthdate', class: 'control-label col-lg-3 '
-            .col-lg-4 = f.text_field :birthdate, value: @student.birthdate.strftime('%b %e, %Y'), class: 'form-control date-picker required', 'data-date-format'.to_sym => 'MMM DD, YYYY'
+            .col-lg-4 = f.text_field :birthdate, value: pretty_date(@student.birthdate), class: 'form-control date-picker required', 'data-date-format'.to_sym => 'MMM DD, YYYY'
           .form-group
             = f.label :sex, class: 'control-label col-lg-3'
             .col-lg-3 = f.select :sex, %w{Male Female}, {}, {class: 'form-control required'}
