@@ -18,7 +18,7 @@ form
       .col-md-5.actions
         button.btn.btn-default ng-click='save()' ng-show='test.id == null' Save
         button.btn.btn-default ng-click='save()' ng-hide='test.id == null' Update
-        button.btn.btn-primary type='Submit' data-target='#students-select-modal' data-toggle='modal' ng-click='selectStudents()'
+        button.btn.btn-primary type='Submit' data-target='#students-select-modal' data-toggle='modal' ng-click='selectStudents()' ng-show='test.id != null'
           span ng-hide='publishing' Publish
           span ng-show='publishing' Publishing...
     .row
@@ -29,7 +29,7 @@ form
       .col-md-8
         .radio
           label
-            input type='checkbox' name='random' ng-model='test.random'
+            input> type='checkbox' name='random' ng-model='test.random'
             | Randomize questions
     .bar
       .pull-left ng-show='saving'

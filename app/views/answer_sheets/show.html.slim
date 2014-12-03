@@ -11,8 +11,8 @@
             | {{sheet.test.description}}
           span ng-show='sheet.started'
             | Started {{moment(sheet.start_time)}}.
-            div Submitted {{moment(sheet.submission_date)}}.
-            div ng-hide='sheet.deadline'Awaiting result after deadline.
+            div ng-show='sheet.submitted' Submitted {{moment(sheet.submission_date)}}.
+            div ng-hide='sheet.deadline || !sheet.submitted'Awaiting result after deadline.
         .timer ng-show='sheet.test.timer > 0 && !sheet.submitted'
           .img-wrapper ng-class='{near: near}'
             = image_tag 'timer-off.svg', class: 'inject-me'

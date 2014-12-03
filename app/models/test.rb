@@ -21,7 +21,13 @@ class Test
   def create_answer_sheet_for(student)
     unless student.answer_sheets.where(test: self).exists?
       a = AnswerSheet.create(student: student, test: self)
-      questions.each do |q|
+      qs =
+          if random
+            questions.shuffle
+          else
+            questions
+          end
+      qs.each do |q|
         a.answers.create(id: q.id)
       end
       a.save

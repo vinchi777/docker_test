@@ -2,6 +2,12 @@
   $students = $('#students')
   $scope.currentPage = $students.data 'page'
   $scope.q = $students.data 'q'
+  $scope.enrollment_status = {
+    value: $students.data 'status'
+  }
+  $scope.season = {
+    id: $students.data 'season'
+  }
   $scope.maxSize = 5
   $scope.students = []
   forUser = null
@@ -42,7 +48,17 @@
     r.success (d) ->
       d.push {season: 'All', id: 0}
       $scope.seasons = d
-      $scope.season = d[0]
+
+      ss = null
+      if $scope.season
+        ss = s for s in d when s.id == $scope.season.id
+        if ss != null
+          $scope.season = ss
+        else
+          $scope.season = d[0]
+      else
+        $scope.season = d[0]
+
       loadStudents()
 
   loadEnrollmentStatus = ->
@@ -50,7 +66,10 @@
     r.success (d) ->
       d.push {key: 'All', value: -1}
       $scope.enrollment_statuses = d
-      $scope.enrollment_status = d[d.length - 1]
+      if $scope.enrollment_status
+        $scope.enrollment_status = d[$scope.enrollment_status.value - 1]
+      else
+        $scope.enrollment_status = d[d.length - 1]
 
   $scope.filter = ->
     loadStudents()

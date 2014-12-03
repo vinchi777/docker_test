@@ -42,7 +42,7 @@
       $('#remaining').countdown d, (e) ->
         $scope.$apply ->
           $scope.near = (e.offset.hours * 360 + e.offset.minutes * 60 + e.offset.seconds) <= 300
-        if !$scope.sheet.submitted && $scope.near && !audioPlayed
+        if !$scope.sheet.submitted && $scope.near && !audioPlayed && $scope.test.timer > 0
           audioPlayed = true
           new Audio('/assets/countdown.mp3').play()
 
