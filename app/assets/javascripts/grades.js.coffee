@@ -1,7 +1,29 @@
 # Place all the behaviors and hooks related to the matching controller here.
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
+$ ->
+  count_selected_students($('#students-select-modal.primitive'))
 
+  # adjust percent indicator
+  $('.grade').each ->
+    self = $(this)
+    percent = parseInt(self.find('.percent').val())
+  # adjust_gauge(1, percent, self)
+
+  ###$('.new-grade').click ->
+    $('#grade-modal').modal('show')
+    false###
+
+  $('#batch-grades .edit-students').click ->
+    $('#students-select-modal').modal('show')
+    false
+
+  update_percents()
+  $('#batch-grades .total-score').on 'change keyup', ->
+    update_percents()
+
+
+# For table effects
 $(document).on 'click', 'table tr *', ->
   $(this).closest('table').find('tr.current').removeClass 'current'
   $(this).closest('tr').addClass 'current'
@@ -14,6 +36,7 @@ $(document).on 'click', 'table td .form-control', ->
   if index > 0 && index < td.siblings().length
     target = table.find('thead td')[index]
     $(target).addClass 'active'
+
 
 # For select student modal
 $(document).on 'click', '#students-select-modal.primitive .toggle', ->
@@ -56,38 +79,11 @@ toggle_select_icons = (container, counts) ->
   else
     toggle.find('.fa-dot-circle-o').removeClass('hide')
 
-$ ->
-  count_selected_students($('#students-select-modal.primitive'))
-  # adjust percent indicator
-  $('.grade').each ->
-    self = $(this)
-    percent = parseInt(self.find('.percent').val())
-  # adjust_gauge(1, percent, self)
 
-  ###$('.new-grade').click ->
-    $('#grade-modal').modal('show')
-    false###
-
-  $('#batch-grades .edit-students').click ->
-    $('#students-select-modal').modal('show')
-    false
-
-  ###$('#batch-grades .add-grade, #batch-grades .edit-grade').click ->
-    $('#grade-modal').modal('show')
-    table = $('#batch-grades table')
-    $('<td><h6>500 points</h6>NLE Examination</td>').insertBefore(table.find('thead td').last()).hide().fadeIn()
-    table.find('tbody tr').each ->
-      $("<td><input type='text' class='form-control'></input></td>").insertBefore($(this).find('td').last()).hide().fadeIn()
-    do_scroll_x($('#batch-grades .table-wrapper').first(), $(this))
-    false###
-
-  $('#batch-grades .total-score').on 'change keyup', ->
-    $('.student-list tr').each ->
-      update_percent($(this))
-
-###$('#students-select-modal.primitive .student').click ->
-  selected_count = $('#students-select-modal.primitive').find('.student.excluded').length
-  $('#students-select-modal.primitive .batch-count').text(selected_count)###
+# Update_percents in grades
+update_percents = ->
+  $('.student-list tr').each ->
+    update_percent($(this))
 
 $(document).on 'change keyup', '#batch-grades .student-list input', ->
   self = $(this)
@@ -104,6 +100,8 @@ update_percent = (student_container, input) ->
   percentage = 0 if isNaN(percentage) || percentage == Infinity
   pr.text(percentage)
 
+
+# Percentage gauge indicator for index
 adjust_gauge = (level, percent, container) ->
   if percent <= 0
     return
