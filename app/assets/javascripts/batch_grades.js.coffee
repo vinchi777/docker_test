@@ -53,14 +53,3 @@
 #      lastName: data.lastName
 #      firstName: data.firstName
 #      middleInitial: data.middleInitial
-
-$ ->
-  $('#batch-grades input.search-students').keyup ->
-    q = $(this).val().toLowerCase()
-    $('#batch-grades .student-list tr').each ->
-      self = $(this)
-      student = self.data('query').toLowerCase()
-      if student.indexOf(q) == -1
-        self.fadeOut()
-      else
-        self.fadeIn()

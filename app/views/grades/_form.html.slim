@@ -29,14 +29,14 @@
           a.edit-students href='#'
             i.fa.fa-pencil
           .search-wrapper
-            input.form-control.search-students type='text' placeholder='Search students' name='q'
+            input.form-control.search-existing-students type='text' placeholder='Search students' name='q'
         th Grades
         th Percentage
       tbody.student-list
         - @grade.student_grades.each do |e|
           - student = e.student
           = f.fields_for :student_grades, e do |f|
-            tr data-query=student.to_s
+            tr data-query=student
               th.student
                 = f.hidden_field :id unless @grade.new_record?
                 = f.hidden_field :student_enrollment_id, value: e.student_enrollment.id

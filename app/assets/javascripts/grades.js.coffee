@@ -22,6 +22,28 @@ $ ->
   $('#batch-grades .total-score').on 'change keyup', ->
     update_percents()
 
+  #Search
+  $('#batch-grades input.search-existing-students').keyup ->
+    q = $(this).val().toLowerCase()
+    $('#batch-grades .student-list tr').each ->
+      self = $(this)
+      student = self.data('query').toLowerCase()
+      if student.indexOf(q) == -1
+        self.fadeOut()
+      else
+        self.fadeIn()
+
+  #Search in student select modal
+  $('#students-select-modal.primitive input.search-students').keyup ->
+    q = $(this).val().toLowerCase()
+    $('#students-select-modal.primitive .student').each ->
+      self = $(this)
+      student = self.data('query').toLowerCase()
+      if student.indexOf(q) == -1
+        self.fadeOut()
+      else
+        self.fadeIn()
+
 
 # For table effects
 $(document).on 'click', 'table tr *', ->
