@@ -33,21 +33,7 @@
         th Grades
         th Percentage
       tbody.student-list
-        - @grade.student_grades.each do |e|
-          - student = e.student
-          = f.fields_for :student_grades, e do |f|
-            tr data-query=student
-              th.student
-                = f.hidden_field :id unless @grade.new_record?
-                = f.hidden_field :student_enrollment_id, value: e.student_enrollment.id
-                span.profile-pic
-                  = render 'students/profile_pic', student: student
-                span
-                  b = student.lastName
-                  = student.trailing_name
-              td
-                = f.text_field :score, class: 'form-control'
-              td
-                span.pr 0
-                | %
+        - @grade.student_grades.each_with_index do |e, index|
+          = render 'student_strip', index: index, student_grade: e
+
 = render 'students_select_modal'

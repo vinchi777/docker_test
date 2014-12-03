@@ -10,4 +10,8 @@ module GradesHelper
   def existing_student(student)
     'excluded' if @grade.student_grades.none? { |g| g.student == student }
   end
+
+  def grade_name_attr(index)
+    "grade[student_grades_attributes][#{index}]"
+  end
 end
