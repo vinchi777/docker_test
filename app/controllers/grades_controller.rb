@@ -1,5 +1,5 @@
 class GradesController < AdminController
-  before_action :set_grade, only: [:show, :edit, :update, :destroy]
+  before_action :set_grade, only: [:show, :edit, :update, :destroy, :new_student_grade]
   before_action :set_page
 
   layout 'grades'
@@ -30,7 +30,7 @@ class GradesController < AdminController
       redirect_to grades_path
     else
       @grade.review_season = review_season
-      @students = @grade.review_season.enrolled_students
+      @enrollments = @grade.review_season.enrolled
       review_season.enrolled.each do |e|
         @grade.student_grades << StudentGrade.new(student_enrollment: e)
       end
@@ -39,7 +39,7 @@ class GradesController < AdminController
   end
 
   def edit
-    @students = @grade.review_season.enrolled_students
+    @enrollments = @grade.review_season.enrolled
   end
 
   def create
@@ -49,7 +49,7 @@ class GradesController < AdminController
       if @grade.save
         format.html { redirect_to grades_path }
       else
-        @students = @grade.review_season.enrolled_students
+        @enrollments = @grade.review_season.enrolled
         format.html { render :new }
       end
     end
@@ -60,7 +60,7 @@ class GradesController < AdminController
       if @grade.update(grade_params)
         format.html { redirect_to grades_path }
       else
-        @students = @grade.review_season.enrolled_students
+        @enrollments = @grade.review_season.enrolled
         format.html { render :edit }
       end
     end
@@ -79,6 +79,11 @@ class GradesController < AdminController
   def grades_per_season
     @grades = Grade.all.group_by { |g| g.review_season }
     respond_with @grades
+  end
+
+  def new_student_grade
+    student_grade = @grade.student_grades.build(student_enrollment: params[:student_enrollment])
+    render partial: 'student_strip', locals: {student_grade: student_grade, index: params[:index]}
   end
 
   private
