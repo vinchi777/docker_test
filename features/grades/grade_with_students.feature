@@ -3,10 +3,10 @@ Feature: Grades with students
 
   Background:
     Given A review season exists
-
-  Scenario: Add grades for enrolled students
     Given Students exists
     And I am on the new grade page
+
+  Scenario: Add grades for enrolled students
     Then I should see 2 students
     When I fill in the following "grade" details
       | Field       | Value       | Type |
@@ -22,8 +22,6 @@ Feature: Grades with students
     And I should see a grade with an average of 33
 
   Scenario: Wrong average calculation
-    Given Students exists
-    And I am on the new grade page
     When I fill in the following "grade" details
       | Field       | Value       | Type |
       | description | Semi Finals | text |
@@ -37,8 +35,6 @@ Feature: Grades with students
     Then I should not see a grade with an average of 32
 
   Scenario: Searching students
-    Given Students exists
-    And I am on the new grade page
     Then I should be able to search for the following student queries
       | Keyword   | Result |
       | bc        | 1      |
