@@ -15,29 +15,49 @@ $(document).on 'click', 'table td .form-control', ->
     target = table.find('thead td')[index]
     $(target).addClass 'active'
 
-$(document).on 'click', '#students-select-modal .toggle', ->
+# For select student modal
+$(document).on 'click', '#students-select-modal.primitive .toggle', ->
   self = $(this)
-  hidden = self.children('.hidden').removeClass('hidden')
-  hidden.siblings().first().addClass('hidden')
-  container = $(this).closest('.batch')
-  if self.children('.fa-check-circle-o:visible').length
+  container = $('#students-select-modal.primitive')
+  counts = get_counts(container)
+
+  if counts.count != counts.total_count
     container.find('a.student').removeClass('excluded')
   else
     container.find('a.student').addClass('excluded')
+
   count_selected_students(container)
   false
 
-$(document).on 'click', '#students-select-modal a.student', ->
+$(document).on 'click', '#students-select-modal.primitive a.student', ->
   self = $(this)
   self.toggleClass('excluded')
-  count_selected_students(self.closest('.batch'))
+  count_selected_students($('#students-select-modal.primitive'))
   false
 
-count_selected_students = (batch) ->
-  count = batch.find('a.student').not('.excluded').length
-  batch.find('.count b').text(count).change()
+get_counts = (container) ->
+  count = container.find('a.student:not(.excluded)').length
+  total_count = parseInt container.find('.total-count').text()
+  {count: count, total_count: total_count}
+
+count_selected_students = (container) ->
+  counts = get_counts(container)
+  container.find('.batch-count').text(counts.count)
+  toggle_select_icons(container, counts)
+
+toggle_select_icons = (container, counts) ->
+  toggle = container.find('.toggle')
+
+  toggle.children().addClass('hide')
+  if counts.count == 0
+    toggle.find('.fa-check-circle-o').removeClass('hide')
+  else if counts.count == counts.total_count
+    toggle.find('.fa-circle-o').removeClass('hide')
+  else
+    toggle.find('.fa-dot-circle-o').removeClass('hide')
 
 $ ->
+  count_selected_students($('#students-select-modal.primitive'))
   # adjust percent indicator
   $('.grade').each ->
     self = $(this)
@@ -64,6 +84,10 @@ $ ->
   $('#batch-grades .total-score').on 'change keyup', ->
     $('.student-list tr').each ->
       update_percent($(this))
+
+###$('#students-select-modal.primitive .student').click ->
+  selected_count = $('#students-select-modal.primitive').find('.student.excluded').length
+  $('#students-select-modal.primitive .batch-count').text(selected_count)###
 
 $(document).on 'change keyup', '#batch-grades .student-list input', ->
   self = $(this)

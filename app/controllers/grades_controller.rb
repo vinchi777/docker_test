@@ -30,6 +30,7 @@ class GradesController < AdminController
       redirect_to grades_path
     else
       @grade.review_season = review_season
+      @students = @grade.review_season.enrolled_students
       review_season.enrolled.each do |e|
         @grade.student_grades << StudentGrade.new(student_enrollment: e)
       end
@@ -38,6 +39,7 @@ class GradesController < AdminController
   end
 
   def edit
+    @students = @grade.review_season.enrolled_students
   end
 
   def create
