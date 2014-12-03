@@ -19,7 +19,7 @@
     | Found
     b<>
       | {{totalItems}}
-    | user(s)
+    ng-pluralize count='totalItems' when="{'0': 'user', '1': 'user', 'other': 'users'}"
   .users.listing.panel.panel-light.col-md-12
     .empty-list ng-show='users.length == 0 && q == null'
       p

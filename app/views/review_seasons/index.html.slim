@@ -24,8 +24,12 @@
         .row
           form role='form'
             .col-lg-2
-              div: a href='/students?season={{r.id}}&status=2' target='_blank' {{r.enrolled}} student(s)
-              div: a href='/students?season={{r.id}}&status=1' target='_blank' {{r.enrolling}} enrollee(s)
+              div: a href='/students?season={{r.id}}&status=2' target='_blank'
+                | {{r.enrolled}}
+                ng-pluralize< count='r.enrolled' when="{'0': 'student', '1': 'student', 'other': 'students'}"
+              div: a href='/students?season={{r.id}}&status=1' target='_blank'
+                | {{r.enrolling}}
+                ng-pluralize< count='r.enrolling' when="{'0': 'enrollee', '1': 'enrollee', 'other': 'enrollees'}"
               .actions
                 a href='#' data-toggle='modal' data-target=('#confirm-{{r.id}}')
                   i.fa.fa-trash

@@ -20,7 +20,7 @@
             .points
               h2
                 | {{t.questions_length}}
-              span item(s)
+              span: ng-pluralize count='t.questions_length' when="{'0': 'item', '1': 'item', 'other': 'items'}"
           .description
             h6
               | {{t.description}}
