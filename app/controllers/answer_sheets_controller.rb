@@ -30,9 +30,10 @@ class AnswerSheetsController < AdminController
   end
 
   def update
+    set_submission @sheet
     respond_with @sheet do |format|
       if @sheet.submitted?
-        format.json { render json: {error: 'already submitted'}, status: :unprocessable_entity }
+        format.json { render :show }
       else
         if @sheet.update(sheet_params)
           format.json { render :show }
