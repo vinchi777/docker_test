@@ -49,6 +49,7 @@ class GradesController < AdminController
       if @grade.save
         format.html { redirect_to grades_path }
       else
+        @students = @grade.review_season.enrolled_students
         format.html { render :new }
       end
     end
@@ -59,6 +60,7 @@ class GradesController < AdminController
       if @grade.update(grade_params)
         format.html { redirect_to grades_path }
       else
+        @students = @grade.review_season.enrolled_students
         format.html { render :edit }
       end
     end
