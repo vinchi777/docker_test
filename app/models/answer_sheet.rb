@@ -48,7 +48,7 @@ class AnswerSheet
   end
 
   def remaining
-    start_time + test.timer * 60 - Time.now if start_time
+    start_time + test.timer * 60 - Time.now if start_time && test.timer != 0
   end
 
   def correct_points
