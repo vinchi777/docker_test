@@ -19,8 +19,8 @@ class Test
   validates_associated :questions
 
   def create_answer_sheet_for(student)
-    unless student.answer_sheets.where(test: self).exists?
-      a = AnswerSheet.create(student: student, test: self)
+    if student.current_enrollment && !student.current_enrollment.answer_sheets.where(test: self).exists?
+      a = AnswerSheet.create(student_enrollment: student.current_enrollment, test: self)
       qs =
           if random
             questions.shuffle
