@@ -14,7 +14,7 @@
               span<> of
               span
                 | {{totalSize}}
-              span< students
+              span<: ng-pluralize count='totalSize' when="{'0': 'student', '1': 'student', 'other': 'students'}"
 
         .modal-body
           .batch

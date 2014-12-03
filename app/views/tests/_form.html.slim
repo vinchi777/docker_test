@@ -37,7 +37,7 @@ form
       .pull-right
         b>
         | {{test.questions.length}}
-        span< item(s)
+        span<: ng-pluralize count='test.questions.length' when="{'0': 'item', '1': 'item', 'other': 'items'}"
     hr
 
   .question ng-repeat='(i, q) in test.questions' ng-class='{wrong: q.answer == null}'
