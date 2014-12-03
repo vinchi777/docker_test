@@ -42,7 +42,6 @@ class GradesController < AdminController
 
   def create
     @grade = Grade.new(grade_params)
-    @grade.review_season = ReviewSeason.current
 
     respond_to do |format|
       if @grade.save
