@@ -48,7 +48,17 @@
     r.success (d) ->
       d.push {season: 'All', id: 0}
       $scope.seasons = d
-      $scope.season = d[0]
+
+      ss = null
+      if $scope.season
+        ss = s for s in d when s.id == $scope.season.id
+        if ss != null
+          $scope.season = ss
+        else
+          $scope.season = d[0]
+      else
+        $scope.season = d[0]
+
       loadStudents()
 
   loadEnrollmentStatus = ->
