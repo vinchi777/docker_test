@@ -61,6 +61,24 @@ $ ->
     do_scroll_x($('#batch-grades .table-wrapper').first(), $(this))
     false###
 
+  $('#batch-grades .total-score').on 'change keyup', ->
+    $('.student-list tr').each ->
+      update_percent($(this))
+
+$(document).on 'change keyup', '#batch-grades .student-list input', ->
+  self = $(this)
+  parent = self.closest('tr')
+  update_percent(parent, self)
+
+update_percent = (student_container, input) ->
+  pr = student_container.find('.pr')
+  input = if input == undefined then student_container.find('.form-control') else input
+  points = safe_float_val($('#batch-grades .total-score'))
+  score = safe_float_val(input)
+  percentage = score / points * 100
+  percentage = Math.round(percentage)
+  percentage = 0 if isNaN(percentage) || percentage == Infinity
+  pr.text(percentage)
 
 adjust_gauge = (level, percent, container) ->
   if percent <= 0

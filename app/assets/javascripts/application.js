@@ -45,3 +45,12 @@ window.do_scroll_x = function (container, target) {
   scroll = target.offset().left
   container.animate({scrollLeft: scroll}, "fast")
 }
+
+window.safe_num_val = function(element) {
+    num = parseInt(element.val())
+    return num == NaN ? 0 : num
+}
+window.safe_float_val = function(element) {
+    num = parseFloat(element.val())
+    return isNaN(num) ? 0 : num
+}
