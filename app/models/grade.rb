@@ -3,7 +3,7 @@ class Grade
   field :description, type: String
   field :date, type: Date
   field :points, type: Integer
-  field :average, type: Integer, default: 0
+  field :average, type: Float, default: 0
 
   belongs_to :review_season
   has_many :student_grades, dependent: :destroy
@@ -40,7 +40,7 @@ class Grade
     if sum == 0
       self.average = 0
     else
-      self.average = (sum / size * 100.0 / points)
+      self.average = sum.to_d / size * 100 / points
     end
   end
 
