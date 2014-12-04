@@ -3,7 +3,7 @@ class Test
   field :description, type: String
   validates_presence_of :description
 
-  field :date, type: Time
+  field :date, type: Date
   validates_presence_of :date
 
   field :deadline, type: Time
@@ -42,6 +42,27 @@ class Test
 
   def deadline?
     Time.now > deadline
+  end
+
+  def test?
+    true
+  end
+
+  def timer?
+    timer != 0
+  end
+
+  def average
+    return 0 if answer_sheets.empty?
+    answer_sheets.inject(0) { |sum, s| sum + s.percent } / answer_sheets.size
+  end
+
+  def points
+    questions.size
+  end
+
+  def self.finished
+    Test.all.select { |t| t.deadline? }
   end
 end
 

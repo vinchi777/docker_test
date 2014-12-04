@@ -20,7 +20,9 @@
         td = "P #{to_currency @student.total_current_amount}"
     p
       | We support online payment of reservation fee (down payment) of
-      b<> P 3,000
+      b<
+        | Php
+        =<> to_currency @season.reservation
       | to confirm your application. Should you
               wish to pay manually, you may Skip the button and do payment at our office within three days to verify your
               enrollment.

@@ -7,8 +7,6 @@ class GradesController < AdminController
 
   def index
     @review_seasons = ReviewSeason.descending
-    @grades = Grade.all
-    respond_with @grades
   end
 
   def show
