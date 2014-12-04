@@ -37,6 +37,10 @@ class Test
   def deadline?
     Time.now > deadline
   end
+
+  def self.finished
+    Test.all.select {|t| t.deadline?}
+  end
 end
 
 class Question

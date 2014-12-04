@@ -7,7 +7,7 @@ class GradesController < AdminController
 
   def index
     @review_seasons = ReviewSeason.descending
-    @grades = Grade.all
+    @grades = Grade.all.concat Test.finished
     respond_with @grades
   end
 
