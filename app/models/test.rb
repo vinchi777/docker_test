@@ -54,7 +54,7 @@ class Test
 
   def average
     return 0 if answer_sheets.empty?
-    answer_sheets.inject(0) { |sum, s| s + s.percent } / answer_sheets.size
+    answer_sheets.inject(0) { |sum, s| sum + s.percent } / answer_sheets.size
   end
 
   def points

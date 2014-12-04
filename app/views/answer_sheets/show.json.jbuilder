@@ -10,7 +10,7 @@ json.expired @sheet.expired?
 json.deadline @sheet.deadline?
 json.correct_points @sheet.correct_points
 json.total_points @sheet.total_points
-json.percent @sheet.percent
+json.percent '%.1f' % @sheet.percent if @sheet.percent
 json.answers @sheet.answers do |a|
   json.id a.id.to_s
   json.text a.question.text

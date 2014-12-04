@@ -16,4 +16,32 @@ class StudentGrade
   def is_for_delete
     to_delete
   end
+
+  def average
+    (score*100.0/total_points).round
+  end
+
+  def total_points
+    grade.points
+  end
+
+  def points
+    score
+  end
+
+  def description
+    grade.description
+  end
+
+  def date
+    grade.date
+  end
+
+  def test?
+    false
+  end
+
+  def timer?
+    false
+  end
 end

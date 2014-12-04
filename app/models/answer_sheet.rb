@@ -64,7 +64,7 @@ class AnswerSheet
   end
 
   def percent
-    '%.1f' % (correct_points / total_points.to_d * 100) if deadline?
+    (correct_points / total_points.to_d * 100) if deadline?
   end
 end
 
