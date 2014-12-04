@@ -1,5 +1,5 @@
 class GradesController < AdminController
-  before_action :set_grade, only: [:show, :edit, :update, :destroy, :new_student_grade]
+  before_action :set_grade, only: [:show, :edit, :update, :destroy]
   before_action :set_page
 
   layout 'grades'
@@ -82,7 +82,7 @@ class GradesController < AdminController
   end
 
   def new_student_grade
-    student_grade = @grade.student_grades.build(student_enrollment: params[:student_enrollment])
+    student_grade = StudentGrade.new(student_enrollment: params[:student_enrollment])
     render partial: 'student_strip', locals: {student_grade: student_grade, index: params[:index]}
   end
 
@@ -92,7 +92,7 @@ class GradesController < AdminController
   end
 
   def grade_params
-    params.require(:grade).permit(:id, :description, :date, :points, :review_season_id, student_grades_attributes: [:id, :score, :student_enrollment_id])
+    params.require(:grade).permit(:id, :description, :date, :points, :review_season_id, student_grades_attributes: [:id, :score, :student_enrollment_id, :to_delete])
   end
 
   def set_page

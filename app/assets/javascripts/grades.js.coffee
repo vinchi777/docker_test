@@ -2,7 +2,8 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 $ ->
-  count_selected_students($('#students-select-modal.primitive'))
+  modal = $('#students-select-modal.primitive')
+  count_selected_students(modal)
 
   # adjust percent indicator
   $('.grade').each ->
@@ -15,7 +16,7 @@ $ ->
     false###
 
   $('#batch-grades .edit-students').click ->
-    $('#students-select-modal').modal('show')
+    modal.modal('show')
     false
 
   update_percents()
@@ -34,15 +35,43 @@ $ ->
         self.fadeIn()
 
   #Search in student select modal
-  $('#students-select-modal.primitive input.search-students').keyup ->
+  modal.find('input.search-students').keyup ->
     q = $(this).val().toLowerCase()
-    $('#students-select-modal.primitive .student').each ->
+    modal.find('.student').each ->
       self = $(this)
       student = self.data('query').toLowerCase()
       if student.indexOf(q) == -1
         self.fadeOut()
       else
         self.fadeIn()
+
+  student_list_container = $('#batch-grades tbody.student-list')
+  student_count = student_list_container.find('tr').length
+  modal.find('input:submit').click ->
+    current = $('#batch-grades .student-list tr')
+    ids = current.map -> $(this).data('enrollment-id')
+    modal.find('a.student').each ->
+      self = $(this)
+      id = self.data('enrollment-id')
+      selected = !$(this).hasClass('excluded')
+      student = student_list_container.find("[data-enrollment-id='#{id}']")
+
+      if student.length
+        if selected
+          student.removeClass('hide')
+          student.find('.to-delete').val(false)
+          modal.modal('hide')
+        else
+          student.addClass('hide')
+          student.find('.to-delete').val(true)
+          modal.modal('hide')
+      else if selected
+        $.ajax
+          url: "/grades/new_student_grade"
+          data: {index: student_count++, student_enrollment: id}
+          success: (data) ->
+            student_list_container.append(data)
+            modal.modal('hide')
 
 
 # For table effects
@@ -77,7 +106,8 @@ $(document).on 'click', '#students-select-modal.primitive .toggle', ->
 $(document).on 'click', '#students-select-modal.primitive a.student', ->
   self = $(this)
   self.toggleClass('excluded')
-  count_selected_students($('#students-select-modal.primitive'))
+  container = $('#students-select-modal.primitive')
+  count_selected_students(container)
   false
 
 get_counts = (container) ->

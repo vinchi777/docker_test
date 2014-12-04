@@ -56,7 +56,6 @@ $ ->
       unless self.hasClass('momented')
         self.addClass('momented')
         date = self.text()
-        console.log date
         m = moment(date).format('MMMM D');
         self.text(m)
 

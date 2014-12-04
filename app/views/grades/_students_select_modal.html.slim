@@ -31,7 +31,7 @@
               - else
                 - @enrollments.each do|e|
                   - student = e.student
-                  a.col-md-4.student href='#' class=(existing_student student) data-query=student data-enrollment=e.id
+                  a.col-md-4.student href='#' class=(existing_student student) data-query=student data-enrollment-id=e.id
                     span.profile-pic
                       i.fa.fa-check
                       - if student.has_profile_pic?
