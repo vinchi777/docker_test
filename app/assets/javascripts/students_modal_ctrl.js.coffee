@@ -4,17 +4,15 @@
     $scope.students = []
 
     loadStudents = ->
-      ReviewSeason.query (r) ->
-        params =
-          season: r[0].id
-          per_page: 0
-          status: 2 # enrolled
-        $scope.season = r[0]
-        r = $http.get '/students.json', params: params
-        r.success (d) ->
-          $scope.students = d.students
-          $scope.totalSize = d.totalSize
-          $scope.selected = []
+      params =
+        season: $scope.season.id
+        per_page: 0
+        status: 2 # enrolled
+      r = $http.get '/students.json', params: params
+      r.success (d) ->
+        $scope.students = d.students
+        $scope.totalSize = d.totalSize
+        $scope.selected = []
 
     $scope.toggle = (s) ->
       s.selected = !s.selected
@@ -25,7 +23,9 @@
         idx = $scope.selected.indexOf
         $scope.selected.splice(idx, 1) if idx != -1
 
+    # a - Review season obj
     $scope.$on 'student_modal_show', (e, a) ->
+      $scope.season = a
       loadStudents()
 
     $scope.toggleAll = ->

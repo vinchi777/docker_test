@@ -4,6 +4,10 @@ json.date @test.date.strftime('%b %e, %Y')
 json.deadline @test.deadline.strftime('%b %e, %Y %I:%M %p')
 json.timer @test.timer
 json.random @test.random
+json.review_season do
+  json.id @test.review_season.id.to_s
+  json.season @test.review_season.season
+end
 json.questions @test.questions.each do |q|
   json.id q.id.to_s
   json.text q.text
