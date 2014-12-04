@@ -11,12 +11,12 @@ $ ->
     percent = parseInt(self.find('.percent').val())
   # adjust_gauge(1, percent, self)
 
-  ###$('.new-grade').click ->
-    $('#grade-modal').modal('show')
-    false###
-
+  original_selected = []
+  original_toggle = null
   $('#batch-grades .edit-students').click ->
     modal.modal('show')
+    original_selected = modal.find('.student:not(.excluded)')
+    original_toggle = modal.find('.toggle .fa:not(.hide)')
     false
 
   update_percents()
@@ -45,6 +45,7 @@ $ ->
       else
         self.fadeIn()
 
+  #Ajax add students to list
   student_list_container = $('#batch-grades tbody.student-list')
   student_count = student_list_container.find('tr').length
   modal.find('input:submit').click ->
@@ -57,21 +58,33 @@ $ ->
       student = student_list_container.find("[data-enrollment-id='#{id}']")
 
       if student.length
+        hide_modal()
         if selected
           student.removeClass('hide')
           student.find('.to-delete').val(false)
-          modal.modal('hide')
         else
           student.addClass('hide')
           student.find('.to-delete').val(true)
-          modal.modal('hide')
       else if selected
         $.ajax
           url: "/grades/new_student_grade"
           data: {index: student_count++, student_enrollment: id}
           success: (data) ->
+            hide_modal()
             student_list_container.append(data)
-            modal.modal('hide')
+
+  #Revert selected students if cancel
+  modal.find('.actions .revert').click ->
+    hide_modal()
+    modal.find('.student:not(.excluded)').addClass('excluded')
+    original_selected.removeClass('excluded')
+    modal.find('.batch-count').text(original_selected.length)
+    modal.find('.toggle .fa:not(.hide)').addClass('hide')
+    original_toggle.removeClass('hide')
+    false
+
+  hide_modal = ->
+    modal.modal('hide')
 
 
 # For table effects
