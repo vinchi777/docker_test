@@ -18,9 +18,15 @@ class Test
   accepts_nested_attributes_for :questions
   validates_associated :questions
 
+  has_many :answer_sheets, dependent: :destroy
+
+  belongs_to :review_season
+  validates_presence_of :review_season
+
   def create_answer_sheet_for(student)
-    if student.current_enrollment && !student.current_enrollment.answer_sheets.where(test: self).exists?
-      a = AnswerSheet.create(student_enrollment: student.current_enrollment, test: self)
+    enrollment = student.enrollments.where(review_season: review_season).first
+    if enrollment && !enrollment.answer_sheets.where(test: self).exists?
+      a = AnswerSheet.create(student_enrollment: enrollment, test: self)
       qs =
           if random
             questions.shuffle

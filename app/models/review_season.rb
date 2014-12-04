@@ -43,6 +43,8 @@ class ReviewSeason
   has_many :enrollments, class_name: 'StudentEnrollment', dependent: :restrict
   has_many :grades, dependent: :destroy
 
+  has_many :tests, dependent: :destroy
+
   def date_precedence
 
     if season_start.present? && season_end.present? && season_start + 1.day > season_end

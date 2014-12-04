@@ -47,7 +47,7 @@
               updateOnZero = true
               $scope.update()
 
-          if !$scope.sheet.submitted && $scope.near && !audioPlayed && $scope.sheet.test.timer != null
+          if !$scope.sheet.submitted && $scope.near && !audioPlayed && $scope.sheet.test.timer > 0
             audioPlayed = true
             new Audio('/assets/countdown.mp3').play()
 

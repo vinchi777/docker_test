@@ -1,0 +1,80 @@
+<style>
+    * {
+        font-family: 'Arial';
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 18px;
+    }
+
+    h2 {
+        font-size: 16px;
+    }
+
+    header {
+        background-color: #efc94c;
+        padding: 13px 18px;
+        border-radius: 8px 8px 0 0;
+    }
+
+    header a {
+        text-decoration: none;
+        color: #444;
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+    .container {
+        background: lightgray;
+        width: 90%;
+        margin-left: 5%;
+        margin-top: 20px;
+        border-radius: 8px;
+    }
+
+    .content {
+        padding: 1px 20px;
+    }
+
+    footer {
+        background: darkgray;
+        padding: 11px 20px;
+        border-radius: 0 0 8px 8px;
+    }
+
+    footer * {
+        font-size: 12px
+    }
+
+</style>
+
+<div class="container">
+  <header>
+    <%= link_to root_url, target: '_blank' do %>
+       MaxRevOne
+    <% end %>
+  </header>
+  <div class="content">
+    <h2>
+      Hello <span><%= @user.person.firstName + ' ' + @user.person.lastName + '!' %></span>
+    </h2>
+
+    <p>
+      You can confirm your account email through this
+      <span> <%= link_to 'link', user_confirmation_url(confirmation_token: @token) %></span>
+    </p>
+
+    <p>
+      Your password is
+      <b><%= @user.password %></b>
+    </p>
+  </div>
+
+  <footer>
+    <span> © </span>
+    <%= link_to 'MaxRevOne', root_url, target: '_blank' %>
+    <span> 2014 Powered by </span>
+    <%= link_to 'Infiniti Code Box, Inc.', 'http://www.infiniticodebox.com', target: '_blank ' %>
+  </footer>
+</div>

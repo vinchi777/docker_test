@@ -54,7 +54,7 @@
           $scope.errors.push "#{toHuman(k)} #{v}" unless "#{toHuman(k)} #{v}" in $scope.errors
 
   $scope.selectStudents = ->
-    $scope.$broadcast 'student_modal_show', null
+    $scope.$broadcast 'student_modal_show', $scope.test.review_season
 
   $scope.$on 'students_selected', (e, a) ->
     params =
