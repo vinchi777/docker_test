@@ -37,10 +37,10 @@ class Grade
       end
     end
 
-    if sum ==0
-      self.average =0
+    if sum == 0
+      self.average = 0
     else
-      self.average = sum / size * 100.0 / points
+      self.average = (sum / size * 100.0 / points).round
     end
   end
 
