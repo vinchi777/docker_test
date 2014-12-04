@@ -1,0 +1,18 @@
+= fields_for grade_name_attr(index), student_grade do |f|
+  - student = student_grade.student
+  - enrollment_id = student_grade.student_enrollment.id
+  tr data-query=student data-enrollment-id=enrollment_id
+    th.student
+      = f.hidden_field :id unless student_grade.new_record?
+      = f.hidden_field :to_delete, value: false, class: 'to-delete'
+      = f.hidden_field :student_enrollment_id, value: enrollment_id
+      span.profile-pic
+        = render 'students/profile_pic', student: student
+      span
+        b = student.lastName
+        = student.trailing_name
+    td
+      = f.text_field :score, class: 'form-control'
+    td
+      span.pr 0
+      | %

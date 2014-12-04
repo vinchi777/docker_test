@@ -50,8 +50,8 @@ class Student < Person
   # Caching purposes
   field :is_enrolling, type: Boolean, default: false
 
-  has_many :invoices, class_name: 'StudentInvoice'
-  has_many :enrollments, class_name: 'StudentEnrollment'
+  has_many :invoices, class_name: 'StudentInvoice', dependent: :destroy
+  has_many :enrollments, class_name: 'StudentEnrollment', dependent: :destroy
 
   scope :filter, ->(season, status) do
     if season.nil? || season == '0' # No season filter

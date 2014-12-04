@@ -21,7 +21,7 @@ class StudentEnrollment
 
   belongs_to :student
   belongs_to :review_season
-  has_many :answer_sheets
+  has_many :answer_sheets, dependent: :destroy
   has_many :student_grades, dependent: :destroy
 
   def self.status_json
