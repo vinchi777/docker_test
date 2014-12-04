@@ -35,7 +35,7 @@
           b>
             | {{done().length}}
           | of {{sheet.answers.length}}
-          ng-pluralize count='sheet.answers.length' when="{'0': 'item', '1': 'item', 'other': 'items'}"
+          ng-pluralize<> count='sheet.answers.length' when="{'0': 'item', '1': 'item', 'other': 'items'}"
           | done
       hr
 
