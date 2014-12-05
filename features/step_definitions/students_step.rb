@@ -35,7 +35,7 @@ When /^I search for "(.*?)"/ do |query|
 end
 
 And /^I should see "(.*?)" students$/ do |count|
-  expect(page).to have_content "Found #{count} student(s)"
+  expect(page).to have_content "Found #{count} " + 'student'.pluralize(count.to_i)
 end
 
 When /^I remove a student$/ do
@@ -82,10 +82,10 @@ Given /^I am on the enrollment package type page$/ do
 end
 
 Then /^I should be able to search students by/ do |data|
-  data.rows.each do|row|
+  data.rows.each do |row|
     fill_in 'q', with: row[0]
     execute_script('$(".search form").submit()')
     expect(page).to have_content row[1]
-    expect(page).to have_content "Found #{row[2]} student(s)"
+    expect(page).to have_content "Found #{row[2]} " + 'student'.pluralize(row[2].to_i)
   end
 end
