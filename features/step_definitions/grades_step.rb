@@ -36,15 +36,18 @@ When /^I fill in the following "(.*?)" details$/ do |pre, data|
     name = "#{pre}[#{row[0]}]"
     case row[2]
       when 'text'
+        if pre == 'test' && row[0] == 'question_0_ratio' # Add rationale
+          all('.add-rationale').each { |l| l.click }
+        end
         fill_in name, with: row[1]
       when 'select'
         select row[1], from: name
       when 'check'
-        check row[1]
+        check name
       when 'uncheck'
-        uncheck row[1]
+        uncheck name
       when 'choose'
-        choose row[1]
+        choose name
     end
   end
 end
