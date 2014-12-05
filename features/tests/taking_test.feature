@@ -9,6 +9,7 @@ Feature: Taking tests
     Given a test with timer exists and published
     When I am on the student grade page
     Then I should see this answer sheet
+      | Attribute   | Value           | Type    |
       | item        | 1               | text    |
       | timer       | true            | boolean |
       | date        | Dec 4, 2014     | text    |
@@ -19,6 +20,7 @@ Feature: Taking tests
   Scenario: Answer sheet with no timer exists
     Given a test without timer exists and published
     Then I should see this answer sheet
+      | Attribute   | Value           | Type    |
       | item        | 1               | text    |
       | timer       | false           | boolean |
       | date        | Dec 4, 2014     | text    |
