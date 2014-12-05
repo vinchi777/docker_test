@@ -34,8 +34,8 @@ end
 
 When /I remove the invoice/ do
   execute_script "$('#remove-#{@invoice.id}').show()"
-  find("#remove-#{@invoice.id}").click
   sleep 0.1
+  find("#remove-#{@invoice.id}").click
   click_on 'Yes'
 end
 
