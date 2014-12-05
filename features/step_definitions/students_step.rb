@@ -13,7 +13,7 @@ When /^I fill up these student information/ do |table|
   end
 end
 
-When /^I submit the student form/ do
+When /^I save the student form/ do
   all('.save.btn').first.click
 end
 

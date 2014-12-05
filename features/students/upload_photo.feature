@@ -18,5 +18,5 @@ Feature: Upload student photo
       | elem         | Bethel International School | text   |
       | elemYear     | 2000                        | select |
     When I attach a photo
-    And I submit the student form
+    And I save the student form
     Then I should see the uploaded photo

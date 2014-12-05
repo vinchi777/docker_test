@@ -17,7 +17,7 @@ Feature: Add students
       | hsYear       | 2010                        | select |
       | elem         | Bethel International School | text   |
       | elemYear     | 2000                        | select |
-    And I submit the student form
+    And I save the student form
     Then I should be on the students page
 
   Scenario: Insert all fields
@@ -45,10 +45,10 @@ Feature: Add students
       | facebook          | juan                        | text   |
       | twitter           | juan                        | text   |
       | linkedin          | juan                        | text   |
-    And I submit the student form
+    And I save the student form
     Then I should be on the students page
 
   Scenario: Insert blank data
     When I am on the new student page
-    And I submit the student form
+    And I save the student form
     Then I should see 11 errors
