@@ -3,12 +3,11 @@ Given /I am on the tests page/ do
 end
 
 When /I click the add test link/ do
-  all('.new-test').first.click
+  find('.new-test', match: :first).click
 end
 
 When /I save the test form/ do
   click_on 'Save'
-  sleep 0.1
 end
 
 Then /the test is persisted/ do

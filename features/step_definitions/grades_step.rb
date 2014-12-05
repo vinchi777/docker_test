@@ -89,9 +89,8 @@ end
 Then /^I should be able to search for the following student queries$/ do |data|
   data.rows.each do |row|
     fill_in 'q', with: row[0]
-    sleep 0.5
-    visibles = all('.student-list tr').select { |tr| tr.visible? }
-    expect(visibles.count).to eq row[1].to_i
+    s = all('.student-list tr', count: row[1].to_i)
+    expect(s.count).to eq row[1].to_i
   end
 end
 

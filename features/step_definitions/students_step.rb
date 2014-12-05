@@ -14,11 +14,11 @@ When /^I fill up these student information/ do |table|
 end
 
 When /^I save the student form/ do
-  all('.save.btn').first.click
+  first('.save.btn').click
 end
 
 Then /^I should see (\d+) errors/ do |i|
-  expect(all('.error li').count).to eq i.to_i
+  expect(all('.error li', count: i.to_i).count).to eq i.to_i
 end
 
 Then /^I should be on the students page$/ do
@@ -40,9 +40,7 @@ end
 
 When /^I remove a student$/ do
   @count = Student.count
-  sleep 1.0
-  all('.student .actions a').first.click
-  sleep 0.5
+  find('.student .actions a', match: :first).click
   click_on 'Yes'
 end
 
@@ -53,9 +51,7 @@ end
 
 When /^I cancel the removal of student$/ do
   @count = Student.count
-  sleep 1.0
-  all('.student .actions a').first.click
-  sleep 0.5
+  find('.student .actions a', match: :first).click
   click_on 'No'
 end
 

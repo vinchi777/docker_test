@@ -17,7 +17,6 @@ Given /^I have logged in as admin$/ do
   fill_in 'user_email', with: 'admin@example.com'
   fill_in 'user_password', with: '123456789'
   click_on 'Log in'
-  sleep 0.5
 end
 
 Given /^there are existing students$/ do
