@@ -36,7 +36,9 @@ When /I remove the invoice/ do
   execute_script "$('#remove-#{@invoice.id}').show()"
   sleep 0.1
   find("#remove-#{@invoice.id}").click
+  sleep 0.1
   click_on 'Yes'
+  sleep 0.1
 end
 
 Then /I should not see the invoice/ do
