@@ -6,7 +6,7 @@
           h4.modal-title
             | Select Students
           .search-wrapper
-            input.form-control.search-students type='text' placeholder='Search students' ng-model='filter'
+            input.form-control.search-students type='text' placeholder='Search students' ng-model='filter' name='q'
           .overall-count.pull-right ng-hide='students.length == 0'
             .count
               b.batch-count
@@ -29,7 +29,7 @@
             .form-group.student-list
               div.col-md-12.text-center ng-show='students.length == 0'
                 | No enrolled students found for seasons {{season.season}}
-              a.col-md-4.student href='' ng-repeat='s in students | filter:filter' ng-click='toggle(s)' ng-class='{excluded:!s.selected}'
+              a.col-md-4.student href='' ng-repeat='s in students | filter:filter' ng-click='toggle(s)' ng-class='{excluded:!s.selected, selected:s.selected}'
                 span.profile-pic
                   i.fa.fa-check
                   img.profile ng-src='{{s.profile_pic}}' ng-show='s.profile_pic != null'

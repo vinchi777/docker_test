@@ -29,7 +29,7 @@ Given /^I am on the students page$/ do
   visit students_path
 end
 
-When /^I search for "(.*?)"/ do |query|
+When /^I search for "(.*?)"$/ do |query|
   fill_in 'q', with: query
   execute_script('$(".search form").submit()')
 end

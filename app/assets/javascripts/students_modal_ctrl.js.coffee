@@ -13,6 +13,9 @@
         $scope.students = d.students
         $scope.totalSize = d.totalSize
         $scope.selected = []
+        for s in $scope.students
+          s.selected = true
+          $scope.selected.push s
 
     $scope.toggle = (s) ->
       s.selected = !s.selected

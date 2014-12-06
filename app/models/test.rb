@@ -23,9 +23,14 @@ class Test
   belongs_to :review_season
   validates_presence_of :review_season
 
+  def has_answer_sheet?(student)
+    enrollment = student.enrollments.where(review_season: review_season).first
+    enrollment && enrollment.answer_sheets.where(test: self).exists?
+  end
+
   def create_answer_sheet_for(student)
     enrollment = student.enrollments.where(review_season: review_season).first
-    if enrollment && !enrollment.answer_sheets.where(test: self).exists?
+    unless has_answer_sheet? student
       a = AnswerSheet.create(student_enrollment: enrollment, test: self)
       qs =
           if random

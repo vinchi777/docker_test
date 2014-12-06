@@ -5,7 +5,8 @@ Feature: Distribute test
     * a review season exists
     * enrolled students exists for the current season
     * a test exists
-    When I click on the test
+    * I am on the tests page
+    When I click on the test  
     * I press the "Publish" button
 
   Scenario: Student exists on the modal
@@ -17,9 +18,10 @@ Feature: Distribute test
     * the students have answer sheets
 
   Scenario: Filter students
-    When I search for "Aquino"
-    Then I should see 1 student for selection
-    When I press the "Start" button
-    Then "Aquino" should have answer sheet
+    When I deselect all students
+    * I search for "Bob" in student select
+    * select the student
+    * I press the "Start" button
+    Then "Bob" should have answer sheet
     * other students should not have answer sheets
 
