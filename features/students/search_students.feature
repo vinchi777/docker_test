@@ -1,8 +1,9 @@
 Feature: Search students
+
   Scenario: Search students
     Given I am logged in as admin
-    * there are existing students
-    Given I am on the students page
+    * students exist for searching
+    * I am on the students page
     Then I should be able to search students by name
       | Query | Text             | Count |
       | Joh   | dela Cruz, John  | 1     |

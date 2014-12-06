@@ -2,7 +2,7 @@ Feature: Basic grade
 
   Background:
     Given I am logged in as admin
-    * A review season exists
+    * a review season exists
 
   Scenario: Add new grade
     Given I am on the grades page

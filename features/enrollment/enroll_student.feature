@@ -1,7 +1,7 @@
 Feature: Online enrollment for students
 
   Scenario: Full package enrollment
-    Given A review season exists
+    Given a review season exists
     * I am on the enrollment package type page
     When I select "standard_package"
     * I press the "Next" button

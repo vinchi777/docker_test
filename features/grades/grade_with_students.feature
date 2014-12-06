@@ -2,8 +2,8 @@ Feature: Grades with students
 
   Background:
     Given I am logged in as admin
-    * A review season exists
-    * Students exists
+    * a review season exists
+    * students exist
     * I am on the new grade page
 
   Scenario: Add grades for enrolled students

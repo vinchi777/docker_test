@@ -2,7 +2,7 @@ Feature: Taking tests
 
   Background:
     Given I am logged in as a student
-    * A review season exists
+    * a review season exists
     * I am enrolled for the current season
 
   Scenario: Answer sheet exists

@@ -2,8 +2,7 @@ Feature: Add student payment
 
   Background:
     Given I am logged in as admin
-    * A review season exists
-    * there are existing students
+    * students exist
 
   Scenario: Insert required information
     Given I add a student invoice
