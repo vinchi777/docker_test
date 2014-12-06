@@ -114,7 +114,7 @@ class Student < Person
   end
 
   def has_enrollment_on(season)
-    enrollments.any? { |x| x.review_season = season }
+    enrollments.any? { |x| x.review_season == season }
   end
 
   def enrollment_status
