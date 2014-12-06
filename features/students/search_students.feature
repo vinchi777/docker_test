@@ -1,6 +1,7 @@
-@admin @student_list
 Feature: Search students
   Scenario: Search students
+    Given I am logged in as admin
+    And there are existing students
     Given I am on the students page
     Then I should be able to search students by name
       | Query | Text             | Count |

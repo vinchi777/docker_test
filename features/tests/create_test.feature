@@ -1,7 +1,7 @@
 Feature: Create test
 
   Background:
-    Given I have logged in as admin
+    Given I am logged in as admin
     * A review season exists
     * I am on the tests page
     When I click the add test link

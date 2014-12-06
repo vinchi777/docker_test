@@ -1,7 +1,7 @@
 Feature: Distribute test
 
   Background:
-    Given I have logged in as admin
+    Given I am logged in as admin
     * A review season exists
     * enrolled students exists for the current season
     * a test exists

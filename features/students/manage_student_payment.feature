@@ -1,8 +1,9 @@
-@admin  @review_season
 Feature: Add student payment
 
   Background:
-    Given there are existing students
+    Given I am logged in as admin
+    And A review season exists
+    And there are existing students
 
   Scenario: Insert required information
     Given I add a student invoice

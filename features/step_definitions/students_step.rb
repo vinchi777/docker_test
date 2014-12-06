@@ -85,3 +85,10 @@ Then /^I should be able to search students by/ do |data|
     expect(page).to have_content "Found #{row[2]} " + 'student'.pluralize(row[2].to_i)
   end
 end
+
+Given /there are existing students for filtering/ do
+  StudentFactory.create_student('maria')
+  StudentFactory.create_student('jk', true, false)
+  StudentFactory.create_student('abc', true, true)
+  StudentFactory.create_student('def', true, true)
+end

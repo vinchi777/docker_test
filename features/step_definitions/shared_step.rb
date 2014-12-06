@@ -10,7 +10,7 @@ Then /^I should be on the homepage$/ do
   expect(current_path).to eq root_path
 end
 
-Given /^I have logged in as admin$/ do
+Given /^I am logged in as admin$/ do
   p = Person.create(firstName: 'John', lastName: 'dela Cruz', email: 'admin@example.com')
   User.create(password: '123456789', person: p, confirmed_at: Date.new)
   visit '/login'

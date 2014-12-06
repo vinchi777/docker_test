@@ -1,5 +1,7 @@
-@admin @student_list
 Feature: Add students
+
+  Background:
+    Given I am logged in as admin
 
   Scenario: Insert required information
     When I am on the new student page

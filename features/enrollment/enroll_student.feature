@@ -1,8 +1,8 @@
 Feature: Online enrollment for students
 
-  @review_season
   Scenario: Full package enrollment
-    Given I am on the enrollment package type page
+    Given A review season exists
+    And I am on the enrollment package type page
     When I select "standard_package"
     And I press the "Next" button
     And I fill up these student information
@@ -28,7 +28,6 @@ Feature: Online enrollment for students
     And I press the "Done" button
     Then I should be on the homepage
     And The student should be for confirmation
-
 
   Scenario: Missing personal information
     Given I am on the enrollment package type page

@@ -1,7 +1,7 @@
 Feature: Taking tests
 
   Background:
-    Given I have logged in as a student
+    Given I am logged in as a student
     And A review season exists
     And I am enrolled for the current season
 

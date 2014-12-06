@@ -1,8 +1,8 @@
-@admin
 Feature: Upload student photo
 
   Scenario: Upload photo while creating student
-    Given I am on the new student page
+    Given I am logged in as admin
+    And I am on the new student page
     And I fill up these student information
       | firstName    | John                        | text   |
       | lastName     | dela Cruz                   | text   |

@@ -1,8 +1,8 @@
-@admin
 Feature: Basic grade
 
   Background:
-    Given A review season exists
+    Given I am logged in as admin
+    And A review season exists
 
   Scenario: Add new grade
     Given I am on the grades page
