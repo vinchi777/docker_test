@@ -2,10 +2,10 @@ Feature: Online enrollment for students
 
   Scenario: Full package enrollment
     Given A review season exists
-    And I am on the enrollment package type page
+    * I am on the enrollment package type page
     When I select "standard_package"
-    And I press the "Next" button
-    And I fill up these student information
+    * I press the "Next" button
+    * I fill up these student information
       | firstName | John           | text   |
       | lastName  | dela Cruz      | text   |
       | birthdate | Nov 10, 1992   | text   |
@@ -13,35 +13,35 @@ Feature: Online enrollment for students
       | address   | Palo, Leyte,   | text   |
       | contactNo | 123-4567       | text   |
       | email     | john@gmail.com | text   |
-    And I press the "Next" button
-    And I fill up these student information
+    * I press the "Next" button
+    * I fill up these student information
       | lastAttended | Cebu Institute of Medicine  | text   |
       | yearGrad     | 2014                        | select |
       | hs           | Bethel International School | text   |
       | hsYear       | 2010                        | select |
       | elem         | Bethel International School | text   |
       | elemYear     | 2000                        | select |
-    And I press the "Next" button
-    And I press the "Next" button
-    And I press the "I Agree" button
-    And I press the "Skip" button
-    And I press the "Done" button
+    * I press the "Next" button
+    * I press the "Next" button
+    * I press the "I Agree" button
+    * I press the "Skip" button
+    * I press the "Done" button
     Then I should be on the homepage
-    And The student should be for confirmation
+    * The student should be for confirmation
 
   Scenario: Missing personal information
     Given I am on the enrollment package type page
     When I select "standard_package"
-    And I press the "Next" button
-    And I press the "Next" button
+    * I press the "Next" button
+    * I press the "Next" button
     Then I should see 6 errors
 
 
   Scenario: Missing educational information
     Given I am on the enrollment package type page
     When I select "standard_package"
-    And I press the "Next" button
-    And I fill up these student information
+    * I press the "Next" button
+    * I fill up these student information
       | firstName | John           | text   |
       | lastName  | dela Cruz      | text   |
       | birthdate | Nov 10, 1992   | text   |
@@ -50,7 +50,7 @@ Feature: Online enrollment for students
       | contactNo | 123-4567       | text   |
       | email     | john@gmail.com | text   |
     When I press the "Next" button
-    And I press the "Next" button
+    * I press the "Next" button
     Then I should see 5 errors
 
 
@@ -58,7 +58,7 @@ Feature: Online enrollment for students
     Given I am on the pricing page
     When I select the "<Package>" package
     Then I should skip the enrollment package step
-    And should be enrolled for the "<Package>" package
+    * should be enrolled for the "<Package>" package
 
   Examples:
     | Package          |

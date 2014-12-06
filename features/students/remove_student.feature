@@ -2,7 +2,7 @@ Feature: Remove student
 
   Background:
     Given I am logged in as admin
-    And there are existing students
+    * there are existing students
 
   Scenario: Remove student successfully
     Given I am on the students page
