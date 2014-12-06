@@ -43,7 +43,7 @@ Then /I should not see the invoice/ do
 end
 
 When /I add a new transaction/ do
-  click_on 'Add Transaction'
+  find_link('Add Transaction', match: :first).click
 end
 
 When /I fill up these transaction information/ do |table|
