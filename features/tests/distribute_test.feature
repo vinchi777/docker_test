@@ -2,7 +2,7 @@ Feature: Distribute test
 
   Background:
     Given I am logged in as admin
-    * A review season exists
+    * a review season exists
     * enrolled students exists for the current season
     * a test exists
     When I click on the test

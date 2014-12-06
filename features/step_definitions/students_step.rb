@@ -86,7 +86,7 @@ Then /^I should be able to search students by/ do |data|
   end
 end
 
-Given /there are existing students for filtering/ do
+Given /students exist for filtering/ do
   StudentFactory.create_student('maria')
   StudentFactory.create_student('jk', true, false)
   StudentFactory.create_student('abc', true, true)

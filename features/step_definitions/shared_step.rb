@@ -19,7 +19,32 @@ Given /^I am logged in as admin$/ do
   click_on 'Log in'
 end
 
-Given /^there are existing students$/ do
+Given /^a review season exists$/ do
+  if ReviewSeason.empty?
+    ReviewSeason.create!(
+        season: 'May 2014',
+        season_start: Date.new(2014, 4, 1),
+        season_end: Date.new(2014, 4, 5),
+        first_timer: 17000,
+        repeater: 10000,
+        full_review: 17000,
+        double_review: 22000,
+        coaching: 7000,
+        reservation: 3000
+    )
+  end
+end
+
+Given /^students exist$/ do
+  step 'a review season exists'
+  StudentFactory.create_student('maria')
+  StudentFactory.create_student('jk', true, false)
+  StudentFactory.create_student('abc', true, true)
+  StudentFactory.create_student('def', true, true)
+  @student = Student.first
+end
+
+Given /students exist for searching/ do
   Student.create!(
       firstName: 'John',
       lastName: 'dela Cruz',

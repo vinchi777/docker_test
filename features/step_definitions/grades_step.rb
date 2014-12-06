@@ -1,24 +1,3 @@
-Given /^A review season exists$/ do
-  ReviewSeason.create!(
-      season: 'May 2014',
-      season_start: Date.new(2014, 4, 1),
-      season_end: Date.new(2014, 4, 5),
-      first_timer: 17000,
-      repeater: 10000,
-      full_review: 17000,
-      double_review: 22000,
-      coaching: 7000,
-      reservation: 3000
-  )
-end
-
-Given /^Students exists$/ do
-  StudentFactory.create_student('maria')
-  StudentFactory.create_student('jk', true, false)
-  StudentFactory.create_student('abc', true, true)
-  StudentFactory.create_student('def', true, true)
-end
-
 Given /^I am on the grades page$/ do
   visit grades_path
 end

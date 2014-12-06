@@ -2,8 +2,8 @@ Feature: Filtering students
 
   Background:
     Given I am logged in as admin
-    * A review season exists
-    * there are existing students for filtering
+    * a review season exists
+    * students exist for filtering
 
   Scenario Outline: Filter by review season and enrollment status
     Given I am on the students page
