@@ -67,7 +67,7 @@ end
 
 Then /"(.*?)" should have answer sheet/ do |i|
   sleep 0.5
-  @bob = Student.where(firstName: i).first
+  @bob = Student.where(first_name: i).first
   expect(@test.has_answer_sheet? @bob).to eq true
 end
 

@@ -9,9 +9,9 @@
         = f.file_field :profile_pic, class: 'preview', accept: 'image/*'
     .middle.col-lg-8
       .name
-        = f.text_field :firstName, placeholder: 'First name', class: 'form-control required'
-        = f.text_field :middleName, placeholder: 'Middle name', class: 'form-control col-lg-2'
-        = f.text_field :lastName, placeholder: 'Last name', class: 'form-control required col-lg-2'
+        = f.text_field :first_name, placeholder: 'First name', class: 'form-control required'
+        = f.text_field :middle_name, placeholder: 'Middle name', class: 'form-control col-lg-2'
+        = f.text_field :last_name, placeholder: 'Last name', class: 'form-control required col-lg-2'
       .status
         .enroll ng-switch='student.enrollment_status'
           span ng-switch-when='enrolled'
@@ -50,8 +50,8 @@
             = f.label :address, class: 'control-label col-lg-3'
             .col-lg-9 = f.text_field :address, class: 'form-control required'
           .form-group
-            = f.label :contactNo, 'Contact No.', class: 'control-label col-lg-3'
-            .col-lg-9 = f.text_field :contactNo, class: 'form-control required'
+            = f.label :contact_no, 'Contact No.', class: 'control-label col-lg-3'
+            .col-lg-9 = f.text_field :contact_no, class: 'form-control required'
           .form-group
             = f.label :email, 'Email', class: 'control-label col-lg-3'
             .col-lg-9 = f.email_field :email, class: 'form-control required'

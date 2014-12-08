@@ -6,9 +6,9 @@
     }
 
     $scope.person = {
-      firstName: null
-      middleName: null
-      lastName: null
+      first_name: null
+      middle_name: null
+      last_name: null
       email: null
     }
 

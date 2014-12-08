@@ -37,7 +37,7 @@ When /^I fill up these (.*?) information$/ do |p, data|
 end
 
 Given /^I am logged in as admin$/ do
-  p = Person.create(firstName: 'John', lastName: 'dela Cruz', email: 'admin@example.com')
+  p = Person.create(first_name: 'John', last_name: 'dela Cruz', email: 'admin@example.com')
   User.create(password: '123456789', person: p, confirmed_at: Date.new)
   visit '/login'
   fill_in 'user_email', with: 'admin@example.com'
@@ -72,11 +72,11 @@ end
 
 Given /students exist for searching/ do
   Student.create!(
-      firstName: 'John',
-      lastName: 'dela Cruz',
+      first_name: 'John',
+      last_name: 'dela Cruz',
       sex: 'Male',
       address: 'Tacloban City',
-      contactNo: '321-444',
+      contact_no: '321-444',
       email: 'jdelacruz@gmail.com',
       lastAttended: 'Cebu Institute of Medicine',
       yearGrad: 2014,
@@ -86,11 +86,11 @@ Given /students exist for searching/ do
       elemYear: 2002
   )
   Student.create!(
-      firstName: 'Maria',
-      lastName: 'dela Cruz',
+      first_name: 'Maria',
+      last_name: 'dela Cruz',
       sex: 'Male',
       address: 'Tacloban City',
-      contactNo: '321-444',
+      contact_no: '321-444',
       email: 'maria@gmail.com',
       lastAttended: 'St. Therese School of Medicine',
       yearGrad: 2014,

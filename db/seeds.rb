@@ -33,13 +33,13 @@ def rand_student
   first_name = rand_name
   last_name = rand_last_name
   Student.create(
-      firstName: first_name,
-      lastName: last_name,
-      middleName: rand_last_name,
+      first_name: first_name,
+      last_name: last_name,
+      middle_name: rand_last_name,
       sex: rand_sex,
       address: rand_address,
-      contactNo: '321-444',
-      email: "#{first_name}_#{last_name}@gmail.com",
+      contact_no: '321-444',
+      email: "#{first_name}_#{last_name.parameterize('_')}@gmail.com",
       lastAttended: rand_schools,
       yearGrad: 2014,
       hs: 'St. Marys Academy',
@@ -52,7 +52,7 @@ end
 s = rand_student
 s.email = 'admin@example.com'
 s.save
-User.create(password: '123456789', person: s, confirmed_at: Date.new)
+User.create!(password: '123456789', person: s, confirmed_at: Date.new)
 
 ReviewSeason.create!(
     season: 'May 2014',

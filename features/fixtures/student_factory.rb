@@ -1,11 +1,11 @@
 class StudentFactory
   def self.create_student(name, create_invoice = false, enroll = false)
     s = Student.create!(
-        firstName: name,
-        lastName: 'dela Cruz',
+        first_name: name,
+        last_name: 'dela Cruz',
         sex: 'Male',
         address: 'Tacloban City',
-        contactNo: '321-444',
+        contact_no: '321-444',
         email: "#{name}@gmail.com",
         lastAttended: 'St. Therese School of Medicine',
         yearGrad: 2014,

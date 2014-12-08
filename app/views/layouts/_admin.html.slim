@@ -30,8 +30,8 @@ html lang='en' ng-app='maxRevApp'
                     = image_tag 'user.png', class: 'profile' if @student.profile_pic == nil
                     = image_tag @student.profile_pic, class: 'profile' unless @student.profile_pic == nil
                   .name.visible-lg.visible-md
-                    div = @student.lastName
-                    div = @student.firstName
+                    div = @student.last_name
+                    div = @student.first_name
                 li.profile.attr class=('active' if @page == 'show')
                   = link_to @student
                     .ico = image_tag 'profile-ico.svg'

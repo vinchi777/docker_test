@@ -3,12 +3,12 @@ require 'rails_helper'
 RSpec.describe "students/show", :type => :view do
   before(:each) do
     @student = assign(:student, Student.create!(
-      :firstName => "First Name",
-      :middleName => "Middle Name",
-      :lastName => "Last Name",
+      :first_name => "First Name",
+      :middle_name => "Middle Name",
+      :last_name => "Last Name",
       :sex => "",
       :address => "Address",
-      :contactNo => "Contact No",
+      :contact_no => "Contact No",
       :email => "Email",
       :parentFirstName => "Parent First Name",
       :parentLastName => "Parent Last Name",

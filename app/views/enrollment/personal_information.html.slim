@@ -12,9 +12,9 @@
     .col-lg-10.col-md-9.col-sm-8
       .form-horizontal
         .form-group
-          .col-sm-4 = f.text_field :firstName, class: 'form-control required', placeholder: 'First Name'
-          .col-sm-4 = f.text_field :middleName, class: 'form-control', placeholder: 'Middle Name'
-          .col-sm-4 = f.text_field :lastName, class: 'form-control required', placeholder: 'Last Name'
+          .col-sm-4 = f.text_field :first_name, class: 'form-control required', placeholder: 'First Name'
+          .col-sm-4 = f.text_field :middle_name, class: 'form-control', placeholder: 'Middle Name'
+          .col-sm-4 = f.text_field :last_name, class: 'form-control required', placeholder: 'Last Name'
       .form-horizontal
         .form-group
           label.control-label.col-lg-2.col-md-3.col-sm-4 Birthdate
@@ -29,7 +29,7 @@
           .col-md-6.col-sm-8 = f.text_field :address, class: 'form-control required'
         .form-group
           label.control-label.col-lg-2.col-md-3.col-sm-4 Contacts
-          .col-md-6.col-sm-8 = f.text_field :contactNo, class: 'form-control required'
+          .col-md-6.col-sm-8 = f.text_field :contact_no, class: 'form-control required'
         .form-group
           label.control-label.col-lg-2.col-md-3.col-sm-4 Email Address
           .col-md-6.col-sm-8 = f.email_field :email, class: 'form-control required'
