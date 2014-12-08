@@ -8,7 +8,7 @@ module ApplicationHelper
   end
 
   def people_page?
-    (current_page? :reviewers) || (current_page? :founders)
+    (current_page? :reviewers) || (current_page? :founders) || (current_page? :our_students)
   end
 
   def login_page?

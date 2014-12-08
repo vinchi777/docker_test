@@ -1,9 +1,9 @@
 #our-students {
-  margin-top: 50px;
+  margin-top: 60px;
   text-align: center;
 }
 #our-students .banner {
-  margin: 40px 0px 30px 0px;
+  padding: 40px 0px 30px 0px;
 }
 #our-students .banner h1 {
   margin: 0px;
