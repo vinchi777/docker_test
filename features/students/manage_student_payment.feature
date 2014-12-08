@@ -7,9 +7,10 @@ Feature: Add student payment
   Scenario: Insert required information
     Given I add a student invoice
     When I fill up these invoice information
-      | package | Full Package | text   |
-      | season  | May 2014     | select |
-      | amount  | 17000        | text   |
+      | Field   | Value        | Type   |
+      | Package | Full Package | text   |
+      | Season  | May 2014     | select |
+      | Amount  | 17000        | text   |
     * I submit the invoice form
     Then I should see these invoice information on the student invoice form
       | Full Package |
@@ -19,11 +20,12 @@ Feature: Add student payment
   Scenario: Insert all information
     Given I add a student invoice
     When I fill up these invoice information
-      | package     | Full Package | text   |
-      | season      | May 2014     | select |
-      | description | 50% Discount | text   |
-      | amount      | 17000        | text   |
-      | discount    | 0.5          | text   |
+      | Field       | Value        | Type   |
+      | Package     | Full Package | text   |
+      | Season      | May 2014     | select |
+      | Description | 50% Discount | text   |
+      | Amount      | 17000        | text   |
+      | Discount    | 0.5          | text   |
     * I submit the invoice form
     Then I should see these invoice information on the student invoice form
       | Full Package |
@@ -40,10 +42,11 @@ Feature: Add student payment
     Given there's a student invoice
     When I add a new transaction
     * I fill up these transaction information
-      | date   | 2014-12-01 |
-      | or_no  | 123456789  |
-      | method | Cash       |
-      | amount | 15000      |
+      | Field  | Value      | Type |
+      | date   | 2014-12-01 | text |
+      | or_no  | 123456789  | text |
+      | method | Cash       | text |
+      | amount | 15000      | text |
     * I submit the transaction form
     Then the transaction is added to the invoice
     * I see the balance updated
@@ -58,10 +61,11 @@ Feature: Add student payment
     Given there's a student invoice
     When I add a new transaction
     * I fill up these transaction information
-      | date   | 2014-12-01 |
-      | or_no  | 123456789  |
-      | method | Cash       |
-      | amount | 15000      |
+      | Field  | Value      | Type |
+      | date   | 2014-12-01 | text |
+      | or_no  | 123456789  | text |
+      | method | Cash       | text |
+      | amount | 15000      | text |
     * I submit the transaction form
     * I press the remove transaction button
     Then I should not see the transaction on the invoice

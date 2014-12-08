@@ -10,6 +10,32 @@ Then /^I should be on the homepage$/ do
   expect(current_path).to eq root_path
 end
 
+When /^I fill up these (.*?) information$/ do |p, data|
+  pre = p.parameterize.underscore
+  data.rows.each do |row|
+    attr = row[0].parameterize.underscore
+    val = row[1]
+    name = "#{pre}[#{attr}]"
+    case row[2].parameterize.underscore
+      when 'text'
+        if pre == 'test' && attr == 'question_0_ratio' # Add rationale
+          all('.add-rationale').each { |l| l.click }
+        end
+        sleep 0.1
+        fill_in name, with: ''
+        fill_in name, with: val
+      when 'select'
+        select val, from: name
+      when 'check'
+        check name
+      when 'uncheck'
+        uncheck name
+      when 'choose'
+        choose name
+    end
+  end
+end
+
 Given /^I am logged in as admin$/ do
   p = Person.create(firstName: 'John', lastName: 'dela Cruz', email: 'admin@example.com')
   User.create(password: '123456789', person: p, confirmed_at: Date.new)

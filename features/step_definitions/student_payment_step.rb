@@ -3,17 +3,6 @@ And /^I add a student invoice$/ do
   find('.new-invoice.btn').click
 end
 
-When /^I fill up these invoice information$/ do |table|
-  table.raw.each do |name, value, type|
-    case type
-      when 'text'
-        fill_in "invoice[#{name}]", with: value
-      when 'select'
-        select value, from: "invoice[#{name}]"
-    end
-  end
-end
-
 And /^I submit the invoice form$/ do
   click_on 'Add Invoice'
 end
@@ -44,12 +33,6 @@ end
 
 When /I add a new transaction/ do
   find_link('Add Transaction', match: :first).click
-end
-
-When /I fill up these transaction information/ do |table|
-  table.raw.each do |name, value|
-    fill_in "transaction[#{name}]", with: value
-  end
 end
 
 When /I submit the transaction form/ do

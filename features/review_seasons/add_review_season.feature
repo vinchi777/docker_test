@@ -6,8 +6,8 @@ Feature: Add review season
     When I press the "Create Review Season" button
 
   Scenario: Add required fields
-    When I fill in the following "Review Season" details
-      | Attribute     | Value         | Type |
+    When I fill up these Review Season information
+      | Field         | Value         | Type |
       | Season        | May 2014      | text |
       | Season Start  | Apr. 1, 2014  | text |
       | Season End    | Apr. 15, 2014 | text |
@@ -20,8 +20,8 @@ Feature: Add review season
     * the review season is persisted
 
   Scenario: Add all fields
-    When I fill in the following "Review Season" details
-      | Attribute     | Value         | Type |
+    When I fill up these Review Season information
+      | Field         | Value         | Type |
       | Season        | May 2014      | text |
       | Season Start  | Apr. 1, 2014  | text |
       | Season End    | Apr. 15, 2014 | text |
@@ -42,8 +42,8 @@ Feature: Add review season
     Then I should see 8 errors
 
   Scenario: Invalid fields
-    When I fill in the following "Review Season" details
-      | Attribute     | Value         | Type | Note                  |
+    When I fill up these Review Season information
+      | Field         | Value         | Type | Note                  |
       | Season        | ma            | text | Min length is 3       |
       | Season Start  | Apr. 15, 2014 | text |                       |
       | Season End    | Apr. 1, 2014  | text | Wrong date precedence |

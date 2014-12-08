@@ -7,36 +7,36 @@ Feature: Create test
     When I click the add test link
 
   Scenario: Fill up required fields
-    When I fill in the following "test" details
-      | Attribute          | Value                | Type   |
-      | description        | First long exam      | text   |
-      | date               | Dec. 1, 2014         | text   |
-      | deadline           | Dec. 1, 2014 5:00 pm | text   |
-      | question_0_text    | What is love?        | text   |
-      | question_0_choice0 | Love is patient      | text   |
-      | question_0_choice1 | Love is kind         | text   |
-      | question_0_choice2 | Love does not envy   | text   |
-      | question_0_choice3 | Love does not boast  | text   |
-      | question_0_answer0 |                      | choose |
+    When I fill up these test information
+      | Field              | Value                | Type   |
+      | Description        | First long exam      | text   |
+      | Date               | Dec. 1, 2014         | text   |
+      | Deadline           | Dec. 1, 2014 5:00 pm | text   |
+      | Question 0 Text    | What is love?        | text   |
+      | Question 0 Choice0 | Love is patient      | text   |
+      | Question 0 Choice1 | Love is kind         | text   |
+      | Question 0 Choice2 | Love does not envy   | text   |
+      | Question 0 Choice3 | Love does not boast  | text   |
+      | Question 0 Answer0 |                      | choose |
     * I save the test form
     Then the test is persisted
     * I should be on the test page
 
   Scenario: Fill up all fields
-    When I fill in the following "test" details
-      | Attribute          | Value                | Type   |
-      | description        | First long exam      | text   |
-      | date               | Dec. 1, 2014         | text   |
-      | deadline           | Dec. 1, 2014 5:00 pm | text   |
-      | timer              | 10                   | text   |
-      | random             |                      | check  |
-      | question_0_text    | What is love?        | text   |
-      | question_0_choice0 | Love is patient      | text   |
-      | question_0_choice1 | Love is kind         | text   |
-      | question_0_choice2 | Love does not envy   | text   |
-      | question_0_choice3 | Love does not boast  | text   |
-      | question_0_ratio   | Love is happiness    | text   |
-      | question_0_answer2 |                      | choose |
+    When I fill up these test information
+      | Field              | Value                | Type   |
+      | Description        | First long exam      | text   |
+      | Date               | Dec. 1, 2014         | text   |
+      | Deadline           | Dec. 1, 2014 5:00 pm | text   |
+      | Timer              | 10                   | text   |
+      | Random             |                      | check  |
+      | Question 0 Text    | What is love?        | text   |
+      | Question 0 Choice0 | Love is patient      | text   |
+      | Question 0 Choice1 | Love is kind         | text   |
+      | Question 0 Choice2 | Love does not envy   | text   |
+      | Question 0 Choice3 | Love does not boast  | text   |
+      | Question 0 Ratio   | Love is happiness    | text   |
+      | Question 0 Answer2 |                      | choose |
     * I save the test form
     Then the test is persisted
     * I should be on the test page

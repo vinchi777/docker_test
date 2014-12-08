@@ -5,7 +5,7 @@ Feature: Add students
 
   Scenario: Insert required information
     When I am on the new student page
-    * I fill up these student information
+    * I fill up the following student information
       | firstName    | John                        | text   |
       | lastName     | dela Cruz                   | text   |
       | birthdate    | Nov 10, 1992                | text   |
@@ -24,7 +24,7 @@ Feature: Add students
 
   Scenario: Insert all fields
     When I am on the new student page
-    * I fill up these student information
+    * I fill up the following student information
       | firstName         | John                        | text   |
       | middleName        | John                        | text   |
       | lastName          | dela Cruz                   | text   |
