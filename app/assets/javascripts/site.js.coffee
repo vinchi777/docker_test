@@ -21,22 +21,6 @@ $ ->
       else
         $('.header').addClass('for-home')
 
-  if has_google_map()
-    map = new GMaps({
-      div: '#map'
-      lat: 11.24450
-      lng: 124.998627
-      zoom: 18
-    })
-
-    map.addMarker({
-      lat: 11.244554
-      lng: 124.998656
-      title: 'Maximum Review Center One'
-    })
-  else
-    $('#map').hide()
-
   $('body').on 'DOMNodeInserted', ->
     #svg-injector
     mySVGsToInject = this.querySelectorAll('img.inject-me:not(.injected-svg)')
@@ -56,9 +40,11 @@ $ ->
       unless self.hasClass('momented')
         self.addClass('momented')
         date = self.text()
-        console.log date
         m = moment(date).format('MMMM D');
         self.text(m)
+
+  #scrollreveal
+  window.sr = new scrollReveal();
 
   #count animation in homepage
   $(window).scroll(->
@@ -73,11 +59,22 @@ $ ->
       countup = new countUp("countup", 0, limit, 0, 10, options);
       countup.start();
 
+  #map at home page
+  if $('#map').length
+    if has_google_map()
+      map = new GMaps({
+        div: '#map'
+        lat: 11.24450
+        lng: 124.998627
+        zoom: 18
+      })
+
+      map.addMarker({
+        lat: 11.244554
+        lng: 124.998656
+        title: 'Maximum Review Center One'
+      })
+    else
+      $('#map').hide()
+
 $(window).load ->
-  config = {
-    easing: 'hustle',
-    reset: false,
-    delay: 'once',
-    vFactor: 0.90,
-  }
-  window.sr = new scrollReveal(config);

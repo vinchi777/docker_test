@@ -30,11 +30,13 @@
         .pull-right ng-show='sheet.deadline'
           b>
             | {{sheet.answers.length}}
-          | item(s)
+          ng-pluralize count='sheet.answers.length' when="{'0': 'item', '1': 'item', 'other': 'items'}"
         .pull-right ng-hide='sheet.deadline'
           b>
             | {{done().length}}
-          | of {{sheet.answers.length}} items done
+          | of {{sheet.answers.length}}
+          ng-pluralize<> count='sheet.answers.length' when="{'0': 'item', '1': 'item', 'other': 'items'}"
+          | done
       hr
 
     .question ng-class='{correct: sheet.deadline && a.index == a.answer, wrong: sheet.deadline && a.index != a.answer}' ng-repeat='(i, a) in sheet.answers'

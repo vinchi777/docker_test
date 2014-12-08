@@ -1,24 +1,3 @@
-Given /^A review season exists$/ do
-  ReviewSeason.create!(
-      season: 'May 2014',
-      season_start: Date.new(2014, 4, 1),
-      season_end: Date.new(2014, 4, 5),
-      first_timer: 17000,
-      repeater: 10000,
-      full_review: 17000,
-      double_review: 22000,
-      coaching: 7000,
-      reservation: 3000
-  )
-end
-
-Given /^Students exists$/ do
-  StudentFactory.create_student('maria')
-  StudentFactory.create_student('jk', true, false)
-  StudentFactory.create_student('abc', true, true)
-  StudentFactory.create_student('def', true, true)
-end
-
 Given /^I am on the grades page$/ do
   visit grades_path
 end
@@ -36,15 +15,18 @@ When /^I fill in the following "(.*?)" details$/ do |pre, data|
     name = "#{pre}[#{row[0]}]"
     case row[2]
       when 'text'
+        if pre == 'test' && row[0] == 'question_0_ratio' # Add rationale
+          all('.add-rationale').each { |l| l.click }
+        end
         fill_in name, with: row[1]
       when 'select'
         select row[1], from: name
       when 'check'
-        check row[1]
+        check name
       when 'uncheck'
-        uncheck row[1]
+        uncheck name
       when 'choose'
-        choose row[1]
+        choose name
     end
   end
 end
@@ -86,9 +68,8 @@ end
 Then /^I should be able to search for the following student queries$/ do |data|
   data.rows.each do |row|
     fill_in 'q', with: row[0]
-    sleep 0.5
-    visibles = all('.student-list tr').select { |tr| tr.visible? }
-    expect(visibles.count).to eq row[1].to_i
+    s = all('.student-list tr', count: row[1].to_i)
+    expect(s.count).to eq row[1].to_i
   end
 end
 

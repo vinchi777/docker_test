@@ -25,7 +25,7 @@
     | Found
     b<>
       | {{totalItems}}
-    | student(s)
+    ng-pluralize count='totalItems' when="{'0': 'student', '1': 'student', 'other': 'students'}"
   .students.listing.panel.panel-light.col-md-12
     .empty-list ng-show='students.length == 0 && q == null'
       p

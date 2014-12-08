@@ -1,10 +1,10 @@
-@admin
 Feature: Grades with students
 
   Background:
-    Given A review season exists
-    Given Students exists
-    And I am on the new grade page
+    Given I am logged in as admin
+    * a review season exists
+    * students exist
+    * I am on the new grade page
 
   Scenario: Add grades for enrolled students
     Then I should see 2 students
@@ -13,13 +13,13 @@ Feature: Grades with students
       | description | Semi Finals | text |
       | date        | 05-10-2014  | text |
       | points      | 200         | text |
-    And I fill up the following student grades
+    * I fill up the following student grades
       | Value |
       | 50    |
       | 80    |
-    And I submit the grade form
+    * I submit the grade form
     Then I should successfully add the "Semi Finals" grade
-    And I should see a grade with an average of 33
+    * I should see a grade with an average of 33
 
   Scenario: Wrong average calculation
     When I fill in the following "grade" details
@@ -27,11 +27,11 @@ Feature: Grades with students
       | description | Semi Finals | text |
       | date        | 05-10-2014  | text |
       | points      | 200         | text |
-    And I fill up the following student grades
+    * I fill up the following student grades
       | Value |
       | 50    |
       | 80    |
-    And I submit the grade form
+    * I submit the grade form
     Then I should not see a grade with an average of 32
 
   Scenario: Searching students

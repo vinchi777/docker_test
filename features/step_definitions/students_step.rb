@@ -13,12 +13,12 @@ When /^I fill up these student information/ do |table|
   end
 end
 
-When /^I submit the student form/ do
-  all('.save.btn').first.click
+When /^I save the student form/ do
+  first('.save.btn').click
 end
 
 Then /^I should see (\d+) errors/ do |i|
-  expect(all('.error li').count).to eq i.to_i
+  expect(all('.error li', count: i.to_i).count).to eq i.to_i
 end
 
 Then /^I should be on the students page$/ do
@@ -35,14 +35,12 @@ When /^I search for "(.*?)"/ do |query|
 end
 
 And /^I should see "(.*?)" students$/ do |count|
-  expect(page).to have_content "Found #{count} student(s)"
+  expect(page).to have_content "Found #{count} " + 'student'.pluralize(count.to_i)
 end
 
 When /^I remove a student$/ do
   @count = Student.count
-  sleep 1.0
-  all('.student .actions a').first.click
-  sleep 0.5
+  find('.student .actions a', match: :first).click
   click_on 'Yes'
 end
 
@@ -53,9 +51,7 @@ end
 
 When /^I cancel the removal of student$/ do
   @count = Student.count
-  sleep 1.0
-  all('.student .actions a').first.click
-  sleep 0.5
+  find('.student .actions a', match: :first).click
   click_on 'No'
 end
 
@@ -82,10 +78,17 @@ Given /^I am on the enrollment package type page$/ do
 end
 
 Then /^I should be able to search students by/ do |data|
-  data.rows.each do|row|
+  data.rows.each do |row|
     fill_in 'q', with: row[0]
     execute_script('$(".search form").submit()')
     expect(page).to have_content row[1]
-    expect(page).to have_content "Found #{row[2]} student(s)"
+    expect(page).to have_content "Found #{row[2]} " + 'student'.pluralize(row[2].to_i)
   end
+end
+
+Given /students exist for filtering/ do
+  StudentFactory.create_student('maria')
+  StudentFactory.create_student('jk', true, false)
+  StudentFactory.create_student('abc', true, true)
+  StudentFactory.create_student('def', true, true)
 end

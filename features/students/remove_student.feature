@@ -1,5 +1,9 @@
-@admin @student_list
 Feature: Remove student
+
+  Background:
+    Given I am logged in as admin
+    * students exist
+
   Scenario: Remove student successfully
     Given I am on the students page
     When I remove a student

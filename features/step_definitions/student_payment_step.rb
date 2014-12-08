@@ -33,9 +33,8 @@ Given /there's a student invoice/ do
 end
 
 When /I remove the invoice/ do
-  execute_script "$('#remove-#{@invoice.id}').show()"
+  find("#invoice-#{@invoice.id}").hover
   find("#remove-#{@invoice.id}").click
-  sleep 0.1
   click_on 'Yes'
 end
 
@@ -55,10 +54,10 @@ end
 
 When /I submit the transaction form/ do
   find('input.peso').native.send_keys :return
-  sleep 0.3
 end
 
 Then /the transaction is added to the invoice/ do
+  sleep 0.2
   @invoice = StudentInvoice.find(@invoice.id)
   expect(@invoice.transactions).not_to be_empty
 end
@@ -69,9 +68,8 @@ Then /I see the balance updated/ do
 end
 
 And /I press the remove transaction button/ do
-  execute_script '$("a.remove-transaction").show()'
-  all('a.remove-transaction').first.click
-  sleep 0.1
+  find('.transaction', match: :first).hover
+  find('a.remove-transaction', match: :first).click
   click_on 'Yes'
 end
 

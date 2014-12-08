@@ -1,9 +1,9 @@
-@admin
 Feature: Upload student photo
 
   Scenario: Upload photo while creating student
-    Given I am on the new student page
-    And I fill up these student information
+    Given I am logged in as admin
+    * I am on the new student page
+    * I fill up these student information
       | firstName    | John                        | text   |
       | lastName     | dela Cruz                   | text   |
       | birthdate    | Nov 10, 1992                | text   |
@@ -18,5 +18,5 @@ Feature: Upload student photo
       | elem         | Bethel International School | text   |
       | elemYear     | 2000                        | select |
     When I attach a photo
-    And I submit the student form
+    * I save the student form
     Then I should see the uploaded photo

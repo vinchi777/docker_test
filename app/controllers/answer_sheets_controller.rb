@@ -5,7 +5,7 @@ class AnswerSheetsController < AdminController
   layout 'students', only: [:show]
 
   def index
-    @sheets = AnswerSheet.where(student: params[:student])
+    @sheets = Student.find(params[:student]).enrollments.map { |e| e.answer_sheets }.flatten
     @sheets.each do |s|
       set_submission s
     end
@@ -20,7 +20,7 @@ class AnswerSheetsController < AdminController
   end
 
   def show
-    @student = @sheet.student
+    @student = @sheet.student_enrollment.student
     unless @sheet.started? || @sheet.deadline?
       @sheet.start
       @sheet.save
@@ -30,9 +30,10 @@ class AnswerSheetsController < AdminController
   end
 
   def update
+    set_submission @sheet
     respond_with @sheet do |format|
       if @sheet.submitted?
-        format.json { render json: {error: 'already submitted'}, status: :unprocessable_entity }
+        format.json { render :show }
       else
         if @sheet.update(sheet_params)
           format.json { render :show }

@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
   resources :grades do
     collection do
-      get :temp_show, :grades_per_season
+      get :temp_show, :grades_per_season, :new_student_grade
     end
   end
 

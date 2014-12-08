@@ -15,14 +15,10 @@
           .col-sm-4 = f.text_field :firstName, class: 'form-control required', placeholder: 'First Name'
           .col-sm-4 = f.text_field :middleName, class: 'form-control', placeholder: 'Middle Name'
           .col-sm-4 = f.text_field :lastName, class: 'form-control required', placeholder: 'Last Name'
-      .form-inline
+      .form-horizontal
         .form-group
-          label.control-label Birthdate
-          = f.text_field :birthdate, value: pretty_date(@student.birthdate), class: 'form-control date-picker required', placeholder: 'Select birthdate', 'data-date-format' => 'MMM DD, YYYY'
-        .form-group
-          .age.control-label
-            | Age
-            span< 19
+          label.control-label.col-lg-2.col-md-3.col-sm-4 Birthdate
+          .col-lg-2.col-md-3.col-sm-4 = f.text_field :birthdate, value: pretty_date(@student.birthdate), class: 'form-control date-picker required', placeholder: 'Select birthdate', 'data-date-format' => 'MMM DD, YYYY'
       .form-horizontal
         .form-group
           label.control-label.col-lg-2.col-md-3.col-sm-4 Sex
@@ -36,7 +32,7 @@
           .col-md-6.col-sm-8 = f.text_field :contactNo, class: 'form-control required'
         .form-group
           label.control-label.col-lg-2.col-md-3.col-sm-4 Email Address
-          .col-md-6.col-sm-8 = f.text_field :email, class: 'form-control required'
+          .col-md-6.col-sm-8 = f.email_field :email, class: 'form-control required'
         hr
         .form-group
           label.control-label.col-sm-8 Parent or Guardian Name

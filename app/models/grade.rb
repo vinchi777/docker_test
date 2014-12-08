@@ -3,7 +3,7 @@ class Grade
   field :description, type: String
   field :date, type: Date
   field :points, type: Integer
-  field :average, type: Integer, default: 0
+  field :average, type: Float, default: 0
 
   belongs_to :review_season
   has_many :student_grades, dependent: :destroy
@@ -14,6 +14,7 @@ class Grade
   validates_presence_of :points
 
   before_save :calculate_average
+  after_save :post_process_grades
 
   def test?
     false
@@ -24,8 +25,26 @@ class Grade
   end
 
   def calculate_average
-    return if student_grades.empty?
-    ave = student_grades.inject(0) { |sum, grade| sum + grade.score } / student_grades.size * 100.0 / points
-    self.average = ave.round
+    sum = 0
+    size = 0
+
+    self.student_grades.each do |g|
+      if g.to_delete
+        g.destroy
+      else
+        sum += g.score
+        size += 1
+      end
+    end
+
+    if sum == 0
+      self.average = 0
+    else
+      self.average = sum.to_d / size * 100 / points
+    end
+  end
+
+  def post_process_grades
+    student_grades.delete_all(to_delete: true)
   end
 end

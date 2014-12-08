@@ -1,5 +1,9 @@
-@student_list_for_filter @admin
 Feature: Filtering students
+
+  Background:
+    Given I am logged in as admin
+    * a review season exists
+    * students exist for filtering
 
   Scenario Outline: Filter by review season and enrollment status
     Given I am on the students page

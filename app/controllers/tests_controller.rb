@@ -19,13 +19,19 @@ class TestsController < AdminController
   end
 
   def create
-    @test = Test.new(test_params)
-    respond_with @test do |format|
-      if @test.save
-        format.json { render :show }
-      else
-        format.json { render json: @test.errors, status: :unprocessable_entity }
+    if ReviewSeason.count > 0
+      @test = Test.new(test_params)
+      @test.review_season = ReviewSeason.current
+
+      respond_with @test do |format|
+        if @test.save
+          format.json { render :show }
+        else
+          format.json { render json: @test.errors, status: :unprocessable_entity }
+        end
       end
+    else
+      render json: {status: :unprocessable_entity}
     end
   end
 

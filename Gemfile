@@ -40,6 +40,8 @@ end
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
+  gem 'spring'
+  gem 'spring-commands-cucumber'
 end
 
 group :test do

@@ -1,7 +1,9 @@
-@admin @student_list
 Feature: Search students
+
   Scenario: Search students
-    Given I am on the students page
+    Given I am logged in as admin
+    * students exist for searching
+    * I am on the students page
     Then I should be able to search students by name
       | Query | Text             | Count |
       | Joh   | dela Cruz, John  | 1     |
@@ -10,11 +12,11 @@ Feature: Search students
       | de    | dela Cruz, John  | 2     |
       | Maria | dela Cruz, Maria | 1     |
       | Ma    | dela Cruz, Maria | 1     |
-    And I should be able to search students by address
+    * I should be able to search students by address
       | Query | Text             | Count |
       | Tac   | dela Cruz, John  | 2     |
       | City  | dela Cruz, Maria | 2     |
-    And I should be able to search students by school
+    * I should be able to search students by school
       | Query    | Text             | Count |
       | Cebu     | dela Cruz, John  | 1     |
       | insti    | dela Cruz, John  | 1     |

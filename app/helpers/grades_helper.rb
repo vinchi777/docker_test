@@ -4,7 +4,8 @@ module GradesHelper
   end
 
   def grades_in_season(season)
-    @grades.where(review_season: season).desc(:date)
+    grades = season.grades.concat season.tests.select { |t| t.deadline? }
+    grades.select { |g| g.review_season == season }.sort { |a, b| b.date <=> a.date }
   end
 
   def existing_student(student)

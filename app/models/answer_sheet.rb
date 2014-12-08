@@ -8,15 +8,19 @@ class AnswerSheet
   belongs_to :test
   validates_presence_of :test
 
-  belongs_to :student
-  validates_presence_of :student
+  belongs_to :student_enrollment
+  validates_presence_of :student_enrollment
 
   validate :one_instance, on: :create
 
   def one_instance
-    if AnswerSheet.where(test: test, student: student).exists?
-      errors.add :test, 'exists already for student' + student.to_s
+    if AnswerSheet.where(test: test, student_enrollment: student_enrollment).exists?
+      errors.add :test, 'exists already for student ' + student_enrollment.student.to_s
     end
+  end
+
+  def student
+    student_enrollment.student
   end
 
   def started?
@@ -52,7 +56,7 @@ class AnswerSheet
   end
 
   def correct_points
-    answers.count { |a| a.correct? } if deadline?
+    answers.select { |a| a.correct? }.length if deadline?
   end
 
   def total_points
@@ -60,7 +64,31 @@ class AnswerSheet
   end
 
   def percent
-    '%.1f' % (correct_points / total_points.to_d * 100) if deadline?
+    (correct_points / total_points.to_d * 100) if deadline?
+  end
+
+  def date
+    test.date
+  end
+
+  def test?
+    true
+  end
+
+  def timer?
+    test.timer?
+  end
+
+  def average
+    percent
+  end
+
+  def points
+    total_points
+  end
+
+  def description
+    test.description
   end
 end
 

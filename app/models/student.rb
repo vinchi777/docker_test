@@ -50,9 +50,8 @@ class Student < Person
   # Caching purposes
   field :is_enrolling, type: Boolean, default: false
 
-  has_many :invoices, class_name: 'StudentInvoice'
-  has_many :enrollments, class_name: 'StudentEnrollment'
-  has_many :answer_sheets
+  has_many :invoices, class_name: 'StudentInvoice', dependent: :destroy
+  has_many :enrollments, class_name: 'StudentEnrollment', dependent: :destroy
 
   scope :filter, ->(season, status) do
     if season.nil? || season == '0' # No season filter
@@ -75,8 +74,11 @@ class Student < Person
     end
   end
 
+  #for enrollment only
   def setup_payment
     current_season = ReviewSeason.current
+    return true if has_enrollment_on(current_season) && invoices.where(review_season: current_season).exists?
+
     invoice1 = StudentInvoice.create(
         package: package_type,
         review_season: current_season,
@@ -115,7 +117,7 @@ class Student < Person
   end
 
   def has_enrollment_on(season)
-    enrollments.any? { |x| x.review_season = season }
+    enrollments.any? { |x| x.review_season == season }
   end
 
   def enrollment_status

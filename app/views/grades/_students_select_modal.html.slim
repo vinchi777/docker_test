@@ -11,7 +11,7 @@
             .count
               b.batch-count
               span<> of
-              span.total-count = @students.count
+              span.total-count = @enrollments.count
               span< students
 
         .modal-body
@@ -24,13 +24,14 @@
               h5
                 = @grade.review_season
             .form-group.student-list
-              - if @students.empty?
+              - if @enrollments.empty?
                 div.col-md-12.text-center
                   | No enrolled students found for season
                   =< @grade.review_season
               - else
-                - @students.each do|student|
-                  a.col-md-4.student href='#' class=(existing_student student) data-query=student
+                - @enrollments.each do|e|
+                  - student = e.student
+                  a.col-md-4.student href='#' class=(existing_student student) data-query=student data-enrollment-id=e.id
                     span.profile-pic
                       i.fa.fa-check
                       - if student.has_profile_pic?
@@ -43,5 +44,5 @@
 
         .modal-footer
           .actions
-            a.btn data-dismiss='modal' Cancel
+            a.btn.revert href='#' Cancel
             input.btn.btn-default type='submit' value='Confirm'

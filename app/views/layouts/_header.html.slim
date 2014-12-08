@@ -31,7 +31,7 @@
           a href='http://www.prc.gov.ph' target='_blank' PRC
         li class=('active' if yield(:title)== 'Pricing')
           a href=pricing_path Pricing
-        li class=('active' if yield(:title)== 'Enrollment')
+        li class=('active' if @page == 'enrollment')
           a href=enrollment_path(:package_type) Enroll
         - if user_signed_in?
           li.dropdown class=('active' if admin_page?)

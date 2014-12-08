@@ -2,9 +2,11 @@
   $students = $('#students')
   $scope.currentPage = $students.data 'page'
   $scope.q = $students.data 'q'
-  $scope.enrollment_status = {
-    value: $students.data 'status'
-  }
+
+  if $students.data 'status'
+    $scope.enrollment_status =
+      value: $students.data 'status'
+
   $scope.season = {
     id: $students.data 'season'
   }
