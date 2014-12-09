@@ -49,7 +49,7 @@ end
 
 Given /^a review season exists$/ do
   if ReviewSeason.empty?
-    ReviewSeason.create!(
+    @season = ReviewSeason.create!(
         season: 'May 2014',
         season_start: Date.new(2014, 4, 1),
         season_end: Date.new(2014, 4, 5),
@@ -60,6 +60,8 @@ Given /^a review season exists$/ do
         coaching: 7000,
         reservation: 3000
     )
+  else
+    @season = ReviewSeason.first
   end
 end
 
@@ -102,4 +104,14 @@ Given /students exist for searching/ do
       elem_year: 2002
   )
   @student = Student.first
+end
+
+def expect_updated(a, b)
+  keys = Set.new
+  b.each do |k, v|
+    keys << k if a[k] != v
+  end
+  @attributes.each do |k|
+    expect(keys.include? k).to be true
+  end
 end

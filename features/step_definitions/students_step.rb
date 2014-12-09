@@ -115,13 +115,5 @@ Then /I should see names, email, last school, address and balance of the student
 end
 
 Then /the student should be updated/ do
-  a = @student.attributes
-  b = @student.reload.attributes
-  keys = Set.new
-  b.each do |k, v|
-    keys << k if a[k] != v
-  end
-  @attributes.each do |k|
-    expect(keys.include? k).to be true
-  end
+  expect_updated @student.attributes, @student.reload.attributes
 end
