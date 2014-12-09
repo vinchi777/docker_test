@@ -97,3 +97,24 @@ Then /^I should search for the following students in the select modal$/ do |data
   end
 end
 
+And /^the grade should only contain (\d+) student grade$/ do |count|
+  expect(Grade.first.student_grades.size).to eq count.to_d
+end
+
+Given /^a grade exists$/ do
+  enrs = StudentEnrollment.all
+  Grade.create!({
+                    description: 'NLE Examination',
+                    date: DateTime.now,
+                    points: 50,
+                    review_season: ReviewSeason.current,
+                    student_grades_attributes: [
+                        {score: 50, student_enrollment: enrs.first},
+                        {score: 49, student_enrollment: enrs.last}
+                    ]
+                })
+end
+
+When /^I click the first existing grade$/ do
+  all('.grade')[0].click
+end

@@ -66,8 +66,30 @@ Feature: Grades with students
     * I press the "Confirm" button
     Then I should see 0 students
 
-  Scenario: Removing a student from the list
+  Scenario: Exclude student from grading
     When I click the edit students icon
-    * I deselect "dela Cruz, abc" at the student select modal
+    * I deselect "dela Cruz, def" at the student select modal
     * I press the "Confirm" button
-    Then I should not see "dela Cruz, abc"
+    Then I should not see "dela Cruz, def"
+    When I fill up these grade information
+      | Field       | Value       | Type |
+      | description | Semi Finals | text |
+      | date        | 05-10-2014  | text |
+      | points      | 200         | text |
+    * I fill up the following student grades
+      | Value |
+      | 50    |
+    * I submit the grade form
+    Then I should successfully add the "Semi Finals" grade
+    And the grade should only contain 1 student grade
+
+  Scenario: Removing a student from existing grade
+    Given a grade exists
+    And I am on the grades page
+    When I click the first existing grade
+    * I click the edit students icon
+    * I deselect "dela Cruz, def" at the student select modal
+    * I press the "Confirm" button
+    * I submit the grade form
+    And the grade should only contain 1 student grade
+
