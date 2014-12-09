@@ -7,5 +7,5 @@ When /^I click the "(.*?)" link$/ do |link|
 end
 
 Then /^I should see (\d+) students in our students page$/ do|count|
-  expect(all('#our-students .student').count).to eq count
+  expect(all('#our-students .student').count).to eq count.to_d
 end
