@@ -25,8 +25,11 @@ class StudentsController < AdminController
           @students = students.desc('is_enrolling').asc('last_name', 'first_name').paginate(page: page, per_page: per_page)
           @size = students.length
         else
-          r = Student.filter(season, status).or({last_name: /#{q}/i}, {first_name: /#{q}/i}, {address: /#{q}/i}, {last_attended: /#{q}/i}).desc('is_enrolling').asc('last_name', 'first_name')
-          @students = r.paginate(page: page, per_page: per_page)
+          r = Student.filter(season, status)
+          q.split.each do |t|
+            r = r.or({search_terms: /#{t}/i})
+          end
+          @students = r.desc('is_enrolling').asc('last_name', 'first_name').paginate(page: page, per_page: per_page)
           @size = r.length
         end
         render :index
