@@ -26,5 +26,6 @@ class StudentFactory
         s.current_enrollment.enroll
       end
     end
+    s
   end
 end
