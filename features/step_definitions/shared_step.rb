@@ -105,3 +105,7 @@ Given /students exist for searching/ do
   )
   @student = Student.first
 end
+
+Given /^I am on the home page$/ do
+  visit home_path
+end
