@@ -22,6 +22,6 @@ class SiteController < ApplicationController
   end
 
   def our_students
-    @batches = StudentEnrollment.all.group_by { |e| e.review_season }
+    @batches = StudentEnrollment.enrolled.group_by { |e| e.review_season }
   end
 end
