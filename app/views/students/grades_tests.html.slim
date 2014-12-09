@@ -28,10 +28,12 @@
 
   .grades-container
     - sorted_enrollments.each do |e|
-      h5 = e.review_season
-      hr
-      .grades.row
-        - grades_in_enrollment(e).each do |g|
-          .col-md-2
-            .grade
-              = render '/grades/grade_strip', g: g
+      - grades = grades_in_enrollment(e)
+      - if grades.any?
+        h5 = e.review_season
+        hr
+        .grades.row
+          - grades.each do |g|
+            .col-md-2
+              .grade
+                = render '/grades/grade_strip', g: g
