@@ -32,7 +32,7 @@ end
 def rand_student
   first_name = rand_name
   last_name = rand_last_name
-  Student.create(
+  std = Student.create!(
       first_name: first_name,
       last_name: last_name,
       middle_name: rand_last_name,
@@ -47,12 +47,11 @@ def rand_student
       elem: 'Luntad Elem. School',
       elemYear: 2002
   )
+  std.package_type = %w{Standard Double Coaching}[rand(3)]
+  std.setup_payment
+  std.finish_enrollment_process
+  std
 end
-
-s = rand_student
-s.email = 'admin@example.com'
-s.save
-User.create!(password: '123456789', person: s, confirmed_at: Date.new)
 
 ReviewSeason.create!(
     season: 'May 2014',
@@ -66,6 +65,13 @@ ReviewSeason.create!(
     reservation: 3000
 )
 
-30.times do |i|
+s = rand_student
+s.email = 'admin@example.com'
+s.save
+User.create!(password: '123456789', person: s, confirmed_at: Date.new)
+
+
+
+10.times do |i|
   rand_student
 end
