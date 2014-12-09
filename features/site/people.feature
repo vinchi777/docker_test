@@ -32,8 +32,8 @@ Feature: List of founders, reviewers and students for public viewing
       | Dindo De Guzman           | DMD, RN, USRN, PhDBiochem    |
       | Elenita Arreglo           | RN, MD, MAN                  |
       | Ernest Jourdan Flaminiano | RN, MAN                      |
-      | John Patrick Jacomille    | RN, MAN                      |
       | Gilbert Marzan            | RN, MAN                      |
+      | John Patrick Jacomille    | RN, MAN                      |
       | Mark Billy Perpetua       | RN, MAN                      |
       | Mary Anne Charry Te       | RN, USRN, MAN                |
       | Robert Joseph Seguin      | RN, MAN                      |
