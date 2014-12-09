@@ -99,11 +99,11 @@
   .testimonials
     .container
       h3 What people say about us.
-      .row data-sr="enter top"
+      .row
         - @testimonials.each_with_index do |testimonial, i|
           - if @testimonials.length.odd? && i == @testimonials.length - 1
             .col-md-3
-          .col-md-6.testimony
+          .col-md-6.testimony data-sr="enter top wait #{0.5*i}s"
             = image_tag testimonial.image
             b = testimonial.student
             p.title = testimonial.title

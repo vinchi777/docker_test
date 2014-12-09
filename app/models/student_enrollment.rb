@@ -4,6 +4,10 @@ class StudentEnrollment
 
   as_enum :status, enrolling: 1, enrolled: 2
 
+  scope :enrolled, -> do
+    StudentEnrollment.where(status_cd: 2)
+  end
+
   def enrolled?
     status == :enrolled
   end
