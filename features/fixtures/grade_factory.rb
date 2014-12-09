@@ -21,4 +21,17 @@ class GradeFactory
                       ]
                   })
   end
+
+  def self.createGradeWithStudent
+    enrs = StudentEnrollment.enrolled
+    Grade.create!({
+                      description: 'NLE Examination',
+                      date: DateTime.now,
+                      points: 50,
+                      review_season: ReviewSeason.current,
+                      student_grades_attributes: [
+                          {score: 50, student_enrollment: enrs.first},
+                      ]
+                  })
+  end
 end

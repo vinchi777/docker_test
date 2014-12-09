@@ -84,12 +84,24 @@ Feature: Grades with students
     And the grade should only contain 1 student grade
 
   Scenario: Removing a student from existing grade
-    Given a grade with students exists
-    And I am on the grades page
-    When I click the first existing grade
+    Given I am on an existing grade with students page
     * I click the edit students icon
     * I deselect "dela Cruz, def" at the student select modal
     * I press the "Confirm" button
     * I submit the grade form
-    And the grade should only contain 1 student grade
+    Then the grade should only contain 1 student grade
+
+  Scenario: Add a new student in existing grade
+    Given I am on an existing grade with a student page
+    * I click the edit students icon
+    * I select "dela Cruz, def" at the student select modal
+    * I press the "Confirm" button
+    * I fill up the following student grades
+      | Value |
+      | 50    |
+      | 49    |
+    * I submit the grade form
+    Then the grade should only contain 2 student grades
+
+
 

@@ -81,7 +81,7 @@ Then /^all students should be (de)?selected$/ do |deselected|
   end
 end
 
-When /^I deselect "(.*?)" at the student select modal$/ do |student|
+When /^I (de)?select "(.*?)" at the student select modal$/ do |_, student|
   find("#students-select-modal .student[data-query='#{student}']").click
 end
 
@@ -97,7 +97,7 @@ Then /^I should search for the following students in the select modal$/ do |data
   end
 end
 
-And /^the grade should only contain (\d+) student grade$/ do |count|
+And /^the grade should only contain (\d+) student grade(s)?$/ do |count, _|
   expect(Grade.first.student_grades.size).to eq count.to_d
 end
 
@@ -118,12 +118,23 @@ Given /^I am on an existing grade page$/ do
   visit edit_grade_path(grade)
 end
 
+Given /^I am on an existing grade with students page$/ do
+  grade = GradeFactory.createGradeWithStudents
+  visit edit_grade_path(grade)
+end
+
+Given /^I am on an existing grade with a student page$/ do
+  grade = GradeFactory.createGradeWithStudent
+  visit edit_grade_path(grade)
+end
+
 When /^I press the delete button for grade$/ do
-  accept_alert do
+  accept_confirm do
     click_on 'Delete'
   end
 end
 
 Then /^the grade should be deleted$/ do
+  sleep 0.1
   expect(Grade.count).to eq 0
 end
