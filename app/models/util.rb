@@ -26,8 +26,4 @@ module Util
     fullpath = 'public' + file_path.split('?')[0]
     FileUtils.rm(fullpath) if File.exist?(fullpath)
   end
-
-  def to_bool(s)
-    s == 'true'
-  end
 end

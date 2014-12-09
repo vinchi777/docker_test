@@ -82,12 +82,6 @@ class ReviewSeason
     end
   end
 
-  def as_json(opt = nil)
-    hash = self.serializable_hash(nil)
-    hash[:id] = self.id.to_s
-    hash.as_json(nil)
-  end
-
   def to_s
     season
   end

@@ -26,27 +26,7 @@ class StudentInvoice
   def has_balance?
     balance > 0
   end
-
-  def as_json(opt = nil)
-    json = {
-        _id: id,
-        package: package,
-        description: description,
-        amount: amount,
-        discount: discount,
-        transactions: transactions,
-    }
-    if review_season
-      json.merge review_season: {
-                     id: review_season.id,
-                     season: review_season.season
-                 }
-    else
-      json
-    end
-  end
 end
-
 
 class Transaction
   include Mongoid::Document
