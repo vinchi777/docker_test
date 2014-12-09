@@ -24,10 +24,11 @@ Given /enrolled students exists for the current season/ do
 end
 
 Given /a test exists/ do
+  step 'a review season exists'
   @test = Test.create!(
       description: 'First long exam',
-      date: Date.new,
-      deadline: Date.new + 1.day,
+      date: Date.parse('Feb. 1, 2014'),
+      deadline: Date.parse('Feb. 1, 2014') + 1.day,
       timer: 30,
       review_season: ReviewSeason.first
   )
@@ -92,4 +93,9 @@ Then /other students should(.*?) have answer sheets/ do |arg|
   Student.not.where(id: @bob.id).each do |s|
     expect(@test.has_answer_sheet? s).not_to eq true
   end
+end
+
+Then /I should see the test/ do
+  expect(page).to have_content @test.description
+  expect(page).to have_content @test.date.strftime('%b %-d, %Y')
 end
