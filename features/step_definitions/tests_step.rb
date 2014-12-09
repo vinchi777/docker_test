@@ -71,6 +71,19 @@ Then /"(.*?)" should have answer sheet/ do |i|
   expect(@test.has_answer_sheet? @bob).to eq true
 end
 
+Given /I am on the test page/ do
+  visit test_path(@test)
+end
+
+Then /the test should be updated/ do
+  @test.reload
+  expect(@test.description).to eq @params[:description]
+  expect(@test.date).to eq DateTime.parse(@params[:date])
+  expect(@test.deadline).to eq Time.parse(@params[:deadline])
+  expect(@test.questions[0].text).to eq @params[:question_0_text]
+  expect(@test.questions[0].choice1).to eq @params[:question_0_choice0]
+end
+
 When /^select the student$/ do
   find('a.student', match: :first).click
 end

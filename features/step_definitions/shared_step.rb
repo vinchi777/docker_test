@@ -16,11 +16,13 @@ end
 
 When /^I fill up these (.*?) information$/ do |p, data|
   @attributes = Set.new
+  @params = Hash.new
   pre = p.parameterize.underscore
   data.rows.each do |row|
     attr = row[0].parameterize.underscore
-    @attributes << attr
     val = row[1]
+    @params[:"#{attr}"] = val if val.present?
+    @attributes << attr
     name = "#{pre}[#{attr}]"
     case row[2].parameterize.underscore
       when 'text'
@@ -120,6 +122,6 @@ def expect_updated(a, b)
     keys << k if a[k] != v
   end
   @attributes.each do |k|
-    expect(keys.include? k).to be true
+    expect(keys).to include k
   end
 end
