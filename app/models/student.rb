@@ -74,8 +74,11 @@ class Student < Person
     end
   end
 
+  #for enrollment only
   def setup_payment
     current_season = ReviewSeason.current
+    return true if has_enrollment_on(current_season) && invoices.where(review_season: current_season).exists?
+
     invoice1 = StudentInvoice.create(
         package: package_type,
         review_season: current_season,

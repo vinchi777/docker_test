@@ -43,6 +43,9 @@ $ ->
         m = moment(date).format('MMMM D');
         self.text(m)
 
+  #scrollreveal
+  window.sr = new scrollReveal();
+
   #count animation in homepage
   $(window).scroll(->
     $('#countup:in-viewport(-100)').run(animateCountup)
@@ -75,10 +78,3 @@ $ ->
       $('#map').hide()
 
 $(window).load ->
-  config = {
-    easing: 'hustle',
-    reset: false,
-    delay: 'once',
-    vFactor: 0.90,
-  }
-  window.sr = new scrollReveal(config);
