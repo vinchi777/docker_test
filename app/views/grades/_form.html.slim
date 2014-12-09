@@ -11,7 +11,7 @@
       label.control-label Total Points
       = f.text_field :points, class: 'form-control required total-score'
     .col-md-5.actions
-      = link_to 'Delete', @grade, method: :delete, data: {confirm: 'Are you sure you want to delete this grade?'}, class: 'btn btn-danger'
+      = link_to 'Delete', @grade, method: :delete, data: {confirm: 'Are you sure you want to delete this grade?'}, class: 'btn btn-danger' unless @grade.new_record?
       button.btn.btn-primary type='Submit' Save
   hr
 
