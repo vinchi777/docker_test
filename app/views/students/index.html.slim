@@ -27,12 +27,12 @@
       | {{totalItems}}
     ng-pluralize count='totalItems' when="{'0': 'student', '1': 'student', 'other': 'students'}"
   .students.listing.panel.panel-light.col-md-12
-    .empty-list ng-show='students.length == 0 && q == null'
+    .empty-list ng-show='students.length == 0 && q == null && !loading'
       p
         | There is no existing students. Click the
         b  'New Student'
         |  button to create one.
-    .no-result ng-show='students.length == 0 && q != null'
+    .no-result ng-show='students.length == 0 && q != null && !loading'
       i.fa.fa-exclamation-circle
       div No result found
 
@@ -48,7 +48,7 @@
           .email
             | {{student.email}}
           .school
-            | {{student.lastAttended}}
+            | {{student.last_attended}}
           .address
             | {{student.address}}
       .account.col-md-1

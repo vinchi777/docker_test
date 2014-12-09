@@ -8,34 +8,34 @@ class Student < Person
   validates_presence_of :contact_no, if: :can_validate_info?
   validates_presence_of :email, if: :can_validate_info?
 
-  field :parentFirstName, type: String
-  field :parentLastName, type: String
-  field :parentContact, type: String
+  field :parent_first_name, type: String
+  field :parent_last_name, type: String
+  field :parent_contact, type: String
 
-  field :lastAttended, type: String
-  validates_presence_of :lastAttended, if: :can_validate_education?
+  field :last_attended, type: String
+  validates_presence_of :last_attended, if: :can_validate_education?
 
-  field :yearGrad, type: Integer
-  validates_presence_of :yearGrad, if: :can_validate_education?
-  validates_numericality_of :yearGrad, greater_than: :hsYear, message: 'must be later than High School Year', if: :can_validate_education?
+  field :college_year, type: Integer
+  validates_presence_of :college_year, if: :can_validate_education?
+  validates_numericality_of :college_year, greater_than: :hs_year, message: 'must be later than High School Year', if: :can_validate_education?
 
   field :recognition, type: String
   field :hs, type: String
   validates_presence_of :hs, if: :can_validate_education?
 
-  field :hsYear, type: Integer
-  validates_presence_of :hsYear, if: :can_validate_education?
-  validates_numericality_of :hsYear, greater_than: :elemYear, message: 'must be later than Elementary Year', if: :can_validate_education?
+  field :hs_year, type: Integer
+  validates_presence_of :hs_year, if: :can_validate_education?
+  validates_numericality_of :hs_year, greater_than: :elem_year, message: 'must be later than Elementary Year', if: :can_validate_education?
 
   field :elem, type: String
   validates_presence_of :elem, if: :can_validate_education?
 
-  field :elemYear, type: Integer
-  validates :elemYear, presence: true, if: :can_validate_education?
+  field :elem_year, type: Integer
+  validates :elem_year, presence: true, if: :can_validate_education?
 
-  field :referrerFirstName, type: String
-  field :referrerLastName, type: String
-  field :referrerContact, type: String
+  field :referrer_first_name, type: String
+  field :referrer_last_name, type: String
+  field :referrer_contact, type: String
 
   field :why, type: String
   field :facebook, type: String
