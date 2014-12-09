@@ -5,22 +5,24 @@ Feature: Online enrollment for students
     * I am on the enrollment package type page
     When I select "standard_package"
     * I press the "Next" button
-    * I fill up the following student information
-      | first_name | John           | text   |
-      | last_name  | dela Cruz      | text   |
-      | birthdate  | Nov 10, 1992   | text   |
-      | sex        | Female         | select |
-      | address    | Palo, Leyte,   | text   |
-      | contact_no | 123-4567       | text   |
-      | email      | john@gmail.com | text   |
+    * I fill up these student information
+      | Field      | Value          | Type   |
+      | First Name | John           | text   |
+      | Last Name  | dela Cruz      | text   |
+      | Birthdate  | Nov 10, 1992   | text   |
+      | Sex        | Female         | select |
+      | Address    | Palo, Leyte,   | text   |
+      | Contact No | 123-4567       | text   |
+      | Email      | john@gmail.com | text   |
     * I press the "Next" button
-    * I fill up the following student information
-      | last_attended | Cebu Institute of Medicine  | text   |
-      | college_year  | 2014                        | select |
-      | hs            | Bethel International School | text   |
-      | hs_year       | 2010                        | select |
-      | elem          | Bethel International School | text   |
-      | elem_year     | 2000                        | select |
+    * I fill up these student information
+      | Field         | Value                       | Type   |
+      | Last Attended | Cebu Institute of Medicine  | text   |
+      | College Year  | 2014                        | select |
+      | HS            | Bethel International School | text   |
+      | HS Year       | 2010                        | select |
+      | Elem          | Bethel International School | text   |
+      | Elem Year     | 2000                        | select |
     * I press the "Next" button
     * I press the "Next" button
     * I press the "I Agree" button
@@ -41,14 +43,15 @@ Feature: Online enrollment for students
     Given I am on the enrollment package type page
     When I select "standard_package"
     * I press the "Next" button
-    * I fill up the following student information
-      | first_name | John           | text   |
-      | last_name  | dela Cruz      | text   |
-      | birthdate  | Nov 10, 1992   | text   |
-      | sex        | Female         | select |
-      | address    | Palo, Leyte,   | text   |
-      | contact_no | 123-4567       | text   |
-      | email      | john@gmail.com | text   |
+    * I fill up these student information
+      | Field      | Value          | Type   |
+      | First Name | John           | text   |
+      | Last Name  | dela Cruz      | text   |
+      | Birthdate  | Nov 10, 1992   | text   |
+      | Sex        | Female         | select |
+      | Address    | Palo, Leyte,   | text   |
+      | Contact No | 123-4567       | text   |
+      | Email      | john@gmail.com | text   |
     When I press the "Next" button
     * I press the "Next" button
     Then I should see 5 errors

@@ -2,17 +2,6 @@ When /^I am on the new student page$/ do
   visit new_student_path
 end
 
-When /^I fill up the following student information$/ do |table|
-  table.raw.each do |name, value, type|
-    case type
-      when 'text'
-        fill_in "student[#{name}]", with: value
-      when 'select'
-        select value, from: "student[#{name}]"
-    end
-  end
-end
-
 When /^I save the student form/ do
   first('.save.btn').click
 end
