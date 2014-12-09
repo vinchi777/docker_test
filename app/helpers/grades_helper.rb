@@ -4,7 +4,7 @@ module GradesHelper
   end
 
   def grades_in_season(season)
-    grades = season.grades.concat season.tests.select { |t| t.deadline? }
+    grades = season.grades + season.tests.select { |t| t.deadline? }
     grades.select { |g| g.review_season == season }.sort { |a, b| b.date <=> a.date }
   end
 
