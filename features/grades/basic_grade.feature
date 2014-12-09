@@ -4,7 +4,7 @@ Feature: Basic grade
     Given I am logged in as admin
     * a review season exists
 
-  Scenario: Add new grade
+  Scenario: Adding a new grade
     Given I am on the grades page
     * I click the add grade link
     Then I should be redirected to the new grade page
@@ -18,6 +18,12 @@ Feature: Basic grade
     * I should be redirected to the grades page
     * I should see "Mock Exam for NLE"
 
+  Scenario: Adding a new grade with missing information
+    Given I am on the grades page
+    * I click the add grade link
+    * I submit the grade form
+    Then I should see 3 errors
+
   Scenario: Editing a grade
     Given a grade exists
     And I am on the grades page
@@ -28,16 +34,22 @@ Feature: Basic grade
     * I submit the grade form
     Then I should see "Super Finals"
 
+  Scenario: Editing a grade wth missing information
+    Given a grade exists
+    And I am on the grades page
+    When I click the first existing grade
+    And I fill up these grade information
+      | Field       | Value | Type |
+      | description |       | text |
+      | date        |       | text |
+      | points      |       | text |
+    * I submit the grade form
+    Then I should see 3 errors
+
   Scenario: Deleting a grade
     Given I am on an existing grade page
     When I press the delete button for grade
     Then the grade should be deleted
-
-  Scenario: Missing grade information
-    Given I am on the grades page
-    * I click the add grade link
-    * I submit the grade form
-    Then I should see 3 errors
 
   Scenario: Visit new grades path through url
     Given I am on the new grade page
