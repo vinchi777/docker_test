@@ -31,6 +31,11 @@ Feature: Online enrollment for students
     Then I should be on the homepage
     * The student should be for confirmation
 
+  Scenario: No package selected
+    Given I am on the enrollment package type page
+    When I press the "Next" button
+    Then I should still be on the enrollment package page
+
   Scenario: Missing personal information
     Given I am on the enrollment package type page
     When I select "standard_package"
