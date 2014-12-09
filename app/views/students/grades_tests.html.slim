@@ -35,5 +35,9 @@
         .grades.row
           - grades.each do |g|
             .col-md-2
-              .grade
-                = render '/grades/grade_strip', g: g
+              - if g.test?
+                = link_to answer_sheet_path(g), class: 'grade' do
+                  = render '/grades/grade_strip', g: g
+              - else
+                .grade
+                  = render '/grades/grade_strip', g: g
