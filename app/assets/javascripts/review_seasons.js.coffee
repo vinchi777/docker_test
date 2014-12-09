@@ -88,7 +88,7 @@
   $scope.remove = (r) ->
     p = $http.delete "/review_seasons/#{r.id}.json"
     p.success (d) ->
-      confirm = $("#confirm-#{id}")
+      confirm = $("#confirm-#{r.id}")
       confirm.on 'hidden.bs.modal', ->
         idx = $scope.reviewSeasons.indexOf r
 
@@ -99,6 +99,6 @@
       confirm.modal('hide')
 
     p.error (e) ->
-      $("#confirm-#{id}").modal 'hide'
+      $("#confirm-#{r.id}").modal 'hide'
       $('#error-delete').modal 'show'
 ]

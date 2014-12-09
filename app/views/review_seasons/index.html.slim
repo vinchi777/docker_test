@@ -31,7 +31,7 @@
                 | {{r.enrolling}}
                 ng-pluralize< count='r.enrolling' when="{'0': 'enrollee', '1': 'enrollee', 'other': 'enrollees'}"
               .actions
-                a href='#' data-toggle='modal' data-target=('#confirm-{{r.id}}')
+                a href='#' id='remove-{{r.id}}' data-toggle='modal' data-target=('#confirm-{{r.id}}')
                   i.fa.fa-trash
                 a href='#' id='update-{{r.id}}' data-target='#review-season-modal' ng-click='editReviewSeason(r)' data-toggle='modal'
                   i.fa.fa-pencil-square-o
