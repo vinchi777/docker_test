@@ -2,17 +2,6 @@ When /^I am on the new student page$/ do
   visit new_student_path
 end
 
-When /^I fill up the following student information$/ do |table|
-  table.raw.each do |name, value, type|
-    case type
-      when 'text'
-        fill_in "student[#{name}]", with: value
-      when 'select'
-        select value, from: "student[#{name}]"
-    end
-  end
-end
-
 When /^I save the student form/ do
   first('.save.btn').click
 end
@@ -91,4 +80,48 @@ Given /students exist for filtering/ do
   StudentFactory.create_student('jk', true, false)
   StudentFactory.create_student('abc', true, true)
   StudentFactory.create_student('def', true, true)
+end
+
+Given /an enrolling student exists/ do
+  @student = StudentFactory.create_student('John', true, false)
+end
+
+Then /I should see the student is enrolled/ do
+  @season = ReviewSeason.first
+  expect(page).to have_content "Enrolled for #{@season.season}"
+end
+
+Then /the student is confirmed/ do
+  expect(@student.reload.enrolled?).to be true
+end
+
+Given /I am on the student page/ do
+  visit student_path(@student)
+end
+
+Given /students exist with balance/ do
+  @students = []
+  @students << StudentFactory.create_student('Maria', true, true)
+  @students << StudentFactory.create_student('Erik', true, true)
+end
+
+Then /I should see names, email, last school, address and balance of the students/ do
+  @students.each do |s|
+    expect(page).to have_content s.to_s
+    expect(page).to have_content s.last_attended
+    expect(page).to have_content s.address
+    expect(page).to have_content '15,000' if s.has_balance?
+  end
+end
+
+Then /the student should be updated/ do
+  a = @student.attributes
+  b = @student.reload.attributes
+  keys = Set.new
+  b.each do |k, v|
+    keys << k if a[k] != v
+  end
+  @attributes.each do |k|
+    expect(keys.include? k).to be true
+  end
 end

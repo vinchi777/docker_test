@@ -5,50 +5,52 @@ Feature: Add students
 
   Scenario: Insert required information
     When I am on the new student page
-    * I fill up the following student information
-      | first_name    | John                        | text   |
-      | last_name     | dela Cruz                   | text   |
-      | birthdate     | Nov 10, 1992                | text   |
-      | sex           | Female                      | select |
-      | address       | Palo, Leyte,                | text   |
-      | contact_no    | 123-4567                    | text   |
-      | email         | john@gmail.com              | text   |
-      | last_attended | Cebu Institute of Medicine  | text   |
-      | college_year  | 2014                        | select |
-      | hs            | Bethel International School | text   |
-      | hs_year       | 2010                        | select |
-      | elem          | Bethel International School | text   |
-      | elem_year     | 2000                        | select |
+    * I fill up these student information
+      | Field         | Value                       | Type   |
+      | First Name    | John                        | text   |
+      | Last Name     | dela Cruz                   | text   |
+      | Birthdate     | Nov 10, 1992                | text   |
+      | Sex           | Female                      | select |
+      | Address       | Palo, Leyte,                | text   |
+      | Contact No    | 123-4567                    | text   |
+      | Email         | john@gmail.com              | text   |
+      | Last Attended | Cebu Institute of Medicine  | text   |
+      | College Year  | 2014                        | select |
+      | HS            | Bethel International School | text   |
+      | HS Year       | 2010                        | select |
+      | Elem          | Bethel International School | text   |
+      | Elem Year     | 2000                        | select |
     * I save the student form
     Then I should be on the students page
 
   Scenario: Insert all fields
     When I am on the new student page
-    * I fill up the following student information
-      | first_name          | John                        | text   |
-      | middle_name         | John                        | text   |
-      | last_name           | dela Cruz                   | text   |
-      | birthdate           | Nov 10, 1992                | text   |
-      | sex                 | Female                      | select |
-      | address             | Palo, Leyte,                | text   |
-      | contact_no          | 123-4567                    | text   |
-      | parent_first_name   | Maria                       | text   |
-      | parent_last_name    | dela Cruz                   | text   |
-      | parent_contact      | 123456789                   | text   |
-      | last_attended       | Cebu Institute of Medicine  | text   |
-      | recognition         | john@gmail.com              | text   |
-      | college_year        | 2014                        | select |
-      | hs                  | Bethel International School | text   |
-      | hs_year             | 2010                        | select |
-      | elem                | Bethel International School | text   |
-      | elem_year           | 2000                        | select |
-      | referrer_first_name | JK                          | text   |
-      | referrer_last_name  | de Veyra                    | text   |
-      | referrer_contact    | 123456789                   | text   |
-      | why                 | I just like MaxRevOne       | text   |
-      | facebook            | juan                        | text   |
-      | twitter             | juan                        | text   |
-      | linkedin            | juan                        | text   |
+    * I fill up these student information
+      | Field               | Value                       | Type   |
+      | First Name          | John                        | text   |
+      | Middle Name         | John                        | text   |
+      | Last Name           | dela Cruz                   | text   |
+      | Birthdate           | Nov 10, 1992                | text   |
+      | Sex                 | Female                      | select |
+      | Address             | Palo, Leyte,                | text   |
+      | Contact No          | 123-4567                    | text   |
+      | Parent First Name   | Maria                       | text   |
+      | Parent Last Name    | dela Cruz                   | text   |
+      | Parent Contact      | 123456789                   | text   |
+      | Last Attended       | Cebu Institute of Medicine  | text   |
+      | Recognition         | john@gmail.com              | text   |
+      | College Year        | 2014                        | select |
+      | HS                  | Bethel International School | text   |
+      | HS Year             | 2010                        | select |
+      | Elem                | Bethel International School | text   |
+      | Elem Year           | 2000                        | select |
+      | Referrer First Name | JK                          | text   |
+      | Referrer Last Name  | de Veyra                    | text   |
+      | Referrer Contact    | 123456789                   | text   |
+      | Why                 | I just like MaxRevOne       | text   |
+      | Facebook            | juan                        | text   |
+      | Twitter             | juan                        | text   |
+      | Linkedin            | juan                        | text   |
     * I save the student form
     Then I should be on the students page
 

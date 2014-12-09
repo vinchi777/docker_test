@@ -49,6 +49,7 @@ class Student < Person
 
   # Caching purposes
   field :is_enrolling, type: Boolean, default: false
+  field :search_terms, type: String
 
   has_many :invoices, class_name: 'StudentInvoice', dependent: :destroy
   has_many :enrollments, class_name: 'StudentEnrollment', dependent: :destroy
@@ -72,6 +73,10 @@ class Student < Person
         Student.all
       end
     end
+  end
+
+  before_validation do |d|
+    d.search_terms = "#{first_name} #{last_name} #{middle_name} #{email} #{last_attended} #{address}"
   end
 
   #for enrollment only

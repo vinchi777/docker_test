@@ -11,9 +11,11 @@ Then /^I should be on the homepage$/ do
 end
 
 When /^I fill up these (.*?) information$/ do |p, data|
+  @attributes = Set.new
   pre = p.parameterize.underscore
   data.rows.each do |row|
     attr = row[0].parameterize.underscore
+    @attributes << attr
     val = row[1]
     name = "#{pre}[#{attr}]"
     case row[2].parameterize.underscore
