@@ -10,27 +10,6 @@ Then /^I should be redirected to the new grade page$/ do
   expect(current_path).to eq new_grade_path
 end
 
-When /^I fill in the following "(.*?)" details$/ do |pre, data|
-  data.rows.each do |row|
-    name = "#{pre}[#{row[0]}]"
-    case row[2]
-      when 'text'
-        if pre == 'test' && row[0] == 'question_0_ratio' # Add rationale
-          all('.add-rationale').each { |l| l.click }
-        end
-        fill_in name, with: row[1]
-      when 'select'
-        select row[1], from: name
-      when 'check'
-        check name
-      when 'uncheck'
-        uncheck name
-      when 'choose'
-        choose name
-    end
-  end
-end
-
 And /^I submit the grade form$/ do
   click_button 'Save'
 end

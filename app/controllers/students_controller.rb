@@ -22,10 +22,10 @@ class StudentsController < AdminController
       format.json do
         if q.nil? || q.blank?
           students = Student.filter(season, status)
-          @students = students.desc('is_enrolling').asc('lastName', 'firstName').paginate(page: page, per_page: per_page)
+          @students = students.desc('is_enrolling').asc('last_name', 'first_name').paginate(page: page, per_page: per_page)
           @size = students.length
         else
-          r = Student.filter(season, status).or({lastName: /#{q}/i}, {firstName: /#{q}/i}, {address: /#{q}/i}, {lastAttended: /#{q}/i}).desc('is_enrolling').asc('lastName', 'firstName')
+          r = Student.filter(season, status).or({last_name: /#{q}/i}, {first_name: /#{q}/i}, {address: /#{q}/i}, {lastAttended: /#{q}/i}).desc('is_enrolling').asc('last_name', 'first_name')
           @students = r.paginate(page: page, per_page: per_page)
           @size = r.length
         end
@@ -118,6 +118,6 @@ class StudentsController < AdminController
   end
 
   def student_params
-    params.require(:student).permit(:firstName, :middleName, :lastName, :birthdate, :sex, :address, :contactNo, :email, :parentFirstName, :parentLastName, :parentContact, :lastAttended, :yearGrad, :recognition, :hs, :hsYear, :elem, :elemYear, :referrerFirstName, :referrerLastName, :referrerContact, :why, :facebook, :twitter, :linkedin)
+    params.require(:student).permit(:first_name, :middle_name, :last_name, :birthdate, :sex, :address, :contact_no, :email, :parentFirstName, :parentLastName, :parentContact, :lastAttended, :yearGrad, :recognition, :hs, :hsYear, :elem, :elemYear, :referrerFirstName, :referrerLastName, :referrerContact, :why, :facebook, :twitter, :linkedin)
   end
 end

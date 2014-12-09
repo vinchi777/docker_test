@@ -2,7 +2,7 @@ When /^I am on the new student page$/ do
   visit new_student_path
 end
 
-When /^I fill up these student information/ do |table|
+When /^I fill up the following student information$/ do |table|
   table.raw.each do |name, value, type|
     case type
       when 'text'
@@ -29,7 +29,7 @@ Given /^I am on the students page$/ do
   visit students_path
 end
 
-When /^I search for "(.*?)"/ do |query|
+When /^I search for "(.*?)"$/ do |query|
   fill_in 'q', with: query
   execute_script('$(".search form").submit()')
 end
@@ -45,8 +45,8 @@ When /^I remove a student$/ do
 end
 
 Then /^I should not see the student$/ do
-  expect(Student.count).to eq @count - 1
   expect(current_path).to eq students_path
+  expect(Student.count).to eq @count - 1
 end
 
 When /^I cancel the removal of student$/ do

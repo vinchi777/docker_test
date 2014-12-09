@@ -4,12 +4,12 @@ RSpec.describe "students/index", :type => :view do
   before(:each) do
     assign(:students, [
       Student.create!(
-        :firstName => "First Name",
-        :middleName => "Middle Name",
-        :lastName => "Last Name",
+        :first_name => "First Name",
+        :middle_name => "Middle Name",
+        :last_name => "Last Name",
         :sex => "",
         :address => "Address",
-        :contactNo => "Contact No",
+        :contact_no => "Contact No",
         :email => "Email",
         :parentFirstName => "Parent First Name",
         :parentLastName => "Parent Last Name",
@@ -29,12 +29,12 @@ RSpec.describe "students/index", :type => :view do
         :linkedin => "Linkedin"
       ),
       Student.create!(
-        :firstName => "First Name",
-        :middleName => "Middle Name",
-        :lastName => "Last Name",
+        :first_name => "First Name",
+        :middle_name => "Middle Name",
+        :last_name => "Last Name",
         :sex => "",
         :address => "Address",
-        :contactNo => "Contact No",
+        :contact_no => "Contact No",
         :email => "Email",
         :parentFirstName => "Parent First Name",
         :parentLastName => "Parent Last Name",

@@ -8,7 +8,7 @@ Feature: Grades with students
 
   Scenario: Add grades for enrolled students
     Then I should see 2 students
-    When I fill in the following "grade" details
+    When I fill up these grade information
       | Field       | Value       | Type |
       | description | Semi Finals | text |
       | date        | 05-10-2014  | text |
@@ -22,7 +22,7 @@ Feature: Grades with students
     * I should see a grade with an average of 33
 
   Scenario: Wrong average calculation
-    When I fill in the following "grade" details
+    When I fill up these grade information
       | Field       | Value       | Type |
       | description | Semi Finals | text |
       | date        | 05-10-2014  | text |

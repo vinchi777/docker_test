@@ -13,42 +13,42 @@
                 | {{e}}
           .form-group
             label Season
-            input.form-control.season.required type='text' ng-model='reviewSeason.season'
+            input.form-control.season.required type='text' ng-model='reviewSeason.season' name='review_season[season]'
           .season.range
             label Schedule
-            input.date-picker.form-control.required type='text' data-date-format='MMM DD, YYYY' ng-model='reviewSeason.season_start'
+            input.date-picker.form-control.required type='text' data-date-format='MMM DD, YYYY' ng-model='reviewSeason.season_start' name='review_season[season_start]'
             label.to.light to
-            input.date-picker.form-control.required type='text' data-date-format='MMM DD, YYYY' ng-model='reviewSeason.season_end'
+            input.date-picker.form-control.required type='text' data-date-format='MMM DD, YYYY' ng-model='reviewSeason.season_end' name='review_season[season_end]'
           .promo.range
             label Promo
-            input.date-picker.form-control type='text' data-date-format='MMM DD, YYYY' ng-model='reviewSeason.promo_start'
+            input.date-picker.form-control type='text' data-date-format='MMM DD, YYYY' ng-model='reviewSeason.promo_start' name='review_season[promo_start]'
             label.to.light to
-            input.date-picker.form-control type='text' data-date-format='MMM DD, YYYY' ng-model='reviewSeason.promo_end'
+            input.date-picker.form-control type='text' data-date-format='MMM DD, YYYY' ng-model='reviewSeason.promo_end' name='review_season[promo_end]'
 
           .row
             .package.col-lg-6
               header: b Pricing Package
               .form-group
                 label.light Full Review
-                input.peso.form-control.required type='text' ng-model='reviewSeason.full_review'
+                input.peso.form-control.required type='text' ng-model='reviewSeason.full_review' name='review_season[full_review]'
               .form-group
                 label.light Double Review
-                input.peso.form-control.required type='text' ng-model='reviewSeason.double_review'
+                input.peso.form-control.required type='text' ng-model='reviewSeason.double_review' name='review_season[double_review]'
               .form-group
                 label.light Coaching
-                input.peso.form-control.required type='text' ng-model='reviewSeason.coaching'
+                input.peso.form-control.required type='text' ng-model='reviewSeason.coaching' name='review_season[coaching]'
               .form-group
                 label.light Reservation
-                input.peso.form-control.required type='text' ng-model='reviewSeason.reservation'
+                input.peso.form-control.required type='text' ng-model='reviewSeason.reservation' name='review_season[reservation]'
 
             .discount.col-lg-6
               header: b Discount
               .form-group
                 label.light Repeater
-                input.peso.form-control type='text' ng-model='reviewSeason.repeater'
+                input.peso.form-control type='text' ng-model='reviewSeason.repeater' name='review_season[repeater]'
               .form-group
                 label.light First Timer
-                input.peso.form-control type='text' ng-model='reviewSeason.first_timer'
+                input.peso.form-control type='text' ng-model='reviewSeason.first_timer' name='review_season[first_timer]'
 
         .modal-footer
           .actions

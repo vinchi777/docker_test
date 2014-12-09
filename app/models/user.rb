@@ -45,8 +45,8 @@ class User
 
   before_validation do |d|
     d.email = d.person.email
-    d.first_name = d.person.firstName
-    d.last_name = d.person.lastName
+    d.first_name = d.person.first_name
+    d.last_name = d.person.last_name
     d.middle_initial = d.person.middle_initial
   end
 

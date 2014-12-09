@@ -80,7 +80,7 @@ class EnrollmentController < ApplicationController
   end
 
   def student_params
-    params.require(:student).permit(:firstName, :middleName, :lastName, :birthdate, :sex, :address, :contactNo, :email,
+    params.require(:student).permit(:first_name, :middle_name, :last_name, :birthdate, :sex, :address, :contact_no, :email,
                                     :parentFirstName, :parentLastName, :parentContact, :lastAttended, :yearGrad,
                                     :recognition, :hs, :hsYear, :elem, :elemYear, :referrerFirstName, :referrerLastName,
                                     :why, :facebook, :twitter, :linkedin, :enrollment_process, :package_type)

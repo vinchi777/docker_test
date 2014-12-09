@@ -19,11 +19,12 @@ Then /I should be on the test page/ do
 end
 
 Given /enrolled students exists for the current season/ do
-  StudentFactory.create_student 'Mark', true, true
+  StudentFactory.create_student 'Erik', true, true
+  StudentFactory.create_student 'Bob', true, true
 end
 
 Given /a test exists/ do
-  Test.create!(
+  @test = Test.create!(
       description: 'First long exam',
       date: Date.new,
       deadline: Date.new + 1.day,
@@ -33,29 +34,49 @@ Given /a test exists/ do
 end
 
 When /I click on the test/ do
-
+  find("#test-#{@test.id} a").click
 end
 
 Then /I should see all students selected/ do
-
+  len = ReviewSeason.first.enrolled_students.length
+  expect(all('a.student.selected', count: len).count).to eq len
 end
 
 Then /I should(.*?) see the student select modal/ do |arg|
-
+  expect(find('#students-select-modal', visible: false).visible?).to be !arg.present?
 end
 
 Then /the students have answer sheets/ do
+  expect(ReviewSeason.first.enrolled_students.size).not_to eq 0
+  ReviewSeason.first.enrolled_students do |s|
+    expect(@test.has_answer_sheet? s).to be true
+  end
+end
 
+When /I search for "(.*?)" in student select/ do |q|
+  fill_in 'q', with: q
+end
+
+When /^I deselect all students$/ do
+  find('a.toggle').click
 end
 
 Then /I should see (\d+) student for selection/ do |i|
-
+  expect(all('a.student', count: i.to_i).count).to eq i.to_i
 end
 
 Then /"(.*?)" should have answer sheet/ do |i|
+  sleep 0.5
+  @bob = Student.where(first_name: i).first
+  expect(@test.has_answer_sheet? @bob).to eq true
+end
 
+When /^select the student$/ do
+  find('a.student', match: :first).click
 end
 
 Then /other students should(.*?) have answer sheets/ do |arg|
-
+  Student.not.where(id: @bob.id).each do |s|
+    expect(@test.has_answer_sheet? s).not_to eq true
+  end
 end

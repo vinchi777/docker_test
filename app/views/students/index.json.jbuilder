@@ -2,9 +2,9 @@ json.totalSize @size
 json.students @students do |s|
   json.id s.id.to_s
   json.profile_pic s.profile_pic
-  json.lastName s.lastName
-  json.firstName s.firstName
-  json.middleInitial s.middle_initial
+  json.last_name s.last_name
+  json.first_name s.first_name
+  json.middle_initial s.middle_initial
   json.email s.email
   json.lastAttended s.lastAttended
   json.address s.address

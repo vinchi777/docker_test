@@ -5,7 +5,7 @@ class Student < Person
 
   validates_presence_of :sex, if: :can_validate_info?
   validates_presence_of :address, if: :can_validate_info?
-  validates_presence_of :contactNo, if: :can_validate_info?
+  validates_presence_of :contact_no, if: :can_validate_info?
   validates_presence_of :email, if: :can_validate_info?
 
   field :parentFirstName, type: String

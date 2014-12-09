@@ -7,7 +7,7 @@
     .col-lg-8
       h2 Review Seasons
     .col-lg-4
-      .btn.btn-primary.pull-right data-target='#review-season-modal' ng-click='addReviewSeason()' data-toggle='modal' Add Review Season
+      button.btn.btn-primary.pull-right data-target='#review-season-modal' ng-click='addReviewSeason()' data-toggle='modal' Create Review Season
 
   = render 'form'
 
@@ -15,7 +15,7 @@
     .no-review-season ng-show='reviewSeasons.length == 0'
       p
         | There is no existing review season. Click the
-        b  'Add Review Season'
+        b  'Create Review Season'
         |  button to create one.
     .review-season.panel ng-repeat='r in reviewSeasons'
       .panel-title

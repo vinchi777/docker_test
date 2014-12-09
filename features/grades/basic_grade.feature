@@ -8,7 +8,7 @@ Feature: Basic grade
     Given I am on the grades page
     * I click the add grade link
     Then I should be redirected to the new grade page
-    When I fill in the following "grade" details
+    When I fill up these grade information
       | Field       | Value             | Type |
       | description | Mock Exam for NLE | text |
       | date        | 05-10-2014        | text |
