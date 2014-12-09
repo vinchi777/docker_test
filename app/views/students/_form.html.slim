@@ -58,10 +58,10 @@
         .col-lg-6
           .form-group.inline
             label.control-label.col-lg-12 Parent or Guardian
-            .col-lg-6.first-name = f.text_field :parentFirstName, class: 'form-control', placeholder: 'First name'
-            .col-lg-6.last-name = f.text_field :parentLastName, class: 'form-control', placeholder: 'Last name'
+            .col-lg-6.first-name = f.text_field :parent_first_name, class: 'form-control', placeholder: 'First name'
+            .col-lg-6.last-name = f.text_field :parent_last_name, class: 'form-control', placeholder: 'Last name'
           .form-group
-            .col-lg-10 = f.text_field :parentContact, class: 'form-control', placeholder: "Parent's contact no."
+            .col-lg-10 = f.text_field :parent_contact, class: 'form-control', placeholder: "Parent's contact no."
 
   .education.panel
     .panel-title
@@ -69,11 +69,11 @@
     .panel-body
       .row
         .form-group.col-lg-7
-          = f.label :lastAttended, 'School Last Attended', class: 'control-label col-lg-4'
-          .col-lg-8 = f.text_field :lastAttended, class: 'form-control required'
+          = f.label :last_attended, 'School Last Attended', class: 'control-label col-lg-4'
+          .col-lg-8 = f.text_field :last_attended, class: 'form-control required'
         .form-group.col-lg-5
-          = f.label :yearGrad, 'Year Graduated', class: 'control-label col-lg-4'
-          .year.col-lg-3 = select_year @student.yearGrad, {start_year: 1980, end_year: Date.today.year}, {class: 'form-control required', name: 'student[yearGrad]'}
+          = f.label :college_year, 'Year Graduated', class: 'control-label col-lg-4'
+          .year.col-lg-3 = select_year @student.college_year, {start_year: 1980, end_year: Date.today.year}, {class: 'form-control required', name: 'student[college_year]'}
       .row
         .form-group.col-lg-7
           = f.label :recognition, 'Recognitions/Awards', class: 'control-label col-lg-4'
@@ -83,15 +83,15 @@
           = f.label :hs, 'High School', class: 'control-label col-lg-4'
           .col-lg-8 = f.text_field :hs, class: 'form-control required'
         .form-group.col-lg-5
-          = f.label :hsYear, 'Year Graduated', class: 'control-label col-lg-4'
-          .year.col-lg-3 = select_year @student.hsYear, {start_year: 1980, end_year: Date.today.year}, {class: 'form-control required', name: 'student[hsYear]'}
+          = f.label :hs_year, 'Year Graduated', class: 'control-label col-lg-4'
+          .year.col-lg-3 = select_year @student.hs_year, {start_year: 1980, end_year: Date.today.year}, {class: 'form-control required', name: 'student[hs_year]'}
       .row
         .form-group.col-lg-7
           = f.label 'Elementary', class: 'control-label col-lg-4'
           .col-lg-8 = f.text_field :elem, class: 'form-control required'
         .form-group.col-lg-5
-          = f.label :elemYear, 'Year Graduated', class: 'control-label col-lg-4'
-          .year.col-lg-3 = select_year @student.elemYear, {start_year: 1980, end_year: Date.today.year}, {class: 'form-control required', name: 'student[elemYear]'}
+          = f.label :elem_year, 'Year Graduated', class: 'control-label col-lg-4'
+          .year.col-lg-3 = select_year @student.elem_year, {start_year: 1980, end_year: Date.today.year}, {class: 'form-control required', name: 'student[elem_year]'}
 
   .others.panel
     .panel-title
@@ -100,10 +100,10 @@
       .col-lg-6
         .form-group.inline
           label.control-label.col-lg-12 Referred by
-          .first-name.col-lg-6 = f.text_field :referrerFirstName, class: 'form-control', placeholder: 'First name'
-          .last-name.col-lg-6 = f.text_field :referrerLastName, class: 'form-control', placeholder: 'Last name'
+          .first-name.col-lg-6 = f.text_field :referrer_first_name, class: 'form-control', placeholder: 'First name'
+          .last-name.col-lg-6 = f.text_field :referrer_last_name, class: 'form-control', placeholder: 'Last name'
         .form-group.inline
-          .referrer-contact.col-lg-8 = f.text_field :referrerContact, class: 'form-control', placeholder: 'Referrer contact no.'
+          .referrer-contact.col-lg-8 = f.text_field :referrer_contact, class: 'form-control', placeholder: 'Referrer contact no.'
         .form-group.inline
           = f.label :why, 'Why did you choose MaxRevOne?', class: 'control-label col-lg-12', cols: '50'
           .col-lg-12 = f.text_area :why, class: 'form-control'

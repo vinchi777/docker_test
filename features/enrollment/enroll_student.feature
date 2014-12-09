@@ -15,12 +15,12 @@ Feature: Online enrollment for students
       | email      | john@gmail.com | text   |
     * I press the "Next" button
     * I fill up the following student information
-      | lastAttended | Cebu Institute of Medicine  | text   |
-      | yearGrad     | 2014                        | select |
-      | hs           | Bethel International School | text   |
-      | hsYear       | 2010                        | select |
-      | elem         | Bethel International School | text   |
-      | elemYear     | 2000                        | select |
+      | last_attended | Cebu Institute of Medicine  | text   |
+      | college_year  | 2014                        | select |
+      | hs            | Bethel International School | text   |
+      | hs_year       | 2010                        | select |
+      | elem          | Bethel International School | text   |
+      | elem_year     | 2000                        | select |
     * I press the "Next" button
     * I press the "Next" button
     * I press the "I Agree" button

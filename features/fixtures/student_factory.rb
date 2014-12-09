@@ -7,12 +7,12 @@ class StudentFactory
         address: 'Tacloban City',
         contact_no: '321-444',
         email: "#{name}@gmail.com",
-        lastAttended: 'St. Therese School of Medicine',
-        yearGrad: 2014,
+        last_attended: 'St. Therese School of Medicine',
+        college_year: 2014,
         hs: 'St. Marys Academy',
-        hsYear: 2006,
+        hs_year: 2006,
         elem: 'Luntad Elem. School',
-        elemYear: 2002
+        elem_year: 2002
     )
     if create_invoice
       i = StudentInvoice.new(

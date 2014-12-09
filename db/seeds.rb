@@ -40,12 +40,12 @@ def rand_student
       address: rand_address,
       contact_no: '321-444',
       email: "#{first_name}_#{last_name.parameterize('_')}@gmail.com",
-      lastAttended: rand_schools,
-      yearGrad: 2014,
+      last_attended: rand_schools,
+      college_year: 2014,
       hs: 'St. Marys Academy',
-      hsYear: 2006,
+      hs_year: 2006,
       elem: 'Luntad Elem. School',
-      elemYear: 2002
+      elem_year: 2002
   )
 end
 

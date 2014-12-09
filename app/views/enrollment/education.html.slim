@@ -4,9 +4,9 @@
     .form-horizontal.col-md-10.col-md-offset-1
       .form-group
         label.control-label.col-md-3 School Last Attended
-        .col-lg-5.col-md-4 = f.text_field :lastAttended, class: 'form-control required'
+        .col-lg-5.col-md-4 = f.text_field :last_attended, class: 'form-control required'
         label.control-label.col-lg-2.col-md-3 Year Graduated
-        .col-md-2 = select_year @student.yearGrad, {start_year: 1980, end_year: Date.today.year}, class: 'form-control required', name: 'student[yearGrad]'
+        .col-md-2 = select_year @student.college_year, {start_year: 1980, end_year: Date.today.year}, class: 'form-control required', name: 'student[college_year]'
       .form-group
         label.control-label.col-md-3 Recognition/Awards
         .col-lg-5.col-md-4 = f.text_field :recognition, class: 'form-control'
@@ -14,9 +14,9 @@
         label.control-label.col-md-3 High School
         .col-lg-5.col-md-4 = f.text_field :hs, class: 'form-control required'
         label.control-label.col-lg-2.col-md-3 Year Graduated
-        .col-md-2 = select_year @student.hsYear, {start_year: 1980, end_year: Date.today.year}, class: 'form-control required', name: 'student[hsYear]'
+        .col-md-2 = select_year @student.hs_year, {start_year: 1980, end_year: Date.today.year}, class: 'form-control required', name: 'student[hs_year]'
       .form-group
         label.control-label.col-md-3 Elementary
         .col-lg-5.col-md-4 = f.text_field :elem, class: 'form-control required'
         label.control-label.col-lg-2.col-md-3 Year Graduated
-        .col-md-2 = select_year @student.elemYear, {start_year: 1980, end_year: Date.today.year}, class: 'form-control required', name: 'student[elemYear]'
+        .col-md-2 = select_year @student.elem_year, {start_year: 1980, end_year: Date.today.year}, class: 'form-control required', name: 'student[elem_year]'

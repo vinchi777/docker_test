@@ -6,7 +6,7 @@ json.students @students do |s|
   json.first_name s.first_name
   json.middle_initial s.middle_initial
   json.email s.email
-  json.lastAttended s.lastAttended
+  json.last_attended s.last_attended
   json.address s.address
   json.user_id s.user_id
   json.enrollment_status s.enrollment_status

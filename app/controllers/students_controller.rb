@@ -25,7 +25,7 @@ class StudentsController < AdminController
           @students = students.desc('is_enrolling').asc('last_name', 'first_name').paginate(page: page, per_page: per_page)
           @size = students.length
         else
-          r = Student.filter(season, status).or({last_name: /#{q}/i}, {first_name: /#{q}/i}, {address: /#{q}/i}, {lastAttended: /#{q}/i}).desc('is_enrolling').asc('last_name', 'first_name')
+          r = Student.filter(season, status).or({last_name: /#{q}/i}, {first_name: /#{q}/i}, {address: /#{q}/i}, {last_attended: /#{q}/i}).desc('is_enrolling').asc('last_name', 'first_name')
           @students = r.paginate(page: page, per_page: per_page)
           @size = r.length
         end
@@ -118,6 +118,6 @@ class StudentsController < AdminController
   end
 
   def student_params
-    params.require(:student).permit(:first_name, :middle_name, :last_name, :birthdate, :sex, :address, :contact_no, :email, :parentFirstName, :parentLastName, :parentContact, :lastAttended, :yearGrad, :recognition, :hs, :hsYear, :elem, :elemYear, :referrerFirstName, :referrerLastName, :referrerContact, :why, :facebook, :twitter, :linkedin)
+    params.require(:student).permit(:first_name, :middle_name, :last_name, :birthdate, :sex, :address, :contact_no, :email, :parent_first_name, :parent_last_name, :parent_contact, :last_attended, :college_year, :recognition, :hs, :hs_year, :elem, :elem_year, :referrer_first_name, :referrer_last_name, :referrer_contact, :why, :facebook, :twitter, :linkedin)
   end
 end
