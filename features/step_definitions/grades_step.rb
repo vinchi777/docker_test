@@ -55,3 +55,45 @@ end
 Given /^No review season exists$/ do
   ReviewSeason.destroy_all
 end
+
+When /^I click the edit students icon$/ do
+  find('.edit-students').click
+end
+
+Then /^I should see the select students modal$/ do
+  expect(find('#students-select-modal').visible?).to eq true
+end
+
+When /^I click the (de)?select all icon$/ do |deselect|
+  if deselect
+    find('#students-select-modal .fa-circle-o').click
+  else
+    find('#students-select-modal .fa-check-circle-o').click
+  end
+end
+
+Then /^all students should be (de)?selected$/ do |deselected|
+  count = all('#students-select-modal .student.excluded').size
+  if deselected
+    expect(count).to eq 2
+  else
+    expect(count).to eq 0
+  end
+end
+
+When /^I deselect "(.*?)" at the student select modal$/ do |student|
+  find("#students-select-modal .student[data-query='#{student}']").click
+end
+
+Then /^I should not see the select indicator on "(.*?)"$/ do |student|
+  expect(all("#students-select-modal .student.excluded[data-query='#{student}']").size).to eq 1
+end
+
+Then /^I should search for the following students in the select modal$/ do |data|
+  data.rows.each do |row|
+    fill_in 'student_q', with: row[0]
+    s = all("#students-select-modal .student", count: row[1].to_i)
+    expect(s.count).to eq row[1].to_i
+  end
+end
+
