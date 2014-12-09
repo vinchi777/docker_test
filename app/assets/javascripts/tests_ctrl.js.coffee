@@ -31,6 +31,8 @@
 
   $scope.load = (id) ->
     Test.get id: id, (d) ->
+      if d.questions.length <= 0
+        $scope.addQuestion(d)
       $scope.test = d
 
   $scope.save = ->
