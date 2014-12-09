@@ -20,3 +20,21 @@ Feature: List of founders, reviewers and students for public viewing
       | Christine Almedilla-Pablico   | Review Specialist and Head of Accounting           |
       | Cesar Czarbo P. Trani         | Review Specialist and Head of Marketing            |
       | Menardo Lim                   | Review Specialist and Head of Program and Planning |
+
+  Scenario: Visit reviewers page
+    When I click the people dropdown
+    * I click the "Reviewers" link
+    Then I should see the following reviewers
+      | Name                      | Position                     |
+      | Alvin Andrade             | RN, MAN                      |
+      | Christian Paul Biluan     | RN, USRN, MAN                |
+      | Diana Mahinay             | RN, MAN, phD                 |
+      | Dindo De Guzman           | DMD, RN, USRN, PhDBiochem    |
+      | Elenita Arreglo           | RN, MD, MAN                  |
+      | Ernest Jourdan Flaminiano | RN, MAN                      |
+      | John Patrick Jacomille    | RN, MAN                      |
+      | Gilbert Marzan            | RN, MAN                      |
+      | Mark Billy Perpetua       | RN, MAN                      |
+      | Mary Anne Charry Te       | RN, USRN, MAN                |
+      | Robert Joseph Seguin      | RN, MAN                      |
+      | Roland Villegas           | RN, MAN, Review Center Owner |

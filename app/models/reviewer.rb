@@ -23,7 +23,7 @@ class Reviewer
         Reviewer.new('Mark Billy Perpetua','RN, MAN'),
         Reviewer.new('Mary Anne Charry Te','RN, USRN, MAN'),
         Reviewer.new('Robert Joseph Seguin','RN, MAN'),
-        Reviewer.new('Roland Villegas','RN, MAN'),
+        Reviewer.new('Roland Villegas','RN, MAN, Review Center Owner'),
     ].sort_by { |f| f.name}
   end
 end
