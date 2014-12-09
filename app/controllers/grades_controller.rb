@@ -9,10 +9,6 @@ class GradesController < AdminController
     @review_seasons = ReviewSeason.descending
   end
 
-  def show
-    respond_with @grade
-  end
-
   def new
     @grade = Grade.new
     if params[:season]
@@ -67,16 +63,6 @@ class GradesController < AdminController
   def destroy
     @grade.destroy
     respond_with @grade
-  end
-
-  def temp_show
-    @students = ReviewSeason.current.students
-    render 'show'
-  end
-
-  def grades_per_season
-    @grades = Grade.all.group_by { |g| g.review_season }
-    respond_with @grades
   end
 
   def new_student_grade

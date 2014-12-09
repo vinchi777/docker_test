@@ -1,5 +1,9 @@
-Then /^I should see "(.*?)"$/ do |text|
-  expect(page).to have_content text
+Then /^I should( not)? see "(.*?)"$/ do |negative, text|
+  if negative
+    expect(page).not_to have_content text
+  else
+    expect(page).to have_content text
+  end
 end
 
 When /^I press the "(.*?)" button$/ do |label|
@@ -104,6 +108,10 @@ Given /students exist for searching/ do
       elem_year: 2002
   )
   @student = Student.first
+end
+
+Given /^I am on the home page$/ do
+  visit home_path
 end
 
 def expect_updated(a, b)

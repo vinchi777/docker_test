@@ -24,17 +24,17 @@ class EnrollmentController < ApplicationController
   def update
     @page = 'enrollment'
     if process_step
+      flash[:alert] = nil
       if @student
         redirect_to next_wizard_path(:student_id => @student.id)
       elsif @type
         redirect_to next_wizard_path(package_type: @type)
-      else
-        redirect_to next_wizard_path
       end
     else
       if @student
         render_wizard @student
       else
+        flash[:alert] = 'Please select package type.'
         render_wizard
       end
     end

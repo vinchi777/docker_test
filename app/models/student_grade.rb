@@ -13,10 +13,6 @@ class StudentGrade
     student_enrollment.student
   end
 
-  def is_for_delete
-    to_delete
-  end
-
   def average
     (score*100.0/total_points).round
   end

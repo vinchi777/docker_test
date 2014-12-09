@@ -26,7 +26,7 @@ class Founder
         ),
         Founder.new(
             "Mariel C. Villaflor-Capungcol",
-            "Owner",
+            "Co-Owner",
             "Mariel is a Medical Technology graduate of the Divine Word University. She took and passed the Medical Technologist board examinations in 1989. In 2004, Mariel graduated with a bachelor's degree in Law from Dr. Vicente Orestes Romualdez Educational Foundation. She later studied at the Southwestern University, where she graduated with a master's degree in Public Administration in 2011. Today, Mariel is a faculty member of the College of Medical Technology at the Remedios Trinidad Romualdez Medical Foundation."
         ),
         Founder.new(

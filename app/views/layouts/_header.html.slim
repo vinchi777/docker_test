@@ -15,7 +15,7 @@
         li class=('active' if yield(:title)== 'About Us')
           a href=about_path About
         li.dropdown class=('active' if people_page?)
-          a.dropdown-toggle href='#' data-toggle='dropdown'
+          a.dropdown-toggle.toggle-people href='#' data-toggle='dropdown'
             | People
             span.caret
           ul.dropdown-menu role='menu'
