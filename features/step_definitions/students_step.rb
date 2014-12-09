@@ -98,3 +98,30 @@ end
 Given /I am on the student page/ do
   visit student_path(@student)
 end
+
+Given /students exist with balance/ do
+  @students = []
+  @students << StudentFactory.create_student('Maria', true, true)
+  @students << StudentFactory.create_student('Erik', true, true)
+end
+
+Then /I should see names, email, last school, address and balance of the students/ do
+  @students.each do |s|
+    expect(page).to have_content s.to_s
+    expect(page).to have_content s.last_attended
+    expect(page).to have_content s.address
+    expect(page).to have_content '15,000' if s.has_balance?
+  end
+end
+
+Then /the student should be updated/ do
+  a = @student.attributes
+  b = @student.reload.attributes
+  keys = Set.new
+  b.each do |k, v|
+    keys << k if a[k] != v
+  end
+  @attributes.each do |k|
+    expect(keys.include? k).to be true
+  end
+end
