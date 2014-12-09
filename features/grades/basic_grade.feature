@@ -17,7 +17,21 @@ Feature: Basic grade
     Then I should successfully add the "Mock Exam for NLE" grade
     * I should be redirected to the grades page
     * I should see "Mock Exam for NLE"
-    * I should see "100"
+
+  Scenario: Editing a grade
+    Given a grade exists
+    And I am on the grades page
+    When I click the first existing grade
+    And I fill up these grade information
+      | Field       | Value        | Type |
+      | description | Super Finals | text |
+    * I submit the grade form
+    Then I should see "Super Finals"
+
+  Scenario: Deleting a grade
+    Given I am on an existing grade page
+    When I press the delete button for grade
+    Then the grade should be deleted
 
   Scenario: Missing grade information
     Given I am on the grades page

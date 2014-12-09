@@ -102,19 +102,28 @@ And /^the grade should only contain (\d+) student grade$/ do |count|
 end
 
 Given /^a grade exists$/ do
-  enrs = StudentEnrollment.all
-  Grade.create!({
-                    description: 'NLE Examination',
-                    date: DateTime.now,
-                    points: 50,
-                    review_season: ReviewSeason.current,
-                    student_grades_attributes: [
-                        {score: 50, student_enrollment: enrs.first},
-                        {score: 49, student_enrollment: enrs.last}
-                    ]
-                })
+  GradeFactory.createGrade
+end
+
+Given /^a grade with students exists$/ do
+  GradeFactory.createGradeWithStudents
 end
 
 When /^I click the first existing grade$/ do
   all('.grade')[0].click
+end
+
+Given /^I am on an existing grade page$/ do
+  grade = GradeFactory.createGrade
+  visit edit_grade_path(grade)
+end
+
+When /^I press the delete button for grade$/ do
+  accept_alert do
+    click_on 'Delete'
+  end
+end
+
+Then /^the grade should be deleted$/ do
+  expect(Grade.count).to eq 0
 end

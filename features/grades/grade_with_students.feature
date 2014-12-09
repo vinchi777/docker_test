@@ -84,7 +84,7 @@ Feature: Grades with students
     And the grade should only contain 1 student grade
 
   Scenario: Removing a student from existing grade
-    Given a grade exists
+    Given a grade with students exists
     And I am on the grades page
     When I click the first existing grade
     * I click the edit students icon
