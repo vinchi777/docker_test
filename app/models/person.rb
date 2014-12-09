@@ -31,10 +31,14 @@ class Person
   end
 
   def to_s
-    "#{last_name}, #{first_name} #{middle_name}"
+    str = "#{last_name}, #{first_name}"
+    str << ' ' << middle_name if middle_name.present?
+    str
   end
 
   def trailing_name
-    ", #{first_name} #{middle_name}"
+    str = ", #{first_name}"
+    str << ' ' << middle_name if middle_name.present?
+    str
   end
 end
