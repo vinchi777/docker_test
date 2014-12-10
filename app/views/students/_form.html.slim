@@ -4,14 +4,15 @@
     .profile-pic.col-lg-1
       = image_tag @student.profile_pic, class: 'profile' if @student.has_profile_pic?
       = image_tag placeholder_pic, class: 'profile' unless @student.has_profile_pic?
-      .upload
-        = f.hidden_field :clean, value: true, class: 'clean'
-        = f.file_field :profile_pic, class: 'preview', accept: 'image/*'
+      - if @can_edit
+        .upload
+          = f.hidden_field :clean, value: true, class: 'clean'
+          = f.file_field :profile_pic, class: 'preview', accept: 'image/*'
     .middle.col-lg-8
       .name
-        = f.text_field :first_name, placeholder: 'First name', class: 'form-control required'
-        = f.text_field :middle_name, placeholder: 'Middle name', class: 'form-control col-lg-2'
-        = f.text_field :last_name, placeholder: 'Last name', class: 'form-control required col-lg-2'
+        = f.text_field :first_name, placeholder: 'First name', class: 'form-control required', disabled: !@can_edit
+        = f.text_field :middle_name, placeholder: 'Middle name', class: 'form-control col-lg-2', disabled: !@can_edit
+        = f.text_field :last_name, placeholder: 'Last name', class: 'form-control required col-lg-2', disabled: !@can_edit
       .status
         .enroll ng-switch='student.enrollment_status'
           span ng-switch-when='enrolled'
@@ -20,12 +21,14 @@
           span ng-switch-when='enrolling'
             i.fa.fa-lg.fa-clock-o
             | Enrolling for {{student.current_season}}
-            a.btn.btn-primary.btn-confirm href='' ng-click='confirm(student)'
-              | Confirm
+            - if can? :confirm, Student
+              a.btn.btn-primary.btn-confirm href='' ng-click='confirm(student)'
+                | Confirm
           span.no-info ng-switch-default=''
             | No enrollment information.
-    .actions.col-lg-3
-      = f.submit 'Save', class: 'save btn btn-primary pull-right col-lg-2'
+    - if @can_edit
+      .actions.col-lg-3
+        = f.submit 'Save', class: 'save btn btn-primary pull-right col-lg-2'
 
   - if @student.errors.any?
     #error_explanation.error.panel
@@ -42,26 +45,26 @@
         .col-lg-6
           .form-group
             = f.label :birthdate, 'Birthdate', class: 'control-label col-lg-3 '
-            .col-lg-4 = f.text_field :birthdate, value: pretty_date(@student.birthdate), class: 'form-control date-picker required', 'data-date-format'.to_sym => 'MMM DD, YYYY'
+            .col-lg-4 = f.text_field :birthdate, value: pretty_date(@student.birthdate), class: 'form-control date-picker required', 'data-date-format'.to_sym => 'MMM DD, YYYY', disabled: !@can_edit
           .form-group
             = f.label :sex, class: 'control-label col-lg-3'
-            .col-lg-3 = f.select :sex, %w{Male Female}, {}, {class: 'form-control required'}
+            .col-lg-3 = f.select :sex, %w{Male Female}, {}, {class: 'form-control required', disabled: !@can_edit}
           .form-group
             = f.label :address, class: 'control-label col-lg-3'
-            .col-lg-9 = f.text_field :address, class: 'form-control required'
+            .col-lg-9 = f.text_field :address, class: 'form-control required', disabled: !@can_edit
           .form-group
             = f.label :contact_no, 'Contact No.', class: 'control-label col-lg-3'
-            .col-lg-9 = f.text_field :contact_no, class: 'form-control required'
+            .col-lg-9 = f.text_field :contact_no, class: 'form-control required', disabled: !@can_edit
           .form-group
             = f.label :email, 'Email', class: 'control-label col-lg-3'
-            .col-lg-9 = f.email_field :email, class: 'form-control required'
+            .col-lg-9 = f.email_field :email, class: 'form-control required', disabled: !@can_edit
         .col-lg-6
           .form-group.inline
             label.control-label.col-lg-12 Parent or Guardian
-            .col-lg-6.first-name = f.text_field :parent_first_name, class: 'form-control', placeholder: 'First name'
-            .col-lg-6.last-name = f.text_field :parent_last_name, class: 'form-control', placeholder: 'Last name'
+            .col-lg-6.first-name = f.text_field :parent_first_name, class: 'form-control', placeholder: 'First name', disabled: !@can_edit
+            .col-lg-6.last-name = f.text_field :parent_last_name, class: 'form-control', placeholder: 'Last name', disabled: !@can_edit
           .form-group
-            .col-lg-10 = f.text_field :parent_contact, class: 'form-control', placeholder: "Parent's contact no."
+            .col-lg-10 = f.text_field :parent_contact, class: 'form-control', placeholder: "Parent's contact no.", disabled: !@can_edit
 
   .education.panel
     .panel-title
@@ -70,28 +73,28 @@
       .row
         .form-group.col-lg-7
           = f.label :last_attended, 'School Last Attended', class: 'control-label col-lg-4'
-          .col-lg-8 = f.text_field :last_attended, class: 'form-control required'
+          .col-lg-8 = f.text_field :last_attended, class: 'form-control required', disabled: !@can_edit
         .form-group.col-lg-5
           = f.label :college_year, 'Year Graduated', class: 'control-label col-lg-4'
-          .year.col-lg-3 = select_year @student.college_year, {start_year: 1980, end_year: Date.today.year}, {class: 'form-control required', name: 'student[college_year]'}
+          .year.col-lg-3 = select_year @student.college_year, {start_year: 1980, end_year: Date.today.year}, {class: 'form-control required', name: 'student[college_year]', disabled: !@can_edit}
       .row
         .form-group.col-lg-7
           = f.label :recognition, 'Recognitions/Awards', class: 'control-label col-lg-4'
-          .col-lg-8 = f.text_field :recognition, class: 'form-control'
+          .col-lg-8 = f.text_field :recognition, class: 'form-control', disabled: !@can_edit
       .row
         .form-group.col-lg-7
           = f.label :hs, 'High School', class: 'control-label col-lg-4'
-          .col-lg-8 = f.text_field :hs, class: 'form-control required'
+          .col-lg-8 = f.text_field :hs, class: 'form-control required', disabled: !@can_edit
         .form-group.col-lg-5
           = f.label :hs_year, 'Year Graduated', class: 'control-label col-lg-4'
-          .year.col-lg-3 = select_year @student.hs_year, {start_year: 1980, end_year: Date.today.year}, {class: 'form-control required', name: 'student[hs_year]'}
+          .year.col-lg-3 = select_year @student.hs_year, {start_year: 1980, end_year: Date.today.year}, {class: 'form-control required', name: 'student[hs_year]', disabled: !@can_edit}
       .row
         .form-group.col-lg-7
           = f.label 'Elementary', class: 'control-label col-lg-4'
-          .col-lg-8 = f.text_field :elem, class: 'form-control required'
+          .col-lg-8 = f.text_field :elem, class: 'form-control required', disabled: !@can_edit
         .form-group.col-lg-5
           = f.label :elem_year, 'Year Graduated', class: 'control-label col-lg-4'
-          .year.col-lg-3 = select_year @student.elem_year, {start_year: 1980, end_year: Date.today.year}, {class: 'form-control required', name: 'student[elem_year]'}
+          .year.col-lg-3 = select_year @student.elem_year, {start_year: 1980, end_year: Date.today.year}, {class: 'form-control required', name: 'student[elem_year]', disabled: !@can_edit}
 
   .others.panel
     .panel-title
@@ -100,23 +103,24 @@
       .col-lg-6
         .form-group.inline
           label.control-label.col-lg-12 Referred by
-          .first-name.col-lg-6 = f.text_field :referrer_first_name, class: 'form-control', placeholder: 'First name'
-          .last-name.col-lg-6 = f.text_field :referrer_last_name, class: 'form-control', placeholder: 'Last name'
+          .first-name.col-lg-6 = f.text_field :referrer_first_name, class: 'form-control', placeholder: 'First name', disabled: !@can_edit
+          .last-name.col-lg-6 = f.text_field :referrer_last_name, class: 'form-control', placeholder: 'Last name', disabled: !@can_edit
         .form-group.inline
-          .referrer-contact.col-lg-8 = f.text_field :referrer_contact, class: 'form-control', placeholder: 'Referrer contact no.'
+          .referrer-contact.col-lg-8 = f.text_field :referrer_contact, class: 'form-control', placeholder: 'Referrer contact no.', disabled: !@can_edit
         .form-group.inline
           = f.label :why, 'Why did you choose MaxRevOne?', class: 'control-label col-lg-12', cols: '50'
-          .col-lg-12 = f.text_area :why, class: 'form-control'
+          .col-lg-12 = f.text_area :why, class: 'form-control', disabled: !@can_edit
       .col-lg-6.social
         .form-group
           label.col-lg-2.control-label: i.fa.fa-facebook-square
-          .col-lg-6 = f.text_field :facebook, class: 'form-control'
+          .col-lg-6 = f.text_field :facebook, class: 'form-control', disabled: !@can_edit
         .form-group
           label.col-lg-2.control-label: i.fa.fa-twitter-square
-          .col-lg-6 = f.text_field :twitter, class: 'form-control'
+          .col-lg-6 = f.text_field :twitter, class: 'form-control', disabled: !@can_edit
         .form-group
           label.col-lg-2.control-label: i.fa.fa-linkedin-square
-          .col-lg-6 = f.text_field :linkedin, class: 'form-control'
+          .col-lg-6 = f.text_field :linkedin, class: 'form-control', disabled: !@can_edit
 
-  footer
-    = f.submit 'Save', class: 'save btn btn-primary pull-right col-lg-2'
+  - if @can_edit
+    footer
+      = f.submit 'Save', class: 'save btn btn-primary pull-right col-lg-2'

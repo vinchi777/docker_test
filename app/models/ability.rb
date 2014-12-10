@@ -3,9 +3,11 @@ class Ability
 
   def initialize(user)
     if user.person.is_a? Student
-      can :read, user.person
-      can :grades_tests, user.person
+      can [:read, :grades_tests], Student, id: user.person.id
       can [:change_password, :update_password], User
+      can [:update, :read, :submit], AnswerSheet do |s|
+        s.student == user.person
+      end
     else
       can :manage, :all
     end

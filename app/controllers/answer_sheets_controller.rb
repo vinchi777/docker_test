@@ -5,7 +5,7 @@ class AnswerSheetsController < AdminController
   layout 'students', only: [:show]
 
   def index
-    @sheets = Student.find(params[:student]).enrollments.map { |e| e.answer_sheets }.flatten
+    @sheets = Student.accessible_by(current_ability).find(params[:student]).enrollments.map { |e| e.answer_sheets }.flatten
     @sheets.each do |s|
       set_submission s
     end

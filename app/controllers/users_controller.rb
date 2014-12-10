@@ -1,5 +1,6 @@
 class UsersController < AdminController
   before_action :set_user, except: [:index, :new, :create, :update_password, :change_password, :resend_confirmation, :create_student_account]
+  before_action :set_student
 
   def index
     @page = 'users'
@@ -86,7 +87,6 @@ class UsersController < AdminController
 
   # Shows own change password html
   def change_password
-    @student = current_user.person if current_user.person.is_a? Student
   end
 
   # Updates own user password
@@ -128,5 +128,9 @@ class UsersController < AdminController
 
   def set_user
     @user = User.find(params[:id])
+  end
+
+  def set_student
+    @student = current_user.person if current_user.person.is_a? Student
   end
 end

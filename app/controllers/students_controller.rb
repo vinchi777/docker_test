@@ -39,6 +39,7 @@ class StudentsController < AdminController
 
   def show
     @page = 'show'
+    @can_edit = can? :edit, Student
     respond_to do |format|
       format.html { render :edit }
       format.json { render json: @student }
