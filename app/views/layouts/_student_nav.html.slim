@@ -1,0 +1,21 @@
+ul.student.nav.nav-pills.nav-stacked
+  li.student
+    .pic
+      = image_tag 'user.png', class: 'profile' if @student.profile_pic == nil
+      = image_tag @student.profile_pic, class: 'profile' unless @student.profile_pic == nil
+    .name.visible-lg.visible-md
+      div = @student.last_name
+      div = @student.first_name
+  li.profile.attr class=('active' if @page == 'show')
+    = link_to @student
+      .ico = image_tag 'profile-ico.svg'
+      .title.visible-lg.visible-md Profile
+  - if can? :manage, StudentInvoice
+    li.payment.attr class=('active' if @page == 'payment')
+      = link_to student_invoices_path(id: @student.id)
+        .ico = image_tag 'payment-ico.svg'
+        .title.visible-lg.visible-md Payment
+  li.grades.attr class=('active' if @page == 'grades_and_tests')
+    = link_to grades_tests_student_path(@student)
+      .ico = image_tag 'grades-test.svg'
+      .title.visible-lg.visible-md Grades and Tests

@@ -86,6 +86,7 @@ class UsersController < AdminController
 
   # Shows own change password html
   def change_password
+    @student = current_user.person if current_user.person.is_a? Student
   end
 
   # Updates own user password

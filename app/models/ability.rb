@@ -5,6 +5,7 @@ class Ability
     if user.person.is_a? Student
       can :read, user.person
       can :grades_tests, user.person
+      can [:change_password, :update_password], User
     else
       can :manage, :all
     end
