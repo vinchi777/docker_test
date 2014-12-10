@@ -68,9 +68,7 @@ class EnrollmentController < ApplicationController
   end
 
   def set_student
-    if current_user && current_user.student?
-      @student = current_user.person
-    elsif params[:student_id]
+    if params[:student_id]
       @student = Student.find(params[:student_id])
     else
       @student = Student.new({enrollment_process: step_index_for(step), package_type: params[:package_type]})
@@ -79,9 +77,7 @@ class EnrollmentController < ApplicationController
 
   def set_student_2
     return if step == :package_type
-    if current_user && current_user.student?
-      @student = current_user.person
-    elsif params[:student_id]
+    if params[:student_id]
       @student = Student.find(params[:student_id])
     else
       @student = Student.new student_params
