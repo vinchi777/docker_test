@@ -6,7 +6,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin]
 
 gem 'mongoid', '~> 4.0.0'
 gem 'devise', '~> 3.4.0'
-gem 'cancan'
+gem 'cancancan'
 
 gem 'simple_enum', '~> 2.0.0' , require: 'simple_enum/mongoid' # Enum for Mongoid
 

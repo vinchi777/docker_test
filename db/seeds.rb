@@ -65,12 +65,13 @@ ReviewSeason.create!(
     reservation: 3000
 )
 
-s = rand_student
-s.email = 'admin@example.com'
-s.save
+s = Person.create!(first_name: 'Admin', last_name: 'Admin', email: 'admin@example.com')
 User.create!(password: '123456789', person: s, confirmed_at: Date.new)
 
-
+s = rand_student
+s.email = 'student@example.com'
+s.save
+User.create!(password: '123456789', person: s, confirmed_at: Date.new)
 
 10.times do |i|
   rand_student
