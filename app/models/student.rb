@@ -146,6 +146,10 @@ class Student < Person
     end
   end
 
+  def enrolled_once?
+    enrollments.enrolled.exists?
+  end
+
   def current_season
     if current_invoice
       current_invoice.review_season.season
