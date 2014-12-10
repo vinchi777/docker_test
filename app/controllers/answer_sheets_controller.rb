@@ -5,18 +5,15 @@ class AnswerSheetsController < AdminController
   layout 'students', only: [:show]
 
   def index
-    @sheets = Student.accessible_by(current_ability).find(params[:student]).enrollments.map { |e| e.answer_sheets }.flatten
-    @sheets = @sheets.select do |s|
-      set_submission s
-      !s.deadline?
-    end
-    respond_with @sheets
-  end
-
-  def set_submission(sheet)
-    if !sheet.submitted? && (sheet.deadline? || sheet.expired?)
-      sheet.submit
-      sheet.save
+    if params[:student]
+      @sheets = Student.accessible_by(current_ability).find(params[:student]).enrollments.map { |e| e.answer_sheets }.flatten
+      @sheets = @sheets.select do |s|
+        set_submission s
+        !s.deadline?
+      end
+      respond_with @sheets
+    else
+      redirect_to root_path
     end
   end
 
@@ -74,6 +71,13 @@ class AnswerSheetsController < AdminController
   end
 
   private
+  def set_submission(sheet)
+    unless sheet.submitted? || !(sheet.deadline? || sheet.expired?)
+      sheet.submit
+      sheet.save
+    end
+  end
+
   def set_sheet
     @sheet = AnswerSheet.find(params[:id])
   end
