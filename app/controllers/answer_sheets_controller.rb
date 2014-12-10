@@ -6,8 +6,9 @@ class AnswerSheetsController < AdminController
 
   def index
     @sheets = Student.accessible_by(current_ability).find(params[:student]).enrollments.map { |e| e.answer_sheets }.flatten
-    @sheets.each do |s|
+    @sheets = @sheets.select do |s|
       set_submission s
+      !s.deadline?
     end
     respond_with @sheets
   end
