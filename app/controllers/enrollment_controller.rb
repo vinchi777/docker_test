@@ -13,12 +13,16 @@ class EnrollmentController < ApplicationController
 
   def show
     @page = 'enrollment'
-    if step == :personal_information && !%w{Standard Double Coaching}.include?(params[:package_type])
+    if step == :personal_information && !((@student && valid_package(@student.package_type)) || valid_package(params[:package_type]))
       redirect_to previous_wizard_path, flash: {error: 'Package type is invalid.'}
     else
       @season = ReviewSeason.current if (step == :terms_and_conditions || step == :payment) && ReviewSeason.exists?
       render_wizard
     end
+  end
+
+  def valid_package(pck)
+    %w{Standard Double Coaching}.include? pck
   end
 
   def update
@@ -46,6 +50,7 @@ class EnrollmentController < ApplicationController
       @type = params[:package_type]
       @type.present?
     elsif step ==:personal_information
+      @student.assign_attributes student_params
       @student.save_profile_pic params[:student][:profile_pic], params[:student][:clean]
       @student.save
     elsif step == :terms_and_conditions
@@ -63,7 +68,9 @@ class EnrollmentController < ApplicationController
   end
 
   def set_student
-    if params[:student_id]
+    if current_user && current_user.student?
+      @student = current_user.person
+    elsif params[:student_id]
       @student = Student.find(params[:student_id])
     else
       @student = Student.new({enrollment_process: step_index_for(step), package_type: params[:package_type]})
@@ -72,7 +79,9 @@ class EnrollmentController < ApplicationController
 
   def set_student_2
     return if step == :package_type
-    if params[:student_id]
+    if current_user && current_user.student?
+      @student = current_user.person
+    elsif params[:student_id]
       @student = Student.find(params[:student_id])
     else
       @student = Student.new student_params

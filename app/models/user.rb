@@ -71,4 +71,8 @@ class User
       send_confirmation_instructions
     end
   end
+
+  def student?
+    person.is_a? Student
+  end
 end
