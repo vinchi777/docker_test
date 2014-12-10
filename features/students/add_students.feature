@@ -11,6 +11,7 @@ Feature: Add students
       | Last Name     | dela Cruz                   | text   |
       | Birthdate     | Nov 10, 1992                | text   |
       | Sex           | Female                      | select |
+      | Civil Status  | Married                     | select |
       | Address       | Palo, Leyte,                | text   |
       | Contact No    | 123-4567                    | text   |
       | Email         | john@gmail.com              | text   |
@@ -32,6 +33,7 @@ Feature: Add students
       | Last Name           | dela Cruz                   | text   |
       | Birthdate           | Nov 10, 1992                | text   |
       | Sex                 | Female                      | select |
+      | Civil Status        | Married                     | select |
       | Address             | Palo, Leyte,                | text   |
       | Contact No          | 123-4567                    | text   |
       | Parent First Name   | Maria                       | text   |
