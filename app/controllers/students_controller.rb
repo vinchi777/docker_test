@@ -67,6 +67,7 @@ class StudentsController < AdminController
   def update
     @student.save_profile_pic params[:student][:profile_pic], params[:student][:clean]
     @student.enrollment_process = 0
+    @can_edit = can? :edit, Student
 
     respond_to do |format|
       if @student.update(student_params)
@@ -122,6 +123,6 @@ class StudentsController < AdminController
   end
 
   def student_params
-    params.require(:student).permit(:first_name, :middle_name, :last_name, :birthdate, :sex, :address, :contact_no, :email, :parent_first_name, :parent_last_name, :parent_contact, :last_attended, :college_year, :recognition, :hs, :hs_year, :elem, :elem_year, :referrer_first_name, :referrer_last_name, :referrer_contact, :why, :facebook, :twitter, :linkedin)
+    params.require(:student).permit(:first_name, :middle_name, :last_name, :birthdate, :sex, :civil_status, :address, :contact_no, :email, :parent_first_name, :parent_last_name, :parent_contact, :last_attended, :college_year, :recognition, :hs, :hs_year, :elem, :elem_year, :referrer_first_name, :referrer_last_name, :referrer_contact, :why, :facebook, :twitter, :linkedin)
   end
 end

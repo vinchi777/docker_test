@@ -8,9 +8,12 @@
       h2 Grades and Tests
 
   .tests-container ng-controller='StudentAnswerSheetsCtrl' ng-init=("load('#{params[:id]}')")
-    h5 Tests
+    h5 Ongoing Tests
     hr
-    .tests.row
+    .no-tests ng-hide='sheets.length > 0'
+      | No ongoing tests found.
+
+    .tests.row ng-show='sheets.length > 0'
       .test.col-md-2 ng-repeat='t in sheets'
         a href='/answer_sheets/{{t.id}}'
           .summary ng-class='{done: t.submitted}'

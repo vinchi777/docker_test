@@ -10,6 +10,7 @@ class Person
 
   field :birthdate, type: Date, default: Date.today
   field :sex, type: String
+  field :civil_status, type: String
   field :address, type: String
   field :contact_no, type: String
   field :email, type: String
