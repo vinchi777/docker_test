@@ -91,7 +91,7 @@ Feature: Grades with students
     * I submit the grade form
     Then the grade should only contain 1 student grade
 
-  Scenario: Add a new student in existing grade
+  Scenario: Adding a new student in existing grade
     Given I am on an existing grade with a student page
     * I click the edit students icon
     * I select "dela Cruz, def" at the student select modal

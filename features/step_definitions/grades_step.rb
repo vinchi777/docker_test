@@ -138,3 +138,12 @@ Then /^the grade should be deleted$/ do
   sleep 0.1
   expect(Grade.count).to eq 0
 end
+
+Given /^I am on an existing student's grade page$/ do
+  student = StudentEnrollment.enrolled.first.student
+  visit grades_tests_student_path student
+end
+
+Then /^I should not see any grades$/ do
+  expect(all('.grades .grade').size).to eq 0
+end
