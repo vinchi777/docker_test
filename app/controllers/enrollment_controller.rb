@@ -13,7 +13,9 @@ class EnrollmentController < ApplicationController
 
   def show
     @page = 'enrollment'
-    if step == :personal_information && !((@student && valid_package(@student.package_type)) || valid_package(params[:package_type]))
+    if @student && @student.enrolled_once?
+      redirect_to root_path, flash: {alert: 'Student is already enrolled.'}
+    elsif step == :personal_information && !((@student && valid_package(@student.package_type)) || valid_package(params[:package_type]))
       redirect_to previous_wizard_path, flash: {error: 'Package type is invalid.'}
     else
       @season = ReviewSeason.current if (step == :terms_and_conditions || step == :payment) && ReviewSeason.exists?
