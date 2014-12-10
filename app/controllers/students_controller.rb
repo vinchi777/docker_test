@@ -48,6 +48,7 @@ class StudentsController < AdminController
 
   def new
     @student = Student.new
+    @can_edit = can? :edit, Student
   end
 
   def create
@@ -67,7 +68,6 @@ class StudentsController < AdminController
   def update
     @student.save_profile_pic params[:student][:profile_pic], params[:student][:clean]
     @student.enrollment_process = 0
-    @can_edit = can? :edit, Student
 
     respond_to do |format|
       if @student.update(student_params)

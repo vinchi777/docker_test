@@ -4,6 +4,7 @@ class StudentFactory
         first_name: name,
         last_name: 'dela Cruz',
         sex: 'Male',
+        civil_status: 'Single',
         address: 'Tacloban City',
         contact_no: '321-444',
         email: "#{name}@gmail.com",
