@@ -3,6 +3,7 @@ class Student < Person
 
   DAYS_TILL_EXPIRATION = 3
 
+  validates_presence_of :civil_status, if: :can_validate_info?
   validates_presence_of :sex, if: :can_validate_info?
   validates_presence_of :address, if: :can_validate_info?
   validates_presence_of :contact_no, if: :can_validate_info?
