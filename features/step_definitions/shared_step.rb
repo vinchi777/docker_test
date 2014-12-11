@@ -53,6 +53,16 @@ Given /^I am logged in as admin$/ do
   click_on 'Log in'
 end
 
+Given /^I am logged in as a student/ do
+  p = StudentFactory.create_student('Mary', true, false)
+  p.email = 'student@example.com'
+  @user = User.create(password: '123456789', person: p, confirmed_at: Date.new)
+  visit '/login'
+  fill_in 'user_email', with: 'student@example.com'
+  fill_in 'user_password', with: '123456789'
+  click_on 'Log in'
+end
+
 Given /^a review season exists$/ do
   if ReviewSeason.empty?
     @season = ReviewSeason.create!(

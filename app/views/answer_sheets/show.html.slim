@@ -23,7 +23,7 @@
               | {{sheet.percent}}%
             span
               | {{sheet.correct_points}} / {{sheet.total_points}}
-          input.btn.btn-primary type='Submit' value='Submit' ng-click='submit()' ng-hide='sheet.submitted'
+          input.submit.btn.btn-primary type='Submit' value='Submit' ng-click='submit()' ng-hide='sheet.submitted'
       .bar
         .pull-left
           span ng-show='saving' Saving...
@@ -39,26 +39,26 @@
           | done
       hr
 
-    .question ng-class='{correct: sheet.deadline && a.index == a.answer, wrong: sheet.deadline && a.index != a.answer}' ng-repeat='(i, a) in sheet.answers'
+    .question ng-class='{correct: sheet.deadline && a.index == a.answer, wrong: sheet.deadline && a.index != a.answer}' ng-repeat='(i, a) in sheet.answers' id='question-{{i + 1}}'
       .question-no-wrapper
         .question-no
           | {{i + 1}}
       .details
         | {{a.text}}
         .choice
-          .radio-wrapper: input type='radio' name='1' ng-model='a.index' value='0' ng-click='update()' ng-disabled='sheet.submitted'
+          .radio-wrapper: input.choice1 type='radio' name='1' ng-model='a.index' value='0' ng-click='update()' ng-disabled='sheet.submitted'
           .description: span ng-class='{correct: sheet.deadline && a.answer == 0, wrong: sheet.deadline && a.answer != 0 && a.index == 0}'
             | {{a.choice1}}
         .choice
-          .radio-wrapper: input type='radio' name='1' ng-model='a.index' value='1' ng-click='update()' ng-disabled='sheet.submitted'
+          .radio-wrapper: input.choice2 type='radio' name='1' ng-model='a.index' value='1' ng-click='update()' ng-disabled='sheet.submitted'
           .description: span ng-class='{correct: sheet.deadline && a.answer == 1, wrong: sheet.deadline && a.answer != 1 && a.index == 1}'
             | {{a.choice2}}
         .choice
-          .radio-wrapper: input type='radio' name='1' ng-model='a.index' value='2' ng-click='update()' ng-disabled='sheet.submitted'
+          .radio-wrapper: input.choice3 type='radio' name='1' ng-model='a.index' value='2' ng-click='update()' ng-disabled='sheet.submitted'
           .description: span ng-class='{correct: sheet.deadline && a.answer == 2, wrong: sheet.deadline && a.answer != 2 && a.index == 2}'
             | {{a.choice3}}
         .choice
-          .radio-wrapper: input type='radio' name='1' ng-model='a.index' value='3' ng-click='update()' ng-disabled='sheet.submitted'
+          .radio-wrapper: input.choice4 type='radio' name='1' ng-model='a.index' value='3' ng-click='update()' ng-disabled='sheet.submitted'
           .description: span ng-class='{correct: sheet.deadline && a.answer == 3, wrong: sheet.deadline && a.answer != 3 && a.index == 3}'
             | {{a.choice4}}
         .rationale ng-show='a.ratio != null'

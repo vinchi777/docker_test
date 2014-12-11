@@ -23,15 +23,15 @@ Given /enrolled students exists for the current season/ do
   StudentFactory.create_student 'Bob', true, true
 end
 
-Given /a test exists/ do
+Given /a test exists( and published)?$/ do |flag|
   step 'a review season exists'
-  @test = Test.create!(
-      description: 'First long exam',
-      date: Date.parse('Feb. 1, 2014'),
-      deadline: Date.parse('Feb. 1, 2014') + 1.day,
-      timer: 30,
-      review_season: ReviewSeason.first
-  )
+  @test = TestFactory.test(false, flag.present?)
+end
+
+Given /a test exists and past the deadline/ do
+  step 'a review season exists'
+  @test = TestFactory.test(false, true, true)
+  @sheet = @user.reload.person.current_enrollment.answer_sheets.first
 end
 
 When /I click on the test/ do
@@ -98,4 +98,111 @@ end
 Then /I should see the test/ do
   expect(page).to have_content @test.description
   expect(page).to have_content @test.date.strftime('%b %-d, %Y')
+end
+
+Given /I am enrolled for the current season/ do
+  @user.person.current_enrollment.enroll
+end
+
+Given /a test with(out)? timer exists and published/ do |flag|
+  timer = flag.nil?
+  @test = TestFactory.test(timer = timer, published = true)
+  @sheet = @user.reload.person.current_enrollment.answer_sheets.first
+end
+
+When /I am on the student grade page/ do
+  visit grades_tests_student_path(@user.person)
+end
+
+Then /I should see this answer sheet/ do
+  expect(page).to have_content '1'
+  expect(page).to have_content 'First long exam'
+  expect(page).to have_content @sheet.date.strftime('%b %-d, %Y')
+  expect(page).to have_css '.timer-on' if @sheet.test.timer?
+  expect(page).to have_css '.timer-off' unless @sheet.test.timer?
+end
+
+Then /I can take on the answer sheet/ do
+  find("#sheet-#{@sheet.id} a").click
+  expect(current_path).to eq answer_sheet_path(@sheet)
+end
+
+Then /I should( not)? see the timer/ do |flag|
+  expect(page).to have_css '.timer' if flag.nil?
+  expect(page).not_to have_css '.timer' unless flag.nil?
+end
+
+When /I am on the answer sheet/ do
+  @sheet = @user.reload.person.current_enrollment.answer_sheets.first
+  visit answer_sheet_path(@sheet)
+end
+
+When /I fill up the answer sheet/ do |data|
+  data.rows.each do |row|
+    find("#question-#{row[0]} .choice#{row[1]}").set true
+  end
+end
+
+When /I submit the answer sheet/ do
+  find('input.submit').click
+end
+
+Then /I should not be able to fill up the answer sheet/ do
+  expect(page).to have_css 'input.choice1:disabled'
+  expect(page).to have_css 'input.choice2:disabled'
+  expect(page).to have_css 'input.choice3:disabled'
+  expect(page).to have_css 'input.choice4:disabled'
+end
+
+Then /I should not be able to submit the answer sheet/ do
+  expect(page).not_to have_css 'input.submit'
+end
+
+Then /I should see my answers/ do
+  expect(page).to have_css 'input:checked'
+end
+
+Then /I should see message to wait for results after deadline/ do
+  expect(page).to have_content 'Awaiting result after deadline'
+end
+
+When /I wait for the timer to end/ do
+  @sheet.start_time = Time.now - @sheet.test.timer.minute + 1.seconds
+  @sheet.save
+  find('#question-1 .choice1').set true
+end
+
+When /I took the test/ do
+  step 'I am on the answer sheet'
+  find('#question-1 .choice1').set true
+  find('#question-2 .choice2').set true
+  find('#question-3 .choice1').set true
+  find('#question-4 .choice1').set true
+  step 'I submit the answer sheet'
+end
+
+When /I wait until the deadline/ do
+  test = @sheet.test
+  test.deadline = Time.now
+  test.save
+  step 'I am on the answer sheet'
+end
+
+Then /I should see (\d+) out of (\d+) score of the test/ do |correct, total|
+  expect(page).to have_content "#{correct} / #{total}"
+end
+
+Then /I should see (\d+) out of (\d+) correct answers/ do |correct, total|
+  c = correct.to_i
+  t = total.to_i
+  expect(all('span.correct', count: t).count).to eq t
+  expect(all('span.wrong', count: c).count).to eq c
+end
+
+Then /I should see the rationalizations/ do
+  expect(all('.rationale', count: 4).count).to eq 4
+end
+
+When /I try to take the test/ do
+  find("#grade-#{@sheet.id}").click
 end
