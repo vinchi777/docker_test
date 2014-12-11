@@ -77,4 +77,14 @@ $ ->
     else
       $('#map').hide()
 
-$(window).load ->
+  $('.footer .share .facebook').click ->
+    href = $(this).attr('href')
+    width = 600
+    height = 350
+    left = (window.screen.width / 2) - ((width / 2) + 10)
+    top = (window.screen.height / 2) - ((height / 2) + 50)
+    windowFeatures = "status=no,height=" + height + ",width=" + width + ",resizable=yes,left=" + left + ",top=" + top + ",screenX=" + left + ",screenY=" + top + ",toolbar=no,menubar=no,scrollbars=no,location=no,directories=no"
+    u=location.href
+    t=document.title
+    window.open(href,'sharer', windowFeatures);
+    false
