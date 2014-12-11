@@ -57,7 +57,7 @@
           input.form-control.required name='transaction[method]' ng-model='i.transaction.method'
         .amount
           input.peso.form-control.required name='transaction[amount]' ng-model='i.transaction.amount'
-        input.hide.save-transaction type='submit'
+        input.hide.save-transaction type='submit' value='Save Transaction'
       .action  ng-show='i.showTransaction': a href='#' ng-click='hideTransaction(i)': i.fa.fa-trash
       a class='add-transaction' href='#' ng-hide='i.showTransaction' ng-click='showTransaction(i)' Add Transaction
 

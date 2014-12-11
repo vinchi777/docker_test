@@ -36,7 +36,8 @@ When /I add a new transaction/ do
 end
 
 When /I submit the transaction form/ do
-  find('input.peso').native.send_keys :return
+  execute_script "$('.save-transaction').removeClass('hide')"
+  find('.save-transaction', match: :first).click
 end
 
 Then /the transaction is added to the invoice/ do
