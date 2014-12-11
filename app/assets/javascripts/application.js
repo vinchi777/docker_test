@@ -29,6 +29,7 @@
 //= require handlebars
 //= require ember
 //= require ember-data
+//= require bootbox.min
 
 window.has_google_map = function () {
   return typeof window.google === 'object' && window.google.maps
