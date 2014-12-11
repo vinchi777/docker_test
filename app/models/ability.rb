@@ -8,6 +8,7 @@ class Ability
       can [:update, :read, :submit], AnswerSheet do |s|
         s.student == user.person
       end
+      cannot :index, Student
     else
       can :manage, :all
     end

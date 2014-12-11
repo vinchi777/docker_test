@@ -6,14 +6,15 @@ Feature: Online enrollment for students
     When I select "standard_package"
     * I press the "Next" button
     * I fill up these student information
-      | Field      | Value          | Type   |
-      | First Name | John           | text   |
-      | Last Name  | dela Cruz      | text   |
-      | Birthdate  | Nov 10, 1992   | text   |
-      | Sex        | Female         | select |
-      | Address    | Palo, Leyte,   | text   |
-      | Contact No | 123-4567       | text   |
-      | Email      | john@gmail.com | text   |
+      | Field        | Value          | Type   |
+      | First Name   | John           | text   |
+      | Last Name    | dela Cruz      | text   |
+      | Birthdate    | Nov 10, 1992   | text   |
+      | Sex          | Female         | select |
+      | Civil Status | Married        | select |
+      | Address      | Palo, Leyte,   | text   |
+      | Contact No   | 123-4567       | text   |
+      | Email        | john@gmail.com | text   |
     * I press the "Next" button
     * I fill up these student information
       | Field         | Value                       | Type   |
@@ -49,14 +50,15 @@ Feature: Online enrollment for students
     When I select "standard_package"
     * I press the "Next" button
     * I fill up these student information
-      | Field      | Value          | Type   |
-      | First Name | John           | text   |
-      | Last Name  | dela Cruz      | text   |
-      | Birthdate  | Nov 10, 1992   | text   |
-      | Sex        | Female         | select |
-      | Address    | Palo, Leyte,   | text   |
-      | Contact No | 123-4567       | text   |
-      | Email      | john@gmail.com | text   |
+      | Field        | Value          | Type   |
+      | First Name   | John           | text   |
+      | Last Name    | dela Cruz      | text   |
+      | Birthdate    | Nov 10, 1992   | text   |
+      | Sex          | Female         | select |
+      | Civil Status | Married        | select |
+      | Address      | Palo, Leyte,   | text   |
+      | Contact No   | 123-4567       | text   |
+      | Email        | john@gmail.com | text   |
     When I press the "Next" button
     * I press the "Next" button
     Then I should see 5 errors
