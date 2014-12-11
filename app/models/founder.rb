@@ -12,7 +12,6 @@ class Founder
   end
 
   def self.seed
-    puts "heheheh"
     [
         Founder.new(
             "Rommel D. Capungcol",
