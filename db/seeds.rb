@@ -37,7 +37,6 @@ def rand_student
       first_name: first_name,
       last_name: last_name,
       middle_name: rand_last_name,
-      civil_status: 'Single',
       sex: rand_sex,
       address: rand_address,
       civil_status: civil_status[rand(civil_status.size)],

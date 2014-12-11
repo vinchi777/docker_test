@@ -6,7 +6,6 @@ class StudentFactory
         last_name: 'dela Cruz',
         civil_status: civil_status[rand(civil_status.size)],
         sex: 'Male',
-        civil_status: 'Single',
         address: 'Tacloban City',
         contact_no: '321-444',
         email: "#{name}@gmail.com",
