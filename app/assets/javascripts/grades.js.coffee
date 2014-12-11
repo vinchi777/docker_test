@@ -87,6 +87,16 @@ $ ->
     hide_modal = ->
       modal.modal('hide')
 
+  $('#batch-grades .delete-grade').click ->
+    self = $(this)
+    unless self.hasClass('bypass')
+      bootbox.confirm('Are you sure you want to delete this grade?', (confirm) ->
+        if confirm
+          self.addClass('bypass')
+          self.click()
+      )
+      false
+
 
 # For table effects
 $(document).on 'click', 'table tr *', ->
