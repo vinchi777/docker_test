@@ -90,7 +90,7 @@ class EnrollmentController < ApplicationController
     params.require(:student).permit(:first_name, :middle_name, :last_name, :birthdate, :sex, :address, :contact_no, :email,
                                     :parent_first_name, :parent_last_name, :parent_contact, :last_attended, :college_year,
                                     :recognition, :hs, :hs_year, :elem, :elem_year, :referrer_first_name, :referrer_last_name,
-                                    :why, :facebook, :twitter, :linkedin, :enrollment_process, :package_type)
+                                    :why, :facebook, :twitter, :linkedin, :enrollment_process, :package_type, :civil_status)
   end
 
   def update_enrollment_status
