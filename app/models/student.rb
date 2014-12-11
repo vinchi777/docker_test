@@ -94,6 +94,7 @@ class Student < Person
 
     if package_type == 'Double'
       invoice1.description = 'Invoice 1 of 2'
+      invoice1.save
       amount = current_season.double_review - current_season.full_review
       invoice2 = StudentInvoice.create(
           package: package_type,
