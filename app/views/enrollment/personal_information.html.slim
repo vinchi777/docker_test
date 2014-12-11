@@ -21,7 +21,7 @@
         label.control-label.col-lg-2.col-md-3.col-sm-4 Sex
         .col-md-2.col-sm-3 = f.select :sex, %w{Male Female}, {}, class: 'form-control required'
         label.control-label.col-lg-2.col-md-3.col-sm-4 Civil Status
-        .col-md-2.col-sm-3 = f.select :civil_status, %w{Single Married Widowed Separated}, {}, class: 'form-control required'
+        .col-md-2.col-sm-3 = f.select :civil_status, enum_option_pairs(Student, :civil_status), {}, class: 'form-control required'
       .form-group
         label.control-label.col-lg-2.col-md-3.col-sm-4 Address
         .col-md-6.col-sm-8 = f.text_field :address, class: 'form-control required'
