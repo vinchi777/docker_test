@@ -14,11 +14,11 @@
       | No ongoing tests found.
 
     .tests.row ng-show='sheets.length > 0'
-      .test.col-md-2 ng-repeat='t in sheets'
+      .test.col-md-2 ng-repeat='t in sheets' id='sheet-{{t.id}}'
         a href='/answer_sheets/{{t.id}}'
           .summary ng-class='{done: t.submitted}'
-            .timer ng-show='t.timer == null || t.timer == 0' = image_tag 'timer-off.svg'
-            .timer ng-hide='t.timer == null || t.timer == 0' = image_tag 'timer-on.svg'
+            .timer ng-show='t.timer == null || t.timer == 0' = image_tag 'timer-off.svg', class: 'timer-off'
+            .timer ng-hide='t.timer == null || t.timer == 0' = image_tag 'timer-on.svg', class: 'timer-on'
             .points
               h2
                 | {{t.questions_length}}
@@ -39,7 +39,7 @@
           - grades.each do |g|
             .col-md-2
               - if g.test?
-                = link_to answer_sheet_path(g), class: 'grade' do
+                = link_to answer_sheet_path(g), class: 'grade', id: "grade-#{g.id}"
                   = render '/grades/grade_strip', g: g
               - else
                 .grade
