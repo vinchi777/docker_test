@@ -129,9 +129,7 @@ Given /^I am on an existing grade with a student page$/ do
 end
 
 When /^I press the delete button for grade$/ do
-  accept_confirm do
-    click_on 'Delete'
-  end
+  click_on 'Delete'
 end
 
 Then /^the grade should be deleted$/ do

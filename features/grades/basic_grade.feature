@@ -49,6 +49,8 @@ Feature: Basic grade
   Scenario: Deleting a grade
     Given I am on an existing grade page
     When I press the delete button for grade
+    Then I should see "Are you sure you want to delete this grade?"
+    When I press the "OK" button
     Then the grade should be deleted
 
   Scenario: Visit new grades path through url
