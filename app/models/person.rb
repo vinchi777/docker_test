@@ -1,5 +1,6 @@
 class Person
   include Mongoid::Document
+  include SimpleEnum::Mongoid
 
   field :first_name, type: String
   validates_presence_of :first_name
@@ -14,6 +15,9 @@ class Person
   field :address, type: String
   field :contact_no, type: String
   field :email, type: String
+
+  as_enum :civil_status, %w{single married widowed separated}
+
   validates_uniqueness_of :email
   validates_format_of :email, with: Devise::email_regexp, message: 'is not in valid format'
 

@@ -1,8 +1,10 @@
 class StudentFactory
   def self.create_student(name, create_invoice = false, enroll = false)
+    civil_status = Student.civil_statuses.keys
     s = Student.create!(
         first_name: name,
         last_name: 'dela Cruz',
+        civil_status: civil_status[rand(civil_status.size)],
         sex: 'Male',
         civil_status: 'Single',
         address: 'Tacloban City',

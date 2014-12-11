@@ -32,6 +32,7 @@ end
 def rand_student
   first_name = rand_name
   last_name = rand_last_name
+  civil_status = Student.civil_statuses.keys
   std = Student.create!(
       first_name: first_name,
       last_name: last_name,
@@ -39,6 +40,7 @@ def rand_student
       civil_status: 'Single',
       sex: rand_sex,
       address: rand_address,
+      civil_status: civil_status[rand(civil_status.size)],
       contact_no: '321-444',
       email: "#{first_name}_#{last_name.parameterize('_')}@gmail.com",
       last_attended: rand_schools,
