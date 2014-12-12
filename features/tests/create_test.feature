@@ -19,7 +19,7 @@ Feature: Create test
       | Question 0 Choice3 | Love does not boast  | text   |
       | Question 0 Answer0 |                      | choose |
     * I save the test form
-    Then the test is persisted
+    Then the test should be persisted
     * I should be on the test page
 
   Scenario: Fill up all fields
@@ -38,7 +38,7 @@ Feature: Create test
       | Question 0 Ratio   | Love is happiness    | text   |
       | Question 0 Answer2 |                      | choose |
     * I save the test form
-    Then the test is persisted
+    Then the test should be persisted
     * I should be on the test page
 
   Scenario: Don't fill up question

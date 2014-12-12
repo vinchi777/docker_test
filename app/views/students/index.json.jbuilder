@@ -8,8 +8,8 @@ json.students @students do |s|
   json.email s.email
   json.last_attended s.last_attended
   json.address s.address
-  json.user_id s.user_id
+  json.user_id s.user.id if s.user
   json.enrollment_status s.enrollment_status
-  json.current_season s.current_season
+  json.current_season s.current_season.season if s.current_season
   json.balance s.balance
 end

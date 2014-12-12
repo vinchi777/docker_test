@@ -39,14 +39,11 @@ class ReviewSeason
 
   validate :date_precedence
 
-  has_many :student_invoices, dependent: :restrict
   has_many :enrollments, class_name: 'StudentEnrollment', dependent: :restrict
   has_many :grades, dependent: :destroy
-
   has_many :tests, dependent: :destroy
 
   def date_precedence
-
     if season_start.present? && season_end.present? && season_start + 1.day > season_end
       errors[:season_end] << 'must be after the start of the season'
     end
@@ -71,8 +68,6 @@ class ReviewSeason
       ReviewSeason.new(full_review: 16000, double_review: 22000, coaching: 7000, reservation: 3000)
     end
   end
-
-  has_many :student_invoices, dependent: :restrict
 
   def get_fee(package)
     if package == 'Coaching'

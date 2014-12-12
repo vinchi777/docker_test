@@ -10,7 +10,8 @@ When /I save the test form/ do
   click_on 'Save'
 end
 
-Then /the test is persisted/ do
+Then /the test should be persisted/ do
+  sleep 0.2
   expect(Test.exists?).to be true
 end
 
@@ -44,7 +45,8 @@ Then /I should see all students selected/ do
 end
 
 Then /I should(.*?) see the student select modal/ do |arg|
-  expect(find('#students-select-modal', visible: false).visible?).to be !arg.present?
+  expect(find('#students-select-modal').visible?).to be true if arg.nil?
+  expect(find('#students-select-modal', visible: false).visible?).to be false if arg.present?
 end
 
 Then /the students have answer sheets/ do

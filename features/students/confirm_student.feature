@@ -16,3 +16,7 @@ Feature: Confirm students
     When I press the "Confirm" button
     Then I should see the student is enrolled
     * the student is confirmed
+
+  Scenario: Automatically confirm students upon payment of reservation fee
+    When student pay at least the reservation fee
+    Then the student is confirmed

@@ -91,36 +91,7 @@ Given /^students exist$/ do
 end
 
 Given /students exist for searching/ do
-  Student.create!(
-      first_name: 'John',
-      last_name: 'dela Cruz',
-      sex: 'Male',
-      civil_status: 'Single',
-      address: 'Tacloban City',
-      contact_no: '321-444',
-      email: 'jdelacruz@gmail.com',
-      last_attended: 'Cebu Institute of Medicine',
-      college_year: 2014,
-      hs: 'St. Marys Academy',
-      hs_year: 2006,
-      elem: 'Luntad Elem. School',
-      elem_year: 2002
-  )
-  Student.create!(
-      first_name: 'Maria',
-      last_name: 'dela Cruz',
-      sex: 'Male',
-      civil_status: 'Single',
-      address: 'Tacloban City',
-      contact_no: '321-444',
-      email: 'maria@gmail.com',
-      last_attended: 'St. Therese School of Medicine',
-      college_year: 2014,
-      hs: 'St. Marys Academy',
-      hs_year: 2006,
-      elem: 'Luntad Elem. School',
-      elem_year: 2002
-  )
+  StudentFactory.for_searching
   @student = Student.first
 end
 

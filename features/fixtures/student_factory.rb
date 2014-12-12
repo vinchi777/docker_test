@@ -17,17 +17,48 @@ class StudentFactory
         elem_year: 2002
     )
     if create_invoice
-      i = StudentInvoice.new(
+      e = s.enrollment_on(ReviewSeason.first)
+      @invoice = e.create_invoice(
           package: 'Full Package',
           amount: 15000,
-          review_season: ReviewSeason.first
       )
-      s.add_invoice i
-
       if enroll
         s.current_enrollment.enroll
       end
     end
     s
+  end
+
+  def self.for_searching
+    Student.create!(
+        first_name: 'John',
+        last_name: 'dela Cruz',
+        sex: 'Male',
+        civil_status: :single,
+        address: 'Tacloban City',
+        contact_no: '321-444',
+        email: 'jdelacruz@gmail.com',
+        last_attended: 'Cebu Institute of Medicine',
+        college_year: 2014,
+        hs: 'St. Marys Academy',
+        hs_year: 2006,
+        elem: 'Luntad Elem. School',
+        elem_year: 2002
+    )
+    Student.create!(
+        first_name: 'Maria',
+        last_name: 'dela Cruz',
+        sex: 'Male',
+        civil_status: :single,
+        address: 'Tacloban City',
+        contact_no: '321-444',
+        email: 'maria@gmail.com',
+        last_attended: 'St. Therese School of Medicine',
+        college_year: 2014,
+        hs: 'St. Marys Academy',
+        hs_year: 2006,
+        elem: 'Luntad Elem. School',
+        elem_year: 2002
+    )
   end
 end

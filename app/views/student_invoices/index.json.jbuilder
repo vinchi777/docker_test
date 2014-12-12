@@ -4,7 +4,7 @@ json.array! @invoices do |i|
   json.description i.description
   json.amount i.amount
   json.discount i.discount
-  json.student_id i.student_id.to_s
+  json.student_id i.student_enrollment.student_id.to_s
   json.transactions i.transactions do |t|
     json.id t.id.to_s
     json.date t.date
