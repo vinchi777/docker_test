@@ -77,4 +77,22 @@ $ ->
     else
       $('#map').hide()
 
-$(window).load ->
+  $('.footer .share .facebook').click ->
+    href = $(this).attr('href')
+    window.open(href,'sharer', windowFeatures());
+    false
+
+  $('.footer .share .twitter').click ->
+    href = $(this).attr('href')
+    url = encodeURI(href+"?text=Settle for nothing less but the best.")
+    window.open(url,'sharer', windowFeatures());
+    false
+
+  windowFeatures = ->
+    width = 550
+    height = 350
+    left = (window.screen.width / 2) - ((width / 2) + 10)
+    top = (window.screen.height / 2) - ((height / 2) + 50)
+    "status=no,height=" + height + ",width=" + width + ",resizable=yes,left=" + left + ",top=" + top + ",screenX=" + left + ",screenY=" + top + ",toolbar=no,menubar=no,scrollbars=no,location=no,directories=no"
+    
+
