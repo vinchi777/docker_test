@@ -41,4 +41,9 @@ class StudentEnrollment
     i.save
     i
   end
+
+  def check_paid_transactions
+    sum_total = invoices.map { |i| i.sum }.sum
+    enroll if sum_total >= review_season.reservation
+  end
 end

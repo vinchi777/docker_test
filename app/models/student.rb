@@ -158,6 +158,10 @@ class Student < Person
     current_enrollment.review_season if current_enrollment
   end
 
+  def current_invoice
+    current_invoices.first unless current_invoices.empty?
+  end
+
   def current_invoices
     if current_enrollment
       current_enrollment.invoices
