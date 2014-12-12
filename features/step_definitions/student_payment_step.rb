@@ -16,8 +16,8 @@ Then /^I should see these invoice information on the student invoice form$/ do |
 end
 
 Given /there's a student invoice/ do
-  @invoice = StudentInvoice.new(package: 'Full Package', amount: 15000, review_season: ReviewSeason.first)
-  @student.add_invoice @invoice
+  e = @student.enrollment_on ReviewSeason.first
+  @invoice = e.create_invoice(package: 'Full 0Package', amount: 15000)
   visit student_invoices_path(id: @student.id)
 end
 

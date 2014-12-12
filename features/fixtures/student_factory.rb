@@ -17,13 +17,11 @@ class StudentFactory
         elem_year: 2002
     )
     if create_invoice
-      i = StudentInvoice.new(
+      e = s.enrollment_on(ReviewSeason.first)
+      @invoice = e.create_invoice(
           package: 'Full Package',
           amount: 15000,
-          review_season: ReviewSeason.first
       )
-      s.add_invoice i
-
       if enroll
         s.current_enrollment.enroll
       end
@@ -31,7 +29,7 @@ class StudentFactory
     s
   end
 
-  def for_searching
+  def self.for_searching
     Student.create!(
         first_name: 'John',
         last_name: 'dela Cruz',

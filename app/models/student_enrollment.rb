@@ -3,9 +3,21 @@ class StudentEnrollment
   include SimpleEnum::Mongoid
 
   as_enum :status, enrolling: 1, enrolled: 2
+  validates_presence_of :status
+
+  belongs_to :student
+  belongs_to :review_season
+
+  has_many :answer_sheets, dependent: :destroy
+  has_many :student_grades, dependent: :destroy
+  has_many :invoices, class_name: 'StudentInvoice', dependent: :destroy
 
   scope :enrolled, -> do
     StudentEnrollment.where(status_cd: 2)
+  end
+
+  before_validation do |e|
+    e.status = :enrolling unless e.persisted?
   end
 
   def enrolled?
@@ -23,8 +35,10 @@ class StudentEnrollment
     save
   end
 
-  belongs_to :student
-  belongs_to :review_season
-  has_many :answer_sheets, dependent: :destroy
-  has_many :student_grades, dependent: :destroy
+  def create_invoice(hash)
+    i = StudentInvoice.new(hash)
+    i.student_enrollment = self
+    i.save
+    i
+  end
 end

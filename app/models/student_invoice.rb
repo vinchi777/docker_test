@@ -12,12 +12,14 @@ class StudentInvoice
 
   field :discount, type: BigDecimal, default: 0
 
-  belongs_to :student
-  validates_presence_of :student
+  belongs_to :student_enrollment
+  validates_presence_of :student_enrollment
 
   embeds_many :transactions
-  belongs_to :review_season
-  validates_presence_of :review_season
+
+  def review_season
+    student_enrollment.review_season
+  end
 
   def balance
     BigDecimal(amount) * (1 - BigDecimal(discount)) - transactions.map { |t| t.amount }.sum

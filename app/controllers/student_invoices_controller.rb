@@ -12,14 +12,14 @@ class StudentInvoicesController < AdminController
   end
 
   def create
-    student = Student.find(student_invoice_params[:student_id])
-    @invoice = StudentInvoice.new(student_invoice_params.except :student_id)
-
-    if params[:student_invoice][:review_season]
-      @invoice.review_season = ReviewSeason.find(params[:student_invoice][:review_season][:id])
+    unless params[:student_invoice][:review_season]
+      render json: {status: :unprocessable_entity}
     end
 
-    student.add_invoice(@invoice)
+    student = Student.find(params[:student_invoice][:student_id])
+    season = ReviewSeason.find(params[:student_invoice][:review_season][:id])
+    e = student.enrollment_on(season)
+    @invoice = e.create_invoice(student_invoice_params)
 
     respond_to do |format|
       if @invoice.save
@@ -74,14 +74,15 @@ class StudentInvoicesController < AdminController
 
   private
   def set_student_payment
-    @invoice = Student.find(params[:student_id]).invoices.find(params[:id])
+    @invoice = StudentInvoice.find(params[:id])
   end
 
   def student_invoice_params
-    params.require(:student_invoice).permit(:student_id, :package, :description, :amount, :discount)
+    params.require(:student_invoice).permit(:package, :description, :amount, :discount)
   end
 
   def transaction_params
     params.require(:transaction).permit(:student_id, :id, :tr_id, :date, :or_no, :method, :amount)
   end
+
 end

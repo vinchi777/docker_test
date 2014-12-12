@@ -52,7 +52,6 @@ class Student < Person
   field :is_enrolling, type: Boolean, default: false
   field :search_terms, type: String
 
-  has_many :invoices, class_name: 'StudentInvoice', dependent: :destroy
   has_many :enrollments, class_name: 'StudentEnrollment', dependent: :destroy
 
   scope :filter, ->(season, status) do
@@ -83,28 +82,28 @@ class Student < Person
   #for enrollment only
   def setup_payment
     current_season = ReviewSeason.current
-    return true if has_enrollment_on(current_season) && invoices.where(review_season: current_season).exists?
-
-    invoice1 = StudentInvoice.create(
+    return true if has_enrollment_on(current_season) && current_invoices.nil?
+    e = enrollment_on(current_season)
+    invoice1 = e.create_invoice(
         package: package_type,
-        review_season: current_season,
         amount: current_season.get_fee(package_type)
     )
-    add_invoice(invoice1)
 
     if package_type == 'Double'
       invoice1.description = 'Invoice 1 of 2'
       invoice1.save
       amount = current_season.double_review - current_season.full_review
-      invoice2 = StudentInvoice.create(
+      e.create_invoice(
           package: package_type,
           description: 'Invoice 2 of 2',
-          review_season: current_season,
           amount: amount
       )
-      add_invoice(invoice2)
     end
     save
+  end
+
+  def invoices
+    enrollments.map { |e| e.invoices }.flatten
   end
 
   def balance
@@ -125,6 +124,10 @@ class Student < Person
 
   def has_enrollment_on(season)
     enrollments.any? { |x| x.review_season == season }
+  end
+
+  def enrollment_on(season)
+    StudentEnrollment.find_or_create_by(review_season: season.id, student: self.id)
   end
 
   def enrollment_status
@@ -152,19 +155,15 @@ class Student < Person
   end
 
   def current_season
-    if current_invoice
-      current_invoice.review_season.season
-    else
-      ''
-    end
-  end
-
-  def current_invoice
-    invoices.sort_by { |i| i.review_season.season_start }.last
+    current_enrollment.review_season if current_enrollment
   end
 
   def current_invoices
-    invoices.where(review_season: current_invoice.review_season) if invoices
+    if current_enrollment
+      current_enrollment.invoices
+    else
+      []
+    end
   end
 
   def total_current_amount
@@ -185,7 +184,7 @@ class Student < Person
     hash[:middle_initial] = middle_initial
     hash[:id] = id.to_s
     hash[:enrollment_status] = enrollment_status
-    hash[:current_season] = current_season
+    hash[:current_season] = current_season.season if current_season
     hash[:user_id] = user.id.to_s if user.present?
     hash[:user_id] = nil if user.nil?
     hash[:balance] = balance unless balance.nil?
@@ -199,17 +198,6 @@ class Student < Person
   def save_profile_pic(img, clean)
     unless clean == 'true'
       self.profile_pic = save_file(img, id.to_s, profile_pic, 'students')
-    end
-  end
-
-  def add_invoice(invoice)
-    invoice.student = self
-    invoice.save
-    unless has_enrollment_on invoice.review_season
-      enrollment = StudentEnrollment.new(status: 1, student: self)
-      enrollment.review_season = invoice.review_season
-      enrollment.save
-      self.is_enrolling = true
     end
   end
 

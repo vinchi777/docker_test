@@ -10,18 +10,18 @@ class Person
   validates_presence_of :last_name
 
   field :birthdate, type: Date, default: Date.today
+  as_enum :civil_status, %w{single married widowed separated}
+  validates_presence_of :civil_status
+
   field :sex, type: String
   field :civil_status, type: String
   field :address, type: String
   field :contact_no, type: String
   field :email, type: String
-
-  as_enum :civil_status, %w{single married widowed separated}
-
   validates_uniqueness_of :email
   validates_format_of :email, with: Devise::email_regexp, message: 'is not in valid format'
 
-  belongs_to :user
+  has_one :user
 
   before_validation do |d|
     d.email = d.email.downcase

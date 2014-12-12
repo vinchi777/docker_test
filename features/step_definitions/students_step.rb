@@ -117,3 +117,12 @@ end
 Then /the student should be updated/ do
   expect_updated @student.attributes, @student.reload.attributes
 end
+
+When /student pay at least the reservation fee$/ do
+  @student.current_invoice.transactions.create(
+      date: Date.today,
+      or_no: '1234560',
+      method: 'Cash',
+      amount: ReviewSeason.current.reservation
+  )
+end
