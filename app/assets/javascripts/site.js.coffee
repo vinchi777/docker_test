@@ -62,7 +62,7 @@ $ ->
 
   $('.footer .share .facebook').click ->
     href = $(this).attr('href')
-    width = 600
+    width = 550
     height = 350
     left = (window.screen.width / 2) - ((width / 2) + 10)
     top = (window.screen.height / 2) - ((height / 2) + 50)
