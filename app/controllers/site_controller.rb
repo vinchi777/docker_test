@@ -1,6 +1,7 @@
 class SiteController < ApplicationController
   def home
     @testimonials = Testimonial.seed
+    @student_count = StudentEnrollment.enrolled.count
   end
 
   def about
