@@ -21,27 +21,27 @@ $ ->
       else
         $('.header').addClass('for-home')
 
-  $('body').on 'DOMNodeInserted', ->
-    #svg-injector
-    mySVGsToInject = this.querySelectorAll('img.inject-me:not(.injected-svg)')
-    SVGInjector(mySVGsToInject)
+  # $('body').on 'DOMNodeInserted', ->
+  #svg-injector
+  mySVGsToInject = document.querySelectorAll('img.inject-me:not(.injected-svg)')
+  SVGInjector(mySVGsToInject)
 
-    #datepicker
-    $(this).find('.date-picker:not(.picked)').each ->
-      self = $(this)
-      unless self.hasClass('picked')
-        self.addClass 'picked'
-        self.datetimepicker
-          pickTime: false
+  #datepicker
+  $('body').find('.date-picker:not(.picked)').each ->
+    self = $(this)
+    unless self.hasClass('picked')
+      self.addClass 'picked'
+      self.datetimepicker
+        pickTime: false
 
-    #momentjs
-    $(this).find('.moment:not(.momented)').each ->
-      self = $(this)
-      unless self.hasClass('momented')
-        self.addClass('momented')
-        date = self.text()
-        m = moment(date).format('MMMM D');
-        self.text(m)
+  #momentjs
+  $('body').find('.moment:not(.momented)').each ->
+    self = $(this)
+    unless self.hasClass('momented')
+      self.addClass('momented')
+      date = self.text()
+      m = moment(date).format('MMMM D');
+      self.text(m)
 
   #scrollreveal
   window.sr = new scrollReveal();
