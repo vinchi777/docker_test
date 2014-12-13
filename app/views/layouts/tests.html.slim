@@ -1,7 +1,9 @@
-= render layout: 'layouts/admin' do
+- content_for :head do
   = stylesheet_link_tag 'tests'
   = stylesheet_link_tag 'grades'
   = stylesheet_link_tag 'students'
   = javascript_include_tag 'tests_ctrl'
   = javascript_include_tag 'students_modal_ctrl'
+
+= render layout: 'layouts/admin' do
   = yield

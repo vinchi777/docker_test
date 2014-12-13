@@ -1,7 +1,9 @@
+- content_for :head do
+  = javascript_include_tag 'student_invoices'
+  = javascript_include_tag 'student_invoice_ctrl'
+  = stylesheet_link_tag 'student_invoices'
+
 = title 'Student Invoice'
-= javascript_include_tag 'student_invoices'
-= javascript_include_tag 'student_invoice_ctrl'
-= stylesheet_link_tag 'student_invoices'
 
 #student-payment ng-controller='StudentPaymentCtrl'
   header.row

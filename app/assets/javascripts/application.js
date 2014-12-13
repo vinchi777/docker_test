@@ -12,11 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require angular
+//= require ui-bootstrap-tpls-0.12.0
 //= require bootstrap.min
 //= require coverflow
-//= require angular
-//= require angular-resource
-//= require ui-bootstrap-tpls-0.11.2
 //= require moment
 //= require bootstrap-datetimepicker
 //= require scrollReveal

@@ -1,6 +1,8 @@
+- content_for :head do
+  = stylesheet_link_tag 'review_seasons'
+  = javascript_include_tag 'review_seasons'
+
 = title 'Review Seasons'
-= stylesheet_link_tag 'review_seasons'
-= javascript_include_tag 'review_seasons'
 
 #review-seasons ng-controller='ReviewSeasonsCtrl'
   header.row

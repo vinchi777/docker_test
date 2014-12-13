@@ -1,7 +1,7 @@
 # Place all the behaviors and hooks related to the matching controller here.
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
-@app.controller 'TestCtrl', ['$scope', '$http', 'Test', ($scope, $http, Test) ->
+@app.controller 'TestCtrl', ['$scope', '$http', ($scope, $http) ->
   $scope.errors = []
   $scope.test = {
     description: ''
@@ -30,7 +30,8 @@
     }
 
   $scope.load = (id) ->
-    Test.get id: id, (d) ->
+    r = $http.get "/tests/#{id}.json"
+    r.success (d) ->
       if d.questions.length <= 0
         $scope.addQuestion(d)
       $scope.test = d
@@ -72,7 +73,8 @@
       $('#students-select-modal').modal('hide')
 ]
 
-@app.controller 'TestsCtrl', ['$scope', '$http', 'Test', ($scope, $http, Test) ->
-  Test.query (d) ->
+@app.controller 'TestsCtrl', ['$scope', '$http', ($scope, $http) ->
+  r = $http.get "/tests.json"
+  r.success (d) ->
     $scope.tests = d
 ]

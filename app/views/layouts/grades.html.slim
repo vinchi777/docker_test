@@ -1,11 +1,11 @@
-= render layout: 'layouts/admin' do
+- content_for :head do
   = stylesheet_link_tag 'grades'
   = javascript_include_tag 'grades'
   = javascript_include_tag 'student_grades'
   = javascript_include_tag 'templates/grades'
   = javascript_include_tag 'templates/new_grade_modal'
   = javascript_include_tag 'batch_grades'
-  /= javascript_include_tag 'templates/batch_grade'
   = javascript_include_tag 'tests_ctrl'
 
+= render layout: 'layouts/admin' do
   = yield
