@@ -10,6 +10,10 @@ When /^I press the "(.*?)" button$/ do |label|
   click_on label
 end
 
+When /I click on "(.*?)"/ do |text|
+  click_on text
+end
+
 Then /^I should be on the homepage$/ do
   expect(current_path).to eq root_path
 end

@@ -43,6 +43,7 @@ Feature: Taking tests
     Given a test exists and published
     When I took the test
     * I wait until the deadline
+    * I am on the answer sheet
     Then I should see 2 out of 4 score of the test
     * I should see 2 out of 4 correct answers
     * I should see the rationalizations

@@ -20,8 +20,9 @@ Then /I should be on the test page/ do
 end
 
 Given /enrolled students exists for the current season/ do
-  StudentFactory.create_student 'Erik', true, true
-  StudentFactory.create_student 'Bob', true, true
+  @students = []
+  @students << StudentFactory.create_student('Erik', true, true)
+  @students << StudentFactory.create_student('Bob', true, true)
 end
 
 Given /a test exists( and published)?$/ do |flag|
@@ -184,10 +185,9 @@ When /I took the test/ do
 end
 
 When /I wait until the deadline/ do
-  test = @sheet.test
-  test.deadline = Time.now
-  test.save
-  step 'I am on the answer sheet'
+  @test = @sheet.test if @sheet
+  @test.deadline = Time.now
+  @test.save
 end
 
 Then /I should see (\d+) out of (\d+) score of the test/ do |correct, total|
@@ -207,4 +207,32 @@ end
 
 When /I try to take the test/ do
   find("#grade-#{@sheet.id}").click
+end
+
+When /students take the exam/ do
+  answer @test.answer_sheets[0], false
+  answer @test.answer_sheets[1], true
+end
+
+Then /I can see passing rate/ do
+  expect(page).to have_content('%.1f' % @test.passing_rate)
+end
+
+Then /I can see students score/ do
+  @test.answer_sheets.each do |s|
+    expect(page).to have_content "#{s.student.last_name}, #{s.student.first_name}"
+    expect(page).to have_content s.correct_points
+  end
+end
+
+def answer(sheet, pass)
+  sheet.answers.each do |a|
+    if pass
+      a.index = a.question.answer
+    else
+      a.index = 0 if a.question.answer != 0
+      a.index = 1 if a.question.answer == 0
+    end
+    a.save
+  end
 end
