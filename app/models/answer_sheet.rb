@@ -51,6 +51,10 @@ class AnswerSheet
     end
   end
 
+  def passed?
+    correct_points > total_points * 0.75 if deadline?
+  end
+
   def remaining
     start_time + test.timer * 60 - Time.now if start_time && test.timer != 0
   end
@@ -62,6 +66,8 @@ class AnswerSheet
   def total_points
     test.questions.length
   end
+
+  alias points total_points
 
   def percent
     (correct_points / total_points.to_d * 100) if deadline?
@@ -81,10 +87,6 @@ class AnswerSheet
 
   def average
     percent
-  end
-
-  def points
-    total_points
   end
 
   def description

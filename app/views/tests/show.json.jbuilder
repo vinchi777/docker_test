@@ -2,6 +2,7 @@ json.id @test.id.to_s
 json.description @test.description
 json.date @test.date.strftime('%b %e, %Y')
 json.deadline @test.deadline.strftime('%b %e, %Y %I:%M %p')
+json.is_deadline @test.deadline?
 json.timer @test.timer
 json.random @test.random
 json.review_season do
@@ -19,3 +20,4 @@ json.questions @test.questions.each do |q|
   json.ratio q.ratio
 end
 json.url test_path(@test)
+json.results_url results_test_path(@test)

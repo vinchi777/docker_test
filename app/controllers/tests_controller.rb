@@ -1,5 +1,5 @@
 class TestsController < AdminController
-  before_action :set_test, only: [:show, :edit, :update, :destroy]
+  before_action :set_test, only: [:show, :edit, :update, :destroy, :results]
 
   layout 'tests'
   respond_to :html, :json
@@ -64,6 +64,10 @@ class TestsController < AdminController
 
   def answer
     render 'show'
+  end
+
+  def results
+    @students = @test.answer_sheets.map { |a| a.student }
   end
 
   private

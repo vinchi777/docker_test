@@ -28,6 +28,11 @@ class Test
     enrollment && enrollment.answer_sheets.where(test: self).exists?
   end
 
+  def answer_sheet_of(student)
+    enrollment = student.enrollments.where(review_season: review_season).first
+    enrollment.answer_sheets.find_by(test: self.id) if enrollment
+  end
+
   def create_answer_sheet_for(student)
     enrollment = student.enrollments.where(review_season: review_season).first
     unless has_answer_sheet? student
@@ -55,6 +60,18 @@ class Test
 
   def timer?
     timer != 0
+  end
+
+  def passed
+    answer_sheets.count { |s| s.passed? } if deadline?
+  end
+
+  def failed
+    answer_sheets.length - passed if deadline?
+  end
+
+  def passing_rate
+    (passed / answer_sheets.length.to_d * 100) if deadline?
   end
 
   def average

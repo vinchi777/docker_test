@@ -1,5 +1,4 @@
-@app.controller 'StudentsModalCtrl', ['$scope', '$http', 'ReviewSeason',
-  ($scope, $http, ReviewSeason) ->
+@app.controller 'StudentsModalCtrl', ['$scope', '$http', ($scope, $http) ->
     $scope.selected = []
     $scope.students = []
 

@@ -1,0 +1,56 @@
+- content_for :head do
+  = javascript_include_tag 'test_results_ctrl'
+
+== title 'Batch Grades'
+
+#batch-grades.read-only ng-controller='TestResultCtrl' ng-init=("init('#{params[:id]}')")
+  header.main.row
+    .col-md-3
+      h5
+        | {{test.description}}
+      a href='{{test.url}}' Back to Test
+    .col-md-9.text-right
+      b
+        | {{test.passing_rate}}%
+      span
+        | {{test.passed}} passed | {{test.failed}} failed
+
+  header.row.hidden
+    .col-md-3
+      label.control-label Description
+      input.form-control.required type='text'
+    .col-md-2
+      label.control-label Date
+      input.form-control.required.date-picker type='text' data-date-format="MMM DD, YYYY"
+    .col-md-2
+      label.control-label Total Points
+      input.form-control.required.total-score type='text'
+    .col-md-5.actions
+      button.btn.btn-primary type='Submit' Save
+  hr
+  .table-wrapper
+    table.table
+      thead
+        td.table-actions
+          .search-wrapper
+            input.form-control.search-students type='text' placeholder='Filter students' ng-model='q'
+        th Score
+        th Percentage
+      tbody.student-list
+        tr.student ng-repeat='s in students | filter:q'
+          th.student
+            a href='{{s.url}}'
+              span.profile-pic
+                img.profile ng-src='{{s.profile_pic}}' ng-show='s.profile_pic != null'
+                img.profile src=(image_url 'user.png') ng-hide='s.profile_pic != null'
+              span
+                b
+                  | {{s.last_name}}
+                | , {{s.first_name}} {{s.middle_initial}}
+          td
+            span
+              | {{s.answer_sheet.correct_points}}
+          td
+            span.pr
+              | {{s.answer_sheet.percent}}
+            | %

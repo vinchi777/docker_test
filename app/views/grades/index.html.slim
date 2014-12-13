@@ -13,19 +13,22 @@
         = link_to new_test_path, class: 'new-test'
           = image_tag 'new-test.svg', class: 'inject-me'
       .test.col-md-2 ng-repeat='t in tests' id='test-{{t.id}}'
-        a href='/tests/{{t.id}}'
-          .summary
+        .summary
+          a href='/tests/{{t.id}}'
             .timer ng-show='t.timer == null || t.timer == 0' = image_tag 'timer-off.svg'
             .timer ng-hide='t.timer == null || t.timer == 0' = image_tag 'timer-on.svg'
             .points
               h2
                 | {{t.questions_length}}
               span: ng-pluralize count='t.questions_length' when="{'0': 'item', '1': 'item', 'other': 'items'}"
-          .description
-            h6
-              | {{t.description}}
-            span
-              | {{t.date | date:'mediumDate'}}
+        .description
+          h6
+            | {{t.description}}
+          div
+            | {{t.date | date:'mediumDate'}}
+          .results
+            a href='{{t.results_url}}' ng-show='{{t.is_deadline}}' Results
+
 
   .grades-container
     - @review_seasons.each do |review_season|

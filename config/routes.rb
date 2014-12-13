@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     end
     member do
       patch 'publish'
+      get 'results'
+      get 'students'
     end
   end
 

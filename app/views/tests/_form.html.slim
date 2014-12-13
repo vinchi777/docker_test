@@ -17,9 +17,10 @@ form
       .col-md-5.actions
         button.btn.btn-default ng-click='save()' ng-show='test.id == null' Save
         button.btn.btn-default ng-click='save()' ng-hide='test.id == null' Update
-        button.btn.btn-primary type='Submit' data-target='#students-select-modal' data-toggle='modal' ng-click='selectStudents()' ng-show='test.id != null'
+        button.btn.btn-primary type='Submit' data-target='#students-select-modal' data-toggle='modal' ng-click='selectStudents()' ng-show='test.id != null && !test.is_deadline'
           span ng-hide='publishing' Publish
           span ng-show='publishing' Publishing...
+        a.btn.btn-primary href='{{test.results_url}}' ng-show='test.is_deadline' See Results
     .row
       .col-md-4.auto-width
         i.fa.fa-clock-o
