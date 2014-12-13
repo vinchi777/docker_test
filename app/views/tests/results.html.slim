@@ -8,6 +8,9 @@
     .col-md-3
       h5
         | {{test.description}}
+      div
+        | {{test.length}}
+        ng-pluralize< count='test.length' when="{'0': 'item', '1': 'item', 'other': 'items'}"
       a href='{{test.url}}' Back to Test
     .col-md-9.text-right
       b

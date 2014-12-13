@@ -1,5 +1,6 @@
 json.test do
   json.description @test.description
+  json.length @test.questions.length
   json.passed @test.passed
   json.failed @test.failed
   json.passing_rate '%.1f' % @test.passing_rate if @test.deadline?
