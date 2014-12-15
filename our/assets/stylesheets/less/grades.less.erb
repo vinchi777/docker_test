@@ -1,5 +1,14 @@
 @gray: #b2b2b2;
 @height: 120px;
+@border-size: 7px;
+@skew: 0deg;
+// border colors
+@green: #16b27a;
+@green2: #84d3c4;
+@yellow: #efc655;
+@yellow2: #e4c382;
+@red: #df5a49;
+@red2: #cc7371;
 
 .points(@margin-top:35px) {
     .points {
@@ -107,8 +116,6 @@
         color: #333;
     }
 
-    @border-size: 6px;
-    @skew: 0deg;
     .new-grade {
         .injected-svg {
             height: @height+@border-size*2;
@@ -122,66 +129,71 @@
     }
 
     .grade {
+        display: block;
         text-decoration: none;
         color: #4C4C4C;
         text-align: center;
         margin-bottom: 15px;
         .wrapper {
-            height: @height+@border-size*2;
+            width: @height + @border-size*2;
+            height: @height + @border-size*2;
+            position: relative;
+            display: inline-block;
+            background: white;
+            box-sizing: border-box;
+            text-align: center;
+            .pie {
+                width: 50%;
+                height: 100%;
+                position: absolute;
+                background: none;
+                transform-origin: 100% 50% 0px;
+                border: @border-size solid @green;
 
+                &.spinner {
+                    border-radius: 125px 0 0 125px;
+                    z-index: 200;
+                    transform: rotate(360deg)
+                }
+                &.filler {
+                    border-radius: 0 125px 125px 0;
+                    z-index: 100;
+                    opacity: 0;
+                    left: 50%;
+                }
+                &.fail {
+                    border-color: @red;
+                }
+                &.pass {
+                    border-color: @yellow;
+                }
+            }
+            .mask {
+                width: 50%;
+                height: 100%;
+                position: absolute;
+                z-index: 300;
+                background: inherit;
+                opacity: 1;
+                /*animation: mask 10s steps(1, end) infinite;*/
+            }
+            .fill {
+                background: #4c4c4c;
+                z-index: 400;
+                position: absolute;
+                height: @height+2;
+                width: @height+2;
+                border-radius: 50%;
+                top: @border-size - 1;
+                left: @border-size - 1;
+            }
             .summary {
-                height: @height;
-                width: @height;
+                height: @height + @border-size*2;
+                width: @height + @border-size*2;
                 position: absolute;
                 border-radius: 50%;
-                background: #4c4c4c;
                 top: 5px;
-                z-index: -1;
-                left: 17%;
-                .arc {
-                    overflow: hidden;
-                    position: absolute;
-                    top: -@border-size+1;
-                    right: 50%;
-                    bottom: 50%;
-                    left: -@border-size+1;
-                    transform-origin: 100% 100%;
-
-                    // border colors
-                    @green: #45b29d;
-                    @green2: #84d3c4;
-                    @yellow: #efc94c;
-                    @yellow2: #e4c382;
-                    @red: #df5a49;
-                    @red2: #cc7371;
-                    &:before {
-                        content: attr(data-content);
-                        box-sizing: border-box;
-                        display: block;
-                        border: solid @border-size @green;
-                        width: 200%;
-                        height: 200%;
-                        border-radius: 50%;
-                        transform: skewX(-@skew);
-                        content: '';
-                    }
-
-                    &.arc1 {
-                        transform: rotate(90deg) skewX(@skew);
-                    }
-
-                    &.arc2 {
-                        transform: rotate(180deg) skewX(@skew);
-                    }
-
-                    &.arc3 {
-                        transform: rotate(270deg) skewX(@skew);
-                    }
-
-                    &.arc4 {
-                        transform: rotate(0deg) skewX(@skew);
-                    }
-                }
+                z-index: 500;
                 .points;
                 .status {
                     margin-top: 5px;

@@ -97,6 +97,21 @@ $ ->
       )
       false
 
+  $("#grades-tests .grade").each ->
+    me = $(this)
+    ave = parseInt(me.find('.average').text())
+    deg = Math.round(360 * ave/100.0)
+    me.find('.spinner').css('transform', "rotate(#{deg}deg)")
+    console.log deg
+    console.log ave
+    if deg > 180
+      me.find('.mask').css('opacity',0)
+      me.find('.filler').css('opacity',1)
+    if ave < 60
+      me.find('.pie').addClass('fail')
+    else if ave < 80
+      me.find('.pie').addClass('pass')
+
 
 # For table effects
 $(document).on 'click', 'table tr *', ->
@@ -175,31 +190,3 @@ update_percent = (student_container, input) ->
   percentage = Math.round(percentage)
   percentage = 0 if isNaN(percentage) || percentage == Infinity
   pr.text(percentage)
-
-
-# Percentage gauge indicator for index
-adjust_gauge = (level, percent, container) ->
-  if percent <= 0
-    return
-  else if percent >= 25
-    deg = 0
-  else
-    deg = 90 - percent / 25 * 90
-
-  arc = container.find(".arc#{level}")
-  arc.css('transform', "rotate(#{90 * level}deg) skewX(#{deg}deg)")
-  arc.attr('data-content', arc_style(deg))
-
-  adjust_gauge(level + 1, percent - 25, container)
-
-arc_style = (deg) ->
-  """
-  box-sizing: border-box;
-  display: block;
-  border: solid @border-size @green;
-  width: 200%;
-  height: 200%;
-  border-radius: 50%;
-  transform: skewX(#{-deg}def);
-  content: '';
-  """
