@@ -36,7 +36,8 @@
                 .col-md-6
                   b &nbsp
                 .col-md-6 &nbsp
-            a.btn.btn-default.btn-lg href=pricing_link('Coaching') Enroll
+            - unless @season.new_record?
+              a.btn.btn-default.btn-lg href=pricing_link('Coaching') Enroll
           .col-md-4.col-sm-6.package.standard-package
             h4 Standard Review
             h2.price
@@ -73,8 +74,9 @@
                   .col-md-6
                     b &nbsp
                   .col-md-6 &nbsp
-            a.btn.btn-black.btn-lg href=pricing_link('Standard')
-              b Enroll
+            - unless @season.new_record?
+              a.btn.btn-black.btn-lg href=pricing_link('Standard')
+                b Enroll
           .col-md-4.package.double-package
             h4 Double Review
             h2.price
@@ -97,7 +99,8 @@
               div
                 | by
                 b< = number_to_currency @season.full_review * 2 - @season.double_review, unit: '₱ ', precision: 0
-            a.btn.btn-default.btn-lg href=pricing_link('Double') Enroll
+            - unless @season.new_record?
+              a.btn.btn-default.btn-lg href=pricing_link('Double') Enroll
     p.info
       - if @season.promo_start.present?
         | Promos for the Standard Review are valid from
@@ -107,6 +110,8 @@
         | only.
       - else
         | &nbsp
+      - if @season.new_record?
+        | There is no ongoing review season as of this moment.
 
   hr
   .container.plans
