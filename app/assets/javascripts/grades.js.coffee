@@ -107,9 +107,9 @@ $ ->
     if deg > 180
       me.find('.mask').css('opacity',0)
       me.find('.filler').css('opacity',1)
-    if ave < 60
+    if ave < 75
       me.find('.pie').addClass('fail')
-    else if ave < 80
+    else if ave < 90
       me.find('.pie').addClass('pass')
 
 
