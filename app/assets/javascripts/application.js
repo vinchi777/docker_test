@@ -24,9 +24,6 @@
 //= require jquery.countdown
 //= require_self
 //= require site
-//= require handlebars
-//= require ember
-//= require ember-data
 //= require bootbox.min
 
 window.do_scroll = function (target) {
