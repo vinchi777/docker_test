@@ -63,9 +63,8 @@ class ReviewSeason
 
   def self.current
     if ReviewSeason.exists?
-      ReviewSeason.all.sort_by { |r| r.season_start }.last
-    else
-      ReviewSeason.new(full_review: 16000, double_review: 22000, coaching: 7000, reservation: 3000)
+      last = ReviewSeason.all.sort_by { |r| r.season_start }.last
+      last if last.season_start <= Date.today && last.season_end >= Date.today
     end
   end
 
