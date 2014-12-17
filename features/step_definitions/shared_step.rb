@@ -71,8 +71,8 @@ Given /^a review season exists$/ do
   if ReviewSeason.empty?
     @season = ReviewSeason.create!(
         season: 'May 2014',
-        season_start: Date.new(2014, 4, 1),
-        season_end: Date.new(2014, 4, 5),
+        season_start: Date.today - 1.day,
+        season_end: Date.today + 1.month,
         first_timer: 17000,
         repeater: 10000,
         full_review: 17000,
