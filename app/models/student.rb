@@ -223,5 +223,5 @@ class Student < Person
     enrollment_process == 0 || enrollment_process == 3
   end
 
-  handle_asynchronously :expire, run_at: Proc.new {3.days.from_now}
+  handle_asynchronously :expire, run_at: Proc.new {3.minutes.from_now}
 end
