@@ -99,6 +99,7 @@ class Student < Person
           amount: amount
       )
     end
+    expire
     save
   end
 
@@ -205,6 +206,10 @@ class Student < Person
     end
   end
 
+  def expire
+    destroy unless enrolled?
+  end
+
   private
   def can_validate_info?
     enrollment_process == 0 || enrollment_process == 1
@@ -217,4 +222,6 @@ class Student < Person
   def can_validate_others?
     enrollment_process == 0 || enrollment_process == 3
   end
+
+  handle_asynchronously :expire, run_at: Proc.new {3.days.from_now}
 end

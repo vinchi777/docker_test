@@ -25,7 +25,6 @@ gem 'will_paginate_mongoid', '~> 2.0.1'
 gem 'wicked'
 
 gem 'delayed_job_mongoid'
-gem 'delayed_job_web'
 
 gem 'thin'
 
