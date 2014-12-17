@@ -66,15 +66,6 @@ Given /^I am on the enrollment package type page$/ do
   visit enrollment_index_path
 end
 
-Then /^I should be able to search students by/ do |data|
-  data.rows.each do |row|
-    fill_in 'q', with: row[0]
-    execute_script('$(".search form").submit()')
-    expect(page).to have_content row[1]
-    expect(page).to have_content "Found #{row[2]} " + 'student'.pluralize(row[2].to_i)
-  end
-end
-
 Given /students exist for filtering/ do
   StudentFactory.create_student('maria')
   StudentFactory.create_student('jk', true, false)

@@ -1,7 +1,7 @@
 Feature: Search students
 
   Scenario: Search students
-    Given I am logged in as admin
+    When I am logged in as admin
     * students exist for searching
     * I am on the students page
     Then I should be able to search students by name

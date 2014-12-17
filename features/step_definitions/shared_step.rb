@@ -103,6 +103,15 @@ Given /^I am on the home page$/ do
   visit home_path
 end
 
+Then /^I should be able to search (.*?) by/ do |model, data|
+  data.rows.each do |row|
+    fill_in 'q', with: row[0]
+    execute_script('$(".search form").submit()')
+    expect(page).to have_content row[1]
+    expect(page).to have_content "Found #{row[2]} " + model.singularize.pluralize(row[2].to_i)
+  end
+end
+
 def expect_updated(a, b)
   keys = Set.new
   b.each do |k, v|
