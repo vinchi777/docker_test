@@ -44,10 +44,12 @@ class User
   validates_presence_of :person
 
   before_validation do |d|
-    d.email = d.person.email
-    d.first_name = d.person.first_name
-    d.last_name = d.person.last_name
-    d.middle_initial = d.person.middle_initial
+    if d.person
+      d.email = d.person.email
+      d.first_name = d.person.first_name
+      d.last_name = d.person.last_name
+      d.middle_initial = d.person.middle_initial
+    end
   end
 
   def self.serialize_into_session(record)

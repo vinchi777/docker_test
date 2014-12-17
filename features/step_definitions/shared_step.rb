@@ -7,11 +7,11 @@ Then /^I should( not)? see "(.*?)"$/ do |negative, text|
 end
 
 When /^I press the "(.*?)" button$/ do |label|
-  click_on label
+  click_on label, match: :first
 end
 
 When /I click on "(.*?)"/ do |text|
-  click_on text
+  click_on text, match: :first
 end
 
 Then /^I should be on the homepage$/ do
@@ -49,8 +49,7 @@ When /^I fill up these (.*?) information$/ do |p, data|
 end
 
 Given /^I am logged in as admin$/ do
-  p = Person.create(first_name: 'John', last_name: 'dela Cruz', email: 'admin@example.com')
-  User.create(password: '123456789', person: p, confirmed_at: Date.new)
+  UserFactory.admin
   visit '/login'
   fill_in 'user_email', with: 'admin@example.com'
   fill_in 'user_password', with: '123456789'
@@ -58,9 +57,7 @@ Given /^I am logged in as admin$/ do
 end
 
 Given /^I am logged in as a student/ do
-  p = StudentFactory.create_student('Mary', true, false)
-  p.email = 'student@example.com'
-  @user = User.create(password: '123456789', person: p, confirmed_at: Date.new)
+  @user = UserFactory.student
   visit '/login'
   fill_in 'user_email', with: 'student@example.com'
   fill_in 'user_password', with: '123456789'

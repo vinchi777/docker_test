@@ -6,7 +6,7 @@ When /^I save the student form/ do
   first('.save.btn').click
 end
 
-Then /^I should see (\d+) errors/ do |i|
+Then /^I should see (\d+) error/ do |i|
   expect(all('.error li', count: i.to_i).count).to eq i.to_i
 end
 
