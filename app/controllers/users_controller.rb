@@ -123,7 +123,7 @@ class UsersController < AdminController
   end
 
   def person_params
-    params.require(:person).permit(:first_name, :middle_name, :last_name, :birthdate, :sex, :address, :contact_no, :email)
+    params.require(:person).permit(:first_name, :middle_name, :last_name, :civil_status, :birthdate, :sex, :address, :contact_no, :email)
   end
 
   def set_user

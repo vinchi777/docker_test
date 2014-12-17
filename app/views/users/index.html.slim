@@ -10,7 +10,7 @@
             input.form-control type="search" placeholder="Search for name and email of user" ng-model='q' name='q' value=params[:q]
 
       .col-md-2.col-md-offset-2
-        .btn.btn-primary.pull-right data-target='#user-modal' ng-click='add()' data-toggle='modal' Add User
+        a.btn.btn-primary.pull-right href='#' data-target='#user-modal' ng-click='add()' data-toggle='modal' Add User
 
   = render 'form'
   = render 'password_modal', modal_title: 'Change Password', modal_submit: 'Update Password'

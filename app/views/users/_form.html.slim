@@ -13,20 +13,20 @@
                 | {{e}}
           .form-group.name
             label.control-label Name
-            input.form-control.first_name.required type='text' placeholder='First name' ng-model='person.firstName'
-            input.form-control.middle_name type='text' placeholder='Middle name' ng-model='person.middleName'
-            input.form-control.last_name.required type='text' placeholder='Last name' ng-model='person.lastName'
+            input.form-control.first_name.required type='text' placeholder='First name' ng-model='person.first_name' name='user[first_name]'
+            input.form-control.middle_name type='text' placeholder='Middle name' ng-model='person.middle_name' name='user[middle_name]'
+            input.form-control.last_name.required type='text' placeholder='Last name' ng-model='person.last_name' name='user[last_name]'
           .form-group.email
             label Email
-            input.form-control.required type='email' ng-model='person.email'
+            input.form-control.required type='email' ng-model='person.email' name='user[email]'
           .row.passwords
             .form-group.password
               label Password
-              input.form-control.required type='password' ng-model='user.password'
+              input.form-control.required type='password' ng-model='user.password' name='user[password]'
             .form-group.password.confirm
               label Confirm Password
-              input.form-control.required type='password' ng-model='user.password_confirmation'
+              input.form-control.required type='password' ng-model='user.password_confirmation' name='user[confirm_password]'
 
         .modal-footer
           .actions
-            input.btn.btn-primary ng-class='addBtnClass' type='submit' value='Add User'
+            input.btn.btn-primary ng-class='addBtnClass' type='submit' value='Create User'

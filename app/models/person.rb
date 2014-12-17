@@ -24,7 +24,7 @@ class Person
   has_one :user
 
   before_validation do |d|
-    d.email = d.email.downcase
+    d.email = d.email.downcase if d.email
   end
 
   def middle_initial

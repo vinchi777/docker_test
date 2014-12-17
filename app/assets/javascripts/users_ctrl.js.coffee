@@ -74,6 +74,7 @@
 
   $scope.create = (url) ->
     $scope.addBtnClass = 'disabled'
+    $scope.person.civil_status = 'single'
     params =
       user: $scope.user
       person: $scope.person
@@ -85,6 +86,7 @@
       $scope.addBtnClass = ''
       resetUser()
       $scope.users.push i
+      $scope.totalItems++
 
     r.error (d) ->
       $scope.addBtnClass = ''
