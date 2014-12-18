@@ -86,6 +86,9 @@
 #pricing .moneyback {
   padding-bottom: 25px;
 }
+#pricing .moneyback h3 {
+  font-family: 'Signika Semibold';
+}
 #pricing .moneyback .requirements {
   font-size: 18px;
 }
