@@ -31,7 +31,7 @@ class TestsController < AdminController
         end
       end
     else
-      render json: {status: :unprocessable_entity}
+      render json: {review_season: ['not found. Please add a review season.']}, status: :unprocessable_entity
     end
   end
 
