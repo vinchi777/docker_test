@@ -98,7 +98,7 @@ Then /^I should search for the following students in the select modal$/ do |data
 end
 
 And /^the grade should only contain (\d+) student grade(s)?$/ do |count, _|
-  expect(Grade.first.student_grades.size).to eq count.to_d
+  expect(Grade.first.student_grades.size).to eq count.to_i
 end
 
 Given /^a grade exists$/ do
