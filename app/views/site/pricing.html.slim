@@ -50,7 +50,7 @@
               = number_to_currency @season.reservation, unit: '₱ ', precision: 0
               span< down payment
             .description &nbsp
-            - if @season.promo_start.present?
+            - if @season.promo_still_active?
               hr
               .promos
                 h5 Promos
@@ -102,16 +102,16 @@
             - unless @season.new_record?
               a.btn.btn-default.btn-lg href=pricing_link('Double') Enroll
     p.info
-      - if @season.promo_start.present?
+      - if @season.promo_still_active?
         | Promos for the Standard Review are valid from
         span<> = @season.promo_start.strftime '%B %d, %Y'
         |until
         span<> = @season.promo_end.strftime '%B %d, %Y'
         | only.
+      - elsif @season.new_record?
+        | There is no ongoing review season as of this moment.
       - else
         | &nbsp
-      - if @season.new_record?
-        | There is no ongoing review season as of this moment.
 
   hr
   .container.plans
