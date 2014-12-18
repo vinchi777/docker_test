@@ -51,3 +51,7 @@ end
 Then /^I should still be on the enrollment package page$/ do
   expect(page).to have_content 'Please select package type.'
 end
+
+Then /^I should not be able to see the enroll link/ do
+  expect(page).not_to have_link 'Enroll'
+end

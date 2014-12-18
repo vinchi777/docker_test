@@ -66,17 +66,15 @@ end
 
 Given /^a review season exists$/ do
   if ReviewSeason.empty?
-    @season = ReviewSeason.create!(
-        season: 'May 2014',
-        season_start: Date.today - 1.day,
-        season_end: Date.today + 1.month,
-        first_timer: 17000,
-        repeater: 10000,
-        full_review: 17000,
-        double_review: 22000,
-        coaching: 7000,
-        reservation: 3000
-    )
+    @season = ReviewSeasonFactory.createOngoing
+  else
+    @season = ReviewSeason.first
+  end
+end
+
+Given /^an old review season exists$/ do
+  if ReviewSeason.empty?
+    @season = ReviewSeasonFactory.createOld
   else
     @season = ReviewSeason.first
   end
