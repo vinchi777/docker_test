@@ -1,6 +1,6 @@
 Feature: Disable enrollment and other particulars when there is no ongoing review season
   Background:
-    Given an old review season exists
+    Given no ongoing review season exists
 
   Scenario: Finding the enroll link at header
     Given I am on the home page

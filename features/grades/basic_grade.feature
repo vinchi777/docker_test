@@ -57,7 +57,7 @@ Feature: Basic grade
     Given I am on the new grade page
     Then I should see "Since no season is specified, the current review season will be used."
 
-  Scenario: Add grade without review season
-    Given No review season exists
+  Scenario: Add grade without ongoing review season
+    Given no ongoing review season exists
     * I am on the new grade page
-    Then I should see "No season available. Please add review season first."
+    Then I should see "No ongoing season found. Please add a review season that includes this day."

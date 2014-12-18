@@ -72,12 +72,9 @@ Given /^a review season exists$/ do
   end
 end
 
-Given /^an old review season exists$/ do
-  if ReviewSeason.empty?
-    @season = ReviewSeasonFactory.createOld
-  else
-    @season = ReviewSeason.first
-  end
+Given /^no ongoing review season exists$/ do
+  ReviewSeason.delete_all
+  @season = ReviewSeasonFactory.createOld
 end
 
 Given /^students exist$/ do
