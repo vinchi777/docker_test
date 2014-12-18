@@ -33,7 +33,7 @@ def rand_student
   first_name = rand_name
   last_name = rand_last_name
   civil_status = Student.civil_statuses.keys
-  std = Student.create!(
+  std = Student.create(
       first_name: first_name,
       last_name: last_name,
       middle_name: rand_last_name,
@@ -49,16 +49,18 @@ def rand_student
       elem: 'Luntad Elem. School',
       elem_year: 2002
   )
-  std.package_type = %w{Standard Double Coaching}[rand(3)]
-  std.setup_payment
-  std.finish_enrollment_process
-  std
+  if std.persisted?
+    std.package_type = %w{Standard Double Coaching}[rand(3)]
+    std.setup_payment
+    std.finish_enrollment_process
+    std
+  end
 end
 
 ReviewSeason.create!(
     season: 'May 2014',
-    season_start: Date.new(2014, 4, 1),
-    season_end: Date.new(2014, 4, 5),
+    season_start: Date.today - 1.day,
+    season_end: Date.today + 1.month,
     first_timer: 17000,
     repeater: 10000,
     full_review: 17000,

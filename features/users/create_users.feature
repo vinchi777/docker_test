@@ -1,11 +1,11 @@
-Feature: Add users
+Feature: Create users
 
   Background:
     Given I am logged in as admin
-    * I am on the users page
-    * I click on "Add User"
 
-  Scenario: Successfully add user
+  Scenario: Successfully create user
+    Given I am on the users page
+    * I click on "Add User"
     When I fill up these user information
       | Field            | Value               | Type |
       | First Name       | John                | text |
@@ -21,6 +21,16 @@ Feature: Add users
     * I should see unconfirmed student
 
   Scenario: Error when no fields
+    Given I am on the users page
+    * I click on "Add User"
     When I press the "Create User" button
     Then I should see 6 errors
     * email should not be sent to "jdelacruz@yahoo.com"
+
+  Scenario: Create user from student
+    Given students exist
+    * I am on the students page
+    When I click the user icon
+    * I press the "Yes" button
+    Then I should not see any modal
+    * a user should be created

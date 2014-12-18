@@ -36,3 +36,12 @@ Given /I am on the change password page/ do
   visit change_password_users_path
   @user = User.find_by(email: 'student@example.com')
 end
+
+When /I click the user icon/ do
+  find('a.no-user', match: :first).click
+end
+
+Then /a user should be created/ do
+  sleep 0.2
+  expect(User.count).to eq 2
+end
