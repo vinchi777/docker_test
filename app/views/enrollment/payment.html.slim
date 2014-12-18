@@ -8,12 +8,12 @@
           td
             = "#{invoice.review_season} | Review Fee (#{invoice.package}) - #{invoice.description}"
           td -
-          td = "P #{to_currency invoice.amount}"
+          td = "P #{invoice.description == 'First Timer' ? @season.full_review : to_currency(invoice.amount)}"
         - unless invoice.package == 'Double'
           tr
             td Discount
             td -
-            td = "P #{invoice.discount ? to_currency(invoice.discount) : 0}"
+            td = "P #{invoice.description == 'First Timer' ? to_currency(@season.full_review - invoice.amount) : 0}"
       tr
         td Total
         td -

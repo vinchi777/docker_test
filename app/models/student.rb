@@ -82,12 +82,18 @@ class Student < Person
   #for enrollment only
   def setup_payment
     current_season = ReviewSeason.current
-    return true if has_enrollment_on(current_season) && current_invoices.nil?
+    return true if has_enrollment_on(current_season) && current_invoices.any?
     e = enrollment_on(current_season)
     invoice1 = e.create_invoice(
         package: package_type,
         amount: current_season.get_fee(package_type)
     )
+
+    if current_season.promo_still_active? && package_type == 'Standard'
+      invoice1.amount = current_season.first_timer
+      invoice1.description = 'First Timer'
+      invoice1.save
+    end
 
     if package_type == 'Double'
       invoice1.description = 'Invoice 1 of 2'
@@ -223,5 +229,5 @@ class Student < Person
     enrollment_process == 0 || enrollment_process == 3
   end
 
-  handle_asynchronously :expire, run_at: Proc.new {3.days.from_now}
+  handle_asynchronously :expire, run_at: Proc.new { 3.days.from_now }
 end

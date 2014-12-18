@@ -99,4 +99,8 @@ class ReviewSeason
   def self.descending
     ReviewSeason.desc(:season_start)
   end
+
+  def promo_still_active?
+    promo_start <= Date.today && Date.today <= promo_end
+  end
 end
