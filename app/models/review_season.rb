@@ -101,6 +101,8 @@ class ReviewSeason
   end
 
   def promo_still_active?
-    promo_start <= Date.today && Date.today <= promo_end
+    if promo_start && promo_end
+      promo_start <= Date.today && Date.today <= promo_end
+    end
   end
 end
