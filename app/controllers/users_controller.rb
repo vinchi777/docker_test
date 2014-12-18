@@ -62,7 +62,7 @@ class UsersController < AdminController
   end
 
   def create_student_account
-    s = Student.find(params[:id])
+    s = Student.find(params[:student_id])
     u = User.new(password: Devise.friendly_token.first(8), person: s)
 
     if u.save

@@ -107,7 +107,7 @@
 
   $scope.createUser = ->
     params =
-      id: forUser.id
+      student_id: forUser.id
     r = $http.post '/users/create_student_account.json', params
     r.success (d) ->
       $('#confirm-user-modal').modal 'hide'
