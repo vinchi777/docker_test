@@ -8,7 +8,7 @@ gem 'mongoid', '~> 4.0.0'
 gem 'devise', '~> 3.4.0'
 gem 'cancancan'
 
-gem 'simple_enum', '~> 2.0.0' , require: 'simple_enum/mongoid' # Enum for Mongoid
+gem 'simple_enum', '~> 2.0.0', require: 'simple_enum/mongoid' # Enum for Mongoid
 
 gem 'jquery-rails'
 gem 'jquery-turbolinks'
@@ -37,6 +37,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
   gem 'spring'
   gem 'spring-commands-cucumber'
+  gem 'parallel_tests'
 end
 
 group :test do
@@ -50,7 +51,7 @@ group :heroku do
   # gem 'unicorn'
   # gem 'rack-timeout'
   # gem 'rack-handlers'
-end	
+end
 
 gem 'rails_12factor', group: [:production, :heroku]
 gem 'sdoc', '~> 0.4.0', group: :doc
