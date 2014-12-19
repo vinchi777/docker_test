@@ -80,6 +80,7 @@ Given /I am on the test page/ do
 end
 
 Then /the test should be updated/ do
+  sleep 0.2
   @test.reload
   expect(@test.description).to eq @params[:description]
   expect(@test.date).to eq DateTime.parse(@params[:date])
@@ -185,7 +186,7 @@ When /I took the test/ do
 end
 
 When /I wait until the deadline/ do
-  @test = @sheet.test if @sheet
+  @test = @sheet.reload.test if @sheet
   @test.deadline = Time.now
   @test.save
 end

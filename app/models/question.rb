@@ -20,5 +20,5 @@ class Question
 
   field :ratio, type: String
 
-  embedded_in :test
+  belongs_to :test
 end

@@ -14,7 +14,7 @@ class Test
 
   field :random, type: Boolean
 
-  embeds_many :questions
+  has_many :questions
   accepts_nested_attributes_for :questions
   validates_associated :questions
 
@@ -22,6 +22,12 @@ class Test
 
   belongs_to :review_season
   validates_presence_of :review_season
+
+  before_validation do |t|
+    if t.questions.length == 0
+      t.errors[:questions] << 'are required'
+    end
+  end
 
   def has_answer_sheet?(student)
     enrollment = student.enrollments.where(review_season: review_season).first
@@ -89,7 +95,11 @@ class Test
 
   def can_copy?
     current = ReviewSeason.current
-    t = Test.where(review_season: current.id, description: description)
-    current && review_season != current && t.empty?
+    if current
+      t = Test.where(review_season: current.id, description: description)
+      current && review_season != current && t.empty?
+    else
+      false
+    end
   end
 end

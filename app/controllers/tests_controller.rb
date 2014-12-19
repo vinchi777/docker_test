@@ -22,7 +22,7 @@ class TestsController < AdminController
     if ReviewSeason.current
       @test = Test.new(test_params)
       @test.review_season = ReviewSeason.current
-
+      @test.questions = questions_from_param
       respond_with @test do |format|
         if @test.save
           format.json { render :show }
@@ -36,8 +36,11 @@ class TestsController < AdminController
   end
 
   def update
+    @test.assign_attributes(test_params)
+    @test.questions.clear
+    @test.questions = questions_from_param
     respond_with @test do |format|
-      if @test.update(test_params)
+      if @test.save
         format.json { render :show }
       else
         format.json { render json: @test.errors, status: :unprocessable_entity }
@@ -98,7 +101,32 @@ class TestsController < AdminController
     @test = Test.find(params[:id])
   end
 
+  def questions_from_param
+    if question_params[:questions]
+      question_params[:questions].map do |q_param|
+        if q_param[:id]
+          qs = Question.where(id: q_param[:id])
+          if qs.exists?
+            first = qs.first
+            first.update(q_param)
+            first
+          else
+            Question.create(q_param.except(:id))
+          end
+        else
+          Question.create(q_param.except(:id))
+        end
+      end
+    else
+      []
+    end
+  end
+
   def test_params
-    params.require(:test).permit(:description, :date, :deadline, :timer, :random, questions: [:id, :text, :choice1, :choice2, :choice3, :choice4, :answer, :ratio])
+    params.require(:test).permit(:description, :date, :deadline, :timer, :random)
+  end
+
+  def question_params
+    params.require(:test).permit(questions: [:id, :text, :choice1, :choice2, :choice3, :choice4, :answer, :ratio])
   end
 end
