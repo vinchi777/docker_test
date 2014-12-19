@@ -204,9 +204,6 @@ GEM
       activesupport (>= 3.0, < 4.2)
       railties (>= 3.0, < 4.2)
       slim (~> 2.0)
-    spring (1.2.0)
-    spring-commands-cucumber (1.0.1)
-      spring (>= 0.9.1)
     sprockets (2.12.3)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -273,8 +270,6 @@ DEPENDENCIES
   simple_enum (~> 2.0.0)
   simplecov
   slim-rails
-  spring
-  spring-commands-cucumber
   thin
   tzinfo-data
   uglifier (>= 1.3.0)
