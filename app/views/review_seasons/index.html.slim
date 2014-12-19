@@ -42,17 +42,17 @@
               .season.range
                 label Season
                 span
-                  | {{r.season_start}}
+                  | {{r.season_start | date:'MMM d, yyyy'}}
                 label.to.light to
                 span
-                  | {{r.season_end}}
+                  | {{r.season_end | date:'MMM d, yyyy'}}
               .promo.range ng-show='r.promoStart'
                 label Promo
                 span
-                  | {{r.promo_start}}
+                  | {{r.promo_start | date:'MMM d, yyyy'}}
                 label.to.light to
                 span
-                  | {{r.promo_end}}
+                  | {{r.promo_end | date:'MMM d, yyyy'}}
               .discount
                 header: b Discount
                 .form-group
