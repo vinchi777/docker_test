@@ -15,9 +15,8 @@ html lang='en' ng-app='maxRevApp'
     == csrf_meta_tags
     == render 'layouts/metas'
   body
-    == render 'layouts/header'
-
     .admin-container
+      == render 'layouts/header'
       .admin-nav.col-md-2.col-sm-1
         - if can? :manage, :all
           ul.admin-nav.nav.nav-pills.nav-stacked.col-sm-12
@@ -45,6 +44,7 @@ html lang='en' ng-app='maxRevApp'
 
       .admin-content.col-md-10.col-md-offset-2.col-sm-11.col-sm-offset-1
         == yield
+      .admin-push
 
     == render 'layouts/admin_footer'
     = render 'layouts/flash'

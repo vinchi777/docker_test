@@ -1,23 +1,32 @@
 /***
  Site's variables
 *****/
+html,
 body {
   height: 100%;
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
 }
 .navbar.header .container.admin {
   width: 98%;
 }
 .admin-container {
+  min-height: 100%;
+  height: auto !important;
+  margin: 0 auto -70px;
+  /* the bottom margin is the negative value of the footer's height */
   position: relative;
   float: left;
   width: 100%;
-  min-height: 550px;
 }
 .admin-nav {
+  position: absolute;
   background: #4C4C4C;
   padding: 0;
-  position: absolute;
-  height: 100%;
+  top: 0;
+  left: 0;
+  bottom: 70px;
 }
 .admin-nav ul.admin-nav > li {
   float: left;
@@ -112,6 +121,7 @@ body {
   margin-top: -2px;
 }
 .admin-content {
+  margin-top: 60px;
   padding: 30px;
 }
 .admin-content header h2 {
@@ -125,6 +135,10 @@ body {
   background: url("<%= image_path 'search.svg' %>") no-repeat scroll 7px 6px;
   background-size: 17px;
   padding-left: 33px;
+}
+.admin-push {
+  height: 67px;
+  clear: both;
 }
 .count.listing {
   font-size: 14px;
