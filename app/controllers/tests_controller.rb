@@ -6,6 +6,7 @@ class TestsController < AdminController
 
   def index
     @tests = Test.all
+    @tests = @tests.select { |t| !t.deadline? } if params[:status] == 'ongoing'
     respond_with @tests
   end
 

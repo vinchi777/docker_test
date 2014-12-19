@@ -80,7 +80,7 @@
 ]
 
 @app.controller 'TestsCtrl', ['$scope', '$http', ($scope, $http) ->
-  r = $http.get "/tests.json"
+  r = $http.get "/tests.json?status=ongoing"
   r.success (d) ->
     $scope.tests = d
 ]
