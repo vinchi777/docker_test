@@ -225,6 +225,21 @@ Then /I can see students score/ do
   end
 end
 
+Given /a test from last season exists/ do
+  @test = TestFactory.test(false, true, true)
+  @test.review_season = ReviewSeason.previous
+  @test.save
+end
+
+Then /a duplicated test should be created/ do
+  expect(Test.count).to eq 2
+end
+
+Then /I should be on the duplicated test page/ do
+  dup = ReviewSeason.current.tests.first
+  expect(current_path).to eq test_path(dup)
+end
+
 def answer(sheet, pass)
   sheet.answers.each do |a|
     if pass

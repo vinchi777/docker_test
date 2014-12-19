@@ -56,6 +56,12 @@
         for v in vs
           $scope.errors.push "#{toHuman(k)} #{v}" unless "#{toHuman(k)} #{v}" in $scope.errors
 
+  $scope.copyTest = ->
+    console.log($scope.test.id)
+    p = $http.post "/tests/#{$scope.test.id}/copy.json"
+    p.success (d) ->
+      window.location = d.url
+
   $scope.selectStudents = ->
     $scope.$broadcast 'student_modal_show', $scope.test.review_season
 

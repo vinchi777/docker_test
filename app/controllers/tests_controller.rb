@@ -1,5 +1,5 @@
 class TestsController < AdminController
-  before_action :set_test, only: [:show, :edit, :update, :destroy, :results]
+  before_action :set_test, only: [:show, :update, :destroy, :results, :copy]
 
   layout 'tests'
   respond_to :html, :json
@@ -19,7 +19,7 @@ class TestsController < AdminController
   end
 
   def create
-    if ReviewSeason.count > 0
+    if ReviewSeason.current
       @test = Test.new(test_params)
       @test.review_season = ReviewSeason.current
 
@@ -68,6 +68,29 @@ class TestsController < AdminController
 
   def results
     @students = @test.answer_sheets.map { |a| a.student }
+  end
+
+  def copy
+    if @test.can_copy?
+      current = ReviewSeason.current
+      t = Test.new(
+          description: @test.description,
+          date: Date.today,
+          deadline: current.season_end.to_time,
+          timer: @test.timer,
+          random: @test.random,
+          review_season: current,
+          questions: @test.questions
+      )
+      if t.save
+        @test = t
+        render :show
+      else
+        render json: {}, status: :unprocessable_entity
+      end
+    else
+      render json: {}, status: :unprocessable_entity
+    end
   end
 
   private

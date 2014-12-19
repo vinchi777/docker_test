@@ -86,29 +86,10 @@ class Test
   def self.finished
     Test.all.select { |t| t.deadline? }
   end
-end
 
-class Question
-  include Mongoid::Document
-
-  field :text, type: String
-  validates_presence_of :text
-
-  field :choice1, type: String
-  field :choice2, type: String
-  field :choice3, type: String
-  field :choice4, type: String
-
-  field :answer, type: Integer
-  validate :has_answer
-
-  def has_answer
-    if answer.nil? || answer < 0 || answer > 3
-      errors.add :answer, 'not found'
-    end
+  def can_copy?
+    current = ReviewSeason.current
+    t = Test.where(review_season: current.id, description: description)
+    current && review_season != current && t.empty?
   end
-
-  field :ratio, type: String
-
-  embedded_in :test
 end

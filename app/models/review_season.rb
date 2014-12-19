@@ -61,10 +61,19 @@ class ReviewSeason
     end
   end
 
+  def self.previous
+    if ReviewSeason.count > 0
+      prev = ReviewSeason.all.select { |r| r.season_end < Date.today }
+      prev.sort_by { |r| r.season_end }.last unless prev.empty?
+    end
+  end
+
   def self.current
     if ReviewSeason.exists?
-      last = ReviewSeason.all.sort_by { |r| r.season_start }.last
-      last if last.season_start <= Date.today && last.season_end >= Date.today
+      last = ReviewSeason.all.select do |r|
+        r.season_start <= Date.today && r.season_end >= Date.today
+      end
+      last.first
     end
   end
 

@@ -5,6 +5,7 @@ json.deadline @test.deadline.strftime('%b %e, %Y %I:%M %p')
 json.is_deadline @test.deadline?
 json.timer @test.timer
 json.random @test.random
+json.can_copy @test.can_copy?
 json.review_season do
   json.id @test.review_season.id.to_s
   json.season @test.review_season.season

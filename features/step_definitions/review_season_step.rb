@@ -46,3 +46,31 @@ Then /^I should( not)? see the review season/ do |arg|
   expect(ReviewSeason.count).to eq count
   expect(all('.review-season', count: count).count).to eq count
 end
+
+Given /past review season exists/ do
+  ReviewSeason.create!(
+      season: 'Last Season',
+      season_start: Date.today - 2.months,
+      season_end: Date.today - 1.month,
+      first_timer: 17000,
+      repeater: 10000,
+      full_review: 17000,
+      double_review: 22000,
+      coaching: 7000,
+      reservation: 3000
+  )
+end
+
+Given /current review season exists/ do
+  ReviewSeason.create!(
+      season: 'This Season',
+      season_start: Date.today - 1.week,
+      season_end: Date.today + 3.weeks,
+      first_timer: 17000,
+      repeater: 10000,
+      full_review: 17000,
+      double_review: 22000,
+      coaching: 7000,
+      reservation: 3000
+  )
+end

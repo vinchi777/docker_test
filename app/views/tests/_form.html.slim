@@ -21,6 +21,7 @@ form
           span ng-hide='publishing' Publish
           span ng-show='publishing' Publishing...
         a.btn.btn-primary href='{{test.results_url}}' ng-show='test.is_deadline' See Results
+        .photocopy ng-show='test.can_copy': a href='#' ng-click='copyTest()' Copy to Current Season
     .row
       .col-md-4.auto-width
         i.fa.fa-clock-o

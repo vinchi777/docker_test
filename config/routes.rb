@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       patch 'publish'
       get 'results'
       get 'students'
+      post 'copy'
     end
   end
 
