@@ -4,7 +4,7 @@ module StudentsHelper
   end
 
   def sorted_enrollments
-    @student.enrollments.sort { |a, b| b.season_start <=> a.season_start }
+    @student.enrollments.sort { |a, b| b.review_season.season_start <=> a.review_season.season_start }
   end
 
   def grades_in_enrollment(enrollment)
