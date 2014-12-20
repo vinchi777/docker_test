@@ -52,23 +52,11 @@
 <div class="container">
   <header>
     <%= link_to root_url, target: '_blank' do %>
-       MaxRevOne
+        MaxRevOne
     <% end %>
   </header>
   <div class="content">
-    <h2>
-      Hello <span><%= @user.person.first_name + ' ' + @user.person.last_name+ '!' %></span>
-    </h2>
-
-    <p>
-      You can confirm your account email through this
-      <span> <%= link_to 'link', user_confirmation_url(confirmation_token: @token) %></span>
-    </p>
-
-    <p>
-      Your password is
-      <b><%= @user.password %></b>
-    </p>
+    <%= yield %>
   </div>
 
   <footer>
