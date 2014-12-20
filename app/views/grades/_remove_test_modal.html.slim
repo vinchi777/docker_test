@@ -1,0 +1,10 @@
+.delete-confirm.modal.fade role='dialog' id='confirm-{{t.id}}' tabindex='-1' aria-hidden='true'
+  .modal-dialog
+    .modal-content
+      .modal-header
+        h4.modal-title Confirmation
+      .modal-body
+        span Are you sure you want to remove this test?
+      .modal-footer
+        button.btn.btn-default data-dismiss='modal' No
+        a.remove.btn.btn-primary href='#' ng-click='remove(t)' Yes

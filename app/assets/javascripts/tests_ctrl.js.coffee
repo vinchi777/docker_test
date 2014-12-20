@@ -83,4 +83,15 @@
   r = $http.get "/tests.json?status=ongoing"
   r.success (d) ->
     $scope.tests = d
+
+  $scope.remove = (t) ->
+    p = $http.delete "/tests/#{t.id}.json"
+    p.success (d) ->
+      confirm = $("#confirm-#{t.id}")
+      confirm.on 'hidden.bs.modal', ->
+        idx = $scope.tests.indexOf t
+        if idx != -1
+          $scope.$apply ->
+            $scope.tests.splice(idx, 1)
+      confirm.modal('hide')
 ]

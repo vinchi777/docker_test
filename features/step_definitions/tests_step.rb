@@ -99,9 +99,14 @@ Then /other students should(.*?) have answer sheets/ do |arg|
   end
 end
 
-Then /I should see the test/ do
-  expect(page).to have_content @test.description
-  expect(page).to have_content @test.date.strftime('%b %-d, %Y')
+Then /I should( not)? see the test/ do |neg|
+  if neg
+    expect(page).not_to have_css "#test-#{@test.id}"
+  else
+    expect(page).to have_css "#test-#{@test.id}"
+    expect(page).to have_content @test.description
+    expect(page).to have_content @test.date.strftime('%b %-d, %Y')
+  end
 end
 
 Given /I am enrolled for the current season/ do
@@ -250,6 +255,15 @@ end
 
 Given /the test is duplicated to the current season/ do
   @test.copy
+end
+
+When /I click on the remove test button/ do
+  find("#test-#{@test.id} a.remove", match: :first).click
+end
+
+Then /the test should( not)? exist/ do |neg|
+  expect(Test.empty?).to be false unless neg
+  expect(Test.empty?).to be true if neg
 end
 
 def answer(sheet, pass)

@@ -21,6 +21,8 @@
               h2
                 | {{t.questions_length}}
               span: ng-pluralize count='t.questions_length' when="{'0': 'item', '1': 'item', 'other': 'items'}"
+          a.remove href='#' data-toggle='modal' data-target='#confirm-{{t.id}}'
+            i.fa.fa-trash
         .description
           h6
             | {{t.description}}
@@ -29,6 +31,7 @@
           .results
             a href='{{t.results_url}}' ng-show='{{t.is_deadline}}' Results
 
+        = render 'remove_test_modal'
 
   .grades-container
     - @review_seasons.each do |review_season|
