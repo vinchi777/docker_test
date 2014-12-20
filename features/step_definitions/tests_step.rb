@@ -233,12 +233,23 @@ Given /a test from last season exists/ do
 end
 
 Then /a duplicated test should be created/ do
-  expect(Test.count).to eq 2
+  current = ReviewSeason.current
+  dup = current.tests.first
+  expect(dup).not_to be_nil
+  expect(dup.description).to eq @test.description
+  expect(dup.date).to eq Date.today
+  expect(dup.deadline).to eq current.season_end.to_time
+  expect(dup.timer).to eq @test.timer
+  expect(dup.questions).to match_array(@test.questions)
 end
 
 Then /I should be on the duplicated test page/ do
   dup = ReviewSeason.current.tests.first
   expect(current_path).to eq test_path(dup)
+end
+
+Given /the test is duplicated to the current season/ do
+  @test.copy
 end
 
 def answer(sheet, pass)

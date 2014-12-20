@@ -1,9 +1,9 @@
 class ReviewSeasonFactory
-  def self.createOngoing
+  def self.create_current
     create(Date.today - 1.day, Date.today + 1.month)
   end
 
-  def self.createOld
+  def self.create_previous
     create(Date.today - 1.month, Date.today - 1.day)
   end
 

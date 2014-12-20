@@ -102,4 +102,22 @@ class Test
       false
     end
   end
+
+  # Copy this test to the current review season
+  # @return [ persisted document, nil]
+  def copy
+    if can_copy?
+      current = ReviewSeason.current
+      t = Test.create(
+          description: description,
+          date: Date.today,
+          deadline: current.season_end.to_time,
+          timer: timer,
+          random: random,
+          review_season: current,
+          questions: questions
+      )
+      t if t.persisted?
+    end
+  end
 end

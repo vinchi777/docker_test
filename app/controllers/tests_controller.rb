@@ -75,23 +75,10 @@ class TestsController < AdminController
   end
 
   def copy
-    if @test.can_copy?
-      current = ReviewSeason.current
-      t = Test.new(
-          description: @test.description,
-          date: Date.today,
-          deadline: current.season_end.to_time,
-          timer: @test.timer,
-          random: @test.random,
-          review_season: current,
-          questions: @test.questions
-      )
-      if t.save
-        @test = t
-        render :show
-      else
-        render json: {}, status: :unprocessable_entity
-      end
+    t = @test.copy
+    if t
+      @test = t
+      render :show
     else
       render json: {}, status: :unprocessable_entity
     end
