@@ -17,27 +17,31 @@ html lang='en' ng-app='maxRevApp'
   body
     .admin-container
       == render 'layouts/header'
-      .admin-nav.col-md-2.col-sm-1
+      .admin-nav.col-md-2.col-xs-1
         - if can? :manage, :all
-          ul.admin-nav.nav.nav-pills.nav-stacked.col-sm-12
+          ul.admin-nav.nav.nav-pills.nav-stacked.col-xs-12
             li.students class=('active' if current_page? controller: 'students')
               = link_to students_path
-                .ico = image_tag 'students-ico.svg'
+                .ico.visible-lg.visible-md = image_tag 'students-ico.svg'
+                .ico.lg.visible-sm.visible-xs = image_tag 'students-ico.svg'
                 .title.name.visible-lg.visible-md Students
               - unless @student.nil? || @student.new_record?
                 = render 'layouts/student_nav'
 
             li.review-seasons class=('active' if @page =='review-seasons')
               = link_to review_seasons_path
-                .ico = image_tag 'review-season-ico.svg'
+                .ico.visible-lg.visible-md = image_tag 'review-season-ico.svg'
+                .ico.lg.visible-sm.visible-xs = image_tag 'review-season-ico.svg'
                 .title.name.visible-lg.visible-md Review Seasons
             li.user class=('active' if @page == 'users')
               = link_to users_path
-                .ico = image_tag 'users-ico.svg'
+                .ico.visible-lg.visible-md = image_tag 'users-ico.svg'
+                .ico.lg.visible-sm.visible-xs = image_tag 'users-ico.svg'
                 .title.visible-lg.visible-md Users
             li.user class=('active' if @page == 'grades')
               = link_to grades_path
-                .ico = image_tag 'grades-test.svg'
+                .ico.visible-lg.visible-md = image_tag 'grades-test.svg'
+                .ico.lg.visible-sm.visible-xs = image_tag 'grades-test.svg'
                 .title.visible-lg.visible-md Grades and Tests
         - else
           = render 'layouts/student_nav'

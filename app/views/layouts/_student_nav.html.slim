@@ -8,14 +8,17 @@ ul.student.nav.nav-pills.nav-stacked
       div = @student.first_name
   li.profile.attr class=('active' if @page == 'show')
     = link_to @student
-      .ico = image_tag 'profile-ico.svg'
+      .ico.visible-lg.visible-md = image_tag 'students-ico.svg'
+      .ico.lg.visible-sm.visible-xs = image_tag 'students-ico.svg'
       .title.visible-lg.visible-md Profile
   - if can? :manage, StudentInvoice
     li.payment.attr class=('active' if @page == 'payment')
       = link_to student_invoices_path(id: @student.id)
-        .ico = image_tag 'payment-ico.svg'
+        .ico.visible-lg.visible-md = image_tag 'payment-ico.svg'
+        .ico.lg.visible-sm.visible-xs = image_tag 'payment-ico.svg'
         .title.visible-lg.visible-md Payment
   li.grades.attr class=('active' if @page == 'grades_and_tests')
     = link_to grades_tests_student_path(@student)
-      .ico = image_tag 'grades-test.svg'
+      .ico.visible-lg.visible-md = image_tag 'grades-test.svg'
+      .ico.lg.visible-sm.visible-xs = image_tag 'grades-test.svg'
       .title.visible-lg.visible-md Grades and Tests
