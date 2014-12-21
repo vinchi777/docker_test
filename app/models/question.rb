@@ -20,5 +20,5 @@ class Question
 
   field :ratio, type: String
 
-  belongs_to :test
+  has_and_belongs_to_many :test
 end
