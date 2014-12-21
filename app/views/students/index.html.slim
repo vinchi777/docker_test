@@ -4,12 +4,12 @@
   header
     h2 Students
     .row
-      .search.col-md-8
+      .search.col-md-8.col-xs-8
         form.form-inline.row ng-submit='search()'
-          .form-group.col-md-12
+          .form-group.col-xs-12
             input.form-control type="search" placeholder="Search for name, school or address of the students" ng-model='q' name='q' value=params[:q]
 
-      .col-md-2.col-md-offset-2
+      .col-xs-4.col-md-offset-2.col-md-2
         = link_to 'New Student', new_student_path, class: 'btn btn-primary pull-right'
 
   .filter
@@ -37,44 +37,50 @@
       div No result found
 
     .student.item.row ng-repeat='student in students' ng-hide='loading'
-      .profile-pic.col-md-1
+      .profile-pic.col-xs-1
         a href='/students/{{student.id}}'
           img.profile ng-src='{{student.profile_pic}}' ng-show='profile_pic_exists(student)'
           img.profile src=(image_url 'user.png') ng-hide='profile_pic_exists(student)'
-      .info.col-md-3
-        a href='/students/{{student.id}}'
-          .name
-            | {{student.last_name}}, {{student.first_name}} {{student.middle_initial}}
-          .email
-            | {{student.email}}
-          .school
-            | {{student.last_attended}}
-          .address
-            | {{student.address}}
-      .account.col-md-1
-        a.no-user href='#' data-toggle='modal' data-target='#confirm-user-modal' ng-click='setForUser(student)' ng-show='student.user_id == null'
-          i.fa.fa-user
-        a.has-user href='/users?q={{student.email}}' ng-hide='student.user_id == null'
-          i.fa.fa-user
+      .col-lg-11.col-xs-9
+        .info.col-lg-5.col-md-12
+          a href='/students/{{student.id}}'
+            .name
+              | {{student.last_name}}, {{student.first_name}} {{student.middle_initial}}
+            .email
+              | {{student.email}}
+            .clearfix
+            .school
+              | {{student.last_attended}}
+            .clearfix.visible-lg-block
+            .address
+              | {{student.address}}
 
-      .enroll.col-md-4
-        div ng-switch='student.enrollment_status'
-          span ng-switch-when='enrolled'
-            i.fa.fa-lg.fa-check
-            | Enrolled for {{student.current_season}}
-          span ng-switch-when='enrolling'
-            i.fa.fa-lg.fa-clock-o
-            | Enrolling for {{student.current_season}}
-            a.btn.btn-primary.btn-confirm href='' ng-click='confirm(student)'
-              | Confirm
-      .payment.col-md-2
-        div ng-show='student.balance > 0'
-          i.fa.fa-lg.fa-money
-          span.amount
-            | {{student.balance | currency:"Php "}}
-      .actions.col-md-1
-        a href='#' data-toggle='modal' data-target=('#confirm-{{student.id}}')
-          i.fa.fa-lg.fa-trash-o
+        .clearfix.visible-xs-block.visible-sm-block.visible-md-block
+
+        .enroll.col-xs-4
+          div ng-switch='student.enrollment_status'
+            span ng-switch-when='enrolled'
+              i.fa.fa-lg.fa-check
+              | Enrolled for {{student.current_season}}
+            span ng-switch-when='enrolling'
+              i.fa.fa-lg.fa-clock-o
+              | Enrolling for {{student.current_season}}
+              a.btn.btn-primary.btn-confirm href='' ng-click='confirm(student)'
+                | Confirm
+        .payment.col-xs-2
+          div ng-show='student.balance > 0'
+            i.fa.fa-lg.fa-money
+            span.amount
+              | {{student.balance | currency:"Php "}}
+
+        .clearfix.visible-xs-block.visible-md-block.visible-sm-block
+        .actions.col-sm-1.col-xs-2
+          a.user.no-user href='#' data-toggle='modal' data-target='#confirm-user-modal' ng-click='setForUser(student)' ng-show='student.user_id == null'
+            i.fa.fa-user
+          a.user.has-user href='/users?q={{student.email}}' ng-hide='student.user_id == null'
+            i.fa.fa-user
+          a.remove href='#' data-toggle='modal' data-target=('#confirm-{{student.id}}')
+            i.fa.fa-lg.fa-trash-o
 
       .delete-confirm.modal.fade role='dialog' id=('confirm-{{student.id}}') tabindex='-1' aria-hidden='true'
         .modal-dialog

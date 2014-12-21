@@ -16,7 +16,7 @@
 }
 
 #students {
-
+    min-width: 360px;
     .filter .form-group {
         margin-top: 10px;
         margin-right: 10px;
@@ -30,35 +30,51 @@
         height: 30px;
         padding-top: 3px;
     }
-
+    .students .student {
+        .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6,
+        .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
+            padding-left: 0;
+            padding-right: 0;
+        }
+        padding-left: 10px;
+        padding-right: 10px;
+    }
     .students .student .profile-pic {
         width: 68px;
+        min-width: 68px;
     }
 
     .students .student .info {
-        width: 39%;
-
+        padding-left: 0;
         .name {
             color: #45B29D;
             font-family: "Signika Semibold";
-            font-size: 15px;
             float: left;
+            font-size: 15px;
             margin-right: 6px;
         }
         .email {
             font-size: 14px;
             font-style: italic;
             color: darkgray;
+            float: left;
+            margin-right: 6px;
+
         }
         .school {
             color: #323232;
             font-family: 'Signika Light';
             font-size: 14px;
+            float: left;
+            margin-right: 6px;
+
         }
         .address {
             color: #999999;
             font-family: 'Signika Light';
             font-size: 14px;
+            float: left;
+            margin-right: 6px;
         }
     }
 
@@ -70,14 +86,8 @@
         color: #5f5f5f;
     }
 
-    .students .student .account,
-    .students .student .actions {
-        padding: 0;
-        width: 3.3%;
-    }
-
     .students .student .enroll {
-        width: 318px;
+        min-width: 280px;
     }
 
     .students .student .payment i.fa.fa-money {
@@ -85,7 +95,7 @@
     }
 
     .students .student .payment {
-        width: 170px;
+        min-width: 140px;
     }
 
     .students .student .payment .amount {
@@ -101,6 +111,44 @@
     .students .student .payment,
     .students .student .actions {
         line-height: 50px;
+    }
+
+    @media (min-width: 768px) {
+        .students .student .actions {
+            float: right;
+        }
+    }
+
+    @media (max-width: 1200px) {
+        .students .student .actions {
+            float: left;
+            height: 35px;
+            line-height: 53px;
+        }
+
+        .students .student .enroll,
+        .students .student .payment {
+            line-height: 35px;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .students .student .payment {
+            line-height: 14px;
+            height: 17px;
+            clear: both;
+        }
+    }
+
+    .students .student .actions {
+        margin-right: 0;
+        width: 58px;
+    }
+
+    .students .student .actions a {
+        display: block;
+        margin-left: 6px;
+        float: left;
     }
 }
 
@@ -205,3 +253,6 @@
     }
 }
 
+footer.admin {
+    min-width: 465px;
+}
