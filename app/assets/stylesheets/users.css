@@ -1,9 +1,6 @@
 /***
  Site's variables
 *****/
-#users .users .user {
-  height: 55px;
-}
 #users .users .user .name {
   color: #45B29D;
   font-family: "Signika Semibold";
@@ -22,6 +19,7 @@
   margin-top: 2px;
 }
 #users .users .user .confirm {
+  min-width: 290px;
   margin-top: 6px;
 }
 #users .users .user .confirm > span {
@@ -29,9 +27,15 @@
   font-weight: bold;
 }
 #users .users .user .actions {
-  width: 147px;
-  float: right;
   margin-top: 6px;
+  width: 165px;
+  padding-left: 15px;
+}
+@media (max-width: 767px) {
+  #users .users .user .actions {
+    margin-top: 12px;
+    float: left;
+  }
 }
 #users .users .user .actions .password {
   float: left;
