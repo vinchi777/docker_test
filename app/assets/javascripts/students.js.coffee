@@ -15,6 +15,10 @@ $ ->
 
   $('#students .loading').height($('.admin-container').height() - 285)
 
+  $('a.upload-link').click (e) ->
+    e.preventDefault()
+    $('#student_profile_pic').trigger 'click'
+
 $(document).on 'change', 'input[type="file"].preview', ->
   preview_img this
 
