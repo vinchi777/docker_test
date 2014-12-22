@@ -13,8 +13,8 @@
     .no-tests ng-hide='sheets.length > 0'
       | No ongoing tests found.
 
-    .tests.row ng-show='sheets.length > 0'
-      .test.col-md-2 ng-repeat='t in sheets' id='sheet-{{t.id}}'
+    .tests ng-show='sheets.length > 0'
+      .test ng-repeat='t in sheets' id='sheet-{{t.id}}'
         a href='/answer_sheets/{{t.id}}'
           .summary ng-class='{done: t.submitted}'
             .timer ng-show='t.timer == null || t.timer == 0' = image_tag 'timer-off.svg', class: 'timer-off'
