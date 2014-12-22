@@ -57,6 +57,8 @@
 
     .tests-container {
         margin-bottom: 40px;
+        float: left;
+        width: 100%;
     }
 
     .tests-container .no-tests {
@@ -84,7 +86,6 @@
 
     .new-test-wrapper, .new-grade-wrapper {
         padding-right: 0;
-        margin-right: -28px;
     }
 
     .new-test {
@@ -99,6 +100,10 @@
     .test {
         text-align: center;
         margin-bottom: 15px;
+        width: 105px;
+        float: left;
+        margin-right: 20px;
+
         .summary {
             background: url("<%= asset_path 'test.svg' %>") no-repeat center top;
             height: @height;

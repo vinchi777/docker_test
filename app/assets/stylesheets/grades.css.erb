@@ -7,6 +7,8 @@
 }
 #grades-tests .tests-container {
   margin-bottom: 40px;
+  float: left;
+  width: 100%;
 }
 #grades-tests .tests-container .no-tests {
   color: darkgray;
@@ -31,7 +33,6 @@
 #grades-tests .new-test-wrapper,
 #grades-tests .new-grade-wrapper {
   padding-right: 0;
-  margin-right: -28px;
 }
 #grades-tests .new-test .injected-svg {
   height: 120px;
@@ -42,6 +43,9 @@
 #grades-tests .test {
   text-align: center;
   margin-bottom: 15px;
+  width: 105px;
+  float: left;
+  margin-right: 20px;
 }
 #grades-tests .test .summary {
   background: url("<%= asset_path 'test.svg' %>") no-repeat center top;
