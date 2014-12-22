@@ -23,6 +23,11 @@
 #review-seasons .review-season {
   background: #F9F9F9;
 }
+@media (max-width: 767px) {
+  #review-seasons .season div {
+    clear: left;
+  }
+}
 #review-seasons .range * {
   float: left;
 }
@@ -59,11 +64,19 @@
   font-weight: normal;
   color: #333;
 }
-#review-seasons .review-season .discount {
+#review-seasons .review-season .discount,
+#review-seasons .review-season .package {
   margin-top: 10px;
 }
+#review-seasons .review-season .footer {
+  margin-top: 10px;
+}
+#review-seasons .review-season .footer .stat {
+  float: left;
+  margin-right: 10px;
+}
 #review-seasons .review-season .actions {
-  margin-top: 104px;
+  float: right;
 }
 #review-seasons .review-season .actions i.fa {
   color: #A5A5A5;

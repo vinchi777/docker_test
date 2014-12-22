@@ -32,6 +32,12 @@
     background: #F9F9F9;
   }
 
+  @media (max-width: 767px) {
+    .season div {
+      clear: left
+    }
+  }
+
   .range * {
     float: left;
   }
@@ -77,12 +83,20 @@
       color: #333;
     }
 
-    .discount {
+    .discount, .package {
       margin-top: 10px;
     }
 
+    .footer {
+      margin-top: 10px;
+    }
+    .footer .stat {
+      float: left;
+      margin-right: 10px;
+    }
+
     .actions {
-      margin-top: 104px;
+      float: right;
     }
 
     .actions i.fa {

@@ -25,69 +25,69 @@
       .panel-body
         .row
           form role='form'
-            .col-lg-2
-              div: a href='/students?season={{r.id}}&status=2' target='_blank'
+            .col-xs-12
+              .season.range
+                label Season
+                div
+                  span
+                    | {{r.season_start | date:'MMM d, yyyy'}}
+                  label.to.light to
+                  span
+                    | {{r.season_end | date:'MMM d, yyyy'}}
+                  .promo.range ng-show='r.promoStart'
+                    label Promo
+                    span
+                      | {{r.promo_start | date:'MMM d, yyyy'}}
+                    label.to.light to
+                    span
+                      | {{r.promo_end | date:'MMM d, yyyy'}}
+            .discount.col-sm-6.col-xs-10
+              header: b Discount
+              .form-group
+                label.light Repeater
+                .currency ₱
+                .value
+                  | {{r.repeater|currency:''}}
+              .form-group
+                label.light First Timer
+                .currency ₱
+                .value
+                  | {{r.first_timer|currency:''}}
+            .clearfix.visible-xs-block
+            .package.col-sm-6.col-xs-10
+              header: b Pricing Package
+              .form-group
+                label.light Full Review
+                .currency ₱
+                .value
+                  | {{r.full_review|currency:''}}
+              .form-group
+                label.light Double Review
+                .currency ₱
+                .value
+                  | {{r.double_review|currency:''}}
+              .form-group
+                label.light Coaching
+                .currency ₱
+                .value
+                  | {{r.coaching|currency:''}}
+              .form-group
+                label.light Reservation
+                .currency ₱
+                .value
+                  | {{r.reservation|currency:''}}
+            .footer.col-xs-12
+              .stat: a href='/students?season={{r.id}}&status=2' target='_blank'
                 | {{r.enrolled}}
                 ng-pluralize< count='r.enrolled' when="{'0': 'student', '1': 'student', 'other': 'students'}"
-              div: a href='/students?season={{r.id}}&status=1' target='_blank'
+              .stat: a href='/students?season={{r.id}}&status=1' target='_blank'
                 | {{r.enrolling}}
                 ng-pluralize< count='r.enrolling' when="{'0': 'enrollee', '1': 'enrollee', 'other': 'enrollees'}"
               .actions
-                a href='#' id='remove-{{r.id}}' data-toggle='modal' data-target=('#confirm-{{r.id}}')
-                  i.fa.fa-trash
                 a href='#' id='update-{{r.id}}' data-target='#review-season-modal' ng-click='editReviewSeason(r)' data-toggle='modal'
                   i.fa.fa-pencil-square-o
-
-            .col-lg-6
-              .season.range
-                label Season
-                span
-                  | {{r.season_start | date:'MMM d, yyyy'}}
-                label.to.light to
-                span
-                  | {{r.season_end | date:'MMM d, yyyy'}}
-              .promo.range ng-show='r.promoStart'
-                label Promo
-                span
-                  | {{r.promo_start | date:'MMM d, yyyy'}}
-                label.to.light to
-                span
-                  | {{r.promo_end | date:'MMM d, yyyy'}}
-              .discount
-                header: b Discount
-                .form-group
-                  label.light Repeater
-                  .currency ₱
-                  .value
-                    | {{r.repeater|currency:''}}
-                .form-group
-                  label.light First Timer
-                  .currency ₱
-                  .value
-                    | {{r.first_timer|currency:''}}
-            .col-lg-4
-              .package
-                header: b Pricing Package
-                .form-group
-                  label.light Full Review
-                  .currency ₱
-                  .value
-                    | {{r.full_review|currency:''}}
-                .form-group
-                  label.light Double Review
-                  .currency ₱
-                  .value
-                    | {{r.double_review|currency:''}}
-                .form-group
-                  label.light Coaching
-                  .currency ₱
-                  .value
-                    | {{r.coaching|currency:''}}
-                .form-group
-                  label.light Reservation
-                  .currency ₱
-                  .value
-                    | {{r.reservation|currency:''}}
+                a href='#' id='remove-{{r.id}}' data-toggle='modal' data-target=('#confirm-{{r.id}}')
+                  i.fa.fa-trash
 
       .delete-confirm.modal.fade role='dialog' id=('confirm-{{r.id}}') tabindex='-1' aria-hidden='true'
         .modal-dialog
