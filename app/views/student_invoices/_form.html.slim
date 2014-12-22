@@ -1,85 +1,34 @@
-.invoice.panel.col-lg-6 ng-repeat='i in invoices' id='invoice-{{i.id}}'
-  .panel-title
-    .row
-      .package.col-lg-6
-        | {{i.package}}
-      .balance.col-lg-6
-        .pull-right
-          | {{i.amount | currency:'Php '}}
-    .row
-      .season.col-lg-6
-        | {{i.review_season.season}}
-      .description.col-lg-6
-        .pull-right
-          | {{i.description}}
-  .panel-body
-    .error.panel ng-show='i.transactionErrors.length > 0'
-      ul
-        li ng-repeat='e in i.transactionErrors'
-          | {{e}}
-    .head
-      .date Date
-      .or OR No.
-      .method Method
-      .amount Amount
-    .transaction.data-container ng-repeat='t in i.transactions'
-      .data
-        .date
-          | {{t.date}}
-        .or
-          | {{t.or_no}}&nbsp;
-        .method
-          | {{t.method}}&nbsp;
-        .amount
-          | {{t.amount | currency:''}}
-      .action
-        a.remove-transaction href='#' data-toggle='modal' data-target=('#confirm-tr-{{t.id}}')
-          i.fa.fa-trash
-
-      .delete-confirm-transaction.modal.fade role='dialog' id=('confirm-tr-{{t.id}}') tabindex='-1' aria-hidden='true'
-        .modal-dialog
-          .modal-content
-            .modal-header
-              h4.modal-title Confirmation
-            .modal-body
-              span Are you sure you want to remove this transaction?
-            .modal-footer
-              a.btn.btn-default href='#' ng-click='removeTransaction(i,t)' Yes
-              button.btn.btn-primary data-dismiss='modal' No
-
-    .add
-      form.new-transaction ng-submit='saveTransaction(i)' ng-show='i.showTransaction'
-        .date
-          input.form-control.date-picker.required name='transaction[date]' ng-model='i.transaction.date' data-date-format='YYYY-MM-DD'
-        .or
-          input.form-control.required name='transaction[or_no]' ng-model='i.transaction.or_no'
-        .method
-          input.form-control.required name='transaction[method]' ng-model='i.transaction.method'
-        .amount
-          input.peso.form-control.required name='transaction[amount]' ng-model='i.transaction.amount'
-        input.hide.save-transaction type='submit' value='Save Transaction'
-      .action  ng-show='i.showTransaction': a href='#' ng-click='hideTransaction(i)': i.fa.fa-trash
-      a class='add-transaction' href='#' ng-hide='i.showTransaction' ng-click='showTransaction(i)' Add Transaction
-
-  .panel-footer
-    .trash
-      a id='remove-{{i.id}}' href='#' data-toggle='modal' data-target=('#confirm-{{i.id}}')
-        i.fa.fa-trash
-
-    .text Balance
-    .amount: b
-      | {{balance(i) |currency:'Php '}}
-
-  .delete-confirm.modal.fade role='dialog' id=('confirm-{{i.id}}') tabindex='-1' aria-hidden='true'
-    .modal-dialog
-      .modal-content
+#invoice-modal.modal.fade
+  .modal-dialog
+    .modal-content
+      form ng-submit=('createInvoice("' + student_invoices_path(@payment) + '")')
         .modal-header
-          h4.modal-title Confirmation
+          button.close type='button' data-dismiss='modal': span aria-hidden='true' &times;
+          h4.modal-title New Invoice
         .modal-body
-          span Are you sure you want to remove this invoice?
+          .error.panel ng-show='invoiceErrors.length > 0'
+            ul
+              li ng-repeat='e in invoiceErrors'
+                | {{e}}
+          .form-group.package
+            label Package
+            input.form-control.required name='invoice[package]' type='text' ng-model='invoice.package'
+          .form-group.description
+            label Description
+            input.form-control type='text' name='invoice[description]' ng-model='invoice.description'
+          .form-group.season
+            label Review Season
+            select.form-control.required name='invoice[season]' ng-model='invoice.review_season' ng-options='r.season for r in reviewSeasons'
+          .form-group.amount
+            label Amount
+            input.form-control.required.text-right type='text' name='invoice[amount]' ng-model='invoice.amount'
+          .form-group.discount
+            label Discount
+            input.form-control type='text' name='invoice[discount]' ng-model='invoice.discount'
         .modal-footer
-          a.btn.btn-default href='#' ng-click='remove(i)' Yes
-          button.btn.btn-primary data-dismiss='modal' No
-
-  javascript:
-    bindDatePicker()
+          .total
+            .value
+              | {{total(invoice) | currency:'Php '}}
+            .text TOTAL
+          .actions
+            input.add-invoice.btn.btn-primary ng-class='addInvoiceClass' type='submit' value='Add Invoice'

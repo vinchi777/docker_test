@@ -3,9 +3,9 @@
 }
 #student-payment .invoice {
   padding-left: 0;
-  padding-right: 0;
-  margin-right: 15px;
-  width: 47%;
+  padding-right: 15px;
+}
+#student-payment .invoice .invoice-inner {
   background: #F9F9F9;
 }
 #student-payment .invoice:hover .trash a {
