@@ -14,8 +14,8 @@ Feature: List of founders, reviewers and students for public viewing
     * I click the "Founders" link
     Then I should see the following founders
       | Name                          | Position                                           |
-      | Rommel D. Capungcol           | President                                          |
-      | Jose Van P. Tan               | Vice President and Treasurer                       |
+      | Dr. Rommel D. Capungcol, M.D. | President                                          |
+      | Jose Van P. Tan, RN           | Vice President and Treasurer                       |
       | Mariel C. Villaflor-Capungcol | Co-Owner                                           |
       | Christine Almedilla-Pablico   | Review Specialist and Head of Accounting           |
       | Cesar Czarbo P. Trani         | Review Specialist and Head of Marketing            |
