@@ -60,12 +60,12 @@ Rails.application.configure do
   # Precompile additional assets.
   # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
   # config.assets.precompile += %w( search.js )
-  config.action_mailer.default_url_options = {host: 'maxrevone.herokuapp.com'}
+  config.action_mailer.default_url_options = {host: 'maxrevone.com'}
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
       address: 'smtp.gmail.com',
       port: 587,
-      domain: 'maxrevone.herokuapp.com',
+      domain: 'maxrevone.com',
       user_name: 'maxrevone@gmail.com',
       password: 'Ch88yMSe8y0U',
       authentication: 'plain',
