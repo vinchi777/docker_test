@@ -12,7 +12,7 @@ class UserFactory
   def self.student
     p = StudentFactory.create_student('Mary', true, false)
     p.email = 'student@example.com'
-    @user = User.create(password: '123456789', person: p, confirmed_at: Date.new)
+    User.create!(password: '123456789', person: p, confirmed_at: Date.new)
   end
 
   def self.create(first_name, last_name, email)

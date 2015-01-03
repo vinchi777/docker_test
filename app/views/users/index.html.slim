@@ -30,7 +30,7 @@
       i.fa.fa-exclamation-circle
       div No result found
 
-    .user.item.row ng-repeat='user in users' ng-hide='loading'
+    .user.item.row ng-repeat='user in users' ng-hide='loading' id='user-{{user.id}}'
       .left.col-sm-9.col-xs-12.row
         .info.col-sm-6.col-xs-12
           .name
