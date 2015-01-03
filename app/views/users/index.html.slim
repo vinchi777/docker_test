@@ -21,7 +21,7 @@
       | {{totalItems}}
     ng-pluralize count='totalItems' when="{'0': 'user', '1': 'user', 'other': 'users'}"
   .users.listing.panel.panel-light.col-md-12
-    .empty-list ng-show='users.length == 0 && q == null'
+    .empty-list ng-show='users.length == 0 && q == null && !loading'
       p
         | There is no existing user. Click the
         b  'Add User'
