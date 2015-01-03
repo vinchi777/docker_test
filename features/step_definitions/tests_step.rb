@@ -37,7 +37,7 @@ Given /a test exists and past the deadline/ do
 end
 
 When /I click on the test/ do
-  find("#test-#{@test.id} a").click
+  find("#test-#{@test.id} a", match: :first).click
 end
 
 Then /I should see all students selected/ do
@@ -45,7 +45,8 @@ Then /I should see all students selected/ do
   expect(all('a.student.selected', count: len).count).to eq len
 end
 
-Then /I should(.*?) see the student select modal/ do |arg|
+Then /I should( not)? see the student select modal/ do |arg|
+  sleep 0.2
   expect(find('#students-select-modal').visible?).to be true if arg.nil?
   expect(find('#students-select-modal', visible: false).visible?).to be false if arg.present?
 end
@@ -264,6 +265,15 @@ end
 Then /the test should( not)? exist/ do |neg|
   expect(Test.empty?).to be false unless neg
   expect(Test.empty?).to be true if neg
+end
+
+When /I select for "(.*?)" in student select/ do |name|
+  fill_in 'q', with: name
+  find('a.student', match: :first).click
+end
+
+Then /I should see other students in student select/ do
+  expect(page).to have_content '1 of 1 student'
 end
 
 def answer(sheet, pass)

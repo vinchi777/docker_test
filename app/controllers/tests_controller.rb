@@ -84,6 +84,14 @@ class TestsController < AdminController
     end
   end
 
+  def students
+    @students = Student.filter(@test.review_season.id, '2').select do |s|
+      !@test.has_answer_sheet? s
+    end
+    @size = @students.size
+    render 'students/index'
+  end
+
   private
   def set_test
     @test = Test.find(params[:id])

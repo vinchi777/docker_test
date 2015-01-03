@@ -6,7 +6,7 @@ Feature: Distribute test
     * enrolled students exists for the current season
     * a test exists
     * I am on the tests page
-    When I click on the test  
+    When I click on the test
     * I press the "Publish" button
 
   Scenario: Student exists on the modal
@@ -25,3 +25,9 @@ Feature: Distribute test
     Then "Bob" should have answer sheet
     * other students should not have answer sheets
 
+  Scenario: Redistribute to remaining students
+    When I select for "Bob" in student select
+    * I press the "Start" button
+    * I press the "Publish" button
+    Then I should not see "Bob"
+    * I should see other students in student select

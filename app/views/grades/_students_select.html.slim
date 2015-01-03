@@ -28,7 +28,7 @@
 
             .form-group.student-list
               div.col-md-12.text-center ng-show='students.length == 0'
-                | No enrolled students found for seasons {{season.season}}
+                | No students found for publishing
               a.col-md-4.student href='' ng-repeat='s in students | filter:filter' ng-click='toggle(s)' ng-class='{excluded:!s.selected, selected:s.selected}'
                 span.profile-pic
                   i.fa.fa-check
