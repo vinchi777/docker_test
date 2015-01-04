@@ -63,7 +63,7 @@
       window.location = d.url
 
   $scope.selectStudents = ->
-    $scope.$broadcast 'student_modal_show', $scope.test.review_season
+    $scope.$broadcast 'student_modal_show', $scope.test.review_season, $scope.test.id
 
   $scope.$on 'students_selected', (e, a) ->
     params =

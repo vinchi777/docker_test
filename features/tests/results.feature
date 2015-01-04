@@ -7,7 +7,7 @@ Feature: Show results
     * a test exists and published
     When students take the exam
     * I wait until the deadline
-    * I am on the tests page
-    * I click on "Results"
+    * I am on the test page
+    * I click on "See Results"
     Then I can see passing rate
     * I can see students score

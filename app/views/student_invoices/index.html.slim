@@ -68,8 +68,8 @@
                   .modal-body
                     span Are you sure you want to remove this transaction?
                   .modal-footer
-                    a.btn.btn-default href='#' ng-click='removeTransaction(i,t)' Yes
-                    button.btn.btn-primary data-dismiss='modal' No
+                    button.btn.btn-default data-dismiss='modal' No
+                    a.btn.btn-primary href='#' ng-click='removeTransaction(i,t)' Yes
 
           .add
             form.new-transaction ng-submit='saveTransaction(i)' ng-show='i.showTransaction'
@@ -102,8 +102,8 @@
               .modal-body
                 span Are you sure you want to remove this invoice?
               .modal-footer
-                a.btn.btn-default href='#' ng-click='remove(i)' Yes
-                button.btn.btn-primary data-dismiss='modal' No
+                button.btn.btn-default data-dismiss='modal' No
+                a.btn.btn-primary href='#' ng-click='remove(i)' Yes
 
       javascript:
         bindDatePicker()

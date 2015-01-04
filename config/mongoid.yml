@@ -77,7 +77,7 @@ heroku:
 production:
   sessions:
     default:
-      database: maxrevone_development
+      database: maxrevone
       hosts:
-        - localhost:27017
+        - maxrevone-db:27017
       options:

@@ -21,7 +21,7 @@
       | {{totalItems}}
     ng-pluralize count='totalItems' when="{'0': 'user', '1': 'user', 'other': 'users'}"
   .users.listing.panel.panel-light.col-md-12
-    .empty-list ng-show='users.length == 0 && q == null'
+    .empty-list ng-show='users.length == 0 && q == null && !loading'
       p
         | There is no existing user. Click the
         b  'Add User'
@@ -30,7 +30,7 @@
       i.fa.fa-exclamation-circle
       div No result found
 
-    .user.item.row ng-repeat='user in users' ng-hide='loading'
+    .user.item.row ng-repeat='user in users' ng-hide='loading' id='user-{{user.id}}'
       .left.col-sm-9.col-xs-12.row
         .info.col-sm-6.col-xs-12
           .name
@@ -69,8 +69,8 @@
             .modal-body
               span Are you sure you want to remove this user?
             .modal-footer
-              a.remove.btn.btn-default href='#' ng-click='remove(user)' Yes
-              button.btn.btn-primary data-dismiss='modal' No
+              button.btn.btn-default data-dismiss='modal' No
+              a.remove.btn.btn-primary href='#' ng-click='remove(user)' Yes
 
     #error-delete.modal.fade
       .modal-dialog

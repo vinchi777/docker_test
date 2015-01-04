@@ -76,6 +76,7 @@ class UsersController < AdminController
     own = @user == current_user
     msg = 'You cannot delete your own account.' if own
     msg = 'Cannot delete user. ' unless own
+    @user.person.destroy unless @user.person.is_a? Student
     respond_to do |format|
       if !own && @user.destroy
         format.json { head :no_content }
