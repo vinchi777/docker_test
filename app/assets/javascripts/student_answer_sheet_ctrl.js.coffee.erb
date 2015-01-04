@@ -49,7 +49,7 @@
 
                 if !$scope.sheet.submitted && $scope.near && !audioPlayed && $scope.sheet.test.timer > 0
                     audioPlayed = true
-                    new Audio('<%= asset_path "countdown.mp3" %>').play()
+                    new Audio('<%= asset_path "countdown.ogg" %>').play()
 
                 if e.offset.hours > 0
                     $(this).html e.strftime('%H hr %M min %S sec')
