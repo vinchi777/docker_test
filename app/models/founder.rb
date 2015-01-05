@@ -22,7 +22,7 @@ class Founder
         Founder.new(
             "Jose Van P. Tan, RN",
             "Vice President and Treasurer",
-            "Joe graduated at Far Eastern University - Manila in April 2010 with a Bachelor's Degree in Nursing. In the same year, he passed the Nurse Licensure Examination. This idiomatic expression, “strike while the iron is hot,” envisaged him to advocating students' aspirations to succeed in their chosen fields. Hence, he co-founded SRG - Tacloban, the forerunner of Max Rev One. One of his impressive attributes is being able to cope with multi-tasks such as reviewing finances and overseeing the day-to-day operations of Max Rev One, while pursuing his lifelong dream of becoming a lawyer at the Don Vicente Orestes Romualdez Educational Foundation (DVOREF), where he is presently taking Bachelor of Laws."
+            "Joe graduated at Far Eastern University - Manila in April 2010 with a Bachelor's Degree in Nursing. In the same year, he passed the Nurse Licensure Examination. This idiomatic expression, “strike while the iron is hot,” envisaged him to advocating students' aspirations to succeed in their chosen fields. Hence, he co-founded Max Rev One. One of his impressive attributes is being able to cope with multi-tasks such as reviewing finances and overseeing the day-to-day operations of Max Rev One, while pursuing his lifelong dream of becoming a lawyer at the Don Vicente Orestes Romualdez Educational Foundation (DVOREF), where he is presently taking Bachelor of Laws."
         ),
         Founder.new(
             "Mariel C. Villaflor-Capungcol",
@@ -37,12 +37,12 @@ class Founder
         Founder.new(
             "Cesar Czarbo P. Trani",
             "Review Specialist and Head of Marketing",
-            "Czarbo is a graduate of St. Scholastica's College Tacloban with a degree of Bachelor of Science in Nursing. Prior to taking the Nurse Licensure Examination, he worked part-time as a nurse-researcher for Vantage Medical Review. His hard work soon paid off when he placed 12th in the July 2010 licensure examination with a general rating of 83.6 percent. In October 2010, he was hired as a staff of SRG - Tacloban, where he met his colleagues with whom he formed Max Rev One. When not thinking of bizarre marketing strategies for Max Rev One, Bo enjoys hanging out with friends and simply enjoying life."
+            "Czarbo is a graduate of St. Scholastica's College Tacloban with a degree of Bachelor of Science in Nursing. Prior to taking the Nurse Licensure Examination, he worked part-time as a nurse-researcher for Vantage Medical Review. His hard work soon paid off when he placed 12th in the July 2010 licensure examination with a general rating of 83.6 percent. In October 2010, he was hired as a staff, where he met his colleagues with whom he formed Max Rev One. When not thinking of bizarre marketing strategies for Max Rev One, Bo enjoys hanging out with friends and simply enjoying life."
         ),
         Founder.new(
             "Menardo Lim",
             "Review Specialist and Head of Program and Planning",
-            "Like his colleagues at Max Rev One, Menard is equally an achiever, which is conspicuous in his academic records. He graduated with a degree of Bachelor of Science in Biology from St. Scholastica's College Tacloban in 2004. Not contented with his initial degree, he pursued Nursing at the Our Lady of Mary College, where he graduated in 2011. After passing the rigorous Nurse Licensure Examination in July 2012, he was hired by SRG - Tacloban and later absorbed by Max Rev One. Menard describes himself as simple, unpredictable, and open-minded. His ultimate goal is to become the best in everything that he does."
+            "Like his colleagues at Max Rev One, Menard is equally an achiever, which is conspicuous in his academic records. He graduated with a degree of Bachelor of Science in Biology from St. Scholastica's College Tacloban in 2004. Not contented with his initial degree, he pursued Nursing at the Our Lady of Mary College, where he graduated in 2011. After passing the rigorous Nurse Licensure Examination in July 2012, he was hired by Max Rev One. Menard describes himself as simple, unpredictable, and open-minded. His ultimate goal is to become the best in everything that he does."
         )
     ]
   end
