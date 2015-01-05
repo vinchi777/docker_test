@@ -77,12 +77,19 @@ a, a:hover, a:active, a:focus {
     }
 }
 
-* {
-    @in: 300ms;
+.transition(@in) {
     -webkit-transition: background-color @in ease, border-color @in ease, color @in ease, fill @in ease;
     -moz-transition: background-color @in ease, border-color @in ease, color @in ease, fill @in ease;
     -o-transition: background-color @in ease, border-color @in ease, color @in ease, fill @in ease;
-    transition: background-color @in ease, border-color @in ease, color @in ease, fill @in ease;
+    transition: background-color @in ease, border-color @in ease, color @in ease, fill @in ease;    
+}
+
+* {
+    .transition(300ms);
+}
+
+.header *{
+    .transition(0ms);
 }
 
 .btn-black {
