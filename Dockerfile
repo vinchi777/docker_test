@@ -17,4 +17,5 @@ RUN rake assets:precompile
 
 EXPOSE 3000
 
+CMD rake jobs:work &
 CMD rails s
