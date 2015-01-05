@@ -27,6 +27,7 @@ gem 'wicked'
 gem 'delayed_job_mongoid'
 
 gem 'thin'
+gem 'newrelic_rpm'
 
 group :development do
   gem 'better_errors', '~> 1.1.0'
