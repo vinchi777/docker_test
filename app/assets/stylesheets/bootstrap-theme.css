@@ -8,7 +8,9 @@
   background: #ffffff;
   border: 1px solid #F2F2F2;
 }
-a:hover {
+a:hover,
+a:active,
+a:focus {
   text-decoration: none;
 }
 /*****************
