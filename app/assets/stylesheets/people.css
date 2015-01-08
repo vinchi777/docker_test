@@ -1,3 +1,6 @@
+/***
+ Site's variables
+*****/
 #founders,
 #reviewers {
   text-align: center;
@@ -33,6 +36,10 @@
   border-top: solid 1px #E6E6E6;
   margin: 0 auto;
   width: 50%;
+}
+#founders .list img {
+  border-radius: 100%;
+  border: 2px solid #eca02e;
 }
 #reviewers .banner {
   padding: 40px 0px 50px 0px;
